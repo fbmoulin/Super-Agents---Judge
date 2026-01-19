@@ -11,8 +11,9 @@ Este arquivo serve como índice central para toda a documentação do projeto Le
 | Documento | Descrição | Localização |
 |-----------|-----------|-------------|
 | **CLAUDE.md** | Documentação principal do projeto, status e configuração | `/CLAUDE.md` |
-| **README_LEX_INTELLIGENTIA.md** | Visão geral, arquitetura, agentes e roadmap | `/README_LEX_INTELLIGENTIA.md` |
-| **README_WORKFLOW.md** | Quick start e arquitetura do workflow n8n | `/README_WORKFLOW.md` |
+| **README.md** | Visão geral, arquitetura, agentes e roadmap | `/README.md` |
+| **ROADMAP.md** | Roadmap de evolução do projeto | `/ROADMAP.md` |
+| **TUTORIAL.md** | Tutorial rápido | `/TUTORIAL.md` |
 
 ---
 
@@ -21,34 +22,79 @@ Este arquivo serve como índice central para toda a documentação do projeto Le
 | Documento | Descrição | Localização |
 |-----------|-----------|-------------|
 | **credentials-setup.md** | Guia de configuração de credenciais (Gemini, Claude, Sheets) | `/credentials-setup.md` |
+| **.env.keys.template** | Template de variáveis de ambiente | `/.env.keys.template` |
 | **init_db_audit_logs.sql** | Schema PostgreSQL (alternativa a Sheets) | `/init_db_audit_logs.sql` |
 
 ---
 
-## 📖 Tutoriais
+## 📖 Tutoriais e Guias
 
 | Documento | Descrição | Localização |
 |-----------|-----------|-------------|
 | **TUTORIAL_INICIANTES.md** | Tutorial passo-a-passo para iniciantes | `/docs/TUTORIAL_INICIANTES.md` |
+| **GUIA_INTEGRACAO_AGENTES.md** | Guia completo de integração | `/docs/guides/GUIA_INTEGRACAO_AGENTES.md` |
+| **GEMINI.md** | Configuração do Gemini Router | `/docs/guides/GEMINI.md` |
+| **Plano_Agentes_n8n_Revisado.md** | Plano completo dos agentes | `/docs/guides/LexIntelligentia_Judiciario_Plano_Agentes_n8n_Revisado.md` |
+| **Prompts_Agentes_Especializados.md** | System prompts dos agentes | `/docs/guides/LexIntelligentia_Judiciario_Prompts_Agentes_Especializados.md` |
 
 ---
 
-## 🧪 Testes
+## 🧪 Testes e Validação
 
 | Documento | Descrição | Localização |
 |-----------|-----------|-------------|
 | **test_cases/README.md** | Documentação dos casos de teste | `/test_cases/README.md` |
 | **run_production_tests.js** | Script de testes automatizados | `/test_cases/run_production_tests.js` |
 | **test_results/*.md** | Relatórios de testes de produção | `/test_cases/test_results/` |
+| **VALIDATION_REPORT.md** | Relatório de validação | `/docs/validation/VALIDATION_REPORT.md` |
+| **VALIDATION_SUMMARY.md** | Resumo de validação | `/docs/validation/VALIDATION_SUMMARY.md` |
+| **VALIDATION_INDEX.md** | Índice de validação | `/docs/validation/VALIDATION_INDEX.md` |
 
 ---
 
-## 📋 Planos e Roadmap
+## 📋 Planos e Design
 
 | Documento | Descrição | Localização |
 |-----------|-----------|-------------|
-| **ROADMAP.md** | Roadmap de evolução do projeto | `/ROADMAP.md` |
-| **plans/*.md** | Planos de implementação e otimização | `/docs/plans/` |
+| **plans/** | Planos de implementação e otimização | `/docs/plans/` |
+| **CRITICAL_AGENT_DESIGN.md** | Design crítico dos agentes | `/docs/CRITICAL_AGENT_DESIGN.md` |
+| **RESEARCH_AGENT_DESIGN.md** | Design do agente de pesquisa | `/docs/RESEARCH_AGENT_DESIGN.md` |
+| **REVIEW_INTERFACE_PLAN.md** | Plano da interface de revisão | `/docs/REVIEW_INTERFACE_PLAN.md` |
+
+---
+
+## 🚀 Funcionalidades Futuras
+
+| Documento | Descrição | Localização |
+|-----------|-----------|-------------|
+| **AB_TESTING_PLAN.md** | Plano de testes A/B | `/docs/AB_TESTING_PLAN.md` |
+| **CACHE_IMPLEMENTATION_GUIDE.md** | Guia de implementação de cache | `/docs/CACHE_IMPLEMENTATION_GUIDE.md` |
+| **DASHBOARD_METRICS.md** | Métricas do dashboard | `/docs/DASHBOARD_METRICS.md` |
+| **JURIMETRIC_ANALYSIS_PLAN.md** | Plano de análise jurimétrica | `/docs/JURIMETRIC_ANALYSIS_PLAN.md` |
+| **FINE_TUNING_FEASIBILITY_REPORT.md** | Relatório de viabilidade de fine-tuning | `/docs/FINE_TUNING_FEASIBILITY_REPORT.md` |
+
+---
+
+## 🛠️ Scripts
+
+| Script | Descrição | Localização |
+|--------|-----------|-------------|
+| **validate_workflow.js** | Validação de workflows n8n | `/scripts/validate_workflow.js` |
+| **validate_detailed.js** | Validação detalhada | `/scripts/validate_detailed.js` |
+| **stj_downloader.py** | Download de jurisprudência STJ | `/scripts/stj_downloader.py` |
+| **test_scenarios.js** | Cenários de teste | `/scripts/test_scenarios.js` |
+
+---
+
+## 📁 Workflows n8n
+
+| Arquivo | Descrição | Status |
+|---------|-----------|--------|
+| **n8n_workflow_agentes_especializados_v2.2.json** | Workflow principal (11 agentes) | **PRODUÇÃO** |
+| **n8n_workflow_v2.1.1_cloud_ready.json** | Versão cloud-ready | Backup |
+| **n8n_workflow_stj_vectorstore.json** | Vector store STJ | RAG (futuro) |
+| **archive/workflows/** | Workflows legados | Arquivados |
+| **test_cases/workflows/** | Workflows de teste | Testes |
 
 ---
 

@@ -26,3 +26,4 @@ Thumbs.db
 # Temporarios
 *.tmp
 *.temp
+__pycache__/
