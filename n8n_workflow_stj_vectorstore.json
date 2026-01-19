@@ -1,0 +1,299 @@
+{
+  "name": "STJ Vector Store - Ingestão e Busca",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "stj-ingest",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-ingest",
+      "name": "Webhook: Ingestão",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "filePath": "/data/stj_chunks_vectorstore.json",
+        "options": {}
+      },
+      "id": "read-json",
+      "name": "Read JSON File",
+      "type": "n8n-nodes-base.readBinaryFiles",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse JSON e preparar chunks para embedding\nconst fileContent = $input.first().json;\nlet chunks = [];\n\n// Se vier do arquivo\nif (typeof fileContent === 'string') {\n  chunks = JSON.parse(fileContent);\n} else if (Array.isArray(fileContent)) {\n  chunks = fileContent;\n} else if (fileContent.data) {\n  chunks = JSON.parse(Buffer.from(fileContent.data, 'base64').toString('utf-8'));\n}\n\n// Retornar cada chunk como item separado\nreturn chunks.map(chunk => ({\n  json: {\n    id: chunk.id || `chunk_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,\n    text_for_embedding: chunk.text_for_embedding || createEmbeddingText(chunk),\n    payload: {\n      tipo: chunk.tipo,\n      subtipo: chunk.subtipo,\n      numero_tema: chunk.numero_tema,\n      situacao: chunk.situacao,\n      ramo_direito: chunk.ramo_direito,\n      assunto: chunk.assunto,\n      questao_submetida: chunk.questao_submetida,\n      tese_firmada: chunk.tese_firmada,\n      orgao_julgador: chunk.orgao_julgador,\n      relator: chunk.relator,\n      ementa: chunk.ementa,\n      classe: chunk.classe,\n      numero: chunk.numero,\n      data_julgamento: chunk.data_julgamento,\n      referencias_legislativas: chunk.referencias_legislativas,\n      content_hash: chunk.content_hash\n    }\n  }\n}));\n\nfunction createEmbeddingText(chunk) {\n  const parts = [];\n  \n  if (chunk.tipo === 'precedente_qualificado') {\n    if (chunk.numero_tema) parts.push(`TEMA ${chunk.numero_tema}`);\n    if (chunk.subtipo) parts.push(`(${chunk.subtipo})`);\n    if (chunk.ramo_direito) parts.push(`Ramo: ${chunk.ramo_direito}`);\n    if (chunk.assunto) parts.push(`Assunto: ${chunk.assunto}`);\n    if (chunk.questao_submetida) parts.push(`Questão: ${chunk.questao_submetida}`);\n    if (chunk.tese_firmada) parts.push(`TESE FIRMADA: ${chunk.tese_firmada}`);\n  } else {\n    if (chunk.classe && chunk.numero) parts.push(`${chunk.classe} ${chunk.numero}`);\n    if (chunk.orgao_julgador) parts.push(`Órgão: ${chunk.orgao_julgador}`);\n    if (chunk.ementa) parts.push(`EMENTA: ${chunk.ementa.substring(0, 2000)}`);\n  }\n  \n  return parts.join('\\n');\n}"
+      },
+      "id": "code-parse",
+      "name": "Code: Parse Chunks",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 50,
+        "options": {}
+      },
+      "id": "split-batches",
+      "name": "Split In Batches",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "resource": "textEmbedding",
+        "model": "text-embedding-3-small",
+        "text": "={{ $json.text_for_embedding }}",
+        "options": {
+          "dimensions": 1536
+        }
+      },
+      "id": "openai-embed",
+      "name": "OpenAI: Embeddings",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1,
+      "position": [1050, 300],
+      "credentials": {
+        "openAiApi": {
+          "id": "OPENAI_CREDENTIALS_ID",
+          "name": "OpenAI API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Preparar payload para Qdrant upsert\nconst items = $input.all();\nconst points = items.map((item, index) => {\n  const embedding = item.json.embedding || item.json.data;\n  const originalItem = $('Code: Parse Chunks').item(index);\n  \n  return {\n    id: originalItem.json.id,\n    vector: embedding,\n    payload: originalItem.json.payload\n  };\n});\n\nreturn [{\n  json: {\n    points: points\n  }\n}];"
+      },
+      "id": "code-prepare-upsert",
+      "name": "Code: Prepare Upsert",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 300]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "http://qdrant:6333/collections/stj_jurisprudencia/points",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "http-qdrant-upsert",
+      "name": "HTTP: Qdrant Upsert",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1450, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Log de auditoria CNJ 615/2025\nconst timestamp = new Date().toISOString();\nconst batch = $input.first().json;\n\nconst auditLog = {\n  timestamp: timestamp,\n  operacao: 'INGESTAO_VECTOR_STORE',\n  sistema: 'Lex Intelligentia Judiciário',\n  fonte_dados: 'STJ Dados Abertos',\n  quantidade_chunks: batch.points ? batch.points.length : 0,\n  modelo_embedding: 'text-embedding-3-small',\n  dimensoes: 1536,\n  vector_store: 'Qdrant',\n  collection: 'stj_jurisprudencia',\n  status: 'SUCCESS',\n  compliance: {\n    cnj_615_2025: true,\n    lgpd_anonimizado: true,\n    dados_publicos: true,\n    licenca: 'CC-BY'\n  }\n};\n\nconsole.log('Audit Log:', JSON.stringify(auditLog));\n\nreturn [{ json: auditLog }];"
+      },
+      "id": "code-audit",
+      "name": "Code: Audit Log CNJ",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1650, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "respond-ingest",
+      "name": "Respond: Ingestão OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1850, 300]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "stj-search",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-search",
+      "name": "Webhook: Busca",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 600]
+    },
+    {
+      "parameters": {
+        "resource": "textEmbedding",
+        "model": "text-embedding-3-small",
+        "text": "={{ $json.body.query }}",
+        "options": {
+          "dimensions": 1536
+        }
+      },
+      "id": "openai-embed-query",
+      "name": "OpenAI: Embed Query",
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1,
+      "position": [450, 600],
+      "credentials": {
+        "openAiApi": {
+          "id": "OPENAI_CREDENTIALS_ID",
+          "name": "OpenAI API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Construir filtros Qdrant baseado nos parâmetros\nconst body = $('Webhook: Busca').first().json.body;\nconst embedding = $input.first().json.embedding || $input.first().json.data;\n\nconst searchRequest = {\n  vector: embedding,\n  limit: body.top_k || 5,\n  with_payload: true,\n  score_threshold: 0.5\n};\n\n// Adicionar filtros se especificados\nconst filters = [];\n\nif (body.tipo && body.tipo !== 'todos') {\n  filters.push({\n    key: 'tipo',\n    match: { value: body.tipo }\n  });\n}\n\nif (body.ramo_direito) {\n  filters.push({\n    key: 'ramo_direito',\n    match: { value: body.ramo_direito.toUpperCase() }\n  });\n}\n\nif (body.orgao_julgador) {\n  filters.push({\n    key: 'orgao_julgador',\n    match: { text: body.orgao_julgador }\n  });\n}\n\nif (body.situacao) {\n  filters.push({\n    key: 'situacao',\n    match: { value: body.situacao }\n  });\n}\n\nif (filters.length > 0) {\n  searchRequest.filter = {\n    must: filters\n  };\n}\n\nreturn [{ json: searchRequest }];"
+      },
+      "id": "code-build-search",
+      "name": "Code: Build Search",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 600]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://qdrant:6333/collections/stj_jurisprudencia/points/search",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "http-qdrant-search",
+      "name": "HTTP: Qdrant Search",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [850, 600]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Formatar resultados para o agente\nconst response = $input.first().json;\nconst originalQuery = $('Webhook: Busca').first().json.body.query;\n\nif (!response.result || response.result.length === 0) {\n  return [{\n    json: {\n      query: originalQuery,\n      total_results: 0,\n      results: [],\n      message: 'Nenhum precedente encontrado para esta consulta.'\n    }\n  }];\n}\n\nconst formattedResults = response.result.map((item, index) => {\n  const payload = item.payload;\n  \n  let formatted = {\n    rank: index + 1,\n    score: item.score.toFixed(4),\n    tipo: payload.tipo,\n    id: item.id\n  };\n  \n  if (payload.tipo === 'precedente_qualificado') {\n    formatted = {\n      ...formatted,\n      numero_tema: payload.numero_tema,\n      subtipo: payload.subtipo,\n      situacao: payload.situacao,\n      ramo_direito: payload.ramo_direito,\n      assunto: payload.assunto,\n      questao_submetida: payload.questao_submetida,\n      tese_firmada: payload.tese_firmada,\n      orgao_julgador: payload.orgao_julgador,\n      relator: payload.relator\n    };\n  } else {\n    formatted = {\n      ...formatted,\n      classe: payload.classe,\n      numero: payload.numero,\n      orgao_julgador: payload.orgao_julgador,\n      relator: payload.relator,\n      ementa: payload.ementa ? payload.ementa.substring(0, 500) + '...' : '',\n      data_julgamento: payload.data_julgamento\n    };\n  }\n  \n  return formatted;\n});\n\nreturn [{\n  json: {\n    query: originalQuery,\n    total_results: formattedResults.length,\n    results: formattedResults\n  }\n}];"
+      },
+      "id": "code-format-results",
+      "name": "Code: Format Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 600]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "respond-search",
+      "name": "Respond: Search Results",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1250, 600]
+    },
+    {
+      "parameters": {},
+      "id": "note-ingest",
+      "name": "📥 FLUXO DE INGESTÃO",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [200, 180],
+      "parameters": {
+        "content": "## 📥 Fluxo de Ingestão\n\nEndpoint: POST /webhook/stj-ingest\n\nLê o arquivo JSON com chunks processados do STJ, gera embeddings via OpenAI e insere no Qdrant.\n\n**Batch size:** 50 chunks por vez\n**Modelo:** text-embedding-3-small (1536 dim)"
+      }
+    },
+    {
+      "parameters": {},
+      "id": "note-search",
+      "name": "🔍 FLUXO DE BUSCA",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [200, 480],
+      "parameters": {
+        "content": "## 🔍 Fluxo de Busca\n\nEndpoint: POST /webhook/stj-search\n\nRecebe query de busca, gera embedding, consulta Qdrant e retorna resultados formatados.\n\n**Parâmetros:**\n- query: texto da busca\n- tipo: precedente_qualificado | acordao | todos\n- ramo_direito: filtro opcional\n- top_k: quantidade (default: 5)"
+      }
+    }
+  ],
+  "connections": {
+    "Webhook: Ingestão": {
+      "main": [[{ "node": "Read JSON File", "type": "main", "index": 0 }]]
+    },
+    "Read JSON File": {
+      "main": [[{ "node": "Code: Parse Chunks", "type": "main", "index": 0 }]]
+    },
+    "Code: Parse Chunks": {
+      "main": [[{ "node": "Split In Batches", "type": "main", "index": 0 }]]
+    },
+    "Split In Batches": {
+      "main": [
+        [{ "node": "OpenAI: Embeddings", "type": "main", "index": 0 }],
+        [{ "node": "Respond: Ingestão OK", "type": "main", "index": 0 }]
+      ]
+    },
+    "OpenAI: Embeddings": {
+      "main": [[{ "node": "Code: Prepare Upsert", "type": "main", "index": 0 }]]
+    },
+    "Code: Prepare Upsert": {
+      "main": [[{ "node": "HTTP: Qdrant Upsert", "type": "main", "index": 0 }]]
+    },
+    "HTTP: Qdrant Upsert": {
+      "main": [[{ "node": "Code: Audit Log CNJ", "type": "main", "index": 0 }]]
+    },
+    "Code: Audit Log CNJ": {
+      "main": [[{ "node": "Split In Batches", "type": "main", "index": 0 }]]
+    },
+    "Webhook: Busca": {
+      "main": [[{ "node": "OpenAI: Embed Query", "type": "main", "index": 0 }]]
+    },
+    "OpenAI: Embed Query": {
+      "main": [[{ "node": "Code: Build Search", "type": "main", "index": 0 }]]
+    },
+    "Code: Build Search": {
+      "main": [[{ "node": "HTTP: Qdrant Search", "type": "main", "index": 0 }]]
+    },
+    "HTTP: Qdrant Search": {
+      "main": [[{ "node": "Code: Format Results", "type": "main", "index": 0 }]]
+    },
+    "Code: Format Results": {
+      "main": [[{ "node": "Respond: Search Results", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    { "name": "STJ" },
+    { "name": "Vector Store" },
+    { "name": "Lex Intelligentia" }
+  ],
+  "triggerCount": 2,
+  "updatedAt": "2026-01-14T00:00:00.000Z",
+  "versionId": "1"
+}

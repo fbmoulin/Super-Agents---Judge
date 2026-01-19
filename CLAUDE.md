@@ -97,10 +97,14 @@ Error Path:
 | Arquivo | Status | Descrição |
 |---------|--------|-----------|
 | `n8n_workflow_agentes_especializados_v2.2.json` | **USAR** | Workflow v2.2 (59 nodes) |
+| `n8n_workflow_v2.1.1_cloud_ready.json` | Cloud | Versão cloud-ready |
+| `n8n_workflow_stj_vectorstore.json` | RAG | Vector store STJ |
 | `credentials-setup.md` | Docs | Guia de configuração de credenciais |
+| `docs/TUTORIAL_INICIANTES.md` | Docs | Tutorial passo-a-passo para iniciantes |
+| `scripts/validate_workflow.js` | Script | Validação de workflows |
+| `scripts/stj_downloader.py` | Script | Download de jurisprudência STJ |
 | `init_db_audit_logs.sql` | Opcional | Schema PostgreSQL (alternativa a Sheets) |
-| `docs/plans/2026-01-14-lex-intelligentia-v2.1-optimization-plan.md` | Docs | Plano completo |
-| `n8n_workflow_agentes_especializados.json` | Legacy | Workflow v2.0 (não usar) |
+| `archive/workflows/` | Legacy | Workflows antigos (não usar) |
 
 ## Agentes Especializados
 
@@ -158,7 +162,7 @@ Error Path:
 - [x] Context Buffer com null safety validado
 - [x] Pipeline completo executado (~28-30s)
 - [x] Test cases criados para todos os 6 domínios
-- [x] **5/6 agentes validados em produção**
+- [x] **4/6 agentes validados em produção** (execução com issue)
 
 #### Resultados dos Testes por Agente
 
@@ -166,7 +170,7 @@ Error Path:
 |--------|---------------|-----------|--------|
 | agent_BANCARIO | Empréstimo consignado fraudulento | **0.98** | ✅ PASSOU |
 | agent_CONSUMIDOR | Falha serviço telecomunicações | **0.95** | ✅ PASSOU |
-| agent_EXECUCAO | Cheque prescrito - título extrajudicial | **0.95** | ✅ PASSOU |
+| agent_EXECUCAO | Cheque prescrito - título extrajudicial | **0.30** | ⚠️ FALHOU (truncation) |
 | agent_LOCACAO | Despejo por falta de pagamento | **0.98** | ✅ PASSOU |
 | agent_POSSESSORIAS | Reintegração de posse - esbulho | **0.98** | ✅ PASSOU |
 | agent_GENERICO | Ação declaratória atípica | - | ⏳ Pendente |
@@ -178,6 +182,7 @@ Error Path:
 | Router classifica "bancário" como "genérico" | CRÍTICO | ✅ RESOLVIDO | maxOutputTokens: 800 → 2000 |
 | Confiança baixa (0.3) no router | CRÍTICO | ✅ RESOLVIDO | Agora 0.95-0.98 |
 | Token truncation no Context Buffer | ALTO | ✅ RESOLVIDO | maxOutputTokens aumentado |
+| Execução fallback para genérico | ALTO | ⚠️ PENDENTE | Precisa maxOutputTokens: 3000 |
 
 **Root Cause Identificado:**
 - Gemini 2.5 Flash usa "thinking tokens" internos que consomem o budget de maxOutputTokens
@@ -193,6 +198,7 @@ Error Path:
 **Arquivos de Teste:**
 - `test_cases/run_production_tests.js` - Script de testes automatizados
 - `test_cases/test_results/PRODUCTION_TEST_REPORT_2026-01-19.md` - Relatório completo
+- `test_cases/test_results/PRODUCTION_TEST_REPORT_2026-01-19_SESSION2.md` - Relatório sessão 2
 - `test_cases/bancario/` - 5 casos bancários
 - `test_cases/consumidor/` - 5 casos consumidor
 - `test_cases/execucao/` - 1 caso execução

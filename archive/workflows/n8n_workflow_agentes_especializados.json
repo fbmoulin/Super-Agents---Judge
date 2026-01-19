@@ -1,0 +1,481 @@
+{
+  "name": "Lex Intelligentia Judiciário - Agentes Especializados",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "# 🏛️ LEX INTELLIGENTIA JUDICIÁRIO\n## Pipeline Multi-Agente para Vara Cível\n\n**Versão:** 2.0 - Janeiro 2026\n**Compliance:** CNJ 615/2025\n\n### Fluxo:\n1. Recebe output FIRAC do fluxo existente\n2. Router classifica o tipo de ação\n3. Agente especializado gera minuta\n4. QA Check valida\n5. Output final + Audit Log",
+        "height": 340,
+        "width": 420
+      },
+      "id": "sticky-header",
+      "name": "📋 INFO",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [80, 60]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lex-intelligentia-agentes",
+        "responseMode": "responseNode",
+        "options": {
+          "rawBody": false
+        }
+      },
+      "id": "webhook-entrada",
+      "name": "Webhook: Recebe FIRAC",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [540, 300],
+      "webhookId": "lex-agentes-entrada"
+    },
+    {
+      "parameters": {
+        "jsCode": "// =============================================================================\n// ROUTER JUDICIÁRIO - Classificação Semântica\n// Lex Intelligentia Judiciário - Janeiro 2026\n// =============================================================================\n\nconst firac = $input.first().json.body || $input.first().json;\n\n// Extrair informações do FIRAC\nconst fatos = (firac.fatos || firac.facts || '').toLowerCase();\nconst questoes = (firac.questoes || firac.issues || '').toLowerCase();\nconst pedidos = (firac.pedidos || firac.claims || '').toLowerCase();\nconst classe = (firac.classe_processual || firac.classe || '').toLowerCase();\nconst assunto = (firac.assunto || '').toLowerCase();\n\n// Texto completo para análise\nconst textoCompleto = `${fatos} ${questoes} ${pedidos} ${classe} ${assunto}`;\n\n// =============================================================================\n// REGRAS DE CLASSIFICAÇÃO\n// =============================================================================\n\nconst classificacoes = [\n  {\n    agente: 'agent_bancario',\n    nome: 'Contratos Bancários',\n    keywords: [\n      'banco', 'bancário', 'bancária', 'financeira', 'financeiro',\n      'empréstimo', 'consignado', 'cartão de crédito', 'cartao de credito',\n      'juros abusivos', 'capitalização', 'tarifa', 'cdc bancário',\n      'revisional', 'contrato bancário', 'instituição financeira',\n      'cédula de crédito', 'financiamento', 'mútuo', 'leasing',\n      'spread', 'taxa de abertura', 'seguro prestamista',\n      'desconto em folha', 'margem consignável', 'superendividamento'\n    ],\n    peso: 0\n  },\n  {\n    agente: 'agent_consumidor',\n    nome: 'Consumidor / Danos Morais',\n    keywords: [\n      'consumidor', 'cdc', 'dano moral', 'danos morais', 'indenização',\n      'negativação', 'spc', 'serasa', 'scpc', 'cadastro', 'protesto',\n      'fornecedor', 'produto', 'serviço', 'defeito', 'vício',\n      'propaganda enganosa', 'falha na prestação', 'atraso',\n      'extravio', 'bagagem', 'companhia aérea', 'plano de saúde',\n      'telefonia', 'internet', 'cobrança indevida', 'fraude',\n      'clonagem', 'responsabilidade objetiva'\n    ],\n    peso: 0\n  },\n  {\n    agente: 'agent_possessorias',\n    nome: 'Possessórias',\n    keywords: [\n      'posse', 'reintegração', 'manutenção de posse', 'interdito',\n      'esbulho', 'turbação', 'usucapião', 'possessória', 'imissão',\n      'ocupação', 'invasão', 'despejo possessório', 'liminar possessória',\n      'nunciação de obra nova', 'embargo de terceiro', 'força nova',\n      'força velha', 'ano e dia'\n    ],\n    peso: 0\n  },\n  {\n    agente: 'agent_locacao',\n    nome: 'Locação',\n    keywords: [\n      'locação', 'inquilinato', 'aluguel', 'despejo', 'locador',\n      'locatário', 'lei 8245', 'lei do inquilinato', 'falta de pagamento',\n      'denúncia vazia', 'renovatória', 'revisional de aluguel',\n      'consignatória de aluguéis', 'caução locatícia', 'fiador',\n      'purgação da mora', 'ação de despejo'\n    ],\n    peso: 0\n  },\n  {\n    agente: 'agent_execucao',\n    nome: 'Execução',\n    keywords: [\n      'execução', 'título extrajudicial', 'cumprimento de sentença',\n      'embargos', 'impugnação', 'penhora', 'hasta pública', 'leilão',\n      'cheque', 'nota promissória', 'duplicata', 'confissão de dívida',\n      'prescrição intercorrente', 'exceção de pré-executividade',\n      'sisbajud', 'bloqueio', 'atos executivos', 'arresto'\n    ],\n    peso: 0\n  }\n];\n\n// =============================================================================\n// ALGORITMO DE SCORING\n// =============================================================================\n\nfor (const classif of classificacoes) {\n  for (const keyword of classif.keywords) {\n    // Conta ocorrências da keyword no texto\n    const regex = new RegExp(keyword, 'gi');\n    const matches = textoCompleto.match(regex);\n    if (matches) {\n      classif.peso += matches.length;\n      // Bonus se a keyword aparece nos pedidos (mais relevante)\n      if (pedidos.includes(keyword)) {\n        classif.peso += 2;\n      }\n      // Bonus se aparece na classe processual\n      if (classe.includes(keyword)) {\n        classif.peso += 3;\n      }\n    }\n  }\n}\n\n// Ordenar por peso (maior primeiro)\nclassificacoes.sort((a, b) => b.peso - a.peso);\n\n// Calcular confiança\nconst pesoTotal = classificacoes.reduce((sum, c) => sum + c.peso, 0);\nconst melhorClassif = classificacoes[0];\nconst confianca = pesoTotal > 0 ? (melhorClassif.peso / pesoTotal) : 0;\n\n// Se confiança baixa ou empate, usar genérico\nlet agenteEscolhido = melhorClassif.agente;\nlet nomeEscolhido = melhorClassif.nome;\n\nif (confianca < 0.5 || melhorClassif.peso === 0) {\n  agenteEscolhido = 'agent_generico';\n  nomeEscolhido = 'Genérico (Fallback)';\n}\n\n// =============================================================================\n// OUTPUT\n// =============================================================================\n\nreturn [{\n  json: {\n    router_result: {\n      agente_selecionado: agenteEscolhido,\n      nome_agente: nomeEscolhido,\n      confianca: Math.round(confianca * 100) / 100,\n      peso_calculado: melhorClassif.peso,\n      alternativas: classificacoes.slice(1, 3).map(c => ({\n        agente: c.agente,\n        nome: c.nome,\n        peso: c.peso\n      }))\n    },\n    firac_input: firac,\n    timestamp: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "router-judiciario",
+      "name": "Code: Router Judiciário",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [760, 300]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "rules": [
+            {
+              "value": "agent_bancario",
+              "outputKey": "Bancário"
+            },
+            {
+              "value": "agent_consumidor",
+              "outputKey": "Consumidor"
+            },
+            {
+              "value": "agent_possessorias",
+              "outputKey": "Possessórias"
+            },
+            {
+              "value": "agent_locacao",
+              "outputKey": "Locação"
+            },
+            {
+              "value": "agent_execucao",
+              "outputKey": "Execução"
+            },
+            {
+              "value": "agent_generico",
+              "outputKey": "Genérico"
+            }
+          ],
+          "fallbackOutput": {
+            "mode": "extra"
+          }
+        },
+        "dataPropertyName": "={{ $json.router_result.agente_selecionado }}"
+      },
+      "id": "switch-agentes",
+      "name": "Switch: Seleciona Agente",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [980, 300]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "=Analise o seguinte processo e gere a minuta de decisão/sentença apropriada:\n\n---\nFIRAC ANALYSIS:\n{{ JSON.stringify($json.firac_input, null, 2) }}\n---\n\nConfidência da classificação: {{ $json.router_result.confianca }}\n\nGere a minuta completa seguindo a estrutura definida para processos BANCÁRIOS.",
+        "options": {
+          "systemMessage": "# AGENTE ESPECIALIZADO: CONTRATOS BANCÁRIOS\n## Vara Cível - Tribunal de Justiça do Espírito Santo\n\n### PAPEL\nVocê é um agente judicial especializado em demandas envolvendo instituições financeiras e contratos bancários. Sua função é analisar o output FIRAC fornecido e gerar minutas de decisões ou sentenças tecnicamente precisas.\n\n### COMPETÊNCIAS\n- Ações revisionais de contrato bancário\n- Ações de cobrança e monitórias\n- Empréstimos consignados (inclusive fraudulentos)\n- Cartões de crédito (tarifas, anuidade, juros)\n- Financiamentos (veículos, imóveis)\n- Cédulas de crédito bancário\n\n### BASE JURISPRUDENCIAL OBRIGATÓRIA\n\n**Súmulas STJ:**\n- Súmula 297: \"O CDC é aplicável às instituições financeiras\"\n- Súmula 381: \"Nos contratos bancários, é vedado ao julgador conhecer de ofício da abusividade das cláusulas\"\n- Súmula 382: \"A estipulação de juros remuneratórios superiores a 12% ao ano, por si só, não indica abusividade\"\n- Súmula 539: \"É permitida a capitalização de juros com periodicidade inferior à anual em contratos celebrados com instituições do SFN a partir de 31/3/2000\"\n- Súmula 565: \"A pactuação das tarifas de abertura de crédito (TAC) e de emissão de carnê (TEC) é válida apenas nos contratos bancários anteriores a 30/4/2008\"\n- Súmula 603: \"É vedado ao banco cobrar tarifa pela emissão de segunda via de boleto\"\n\n### PARÂMETROS DE DANOS MORAIS (TJES 2025-2026)\n- Inscrição indevida (primeira vez): R$ 5.000 - R$ 10.000\n- Empréstimo fraudulento (desconto): R$ 8.000 - R$ 15.000\n- Empréstimo fraudulento + negativação: R$ 15.000 - R$ 25.000\n\n### ESTRUTURA DA SENTENÇA\nI - RELATÓRIO (síntese objetiva)\nII - FUNDAMENTAÇÃO (preliminares + mérito + jurisprudência)\nIII - DISPOSITIVO (JULGO PROCEDENTE/IMPROCEDENTE + condenações)\n\nMarque com [REVISAR] qualquer ponto que necessite verificação do magistrado."
+        }
+      },
+      "id": "agent-bancario",
+      "name": "AI Agent: Bancário",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [1220, 60]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "=Analise o seguinte processo e gere a minuta de decisão/sentença apropriada:\n\n---\nFIRAC ANALYSIS:\n{{ JSON.stringify($json.firac_input, null, 2) }}\n---\n\nConfidência da classificação: {{ $json.router_result.confianca }}\n\nGere a minuta completa seguindo a estrutura definida para processos de CONSUMIDOR/DANOS MORAIS.",
+        "options": {
+          "systemMessage": "# AGENTE ESPECIALIZADO: DIREITO DO CONSUMIDOR E DANOS MORAIS\n## Vara Cível - Tribunal de Justiça do Espírito Santo\n\n### PAPEL\nVocê é um agente judicial especializado em relações de consumo e responsabilidade civil por danos morais. Gera minutas de decisões e sentenças com foco em CDC e reparação de danos.\n\n### COMPETÊNCIAS\n- Negativação indevida (SPC, SERASA, SCPC)\n- Fraudes bancárias e clonagem\n- Falha na prestação de serviço\n- Vício do produto/serviço\n- Cobrança indevida\n- Responsabilidade objetiva do fornecedor\n\n### BASE JURISPRUDENCIAL\n- Súmula 385: Não cabe dano moral se preexistente legítima inscrição\n- Súmula 388: Devolução indevida de cheque caracteriza dano moral\n- Súmula 479: Instituições financeiras respondem por fortuito interno\n- Súmula 469: CDC aplicável a planos de saúde\n\n### TEORIA DO DANO MORAL - TJES\nCritérios de Fixação (tríplice função):\n1. Compensatória: Reparar o dano sofrido\n2. Punitiva: Desestimular a conduta lesiva\n3. Pedagógica: Prevenir reincidências\n\n### TABELA DE PARÂMETROS (TJES 2025-2026)\n- Negativação indevida simples: R$ 5.000 - R$ 10.000\n- Negativação + cobranças: R$ 8.000 - R$ 15.000\n- Fraude bancária (devolução rápida): R$ 5.000 - R$ 8.000\n- Fraude bancária (demora): R$ 10.000 - R$ 20.000\n- Plano saúde - negativa: R$ 10.000 - R$ 30.000\n\n### ESTRUTURA\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO (Relação de consumo, Responsabilidade Objetiva, Dano Moral)\nIII - DISPOSITIVO\n\nMarque com [REVISAR] qualquer ponto que necessite verificação."
+        }
+      },
+      "id": "agent-consumidor",
+      "name": "AI Agent: Consumidor",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [1220, 180]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "=Analise o seguinte processo e gere a minuta de decisão/sentença apropriada:\n\n---\nFIRAC ANALYSIS:\n{{ JSON.stringify($json.firac_input, null, 2) }}\n---\n\nConfidência da classificação: {{ $json.router_result.confianca }}\n\nGere a minuta completa seguindo a estrutura definida para AÇÕES POSSESSÓRIAS.",
+        "options": {
+          "systemMessage": "# AGENTE ESPECIALIZADO: AÇÕES POSSESSÓRIAS\n## Vara Cível - Tribunal de Justiça do Espírito Santo\n\n### PAPEL\nVocê é um agente judicial especializado em ações possessórias e direitos reais. Gera minutas de decisões (liminares) e sentenças em reintegração, manutenção de posse, interditos e usucapião.\n\n### COMPETÊNCIAS\n- Reintegração de posse (Art. 560-566 CPC)\n- Manutenção de posse\n- Interdito proibitório\n- Usucapião (todas modalidades)\n- Imissão na posse\n- Nunciação de obra nova\n\n### REQUISITOS LEGAIS\n\n**Reintegração de Posse (Art. 561 CPC):**\nI - Posse anterior\nII - Esbulho praticado pelo réu\nIII - Data do esbulho\nIV - Perda da posse\nLIMINAR: Força nova (menos de ano e dia)\n\n**Manutenção de Posse (Art. 560 CPC):**\nI - Sua posse\nII - Turbação praticada pelo réu\nIII - Data da turbação\nIV - Continuação na posse\n\n### USUCAPIÃO - PRAZOS\n- Extraordinária: 15 anos (ou 10 com moradia)\n- Ordinária: 10 anos (ou 5 com registro)\n- Especial urbana: 5 anos (até 250m²)\n- Especial rural: 5 anos (até 50ha)\n- Familiar: 2 anos\n\n### OBSERVAÇÕES IMPORTANTES\n1. Caráter dúplice (art. 556 CPC)\n2. Audiência de justificação obrigatória se não concedida liminar\n3. Conflitos coletivos: intimar MP e Defensoria\n\nMarque com [REVISAR] qualquer ponto incerto."
+        }
+      },
+      "id": "agent-possessorias",
+      "name": "AI Agent: Possessórias",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [1220, 300]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "=Analise o seguinte processo e gere a minuta de decisão/sentença apropriada:\n\n---\nFIRAC ANALYSIS:\n{{ JSON.stringify($json.firac_input, null, 2) }}\n---\n\nConfidência da classificação: {{ $json.router_result.confianca }}\n\nGere a minuta completa seguindo a estrutura definida para AÇÕES LOCATÍCIAS.",
+        "options": {
+          "systemMessage": "# AGENTE ESPECIALIZADO: LOCAÇÃO DE IMÓVEIS\n## Vara Cível - Tribunal de Justiça do Espírito Santo\n\n### PAPEL\nVocê é um agente judicial especializado em ações locatícias regidas pela Lei 8.245/91 (Lei do Inquilinato).\n\n### COMPETÊNCIAS\n- Despejo por falta de pagamento\n- Despejo por denúncia vazia\n- Despejo por infração contratual\n- Ação renovatória\n- Ação revisional de aluguel\n- Consignatória de aluguéis\n\n### LEI 8.245/91 - DISPOSITIVOS CHAVE\n\n**Despejo por Falta de Pagamento (Art. 62):**\n- Purgação da mora até a contestação\n- Vedação se já usou nos últimos 24 meses\n- Prazo de 15 dias para desocupação (com caução de 3 meses)\n\n**Denúncia Vazia:**\n- Art. 46: Contrato ≥ 30 meses - cabe após o prazo\n- Art. 47: Contrato < 30 meses - hipóteses taxativas\n\n**Ação Renovatória (Art. 51):**\nRequisitos CUMULATIVOS:\nI - Contrato escrito e prazo determinado\nII - Prazo mínimo de 5 anos\nIII - Mesmo ramo por 3 anos\nIV - Prazo decadencial (1 ano a 6 meses antes)\n\n### OBSERVAÇÕES\n1. Purgação da mora: direito potestativo limitado\n2. Liminar de despejo: só nas hipóteses do art. 59, §1º\n3. Caução para desocupação em 15 dias: 3 aluguéis\n\nMarque com [REVISAR] qualquer ponto incerto."
+        }
+      },
+      "id": "agent-locacao",
+      "name": "AI Agent: Locação",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [1220, 420]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "=Analise o seguinte processo e gere a minuta de decisão/sentença apropriada:\n\n---\nFIRAC ANALYSIS:\n{{ JSON.stringify($json.firac_input, null, 2) }}\n---\n\nConfidência da classificação: {{ $json.router_result.confianca }}\n\nGere a minuta completa seguindo a estrutura definida para EXECUÇÕES.",
+        "options": {
+          "systemMessage": "# AGENTE ESPECIALIZADO: EXECUÇÕES E CUMPRIMENTO DE SENTENÇA\n## Vara Cível - Tribunal de Justiça do Espírito Santo\n\n### PAPEL\nVocê é um agente judicial especializado em processos executivos.\n\n### COMPETÊNCIAS\n- Execução de título extrajudicial (art. 784 CPC)\n- Cumprimento de sentença (art. 523 CPC)\n- Embargos à execução (art. 914 CPC)\n- Impugnação ao cumprimento (art. 525 CPC)\n- Exceção de pré-executividade\n- Prescrição intercorrente (art. 921, §4º)\n\n### TÍTULOS EXECUTIVOS EXTRAJUDICIAIS (Art. 784 CPC)\nI - Letra de câmbio, nota promissória, duplicata, cheque\nII - Escritura pública ou documento particular com 2 testemunhas\nIII - Instrumento de transação\nIV - Instrumento de confissão de dívida\nV - Contrato garantido por penhor, anticrese ou hipoteca\nVIII - Crédito de aluguel\nIX - CDA\n\n### REQUISITOS DO TÍTULO (Art. 786 CPC)\n1. Certeza - Existência definida\n2. Liquidez - Valor determinado\n3. Exigibilidade - Obrigação vencida\n\n### PRESCRIÇÃO INTERCORRENTE (Art. 921, §4º CPC)\n- Suspensão por 1 ano + prazo prescricional\n- Cheque: ~18 meses total\n- Nota promissória/duplicata: ~4 anos total\n\n### REGRAS ESPECIAIS\n1. Efeito suspensivo: requer pedido (art. 919 CPC)\n2. Honorários cumulativos: conhecimento + cumprimento\n3. Prescrição intercorrente: pode ser de ofício\n\nMarque com [REVISAR] qualquer ponto incerto."
+        }
+      },
+      "id": "agent-execucao",
+      "name": "AI Agent: Execução",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [1220, 540]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "=Analise o seguinte processo e gere a minuta de decisão/sentença apropriada:\n\n---\nFIRAC ANALYSIS:\n{{ JSON.stringify($json.firac_input, null, 2) }}\n---\n\nConfidência da classificação: {{ $json.router_result.confianca }}\n\n⚠️ ATENÇÃO: Este caso foi classificado como GENÉRICO devido à baixa confiança ou tipo de ação não mapeado. Gere a minuta com MAIS marcadores [REVISAR] do que o normal.",
+        "options": {
+          "systemMessage": "# AGENTE GENÉRICO - FALLBACK\n## Vara Cível - Tribunal de Justiça do Espírito Santo\n\n### PAPEL\nVocê é um agente judicial generalista para ações cíveis que não se enquadram nas especializações definidas.\n\n### QUANDO ACIONADO\n- Classificação com confiança < 50%\n- Tipos de ação não mapeados\n- Casos híbridos ou atípicos\n\n### ESTRUTURA PADRÃO\n\nSENTENÇA / DECISÃO\n\nI - RELATÓRIO\n[Síntese objetiva e imparcial]\n\nII - FUNDAMENTAÇÃO\n[Análise das questões de direito]\n[Aplicação da legislação pertinente]\n[Jurisprudência quando disponível]\n\nIII - DISPOSITIVO\n[Decisão clara e objetiva]\n[Consequências processuais]\n\n### MARCADORES OBRIGATÓRIOS\n\nUse ABUNDANTEMENTE os seguintes marcadores:\n- [REVISAR: fundamentação] - Base legal incerta\n- [REVISAR: valores] - Quantificação a verificar\n- [REVISAR: jurisprudência] - Precedentes a confirmar\n- [REVISAR: fatos] - Fatos não claros no FIRAC\n- [REVISAR: classificação] - Tipo de ação a reavaliar\n\n### OUTPUT\nGere minuta completa com MUITOS marcadores de revisão. PRIORIZE SEGURANÇA sobre automação nestes casos."
+        }
+      },
+      "id": "agent-generico",
+      "name": "AI Agent: Genérico",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [1220, 660]
+    },
+    {
+      "parameters": {},
+      "id": "merge-agentes",
+      "name": "Merge: Coleta Minutas",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [1500, 340]
+    },
+    {
+      "parameters": {
+        "jsCode": "// =============================================================================\n// QA CHECK - Validação de Minutas\n// CNJ 615/2025 Compliance\n// =============================================================================\n\nconst input = $input.first().json;\nconst minuta = input.output || input.text || '';\nconst routerResult = input.router_result || {};\n\n// =============================================================================\n// CHECKLIST DE VALIDAÇÃO\n// =============================================================================\n\nconst validacoes = [];\n\n// 1. Estrutura básica\nconst temRelatorio = /I\\s*[-–]\\s*RELAT[ÓO]RIO/i.test(minuta);\nconst temFundamentacao = /II\\s*[-–]\\s*FUNDAMENTA[ÇC][ÃA]O/i.test(minuta);\nconst temDispositivo = /III\\s*[-–]\\s*DISPOSITIVO/i.test(minuta);\n\nvalidacoes.push({\n  item: 'Estrutura RELATÓRIO',\n  status: temRelatorio ? 'OK' : 'FALHA',\n  critico: true\n});\n\nvalidacoes.push({\n  item: 'Estrutura FUNDAMENTAÇÃO',\n  status: temFundamentacao ? 'OK' : 'FALHA',\n  critico: true\n});\n\nvalidacoes.push({\n  item: 'Estrutura DISPOSITIVO',\n  status: temDispositivo ? 'OK' : 'FALHA',\n  critico: true\n});\n\n// 2. Dispositivo\nconst temJulgamento = /JULGO\\s+(PROCEDENTE|IMPROCEDENTE|PARCIALMENTE)/i.test(minuta);\nvalidacoes.push({\n  item: 'Dispositivo com julgamento',\n  status: temJulgamento ? 'OK' : 'ALERTA',\n  critico: false\n});\n\n// 3. Sucumbência\nconst temSucumbencia = /honor[aá]rios|custas/i.test(minuta);\nvalidacoes.push({\n  item: 'Sucumbência mencionada',\n  status: temSucumbencia ? 'OK' : 'ALERTA',\n  critico: false\n});\n\n// 4. Marcadores de revisão\nconst marcadoresRevisar = (minuta.match(/\\[REVISAR[:\\s]/gi) || []).length;\nvalidacoes.push({\n  item: 'Marcadores [REVISAR]',\n  status: marcadoresRevisar > 0 ? 'INFO' : 'OK',\n  valor: marcadoresRevisar,\n  critico: false\n});\n\n// 5. Tamanho mínimo\nconst palavras = minuta.split(/\\s+/).length;\nvalidacoes.push({\n  item: 'Tamanho da minuta',\n  status: palavras > 100 ? 'OK' : 'ALERTA',\n  valor: palavras + ' palavras',\n  critico: false\n});\n\n// 6. Compliance CNJ 615/2025\nvalidacoes.push({\n  item: 'Supervisão humana obrigatória',\n  status: 'PENDENTE',\n  nota: 'Requer revisão do magistrado',\n  critico: true\n});\n\n// =============================================================================\n// CÁLCULO DO SCORE\n// =============================================================================\n\nconst falhasCriticas = validacoes.filter(v => v.critico && v.status === 'FALHA').length;\nconst alertas = validacoes.filter(v => v.status === 'ALERTA').length;\nconst totalOK = validacoes.filter(v => v.status === 'OK').length;\n\nlet scoreQA = 1.0;\nscoreQA -= falhasCriticas * 0.3;  // -30% por falha crítica\nscoreQA -= alertas * 0.1;          // -10% por alerta\nscoreQA = Math.max(0, Math.min(1, scoreQA));\n\nconst classificacaoRisco = routerResult.confianca < 0.5 ? 'ALTO' : \n                           routerResult.confianca < 0.75 ? 'MEDIO' : 'BAIXO';\n\n// =============================================================================\n// OUTPUT\n// =============================================================================\n\nreturn [{\n  json: {\n    minuta_gerada: minuta,\n    \n    qa_result: {\n      score: Math.round(scoreQA * 100) / 100,\n      aprovado: scoreQA >= 0.7 && falhasCriticas === 0,\n      validacoes: validacoes,\n      falhas_criticas: falhasCriticas,\n      alertas: alertas,\n      marcadores_revisar: marcadoresRevisar\n    },\n    \n    compliance_cnj615: {\n      classificacao_risco: classificacaoRisco,\n      requer_revisao_humana: true,\n      revisao_realizada: false,\n      agente_utilizado: routerResult.agente_selecionado || 'desconhecido',\n      confianca_classificacao: routerResult.confianca || 0\n    },\n    \n    metadata: {\n      timestamp: new Date().toISOString(),\n      versao_sistema: '2.0',\n      palavras_minuta: palavras\n    }\n  }\n}];"
+      },
+      "id": "qa-check",
+      "name": "Code: QA Check",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1720, 340]
+    },
+    {
+      "parameters": {
+        "jsCode": "// =============================================================================\n// AUDIT LOG - CNJ 615/2025\n// =============================================================================\n\nconst data = $input.first().json;\n\nconst auditLog = {\n  timestamp: new Date().toISOString(),\n  \n  // Sistema\n  sistema: 'Lex Intelligentia Judiciário',\n  versao: '2.0',\n  \n  // Operação\n  operacao: 'GERACAO_MINUTA',\n  agente: data.compliance_cnj615?.agente_utilizado || 'desconhecido',\n  \n  // Classificação de Risco CNJ 615\n  classificacao_risco: data.compliance_cnj615?.classificacao_risco || 'ALTO',\n  confianca_classificacao: data.compliance_cnj615?.confianca_classificacao || 0,\n  \n  // QA\n  score_qa: data.qa_result?.score || 0,\n  qa_aprovado: data.qa_result?.aprovado || false,\n  falhas_criticas: data.qa_result?.falhas_criticas || 0,\n  marcadores_revisao: data.qa_result?.marcadores_revisar || 0,\n  \n  // Compliance\n  requer_revisao_humana: true,\n  revisao_realizada: false,\n  \n  // Métricas\n  palavras_minuta: data.metadata?.palavras_minuta || 0,\n  \n  // Hashes para auditoria\n  hash_input: require('crypto').createHash('md5')\n    .update(JSON.stringify(data.firac_input || {}))\n    .digest('hex'),\n  hash_output: require('crypto').createHash('md5')\n    .update(data.minuta_gerada || '')\n    .digest('hex')\n};\n\nconsole.log('AUDIT LOG CNJ 615:', JSON.stringify(auditLog));\n\n// Adicionar ao output\nreturn [{\n  json: {\n    ...data,\n    audit_log: auditLog\n  }\n}];"
+      },
+      "id": "audit-log",
+      "name": "Code: Audit Log CNJ",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1940, 340]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"minuta\": {{ JSON.stringify($json.minuta_gerada) }},\n  \"qa\": {\n    \"score\": {{ $json.qa_result.score }},\n    \"aprovado\": {{ $json.qa_result.aprovado }},\n    \"marcadores_revisar\": {{ $json.qa_result.marcadores_revisar }}\n  },\n  \"compliance\": {\n    \"risco\": \"{{ $json.compliance_cnj615.classificacao_risco }}\",\n    \"agente\": \"{{ $json.compliance_cnj615.agente_utilizado }}\",\n    \"confianca\": {{ $json.compliance_cnj615.confianca_classificacao }}\n  },\n  \"audit_id\": \"{{ $json.audit_log.hash_output }}\",\n  \"timestamp\": \"{{ $json.metadata.timestamp }}\"\n}",
+        "options": {}
+      },
+      "id": "respond-final",
+      "name": "Respond: Output Final",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [2160, 340]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": {
+          "temperature": 0.3,
+          "maxTokensToSample": 4000
+        }
+      },
+      "id": "llm-anthropic",
+      "name": "Anthropic Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [1100, 800],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIALS_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 🤖 AGENTES ESPECIALIZADOS\n\nCada agente possui:\n- System prompt específico\n- Base jurisprudencial TJES/STJ\n- Tabelas de parâmetros atualizadas\n- Estruturas de minuta padronizadas\n\n**Agentes:**\n1. Bancário (35-40%)\n2. Consumidor (25-30%)\n3. Possessórias (5-8%)\n4. Locação (8-12%)\n5. Execução (15-20%)\n6. Genérico (~5%)",
+        "height": 280,
+        "width": 260
+      },
+      "id": "sticky-agentes",
+      "name": "📝 AGENTES",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [1200, 780]
+    },
+    {
+      "parameters": {
+        "content": "## ✅ QA CHECK\n\nValidações:\n- Estrutura (R/F/D)\n- Dispositivo completo\n- Sucumbência\n- Marcadores [REVISAR]\n- Score mínimo: 0.7\n\n**CNJ 615/2025:**\n- Classificação de risco\n- Auditoria obrigatória\n- Supervisão humana",
+        "height": 240,
+        "width": 200
+      },
+      "id": "sticky-qa",
+      "name": "✅ VALIDAÇÃO",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [1700, 520]
+    }
+  ],
+  "connections": {
+    "Webhook: Recebe FIRAC": {
+      "main": [
+        [
+          {
+            "node": "Code: Router Judiciário",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code: Router Judiciário": {
+      "main": [
+        [
+          {
+            "node": "Switch: Seleciona Agente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch: Seleciona Agente": {
+      "main": [
+        [
+          {
+            "node": "AI Agent: Bancário",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Consumidor",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Possessórias",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Locação",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Execução",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Genérico",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Bancário": {
+      "main": [
+        [
+          {
+            "node": "Merge: Coleta Minutas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Consumidor": {
+      "main": [
+        [
+          {
+            "node": "Merge: Coleta Minutas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Possessórias": {
+      "main": [
+        [
+          {
+            "node": "Merge: Coleta Minutas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Locação": {
+      "main": [
+        [
+          {
+            "node": "Merge: Coleta Minutas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Execução": {
+      "main": [
+        [
+          {
+            "node": "Merge: Coleta Minutas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Genérico": {
+      "main": [
+        [
+          {
+            "node": "Merge: Coleta Minutas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge: Coleta Minutas": {
+      "main": [
+        [
+          {
+            "node": "Code: QA Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code: QA Check": {
+      "main": [
+        [
+          {
+            "node": "Code: Audit Log CNJ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code: Audit Log CNJ": {
+      "main": [
+        [
+          {
+            "node": "Respond: Output Final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent: Bancário",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent: Consumidor",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent: Possessórias",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent: Locação",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent: Execução",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent: Genérico",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "Lex Intelligentia"
+    },
+    {
+      "name": "Agentes"
+    },
+    {
+      "name": "Judicial"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2026-01-14T00:00:00.000Z",
+  "versionId": "2"
+}

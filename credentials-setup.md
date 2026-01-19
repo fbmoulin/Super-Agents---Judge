@@ -1,4 +1,4 @@
-# Guia de Configuração de Credenciais - Lex Intelligentia v2.1.1
+# Guia de Configuração de Credenciais - Lex Intelligentia v2.2
 
 ## Credenciais Necessárias no n8n
 
@@ -29,12 +29,17 @@
 3. No n8n, crie uma credencial "Anthropic API":
    - **API Key:** `sk-ant-...`
 
-**No workflow:** Atualizar `ANTHROPIC_CREDENTIALS_ID` nos nós:
+**No workflow:** Atualizar `ANTHROPIC_CREDENTIALS_ID` nos nós (11 agentes):
 - Claude: Bancário
 - Claude: Consumidor
 - Claude: Possessórias
 - Claude: Locação
 - Claude: Execução
+- Claude: Saúde Cobertura
+- Claude: Saúde Contratual
+- Claude: Trânsito
+- Claude: Usucapião
+- Claude: Incorporação
 - Claude: Genérico
 
 ---
@@ -110,5 +115,5 @@ curl -X POST https://seu-n8n.app.n8n.cloud/webhook/lex-intelligentia-agentes \
 
 ---
 
-*Lex Intelligentia Judiciário v2.1.1 - 2026-01-14*
-*Quality Score: 95/100 | Testes: 15/15 passando*
+*Lex Intelligentia Judiciário v2.2 - Atualizado 2026-01-19*
+*Quality Score: 95/100 | 11 Agentes | 59 Nodes*

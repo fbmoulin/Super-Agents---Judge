@@ -1,0 +1,35 @@
+[
+  {
+    "id": "tema_1070",
+    "tipo": "precedente_qualificado",
+    "subtipo": "REPETITIVO",
+    "numero_tema": "1070",
+    "situacao": "Acórdão de mérito publicado",
+    "ramo_direito": "DIREITO DO CONSUMIDOR, DIREITO PROCESSUAL CIVIL",
+    "assunto": "DIREITO DO CONSUMIDOR / Contratos de Consumo / Transporte Aéreo / Cancelamento de Voo",
+    "questao_submetida": "Definir o termo inicial dos juros de mora incidentes sobre o valor a ser restituído pelo fornecedor, em caso de resolução do contrato de transporte aéreo internacional de passageiros, por iniciativa do consumidor.",
+    "tese_firmada": "O termo inicial dos juros de mora incidentes sobre o valor a ser restituído pelo fornecedor, em caso de resolução do contrato de transporte aéreo internacional por iniciativa do consumidor, é a data da citação.",
+    "metadata": {
+      "fonte": "STJ Dados Abertos",
+      "dataset": "precedentes-qualificados"
+    },
+    "text_for_embedding": "TEMA 1070 (REPETITIVO) Ramo do Direito: DIREITO DO CONSUMIDOR Questão Submetida a Julgamento: Definir o termo inicial dos juros de mora incidentes sobre o valor a ser restituído pelo fornecedor... Tese Firmada: O termo inicial dos juros de mora... é a data da citação.",
+    "content_hash": "mock_hash_1"
+  },
+  {
+    "id": "acordao_12345_segunda-secao",
+    "tipo": "acordao",
+    "orgao_julgador": "segunda-secao",
+    "classe": "REsp",
+    "numero": "1881456",
+    "relator": "MINISTRO MOURA RIBEIRO",
+    "data_julgamento": "2021-11-09",
+    "ementa": "RECURSO ESPECIAL. CONTRATO BANCÁRIO. EMPRÉSTIMO. CÉDULA DE CRÉDITO BANCÁRIO. JUROS REMUNERATÓRIOS. ABUSIVIDADE. NÃO OCORRÊNCIA. TAXA PACTUADA INFERIOR A UMA VEZ E MEIA A TAXA MÉDIA DE MERCADO. SÚMULA 382/STJ. CAPITALIZAÇÃO MENSAL DE JUROS. PACTUAÇÃO EXPRESSA. POSSIBILIDADE. PRECEDENTES. 1. A jurisprudência do STJ, em harmonia com o decidido pelo STF no julgamento da ADI 2.316/DF, firmou-se no sentido de que a estipulação de juros remuneratórios superiores a 12% ao ano, por si só, não indica abusividade.",
+    "metadata": {
+      "fonte": "STJ Dados Abertos",
+      "dataset": "espelhos-de-acordaos-segunda-secao"
+    },
+    "text_for_embedding": "REsp 1881456 Órgão: Segunda Secao Relator: MINISTRO MOURA RIBEIRO EMENTA: RECURSO ESPECIAL. CONTRATO BANCÁRIO. EMPRÉSTIMO. CÉDULA DE CRÉDITO BANCÁRIO. JUROS REMUNERATÓRIOS. ABUSIVIDADE. NÃO OCORRÊNCIA...",
+    "content_hash": "mock_hash_2"
+  }
+]

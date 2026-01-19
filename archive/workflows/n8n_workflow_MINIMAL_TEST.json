@@ -1,0 +1,50 @@
+{
+  "name": "Lex Intelligentia - Teste Mínimo",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lex-test",
+        "responseMode": "responseNode"
+      },
+      "id": "webhook-test",
+      "name": "Webhook Test",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [200, 300],
+      "webhookId": "lex-test"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { message: 'Hello', input: $input.first().json } }];"
+      },
+      "id": "code-test",
+      "name": "Code Test",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [400, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: true, data: $json }) }}"
+      },
+      "id": "respond-test",
+      "name": "Respond Test",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [600, 300]
+    }
+  ],
+  "connections": {
+    "Webhook Test": {
+      "main": [[{ "node": "Code Test", "type": "main", "index": 0 }]]
+    },
+    "Code Test": {
+      "main": [[{ "node": "Respond Test", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

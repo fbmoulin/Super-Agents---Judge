@@ -1,0 +1,333 @@
+{
+  "name": "Lex - Teste BASIC Nodes Only",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "# 🏛️ LEX INTELLIGENTIA JUDICIÁRIO v2.1\n## Pipeline Multi-Agente Otimizado\n\n**Versão:** 2.1.1 - Janeiro 2026 (FIXED)\n**Compliance:** CNJ 615/2025\n\n### Mudanças v2.1.1 (FIXES):\n- ✅ Gemini 2.5 Flash Router\n- ✅ Context Buffer com null safety\n- ✅ System Prompts otimizados (~380 tokens)\n- ✅ QA Híbrido (estrutural + semântico)\n- ✅ Audit Log com hash melhorado\n- ✅ Error Handling com Retry Response\n- ✅ Switch fallback conectado\n- ✅ QA Consolidado data flow fixed\n- ✅ Windows line endings handled",
+        "height": 380,
+        "width": 420
+      },
+      "id": "sticky-header",
+      "name": "📋 INFO v2.1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        80,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lex-intelligentia-agentes",
+        "responseMode": "responseNode",
+        "options": {
+          "rawBody": false
+        }
+      },
+      "id": "webhook-entrada",
+      "name": "Webhook: Recebe FIRAC",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        540,
+        300
+      ],
+      "webhookId": "lex-agentes-v21"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "rules": [
+            {
+              "value": "agent_bancario",
+              "outputKey": "Bancário"
+            },
+            {
+              "value": "agent_consumidor",
+              "outputKey": "Consumidor"
+            },
+            {
+              "value": "agent_possessorias",
+              "outputKey": "Possessórias"
+            },
+            {
+              "value": "agent_locacao",
+              "outputKey": "Locação"
+            },
+            {
+              "value": "agent_execucao",
+              "outputKey": "Execução"
+            },
+            {
+              "value": "agent_generico",
+              "outputKey": "Genérico"
+            }
+          ],
+          "fallbackOutput": {
+            "mode": "extra"
+          }
+        },
+        "dataPropertyName": "={{ $json.agente }}"
+      },
+      "id": "switch-agentes",
+      "name": "Switch: Seleciona Agente",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1420,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 🤖 AGENTES v2.1\n\n**Mudanças:**\n- Cada agente tem seu próprio LLM node\n- System prompt otimizado (~380 tokens)\n- Human message com Context Buffer completo\n- Temperature: 0.3 (0.4 para genérico)\n\n**Modelos:**\n- Claude Sonnet 4 para geração\n- Gemini 2.5 Flash para router/QA",
+        "height": 240,
+        "width": 280
+      },
+      "id": "sticky-agentes",
+      "name": "📝 AGENTES",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "skip-check",
+              "leftValue": "={{ $json.skip_semantico }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-skip-semantico",
+      "name": "IF: Executar QA Semântico?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2380,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}",
+        "responseCode": 200,
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "X-Audit-Id",
+                "value": "={{ $('Audit Log CNJ 615').item.json.audit_log.id }}"
+              },
+              {
+                "name": "X-Risk-Level",
+                "value": "={{ $json.compliance.risco }}"
+              },
+              {
+                "name": "X-QA-Score",
+                "value": "={{ $json.qualidade.score }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond-success",
+      "name": "Respond: Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        3760,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## ✅ QA CHECK v2.1\n\n**Camada 1 - Estrutural:**\n- Regex robusto (R/F/D)\n- Verifica julgamento\n- Conta marcadores [REVISAR]\n\n**Camada 2 - Semântico:**\n- Gemini 2.5 Flash\n- Coerência jurídica\n- Precisão técnica\n- Completude\n\n**Score Final:**\n40% estrutural + 60% semântico\n\n**CNJ 615:**\n- BAIXO: ≥85, conf ≥0.85\n- MEDIO: ≥70, conf ≥0.65\n- ALTO: demais",
+        "height": 360,
+        "width": 240
+      },
+      "id": "sticky-qa",
+      "name": "✅ QA CHECK",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2140,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 📋 AUDIT LOG\n\n**Persistência:** Google Sheets\n\n**Campos:**\n- ID único\n- Timestamp\n- Processo\n- Categoria/Agente\n- Scores (QA)\n- Risco CNJ 615\n- Hashes I/O\n- Tempo execução\n\n**Variável necessária:**\n`AUDIT_SHEET_ID`",
+        "height": 280,
+        "width": 200
+      },
+      "id": "sticky-audit",
+      "name": "📋 AUDIT",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3300,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "retry-check",
+              "leftValue": "={{ $json.should_retry }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "if-retry",
+      "name": "IF: Retry?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        980,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({\n  success: false,\n  timestamp: new Date().toISOString(),\n  error: {\n    message: $json.original_error,\n    node: $json.failed_node,\n    tentativas: $json.tentativa,\n    codigo: 'MAX_RETRIES_EXCEEDED'\n  },\n  compliance: {\n    risco: 'ALTO',\n    requer_revisao_humana: true,\n    motivo: 'Falha de processamento após múltiplas tentativas'\n  },\n  rastreabilidade: {\n    workflow_id: $execution.id,\n    error_log: $json.error_log\n  },\n  meta: {\n    versao_api: '2.1',\n    sistema: 'Lex Intelligentia Judiciário'\n  }\n}) }}",
+        "responseCode": 500,
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "X-Error-Code",
+                "value": "MAX_RETRIES_EXCEEDED"
+              },
+              {
+                "name": "X-Risk-Level",
+                "value": "ALTO"
+              },
+              {
+                "name": "X-Retry-Count",
+                "value": "={{ $json.tentativa }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond-error",
+      "name": "Respond: Error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1200,
+        800
+      ],
+      "notes": "Resposta de erro após esgotar retries"
+    },
+    {
+      "parameters": {
+        "content": "## ⚠️ ERROR HANDLING\n\n**Estratégia:** Retry até 3x\n\n**Fluxo:**\n```\n[Erro] → [Error Trigger]\n    ↓\n[Handle Error]\n    ↓\n[IF: Retry?]\n  ├→ SIM: [Log + Notify]\n  └→ NÃO: [Respond: Error]\n```\n\n**Após 3 falhas:**\n- Response 500\n- Risco: ALTO\n- Log completo do erro",
+        "height": 300,
+        "width": 240
+      },
+      "id": "sticky-error",
+      "name": "⚠️ ERROR HANDLING",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        540,
+        900
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({\n  success: false,\n  timestamp: new Date().toISOString(),\n  error: {\n    message: $('Handle Error').item.json.original_error,\n    node: $('Handle Error').item.json.failed_node,\n    tentativa: $('Handle Error').item.json.tentativa,\n    codigo: 'TRANSIENT_ERROR'\n  },\n  retry: {\n    should_retry: true,\n    tentativas_restantes: 3 - $('Handle Error').item.json.tentativa,\n    retry_after_seconds: 5\n  },\n  compliance: {\n    risco: 'MEDIO',\n    requer_revisao_humana: true,\n    motivo: 'Erro transiente - retry recomendado'\n  },\n  rastreabilidade: {\n    workflow_id: $execution.id,\n    error_logged: true\n  },\n  meta: {\n    versao_api: '2.1',\n    sistema: 'Lex Intelligentia Judiciário'\n  }\n}) }}",
+        "responseCode": 503,
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "X-Error-Code",
+                "value": "TRANSIENT_ERROR"
+              },
+              {
+                "name": "X-Risk-Level",
+                "value": "MEDIO"
+              },
+              {
+                "name": "Retry-After",
+                "value": "5"
+              },
+              {
+                "name": "X-Retry-Count",
+                "value": "={{ $('Handle Error').item.json.tentativa }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond-retry",
+      "name": "Respond: Retry",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1420,
+        600
+      ],
+      "notes": "Resposta 503 indicando erro transiente - caller deve retry"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "value1": "={{ $json.qa_result.score_final }}",
+              "operation": "largerEqual",
+              "value2": 95
+            }
+          ]
+        }
+      },
+      "id": "if-score-95",
+      "name": "Score > 95?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2880,
+        500
+      ]
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
