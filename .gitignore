@@ -1,0 +1,28 @@
+# Lex Intelligentia Judiciário - .gitignore
+
+# Credenciais e chaves (NUNCA commitar!)
+.env
+.env.*
+!.env.*.template
+*.keys
+credentials.json
+secrets.json
+
+# Node modules
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Temporarios
+*.tmp
+*.temp

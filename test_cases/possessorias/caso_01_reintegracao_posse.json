@@ -1,0 +1,15 @@
+{
+  "caso_id": "possessorias_01",
+  "descricao": "Reintegração de posse com pedido de liminar",
+  "fatos": "O autor é possuidor de terreno urbano de 500m² no bairro Jardim América, Vitória/ES, há mais de 15 anos, onde mantém pequena horta comunitária. Em dezembro de 2025, o réu invadiu parte do terreno (aproximadamente 150m²), cercando a área e iniciando construção de barraco de madeira. O autor tentou resolver amigavelmente, mas foi ameaçado pelo réu. Registrou boletim de ocorrência em 05/01/2026. A invasão tem menos de ano e dia. O autor apresenta documentos que comprovam pagamento de IPTU desde 2010 e declarações de vizinhos atestando sua posse mansa e pacífica.",
+  "questoes": "1) Está caracterizado o esbulho possessório? 2) É cabível a concessão de liminar de reintegração? 3) Qual o procedimento aplicável considerando que a invasão tem menos de ano e dia? 4) O réu tem direito a indenização por benfeitorias?",
+  "pedidos": "a) Concessão de liminar de reintegração de posse, inaudita altera parte; b) Reintegração definitiva na posse do imóvel; c) Condenação do réu em perdas e danos pela ocupação indevida; d) Demolição das construções realizadas pelo réu às suas expensas; e) Proibição de nova turbação ou esbulho, sob pena de multa diária.",
+  "classe": "Reintegração de Posse",
+  "assunto": "Posse - Esbulho - Arts. 560-566 CPC",
+  "valor_causa": 30000.00,
+  "expectativa": {
+    "agente_esperado": "agent_possessorias",
+    "score_minimo": 75,
+    "artigos_esperados": ["560", "561", "562", "563"]
+  }
+}

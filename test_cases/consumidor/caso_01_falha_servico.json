@@ -1,0 +1,16 @@
+{
+  "caso_id": "consumidor_01",
+  "descricao": "Falha na prestacao de servico de telecomunicacoes",
+  "fatos": "A autora contratou servico de internet banda larga da empresa Re em marco de 2025, plano de 500 Mbps pelo valor mensal de R$ 149,90. Desde a instalacao, alega que a velocidade real nunca ultrapassou 150 Mbps, conforme medicoes realizadas pelo aplicativo oficial da ANATEL (prints anexados). Registrou 12 reclamacoes no SAC da empresa entre abril e novembro de 2025 (protocolos anexados), sem solucao definitiva. Os tecnicos compareceram a residencia em 4 ocasioes, sempre atribuindo o problema a 'oscilacoes normais da rede'. A autora trabalha em home office e alega prejuizos profissionais por quedas constantes durante videoconferencias, tendo recebido advertencia formal de seu empregador. Cancelou o servico em dezembro de 2025 e foi cobrada multa de fidelidade de R$ 890,00.",
+  "questoes": "1) Houve falha na prestacao do servico caracterizada pelo descumprimento contratual? 2) A cobranca de multa de fidelidade e devida quando o cancelamento decorre de falha do fornecedor? 3) Sao cabiveis danos morais pela situacao vivenciada? 4) E possivel a restituicao dos valores pagos pelo servico nao prestado adequadamente?",
+  "pedidos": "a) Declaracao de inexigibilidade da multa de fidelidade; b) Restituicao proporcional das mensalidades pagas (R$ 1.349,10 - 9 meses x R$ 149,90); c) Condenacao em danos morais no valor de R$ 8.000,00.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Prestacao de servicos - Telecomunicacoes - CDC",
+  "valor_causa": 10238.10,
+  "expectativa": {
+    "agente_esperado": "agent_consumidor",
+    "score_minimo": 75,
+    "artigos_esperados": ["Art. 14 CDC", "Art. 20 CDC"],
+    "danos_morais_faixa": "5000-15000"
+  }
+}

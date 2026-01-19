@@ -1,0 +1,15 @@
+{
+  "caso_id": "SAUDE_CONT_001",
+  "descricao": "Reajuste abusivo por faixa etaria para idoso",
+  "fatos": "O autor, 68 anos, e beneficiario do plano de saude ha 15 anos. Em janeiro de 2026, recebeu boleto com reajuste de 120% sob alegacao de mudanca de faixa etaria (60+). A mensalidade subiu de R$ 800 para R$ 1.760.",
+  "questoes": "1. O reajuste e valido? 2. Aplica-se protecao ao idoso? 3. Cabe restituicao?",
+  "pedidos": "Declaracao de nulidade do reajuste. Restituicao dos valores pagos a maior. Danos morais.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Plano de Saude - Reajuste Abusivo",
+  "valor_causa": 25000,
+  "expectativa": {
+    "agente_esperado": "agent_saude_contratual",
+    "score_minimo": 75,
+    "elementos_obrigatorios": ["Art. 15 Lei 9.656/98", "Estatuto do Idoso", "Tema 952"]
+  }
+}

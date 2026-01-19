@@ -1,0 +1,16 @@
+{
+  "caso_id": "bancario_03",
+  "descricao": "Fraude em cartao de credito - compras nao reconhecidas",
+  "fatos": "A autora, servidora publica estadual, alega que em dezembro de 2025 identificou em sua fatura de cartao de credito do Banco Reu tres compras internacionais que nao reconhece: uma no valor de US$ 890,00 (R$ 5.340,00) em site de eletronicos, outra de US$ 450,00 (R$ 2.700,00) em site de apostas online, e uma terceira de US$ 320,00 (R$ 1.920,00) em loja de games. Afirma que estava de posse do cartao fisico, nao realizou compras internacionais e nunca acessou tais sites. Comunicou o banco em 05/12/2025, que negou o cancelamento alegando que as compras foram autenticadas por senha e 3D Secure. A autora teve seu nome incluido no SERASA em 10/01/2026 pelo nao pagamento da fatura, causando-lhe constrangimento ao ter credito negado para financiamento de imovel.",
+  "questoes": "1) Houve falha de seguranca do sistema do banco ao permitir transacoes fraudulentas? 2) E cabivel a declaracao de inexigibilidade dos debitos? 3) A negativacao foi indevida? 4) Sao devidos danos morais?",
+  "pedidos": "a) Declaracao de inexigibilidade dos debitos contestados (R$ 9.960,00); b) Exclusao do nome da autora dos cadastros de inadimplentes; c) Condenacao em danos morais no valor de R$ 20.000,00; d) Inversao do onus da prova.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Cartao de credito - Fraude - Negativacao indevida",
+  "valor_causa": 29960.00,
+  "expectativa": {
+    "agente_esperado": "agent_bancario",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["479", "385"],
+    "danos_morais_faixa": "5000-20000"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "caso_id": "consumidor_02",
+  "descricao": "Produto com defeito de fabricacao - celular",
+  "fatos": "O autor adquiriu smartphone da marca X, modelo Premium Plus, na loja Re em setembro de 2025, pelo valor de R$ 6.500,00 (nota fiscal anexa). Apos 45 dias de uso normal, o aparelho passou a apresentar superaquecimento durante carregamento, chegando a queimar levemente a mao do autor em uma ocasiao (foto e laudo medico anexados). Encaminhou o produto a assistencia tecnica autorizada em novembro de 2025, que reteve o aparelho por 42 dias sem solucao, informando que 'o defeito nao foi constatado em laboratorio'. O autor realizou nova reclamacao no PROCON (protocolo anexo) e foi informado que o prazo legal de 30 dias havia sido ultrapassado. O aparelho continua com o mesmo problema e esta inutilizavel ha mais de 60 dias.",
+  "questoes": "1) Houve vicio do produto que o torna improprio ao uso? 2) O prazo de 30 dias para conserto foi ultrapassado? 3) O consumidor pode optar pela restituicao do valor pago? 4) Sao cabiveis danos morais pela queimadura e pela privacao do uso do bem?",
+  "pedidos": "a) Restituicao integral do valor pago (R$ 6.500,00), devidamente corrigido; b) Condenacao em danos morais no valor de R$ 5.000,00; c) Condenacao em danos materiais correspondentes ao tratamento da queimadura (R$ 350,00).",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Produto defeituoso - Vicio - CDC",
+  "valor_causa": 11850.00,
+  "expectativa": {
+    "agente_esperado": "agent_consumidor",
+    "score_minimo": 75,
+    "artigos_esperados": ["Art. 18 CDC", "Art. 12 CDC"],
+    "prazo_30_dias": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "caso_id": "execucao_01",
+  "descricao": "Execução de título extrajudicial - cheque prescrito",
+  "fatos": "O exequente apresenta cheque emitido pelo executado em 15/03/2024, no valor de R$ 25.000,00, que foi devolvido por insuficiência de fundos (alínea 11). O título foi protestado em 20/04/2024. O executado foi citado por oficial de justiça em 10/01/2026 e não pagou nem ofereceu bens à penhora no prazo legal. Não foram localizados bens penhoráveis via SISBAJUD, RENAJUD ou INFOJUD.",
+  "questoes": "1) O cheque é título executivo extrajudicial válido? 2) Houve prescrição da execução? 3) É cabível a suspensão do processo por inexistência de bens? 4) Deve o executado ser incluído no SERASA?",
+  "pedidos": "a) Prosseguimento da execução; b) Inclusão do nome do executado nos cadastros de inadimplentes; c) Suspensão do processo nos termos do art. 921, III, CPC até localização de bens; d) Expedição de certidão para habilitação em eventual processo de falência.",
+  "classe": "Execução de Título Extrajudicial",
+  "assunto": "Cheque - Execução - Art. 784 CPC",
+  "valor_causa": 25000.00,
+  "expectativa": {
+    "agente_esperado": "agent_execucao",
+    "score_minimo": 75,
+    "artigos_esperados": ["784", "786", "921", "924"]
+  }
+}

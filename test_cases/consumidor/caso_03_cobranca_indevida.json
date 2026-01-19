@@ -1,0 +1,16 @@
+{
+  "caso_id": "consumidor_03",
+  "descricao": "Cobranca indevida de servico nao contratado",
+  "fatos": "A autora e cliente da operadora de telefonia Re desde 2020, com plano pos-pago de R$ 89,90 mensais. Em julho de 2025, passou a ser cobrada por um servico de 'Seguro Celular Premium' no valor de R$ 29,90 mensais, que alega nunca ter contratado. Entrou em contato com a operadora em agosto de 2025 para cancelamento, sendo informada que o servico havia sido 'ativado por aceite em ligacao telefonica'. Solicitou a gravacao da ligacao, que nao foi fornecida. Mesmo apos o cancelamento, os valores continuaram sendo cobrados por mais 4 meses (setembro a dezembro de 2025), totalizando R$ 179,40 indevidamente cobrados. Teve o servico de telefonia suspenso em janeiro de 2026 por nao pagar a parte controversa da fatura, ficando 5 dias sem comunicacao.",
+  "questoes": "1) A cobranca de servico nao contratado e pratica abusiva? 2) A restituicao deve ser simples ou em dobro? 3) A suspensao do servico por debito controverso e legitima? 4) Sao cabiveis danos morais?",
+  "pedidos": "a) Declaracao de inexistencia da contratacao do servico 'Seguro Celular Premium'; b) Restituicao em dobro dos valores indevidamente cobrados (R$ 179,40 x 2 = R$ 358,80); c) Condenacao em danos morais no valor de R$ 5.000,00 pela suspensao indevida do servico.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Cobranca indevida - Servico nao contratado - CDC",
+  "valor_causa": 5358.80,
+  "expectativa": {
+    "agente_esperado": "agent_consumidor",
+    "score_minimo": 75,
+    "artigos_esperados": ["Art. 42 CDC", "Art. 39 CDC"],
+    "restituicao_dobro": true
+  }
+}

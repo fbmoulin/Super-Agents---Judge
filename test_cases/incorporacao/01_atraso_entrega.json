@@ -1,0 +1,15 @@
+{
+  "caso_id": "INCORPORACAO_001",
+  "descricao": "Atraso de 18 meses na entrega de imovel na planta",
+  "fatos": "O autor celebrou contrato de compra e venda de apartamento na planta em 2023 por R$ 450.000. Prazo de entrega: dezembro/2024 com tolerancia de 180 dias. O imovel so foi entregue em dezembro/2025, com atraso de 18 meses alem da tolerancia.",
+  "questoes": "1. Devidos lucros cessantes pelo atraso? 2. Cabem danos morais?",
+  "pedidos": "Lucros cessantes de R$ 2.250/mes x 18 meses = R$ 40.500. Danos morais R$ 20.000.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Incorporacao Imobiliaria - Atraso na Entrega",
+  "valor_causa": 60500,
+  "expectativa": {
+    "agente_esperado": "agent_incorporacao",
+    "score_minimo": 75,
+    "elementos_obrigatorios": ["Tema 970", "Tema 996", "tolerancia 180 dias"]
+  }
+}

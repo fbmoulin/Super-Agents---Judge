@@ -1,0 +1,16 @@
+{
+  "caso_id": "bancario_02",
+  "descricao": "Juros abusivos em financiamento de veiculo",
+  "fatos": "O autor celebrou contrato de financiamento de veiculo com o Banco Reu em marco de 2024, no valor de R$ 45.000,00, para aquisicao de automovel usado. O contrato preve 48 parcelas de R$ 1.890,00, totalizando R$ 90.720,00. Alega que os juros praticados (taxa de 3,8% ao mes, equivalente a 56,44% ao ano) sao abusivos, superando em mais de 150% a taxa media de mercado divulgada pelo BACEN para operacoes similares no periodo (1,5% ao mes). Sustenta ainda a cobranca de tarifa de cadastro (R$ 850,00) e seguro prestamista (R$ 2.100,00) sem opcao de recusa. Apresentou simulacao demonstrando que, aplicando-se a taxa media de mercado, o valor total seria de R$ 62.100,00.",
+  "questoes": "1) Os juros contratados sao abusivos por superarem a taxa media de mercado? 2) E possivel a revisao judicial do contrato para adequacao a taxa media? 3) As tarifas cobradas sao legitimas? 4) E devida a restituicao dos valores pagos a maior?",
+  "pedidos": "a) Revisao do contrato para aplicacao da taxa media BACEN; b) Declaracao de nulidade da tarifa de cadastro e seguro prestamista; c) Recalculo das parcelas vincendas; d) Restituicao simples dos valores pagos a maior; e) Manutencao na posse do veiculo durante a demanda.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Contratos bancarios - Juros - Revisional",
+  "valor_causa": 28620.00,
+  "expectativa": {
+    "agente_esperado": "agent_bancario",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["381", "382", "539"],
+    "parametro_juros": "1.5x taxa media BACEN"
+  }
+}

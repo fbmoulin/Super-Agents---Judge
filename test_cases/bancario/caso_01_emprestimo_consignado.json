@@ -1,0 +1,16 @@
+{
+  "caso_id": "bancario_01",
+  "descricao": "Emprestimo consignado fraudulento - aposentado vitima de fraude",
+  "fatos": "O autor, aposentado do INSS com 72 anos de idade, alega que em outubro de 2025 passou a receber descontos mensais de R$ 450,00 em seu beneficio previdenciario referentes a um suposto emprestimo consignado no valor de R$ 8.500,00 junto ao Banco Reu. Afirma que nunca solicitou tal emprestimo, nao assinou qualquer contrato e nao recebeu os valores em sua conta. Ao procurar o banco, foi informado que o contrato foi celebrado via aplicativo, com biometria facial. O autor sustenta que jamais baixou o aplicativo do banco nem realizou qualquer operacao digital. Juntou aos autos extratos bancarios demonstrando a ausencia de credito correspondente ao emprestimo e boletim de ocorrencia registrado em 15/10/2025.",
+  "questoes": "1) Houve falha na prestacao do servico bancario ao permitir contratacao fraudulenta? 2) E cabivel a declaracao de inexistencia do debito? 3) Sao devidos danos morais pela situacao vivenciada? 4) Ha direito a repeticao do indebito dos valores descontados?",
+  "pedidos": "a) Declaracao de inexistencia do contrato de emprestimo; b) Cessacao imediata dos descontos no beneficio; c) Restituicao em dobro dos valores descontados (R$ 2.250,00 x 2 = R$ 4.500,00); d) Condenacao em danos morais no valor de R$ 15.000,00; e) Inversao do onus da prova; f) Justica gratuita.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Emprestimo consignado - Fraude - Responsabilidade civil",
+  "valor_causa": 19500.00,
+  "expectativa": {
+    "agente_esperado": "agent_bancario",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["297", "479"],
+    "danos_morais_faixa": "8000-25000"
+  }
+}

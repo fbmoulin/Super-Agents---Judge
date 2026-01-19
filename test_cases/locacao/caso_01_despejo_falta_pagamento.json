@@ -1,0 +1,15 @@
+{
+  "caso_id": "locacao_01",
+  "descricao": "Ação de despejo por falta de pagamento cumulada com cobrança",
+  "fatos": "O autor é proprietário do imóvel situado na Rua das Flores, 123, Vitória/ES, locado ao réu desde março de 2023 pelo valor mensal de R$ 2.500,00. O réu deixou de pagar os aluguéis referentes aos meses de agosto, setembro, outubro, novembro e dezembro de 2025, totalizando R$ 12.500,00 de débito. O contrato de locação foi celebrado por prazo indeterminado, com cláusula de fiador, que também deixou de responder às notificações. O autor notificou extrajudicialmente o réu em 15/11/2025, concedendo prazo de 15 dias para purgação da mora, sem êxito.",
+  "questoes": "1) É cabível o despejo por falta de pagamento? 2) Pode haver cumulação com cobrança dos aluguéis em atraso? 3) O fiador deve ser incluído no polo passivo? 4) É possível a concessão de liminar para desocupação?",
+  "pedidos": "a) Decretação do despejo com prazo de 15 dias para desocupação voluntária; b) Condenação solidária do locatário e fiador ao pagamento dos aluguéis vencidos e vincendos até a efetiva desocupação; c) Concessão de liminar para desocupação em 15 dias mediante caução de 3 aluguéis; d) Multa contratual de 3 aluguéis.",
+  "classe": "Ação de Despejo",
+  "assunto": "Locação de Imóveis - Lei 8.245/91 - Despejo por falta de pagamento",
+  "valor_causa": 20000.00,
+  "expectativa": {
+    "agente_esperado": "agent_locacao",
+    "score_minimo": 75,
+    "artigos_esperados": ["Art. 9", "Art. 62", "Lei 8.245/91"]
+  }
+}

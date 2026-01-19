@@ -1,0 +1,16 @@
+{
+  "caso_id": "bancario_05",
+  "descricao": "Acao revisional de contrato de credito pessoal",
+  "fatos": "O autor contratou emprestimo pessoal com o Banco Reu em janeiro de 2025, no valor de R$ 30.000,00, com previsao de 36 parcelas de R$ 1.650,00 (total R$ 59.400,00). Alega que: (i) a taxa de juros de 4,2% ao mes (63,21% ao ano) supera em mais de 180% a taxa media BACEN (1,5% ao mes); (ii) foi cobrada tarifa de abertura de credito (TAC) de R$ 1.500,00; (iii) o contrato preve capitalizacao mensal de juros; (iv) ha clausula de comissao de permanencia cumulada com multa e juros moratorios. Pagou 10 parcelas (R$ 16.500,00) e pretende continuar adimplente, desde que revistas as clausulas abusivas. Juntou planilha de calculo demonstrando diferenca de R$ 15.840,00 entre o contratado e o valor com taxa media de mercado.",
+  "questoes": "1) Os juros remuneratorios podem ser limitados a taxa media BACEN? 2) A TAC e valida em contratos bancarios? 3) E possivel a capitalizacao mensal de juros? 4) A comissao de permanencia pode ser cumulada com outros encargos? 5) O autor pode depositar judicialmente os valores incontroversos?",
+  "pedidos": "a) Revisao do contrato para aplicacao da taxa media BACEN; b) Declaracao de nulidade da TAC; c) Afastamento da capitalizacao ilegal de juros; d) Vedacao da cumulacao de comissao de permanencia com outros encargos; e) Recalculo do saldo devedor; f) Autorizacao para deposito judicial das parcelas recalculadas; g) Manutencao do nome do autor fora dos cadastros de inadimplentes enquanto perdurar a demanda.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Contrato bancario - Revisional - Juros",
+  "valor_causa": 15840.00,
+  "expectativa": {
+    "agente_esperado": "agent_bancario",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["381", "382", "539", "603"],
+    "verificar_capitalizacao": true
+  }
+}

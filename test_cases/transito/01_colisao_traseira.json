@@ -1,0 +1,15 @@
+{
+  "caso_id": "TRANSITO_001",
+  "descricao": "Colisao traseira com lesoes corporais",
+  "fatos": "Em 15/06/2025, o autor conduzia seu veiculo Honda Civic pela Av. Fernando Ferrari quando foi abalroado na traseira pelo veiculo do reu. O impacto causou danos de R$ 12.000 no veiculo e lesoes cervicais no autor (CID S13), com afastamento de 30 dias.",
+  "questoes": "1. Caracterizada a culpa do reu? 2. Devidos danos materiais e morais?",
+  "pedidos": "Danos materiais R$ 12.000. Danos morais R$ 10.000. Lucros cessantes de 30 dias.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Responsabilidade Civil - Acidente de Transito",
+  "valor_causa": 30000,
+  "expectativa": {
+    "agente_esperado": "agent_transito",
+    "score_minimo": 75,
+    "elementos_obrigatorios": ["Art. 186 CC", "Art. 927 CC", "Sumula 54 STJ"]
+  }
+}

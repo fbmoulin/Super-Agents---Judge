@@ -1,0 +1,16 @@
+{
+  "caso_id": "consumidor_04",
+  "descricao": "Propaganda enganosa em venda de curso online",
+  "fatos": "O autor adquiriu curso online de 'Formacao em Day Trade - Do Zero ao Milhao' oferecido pela empresa Re em agosto de 2025, pelo valor de R$ 4.997,00 parcelado em 12x no cartao de credito. A propaganda no Instagram prometia: 'Ganhe R$ 10.000,00 por mes operando apenas 2 horas por dia', 'Metodo comprovado com 95% de acerto', 'Garantia de resultado ou dinheiro de volta'. Apos assistir a 60% do conteudo (15 modulos de 25), constatou que: (i) o metodo nao e replicavel conforme prometido; (ii) nao ha comprovacao dos resultados alardeados; (iii) ao solicitar reembolso pela 'garantia de resultado', foi informado que a garantia so vale se assistir 100% do curso e 'aplicar corretamente' o metodo por 90 dias. Juntou prints da propaganda e termos de uso que contem clausulas em letras miudas contradizendo as promessas principais.",
+  "questoes": "1) A publicidade veiculada e enganosa nos termos do CDC? 2) As clausulas restritivas da garantia sao abusivas por serem contraditorias a oferta? 3) O consumidor tem direito ao reembolso integral? 4) Sao cabiveis danos morais?",
+  "pedidos": "a) Declaracao de nulidade das clausulas restritivas da garantia; b) Rescisao do contrato por culpa exclusiva da Re; c) Restituicao integral do valor pago (R$ 4.997,00); d) Condenacao em danos morais no valor de R$ 3.000,00.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Propaganda enganosa - Curso online - CDC",
+  "valor_causa": 7997.00,
+  "expectativa": {
+    "agente_esperado": "agent_consumidor",
+    "score_minimo": 75,
+    "artigos_esperados": ["Art. 37 CDC", "Art. 30 CDC", "Art. 51 CDC"],
+    "propaganda_enganosa": true
+  }
+}

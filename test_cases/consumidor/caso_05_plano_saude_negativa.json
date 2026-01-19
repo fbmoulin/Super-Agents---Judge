@@ -1,0 +1,17 @@
+{
+  "caso_id": "consumidor_05",
+  "descricao": "Plano de saude - negativa de cobertura de cirurgia",
+  "fatos": "A autora, 58 anos, e beneficiaria do plano de saude da operadora Re desde 2018, plano empresarial categoria Executivo (R$ 1.850,00/mes). Em novembro de 2025, foi diagnosticada com hernia de disco lombar L4-L5 com compressao radicular, necessitando de cirurgia de artrodese lombar com urgencia, conforme relatorio medico anexado. Solicitou autorizacao em 20/11/2025, sendo negada em 25/11/2025 sob a alegacao de que 'o procedimento nao consta no rol da ANS' e 'necessita de junta medica para avaliacao'. A autora apresentou recurso administrativo com parecer de dois neurocirurgioes atestando a urgencia, sendo novamente negado em 05/12/2025. Atualmente esta afastada do trabalho, com dores intensas e perda de sensibilidade no membro inferior direito, utilizando medicacao controlada (receitas anexas). O medico assistente atesta risco de lesao neurologica permanente se a cirurgia nao for realizada em ate 30 dias.",
+  "questoes": "1) A negativa de cobertura e abusiva, considerando a urgencia medica? 2) O rol da ANS e taxativo ou exemplificativo? 3) E cabivel tutela de urgencia para realizacao imediata da cirurgia? 4) Sao devidos danos morais pela negativa indevida em momento de fragilidade?",
+  "pedidos": "a) TUTELA DE URGENCIA para realizacao imediata da cirurgia, sob pena de multa diaria; b) Condenacao da Re a arcar com todos os custos do procedimento e internacao; c) Condenacao em danos morais no valor de R$ 20.000,00; d) Manutencao do plano de saude durante a demanda.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Plano de saude - Negativa de cobertura - Cirurgia urgente",
+  "valor_causa": 80000.00,
+  "expectativa": {
+    "agente_esperado": "agent_consumidor",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["302 STJ"],
+    "danos_morais_faixa": "10000-30000",
+    "urgencia": true
+  }
+}

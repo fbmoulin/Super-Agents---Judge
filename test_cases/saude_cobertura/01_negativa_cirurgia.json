@@ -1,0 +1,15 @@
+{
+  "caso_id": "SAUDE_COB_001",
+  "descricao": "Negativa de cobertura de cirurgia bariatrica",
+  "fatos": "A autora e beneficiaria do plano de saude Unimed ha 5 anos. Foi diagnosticada com obesidade morbida (CID E66.2) e IMC de 42. O medico assistente prescreveu cirurgia bariatrica (gastroplastia). A operadora negou a autorizacao alegando que o procedimento nao esta no rol da ANS.",
+  "questoes": "1. A negativa de cobertura e legitima? 2. Ha dano moral indenizavel?",
+  "pedidos": "Obrigacao de fazer para autorizar a cirurgia. Danos morais de R$ 20.000,00.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Plano de Saude - Negativa de Cobertura",
+  "valor_causa": 40000,
+  "expectativa": {
+    "agente_esperado": "agent_saude_cobertura",
+    "score_minimo": 75,
+    "elementos_obrigatorios": ["Sumula 302", "Sumula 469", "Lei 9.656/98"]
+  }
+}

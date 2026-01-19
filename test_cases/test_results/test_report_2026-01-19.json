@@ -1,0 +1,715 @@
+[
+  {
+    "testCase": {
+      "caso_id": "bancario_01",
+      "descricao": "Emprestimo consignado fraudulento - aposentado vitima de fraude",
+      "fatos": "O autor, aposentado do INSS com 72 anos de idade, alega que em outubro de 2025 passou a receber descontos mensais de R$ 450,00 em seu beneficio previdenciario referentes a um suposto emprestimo consignado no valor de R$ 8.500,00 junto ao Banco Reu. Afirma que nunca solicitou tal emprestimo, nao assinou qualquer contrato e nao recebeu os valores em sua conta. Ao procurar o banco, foi informado que o contrato foi celebrado via aplicativo, com biometria facial. O autor sustenta que jamais baixou o aplicativo do banco nem realizou qualquer operacao digital. Juntou aos autos extratos bancarios demonstrando a ausencia de credito correspondente ao emprestimo e boletim de ocorrencia registrado em 15/10/2025.",
+      "questoes": "1) Houve falha na prestacao do servico bancario ao permitir contratacao fraudulenta? 2) E cabivel a declaracao de inexistencia do debito? 3) Sao devidos danos morais pela situacao vivenciada? 4) Ha direito a repeticao do indebito dos valores descontados?",
+      "pedidos": "a) Declaracao de inexistencia do contrato de emprestimo; b) Cessacao imediata dos descontos no beneficio; c) Restituicao em dobro dos valores descontados (R$ 2.250,00 x 2 = R$ 4.500,00); d) Condenacao em danos morais no valor de R$ 15.000,00; e) Inversao do onus da prova; f) Justica gratuita.",
+      "classe": "Procedimento Comum Civel",
+      "assunto": "Emprestimo consignado - Fraude - Responsabilidade civil",
+      "valor_causa": 19500,
+      "expectativa": {
+        "agente_esperado": "agent_bancario",
+        "score_minimo": 75,
+        "sumulas_esperadas": [
+          "297",
+          "479"
+        ],
+        "danos_morais_faixa": "8000-25000"
+      }
+    },
+    "result": {
+      "success": true,
+      "statusCode": 200,
+      "response": {
+        "message": "Workflow was started"
+      },
+      "executionTime": 310
+    },
+    "validation": {
+      "passed": false,
+      "checks": [
+        {
+          "name": "Success flag",
+          "passed": false,
+          "detail": "false - unknown"
+        },
+        {
+          "name": "Minuta present",
+          "passed": false,
+          "detail": "Missing"
+        },
+        {
+          "name": "QA Score",
+          "passed": false,
+          "detail": "0/100 (min: 75)"
+        },
+        {
+          "name": "Correct agent",
+          "passed": false,
+          "detail": "undefined (expected: agent_bancario)"
+        },
+        {
+          "name": "Structure I/II/III",
+          "passed": false,
+          "detail": "R:✗ F:✗ D:✗"
+        },
+        {
+          "name": "Risk level",
+          "passed": false,
+          "detail": "Not provided"
+        },
+        {
+          "name": "Audit ID",
+          "passed": false,
+          "detail": "Missing"
+        }
+      ]
+    }
+  },
+  {
+    "testCase": {
+      "caso_id": "bancario_02",
+      "descricao": "Juros abusivos em financiamento de veiculo",
+      "fatos": "O autor celebrou contrato de financiamento de veiculo com o Banco Reu em marco de 2024, no valor de R$ 45.000,00, para aquisicao de automovel usado. O contrato preve 48 parcelas de R$ 1.890,00, totalizando R$ 90.720,00. Alega que os juros praticados (taxa de 3,8% ao mes, equivalente a 56,44% ao ano) sao abusivos, superando em mais de 150% a taxa media de mercado divulgada pelo BACEN para operacoes similares no periodo (1,5% ao mes). Sustenta ainda a cobranca de tarifa de cadastro (R$ 850,00) e seguro prestamista (R$ 2.100,00) sem opcao de recusa. Apresentou simulacao demonstrando que, aplicando-se a taxa media de mercado, o valor total seria de R$ 62.100,00.",
+      "questoes": "1) Os juros contratados sao abusivos por superarem a taxa media de mercado? 2) E possivel a revisao judicial do contrato para adequacao a taxa media? 3) As tarifas cobradas sao legitimas? 4) E devida a restituicao dos valores pagos a maior?",
+      "pedidos": "a) Revisao do contrato para aplicacao da taxa media BACEN; b) Declaracao de nulidade da tarifa de cadastro e seguro prestamista; c) Recalculo das parcelas vincendas; d) Restituicao simples dos valores pagos a maior; e) Manutencao na posse do veiculo durante a demanda.",
+      "classe": "Procedimento Comum Civel",
+      "assunto": "Contratos bancarios - Juros - Revisional",
+      "valor_causa": 28620,
+      "expectativa": {
+        "agente_esperado": "agent_bancario",
+        "score_minimo": 75,
+        "sumulas_esperadas": [
+          "381",
+          "382",
+          "539"
+        ],
+        "parametro_juros": "1.5x taxa media BACEN"
+      }
+    },
+    "result": {
+      "success": true,
+      "statusCode": 404,
+      "response": {
+        "code": 404,
+        "message": "The requested webhook \"lex-intelligentia-agentes\" is not registered.",
+        "hint": "Click the 'Execute workflow' button on the canvas, then try again. (In test mode, the webhook only works for one call after you click this button)"
+      },
+      "executionTime": 446
+    },
+    "validation": {
+      "passed": false,
+      "checks": [
+        {
+          "name": "Success flag",
+          "passed": false,
+          "detail": "false - unknown"
+        },
+        {
+          "name": "Minuta present",
+          "passed": false,
+          "detail": "Missing"
+        },
+        {
+          "name": "QA Score",
+          "passed": false,
+          "detail": "0/100 (min: 75)"
+        },
+        {
+          "name": "Correct agent",
+          "passed": false,
+          "detail": "undefined (expected: agent_bancario)"
+        },
+        {
+          "name": "Structure I/II/III",
+          "passed": false,
+          "detail": "R:✗ F:✗ D:✗"
+        },
+        {
+          "name": "Risk level",
+          "passed": false,
+          "detail": "Not provided"
+        },
+        {
+          "name": "Audit ID",
+          "passed": false,
+          "detail": "Missing"
+        }
+      ]
+    }
+  },
+  {
+    "testCase": {
+      "caso_id": "bancario_03",
+      "descricao": "Fraude em cartao de credito - compras nao reconhecidas",
+      "fatos": "A autora, servidora publica estadual, alega que em dezembro de 2025 identificou em sua fatura de cartao de credito do Banco Reu tres compras internacionais que nao reconhece: uma no valor de US$ 890,00 (R$ 5.340,00) em site de eletronicos, outra de US$ 450,00 (R$ 2.700,00) em site de apostas online, e uma terceira de US$ 320,00 (R$ 1.920,00) em loja de games. Afirma que estava de posse do cartao fisico, nao realizou compras internacionais e nunca acessou tais sites. Comunicou o banco em 05/12/2025, que negou o cancelamento alegando que as compras foram autenticadas por senha e 3D Secure. A autora teve seu nome incluido no SERASA em 10/01/2026 pelo nao pagamento da fatura, causando-lhe constrangimento ao ter credito negado para financiamento de imovel.",
+      "questoes": "1) Houve falha de seguranca do sistema do banco ao permitir transacoes fraudulentas? 2) E cabivel a declaracao de inexigibilidade dos debitos? 3) A negativacao foi indevida? 4) Sao devidos danos morais?",
+      "pedidos": "a) Declaracao de inexigibilidade dos debitos contestados (R$ 9.960,00); b) Exclusao do nome da autora dos cadastros de inadimplentes; c) Condenacao em danos morais no valor de R$ 20.000,00; d) Inversao do onus da prova.",
+      "classe": "Procedimento Comum Civel",
+      "assunto": "Cartao de credito - Fraude - Negativacao indevida",
+      "valor_causa": 29960,
+      "expectativa": {
+        "agente_esperado": "agent_bancario",
+        "score_minimo": 75,
+        "sumulas_esperadas": [
+          "479",
+          "385"
+        ],
+        "danos_morais_faixa": "5000-20000"
+      }
+    },
+    "result": {
+      "success": true,
+      "statusCode": 404,
+      "response": {
+        "code": 404,
+        "message": "The requested webhook \"lex-intelligentia-agentes\" is not registered.",
+        "hint": "Click the 'Execute workflow' button on the canvas, then try again. (In test mode, the webhook only works for one call after you click this button)"
+      },
+      "executionTime": 1022
+    },
+    "validation": {
+      "passed": false,
+      "checks": [
+        {
+          "name": "Success flag",
+          "passed": false,
+          "detail": "false - unknown"
+        },
+        {
+          "name": "Minuta present",
+          "passed": false,
+          "detail": "Missing"
+        },
+        {
+          "name": "QA Score",
+          "passed": false,
+          "detail": "0/100 (min: 75)"
+        },
+        {
+          "name": "Correct agent",
+          "passed": false,
+          "detail": "undefined (expected: agent_bancario)"
+        },
+        {
+          "name": "Structure I/II/III",
+          "passed": false,
+          "detail": "R:✗ F:✗ D:✗"
+        },
+        {
+          "name": "Risk level",
+          "passed": false,
+          "detail": "Not provided"
+        },
+        {
+          "name": "Audit ID",
+          "passed": false,
+          "detail": "Missing"
+        }
+      ]
+    }
+  },
+  {
+    "testCase": {
+      "caso_id": "bancario_04",
+      "descricao": "Negativacao indevida apos quitacao de divida",
+      "fatos": "O autor celebrou acordo de renegociacao de divida de cartao de credito com o Banco Reu em agosto de 2025, no valor de R$ 12.000,00 parcelados em 12 vezes de R$ 1.200,00. Quitou integralmente todas as parcelas ate julho de 2025, conforme comprovantes anexados. Ocorre que em outubro de 2025 foi surpreendido com a manutencao de seu nome nos cadastros do SERASA e SPC referente a mesma divida, no valor original de R$ 18.500,00 (antes do acordo). Procurou o banco por tres vezes (protocolo anexo), sendo informado que a baixa seria realizada em ate 5 dias uteis, o que nao ocorreu. Permanece negativado ha mais de 90 dias apos a quitacao, tendo sido impedido de abrir conta em outro banco e obter cartao de credito.",
+      "questoes": "1) A manutencao da negativacao apos quitacao configura ato ilicito? 2) O dano moral e presumido (in re ipsa)? 3) Qual o valor adequado para indenizacao? 4) Cabe dano moral mesmo havendo outras negativacoes preexistentes?",
+      "pedidos": "a) Exclusao definitiva do nome do autor dos cadastros restritivos; b) Declaracao de quitacao da divida; c) Condenacao em danos morais no valor de R$ 10.000,00.",
+      "classe": "Procedimento Comum Civel",
+      "assunto": "Negativacao indevida - Danos morais - Quitacao",
+      "valor_causa": 10000,
+      "expectativa": {
+        "agente_esperado": "agent_bancario",
+        "score_minimo": 75,
+        "sumulas_esperadas": [
+          "385",
+          "388"
+        ],
+        "danos_morais_faixa": "5000-15000",
+        "verificar_sumula_385": true
+      }
+    },
+    "result": {
+      "success": true,
+      "statusCode": 404,
+      "response": {
+        "code": 404,
+        "message": "The requested webhook \"lex-intelligentia-agentes\" is not registered.",
+        "hint": "Click the 'Execute workflow' button on the canvas, then try again. (In test mode, the webhook only works for one call after you click this button)"
+      },
+      "executionTime": 421
+    },
+    "validation": {
+      "passed": false,
+      "checks": [
+        {
+          "name": "Success flag",
+          "passed": false,
+          "detail": "false - unknown"
+        },
+        {
+          "name": "Minuta present",
+          "passed": false,
+          "detail": "Missing"
+        },
+        {
+          "name": "QA Score",
+          "passed": false,
+          "detail": "0/100 (min: 75)"
+        },
+        {
+          "name": "Correct agent",
+          "passed": false,
+          "detail": "undefined (expected: agent_bancario)"
+        },
+        {
+          "name": "Structure I/II/III",
+          "passed": false,
+          "detail": "R:✗ F:✗ D:✗"
+        },
+        {
+          "name": "Risk level",
+          "passed": false,
+          "detail": "Not provided"
+        },
+        {
+          "name": "Audit ID",
+          "passed": false,
+          "detail": "Missing"
+        }
+      ]
+    }
+  },
+  {
+    "testCase": {
+      "caso_id": "bancario_05",
+      "descricao": "Acao revisional de contrato de credito pessoal",
+      "fatos": "O autor contratou emprestimo pessoal com o Banco Reu em janeiro de 2025, no valor de R$ 30.000,00, com previsao de 36 parcelas de R$ 1.650,00 (total R$ 59.400,00). Alega que: (i) a taxa de juros de 4,2% ao mes (63,21% ao ano) supera em mais de 180% a taxa media BACEN (1,5% ao mes); (ii) foi cobrada tarifa de abertura de credito (TAC) de R$ 1.500,00; (iii) o contrato preve capitalizacao mensal de juros; (iv) ha clausula de comissao de permanencia cumulada com multa e juros moratorios. Pagou 10 parcelas (R$ 16.500,00) e pretende continuar adimplente, desde que revistas as clausulas abusivas. Juntou planilha de calculo demonstrando diferenca de R$ 15.840,00 entre o contratado e o valor com taxa media de mercado.",
+      "questoes": "1) Os juros remuneratorios podem ser limitados a taxa media BACEN? 2) A TAC e valida em contratos bancarios? 3) E possivel a capitalizacao mensal de juros? 4) A comissao de permanencia pode ser cumulada com outros encargos? 5) O autor pode depositar judicialmente os valores incontroversos?",
+      "pedidos": "a) Revisao do contrato para aplicacao da taxa media BACEN; b) Declaracao de nulidade da TAC; c) Afastamento da capitalizacao ilegal de juros; d) Vedacao da cumulacao de comissao de permanencia com outros encargos; e) Recalculo do saldo devedor; f) Autorizacao para deposito judicial das parcelas recalculadas; g) Manutencao do nome do autor fora dos cadastros de inadimplentes enquanto perdurar a demanda.",
+      "classe": "Procedimento Comum Civel",
+      "assunto": "Contrato bancario - Revisional - Juros",
+      "valor_causa": 15840,
+      "expectativa": {
+        "agente_esperado": "agent_bancario",
+        "score_minimo": 75,
+        "sumulas_esperadas": [
+          "381",
+          "382",
+          "539",
+          "603"
+        ],
+        "verificar_capitalizacao": true
+      }
+    },
+    "result": {
+      "success": true,
+      "statusCode": 404,
+      "response": {
+        "code": 404,
+        "message": "The requested webhook \"lex-intelligentia-agentes\" is not registered.",
+        "hint": "Click the 'Execute workflow' button on the canvas, then try again. (In test mode, the webhook only works for one call after you click this button)"
+      },
+      "executionTime": 530
+    },
+    "validation": {
+      "passed": false,
+      "checks": [
+        {
+          "name": "Success flag",
+          "passed": false,
+          "detail": "false - unknown"
+        },
+        {
+          "name": "Minuta present",
+          "passed": false,
+          "detail": "Missing"
+        },
+        {
+          "name": "QA Score",
+          "passed": false,
+          "detail": "0/100 (min: 75)"
+        },
+        {
+          "name": "Correct agent",
+          "passed": false,
+          "detail": "undefined (expected: agent_bancario)"
+        },
+        {
+          "name": "Structure I/II/III",
+          "passed": false,
+          "detail": "R:✗ F:✗ D:✗"
+        },
+        {
+          "name": "Risk level",
+          "passed": false,
+          "detail": "Not provided"
+        },
+        {
+          "name": "Audit ID",
+          "passed": false,
+          "detail": "Missing"
+        }
+      ]
+    }
+  },
+  {
+    "testCase": {
+      "caso_id": "consumidor_01",
+      "descricao": "Falha na prestacao de servico de telecomunicacoes",
+      "fatos": "A autora contratou servico de internet banda larga da empresa Re em marco de 2025, plano de 500 Mbps pelo valor mensal de R$ 149,90. Desde a instalacao, alega que a velocidade real nunca ultrapassou 150 Mbps, conforme medicoes realizadas pelo aplicativo oficial da ANATEL (prints anexados). Registrou 12 reclamacoes no SAC da empresa entre abril e novembro de 2025 (protocolos anexados), sem solucao definitiva. Os tecnicos compareceram a residencia em 4 ocasioes, sempre atribuindo o problema a 'oscilacoes normais da rede'. A autora trabalha em home office e alega prejuizos profissionais por quedas constantes durante videoconferencias, tendo recebido advertencia formal de seu empregador. Cancelou o servico em dezembro de 2025 e foi cobrada multa de fidelidade de R$ 890,00.",
+      "questoes": "1) Houve falha na prestacao do servico caracterizada pelo descumprimento contratual? 2) A cobranca de multa de fidelidade e devida quando o cancelamento decorre de falha do fornecedor? 3) Sao cabiveis danos morais pela situacao vivenciada? 4) E possivel a restituicao dos valores pagos pelo servico nao prestado adequadamente?",
+      "pedidos": "a) Declaracao de inexigibilidade da multa de fidelidade; b) Restituicao proporcional das mensalidades pagas (R$ 1.349,10 - 9 meses x R$ 149,90); c) Condenacao em danos morais no valor de R$ 8.000,00.",
+      "classe": "Procedimento Comum Civel",
+      "assunto": "Prestacao de servicos - Telecomunicacoes - CDC",
+      "valor_causa": 10238.1,
+      "expectativa": {
+        "agente_esperado": "agent_consumidor",
+        "score_minimo": 75,
+        "artigos_esperados": [
+          "Art. 14 CDC",
+          "Art. 20 CDC"
+        ],
+        "danos_morais_faixa": "5000-15000"
+      }
+    },
+    "result": {
+      "success": true,
+      "statusCode": 404,
+      "response": {
+        "code": 404,
+        "message": "The requested webhook \"lex-intelligentia-agentes\" is not registered.",
+        "hint": "Click the 'Execute workflow' button on the canvas, then try again. (In test mode, the webhook only works for one call after you click this button)"
+      },
+      "executionTime": 351
+    },
+    "validation": {
+      "passed": false,
+      "checks": [
+        {
+          "name": "Success flag",
+          "passed": false,
+          "detail": "false - unknown"
+        },
+        {
+          "name": "Minuta present",
+          "passed": false,
+          "detail": "Missing"
+        },
+        {
+          "name": "QA Score",
+          "passed": false,
+          "detail": "0/100 (min: 75)"
+        },
+        {
+          "name": "Correct agent",
+          "passed": false,
+          "detail": "undefined (expected: agent_consumidor)"
+        },
+        {
+          "name": "Structure I/II/III",
+          "passed": false,
+          "detail": "R:✗ F:✗ D:✗"
+        },
+        {
+          "name": "Risk level",
+          "passed": false,
+          "detail": "Not provided"
+        },
+        {
+          "name": "Audit ID",
+          "passed": false,
+          "detail": "Missing"
+        }
+      ]
+    }
+  },
+  {
+    "testCase": {
+      "caso_id": "consumidor_02",
+      "descricao": "Produto com defeito de fabricacao - celular",
+      "fatos": "O autor adquiriu smartphone da marca X, modelo Premium Plus, na loja Re em setembro de 2025, pelo valor de R$ 6.500,00 (nota fiscal anexa). Apos 45 dias de uso normal, o aparelho passou a apresentar superaquecimento durante carregamento, chegando a queimar levemente a mao do autor em uma ocasiao (foto e laudo medico anexados). Encaminhou o produto a assistencia tecnica autorizada em novembro de 2025, que reteve o aparelho por 42 dias sem solucao, informando que 'o defeito nao foi constatado em laboratorio'. O autor realizou nova reclamacao no PROCON (protocolo anexo) e foi informado que o prazo legal de 30 dias havia sido ultrapassado. O aparelho continua com o mesmo problema e esta inutilizavel ha mais de 60 dias.",
+      "questoes": "1) Houve vicio do produto que o torna improprio ao uso? 2) O prazo de 30 dias para conserto foi ultrapassado? 3) O consumidor pode optar pela restituicao do valor pago? 4) Sao cabiveis danos morais pela queimadura e pela privacao do uso do bem?",
+      "pedidos": "a) Restituicao integral do valor pago (R$ 6.500,00), devidamente corrigido; b) Condenacao em danos morais no valor de R$ 5.000,00; c) Condenacao em danos materiais correspondentes ao tratamento da queimadura (R$ 350,00).",
+      "classe": "Procedimento Comum Civel",
+      "assunto": "Produto defeituoso - Vicio - CDC",
+      "valor_causa": 11850,
+      "expectativa": {
+        "agente_esperado": "agent_consumidor",
+        "score_minimo": 75,
+        "artigos_esperados": [
+          "Art. 18 CDC",
+          "Art. 12 CDC"
+        ],
+        "prazo_30_dias": true
+      }
+    },
+    "result": {
+      "success": true,
+      "statusCode": 404,
+      "response": {
+        "code": 404,
+        "message": "The requested webhook \"lex-intelligentia-agentes\" is not registered.",
+        "hint": "Click the 'Execute workflow' button on the canvas, then try again. (In test mode, the webhook only works for one call after you click this button)"
+      },
+      "executionTime": 363
+    },
+    "validation": {
+      "passed": false,
+      "checks": [
+        {
+          "name": "Success flag",
+          "passed": false,
+          "detail": "false - unknown"
+        },
+        {
+          "name": "Minuta present",
+          "passed": false,
+          "detail": "Missing"
+        },
+        {
+          "name": "QA Score",
+          "passed": false,
+          "detail": "0/100 (min: 75)"
+        },
+        {
+          "name": "Correct agent",
+          "passed": false,
+          "detail": "undefined (expected: agent_consumidor)"
+        },
+        {
+          "name": "Structure I/II/III",
+          "passed": false,
+          "detail": "R:✗ F:✗ D:✗"
+        },
+        {
+          "name": "Risk level",
+          "passed": false,
+          "detail": "Not provided"
+        },
+        {
+          "name": "Audit ID",
+          "passed": false,
+          "detail": "Missing"
+        }
+      ]
+    }
+  },
+  {
+    "testCase": {
+      "caso_id": "consumidor_03",
+      "descricao": "Cobranca indevida de servico nao contratado",
+      "fatos": "A autora e cliente da operadora de telefonia Re desde 2020, com plano pos-pago de R$ 89,90 mensais. Em julho de 2025, passou a ser cobrada por um servico de 'Seguro Celular Premium' no valor de R$ 29,90 mensais, que alega nunca ter contratado. Entrou em contato com a operadora em agosto de 2025 para cancelamento, sendo informada que o servico havia sido 'ativado por aceite em ligacao telefonica'. Solicitou a gravacao da ligacao, que nao foi fornecida. Mesmo apos o cancelamento, os valores continuaram sendo cobrados por mais 4 meses (setembro a dezembro de 2025), totalizando R$ 179,40 indevidamente cobrados. Teve o servico de telefonia suspenso em janeiro de 2026 por nao pagar a parte controversa da fatura, ficando 5 dias sem comunicacao.",
+      "questoes": "1) A cobranca de servico nao contratado e pratica abusiva? 2) A restituicao deve ser simples ou em dobro? 3) A suspensao do servico por debito controverso e legitima? 4) Sao cabiveis danos morais?",
+      "pedidos": "a) Declaracao de inexistencia da contratacao do servico 'Seguro Celular Premium'; b) Restituicao em dobro dos valores indevidamente cobrados (R$ 179,40 x 2 = R$ 358,80); c) Condenacao em danos morais no valor de R$ 5.000,00 pela suspensao indevida do servico.",
+      "classe": "Procedimento Comum Civel",
+      "assunto": "Cobranca indevida - Servico nao contratado - CDC",
+      "valor_causa": 5358.8,
+      "expectativa": {
+        "agente_esperado": "agent_consumidor",
+        "score_minimo": 75,
+        "artigos_esperados": [
+          "Art. 42 CDC",
+          "Art. 39 CDC"
+        ],
+        "restituicao_dobro": true
+      }
+    },
+    "result": {
+      "success": true,
+      "statusCode": 404,
+      "response": {
+        "code": 404,
+        "message": "The requested webhook \"lex-intelligentia-agentes\" is not registered.",
+        "hint": "Click the 'Execute workflow' button on the canvas, then try again. (In test mode, the webhook only works for one call after you click this button)"
+      },
+      "executionTime": 334
+    },
+    "validation": {
+      "passed": false,
+      "checks": [
+        {
+          "name": "Success flag",
+          "passed": false,
+          "detail": "false - unknown"
+        },
+        {
+          "name": "Minuta present",
+          "passed": false,
+          "detail": "Missing"
+        },
+        {
+          "name": "QA Score",
+          "passed": false,
+          "detail": "0/100 (min: 75)"
+        },
+        {
+          "name": "Correct agent",
+          "passed": false,
+          "detail": "undefined (expected: agent_consumidor)"
+        },
+        {
+          "name": "Structure I/II/III",
+          "passed": false,
+          "detail": "R:✗ F:✗ D:✗"
+        },
+        {
+          "name": "Risk level",
+          "passed": false,
+          "detail": "Not provided"
+        },
+        {
+          "name": "Audit ID",
+          "passed": false,
+          "detail": "Missing"
+        }
+      ]
+    }
+  },
+  {
+    "testCase": {
+      "caso_id": "consumidor_04",
+      "descricao": "Propaganda enganosa em venda de curso online",
+      "fatos": "O autor adquiriu curso online de 'Formacao em Day Trade - Do Zero ao Milhao' oferecido pela empresa Re em agosto de 2025, pelo valor de R$ 4.997,00 parcelado em 12x no cartao de credito. A propaganda no Instagram prometia: 'Ganhe R$ 10.000,00 por mes operando apenas 2 horas por dia', 'Metodo comprovado com 95% de acerto', 'Garantia de resultado ou dinheiro de volta'. Apos assistir a 60% do conteudo (15 modulos de 25), constatou que: (i) o metodo nao e replicavel conforme prometido; (ii) nao ha comprovacao dos resultados alardeados; (iii) ao solicitar reembolso pela 'garantia de resultado', foi informado que a garantia so vale se assistir 100% do curso e 'aplicar corretamente' o metodo por 90 dias. Juntou prints da propaganda e termos de uso que contem clausulas em letras miudas contradizendo as promessas principais.",
+      "questoes": "1) A publicidade veiculada e enganosa nos termos do CDC? 2) As clausulas restritivas da garantia sao abusivas por serem contraditorias a oferta? 3) O consumidor tem direito ao reembolso integral? 4) Sao cabiveis danos morais?",
+      "pedidos": "a) Declaracao de nulidade das clausulas restritivas da garantia; b) Rescisao do contrato por culpa exclusiva da Re; c) Restituicao integral do valor pago (R$ 4.997,00); d) Condenacao em danos morais no valor de R$ 3.000,00.",
+      "classe": "Procedimento Comum Civel",
+      "assunto": "Propaganda enganosa - Curso online - CDC",
+      "valor_causa": 7997,
+      "expectativa": {
+        "agente_esperado": "agent_consumidor",
+        "score_minimo": 75,
+        "artigos_esperados": [
+          "Art. 37 CDC",
+          "Art. 30 CDC",
+          "Art. 51 CDC"
+        ],
+        "propaganda_enganosa": true
+      }
+    },
+    "result": {
+      "success": true,
+      "statusCode": 404,
+      "response": {
+        "code": 404,
+        "message": "The requested webhook \"lex-intelligentia-agentes\" is not registered.",
+        "hint": "Click the 'Execute workflow' button on the canvas, then try again. (In test mode, the webhook only works for one call after you click this button)"
+      },
+      "executionTime": 322
+    },
+    "validation": {
+      "passed": false,
+      "checks": [
+        {
+          "name": "Success flag",
+          "passed": false,
+          "detail": "false - unknown"
+        },
+        {
+          "name": "Minuta present",
+          "passed": false,
+          "detail": "Missing"
+        },
+        {
+          "name": "QA Score",
+          "passed": false,
+          "detail": "0/100 (min: 75)"
+        },
+        {
+          "name": "Correct agent",
+          "passed": false,
+          "detail": "undefined (expected: agent_consumidor)"
+        },
+        {
+          "name": "Structure I/II/III",
+          "passed": false,
+          "detail": "R:✗ F:✗ D:✗"
+        },
+        {
+          "name": "Risk level",
+          "passed": false,
+          "detail": "Not provided"
+        },
+        {
+          "name": "Audit ID",
+          "passed": false,
+          "detail": "Missing"
+        }
+      ]
+    }
+  },
+  {
+    "testCase": {
+      "caso_id": "consumidor_05",
+      "descricao": "Plano de saude - negativa de cobertura de cirurgia",
+      "fatos": "A autora, 58 anos, e beneficiaria do plano de saude da operadora Re desde 2018, plano empresarial categoria Executivo (R$ 1.850,00/mes). Em novembro de 2025, foi diagnosticada com hernia de disco lombar L4-L5 com compressao radicular, necessitando de cirurgia de artrodese lombar com urgencia, conforme relatorio medico anexado. Solicitou autorizacao em 20/11/2025, sendo negada em 25/11/2025 sob a alegacao de que 'o procedimento nao consta no rol da ANS' e 'necessita de junta medica para avaliacao'. A autora apresentou recurso administrativo com parecer de dois neurocirurgioes atestando a urgencia, sendo novamente negado em 05/12/2025. Atualmente esta afastada do trabalho, com dores intensas e perda de sensibilidade no membro inferior direito, utilizando medicacao controlada (receitas anexas). O medico assistente atesta risco de lesao neurologica permanente se a cirurgia nao for realizada em ate 30 dias.",
+      "questoes": "1) A negativa de cobertura e abusiva, considerando a urgencia medica? 2) O rol da ANS e taxativo ou exemplificativo? 3) E cabivel tutela de urgencia para realizacao imediata da cirurgia? 4) Sao devidos danos morais pela negativa indevida em momento de fragilidade?",
+      "pedidos": "a) TUTELA DE URGENCIA para realizacao imediata da cirurgia, sob pena de multa diaria; b) Condenacao da Re a arcar com todos os custos do procedimento e internacao; c) Condenacao em danos morais no valor de R$ 20.000,00; d) Manutencao do plano de saude durante a demanda.",
+      "classe": "Procedimento Comum Civel",
+      "assunto": "Plano de saude - Negativa de cobertura - Cirurgia urgente",
+      "valor_causa": 80000,
+      "expectativa": {
+        "agente_esperado": "agent_consumidor",
+        "score_minimo": 75,
+        "sumulas_esperadas": [
+          "302 STJ"
+        ],
+        "danos_morais_faixa": "10000-30000",
+        "urgencia": true
+      }
+    },
+    "result": {
+      "success": true,
+      "statusCode": 404,
+      "response": {
+        "code": 404,
+        "message": "The requested webhook \"lex-intelligentia-agentes\" is not registered.",
+        "hint": "Click the 'Execute workflow' button on the canvas, then try again. (In test mode, the webhook only works for one call after you click this button)"
+      },
+      "executionTime": 402
+    },
+    "validation": {
+      "passed": false,
+      "checks": [
+        {
+          "name": "Success flag",
+          "passed": false,
+          "detail": "false - unknown"
+        },
+        {
+          "name": "Minuta present",
+          "passed": false,
+          "detail": "Missing"
+        },
+        {
+          "name": "QA Score",
+          "passed": false,
+          "detail": "0/100 (min: 75)"
+        },
+        {
+          "name": "Correct agent",
+          "passed": false,
+          "detail": "undefined (expected: agent_consumidor)"
+        },
+        {
+          "name": "Structure I/II/III",
+          "passed": false,
+          "detail": "R:✗ F:✗ D:✗"
+        },
+        {
+          "name": "Risk level",
+          "passed": false,
+          "detail": "Not provided"
+        },
+        {
+          "name": "Audit ID",
+          "passed": false,
+          "detail": "Missing"
+        }
+      ]
+    }
+  }
+]

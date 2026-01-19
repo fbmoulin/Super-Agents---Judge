@@ -1,0 +1,17 @@
+{
+  "caso_id": "bancario_04",
+  "descricao": "Negativacao indevida apos quitacao de divida",
+  "fatos": "O autor celebrou acordo de renegociacao de divida de cartao de credito com o Banco Reu em agosto de 2025, no valor de R$ 12.000,00 parcelados em 12 vezes de R$ 1.200,00. Quitou integralmente todas as parcelas ate julho de 2025, conforme comprovantes anexados. Ocorre que em outubro de 2025 foi surpreendido com a manutencao de seu nome nos cadastros do SERASA e SPC referente a mesma divida, no valor original de R$ 18.500,00 (antes do acordo). Procurou o banco por tres vezes (protocolo anexo), sendo informado que a baixa seria realizada em ate 5 dias uteis, o que nao ocorreu. Permanece negativado ha mais de 90 dias apos a quitacao, tendo sido impedido de abrir conta em outro banco e obter cartao de credito.",
+  "questoes": "1) A manutencao da negativacao apos quitacao configura ato ilicito? 2) O dano moral e presumido (in re ipsa)? 3) Qual o valor adequado para indenizacao? 4) Cabe dano moral mesmo havendo outras negativacoes preexistentes?",
+  "pedidos": "a) Exclusao definitiva do nome do autor dos cadastros restritivos; b) Declaracao de quitacao da divida; c) Condenacao em danos morais no valor de R$ 10.000,00.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Negativacao indevida - Danos morais - Quitacao",
+  "valor_causa": 10000.00,
+  "expectativa": {
+    "agente_esperado": "agent_bancario",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["385", "388"],
+    "danos_morais_faixa": "5000-15000",
+    "verificar_sumula_385": true
+  }
+}

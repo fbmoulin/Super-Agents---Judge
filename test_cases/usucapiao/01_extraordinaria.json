@@ -1,0 +1,15 @@
+{
+  "caso_id": "USUCAPIAO_001",
+  "descricao": "Usucapiao extraordinaria de imovel urbano",
+  "fatos": "O autor exerce posse mansa e pacifica sobre imovel urbano de 180m2 em Vila Velha desde 1995 (31 anos). Construiu residencia, paga IPTU e contas, sem qualquer oposicao dos proprietarios tabulares.",
+  "questoes": "1. Preenchidos os requisitos da usucapiao extraordinaria? 2. Cabe reducao de prazo?",
+  "pedidos": "Declaracao de aquisicao por usucapiao extraordinaria. Expedicao de mandado para registro.",
+  "classe": "Usucapiao",
+  "assunto": "Usucapiao Extraordinaria",
+  "valor_causa": 150000,
+  "expectativa": {
+    "agente_esperado": "agent_usucapiao",
+    "score_minimo": 75,
+    "elementos_obrigatorios": ["Art. 1.238 CC", "posse mansa", "animus domini"]
+  }
+}

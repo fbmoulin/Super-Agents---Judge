@@ -1,0 +1,15 @@
+{
+  "caso_id": "generico_01",
+  "descricao": "Ação declaratória de inexistência de relação jurídica - caso atípico",
+  "fatos": "O autor descobriu que consta como sócio de empresa denominada XYZ Comércio Ltda., CNPJ 12.345.678/0001-99, registrada na Junta Comercial do ES desde 2020. Alega que nunca participou da constituição dessa empresa, não assinou qualquer documento societário e não conhece os demais sócios. Tomou conhecimento ao tentar obter certidão negativa de débitos para participar de licitação pública. A empresa possui débitos tributários federais e estaduais que superam R$ 500.000,00. O autor não possui qualquer relação com o ramo de atividade da empresa (comércio de autopeças).",
+  "questoes": "1) É cabível ação declaratória para reconhecer inexistência de relação societária? 2) Há necessidade de perícia grafotécnica? 3) Quem deve figurar no polo passivo? 4) É possível tutela de urgência para suspensão das cobranças?",
+  "pedidos": "a) Declaração judicial de que o autor nunca foi sócio da empresa XYZ Comércio Ltda.; b) Determinação de retificação do registro na Junta Comercial; c) Suspensão de qualquer cobrança de débitos tributários em face do autor; d) Condenação dos réus em danos morais; e) Expedição de ofícios à Receita Federal e SEFAZ/ES.",
+  "classe": "Procedimento Comum Cível",
+  "assunto": "Ação Declaratória - Inexistência de relação jurídica societária",
+  "valor_causa": 50000.00,
+  "expectativa": {
+    "agente_esperado": "agent_generico",
+    "score_minimo": 70,
+    "marcadores_revisao_esperados": 2
+  }
+}
