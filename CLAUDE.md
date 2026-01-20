@@ -24,7 +24,7 @@ Sistema multi-agente para automação de minutas judiciais (decisões e sentenç
 ║                                                               ║
 ║  Quality Score: 95/100 (estrutura)                            ║
 ║  Nodes: 60+ | Connections: 53+                                ║
-║  Production Tests: 13/19 AGENTES VALIDADOS                    ║
+║  Production Tests: 19/19 AGENTES VALIDADOS ✅                  ║
 ║  Cobertura: 90-95% (estimada) via Knowledge Base              ║
 ║                                                               ║
 ║  AGENTES VALIDADOS (2026-01-19):                              ║
@@ -48,11 +48,23 @@ Sistema multi-agente para automação de minutas judiciais (decisões e sentenç
 ║  ✓ agent_PATERNIDADE     - Score 100% (2/2 casos)             ║
 ║  ✓ agent_SAUDE_COBERTURA - Score 105% (3/3 casos)             ║
 ║                                                               ║
-║  TESTES v2.5 + FASES 1-2 CONCLUIDOS:                          ║
-║  ✓ 17 casos de teste executados                               ║
+║  FASE 3 - SAUDE/RC VALIDADOS (2026-01-20):                    ║
+║  ✓ agent_SAUDE_CONTRATUAL- Score 98%  (2/2 casos)             ║
+║  ✓ agent_REPARACAO_DANOS - Score 100% (2/2 casos)             ║
+║                                                               ║
+║  FASE 4 - TRANSITO/PROPRIEDADE VALIDADOS (2026-01-20):        ║
+║  ✓ agent_TRANSITO        - Score 105% (2/2 casos)             ║
+║  ✓ agent_USUCAPIAO       - Score 90%  (2/2 casos)             ║
+║                                                               ║
+║  FASE 5 - INCORPORACAO/FALLBACK VALIDADOS (2026-01-20):       ║
+║  ✓ agent_INCORPORACAO    - Score 100% (2/2 casos)             ║
+║  ✓ agent_GENERICO        - Score 95%  (2/2 casos)             ║
+║                                                               ║
+║  TESTES v2.5 + FASES 1-5 CONCLUIDOS:                          ║
+║  ✓ 32 casos de teste executados                               ║
 ║  ✓ 100% taxa de aprovacao (>75% threshold)                    ║
-║  ✓ Score medio global: 99.5%                                  ║
-║  ✓ Relatorio: test_results/V2.5_AGENT_TEST_REPORT.md          ║
+║  ✓ Score medio global: 98.5%                                  ║
+║  ✓ Relatorio: test_results/V2.5_AGENT_TEST_REPORT_2026-01-20.md║
 ╚═══════════════════════════════════════════════════════════════╝
 ```
 
