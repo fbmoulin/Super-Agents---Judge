@@ -1,7 +1,7 @@
 # 🏛️ LEX INTELLIGENTIA JUDICIÁRIO
 ## Sistema Multi-Agente para Automação de Minutas Judiciais
 
-**Versão:** 2.2
+**Versão:** 2.5
 **Data:** Janeiro 2026
 **Compliance:** CNJ 615/2025
 **Autor:** Sistema desenvolvido para 2ª Vara Cível de Cariacica/ES
@@ -29,7 +29,7 @@ O Lex Intelligentia Judiciário é um sistema multi-agente que se integra ao seu
 
 ### Características Principais
 
-- ✅ **11 Agentes Especializados** por tipo de ação
+- ✅ **19 Agentes Especializados** - **100% validados** (32 casos de teste, 98.5% score)
 - ✅ **Router Hierárquico** (Gemini 2.5 Flash) com classificação em 2 estágios
 - ✅ **QA Híbrido** (estrutural + semântico)
 - ✅ **Audit Log** em conformidade com CNJ 615/2025
@@ -406,15 +406,31 @@ ALTO:   confianca < 0.50 || agent_generico
 - [x] Context Buffer com null safety
 - [x] Error handling com retry
 
-### Fase 2 - Validação em Produção (Em Andamento)
+### Fase 2 - Validação em Produção ✅ CONCLUÍDA
 - [x] Bancário validado (0.98 confiança)
 - [x] Consumidor validado (0.95 confiança)
 - [x] Locação validado (0.98 confiança)
 - [x] Possessórias validado (0.98 confiança)
-- [ ] Execução (issue: maxOutputTokens)
-- [ ] Novos 5 agentes pendentes teste
+- [x] Execução validado (0.95 confiança)
 
-### Fase 3 - Vector Store
+### Fase 2.5 - Agentes v2.5 ✅ CONCLUÍDA (2026-01-20)
+- [x] **19/19 agentes validados** (100% cobertura)
+- [x] 32 casos de teste executados
+- [x] Score médio global: 98.5%
+- [x] 100% taxa de aprovação (>75% threshold)
+
+| Fase | Agentes | Score Médio |
+|------|---------|-------------|
+| Inicial | COBRANÇA, DIVÓRCIO, INVENTÁRIO, SEGUROS | 98.5% |
+| Fase 1 | ALIMENTOS, GUARDA | 96% |
+| Fase 2 | PATERNIDADE, SAÚDE_COBERTURA | 102.5% |
+| Fase 3 | SAÚDE_CONTRATUAL, REPARAÇÃO_DANOS | 99% |
+| Fase 4 | TRÂNSITO, USUCAPIÃO | 97.5% |
+| Fase 5 | INCORPORAÇÃO, GENÉRICO | 97.5% |
+
+📊 Relatório completo: `test_cases/test_results/V2.5_AGENT_TEST_REPORT_2026-01-20.md`
+
+### Fase 3 - Vector Store (Próxima)
 - [ ] Download dados STJ
 - [ ] Ingestão no Qdrant
 - [ ] Tool de busca para agentes
@@ -444,4 +460,4 @@ Este projeto foi desenvolvido para uso interno do Tribunal de Justiça do Espír
 
 ---
 
-*Documentação atualizada em 2026-01-19 - Lex Intelligentia Judiciário v2.2*
+*Documentação atualizada em 2026-01-20 - Lex Intelligentia Judiciário v2.5*

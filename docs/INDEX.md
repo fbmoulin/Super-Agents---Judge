@@ -1,4 +1,4 @@
-# Documentação - Lex Intelligentia Judiciário v2.2
+# Documentação - Lex Intelligentia Judiciário v2.5
 
 ## Índice de Documentos
 
@@ -57,6 +57,7 @@ Este arquivo serve como índice central para toda a documentação do projeto Le
 | Documento | Descrição | Localização |
 |-----------|-----------|-------------|
 | **plans/** | Planos de implementação e otimização | `/docs/plans/` |
+| **ANALISE_NOVOS_AGENTES_2026.md** | Análise e priorização de novos agentes v2.5 | `/docs/plans/ANALISE_NOVOS_AGENTES_2026.md` |
 | **CRITICAL_AGENT_DESIGN.md** | Design crítico dos agentes | `/docs/CRITICAL_AGENT_DESIGN.md` |
 | **RESEARCH_AGENT_DESIGN.md** | Design do agente de pesquisa | `/docs/RESEARCH_AGENT_DESIGN.md` |
 | **REVIEW_INTERFACE_PLAN.md** | Plano da interface de revisão | `/docs/REVIEW_INTERFACE_PLAN.md` |
@@ -98,28 +99,58 @@ Este arquivo serve como índice central para toda a documentação do projeto Le
 
 ---
 
-## 🤖 Agentes Especializados
+## 🤖 Agentes Especializados - 19/19 VALIDADOS ✅
 
-### Agentes Validados ✅
+### Status de Validação (2026-01-20)
+
+**Todos os 19 agentes validados com 100% de aprovação (>75% threshold)**
+
+| Fase | Agentes | Score | Status |
+|------|---------|-------|--------|
+| Inicial | COBRANÇA, DIVÓRCIO, INVENTÁRIO, SEGUROS | 98.5% | ✅ Validados |
+| Fase 1 | ALIMENTOS, GUARDA | 96% | ✅ Validados |
+| Fase 2 | PATERNIDADE, SAÚDE_COBERTURA | 102.5% | ✅ Validados |
+| Fase 3 | SAÚDE_CONTRATUAL, REPARAÇÃO_DANOS | 99% | ✅ Validados |
+| Fase 4 | TRÂNSITO, USUCAPIÃO | 97.5% | ✅ Validados |
+| Fase 5 | INCORPORAÇÃO, GENÉRICO | 97.5% | ✅ Validados |
+
+### Agentes Legados (v2.1)
 
 | Agente | Volume | Confiança | Status |
 |--------|--------|-----------|--------|
 | Bancário | 35-40% | 0.98 | ✅ Validado |
 | Consumidor | 25-30% | 0.95 | ✅ Validado |
+| Execução | 15-20% | 0.95 | ✅ Validado |
 | Locação | 8-12% | 0.98 | ✅ Validado |
 | Possessórias | 5-8% | 0.98 | ✅ Validado |
 
-### Agentes Pendentes Validação ⏳
+### Agentes v2.4 (Família/Consumidor)
 
-| Agente | Volume | Status |
-|--------|--------|--------|
-| Execução | 15-20% | ⚠️ Issue (truncation) |
-| Saúde Cobertura | 15% | ⏳ Pendente |
-| Saúde Contratual | 10% | ⏳ Pendente |
-| Trânsito | 12% | ⏳ Pendente |
-| Usucapião | 5% | ⏳ Pendente |
-| Incorporação | 8% | ⏳ Pendente |
-| Genérico | ~5% | ⏳ Pendente |
+| Agente | Domínio | Score | Status |
+|--------|---------|-------|--------|
+| **Reparação Danos** | Danos consumeristas | 100% | ✅ Validado |
+| **Alimentos** | Ações de alimentos | 105% | ✅ Validado |
+| **Paternidade** | Investigação/negatória | 100% | ✅ Validado |
+| **Guarda** | Regulamentação guarda | 87% | ✅ Validado |
+
+📄 Documentação: `/docs/AGENTES_FAMILIA_REFERENCIA.md`
+
+### Agentes v2.5
+
+| Agente | Domínio | Score | Status |
+|--------|---------|-------|--------|
+| **Cobrança** | Cobrança e monitória | 105% | ✅ Validado |
+| **Divórcio** | Divórcio e dissolução | 100% | ✅ Validado |
+| **Inventário** | Inventário e partilha | 84% | ✅ Validado |
+| **Seguros** | Contratos de seguro | 105% | ✅ Validado |
+| **Saúde Cobertura** | Negativa de cobertura | 105% | ✅ Validado |
+| **Saúde Contratual** | Reajuste, rescisão | 98% | ✅ Validado |
+| **Trânsito** | Acidentes, indenização | 105% | ✅ Validado |
+| **Usucapião** | Extraordinária, especial | 90% | ✅ Validado |
+| **Incorporação** | Atraso imóvel, vícios | 100% | ✅ Validado |
+| **Genérico** | Fallback com [REVISAR] | 95% | ✅ Validado |
+
+📄 Relatório completo: `/test_cases/test_results/V2.5_AGENT_TEST_REPORT_2026-01-20.md`
 
 ---
 
@@ -127,12 +158,17 @@ Este arquivo serve como índice central para toda a documentação do projeto Le
 
 | Métrica | Valor |
 |---------|-------|
-| Versão | 2.2 |
-| Nodes | 59 |
-| Connections | 52 |
+| Versão | 2.5 |
+| Nodes | 60+ |
+| Connections | 53+ |
 | Quality Score | 95/100 |
-| Agentes | 11 |
-| Agentes Validados | 5 |
+| Agentes | 19 |
+| **Agentes Validados** | **19/19 (100%)** ✅ |
+| Casos de Teste | 32 |
+| Score Médio Global | 98.5% |
+| Domínios | 21 |
+| Súmulas | 45+ |
+| Temas Repetitivos | 12+ |
 
 ---
 
@@ -145,4 +181,4 @@ Este arquivo serve como índice central para toda a documentação do projeto Le
 
 ---
 
-*Atualizado: 2026-01-19 | Lex Intelligentia Judiciário v2.2*
+*Atualizado: 2026-01-20 | Lex Intelligentia Judiciário v2.5*
