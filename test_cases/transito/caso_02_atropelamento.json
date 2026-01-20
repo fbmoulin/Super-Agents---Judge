@@ -1,0 +1,16 @@
+{
+  "caso_id": "transito_02",
+  "descricao": "Atropelamento com lesões corporais graves",
+  "fatos": "LUCIANA MARIA SANTOS ajuizou ação de indenização por danos materiais, morais e estéticos em face de MARCOS VINÍCIUS COSTA e TRANSPORTADORA RÁPIDO LTDA. Narra que em 10/01/2025, às 19h, atravessava a faixa de pedestres na Av. Nossa Senhora da Penha quando foi atropelada pelo caminhão de propriedade da segunda ré, conduzido pelo primeiro réu, empregado da empresa. O veículo avançou o sinal vermelho em alta velocidade. A autora sofreu: fratura exposta de tíbia e fíbula da perna esquerda, traumatismo craniano leve, múltiplas escoriações. Ficou internada por 20 dias (fls. 30-50), passou por duas cirurgias com colocação de pinos metálicos (fl. 55), e necessitará de cirurgia reparadora futura orçada em R$ 25.000,00. Ficou afastada do trabalho por 6 meses, perdendo salários de R$ 3.500,00/mês. Restou com cicatriz permanente de 15cm na perna (fotos fls. 60-65) e claudicação. Juntou: BO (fl. 15), prontuário médico (fls. 30-55), orçamentos médicos (fls. 56-58), contracheques (fls. 70-75). Os réus contestaram alegando culpa exclusiva da vítima, que teria atravessado fora da faixa. Testemunhas confirmaram a versão da autora.",
+  "questoes": "1) Está configurada a responsabilidade dos réus? 2) A empresa responde solidariamente? 3) Cabe cumulação de danos morais e estéticos? 4) Como quantificar os danos?",
+  "pedidos": "a) Danos materiais: R$ 46.000,00; b) Danos morais: R$ 50.000,00; c) Danos estéticos: R$ 30.000,00; d) Pensão vitalícia por incapacidade parcial.",
+  "classe": "Procedimento Comum Cível - Vara Cível",
+  "assunto": "Acidente de Trânsito - Atropelamento",
+  "valor_causa": 150000.00,
+  "expectativa": {
+    "agente_esperado": "agent_transito",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["387"],
+    "artigos_esperados": ["art. 932 CC", "art. 950 CC", "art. 944 CC"]
+  }
+}

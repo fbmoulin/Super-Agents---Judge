@@ -1,0 +1,16 @@
+{
+  "caso_id": "transito_01",
+  "descricao": "Colisão traseira com presunção de culpa",
+  "fatos": "CARLOS ROBERTO ALMEIDA ajuizou ação de reparação de danos materiais e morais em face de JOSÉ FERNANDO SILVA. Narra que em 15/03/2025, às 08h30, conduzia seu veículo VW Polo, placa ABC-1234, pela Av. Fernando Ferrari, Vitória/ES, quando foi violentamente colidido na traseira pelo veículo Honda Civic, placa XYZ-5678, conduzido pelo réu. O acidente ocorreu quando o autor estava parado no semáforo vermelho. O impacto causou danos materiais no para-choque traseiro, tampa do porta-malas e lanternas, orçados em R$ 8.500,00 (fl. 25). O autor sofreu cervicalgia traumática, necessitando de fisioterapia por 30 dias, conforme atestado médico (fl. 30). Ficou 15 dias sem poder trabalhar como representante comercial autônomo, com perda estimada de R$ 4.000,00 em comissões. Juntou: BO (fl. 15), fotos do acidente (fls. 20-24), três orçamentos (fls. 25-27), atestado médico (fl. 30), declaração de rendimentos (fl. 35). O réu contestou alegando que o semáforo ficou verde e o autor arrancou e freou bruscamente, causando a colisão. Não apresentou prova de suas alegações.",
+  "questoes": "1) A presunção de culpa na colisão traseira é absoluta ou relativa? 2) O réu conseguiu elidir a presunção? 3) Quais danos são indenizáveis? 4) Cabe dano moral por acidente sem lesão grave?",
+  "pedidos": "a) Danos materiais de R$ 8.500,00; b) Lucros cessantes de R$ 4.000,00; c) Danos morais de R$ 5.000,00.",
+  "classe": "Procedimento Comum Cível - Vara Cível",
+  "assunto": "Acidente de Trânsito - Colisão Traseira",
+  "valor_causa": 17500.00,
+  "expectativa": {
+    "agente_esperado": "agent_transito",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["54"],
+    "artigos_esperados": ["art. 186 CC", "art. 927 CC", "art. 29 CTB"]
+  }
+}

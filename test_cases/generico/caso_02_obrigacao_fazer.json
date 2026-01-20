@@ -1,0 +1,16 @@
+{
+  "caso_id": "generico_02",
+  "descricao": "Obrigação de fazer atípica - entrega de documentos",
+  "fatos": "EMPRESA LOGÍSTICA SUL LTDA ajuizou ação de obrigação de fazer em face de TRANSPORTES NORTE S/A. Narra que em 15/06/2024 firmou contrato de prestação de serviços de transporte de cargas com a ré, pelo prazo de 12 meses. A cláusula 15.2 do contrato prevê que ao término da avença a ré deverá entregar à autora: (a) todos os documentos fiscais dos fretes realizados; (b) relatório detalhado de sinistros; (c) comprovantes de seguro das cargas; (d) planilha de quilometragem dos veículos utilizados. O contrato encerrou-se em 15/06/2025, porém a ré recusa-se a entregar os documentos sob alegação de que são 'documentos internos'. A autora necessita dos documentos para: (a) prestação de contas a seus clientes; (b) apuração de créditos tributários; (c) eventual ação regressiva por sinistros. Notificou extrajudicialmente a ré em 01/07/2025 (fl. 30), sem resposta. Juntou: contrato (fls. 15-28), notificação extrajudicial com AR (fl. 30), e-mails de cobrança (fls. 35-40). A ré contestou alegando que os documentos são de uso interno e não há obrigação de fornecê-los, além de afirmar que a autora já possui cópias dos documentos fiscais.",
+  "questoes": "1) A obrigação de entrega de documentos está prevista no contrato? 2) A recusa é justificada? 3) Cabe astreintes? 4) Qual prazo para cumprimento?",
+  "pedidos": "a) Entrega dos documentos listados; b) Multa diária de R$ 1.000,00 por descumprimento; c) Honorários e custas.",
+  "classe": "Procedimento Comum Cível - Vara Cível",
+  "assunto": "Obrigação de Fazer",
+  "valor_causa": 20000.00,
+  "expectativa": {
+    "agente_esperado": "agent_generico",
+    "score_minimo": 75,
+    "sumulas_esperadas": [],
+    "artigos_esperados": ["art. 497 CPC", "art. 536 CPC", "art. 537 CPC"]
+  }
+}

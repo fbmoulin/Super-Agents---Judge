@@ -1,0 +1,16 @@
+{
+  "caso_id": "incorporacao_02",
+  "descricao": "Vícios construtivos em imóvel entregue",
+  "fatos": "ANDRÉ LUÍS PEREIRA ajuizou ação de obrigação de fazer c/c indenização em face de MRV ENGENHARIA LTDA. Narra que em 15/08/2024 recebeu as chaves do apartamento 203, Bloco C, do empreendimento 'Parque das Flores', adquirido em 2022 por R$ 280.000,00. Após um mês de moradia, começaram a surgir diversos vícios construtivos: (a) infiltrações no teto da sala e quartos em dias de chuva; (b) trincas nas paredes da cozinha e área de serviço; (c) descolamento de pisos em 3 cômodos; (d) vazamento na tubulação do banheiro; (e) portas e janelas com folgas que impedem vedação. Comunicou a ré em 20/09/2024, que enviou equipe de manutenção, porém os reparos foram superficiais e os problemas persistem. Contratou engenheiro particular que elaborou laudo técnico (fls. 40-60) identificando falhas estruturais e de acabamento, com custo de reparação estimado em R$ 45.000,00. Os vícios tornaram o imóvel impróprio para moradia digna, tendo o autor que se mudar temporariamente para casa de familiares. Juntou: contrato (fl. 20), termo de entrega (fl. 25), fotos dos vícios (fls. 30-38), laudo técnico (fls. 40-60), protocolos de reclamação (fls. 65-70).",
+  "questoes": "1) Os vícios caracterizam responsabilidade da construtora? 2) Qual o prazo de garantia legal? 3) O autor pode exigir reparação ou abatimento? 4) Cabe dano moral?",
+  "pedidos": "a) Reparação integral dos vícios; b) Subsidiariamente, abatimento de R$ 45.000,00; c) Danos morais: R$ 10.000,00.",
+  "classe": "Procedimento Comum Cível - Vara Cível",
+  "assunto": "Incorporação Imobiliária - Vícios Construtivos",
+  "valor_causa": 55000.00,
+  "expectativa": {
+    "agente_esperado": "agent_incorporacao",
+    "score_minimo": 75,
+    "sumulas_esperadas": [],
+    "artigos_esperados": ["art. 618 CC", "art. 26 CDC", "art. 18 CDC"]
+  }
+}

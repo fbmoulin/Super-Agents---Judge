@@ -1,0 +1,16 @@
+{
+  "caso_id": "incorporacao_01",
+  "descricao": "Atraso na entrega de imóvel na planta",
+  "fatos": "PAULO HENRIQUE MARTINS E CARLA REGINA MARTINS ajuizaram ação de indenização por danos materiais e morais em face de CONSTRUTORA ALPHAVILLE LTDA. Narram que em 10/05/2022 firmaram Contrato de Compra e Venda de unidade autônoma (apartamento 501, Bloco B) no empreendimento 'Residencial Vista Mar', pelo preço de R$ 450.000,00, com previsão de entrega em dezembro/2024. Pagaram R$ 180.000,00 de entrada e financiaram o restante pela CEF. A cláusula 8.2 previa tolerância de 180 dias (até junho/2025). Ocorre que até a presente data (janeiro/2026), decorridos 13 meses de atraso além da tolerância, o imóvel não foi entregue. A ré alega problemas com licenciamento ambiental e escassez de mão de obra. Os autores residem de aluguel desde dezembro/2024, pagando R$ 2.500,00/mês (12 meses = R$ 30.000,00). Juntou: contrato (fl. 20), comprovante de pagamentos (fls. 30-50), contrato de locação (fl. 60), recibos de aluguel (fls. 65-76). A ré contestou alegando caso fortuito (pandemia e guerra na Ucrânia), oferecendo acordo para entrega em mais 6 meses com desconto de R$ 10.000,00. Os autores recusaram.",
+  "questoes": "1) O atraso superior a 180 dias gera direito a lucros cessantes? 2) A pandemia/guerra configura caso fortuito? 3) Cabe dano moral pelo atraso? 4) Como calcular os lucros cessantes?",
+  "pedidos": "a) Lucros cessantes: R$ 30.000,00 (aluguéis); b) Lucros cessantes futuros até entrega; c) Danos morais: R$ 20.000,00.",
+  "classe": "Procedimento Comum Cível - Vara Cível",
+  "assunto": "Incorporação Imobiliária - Atraso na Entrega",
+  "valor_causa": 50000.00,
+  "expectativa": {
+    "agente_esperado": "agent_incorporacao",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["543"],
+    "artigos_esperados": ["art. 43 Lei 4.591/64", "Tema 970/STJ", "Tema 996/STJ"]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "caso_id": "usucapiao_02",
+  "descricao": "Usucapião especial urbana - pró-moradia",
+  "fatos": "MARIA DE FÁTIMA SOUZA ajuizou ação de usucapião especial urbana referente ao imóvel situado na Rua Floriano Peixoto, 45, Centro, Cariacica/ES, com área de 180m². Narra que desde 15/03/2019 reside no imóvel com seus 3 filhos menores, exercendo posse mansa e pacífica há mais de 5 anos. O imóvel pertencia a COMPANHIA HABITACIONAL LTDA, empresa que teve falência decretada em 2015, e o síndico declarou não haver interesse na massa (fl. 30). A autora é empregada doméstica com renda de 1,5 salário mínimo, não possui outro imóvel urbano ou rural, e utiliza o terreno exclusivamente para moradia de sua família. Realizou melhorias significativas: construiu um cômodo adicional, reformou telhado e instalações elétricas, com investimento estimado em R$ 35.000,00 (fls. 40-45). Juntou: planta com área de 180m² (fl. 50), declaração de IR negativa (fl. 55), certidão de nascimento dos filhos (fls. 60-62), comprovantes de residência desde 2019 (fls. 70-85), fotos das benfeitorias (fls. 90-100). Os confrontantes foram citados e concordaram com o pedido. O MP opinou favoravelmente.",
+  "questoes": "1) Estão presentes os requisitos do art. 183 CF? 2) A área está dentro do limite de 250m²? 3) A autora preenche os requisitos pessoais? 4) A posse de 5 anos está comprovada?",
+  "pedidos": "a) Declaração de domínio; b) Expedição de mandado de registro.",
+  "classe": "Procedimento Especial de Jurisdição Contenciosa",
+  "assunto": "Usucapião Especial Urbana",
+  "valor_causa": 80000.00,
+  "expectativa": {
+    "agente_esperado": "agent_usucapiao",
+    "score_minimo": 75,
+    "sumulas_esperadas": [],
+    "artigos_esperados": ["art. 183 CF", "art. 1.240 CC"]
+  }
+}
