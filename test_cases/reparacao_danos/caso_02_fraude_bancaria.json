@@ -1,0 +1,16 @@
+{
+  "caso_id": "reparacao_danos_02",
+  "descricao": "Fraude bancária com empréstimo não contratado",
+  "fatos": "MARIA APARECIDA COSTA ajuizou ação declaratória de inexistência de débito c/c indenização por danos morais e materiais em face de BANCO SANTANDER BRASIL S/A. Narra que em fevereiro/2025, ao verificar seu extrato, identificou depósito de R$ 8.000,00 não solicitado, seguido de descontos mensais de R$ 450,00 a título de parcelas de empréstimo. Procurou a agência e foi informada que havia contratado empréstimo consignado em 15/01/2025. Afirma que: (a) nunca solicitou empréstimo; (b) não assinou qualquer contrato; (c) não recebeu valores em sua conta corrente, já que o depósito foi feito em conta poupança que desconhecia; (d) trabalha como servidora pública estadual e jamais autorizou desconto em folha. O réu apresentou contrato supostamente assinado pela autora (fl. 50), porém a assinatura é visivelmente diferente da autora. Foi realizada perícia grafotécnica (fls. 100-120) que concluiu pela FALSIDADE da assinatura. A autora teve R$ 2.250,00 descontados de seu salário (5 parcelas) até a concessão de tutela de urgência. O réu contestou alegando que foi vítima de fraude de terceiros, configurando fortuito externo, e que agiu de boa-fé.",
+  "questoes": "1) O banco responde pela fraude praticada por terceiros? 2) Configura-se fortuito interno ou externo? 3) Quais os danos indenizáveis? 4) Aplica-se a Súmula 479/STJ?",
+  "pedidos": "a) Declaração de inexistência do débito; b) Restituição em dobro de R$ 4.500,00; c) Danos morais de R$ 15.000,00.",
+  "classe": "Procedimento Comum Cível - Vara Cível",
+  "assunto": "Fraude Bancária - Empréstimo Fraudulento",
+  "valor_causa": 25000.00,
+  "expectativa": {
+    "agente_esperado": "agent_reparacao_danos",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["479"],
+    "artigos_esperados": ["art. 14 CDC", "art. 42 CDC"]
+  }
+}

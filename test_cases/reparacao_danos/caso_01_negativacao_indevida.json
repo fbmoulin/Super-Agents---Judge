@@ -1,0 +1,16 @@
+{
+  "caso_id": "reparacao_danos_01",
+  "descricao": "Negativação indevida após quitação de dívida",
+  "fatos": "PEDRO HENRIQUE SANTOS ajuizou ação de indenização por danos morais c/c obrigação de fazer em face de BANCO ITAÚ UNIBANCO S/A. Narra que em 2023 contraiu empréstimo pessoal no valor de R$ 15.000,00, tendo quitado integralmente a dívida em 20/12/2024, conforme comprovante bancário (fl. 18). Em janeiro/2025, ao tentar financiar um veículo, foi surpreendido com a informação de que seu nome estava inscrito nos cadastros de proteção ao crédito (SPC/Serasa) por débito de R$ 3.500,00 junto ao réu, referente ao mesmo contrato já quitado (fl. 25). Procurou a agência bancária por três vezes (fls. 30-32), sendo informado que 'o sistema estava com erro' e que seria resolvido em 15 dias. Após 60 dias sem solução, ajuizou a presente ação. Alega que: (a) a dívida estava quitada há mais de 30 dias quando ocorreu a negativação; (b) nunca recebeu notificação prévia; (c) perdeu a oportunidade de financiamento do veículo; (d) sofreu constrangimento e abalo de crédito. Juntou: comprovante de quitação (fl. 18), extrato SPC/Serasa (fl. 25), protocolos de atendimento (fls. 30-32), proposta de financiamento recusada (fl. 35). O réu contestou alegando que houve falha sistêmica pontual, sem má-fé, e que a inscrição foi excluída em 10 dias após o ajuizamento.",
+  "questoes": "1) A negativação foi indevida? 2) Configura-se dano moral in re ipsa? 3) Qual o valor adequado da indenização? 4) A exclusão posterior elide o dano?",
+  "pedidos": "a) Exclusão definitiva da negativação; b) Danos morais de R$ 15.000,00; c) Custas e honorários.",
+  "classe": "Procedimento Comum Cível - Vara Cível",
+  "assunto": "Indenização por Dano Moral - Negativação Indevida",
+  "valor_causa": 15000.00,
+  "expectativa": {
+    "agente_esperado": "agent_reparacao_danos",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["385"],
+    "artigos_esperados": ["art. 43 CDC", "art. 927 CC"]
+  }
+}

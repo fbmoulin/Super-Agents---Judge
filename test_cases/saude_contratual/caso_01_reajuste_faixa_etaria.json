@@ -1,0 +1,16 @@
+{
+  "caso_id": "saude_contratual_01",
+  "descricao": "Reajuste abusivo por faixa etária para idoso",
+  "fatos": "MARIA DAS GRAÇAS OLIVEIRA, 72 anos, ajuizou ação revisional de contrato c/c repetição de indébito e danos morais em face de SUL AMÉRICA SAÚDE S/A. Narra que é beneficiária do plano desde 1998, ou seja, há 27 anos. Ao completar 60 anos em 2013, sofreu reajuste de 45% por mudança de faixa etária. Após completar 70 anos em 2023, sofreu novo reajuste de 78%, elevando a mensalidade de R$ 1.200,00 para R$ 2.136,00. Atualmente, aos 72 anos, a mensalidade representa 68% de sua aposentadoria de R$ 3.150,00. Alega que os reajustes são abusivos pois: (a) possui o plano há mais de 10 anos, sendo protegida pelo art. 15, §3º da Lei 9.656/98; (b) os percentuais são muito superiores aos autorizados pela ANS; (c) configuram discriminação por idade. Juntou: contrato (fl. 20), histórico de reajustes (fl. 25), comprovante de aposentadoria (fl. 30), demonstrativo de pagamentos (fls. 35-50). A ré contestou alegando que os reajustes estão previstos contratualmente, foram comunicados previamente, e estão em conformidade com o Tema 952/STJ que validou reajustes por faixa etária quando previstos no contrato.",
+  "questoes": "1) Os reajustes por faixa etária são abusivos? 2) Aplica-se o art. 15, §3º da Lei 9.656/98? 3) Como incide o Tema 952/STJ? 4) Cabe repetição do indébito?",
+  "pedidos": "a) Declaração de nulidade dos reajustes; b) Revisão da mensalidade; c) Repetição do indébito; d) Danos morais de R$ 10.000,00.",
+  "classe": "Procedimento Comum Cível - Vara Cível",
+  "assunto": "Plano de Saúde - Reajuste por Faixa Etária",
+  "valor_causa": 30000.00,
+  "expectativa": {
+    "agente_esperado": "agent_saude_contratual",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["469"],
+    "artigos_esperados": ["art. 15 Lei 9.656/98", "Tema 952/STJ"]
+  }
+}

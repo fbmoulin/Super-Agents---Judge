@@ -1,0 +1,16 @@
+{
+  "caso_id": "saude_contratual_02",
+  "descricao": "Rescisão unilateral durante tratamento oncológico",
+  "fatos": "ANTÔNIO JOSÉ FERREIRA ajuizou ação de obrigação de fazer c/c danos morais em face de AMIL ASSISTÊNCIA MÉDICA S/A. Narra que era beneficiário do plano individual desde 2015. Em março/2025 foi diagnosticado com linfoma de Hodgkin, iniciando tratamento quimioterápico. No curso do tratamento (5ª sessão de 8 previstas), recebeu notificação de rescisão unilateral do contrato, com prazo de 30 dias (fl. 30). A operadora alegou 'reestruturação da carteira de planos individuais' como motivo. O autor tem 55 anos, está afastado do trabalho por auxílio-doença, e depende exclusivamente do plano para o tratamento. Juntou: contrato (fl. 20), notificação de rescisão (fl. 30), relatório médico com plano terapêutico (fl. 35), comprovante de pagamentos em dia nos últimos 24 meses (fls. 40-50). A tutela de urgência foi deferida para manutenção do plano (fl. 60). A ré contestou alegando exercício regular de direito previsto contratualmente, oferecendo portabilidade para outro plano com carências. O MP manifestou-se pela procedência.",
+  "questoes": "1) A rescisão unilateral durante tratamento é válida? 2) Aplica-se o art. 13 da Lei 9.656/98? 3) A cláusula de rescisão é abusiva? 4) Houve dano moral?",
+  "pedidos": "a) Confirmação da tutela; b) Manutenção do contrato; c) Declaração de nulidade da rescisão; d) Danos morais de R$ 20.000,00.",
+  "classe": "Procedimento Comum Cível - Vara Cível",
+  "assunto": "Plano de Saúde - Rescisão Contratual",
+  "valor_causa": 40000.00,
+  "expectativa": {
+    "agente_esperado": "agent_saude_contratual",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["608"],
+    "artigos_esperados": ["art. 13 Lei 9.656/98", "art. 51 CDC"]
+  }
+}
