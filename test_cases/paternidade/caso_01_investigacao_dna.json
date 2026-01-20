@@ -1,0 +1,16 @@
+{
+  "caso_id": "paternidade_01",
+  "descricao": "Investigação de paternidade com exame DNA positivo",
+  "fatos": "MARIA CLARA SILVA SANTOS, menor impúbere, representada por sua genitora JULIANA SILVA SANTOS, ajuizou ação de investigação de paternidade c/c alimentos em face de ROBERTO CARLOS FERREIRA LIMA. Narra a genitora que manteve relacionamento amoroso com o requerido no período de janeiro a setembro de 2018, quando engravidou. A menor nasceu em 20/05/2019 (fl. 12). Afirma que o requerido sempre negou a paternidade e nunca prestou qualquer auxílio material. A família materna arca com todas as despesas da menor, estimadas em R$ 2.500,00 mensais, incluindo escola particular (R$ 900,00), plano de saúde (R$ 350,00), alimentação, vestuário e lazer. A genitora é professora municipal com salário de R$ 3.800,00. Requereu a fixação de alimentos provisórios. Foram fixados alimentos provisórios em 30% do salário mínimo (fl. 25). Citado, o réu contestou (fls. 35-45) negando o relacionamento, afirmando que teve apenas encontros casuais com a genitora e que ela se relacionava com outras pessoas no mesmo período. Requereu a realização de exame de DNA. Foi determinada a produção de prova pericial genética. O laudo do IMESC (fls. 80-85) concluiu pela INCLUSÃO da paternidade com probabilidade de 99,9999%. O réu é comerciante autônomo, não comprovou rendimentos, mas possui veículo ano 2022 e imóvel próprio. O MP opinou pela procedência do pedido de reconhecimento e fixação de alimentos em 1/3 dos rendimentos.",
+  "questoes": "1) Está configurada a paternidade biológica com base no exame de DNA? 2) Quais os efeitos do reconhecimento da paternidade? 3) Como devem ser fixados os alimentos? 4) Desde quando são devidos os alimentos?",
+  "pedidos": "a) Declaração de paternidade; b) Averbação no registro civil; c) Fixação de alimentos definitivos em 33% dos rendimentos; d) Alimentos retroativos desde a citação.",
+  "classe": "Procedimento Comum Cível - Vara de Família",
+  "assunto": "Investigação de Paternidade c/c Alimentos",
+  "valor_causa": 30000.00,
+  "expectativa": {
+    "agente_esperado": "agent_paternidade",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["277", "301"],
+    "artigos_esperados": ["art. 1.597 CC", "Lei 8.560/92", "art. 27 ECA"]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "caso_id": "saude_cobertura_02",
+  "descricao": "Negativa de cobertura para medicamento oncológico",
+  "fatos": "JOÃO MARCOS PEREIRA DA SILVA ajuizou ação de obrigação de fazer c/c danos morais em face de BRADESCO SAÚDE S/A. Narra que é beneficiário do plano empresarial há 12 anos. Em janeiro/2025 foi diagnosticado com câncer de pulmão não-pequenas células (CPNPC) em estágio avançado (estágio IV). Seu oncologista prescreveu tratamento com PEMBROLIZUMAB (Keytruda), imunoterápico de última geração, como única alternativa terapêutica eficaz para seu caso, após falha da quimioterapia convencional. O medicamento custa aproximadamente R$ 25.000,00 por aplicação, sendo necessárias aplicações quinzenais. A operadora negou cobertura alegando que: (a) o medicamento é de uso off-label para seu tipo específico de tumor; (b) não consta no rol de procedimentos da ANS; (c) há alternativas terapêuticas no rol. Juntou relatório oncológico detalhado (fl. 30), laudo anatomopatológico (fl. 35), exames de imagem mostrando progressão tumoral (fls. 40-50), parecer de junta médica recomendando o tratamento (fl. 55), e negativa formal da operadora (fl. 60). O autor tem 58 anos, é funcionário público aposentado, e não possui condições financeiras de arcar com o tratamento particular. A tutela de urgência foi deferida (fl. 80), determinando o fornecimento imediato do medicamento. A ré contestou alegando exercício regular de direito, ausência de cobertura contratual e impossibilidade de fornecimento de medicamento experimental.",
+  "questoes": "1) O medicamento off-label deve ter cobertura obrigatória? 2) O rol da ANS é taxativo ou exemplificativo? 3) A recusa configurou abuso de direito? 4) São devidos danos morais?",
+  "pedidos": "a) Confirmação da tutela; b) Cobertura integral do tratamento; c) Danos morais de R$ 30.000,00.",
+  "classe": "Procedimento Comum Cível - Vara Cível",
+  "assunto": "Plano de Saúde - Cobertura de Medicamento",
+  "valor_causa": 100000.00,
+  "expectativa": {
+    "agente_esperado": "agent_saude_cobertura",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["608"],
+    "artigos_esperados": ["art. 12 Lei 9.656/98", "art. 35-C Lei 9.656/98"]
+  }
+}

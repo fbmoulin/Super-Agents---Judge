@@ -1,0 +1,16 @@
+{
+  "caso_id": "paternidade_02",
+  "descricao": "Negatória de paternidade com vínculo socioafetivo consolidado",
+  "fatos": "CARLOS EDUARDO MARTINS ajuizou ação negatória de paternidade em face do menor LUCAS MARTINS SOUZA, representado por sua genitora ANA PAULA SOUZA. Alega que em 2010 registrou o menor como seu filho, acreditando ser o pai biológico, pois mantinha relacionamento com a genitora. O menor, hoje com 14 anos, sempre foi tratado como seu filho, tendo convivido com ele durante toda a infância, participado de sua criação e educação. Em 2024, após o fim do relacionamento com a genitora, descobriu através de exame particular de DNA que não é o pai biológico do menor. O laudo juntado (fl. 28) apresenta probabilidade de exclusão de paternidade de 0%. O autor afirma que foi enganado pela genitora e que o registro foi feito com erro substancial, requerendo sua anulação. Em contestação, o menor, através da genitora e do Defensor Público, alegou a existência de vínculo socioafetivo consolidado ao longo de 14 anos, com tratamento como pai e filho, reputação pública de filiação, e que o autor é a única referência paterna que conhece. Juntou fotos de aniversários, formaturas, viagens em família (fls. 50-80), declaração de professores sobre a presença do autor em reuniões escolares (fl. 85), e mensagens de afeto trocadas entre as partes (fls. 90-100). O estudo psicossocial (fls. 120-135) identificou forte vínculo afetivo entre autor e menor, recomendando a manutenção da paternidade. O MP opinou pela improcedência.",
+  "questoes": "1) A ausência de vínculo biológico é suficiente para desconstituir a paternidade registral? 2) Está configurada a paternidade socioafetiva? 3) Como aplicar o Tema 622/STF ao caso? 4) Qual o melhor interesse do menor?",
+  "pedidos": "a) Declaração de inexistência de vínculo biológico; b) Anulação do registro civil; c) Exclusão do nome do autor como genitor.",
+  "classe": "Procedimento Comum Cível - Vara de Família",
+  "assunto": "Negatória de Paternidade",
+  "valor_causa": 10000.00,
+  "expectativa": {
+    "agente_esperado": "agent_paternidade",
+    "score_minimo": 75,
+    "sumulas_esperadas": [],
+    "artigos_esperados": ["art. 1.601 CC", "art. 1.604 CC", "Tema 622/STF"]
+  }
+}

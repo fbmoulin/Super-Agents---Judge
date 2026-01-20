@@ -1,0 +1,16 @@
+{
+  "caso_id": "saude_cobertura_01",
+  "descricao": "Negativa de cobertura para cirurgia bariátrica",
+  "fatos": "FERNANDA RIBEIRO COSTA ajuizou ação de obrigação de fazer c/c danos morais em face de UNIMED VITÓRIA COOPERATIVA. Narra que é beneficiária do plano de saúde há 8 anos, com cobertura hospitalar completa. Diagnosticada com obesidade mórbida (IMC 42), diabetes tipo 2 descompensada e hipertensão arterial severa, seu médico assistente prescreveu cirurgia bariátrica (gastroplastia redutora) com urgência, sob risco de complicações graves. Juntou relatório médico detalhado (fl. 25), exames pré-operatórios (fls. 30-45), parecer do endocrinologista (fl. 48) e do cardiologista (fl. 52), todos recomendando o procedimento. Ao solicitar autorização, a operadora negou a cobertura alegando que o procedimento seria 'eletivo' e 'estético', não havendo urgência médica. A negativa foi formalizada por e-mail (fl. 60). A autora tentou recurso administrativo, também negado (fl. 65). Alega que a negativa é abusiva, pois a cirurgia é reconhecida pelo CFM e pela ANS como tratamento para obesidade mórbida. Requereu tutela de urgência para realização imediata do procedimento. A tutela foi deferida (fl. 75), sendo a cirurgia realizada com sucesso em 15/03/2025. A ré contestou (fls. 100-120) alegando que o procedimento estava em carência especial de 24 meses para cirurgias de grande porte, que a autora não cumpriu protocolo de tratamento conservador por 2 anos, e que não havia urgência caracterizada. O MP não interveio.",
+  "questoes": "1) A negativa de cobertura foi abusiva? 2) A carência especial alegada é válida? 3) A cirurgia bariátrica tem cobertura obrigatória? 4) Houve dano moral indenizável?",
+  "pedidos": "a) Confirmação da tutela de urgência; b) Declaração de abusividade da negativa; c) Condenação em danos morais de R$ 20.000,00.",
+  "classe": "Procedimento Comum Cível - Vara Cível",
+  "assunto": "Plano de Saúde - Negativa de Cobertura",
+  "valor_causa": 50000.00,
+  "expectativa": {
+    "agente_esperado": "agent_saude_cobertura",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["302", "469"],
+    "artigos_esperados": ["art. 10 Lei 9.656/98", "art. 14 CDC"]
+  }
+}
