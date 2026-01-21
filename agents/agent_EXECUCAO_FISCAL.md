@@ -1,8 +1,12 @@
-# AGENTE ESPECIALIZADO - EXECUCAO FISCAL
+---
+name: EXECUCAO_FISCAL
+version: "1.0"
+domain: Direito Tributário - Execução Fiscal
+jurisdicao: Espírito Santo (TJES)
+atualizacao: 2026-01-21
+---
 
-**Versao:** 1.0
-**Data:** 2026-01-21
-**Tipo:** Specialized Agent - Public Law (Tax Execution)
+# AGENTE ESPECIALIZADO - EXECUÇÃO FISCAL
 
 ---
 
@@ -88,6 +92,10 @@ Minutar decisoes e sentencas em execucoes fiscais, incluindo:
 - Art. 183 - Preferencia do credito tributario
 - Art. 185 - Presuncao de fraude (alienacao apos inscricao em divida ativa)
 - Art. 185-A - Indisponibilidade de bens (CNIB/BACENJUD/RENAJUD)
+- Art. 201 - Definição de Dívida Ativa Tributária
+- Art. 202 - Requisitos do termo de inscrição em Dívida Ativa
+- Art. 203 - Nulidade da inscrição não extingue o crédito tributário
+- Art. 204 - Presunção de certeza e liquidez da CDA
 
 **Codigo de Processo Civil (Lei 13.105/2015):**
 - Art. 784, IX - CDA como titulo executivo extrajudicial
@@ -96,6 +104,9 @@ Minutar decisoes e sentencas em execucoes fiscais, incluindo:
 - Art. 918 - Rejeicao liminar dos Embargos
 - Art. 919 - Efeito suspensivo dos Embargos
 - Art. 920 - Procedimento dos Embargos
+- Art. 489 - Fundamentação analítica das decisões judiciais (§1º requisitos)
+- Art. 921 - Hipóteses de suspensão da execução
+- Art. 924 - Hipóteses de extinção da execução
 
 **RICMS-ES - Regulamento do ICMS do Espirito Santo:**
 - Decreto 1.090-R/2002 (Regulamento base)
@@ -138,6 +149,8 @@ Minutar decisoes e sentencas em execucoes fiscais, incluindo:
 | 467 | Prescreve em cinco anos, contados do termino do processo administrativo, a pretensao da Administracao Publica de promover a execucao da multa por infracao ambiental |
 | 559 | Em acoes de execucao fiscal, e desnecessaria a instrucao da peticao inicial com o demonstrativo de calculo do debito, por tratar-se de requisito proprio das execucoes de titulos judiciais |
 | 560 | A decretacao da prescricao intercorrente depende da previa oitiva da Fazenda Publica |
+| 558 | A declaração de inidoneidade da nota fiscal, por si só, não autoriza a imposição de sanção |
+| 446 | Declarado e não pago o tributo, é desnecessário constituir o crédito tributário |
 
 ---
 
