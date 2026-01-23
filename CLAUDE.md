@@ -14,13 +14,14 @@ Sistema multi-agente para automação de minutas judiciais (decisões e sentenç
 | v2.2 | Produção | 11 agentes, hierarchical router, Stage 2 conditional |
 | v2.3 | Legacy | +LEX PROMPTER (geração dinâmica), Knowledge Base, 100% cobertura |
 | v2.4 | Legacy | +4 Agentes Família (Alimentos, Paternidade, Guarda) + Reparação Danos |
-| v2.5 | **Atual** | +4 Agentes (Cobrança, Divórcio, Inventário, Seguros) - 19 agentes total |
+| v2.5 | Legacy | +4 Agentes (Cobrança, Divórcio, Inventário, Seguros) - 19 agentes total |
+| v2.6 | **Atual** | +2 Agentes Fazenda Pública (Execução Fiscal, Resp. Civil Estado) - 21 agentes |
 
 ## Status do Projeto
 
 ```
 ╔═══════════════════════════════════════════════════════════════╗
-║  ✅ WORKFLOW v2.5 - 19 AGENTES ESPECIALIZADOS                   ║
+║  ✅ WORKFLOW v2.6 - 21 AGENTES ESPECIALIZADOS                   ║
 ║                                                               ║
 ║  Quality Score: 95/100 (estrutura)                            ║
 ║  Nodes: 60+ | Connections: 53+                                ║
@@ -59,6 +60,12 @@ Sistema multi-agente para automação de minutas judiciais (decisões e sentenç
 ║  FASE 5 - INCORPORACAO/FALLBACK VALIDADOS (2026-01-20):       ║
 ║  ✓ agent_INCORPORACAO    - Score 100% (2/2 casos)             ║
 ║  ✓ agent_GENERICO        - Score 95%  (2/2 casos)             ║
+║                                                               ║
+║  FASE 6 - FAZENDA PUBLICA (2026-01-21):                       ║
+║  ✓ agent_EXECUCAO_FISCAL    - Estrutura validada (2/2 casos)  ║
+║  ✓ agent_RESP_CIVIL_ESTADO  - Estrutura validada (2/2 casos)  ║
+║  ⏳ agent_MANDADO_SEGURANCA - Pendente                         ║
+║  ⏳ agent_SAUDE_MEDICAMENTOS- Pendente                         ║
 ║                                                               ║
 ║  TESTES v2.5 + FASES 1-5 CONCLUIDOS:                          ║
 ║  ✓ 32 casos de teste executados                               ║
@@ -225,6 +232,8 @@ Disponível em `~/.claude/skills/LegalPromptGenerator/`:
 | `agents/agent_DIVORCIO.md` | **v2.5** | Agente divórcio e dissolução |
 | `agents/agent_INVENTARIO.md` | **v2.5** | Agente inventário e partilha |
 | `agents/agent_SEGUROS.md` | **v2.5** | Agente contratos de seguro |
+| `agents/agent_EXECUCAO_FISCAL.md` | **v2.6** | Agente execução fiscal (LEF/CTN) |
+| `agents/agent_RESP_CIVIL_ESTADO.md` | **v2.6** | Agente responsabilidade civil do Estado |
 | `knowledge_base/sumulas.json` | **NOVO** | Súmulas STJ/STF pesquisáveis |
 | `knowledge_base/temas_repetitivos.json` | **NOVO** | Temas com detalhamento |
 | `knowledge_base/domain_mapping.json` | **NOVO** | Mapping keywords → domínios |
@@ -257,6 +266,8 @@ Disponível em `~/.claude/skills/LegalPromptGenerator/`:
 | **Divórcio** | 8-12% | Súmulas 197, 377/STF, 380/STF, CC arts. 1.571-1.590 |
 | **Inventário** | 5-8% | Súmulas 112/STF, 331/STF, 542/STF, CC arts. 1.784-1.856 |
 | **Seguros** | 5-8% | Súmulas 101, 402, 465, 537, 610, CC arts. 757-802 |
+| **Execução Fiscal** | 10-15% | Súmulas 314, 392, 393, 430, 435/STJ, LEF arts. 2, 16, 40, CTN arts. 135, 174 |
+| **Resp. Civil Estado** | 5-8% | Art. 37 §6º CF, Súmulas 37, 54, 362, 387/STJ, Temas 940, 366, 698 |
 
 ## Checklist de Implementação v2.2
 
@@ -285,6 +296,27 @@ Disponível em `~/.claude/skills/LegalPromptGenerator/`:
 - [x] Data flow simulation
 - [x] Edge case testing
 - [x] Error handling verification
+
+### Implantação n8n Cloud (2026-01-21)
+
+**Instância:** `https://lexintel.app.n8n.cloud`
+**Workflow:** `Lex Intelligentia v2.1.1 - FIXED FOR CLOUD` (ID: `kykdTJrSVdFuVwtHknqoi`)
+**Webhook:** `https://lexintel.app.n8n.cloud/webhook/lex-intelligentia-agentes`
+
+#### Fixes Aplicados via Synta MCP:
+- [x] Webhook `responseMode` alterado de "Immediately" para "responseNode"
+- [x] AI Agent nodes atualizados de typeVersion 2 para typeVersion 3
+- [x] Workflow publicado em produção
+
+#### Migração OpenAI → Anthropic (Em Andamento):
+- [ ] Criar credencial Anthropic no n8n
+- [ ] Substituir OpenAI Model nodes por Anthropic Chat Model nodes
+- [ ] Configurar modelo `claude-sonnet-4-20250514`
+- [ ] Testar webhook após migração
+- [ ] Publicar workflow atualizado
+
+**Issue Identificado:** OpenAI API key inválida (`sk-proj-***MzEA`) causando erro 401
+**Solução Escolhida:** Migrar para Anthropic Claude conforme documentado
 
 ### Configuração n8n Cloud (✅ Completo)
 - [x] Credencial `Gemini API Key` (HTTP Header Auth)
@@ -500,4 +532,4 @@ psql -U postgres -d lex_intelligentia -f init_db_audit_logs.sql
 
 ---
 
-*Ultima atualizacao: 2026-01-20 | Versao: 2.5 | Quality Score: 95/100 | 19 agentes especializados, 90-95% cobertura*
+*Ultima atualizacao: 2026-01-21 | Versao: 2.6 | Quality Score: 95/100 | 21 agentes especializados, 90-95% cobertura | n8n Cloud: migração Anthropic em andamento*

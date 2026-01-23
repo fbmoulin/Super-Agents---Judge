@@ -430,6 +430,22 @@ ALTO:   confianca < 0.50 || agent_generico
 
 📊 Relatório completo: `test_cases/test_results/V2.5_AGENT_TEST_REPORT_2026-01-20.md`
 
+### Fase 2.6 - Agentes Fazenda Pública (Em Andamento)
+- [x] Plano de implementação criado (`docs/plans/2026-01-21-agentes-fazenda-publica.md`)
+- [x] **agent_EXECUCAO_FISCAL** - Execuções fiscais estaduais/municipais (CAMADA 0-1 completo)
+- [ ] agent_EXECUCAO_FISCAL - CAMADA 2-4 (metodologia e templates)
+- [ ] agent_RESP_CIVIL_ESTADO - Responsabilidade civil do Estado
+- [ ] agent_MANDADO_SEGURANCA - Mandado de segurança contra Fazenda
+- [ ] agent_SAUDE_MEDICAMENTOS - Fornecimento de medicamentos (STF Temas 6, 500, 793, 1234)
+
+**Novos domínios:**
+| Agente | Domínio | Base Legal |
+|--------|---------|------------|
+| EXECUCAO_FISCAL | Execuções fiscais | LEF 6.830/80, CTN, RICMS-ES |
+| RESP_CIVIL_ESTADO | Responsabilidade civil | CF art. 37 §6º, CC arts. 43, 927, 945 |
+| MANDADO_SEGURANCA | Writ of mandamus | Lei 12.016/2009, CF art. 5º LXIX |
+| SAUDE_MEDICAMENTOS | Direito à saúde | STF Temas 6, 500, 793, 1234, SV 61 |
+
 ### Fase 3 - Vector Store (Próxima)
 - [ ] Download dados STJ
 - [ ] Ingestão no Qdrant
