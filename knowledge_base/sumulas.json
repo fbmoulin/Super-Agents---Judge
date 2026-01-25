@@ -1,0 +1,258 @@
+{
+  "metadata": {
+    "version": "1.1",
+    "lastUpdate": "2026-01-20",
+    "source": "STJ/STF consolidado"
+  },
+  "sumulas": {
+    "STJ": {
+      "7": {
+        "texto": "A pretensão de simples reexame de prova não enseja recurso especial",
+        "domains": ["processual"],
+        "keywords": ["prova", "recurso especial", "reexame"]
+      },
+      "30": {
+        "texto": "A comissão de permanência e a correção monetária são inacumuláveis",
+        "domains": ["bancario"],
+        "keywords": ["comissão de permanência", "correção monetária", "banco"]
+      },
+      "297": {
+        "texto": "O Código de Defesa do Consumidor é aplicável às instituições financeiras",
+        "domains": ["bancario", "consumidor"],
+        "keywords": ["CDC", "banco", "financeira", "consumidor", "instituição financeira"]
+      },
+      "302": {
+        "texto": "É abusiva a cláusula contratual de plano de saúde que limita no tempo a internação hospitalar do segurado",
+        "domains": ["saude"],
+        "keywords": ["plano de saúde", "internação", "UTI", "limite", "hospitalar"]
+      },
+      "340": {
+        "texto": "No contrato de abertura de crédito em conta corrente, a não entrega do extrato ao correntista é descumprimento do dever de informar",
+        "domains": ["bancario"],
+        "keywords": ["conta corrente", "extrato", "banco", "informação"]
+      },
+      "362": {
+        "texto": "A correção monetária do valor da indenização do dano moral incide desde a data do arbitramento",
+        "domains": ["obrigacional", "responsabilidade_civil"],
+        "keywords": ["dano moral", "correção monetária", "arbitramento", "indenização"]
+      },
+      "379": {
+        "texto": "Nos contratos bancários não regidos por legislação específica, os juros moratórios poderão ser convencionados até o limite de 1% ao mês",
+        "domains": ["bancario"],
+        "keywords": ["juros moratórios", "banco", "1%", "contrato bancário"]
+      },
+      "381": {
+        "texto": "Nos contratos bancários, é vedado ao julgador conhecer, de ofício, da abusividade das cláusulas",
+        "domains": ["bancario", "processual"],
+        "keywords": ["banco", "cláusula abusiva", "ofício", "conhecimento"]
+      },
+      "382": {
+        "texto": "A estipulação de juros remuneratórios superiores a 12% ao ano, por si só, não indica abusividade",
+        "domains": ["bancario"],
+        "keywords": ["juros remuneratórios", "12%", "abusividade", "banco"]
+      },
+      "469": {
+        "texto": "Aplica-se o Código de Defesa do Consumidor aos contratos de plano de saúde",
+        "domains": ["saude", "consumidor"],
+        "keywords": ["plano de saúde", "CDC", "consumidor", "contrato"]
+      },
+      "472": {
+        "texto": "A cobrança de comissão de permanência - cujo valor não pode ultrapassar a soma dos encargos remuneratórios e moratórios previstos no contrato - exclui a exigibilidade dos juros remuneratórios, moratórios e da multa contratual",
+        "domains": ["bancario"],
+        "keywords": ["comissão de permanência", "juros", "multa", "banco"]
+      },
+      "539": {
+        "texto": "É permitida a capitalização de juros com periodicidade inferior à anual em contratos celebrados com instituições integrantes do Sistema Financeiro Nacional a partir de 31/3/2000",
+        "domains": ["bancario"],
+        "keywords": ["capitalização", "juros", "SFN", "banco", "anatocismo"]
+      },
+      "541": {
+        "texto": "A previsão no contrato bancário de taxa de juros anual superior ao duodécuplo da mensal é suficiente para permitir a cobrança da taxa efetiva anual contratada",
+        "domains": ["bancario"],
+        "keywords": ["taxa de juros", "anual", "mensal", "banco"]
+      },
+      "543": {
+        "texto": "Na hipótese de resolução de contrato de promessa de compra e venda de imóvel submetido ao Código de Defesa do Consumidor, deve ocorrer a imediata restituição das parcelas pagas pelo promitente comprador",
+        "domains": ["incorporacao", "consumidor"],
+        "keywords": ["imóvel", "resolução", "restituição", "compra e venda", "incorporadora"]
+      },
+      "565": {
+        "texto": "A pactuação das tarifas de abertura de crédito (TAC) e de emissão de carnê (TEC), ou outra denominação para o mesmo fato gerador, é válida apenas nos contratos bancários anteriores a 30/4/2008",
+        "domains": ["bancario"],
+        "keywords": ["TAC", "TEC", "tarifa", "banco", "abertura de crédito"]
+      },
+      "597": {
+        "texto": "A cláusula contratual de plano de saúde que prevê carência para utilização dos serviços de assistência médica nas situações de emergência ou de urgência é considerada abusiva se ultrapassado o prazo máximo de 24 horas contado da data da contratação",
+        "domains": ["saude"],
+        "keywords": ["plano de saúde", "carência", "emergência", "urgência", "24 horas"]
+      },
+      "608": {
+        "texto": "Aplica-se o Código de Defesa do Consumidor aos contratos de plano de saúde, salvo os administrados por entidades de autogestão",
+        "domains": ["saude", "consumidor"],
+        "keywords": ["plano de saúde", "CDC", "autogestão"]
+      },
+      "609": {
+        "texto": "A recusa de cobertura securitária, sob a alegação de doença preexistente, é ilícita se não houve a exigência de exames médicos prévios à contratação ou a demonstração de má-fé do segurado",
+        "domains": ["saude"],
+        "keywords": ["plano de saúde", "doença preexistente", "cobertura", "má-fé", "exame prévio"]
+      },
+      "277": {
+        "texto": "Julgada procedente a investigação de paternidade, os alimentos são devidos a partir da citação",
+        "domains": ["paternidade", "alimentos"],
+        "keywords": ["investigação de paternidade", "alimentos", "citação", "filiação"]
+      },
+      "301": {
+        "texto": "Em ação investigatória, a recusa do suposto pai a submeter-se ao exame de DNA induz presunção juris tantum de paternidade",
+        "domains": ["paternidade"],
+        "keywords": ["investigação de paternidade", "DNA", "recusa", "presunção"]
+      },
+      "309": {
+        "texto": "O débito alimentar que autoriza a prisão civil do alimentante é o que compreende as três prestações anteriores ao ajuizamento da execução e as que se vencerem no curso do processo",
+        "domains": ["alimentos"],
+        "keywords": ["alimentos", "prisão civil", "execução", "três prestações"]
+      },
+      "336": {
+        "texto": "A mulher que renunciou aos alimentos na separação judicial tem direito à pensão previdenciária por morte do ex-marido, comprovada a necessidade econômica superveniente",
+        "domains": ["alimentos"],
+        "keywords": ["alimentos", "renúncia", "pensão previdenciária", "necessidade superveniente"]
+      },
+      "358": {
+        "texto": "O cancelamento de pensão alimentícia de filho que atingiu a maioridade está sujeito à decisão judicial, mediante contraditório, ainda que nos próprios autos",
+        "domains": ["alimentos"],
+        "keywords": ["alimentos", "maioridade", "cancelamento", "contraditório", "exoneração"]
+      },
+      "383": {
+        "texto": "A competência para processar e julgar as ações conexas de interesse de menor é, em princípio, do foro do domicílio do detentor de sua guarda",
+        "domains": ["guarda", "processual"],
+        "keywords": ["guarda", "competência", "menor", "domicílio", "foro"]
+      },
+      "385": {
+        "texto": "Da anotação irregular em cadastro de proteção ao crédito, não cabe indenização por dano moral, quando preexistente legítima inscrição, ressalvado o direito ao cancelamento",
+        "domains": ["reparacao_danos", "consumidor"],
+        "keywords": ["negativação", "SPC", "Serasa", "dano moral", "inscrição preexistente"]
+      },
+      "387": {
+        "texto": "É lícita a cumulação das indenizações de dano estético e dano moral",
+        "domains": ["reparacao_danos", "responsabilidade_civil"],
+        "keywords": ["dano estético", "dano moral", "cumulação", "indenização"]
+      },
+      "388": {
+        "texto": "A simples devolução indevida de cheque caracteriza dano moral, independentemente de prova do prejuízo sofrido pela vítima",
+        "domains": ["reparacao_danos", "bancario"],
+        "keywords": ["cheque", "devolução indevida", "dano moral", "in re ipsa"]
+      },
+      "403": {
+        "texto": "Independe de prova do prejuízo a indenização pela publicação não autorizada de imagem de pessoa com fins econômicos ou comerciais",
+        "domains": ["reparacao_danos", "responsabilidade_civil"],
+        "keywords": ["imagem", "publicação não autorizada", "dano moral", "in re ipsa"]
+      },
+      "479": {
+        "texto": "As instituições financeiras respondem objetivamente pelos danos gerados por fortuito interno relativo a fraudes e delitos praticados por terceiros no âmbito de operações bancárias",
+        "domains": ["reparacao_danos", "bancario", "consumidor"],
+        "keywords": ["banco", "fraude", "responsabilidade objetiva", "fortuito interno", "terceiros"]
+      },
+      "594": {
+        "texto": "O Ministério Público tem legitimidade ativa para ajuizar ação de alimentos em proveito de criança ou adolescente independentemente do exercício do poder familiar dos pais, ou do fato de o menor se encontrar nas situações de risco descritas no art. 98 do Estatuto da Criança e do Adolescente",
+        "domains": ["alimentos"],
+        "keywords": ["alimentos", "Ministério Público", "legitimidade", "menor", "ECA"]
+      },
+      "596": {
+        "texto": "A obrigação alimentar dos avós tem natureza complementar e subsidiária, somente se configurando no caso de impossibilidade total ou parcial de seu cumprimento pelos pais",
+        "domains": ["alimentos"],
+        "keywords": ["alimentos", "avós", "subsidiária", "complementar", "impossibilidade"]
+      },
+      "621": {
+        "texto": "Os efeitos da sentença que reduz, majora ou exonera o alimentante do pagamento retroagem à data da citação, vedadas a compensação e a repetição do indébito",
+        "domains": ["alimentos"],
+        "keywords": ["alimentos", "revisional", "exoneratória", "retroatividade", "citação"]
+      },
+      "54": {
+        "texto": "Os juros moratórios fluem a partir do evento danoso, em caso de responsabilidade extracontratual",
+        "domains": ["cobranca", "responsabilidade_civil"],
+        "keywords": ["juros moratórios", "evento danoso", "responsabilidade extracontratual", "termo inicial"]
+      },
+      "101": {
+        "texto": "A ação de indenização do segurado em grupo contra a seguradora prescreve em um ano",
+        "domains": ["seguros"],
+        "keywords": ["seguro", "prescrição", "um ano", "indenização", "segurado"]
+      },
+      "197": {
+        "texto": "O divórcio direto pode ser concedido sem que haja prévia partilha dos bens",
+        "domains": ["divorcio"],
+        "keywords": ["divórcio", "partilha de bens", "prévia", "dispensa"]
+      },
+      "402": {
+        "texto": "O contrato de seguro por danos pessoais compreende os danos morais, salvo cláusula expressa de exclusão",
+        "domains": ["seguros"],
+        "keywords": ["seguro", "danos pessoais", "danos morais", "cobertura"]
+      },
+      "465": {
+        "texto": "Ressalvada a hipótese de efetivo agravamento do risco, a seguradora não se exime do dever de indenizar em razão da transferência do veículo sem a sua prévia comunicação",
+        "domains": ["seguros"],
+        "keywords": ["seguro", "veículo", "transferência", "agravamento de risco", "comunicação"]
+      },
+      "530": {
+        "texto": "Nos contratos bancários, na impossibilidade de comprovar a taxa de juros efetivamente contratada, aplica-se a taxa média de mercado",
+        "domains": ["cobranca", "bancario"],
+        "keywords": ["taxa de juros", "banco", "taxa média", "prova", "contrato bancário"]
+      },
+      "537": {
+        "texto": "Em ação de reparação de danos, a seguradora denunciada, se aceitar a denunciação ou contestar o pedido do autor, pode ser condenada, direta e solidariamente, junto com o segurado, ao pagamento da indenização devida à vítima, nos limites contratados na apólice",
+        "domains": ["seguros", "responsabilidade_civil"],
+        "keywords": ["seguro", "denunciação da lide", "solidariedade", "responsabilidade civil", "apólice"]
+      },
+      "610": {
+        "texto": "O suicídio não é coberto nos dois primeiros anos de vigência do contrato de seguro de vida, ressalvado o direito do beneficiário à devolução do montante da reserva técnica formada",
+        "domains": ["seguros"],
+        "keywords": ["seguro de vida", "suicídio", "carência", "dois anos", "reserva técnica"]
+      }
+    },
+    "STF": {
+      "149": {
+        "texto": "É imprescritível a ação de investigação de paternidade, mas não o é a de petição de herança",
+        "domains": ["paternidade"],
+        "keywords": ["investigação de paternidade", "imprescritível", "filiação", "petição de herança"]
+      },
+      "340": {
+        "texto": "Desde a vigência do Código Civil, os bens dominicais, como os demais bens públicos, não podem ser adquiridos por usucapião",
+        "domains": ["usucapiao", "direitos_reais"],
+        "keywords": ["bem público", "usucapião", "dominical", "imprescritibilidade"]
+      },
+      "346": {
+        "texto": "A administração pública pode declarar a nulidade dos seus próprios atos",
+        "domains": ["administrativo"],
+        "keywords": ["nulidade", "ato administrativo", "autotutela"]
+      },
+      "473": {
+        "texto": "A administração pode anular seus próprios atos, quando eivados de vícios que os tornam ilegais, porque deles não se originam direitos",
+        "domains": ["administrativo"],
+        "keywords": ["nulidade", "ato administrativo", "vício", "ilegalidade"]
+      },
+      "112": {
+        "texto": "O imposto de transmissão causa mortis é devido pela alíquota vigente ao tempo da abertura da sucessão",
+        "domains": ["inventario"],
+        "keywords": ["ITCMD", "imposto", "sucessão", "alíquota", "abertura da sucessão"]
+      },
+      "331": {
+        "texto": "É legítima a incidência do imposto de transmissão causa mortis no inventário por morte presumida",
+        "domains": ["inventario"],
+        "keywords": ["ITCMD", "morte presumida", "inventário", "transmissão causa mortis"]
+      },
+      "377": {
+        "texto": "No regime de separação legal de bens, comunicam-se os adquiridos na constância do casamento",
+        "domains": ["divorcio"],
+        "keywords": ["separação legal", "regime de bens", "aquestos", "comunicação", "casamento"]
+      },
+      "380": {
+        "texto": "Comprovada a existência de sociedade de fato entre os concubinos, é cabível a sua dissolução judicial, com a partilha do patrimônio adquirido pelo esforço comum",
+        "domains": ["divorcio"],
+        "keywords": ["união estável", "sociedade de fato", "partilha", "esforço comum", "concubinato"]
+      },
+      "542": {
+        "texto": "Não é inconstitucional a multa instituída pelo Estado-Membro, como sanção pelo retardamento do início ou da ultimação do inventário",
+        "domains": ["inventario"],
+        "keywords": ["inventário", "multa", "atraso", "prazo", "sanção"]
+      }
+    }
+  }
+}

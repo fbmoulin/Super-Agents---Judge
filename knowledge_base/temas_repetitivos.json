@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "lastUpdate": "2026-01-19",
+    "source": "STJ Temas Repetitivos"
+  },
+  "temas": {
+    "952": {
+      "tribunal": "STJ",
+      "situacao": "AFETADO",
+      "tese": "O reajuste de mensalidade de plano de saúde individual ou familiar fundado na mudança de faixa etária do beneficiário é válido desde que (i) haja previsão contratual, (ii) sejam observadas as normas expedidas pelos órgãos governamentais reguladores e (iii) não sejam aplicados percentuais desarrazoados ou aleatórios que, concretamente e sem base atuarial idônea, onerem excessivamente o consumidor ou discriminem o idoso.",
+      "domains": ["saude"],
+      "keywords": ["plano de saúde", "reajuste", "faixa etária", "idoso"],
+      "aplicacao": "Reajuste por mudança de faixa etária em planos de saúde"
+    },
+    "970": {
+      "tribunal": "STJ",
+      "situacao": "AFETADO",
+      "tese": "No contrato de promessa de compra e venda de imóvel na planta, no âmbito do Programa Minha Casa, Minha Vida, para os beneficiários de unidades autônomas situadas em empreendimentos de interesse social, a previsão de cláusula contratual de tolerância de até 180 (cento e oitenta) dias para a entrega do imóvel é válida.",
+      "domains": ["incorporacao"],
+      "keywords": ["imóvel", "entrega", "atraso", "tolerância", "180 dias", "MCMV"],
+      "aplicacao": "Prazo de tolerância para entrega de imóvel na planta"
+    },
+    "972": {
+      "tribunal": "STJ",
+      "situacao": "AFETADO",
+      "tese": "Abusividade da exigência de contratação de seguro de proteção financeira como condição para o financiamento (venda casada).",
+      "domains": ["bancario", "consumidor"],
+      "keywords": ["venda casada", "seguro", "financiamento", "banco"],
+      "aplicacao": "Venda casada de seguros em contratos bancários"
+    },
+    "985": {
+      "tribunal": "STJ",
+      "situacao": "AFETADO",
+      "tese": "Para fins de usucapião especial urbana (art. 183 da CF/88 e art. 1.240 do CC/2002), não é exigível a observância do módulo mínimo previsto na lei de parcelamento do solo urbano.",
+      "domains": ["usucapiao"],
+      "keywords": ["usucapião", "área mínima", "módulo", "urbano"],
+      "aplicacao": "Dispensa de área mínima na usucapião especial urbana"
+    },
+    "996": {
+      "tribunal": "STJ",
+      "situacao": "AFETADO",
+      "tese": "Na aquisição de unidades autônomas em construção, sob o regime de incorporação imobiliária, o atraso na entrega do imóvel superior a 180 dias enseja a resolução do contrato por culpa da incorporadora/construtora e a restituição integral dos valores pagos pelo adquirente, além de lucros cessantes.",
+      "domains": ["incorporacao"],
+      "keywords": ["imóvel", "atraso", "resolução", "restituição", "lucros cessantes"],
+      "aplicacao": "Atraso na entrega de imóvel e consequências"
+    },
+    "1062": {
+      "tribunal": "STJ",
+      "situacao": "AFETADO",
+      "tese": "A correção monetária e os juros de mora incidentes sobre as indenizações por danos morais e materiais são regulados pelo art. 407 do CC, fluindo a partir do evento danoso (Súmula 54/STJ) ou da citação (Súmula 362/STJ), conforme a natureza da obrigação.",
+      "domains": ["obrigacional", "responsabilidade_civil"],
+      "keywords": ["correção monetária", "juros", "dano moral", "dano material"],
+      "aplicacao": "Correção monetária e juros em indenizações"
+    },
+    "1069": {
+      "tribunal": "STJ",
+      "situacao": "AFETADO",
+      "tese": "O rol de procedimentos e eventos em saúde elaborado pela ANS é, em regra, exemplificativo (Lei 14.454/2022), garantindo aos beneficiários de plano de saúde o direito à cobertura de procedimentos não previstos no rol, desde que demonstrada a pertinência clínica.",
+      "domains": ["saude"],
+      "keywords": ["plano de saúde", "rol ANS", "cobertura", "procedimento"],
+      "aplicacao": "Natureza exemplificativa do rol ANS"
+    },
+    "1368": {
+      "tribunal": "STJ",
+      "situacao": "AFETADO",
+      "tese": "A incidência da taxa Selic como índice de atualização monetária e de juros de mora, na forma prevista no art. 406 do CC/2002, exige a observância de critério único de cálculo, vedada a cumulação com qualquer outro índice de atualização.",
+      "domains": ["bancario", "obrigacional"],
+      "keywords": ["SELIC", "correção monetária", "juros", "cumulação"],
+      "aplicacao": "Aplicação da taxa SELIC em débitos civis",
+      "detalhamento": {
+        "cenarios": [
+          {
+            "tipo": "Dano material extracontratual",
+            "correcao": "SELIC desde o evento danoso",
+            "juros": "Absorvidos pela SELIC",
+            "sumula_superada": "54/STJ parcialmente"
+          },
+          {
+            "tipo": "Dano material contratual",
+            "correcao": "IPCA-E até citação, depois SELIC",
+            "juros": "Absorvidos pela SELIC após citação"
+          },
+          {
+            "tipo": "Dano moral extracontratual",
+            "correcao": "SELIC desde o evento danoso",
+            "juros": "Absorvidos pela SELIC"
+          },
+          {
+            "tipo": "Dano moral contratual",
+            "correcao": "SELIC desde a citação",
+            "juros": "Absorvidos pela SELIC"
+          }
+        ],
+        "vedacoes": [
+          "Cumular SELIC com IPCA",
+          "Cumular SELIC com juros de 1% ao mês",
+          "Aplicar índices distintos para correção e juros quando usar SELIC"
+        ]
+      }
+    },
+    "622": {
+      "tribunal": "STF",
+      "situacao": "JULGADO",
+      "tese": "A paternidade socioafetiva, declarada ou não em registro público, não impede o reconhecimento do vínculo de filiação concomitante baseado na origem biológica, com os efeitos jurídicos próprios.",
+      "domains": ["paternidade"],
+      "keywords": ["paternidade socioafetiva", "multiparentalidade", "filiação biológica", "registro"],
+      "aplicacao": "Reconhecimento de multiparentalidade - coexistência de paternidade biológica e socioafetiva",
+      "detalhamento": {
+        "requisitos": [
+          "Vínculo socioafetivo configurado (posse do estado de filho)",
+          "Existência de pai biológico distinto do socioafetivo",
+          "Interesse do filho no reconhecimento"
+        ],
+        "efeitos": [
+          "Dupla paternidade no registro civil",
+          "Direitos sucessórios em relação a ambos os pais",
+          "Deveres alimentares de ambos os pais"
+        ]
+      }
+    },
+    "929": {
+      "tribunal": "STJ",
+      "situacao": "AFETADO",
+      "tese": "O comerciante é parte legítima para figurar no polo passivo de ação de indenização por fato do produto, respondendo solidariamente com o fabricante.",
+      "domains": ["reparacao_danos", "consumidor"],
+      "keywords": ["fato do produto", "comerciante", "legitimidade passiva", "solidariedade", "CDC"],
+      "aplicacao": "Responsabilidade do comerciante por fato do produto"
+    },
+    "932": {
+      "tribunal": "STJ",
+      "situacao": "JULGADO",
+      "tese": "É imprescritível a pretensão do filho de obter o reconhecimento do estado de filiação.",
+      "domains": ["paternidade"],
+      "keywords": ["investigação de paternidade", "imprescritível", "filiação", "estado de filiação"],
+      "aplicacao": "Imprescritibilidade da ação de investigação de paternidade"
+    }
+  }
+}
