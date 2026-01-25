@@ -930,6 +930,53 @@
     },
     {
       "parameters": {
+        "jsCode": "// QUALITY VALIDATOR - Structure, Citations, Reasoning\n// Lex Intelligentia v3.1 - Metrics Integration\n\nconst inputItem = $input.first();\nif (!inputItem || !inputItem.json) {\n  return [{ json: { \n    quality_validation: { \n      structure_score: 0,\n      citation_score: 0,\n      reasoning_score: 0,\n      overall_score: 0, \n      issues: [{ type: 'error', message: 'No input data received' }],\n      citations_found: { sumulas: 0, temas: 0, artigos: 0 }\n    }\n  }}];\n}\nconst data = inputItem.json;\nconst minuta = data.minuta_gerada || '';\n\n// 1. STRUCTURE VALIDATION\nconst requiredSections = [\n  { name: 'RELATÓRIO', pattern: /^##?\\s*I\\s*[-–]?\\s*REL[AÁ]T[OÓ]RIO|^##?\\s*REL[AÁ]T[OÓ]RIO/mi },\n  { name: 'FUNDAMENTAÇÃO', pattern: /^##?\\s*II\\s*[-–]?\\s*FUNDAMENTA[CÇ][AÃ]O|^##?\\s*FUNDAMENTA[CÇ][AÃ]O/mi },\n  { name: 'DISPOSITIVO', pattern: /^##?\\s*III\\s*[-–]?\\s*DISPOSITIVO|^##?\\s*DISPOSITIVO/mi }\n];\n\nconst structureIssues = [];\nlet structureScore = 1.0;\n\nfor (const section of requiredSections) {\n  if (!section.pattern.test(minuta)) {\n    structureIssues.push(`Missing: ${section.name}`);\n    structureScore -= 0.33;\n  }\n}\nstructureScore = Math.max(0, structureScore);\n\n// 2. CITATION VALIDATION\nconst citedSumulas = minuta.match(/S[úu]mula\\s+(\\d+)/gi) || [];\nconst citedTemas = minuta.match(/Tema\\s+(\\d+)/gi) || [];\nconst citedArtigos = minuta.match(/art(?:igo)?\\.?\\s*(\\d+)/gi) || [];\n\nlet citationScore = 0.5;\nconst citationIssues = [];\n\nif (citedSumulas.length > 0 || citedTemas.length > 0) citationScore += 0.3;\nif (citedArtigos.length > 0) citationScore += 0.2;\nif (minuta.includes('[REVISAR: jurisprudência]') || minuta.includes('[REVISAR: fundamentação]')) {\n  citationScore -= 0.15;\n  citationIssues.push('Contains unverified citation markers');\n}\ncitationScore = Math.min(1, Math.max(0, citationScore));\n\n// 3. REASONING VALIDATION\nconst fundamentacaoMatch = minuta.match(/FUNDAMENTA[CÇ][AÃ]O[\\s\\S]*?(?=DISPOSITIVO|$)/i);\nconst fundamentacaoText = fundamentacaoMatch ? fundamentacaoMatch[0] : '';\nconst paragraphs = fundamentacaoText.split(/\\n\\n+/).filter(p => p.trim().length > 50);\n\nlet reasoningScore = 0.5;\nconst reasoningIssues = [];\n\nif (paragraphs.length >= 5) reasoningScore += 0.3;\nelse if (paragraphs.length >= 3) reasoningScore += 0.15;\nelse reasoningIssues.push(`Fundamentação shallow: only ${paragraphs.length} paragraphs`);\n\nconst hasLegalPattern = /(?:conforme|nos termos|segundo|de acordo com)[\\s\\S]{10,200}(?:portanto|assim|desta forma|destarte)/i.test(fundamentacaoText);\nif (hasLegalPattern) reasoningScore += 0.2;\nreasoningScore = Math.min(1, Math.max(0, reasoningScore));\n\n// 4. COMPILE RESULT\nconst overallScore = (structureScore + citationScore + reasoningScore) / 3;\n\nconst allIssues = [\n  ...structureIssues.map(i => ({ type: 'structure', message: i })),\n  ...citationIssues.map(i => ({ type: 'citation', message: i })),\n  ...reasoningIssues.map(i => ({ type: 'reasoning', message: i }))\n];\n\nconst quality = {\n  structure_score: Math.round(structureScore * 100) / 100,\n  citation_score: Math.round(citationScore * 100) / 100,\n  reasoning_score: Math.round(reasoningScore * 100) / 100,\n  overall_score: Math.round(overallScore * 100) / 100,\n  issues: allIssues,\n  citations_found: { sumulas: citedSumulas.length, temas: citedTemas.length, artigos: citedArtigos.length }\n};\n\nreturn [{ json: { ...data, quality_validation: quality } }];"
+      },
+      "id": "quality-validator",
+      "name": "Quality Validator",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4340,
+        400
+      ],
+      "notes": "Validates structure/citations/reasoning for metrics dashboard"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.SUPABASE_URL }}/rest/v1/rpc/log_execution",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey", "value": "={{ $env.SUPABASE_ANON_KEY }}" },
+            { "name": "Authorization", "value": "={{ 'Bearer ' + $env.SUPABASE_ANON_KEY }}" },
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "Prefer", "value": "return=representation" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  p_workflow_id: $execution.id,\n  p_agent_name: $json.compliance_cnj615?.agente_utilizado || 'agent_generico',\n  p_domain: $json.contexto?.classificacao?.categoria || 'generico',\n  p_started_at: $json.contexto?.execucao?.timestamp_inicio || new Date().toISOString(),\n  p_finished_at: new Date().toISOString(),\n  p_duration_ms: $json.audit_log?.tempo_execucao_ms || 0,\n  p_status: $json.qa_result?.aprovado ? 'success' : 'warning',\n  p_error_message: null,\n  p_tokens_used: 0,\n  p_rag_results_count: 0,\n  p_cache_hit: false,\n  p_quality: {\n    structure_score: $json.quality_validation?.structure_score || 0,\n    citation_score: $json.quality_validation?.citation_score || 0,\n    reasoning_score: $json.quality_validation?.reasoning_score || 0,\n    issues: $json.quality_validation?.issues || []\n  }\n} }}",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "metrics-logger",
+      "name": "Metrics Logger",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4400,
+        400
+      ],
+      "onError": "continueRegularOutput",
+      "notes": "Sends execution metrics to Supabase for dashboard"
+    },
+    {
+      "parameters": {
         "jsCode": "// ============================================================================\n// AUDIT LOG CNJ 615/2025\n// Lex Intelligentia Judiciário v2.1 - FIXED\n// ============================================================================\n\nconst data = $input.first().json;\nconst ctx = data.contexto || {};\n\n// ============================================================================\n// IMPROVED HASH FUNCTION (djb2 + metadata for uniqueness)\n// ============================================================================\n\nfunction computeHash(str) {\n  if (!str || typeof str !== 'string') {\n    return '0'.repeat(32);\n  }\n  \n  // djb2 hash algorithm\n  let hash1 = 5381;\n  for (let i = 0; i < str.length; i++) {\n    hash1 = ((hash1 << 5) + hash1) + str.charCodeAt(i);\n    hash1 = hash1 & 0xFFFFFFFF;\n  }\n  \n  // FNV-1a hash for additional uniqueness\n  let hash2 = 2166136261;\n  for (let i = 0; i < str.length; i++) {\n    hash2 ^= str.charCodeAt(i);\n    hash2 = Math.imul(hash2, 16777619);\n    hash2 = hash2 >>> 0;\n  }\n  \n  // Combine: djb2(16 hex) + length(4 hex) + fnv(12 hex)\n  const h1 = (hash1 >>> 0).toString(16).padStart(8, '0');\n  const h2 = (hash2 >>> 0).toString(16).padStart(8, '0');\n  const len = (str.length & 0xFFFF).toString(16).padStart(4, '0');\n  const checksum = ((hash1 ^ hash2) >>> 0).toString(16).padStart(8, '0');\n  \n  return `${h1}${len}${h2}${checksum}`;\n}\n\n// ============================================================================\n// SAFE TIME CALCULATION\n// ============================================================================\n\nlet tempoExecucaoMs = 0;\ntry {\n  const inicio = ctx.execucao?.timestamp_inicio;\n  if (inicio) {\n    const startTime = new Date(inicio).getTime();\n    if (!isNaN(startTime)) {\n      tempoExecucaoMs = Math.max(0, Date.now() - startTime);\n    }\n  }\n} catch (e) {\n  tempoExecucaoMs = 0;\n}\n\n// ============================================================================\n// ESTRUTURA DO AUDIT LOG\n// ============================================================================\n\nconst auditLog = {\n  // IDENTIFICAÇÃO\n  id: `LEX-${Date.now()}-${Math.random().toString(36).substr(2, 8)}`,\n  timestamp: new Date().toISOString(),\n  \n  // SISTEMA\n  sistema: 'Lex Intelligentia Judiciário',\n  versao: '2.1',\n  workflow_id: $execution.id,\n  \n  // PROCESSO\n  processo_numero: ctx.processo?.numero || '[NÃO INFORMADO]',\n  processo_classe: ctx.processo?.classe || '',\n  processo_assunto: ctx.processo?.assunto || '',\n  \n  // OPERAÇÃO\n  operacao: 'GERACAO_MINUTA',\n  agente: data.compliance_cnj615?.agente_utilizado || 'agent_generico',\n  categoria: ctx.classificacao?.categoria || 'generico',\n  subcategoria: ctx.classificacao?.subcategoria || null,\n  router_status: ctx.classificacao?.router_status || 'unknown',\n  \n  // MODELOS\n  modelo_router: 'gemini-2.5-flash',\n  modelo_geracao: 'claude-sonnet-4',\n  modelo_qa: data.compliance_cnj615?.modelos_utilizados?.qa || 'estrutural-only',\n  \n  // QUALIDADE\n  score_final: data.qa_result?.score_final || 0,\n  score_estrutural: data.qa_result?.score_estrutural || 0,\n  score_semantico: data.qa_result?.score_semantico || null,\n  aprovado: data.qa_result?.aprovado || false,\n  marcadores_revisao: data.qa_result?.marcadores_revisar || 0,\n  \n  // RISCO CNJ 615\n  risco: data.compliance_cnj615?.classificacao_risco || 'ALTO',\n  confianca_router: data.compliance_cnj615?.confianca_classificacao || 0,\n  \n  // SUPERVISÃO\n  requer_revisao_humana: true,\n  revisao_realizada: false,\n  \n  // INTEGRIDADE (improved hash)\n  hash_input: computeHash(JSON.stringify(ctx.firac || {})),\n  hash_output: computeHash(data.minuta_gerada || ''),\n  \n  // MÉTRICAS\n  palavras_minuta: data.qa_result?.palavras || 0,\n  tempo_execucao_ms: tempoExecucaoMs\n};\n\nreturn [{\n  json: {\n    ...data,\n    audit_log: auditLog\n  }\n}];"
       },
       "id": "audit-log",
@@ -1496,6 +1543,36 @@
         1060,
         480
       ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.SUPABASE_URL }}/rest/v1/rpc/log_execution",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey", "value": "={{ $env.SUPABASE_ANON_KEY }}" },
+            { "name": "Authorization", "value": "={{ 'Bearer ' + $env.SUPABASE_ANON_KEY }}" },
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "Prefer", "value": "return=representation" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  p_workflow_id: $execution.id,\n  p_agent_name: $json.failed_node || 'unknown',\n  p_domain: 'error',\n  p_started_at: new Date().toISOString(),\n  p_finished_at: new Date().toISOString(),\n  p_duration_ms: 0,\n  p_status: 'error',\n  p_error_message: $json.original_error || 'Unknown error',\n  p_tokens_used: 0,\n  p_rag_results_count: 0,\n  p_cache_hit: false,\n  p_quality: null\n} }}",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "metrics-logger-error",
+      "name": "Metrics Logger (Error)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [980, 700],
+      "onError": "continueRegularOutput",
+      "notes": "Logs failed executions to Supabase for error rate tracking"
     }
   ],
   "connections": {
@@ -2030,6 +2107,28 @@
       "main": [
         [
           {
+            "node": "Quality Validator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Quality Validator": {
+      "main": [
+        [
+          {
+            "node": "Metrics Logger",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Metrics Logger": {
+      "main": [
+        [
+          {
             "node": "Audit Log CNJ 615",
             "type": "main",
             "index": 0
@@ -2086,6 +2185,11 @@
         [
           {
             "node": "IF: Retry?",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Metrics Logger (Error)",
             "type": "main",
             "index": 0
           }
