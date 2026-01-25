@@ -52,7 +52,7 @@
         "model": "text-embedding-3-small",
         "text": "={{ $json.text_for_embedding }}",
         "options": {
-          "dimensions": 1536
+          "dimensions": 1024
         }
       },
       "id": "openai-embed",
@@ -144,7 +144,7 @@
         "model": "text-embedding-3-small",
         "text": "={{ $json.body.query }}",
         "options": {
-          "dimensions": 1536
+          "dimensions": 1024
         }
       },
       "id": "openai-embed-query",

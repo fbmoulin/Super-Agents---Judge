@@ -34,7 +34,7 @@ QDRANT_HOST = os.getenv("QDRANT_HOST", "localhost")
 QDRANT_PORT = int(os.getenv("QDRANT_PORT", 6333))
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 EMBEDDING_MODEL = "text-embedding-3-small"
-VECTOR_SIZE = 1536  # text-embedding-3-small dimension
+VECTOR_SIZE = 1024  # text-embedding-3-small with dimensions param
 BATCH_SIZE = 100
 
 
@@ -56,7 +56,8 @@ def get_embedding(text: str, client=None) -> List[float]:
             client = openai.OpenAI(api_key=OPENAI_API_KEY)
         response = client.embeddings.create(
             model=EMBEDDING_MODEL,
-            input=text
+            input=text,
+            dimensions=VECTOR_SIZE
         )
         return response.data[0].embedding
     except ImportError:
@@ -72,7 +73,8 @@ def get_embeddings_batch(texts: List[str], client=None) -> List[List[float]]:
             client = openai.OpenAI(api_key=OPENAI_API_KEY)
         response = client.embeddings.create(
             model=EMBEDDING_MODEL,
-            input=texts
+            input=texts,
+            dimensions=VECTOR_SIZE
         )
         return [item.embedding for item in response.data]
     except ImportError:

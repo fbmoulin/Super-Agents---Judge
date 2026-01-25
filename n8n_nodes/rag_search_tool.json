@@ -33,6 +33,10 @@
             {
               "name": "input",
               "value": "={{ $json.query }}"
+            },
+            {
+              "name": "dimensions",
+              "value": "1024"
             }
           ]
         }
@@ -45,7 +49,7 @@
       "position": [300, 0],
       "parameters": {
         "method": "POST",
-        "url": "http://qdrant:6333/collections/stj_precedentes/points/search",
+        "url": "http://qdrant:6333/collections/stj_jurisprudencia/points/search",
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "{\n  \"vector\": {{ $json.data[0].embedding }},\n  \"limit\": 5,\n  \"with_payload\": true,\n  \"score_threshold\": 0.7\n}"
