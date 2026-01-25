@@ -1,0 +1,287 @@
+{
+  "metadata": {
+    "version": "1.1",
+    "lastUpdate": "2026-01-20",
+    "description": "Mapeamento de keywords para domínios jurídicos"
+  },
+  "domains": {
+    "bancario": {
+      "keywords": [
+        "empréstimo", "financiamento", "juros", "banco", "crédito",
+        "capitalização", "anatocismo", "tarifa", "CDC bancário",
+        "comissão de permanência", "revisional", "contrato bancário",
+        "financeira", "cédula de crédito", "alienação fiduciária",
+        "busca e apreensão", "consignado", "cheque especial"
+      ],
+      "template_base": "bancario_base",
+      "agente_especializado": "agent_BANCARIO",
+      "sumulas_principais": ["297", "382", "539", "541", "30", "472", "565"],
+      "temas_principais": ["1368", "972"]
+    },
+    "saude": {
+      "keywords": [
+        "plano de saúde", "cobertura", "ANS", "hospital", "tratamento",
+        "internação", "UTI", "cirurgia", "medicamento", "home care",
+        "urgência", "emergência", "carência", "doença preexistente",
+        "reajuste", "mensalidade", "operadora", "Unimed", "Bradesco Saúde"
+      ],
+      "template_base": "saude_base",
+      "agente_especializado": "agent_SAUDE_COBERTURA",
+      "sumulas_principais": ["302", "469", "597", "608", "609"],
+      "temas_principais": ["952", "1069"]
+    },
+    "transito": {
+      "keywords": [
+        "acidente", "colisão", "veículo", "DPVAT", "trânsito",
+        "atropelamento", "danos materiais", "perda total", "lesão corporal",
+        "morte", "invalidez", "seguro obrigatório", "culpa concorrente",
+        "CTB", "batida", "abalroamento"
+      ],
+      "template_base": "transito_base",
+      "agente_especializado": "agent_TRANSITO",
+      "sumulas_principais": [],
+      "temas_principais": ["1062"],
+      "base_legal": ["arts. 186, 927 CC", "art. 37 §6º CF", "CTB"]
+    },
+    "incorporacao": {
+      "keywords": [
+        "imóvel", "incorporadora", "entrega", "atraso", "construtora",
+        "apartamento", "unidade", "planta", "SATI", "corretagem",
+        "distrato", "resolução", "restituição", "lucros cessantes",
+        "prazo de tolerância", "180 dias"
+      ],
+      "template_base": "incorporacao_base",
+      "agente_especializado": "agent_INCORPORACAO",
+      "sumulas_principais": ["543"],
+      "temas_principais": ["970", "996"]
+    },
+    "usucapiao": {
+      "keywords": [
+        "posse", "usucapião", "ocupação", "tempo", "prescrição aquisitiva",
+        "animus domini", "mansa", "pacífica", "contínua", "extraordinária",
+        "especial urbana", "especial rural", "função social"
+      ],
+      "template_base": "usucapiao_base",
+      "agente_especializado": "agent_USUCAPIAO",
+      "sumulas_principais": ["340-STF"],
+      "temas_principais": ["985"],
+      "base_legal": ["art. 1.238 CC", "art. 183 CF", "art. 1.240 CC"]
+    },
+    "execucao": {
+      "keywords": [
+        "execução", "título executivo", "penhora", "hasta pública",
+        "prescrição intercorrente", "suspensão", "arquivamento",
+        "satisfação", "adjudicação", "arrematação", "embargos à execução"
+      ],
+      "template_base": "execucao_base",
+      "agente_especializado": "agent_EXECUCAO",
+      "sumulas_principais": [],
+      "temas_principais": [],
+      "base_legal": ["art. 921 CPC", "art. 924 CPC"]
+    },
+    "locacao": {
+      "keywords": [
+        "locação", "aluguel", "inquilino", "locador", "locatário",
+        "despejo", "renovatória", "revisional de aluguel", "fiador",
+        "caução", "benfeitorias", "retomada"
+      ],
+      "template_base": "locacao_base",
+      "agente_especializado": "agent_LOCACAO",
+      "sumulas_principais": [],
+      "temas_principais": [],
+      "base_legal": ["Lei 8.245/91"]
+    },
+    "consumidor": {
+      "keywords": [
+        "consumidor", "fornecedor", "produto", "serviço", "defeito",
+        "vício", "propaganda enganosa", "cobrança indevida", "negativação",
+        "SPC", "Serasa", "recall", "responsabilidade objetiva"
+      ],
+      "template_base": "consumidor_base",
+      "agente_especializado": "agent_CONSUMIDOR",
+      "sumulas_principais": ["297", "469"],
+      "temas_principais": [],
+      "base_legal": ["CDC Lei 8.078/90"]
+    },
+    "responsabilidade_civil": {
+      "keywords": [
+        "dano moral", "dano material", "dano estético", "lucros cessantes",
+        "indenização", "reparação", "culpa", "dolo", "nexo causal",
+        "ato ilícito", "responsabilidade objetiva", "responsabilidade subjetiva"
+      ],
+      "template_base": "responsabilidade_civil_base",
+      "agente_especializado": "agent_GENERICO",
+      "sumulas_principais": ["362"],
+      "temas_principais": ["1062"],
+      "base_legal": ["arts. 186, 187, 927 CC"]
+    },
+    "obrigacional": {
+      "keywords": [
+        "contrato", "inadimplemento", "resolução", "rescisão", "mora",
+        "perdas e danos", "cláusula penal", "multa", "obrigação de fazer",
+        "obrigação de dar", "novação", "compensação"
+      ],
+      "template_base": "obrigacional_base",
+      "agente_especializado": "agent_GENERICO",
+      "sumulas_principais": [],
+      "temas_principais": ["1368"],
+      "base_legal": ["arts. 389 a 420 CC"]
+    },
+    "processual": {
+      "keywords": [
+        "recurso", "apelação", "agravo", "embargos", "prova", "perícia",
+        "audiência", "citação", "intimação", "prazo", "preclusão",
+        "nulidade processual", "competência", "litisconsórcio"
+      ],
+      "template_base": "processual_base",
+      "agente_especializado": "agent_GENERICO",
+      "sumulas_principais": ["7"],
+      "temas_principais": [],
+      "base_legal": ["CPC/2015"]
+    },
+    "direitos_reais": {
+      "keywords": [
+        "propriedade", "posse", "servidão", "usufruto", "hipoteca",
+        "penhor", "anticrese", "superfície", "condomínio", "vizinhança",
+        "registro de imóveis", "matrícula"
+      ],
+      "template_base": "direitos_reais_base",
+      "agente_especializado": "agent_GENERICO",
+      "sumulas_principais": ["340-STF"],
+      "temas_principais": [],
+      "base_legal": ["arts. 1.196 a 1.510 CC"]
+    },
+    "administrativo": {
+      "keywords": [
+        "ato administrativo", "licitação", "concurso público", "servidor",
+        "poder de polícia", "desapropriação", "responsabilidade do Estado",
+        "improbidade", "autotutela", "anulação", "revogação"
+      ],
+      "template_base": "administrativo_base",
+      "agente_especializado": "agent_GENERICO",
+      "sumulas_principais": ["346-STF", "473-STF"],
+      "temas_principais": [],
+      "base_legal": ["CF/88 art. 37", "Lei 8.666/93", "Lei 14.133/21"]
+    },
+    "reparacao_danos": {
+      "keywords": [
+        "dano moral", "negativação indevida", "SPC", "Serasa", "cobrança indevida",
+        "falha do serviço", "vício do produto", "dano estético", "indenização",
+        "repetição do indébito", "devolução em dobro", "CDC", "consumidor"
+      ],
+      "template_base": "reparacao_danos_base",
+      "agente_especializado": "agent_REPARACAO_DANOS",
+      "sumulas_principais": ["385", "387", "388", "403", "479"],
+      "temas_principais": ["929"],
+      "base_legal": ["CDC Lei 8.078/90", "arts. 186, 187, 927 CC"]
+    },
+    "alimentos": {
+      "keywords": [
+        "alimentos", "pensão alimentícia", "alimentando", "alimentante",
+        "binômio necessidade possibilidade", "revisional", "exoneratória",
+        "oferta de alimentos", "execução de alimentos", "prisão civil"
+      ],
+      "template_base": "alimentos_base",
+      "agente_especializado": "agent_ALIMENTOS",
+      "sumulas_principais": ["309", "336", "358", "594", "596", "621"],
+      "temas_principais": [],
+      "base_legal": ["art. 1.694 a 1.710 CC", "Lei 5.478/68", "art. 528 CPC"]
+    },
+    "paternidade": {
+      "keywords": [
+        "investigação de paternidade", "negatória de paternidade", "DNA",
+        "exame genético", "filiação", "reconhecimento de paternidade",
+        "paternidade socioafetiva", "multiparentalidade", "registro civil"
+      ],
+      "template_base": "paternidade_base",
+      "agente_especializado": "agent_PATERNIDADE",
+      "sumulas_principais": ["149-STF", "277", "301"],
+      "temas_principais": ["622", "932"],
+      "base_legal": ["art. 1.593 a 1.617 CC", "Lei 8.560/92", "art. 27 ECA"]
+    },
+    "guarda": {
+      "keywords": [
+        "guarda", "guarda compartilhada", "guarda unilateral", "regulamentação de guarda",
+        "modificação de guarda", "direito de visitas", "convivência familiar",
+        "alienação parental", "melhor interesse da criança", "poder familiar"
+      ],
+      "template_base": "guarda_base",
+      "agente_especializado": "agent_GUARDA",
+      "sumulas_principais": ["383"],
+      "temas_principais": [],
+      "base_legal": ["art. 1.583 a 1.590 CC", "Lei 13.058/14", "Lei 12.318/10", "ECA"]
+    },
+    "cobranca": {
+      "keywords": [
+        "cobrança", "dívida", "inadimplemento", "mora", "monitória",
+        "título executivo", "cumprimento de sentença", "impugnação",
+        "honorários advocatícios", "correção monetária", "juros mora",
+        "SELIC", "nota promissória", "cheque", "duplicata"
+      ],
+      "template_base": "cobranca_base",
+      "agente_especializado": "agent_COBRANCA",
+      "sumulas_principais": ["54", "362", "379", "382", "530"],
+      "temas_principais": ["1062", "1368"],
+      "base_legal": ["arts. 389 a 420 CC", "arts. 700 a 702 CPC", "arts. 513 a 538 CPC"]
+    },
+    "divorcio": {
+      "keywords": [
+        "divórcio", "separação", "dissolução", "casamento", "cônjuge",
+        "partilha de bens", "comunhão parcial", "comunhão universal",
+        "separação de bens", "meação", "união estável", "companheiro",
+        "regime de bens", "pensão ao ex-cônjuge"
+      ],
+      "template_base": "divorcio_base",
+      "agente_especializado": "agent_DIVORCIO",
+      "sumulas_principais": ["197", "377-STF", "380-STF"],
+      "temas_principais": [],
+      "base_legal": ["arts. 1.571 a 1.590 CC", "art. 226 §6º CF", "arts. 731 a 734 CPC"]
+    },
+    "inventario": {
+      "keywords": [
+        "inventário", "arrolamento", "herança", "espólio", "partilha",
+        "herdeiro", "sucessão", "falecido", "de cujus", "monte-mor",
+        "quinhão", "formal de partilha", "ITCMD", "alvará",
+        "sobrepartilha", "colação", "meação do viúvo"
+      ],
+      "template_base": "inventario_base",
+      "agente_especializado": "agent_INVENTARIO",
+      "sumulas_principais": ["112-STF", "331-STF", "542-STF"],
+      "temas_principais": [],
+      "base_legal": ["arts. 1.784 a 1.856 CC", "arts. 610 a 673 CPC", "Lei 11.441/2007"]
+    },
+    "seguros": {
+      "keywords": [
+        "seguro", "sinistro", "apólice", "prêmio", "franquia",
+        "seguradora", "indenização securitária", "cobertura",
+        "beneficiário", "capital segurado", "regulação de sinistro",
+        "recusa de pagamento", "seguro de vida", "seguro de veículo",
+        "seguro residencial", "SUSEP"
+      ],
+      "template_base": "seguros_base",
+      "agente_especializado": "agent_SEGUROS",
+      "sumulas_principais": ["101", "402", "465", "537", "610"],
+      "temas_principais": [],
+      "base_legal": ["arts. 757 a 802 CC", "DL 73/1966", "Circulares SUSEP"]
+    },
+    "mandado_seguranca": {
+      "keywords": [
+        "mandado de segurança", "writ", "liminar", "direito líquido e certo",
+        "autoridade coatora", "ato ilegal", "ato abusivo", "impetrar",
+        "impetrante", "impetrado", "informações", "suspensão de segurança",
+        "decadência 120 dias", "servidor público", "concurso público",
+        "licitação", "nomeação", "posse"
+      ],
+      "template_base": "mandado_seguranca_base",
+      "agente_especializado": "agent_MANDADO_SEGURANCA",
+      "sumulas_principais": ["266-STF", "267-STF", "271-STF", "512-STF", "625-STF", "105", "213", "333"],
+      "temas_principais": [],
+      "base_legal": ["Lei 12.016/2009", "art. 5º LXIX CF"]
+    }
+  },
+  "fallback": {
+    "domain": "generico",
+    "template_base": "generico_base",
+    "agente_especializado": "agent_GENERICO"
+  }
+}

@@ -714,7 +714,31 @@ Gerar minutas em ações indenizatórias contra entes públicos.
 - Erro médico: R$ 80k-300k
 
 ### ESTRUTURA
-I - RELATÓRIO / II - FUNDAMENTAÇÃO / III - DISPOSITIVO`
+I - RELATÓRIO / II - FUNDAMENTAÇÃO / III - DISPOSITIVO`,
+
+  agent_mandado_seguranca: `# AGENTE JUDICIAL: MANDADO DE SEGURANÇA
+
+## FUNÇÃO
+Gerar minutas de decisões/sentenças em mandados de segurança para Vara de Fazenda Pública do TJES.
+
+## REGRAS OBRIGATÓRIAS
+1. Estrutura: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO
+2. Verificar cabimento: direito líquido e certo, prazo 120 dias
+3. Liminar: fumus boni iuris + periculum in mora + reversibilidade
+4. Sem honorários: Súmulas 512/STF e 105/STJ
+5. Reexame necessário obrigatório (art. 14, §1º)
+
+## SÚMULAS PRIORITÁRIAS
+266, 267, 269, 271, 304, 512, 625/STF
+105, 202, 213, 333/STJ
+
+## ÁREAS ESPECÍFICAS
+- Servidor público: concurso, nomeação, PAD
+- Licitação: habilitação, desclassificação
+- Tributário: compensação (Súmula 213/STJ)
+
+## MARCADORES
+[REVISAR: motivo] para incertezas.`
 };
 
 // ============================================================================
@@ -746,7 +770,8 @@ const AGENT_DIRS = {
   agent_paternidade: 'paternidade',
   // Novos agentes Fazenda Pública
   agent_execucao_fiscal: 'execucao_fiscal',
-  agent_resp_civil_estado: 'resp_civil_estado'
+  agent_resp_civil_estado: 'resp_civil_estado',
+  agent_mandado_seguranca: 'mandado_seguranca'
 };
 
 // ============================================================================

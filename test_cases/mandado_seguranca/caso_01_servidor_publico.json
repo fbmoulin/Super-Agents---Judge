@@ -1,0 +1,25 @@
+{
+  "id": "ms_servidor_01",
+  "nome": "Mandado de Seguranca - Nomeacao Servidor",
+  "descricao": "MS contra ato que indeferiu nomeacao de candidato aprovado em concurso publico",
+  "dominio_esperado": "mandado_seguranca",
+  "input": {
+    "fatos": "O impetrante foi aprovado em 3 lugar no concurso publico para o cargo de Analista Judiciario do TJES, Edital n 001/2024, homologado em 15/06/2025. O edital previa 10 vagas imediatas. Ate a presente data, apenas os 2 primeiros colocados foram nomeados, havendo 8 vagas remanescentes. O prazo de validade do concurso expira em 15/06/2027. O impetrante requereu administrativamente sua nomeacao, tendo o pedido sido indeferido pela Presidencia do Tribunal sob alegacao de restricao orcamentaria, sem qualquer fundamentacao especifica.",
+    "questoes": "1) O impetrante possui direito liquido e certo a nomeacao? 2) A alegacao generica de restricao orcamentaria justifica o indeferimento? 3) Qual o prazo decadencial para o MS?",
+    "pedidos": "Concessao de liminar para determinar a imediata nomeacao e posse. No merito, confirmacao da ordem para nomeacao definitiva.",
+    "classe_processual": "Mandado de Seguranca Civel",
+    "assunto": "Concurso Publico - Nomeacao"
+  },
+  "criterios_avaliacao": {
+    "estrutura_firac": true,
+    "citacao_sumulas": ["Sumula 15/STF", "RE 598.099/STF"],
+    "base_legal": ["Lei 12.016/2009", "art. 37 CF"],
+    "analise_requisitos_liminar": true,
+    "observacao_prazo_120_dias": true
+  },
+  "expectativa": {
+    "agente_esperado": "agent_MANDADO_SEGURANCA",
+    "score_minimo": 75,
+    "elementos_obrigatorios": ["direito liquido e certo", "liminar", "Lei 12.016/2009"]
+  }
+}
