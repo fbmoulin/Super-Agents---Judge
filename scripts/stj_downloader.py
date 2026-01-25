@@ -380,11 +380,90 @@ class STJDownloader:
 
 class STJProcessor:
     """Processamento dos dados STJ para vector store"""
-    
+
     def __init__(self, input_dir: str, output_dir: str):
         self.input_dir = Path(input_dir)
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        self.kb_dir = Path(__file__).parent.parent / "knowledge_base"
+
+    def process_local_kb(self) -> List[Dict]:
+        """Process local knowledge base files (sumulas.json, temas_repetitivos.json)"""
+        logger.info("\nProcessando Knowledge Base local...")
+        chunks = []
+
+        # Process sumulas
+        sumulas_file = self.kb_dir / "sumulas.json"
+        if sumulas_file.exists():
+            with open(sumulas_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+
+            for tribunal, items in data.get("sumulas", {}).items():
+                for numero, info in items.items():
+                    texto = info.get("texto", "")
+                    chunk = {
+                        "id": f"sumula_{tribunal}_{numero}",
+                        "tipo": "sumula",
+                        "tribunal": tribunal,
+                        "numero": numero,
+                        "text_for_embedding": f"Sumula {numero} do {tribunal}: {texto}",
+                        "domains": info.get("domains", []),
+                        "keywords": info.get("keywords", []),
+                        "metadata": {
+                            "fonte": "Knowledge Base Local",
+                            "processado_em": datetime.now().isoformat()
+                        }
+                    }
+                    chunk["content_hash"] = hashlib.md5(
+                        chunk["text_for_embedding"].encode()
+                    ).hexdigest()
+                    chunks.append(chunk)
+
+            logger.info(f"  ✓ Processadas {len(chunks)} súmulas do KB local")
+
+        # Process temas repetitivos
+        temas_file = self.kb_dir / "temas_repetitivos.json"
+        if temas_file.exists():
+            with open(temas_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+
+            temas_count = 0
+            for numero, info in data.get("temas", {}).items():
+                tese = info.get("tese", "")
+                tribunal = info.get("tribunal", "STJ")
+                situacao = info.get("situacao", "")
+                aplicacao = info.get("aplicacao", "")
+
+                text = f"Tema {numero} do {tribunal}"
+                if situacao:
+                    text += f" ({situacao})"
+                text += f": {tese}"
+                if aplicacao:
+                    text += f" Aplicacao: {aplicacao}"
+
+                chunk = {
+                    "id": f"tema_{tribunal}_{numero}",
+                    "tipo": "tema_repetitivo",
+                    "tribunal": tribunal,
+                    "numero": numero,
+                    "situacao": situacao,
+                    "text_for_embedding": text,
+                    "domains": info.get("domains", []),
+                    "keywords": info.get("keywords", []),
+                    "metadata": {
+                        "fonte": "Knowledge Base Local",
+                        "processado_em": datetime.now().isoformat()
+                    }
+                }
+                chunk["content_hash"] = hashlib.md5(
+                    chunk["text_for_embedding"].encode()
+                ).hexdigest()
+                chunks.append(chunk)
+                temas_count += 1
+
+            logger.info(f"  ✓ Processados {temas_count} temas do KB local")
+
+        return chunks
     
     def process_precedentes(self) -> List[Dict]:
         """Processa precedentes qualificados para formato de chunks"""
@@ -586,18 +665,24 @@ class STJProcessor:
         
         return " ".join(parts)
     
-    def process_all(self) -> Dict:
+    def process_all(self, include_local_kb: bool = True) -> Dict:
         """Processa todos os dados para vector store"""
         logger.info("\n" + "#"*60)
         logger.info("# PROCESSAMENTO PARA VECTOR STORE")
         logger.info("#"*60)
-        
+
         all_chunks = []
-        
-        # 1. Precedentes
+        kb_chunks = []
+
+        # 0. Local Knowledge Base (sumulas.json, temas_repetitivos.json)
+        if include_local_kb:
+            kb_chunks = self.process_local_kb()
+            all_chunks.extend(kb_chunks)
+
+        # 1. Precedentes (from downloaded STJ data)
         precedentes = self.process_precedentes()
         all_chunks.extend(precedentes)
-        
+
         # 2. Acórdãos
         acordaos = self.process_acordaos()
         all_chunks.extend(acordaos)
@@ -613,6 +698,7 @@ class STJProcessor:
         # Estatísticas
         stats = {
             "total_chunks": len(all_chunks),
+            "knowledge_base": len(kb_chunks) if include_local_kb else 0,
             "precedentes": len(precedentes),
             "acordaos": len(acordaos),
             "output_file": str(output_file),
