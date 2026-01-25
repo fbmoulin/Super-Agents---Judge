@@ -1,0 +1,30 @@
+{
+  "name": "Metrics Logger",
+  "type": "n8n-nodes-base.httpRequest",
+  "typeVersion": 4.2,
+  "position": [0, 0],
+  "parameters": {
+    "method": "POST",
+    "url": "={{ $env.SUPABASE_URL }}/rest/v1/rpc/log_execution",
+    "authentication": "genericCredentialType",
+    "genericAuthType": "httpHeaderAuth",
+    "sendHeaders": true,
+    "headerParameters": {
+      "parameters": [
+        {
+          "name": "apikey",
+          "value": "={{ $env.SUPABASE_ANON_KEY }}"
+        },
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ]
+    },
+    "sendBody": true,
+    "specifyBody": "json",
+    "jsonBody": "={\n  \"p_workflow_id\": \"{{ $workflow.id }}\",\n  \"p_agent_name\": \"{{ $json.agent_name || $node.name }}\",\n  \"p_domain\": \"{{ $json.domain || 'generico' }}\",\n  \"p_started_at\": \"{{ $json.started_at || $now.minus(10, 'seconds').toISO() }}\",\n  \"p_finished_at\": \"{{ $now.toISO() }}\",\n  \"p_duration_ms\": {{ $json.duration_ms || 10000 }},\n  \"p_status\": \"{{ $json.error ? 'error' : 'success' }}\",\n  \"p_error_message\": {{ $json.error ? JSON.stringify($json.error.message || 'Unknown error') : 'null' }},\n  \"p_tokens_used\": {{ $json.tokens_used || 0 }},\n  \"p_rag_results_count\": {{ $json.rag_context?.results_count || 0 }},\n  \"p_cache_hit\": {{ $json.cache_hit || false }},\n  \"p_quality\": {{ $json.quality ? JSON.stringify($json.quality) : 'null' }}\n}"
+  },
+  "credentials": {},
+  "notes": "Sends execution metrics and quality scores to Supabase. Requires SUPABASE_URL and SUPABASE_ANON_KEY environment variables."
+}
