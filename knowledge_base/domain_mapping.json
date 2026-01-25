@@ -277,6 +277,20 @@
       "sumulas_principais": ["266-STF", "267-STF", "271-STF", "512-STF", "625-STF", "105", "213", "333"],
       "temas_principais": [],
       "base_legal": ["Lei 12.016/2009", "art. 5º LXIX CF"]
+    },
+    "saude_medicamentos": {
+      "keywords": [
+        "medicamento", "SUS", "fornecimento", "tratamento médico", "cirurgia",
+        "leito", "UTI", "internação", "RENAME", "ANVISA", "alto custo",
+        "oncológico", "quimioterapia", "insulina", "fralda geriátrica",
+        "cadeira de rodas", "home care", "NAT-JUS", "direito à saúde",
+        "ente público", "Estado", "Município", "União", "responsabilidade solidária"
+      ],
+      "template_base": "saude_medicamentos_base",
+      "agente_especializado": "agent_SAUDE_MEDICAMENTOS",
+      "sumulas_principais": ["SV-61"],
+      "temas_principais": ["6", "500", "793", "1234"],
+      "base_legal": ["art. 196 CF", "Lei 8.080/1990"]
     }
   },
   "fallback": {

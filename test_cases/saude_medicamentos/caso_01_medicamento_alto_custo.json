@@ -1,0 +1,26 @@
+{
+  "id": "saude_med_01",
+  "nome": "Fornecimento de Medicamento de Alto Custo",
+  "descricao": "Acao para fornecimento de medicamento oncologico de alto custo",
+  "dominio_esperado": "saude_medicamentos",
+  "input": {
+    "fatos": "A autora, aposentada por invalidez com renda de 1 salario minimo, e portadora de Cancer de Mama Metastatico (CID-10: C50.9) diagnosticado em 2024. Seu oncologista prescreveu o medicamento PALBOCICLIBE (Ibrance) 125mg, associado ao Letrozol, por ser a unica alternativa terapeutica eficaz para seu caso, apos falha do tratamento convencional disponivel no SUS (Tamoxifeno). O medicamento nao consta na RENAME, porem possui registro na ANVISA. O custo mensal e de aproximadamente R$ 25.000,00, absolutamente incompativel com a renda da autora. O laudo medico atesta risco de progressao da doenca e metastase caso nao inicie o tratamento em 30 dias.",
+    "questoes": "1) Estao presentes os requisitos do Tema 1234/STF? 2) Cabe tutela de urgencia? 3) Qual ente federativo deve fornecer?",
+    "pedidos": "Tutela de urgencia para fornecimento imediato. No merito, condenacao solidaria dos reus ao fornecimento continuo enquanto perdurar o tratamento.",
+    "classe_processual": "Procedimento Comum Civel",
+    "assunto": "Fornecimento de Medicamentos"
+  },
+  "criterios_avaliacao": {
+    "estrutura_firac": true,
+    "citacao_temas": ["Tema 793", "Tema 1234"],
+    "base_legal": ["art. 196 CF", "Lei 8.080/1990"],
+    "analise_requisitos_tutela": true,
+    "responsabilidade_solidaria": true,
+    "fixacao_multa_diaria": true
+  },
+  "expectativa": {
+    "agente_esperado": "agent_SAUDE_MEDICAMENTOS",
+    "score_minimo": 75,
+    "elementos_obrigatorios": ["Tema 793", "Tema 1234", "tutela de urgencia", "multa diaria"]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "saude_med_02",
+  "nome": "Realizacao de Cirurgia pelo SUS",
+  "descricao": "Acao para realizacao de cirurgia ortopedica com longa fila de espera",
+  "dominio_esperado": "saude_medicamentos",
+  "input": {
+    "fatos": "O autor, trabalhador rural de 58 anos, sofreu acidente de trabalho em 2023 que resultou em fratura do femur esquerdo (CID-10: S72.0). Necessita de artroplastia total de quadril, conforme laudo ortopedico juntado. O procedimento esta previsto no SUS, porem o autor esta na fila de espera ha 18 meses, sem previsao de agendamento. Seu quadro clinico deteriorou significativamente, com dor cronica incapacitante e impossibilidade de exercer qualquer atividade laboral. O laudo medico atesta que a demora no procedimento pode resultar em dano irreversivel a articulacao e perda definitiva da capacidade de deambulacao.",
+    "questoes": "1) A demora excessiva na fila do SUS viola o direito a saude? 2) Cabe determinacao de prazo para realizacao da cirurgia? 3) Cabe bloqueio de verbas em caso de descumprimento?",
+    "pedidos": "Tutela de urgencia para realizacao da cirurgia no prazo de 30 dias, sob pena de multa diaria e bloqueio de verbas. No merito, confirmacao da ordem.",
+    "classe_processual": "Procedimento Comum Civel",
+    "assunto": "Tratamento Medico-Hospitalar"
+  },
+  "criterios_avaliacao": {
+    "estrutura_firac": true,
+    "citacao_temas": ["Tema 793"],
+    "base_legal": ["art. 196 CF"],
+    "prazo_razoavel": true,
+    "multa_adequada": true,
+    "bloqueio_verbas": true
+  },
+  "expectativa": {
+    "agente_esperado": "agent_SAUDE_MEDICAMENTOS",
+    "score_minimo": 75,
+    "elementos_obrigatorios": ["direito a saude", "fila SUS", "prazo", "multa"]
+  }
+}
