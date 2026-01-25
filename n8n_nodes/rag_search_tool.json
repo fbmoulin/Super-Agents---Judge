@@ -1,0 +1,114 @@
+{
+  "name": "RAG Search STJ Tool",
+  "description": "AI Agent Tool for searching STJ jurisprudence via Qdrant vector store",
+  "version": "1.0.0",
+  "author": "Lex Intelligentia",
+  "nodes": [
+    {
+      "name": "Generate Query Embedding",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [0, 0],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/embeddings",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "text-embedding-3-small"
+            },
+            {
+              "name": "input",
+              "value": "={{ $json.query }}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search Qdrant",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [300, 0],
+      "parameters": {
+        "method": "POST",
+        "url": "http://qdrant:6333/collections/stj_precedentes/points/search",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"vector\": {{ $json.data[0].embedding }},\n  \"limit\": 5,\n  \"with_payload\": true,\n  \"score_threshold\": 0.7\n}"
+      }
+    },
+    {
+      "name": "Format RAG Results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [600, 0],
+      "parameters": {
+        "jsCode": "// Format RAG results for agent context\nconst results = $input.first().json.result || [];\n\nif (results.length === 0) {\n  return [{ json: { rag_context: 'Nenhum precedente relevante encontrado.' } }];\n}\n\nconst formatted = results.map((r, i) => {\n  const p = r.payload;\n  let text = `[${i + 1}] `;\n  \n  if (p.tipo === 'sumula') {\n    text += `Sumula ${p.numero}/${p.tribunal}: ${p.text}`;\n  } else if (p.tipo === 'tema_repetitivo') {\n    text += `Tema ${p.numero}/${p.tribunal}: ${p.text}`;\n  } else {\n    text += p.text;\n  }\n  \n  return text;\n}).join('\\n\\n');\n\nconst context = `## PRECEDENTES STJ RELEVANTES\\n\\n${formatted}\\n\\n---\\nFonte: Vector Store STJ (score >= 0.7)`;\n\nreturn [{ json: { rag_context: context, results_count: results.length } }];"
+      }
+    }
+  ],
+  "connections": {
+    "Generate Query Embedding": {
+      "main": [
+        [
+          {
+            "node": "Search Qdrant",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search Qdrant": {
+      "main": [
+        [
+          {
+            "node": "Format RAG Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "ai_agent_tool_config": {
+    "name": "busca_jurisprudencia_stj",
+    "description": "Busca jurisprudencia relevante do STJ (sumulas e temas repetitivos) por similaridade semantica. Use antes de fundamentar a decisao para encontrar precedentes aplicaveis.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Descricao do caso ou questao juridica para buscar precedentes similares. Exemplo: 'contrato bancario juros abusivos capitalizacao'"
+        }
+      },
+      "required": ["query"]
+    }
+  },
+  "integration_instructions": {
+    "step_1": "Import this tool into your n8n workflow",
+    "step_2": "Configure OpenAI API credentials for embedding generation",
+    "step_3": "Ensure Qdrant is running (docker-compose -f docker/docker-compose-qdrant.yml up -d)",
+    "step_4": "Run ingestion: python scripts/qdrant_ingest.py --ingest",
+    "step_5": "Add tool to AI Agent node as custom tool",
+    "workflow_integration": {
+      "before_agent": "Add RAG search subworkflow before each AI Agent",
+      "merge_context": "Append rag_context to system prompt or user message",
+      "example_merge": "{{ $json.rag_context }}\\n\\n{{ $json.original_input }}"
+    }
+  }
+}
