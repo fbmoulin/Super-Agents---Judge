@@ -1,0 +1,237 @@
+{
+  "timestamp": "2026-01-20T17:20:17.619Z",
+  "summary": {
+    "totalTests": 2,
+    "passed": 2,
+    "failed": 0,
+    "avgScore": 100,
+    "byAgent": {
+      "agent_divorcio": {
+        "tests": 2,
+        "passed": 2,
+        "avgScore": 100
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "divorcio_01",
+      "descricao": "Divorcio litigioso com partilha de bens e guarda compartilhada",
+      "agente": "agent_divorcio",
+      "success": true,
+      "executionTime": 34607,
+      "inputTokens": 1213,
+      "outputTokens": 2010,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [
+              "197",
+              "377"
+            ],
+            "percentage": 0
+          },
+          "wordCount": 846,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo]\n**Classe:** Ação de Divórcio Litigioso\n**Requerente:** [REVISAR: nome da autora]\n**Requerido:** [REVISAR: nome do réu]\n\n---\n\n## I - RELATÓRIO\n\n**[NOME DA AUTORA]**, qualificada nos autos, ajuizou AÇÃO DE DIVÓRCIO LITIGIOSO em face de **[NOME DO RÉU]**, também qualificado, alegando ruptura irreversível do vínculo conjugal.\n\nNarrou que as partes contraíram matrimônio em 15/03/2018, sob o regime da comunhão parcial de bens, do qual advieram dois filhos menores: Pedro (8 anos) e Maria (5 anos).\n\nDurante a constância do casamento, o casal constituiu patrimônio composto por: (a) imóvel residencial avaliado em R$ 450.000,00; (b) veículo Honda Civic 2022, no valor de R$ 120.000,00; (c) aplicações financeiras de R$ 80.000,00.\n\nRequereu: (a) decretação do divórcio; (b) guarda compartilhada com residência materna; (c) pensão alimentícia de 30% dos rendimentos líquidos do réu; (d) partilha igualitária dos bens; (e) retorno ao nome de solteira.\n\nO réu contestou pleiteando guarda compartilhada com residência paterna, fixação de alimentos em 20% dos rendimentos e permanência no imóvel familiar.\n\nFoi realizado estudo psicossocial (fl. 145), que recomendou guarda compartilhada com residência materna.\n\nConsta que o réu aufere renda mensal de R$ 15.000,00 (contador autônomo) e a autora R$ 8.000,00 (servidora pública).\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1. PRELIMINARES\n\nNão há preliminares a apreciar.\n\n### 2.2. MÉRITO\n\n#### 2.2.1. DO DIVÓRCIO\n\nO divórcio é direito potestativo dos cônjuges, conforme art. 226, §6º da CF/88, com redação da EC 66/2010, que suprimiu os requisitos de prazo e causa.\n\nA ruptura do vínculo conjugal restou demonstrada pela própria propositura da ação e ausência de reconciliação, sendo desnecessária a demonstração de culpa ou lapso temporal.\n\n**DECRETO O DIVÓRCIO** do casal, com fundamento no art. 1.571, I c/c art. 1.580 do Código Civil.\n\n#### 2.2.2. DA GUARDA DOS FILHOS\n\nA guarda compartilhada é a regra no ordenamento jurídico (art. 1.584, §2º, CC), devendo ser aplicada sempre que possível, priorizando o melhor interesse da criança.\n\nO estudo psicossocial de fl. 145 recomendou expressamente a **guarda compartilhada com residência materna**, considerando:\n- Capacidade parental de ambos os genitores\n- Vínculo afetivo preservado com ambos\n- Estabilidade do ambiente materno\n- Rotina escolar e social já estabelecida\n\nAmbas as partes concordam com a guarda compartilhada, divergindo apenas quanto à residência base.\n\n**DEFIRO a guarda compartilhada com residência materna**, nos termos do art. 1.584, §2º do CC e Súmula 608/STJ.\n\n#### 2.2.3. DOS ALIMENTOS\n\nOs alimentos devem atender às necessidades dos alimentandos e às possibilidades do alimentante (art. 1.694, §1º, CC).\n\nConsiderando:\n- Idade das crianças (8 e 5 anos)\n- Renda do genitor: R$ 15.000,00 mensais\n- Renda da genitora: R$ 8.000,00 mensais\n- Necessidades básicas (educação, saúde, lazer)\n- Padrão de vida familiar\n\nO percentual de 30% pleiteado pela autora mostra-se excessivo, enquanto os 20% propostos pelo réu são insuficientes.\n\n**FIXO os alimentos em 25% dos rendimentos líquidos do réu**, a serem pagos até o dia 10 de cada mês, com correção pelo INPC e juros de 1% ao mês em caso de atraso.\n\n#### 2.2.4. DA PARTILHA DE BENS\n\nO regime da comunhão parcial (art. 1.658, CC) determina a partilha igualitária dos aquestos.\n\nOs bens adquiridos na constância do casamento integram o patrimônio comum:\n- Imóvel residencial: R$ 450.000,00\n- Veículo Honda Civic 2022: R$ 120.000,00  \n- Aplicações financeiras: R$ 80.000,00\n- **Total:** R$ 650.000,00\n\n[REVISAR: verificar se existem bens particulares ou dívidas a serem consideradas]\n\n**DETERMINO a partilha igualitária**, cabendo a cada cônjuge 50% do patrimônio comum (R$ 325.000,00).\n\nConsiderando que os filhos residirão com a genitora, **ADJUDICO o imóvel residencial à autora**, devendo esta compensar o réu no valor de R$ 100.000,00 (diferença entre 50% do imóvel e sua meação de R$ 325.000,00).\n\n#### 2.2.5. DO NOME\n\nÉ direito da mulher retornar ao nome de solteira após o divórcio (art. 1.578, CC).\n\n**AUTORIZO** o retorno da autora ao nome de solteira.\n\n### 2.3. JURISPRUDÊNCIA\n\n> \"A guarda compartilhada deve ser aplicada sempre que possível, por atender melhor ao interesse da criança\" (STJ, REsp 1.417.868/MG).\n\n> \"Os alimentos devem ser fixados considerando as necessidades do alimentando e as possibilidades do alimentante\" (STJ, Súmula 358).\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, **JULGO PROCEDENTE EM PARTE** o pedido para:\n\n**a)** DECRETAR o divórcio do casal, com fundamento no art. 1.571, I c/c 1.580 do CC;\n\n**b)** DEFERIR a guarda compartilhada dos filhos menores Pedro e Maria, com residência materna;\n\n**c)** FIXAR alimentos em favor dos menores no valor correspondente a **25% dos rendimentos líquidos do réu**, pagos até o dia 10 de cada mês;\n\n**d)** DETERMINAR a partilha igualitária do patrimônio comum, adjudicando o imóvel residencial à autora mediante compensação de R$ 100.000,00 ao réu;\n\n**e)** AUTORIZAR o retorno da autora ao nome de solteira;\n\n**f)** CONDENAR o réu ao pagamento de honorários advocatícios de 10% sobre o valor da causa (R$ 65.000,00), nos termos do art. 85, §2º, CPC.\n\nCustas pelo réu.\n\nTransitada em julgado, expeçam-se os competentes mandados.\n\nP.R.I.C.\n\n[Local], [data].\n\n**[NOME DO JUIZ]**\nJuiz de Direito\n\n---\n\n**[REVISAR: confirmar valores da compensação patrimonial e verificar se há outros bens ou dívidas não mencionados]**"
+    },
+    {
+      "testCase": "divorcio_02",
+      "descricao": "Dissolucao de uniao estavel com reconhecimento incidental e partilha",
+      "agente": "agent_divorcio",
+      "success": true,
+      "executionTime": 31044,
+      "inputTokens": 1219,
+      "outputTokens": 2014,
+      "validation": {
+        "totalScore": 90,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [
+              "380"
+            ],
+            "percentage": 0
+          },
+          "wordCount": 863,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 95
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [NÚMERO DO PROCESSO]\n**Classe:** Ação de Dissolução de União Estável\n**Autor:** [NOME DO AUTOR]\n**Ré:** [NOME DA RÉ]\n\n---\n\n## I - RELATÓRIO\n\n[NOME DO AUTOR] ajuizou ação de dissolução de união estável cumulada com partilha de bens em face de [NOME DA RÉ], alegando que mantiveram convivência pública, contínua e duradoura com objetivo de constituir família no período de janeiro de 2019 a dezembro de 2025 (7 anos). \n\nSustenta que não houve contrato de convivência, aplicando-se o regime da comunhão parcial (art. 1.725 CC). Informa que não há filhos da união. Durante a convivência, adquiriram: (1) apartamento financiado em nome de ambos, valor de mercado R$ 380.000,00, com saldo devedor de R$ 120.000,00; (2) dois veículos: Fiat Argo 2023 (R$ 75.000,00) em nome do autor e VW Polo 2022 (R$ 85.000,00) em nome da ré; (3) móveis e utensílios domésticos (R$ 40.000,00).\n\nA ré contestou alegando que a união teria durado apenas 4 anos (2021-2025), negando o período anterior.\n\nDurante a instrução, foi produzida prova testemunhal (fls. 180-195) que confirmou a convivência desde 2019, com declarações de vizinhos, amigos e familiares. Foram juntados fotos de viagens, declaração conjunta de IR (2020-2025) e comprovantes de residência comum.\n\nRequer o autor: a) reconhecimento da união estável (jan/2019 a dez/2025); b) declaração de dissolução da união; c) partilha igualitária dos bens adquiridos; d) divisão proporcional do saldo devedor; e) honorários advocatícios.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - DO RECONHECIMENTO DA UNIÃO ESTÁVEL\n\nA união estável está prevista no art. 1.723 do Código Civil, que estabelece: \"É reconhecida como entidade familiar a união estável entre o homem e a mulher, configurada na convivência pública, contínua e duradoura e estabelecida com o objetivo de constituição de família\".\n\nOs elementos caracterizadores da união estável são: (i) diversidade de sexos; (ii) convivência pública; (iii) continuidade; (iv) durabilidade; (v) objetivo de constituir família (affectio maritalis).\n\nNo caso dos autos, restaram amplamente demonstrados todos os requisitos legais:\n\n**Convivência pública:** As testemunhas ouvidas (fls. 180-195) confirmaram que as partes se apresentavam publicamente como casal, sendo reconhecidos pela vizinhança e círculo social como companheiros.\n\n**Continuidade e durabilidade:** A prova documental (declarações de IR conjuntas de 2020-2025, comprovantes de residência comum, fotografias de viagens) comprova a convivência ininterrupta desde janeiro de 2019.\n\n**Objetivo de constituir família:** A vida em comum, com divisão de responsabilidades domésticas e patrimoniais, evidencia o animus de constituir entidade familiar.\n\nQuanto ao período da união, a prova testemunhal foi uníssona em confirmar o início da convivência em janeiro de 2019, não prosperando a alegação da ré de que teria iniciado apenas em 2021. As declarações de IR conjuntas a partir de 2020 corroboram a tese autoral.\n\n### 2.2 - DA DISSOLUÇÃO DA UNIÃO ESTÁVEL\n\nComprovada a união estável e seu término em dezembro de 2025, impõe-se o decreto de dissolução, nos termos do art. 1.726 do Código Civil.\n\n### 2.3 - DA PARTILHA DE BENS\n\nNa ausência de contrato de convivência estabelecendo regime diverso, aplica-se à união estável o regime da comunhão parcial de bens (art. 1.725 CC), comunicando-se os aquestos adquiridos onerosamente durante a convivência.\n\n**Apartamento:** Adquirido durante a união (valor R$ 380.000,00, saldo devedor R$ 120.000,00). Bem comunicável. Valor líquido: R$ 260.000,00. Cota de cada parte: R$ 130.000,00. O saldo devedor deverá ser assumido proporcionalmente por ambos (R$ 60.000,00 cada).\n\n**Veículos:** Ambos adquiridos durante a união estável. Fiat Argo 2023 (R$ 75.000,00) e VW Polo 2022 (R$ 85.000,00). Total: R$ 160.000,00. Cota de cada parte: R$ 80.000,00.\n\n**Móveis e utensílios:** Adquiridos durante a convivência (R$ 40.000,00). Cota de cada parte: R$ 20.000,00.\n\n[REVISAR: necessário avaliar se há outros bens não mencionados ou dívidas a serem consideradas na partilha]\n\n### 2.4 - DOS HONORÁRIOS ADVOCATÍCIOS\n\nTratando-se de ação de família com procedência integral dos pedidos, fixo os honorários advocatícios em 10% sobre o valor da causa (R$ 460.000,00), nos termos do art. 85, §2º, I do CPC, totalizando R$ 46.000,00, a serem suportados pela ré.\n\n**Jurisprudência aplicável:**\n\n> \"A união estável configura-se pela convivência pública, contínua e duradoura entre homem e mulher, estabelecida com objetivo de constituição de família, independentemente de prazo mínimo\" (STJ, REsp 1.454.643/RJ).\n\n> \"Na união estável, aplicam-se as regras da comunhão parcial de bens quando não houver contrato escrito\" (STJ, REsp 1.302.467/SP).\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTES os pedidos para:\n\n**a)** RECONHECER a união estável entre as partes no período de janeiro de 2019 a dezembro de 2025;\n\n**b)** DECLARAR dissolvida a referida união estável;\n\n**c)** DETERMINAR a partilha dos bens adquiridos durante a convivência:\n- Apartamento: valor líquido R$ 260.000,00 (R$ 130.000,00 para cada parte);\n- Saldo devedor do financiamento: R$ 120.000,00 (R$ 60.000,00 para cada parte);\n- Veículos: total R$ 160.000,00 (R$ 80.000,00 para cada parte);\n- Móveis e utensílios: R$ 40.000,00 (R$ 20.000,00 para cada parte);\n\n**d)** CONDENAR a ré ao pagamento de honorários advocatícios no valor de R$ 46.000,00 (10% sobre o valor da causa);\n\n**e)** DETERMINAR que as partes procedam à partilha amigável no prazo de 30 dias, sob pena de nomeação de partidor.\n\nCustas pela ré.\n\nTransitada em julgado, arquivem-se com as cautelas de praxe.\n\nP.R.I.C.\n\n[LOCAL], [DATA].\n\n**[NOME DO JUIZ]**\nJuiz de Direito"
+    }
+  ]
+}

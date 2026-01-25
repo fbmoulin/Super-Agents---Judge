@@ -1,0 +1,2060 @@
+{
+  "timestamp": "2026-01-19T21:42:05.003Z",
+  "summary": {
+    "totalTests": 19,
+    "passed": 19,
+    "failed": 0,
+    "avgScore": 101,
+    "byAgent": {
+      "agent_bancario": {
+        "tests": 5,
+        "passed": 5,
+        "avgScore": 104
+      },
+      "agent_consumidor": {
+        "tests": 5,
+        "passed": 5,
+        "avgScore": 105
+      },
+      "agent_execucao": {
+        "tests": 1,
+        "passed": 1,
+        "avgScore": 89
+      },
+      "agent_locacao": {
+        "tests": 1,
+        "passed": 1,
+        "avgScore": 95
+      },
+      "agent_possessorias": {
+        "tests": 1,
+        "passed": 1,
+        "avgScore": 95
+      },
+      "agent_saude_cobertura": {
+        "tests": 1,
+        "passed": 1,
+        "avgScore": 105
+      },
+      "agent_saude_contratual": {
+        "tests": 1,
+        "passed": 1,
+        "avgScore": 105
+      },
+      "agent_transito": {
+        "tests": 1,
+        "passed": 1,
+        "avgScore": 95
+      },
+      "agent_usucapiao": {
+        "tests": 1,
+        "passed": 1,
+        "avgScore": 89
+      },
+      "agent_incorporacao": {
+        "tests": 1,
+        "passed": 1,
+        "avgScore": 105
+      },
+      "agent_generico": {
+        "tests": 1,
+        "passed": 1,
+        "avgScore": 95
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "bancario_01",
+      "descricao": "Emprestimo consignado fraudulento - aposentado vitima de fraude",
+      "agente": "agent_bancario",
+      "success": true,
+      "executionTime": 30028,
+      "inputTokens": 900,
+      "outputTokens": 1723,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [
+              "297",
+              "479"
+            ],
+            "missing": [],
+            "percentage": 100
+          },
+          "wordCount": 785,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo]\n**Classe:** Procedimento Comum Cível\n**Autor:** [REVISAR: nome completo do autor]\n**Réu:** [REVISAR: nome completo do banco réu]\n\n---\n\n## I - RELATÓRIO\n\n[REVISAR: nome do autor], qualificado nos autos, ajuizou ação declaratória de inexistência de débito c/c indenização por danos morais e repetição de indébito em face de [REVISAR: nome do banco réu], também qualificado, alegando, em síntese, que é aposentado do INSS, com 72 anos de idade,..."
+    },
+    {
+      "testCase": "bancario_02",
+      "descricao": "Juros abusivos em financiamento de veiculo",
+      "agente": "agent_bancario",
+      "success": true,
+      "executionTime": 26615,
+      "inputTokens": 884,
+      "outputTokens": 1597,
+      "validation": {
+        "totalScore": 95,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [
+              "381"
+            ],
+            "missing": [
+              "382",
+              "539"
+            ],
+            "percentage": 33
+          },
+          "wordCount": 719,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 100
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [NÚMERO DO PROCESSO]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Contratos Bancários - Juros - Revisional\n**Requerente:** [NOME DO AUTOR]\n**Requerido:** [NOME DO BANCO]\n\n---\n\n## I - RELATÓRIO\n\n[NOME DO AUTOR] ajuizou ação revisional de contrato bancário em face de [NOME DO BANCO], alegando abusividade nos juros praticados em contrato de financiamento de veículo celebrado em março de 2024.\n\nNarra que firmou contrato no valor de R$ 45.000,00 para aquisição de aut..."
+    },
+    {
+      "testCase": "bancario_03",
+      "descricao": "Fraude em cartao de credito - compras nao reconhecidas",
+      "agente": "agent_bancario",
+      "success": true,
+      "executionTime": 26443,
+      "inputTokens": 897,
+      "outputTokens": 1592,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [
+              "479"
+            ],
+            "missing": [
+              "385"
+            ],
+            "percentage": 50
+          },
+          "wordCount": 709,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº [REVISAR: número do processo]**\n\n**Classe:** Procedimento Comum Cível  \n**Assunto:** Cartão de Crédito - Fraude - Negativação Indevida  \n**Valor da Causa:** R$ 29.960,00\n\n**Requerente:** [REVISAR: nome da autora]  \n**Requerido:** [REVISAR: nome do banco réu]\n\n---\n\n## I - RELATÓRIO\n\n[REVISAR: nome da autora], servidora pública estadual, ajuizou ação declaratória de inexigibilidade de débito c/c indenização por danos morais contra [REVISAR: nome do banco réu], alegando que e..."
+    },
+    {
+      "testCase": "bancario_04",
+      "descricao": "Negativacao indevida apos quitacao de divida",
+      "agente": "agent_bancario",
+      "success": true,
+      "executionTime": 27303,
+      "inputTokens": 850,
+      "outputTokens": 1697,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [
+              "385"
+            ],
+            "missing": [
+              "388"
+            ],
+            "percentage": 50
+          },
+          "wordCount": 803,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo]\n**Classe:** Procedimento Comum Cível\n**Autor:** [REVISAR: nome do autor]\n**Réu:** [REVISAR: nome do banco réu]\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de ação de obrigação de fazer c/c indenização por danos morais ajuizada por [REVISAR: nome do autor] em face de [REVISAR: nome do banco réu], alegando, em síntese, que celebrou acordo de renegociação de dívida de cartão de crédito em agosto de 2025, no valor de R$ 12.000,00, parcelado em 12 vezes..."
+    },
+    {
+      "testCase": "bancario_05",
+      "descricao": "Acao revisional de contrato de credito pessoal",
+      "agente": "agent_bancario",
+      "success": true,
+      "executionTime": 29331,
+      "inputTokens": 973,
+      "outputTokens": 1729,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [
+              "382",
+              "539"
+            ],
+            "missing": [
+              "381",
+              "603"
+            ],
+            "percentage": 50
+          },
+          "wordCount": 762,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº [REVISAR: número do processo]**\n\n**Classe:** Procedimento Comum Cível  \n**Assunto:** Contrato Bancário - Revisional - Juros  \n**Valor da Causa:** R$ 15.840,00\n\n**Autor:** [REVISAR: nome do autor]  \n**Réu:** [REVISAR: nome do banco réu]\n\n---\n\n## I - RELATÓRIO\n\n[REVISAR: nome do autor] ajuizou ação revisional de contrato bancário em face de [REVISAR: nome do banco réu], alegando ter contratado empréstimo pessoal em janeiro de 2025, no valor de R$ 30.000,00, para pagamento em..."
+    },
+    {
+      "testCase": "consumidor_01",
+      "descricao": "Falha na prestacao de servico de telecomunicacoes",
+      "agente": "agent_consumidor",
+      "success": true,
+      "executionTime": 26163,
+      "inputTokens": 902,
+      "outputTokens": 1689,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 804,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo]  \n**Classe:** Procedimento Comum Cível  \n**Assunto:** Prestação de Serviços - Telecomunicações - CDC  \n\n---\n\n## I - RELATÓRIO\n\n[REVISAR: nome da autora] ajuizou ação de obrigação de fazer c/c indenização por danos morais e materiais em face de [REVISAR: nome da empresa ré], alegando, em síntese, ter contratado serviço de internet banda larga de 500 Mbps pelo valor mensal de R$ 149,90 em março de 2025. Sustenta que a velocidade real nunca..."
+    },
+    {
+      "testCase": "consumidor_02",
+      "descricao": "Produto com defeito de fabricacao - celular",
+      "agente": "agent_consumidor",
+      "success": true,
+      "executionTime": 23859,
+      "inputTokens": 858,
+      "outputTokens": 1560,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 716,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo não informado]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Produto defeituoso - Vício - CDC\n**Valor da Causa:** R$ 11.850,00\n\n---\n\n## I - RELATÓRIO\n\n[REVISAR: nome do autor] move ação de indenização por danos materiais e morais em face de [REVISAR: nome da ré], alegando ter adquirido smartphone da marca X, modelo Premium Plus, pelo valor de R$ 6.500,00 em setembro de 2025. Sustenta que após 45 dias de uso normal, o aparelho apresent..."
+    },
+    {
+      "testCase": "consumidor_03",
+      "descricao": "Cobranca indevida de servico nao contratado",
+      "agente": "agent_consumidor",
+      "success": true,
+      "executionTime": 26895,
+      "inputTokens": 894,
+      "outputTokens": 1714,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 762,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº [REVISAR: número do processo]**\n**Classe:** Procedimento Comum Cível\n**Assunto:** Cobrança indevida - Serviço não contratado - CDC\n\n---\n\n## I - RELATÓRIO\n\n[REVISAR: nome da autora], qualificada nos autos, ajuizou ação de procedimento comum em face de [REVISAR: nome da operadora], também qualificada, alegando ser cliente da requerida desde 2020 com plano pós-pago de R$ 89,90 mensais. Sustenta que, a partir de julho de 2025, passou a ser cobrada por serviço denominado \"Se..."
+    },
+    {
+      "testCase": "consumidor_04",
+      "descricao": "Propaganda enganosa em venda de curso online",
+      "agente": "agent_consumidor",
+      "success": true,
+      "executionTime": 27528,
+      "inputTokens": 911,
+      "outputTokens": 1785,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 841,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [NÚMERO DO PROCESSO]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Propaganda enganosa - Curso online - CDC\n**Requerente:** [NOME DO AUTOR]\n**Requerido:** [NOME DA EMPRESA RÉ]\n\n---\n\n## I - RELATÓRIO\n\n[NOME DO AUTOR] ajuizou ação de rescisão contratual c/c restituição de valores e indenização por danos morais em face de [NOME DA EMPRESA RÉ], alegando ter adquirido curso online denominado \"Formação em Day Trade - Do Zero ao Milhão\" em agosto de 2025, pelo valor de ..."
+    },
+    {
+      "testCase": "consumidor_05",
+      "descricao": "Plano de saude - negativa de cobertura de cirurgia",
+      "agente": "agent_consumidor",
+      "success": true,
+      "executionTime": 30365,
+      "inputTokens": 956,
+      "outputTokens": 1692,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [
+              "302 STJ"
+            ],
+            "percentage": 0
+          },
+          "wordCount": 747,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº [REVISAR: número não informado]**\n**Classe:** Procedimento Comum Cível\n**Assunto:** Plano de Saúde - Negativa de Cobertura - Cirurgia Urgente\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de ação de obrigação de fazer c/c indenização por danos morais e pedido de tutela de urgência proposta por **[REVISAR: nome da autora não informado]** em face de **[REVISAR: nome completo da operadora \"Re\" não informado]**.\n\nAlega a autora, em síntese, que é beneficiária de plano de saúde empresarial ..."
+    },
+    {
+      "testCase": "execucao_01",
+      "descricao": "Execução de título extrajudicial - cheque prescrito",
+      "agente": "agent_execucao",
+      "success": true,
+      "executionTime": 21699,
+      "inputTokens": 775,
+      "outputTokens": 1188,
+      "validation": {
+        "totalScore": 85,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 531,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 89
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [NÚMERO DO PROCESSO]\n**Classe:** Execução de Título Extrajudicial\n**Exequente:** [NOME DO EXEQUENTE]\n**Executado:** [NOME DO EXECUTADO]\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de execução de título extrajudicial fundada em cheque no valor de R$ 25.000,00, emitido pelo executado em 15/03/2024 e devolvido por insuficiência de fundos (alínea 11), posteriormente protestado em 20/04/2024.\n\nO executado foi regularmente citado por oficial de justiça em 10/01/2026, não efetuando o ..."
+    },
+    {
+      "testCase": "locacao_01",
+      "descricao": "Ação de despejo por falta de pagamento cumulada com cobrança",
+      "agente": "agent_locacao",
+      "success": true,
+      "executionTime": 34494,
+      "inputTokens": 884,
+      "outputTokens": 2058,
+      "validation": {
+        "totalScore": 90,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 879,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 95
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [NÚMERO DO PROCESSO]\n**Classe:** Ação de Despejo\n**Requerente:** [NOME DO AUTOR]\n**Requerido:** [NOME DO RÉU] e [NOME DO FIADOR]\n\n---\n\n## I - RELATÓRIO\n\n[NOME DO AUTOR], qualificado nos autos, ajuizou a presente **Ação de Despejo por Falta de Pagamento** cumulada com **Cobrança** em face de [NOME DO RÉU] e [NOME DO FIADOR], também qualificados, alegando ser proprietário do imóvel situado na Rua das Flores, 123, Vitória/ES, locado ao primeiro requerido desde março de ..."
+    },
+    {
+      "testCase": "possessorias_01",
+      "descricao": "Reintegração de posse com pedido de liminar",
+      "agente": "agent_possessorias",
+      "success": true,
+      "executionTime": 26417,
+      "inputTokens": 769,
+      "outputTokens": 1594,
+      "validation": {
+        "totalScore": 90,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 707,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 95
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo]\n**Classe:** Reintegração de Posse\n**Requerente:** [REVISAR: nome completo do autor]\n**Requerido:** [REVISAR: nome completo do réu]\n\n---\n\n## I - RELATÓRIO\n\n[REVISAR: nome do autor] ajuizou ação de reintegração de posse em face de [REVISAR: nome do réu], alegando ser possuidor de terreno urbano de 500m² localizado no bairro Jardim América, Vitória/ES, há mais de 15 anos, onde mantém pequena horta comunitária.\n\nNarra que em dezembro de 2025..."
+    },
+    {
+      "testCase": "SAUDE_COB_001",
+      "descricao": "Negativa de cobertura de cirurgia bariatrica",
+      "agente": "agent_saude_cobertura",
+      "success": true,
+      "executionTime": 28419,
+      "inputTokens": 732,
+      "outputTokens": 1577,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 737,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº:** [REVISAR: número do processo]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Plano de Saúde - Negativa de Cobertura\n**Requerente:** [REVISAR: nome da autora]\n**Requerido:** UNIMED [REVISAR: razão social completa]\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de ação de obrigação de fazer c/c indenização por danos morais ajuizada por [REVISAR: nome da autora] em face de UNIMED [REVISAR: razão social], alegando, em síntese, que é beneficiária do plano de saúde há 5 anos e foi diagn..."
+    },
+    {
+      "testCase": "SAUDE_CONT_001",
+      "descricao": "Reajuste abusivo por faixa etaria para idoso",
+      "agente": "agent_saude_contratual",
+      "success": true,
+      "executionTime": 32537,
+      "inputTokens": 681,
+      "outputTokens": 1800,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 832,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [NÚMERO DO PROCESSO]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Plano de Saúde - Reajuste Abusivo\n**Requerente:** [NOME DO AUTOR]\n**Requerido:** [NOME DA OPERADORA]\n\n---\n\n## I - RELATÓRIO\n\n**[NOME DO AUTOR]**, qualificado nos autos, ajuizou a presente ação em face de **[NOME DA OPERADORA]**, também qualificada, alegando, em síntese, que é beneficiário de plano de saúde há 15 anos e que, aos 68 anos de idade, recebeu em janeiro de 2026 boleto com reajuste de 12..."
+    },
+    {
+      "testCase": "TRANSITO_001",
+      "descricao": "Colisao traseira com lesoes corporais",
+      "agente": "agent_transito",
+      "success": true,
+      "executionTime": 27122,
+      "inputTokens": 705,
+      "outputTokens": 1439,
+      "validation": {
+        "totalScore": 90,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 604,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 95
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número não informado]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Responsabilidade Civil - Acidente de Trânsito\n**Autor:** [REVISAR: nome não informado]\n**Réu:** [REVISAR: nome não informado]\n**Valor da Causa:** R$ 30.000,00\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de ação de responsabilidade civil por acidente de trânsito proposta por [REVISAR: nome do autor] em face de [REVISAR: nome do réu], objetivando indenização por danos materiais, morais e lucros cess..."
+    },
+    {
+      "testCase": "USUCAPIAO_001",
+      "descricao": "Usucapiao extraordinaria de imovel urbano",
+      "agente": "agent_usucapiao",
+      "success": true,
+      "executionTime": 28943,
+      "inputTokens": 606,
+      "outputTokens": 1620,
+      "validation": {
+        "totalScore": 85,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 707,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 89
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [NÚMERO DO PROCESSO]\n**Classe:** Usucapião\n**Assunto:** Usucapião Extraordinária\n**Requerente:** [NOME DO AUTOR]\n**Valor da Causa:** R$ 150.000,00\n\n---\n\n## I - RELATÓRIO\n\n[NOME DO AUTOR], qualificado nos autos, ajuizou ação de **USUCAPIÃO EXTRAORDINÁRIA** em face dos proprietários tabulares do imóvel urbano localizado em Vila Velha/ES, com área de 180m², alegando exercer posse mansa, pacífica e ininterrupta desde 1995, perfazendo 31 anos de posse.\n\nSustenta ter const..."
+    },
+    {
+      "testCase": "INCORPORACAO_001",
+      "descricao": "Atraso de 18 meses na entrega de imovel na planta",
+      "agente": "agent_incorporacao",
+      "success": true,
+      "executionTime": 27118,
+      "inputTokens": 672,
+      "outputTokens": 1568,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 696,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo não informado]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Incorporação Imobiliária - Atraso na Entrega\n**Autor:** [REVISAR: nome do autor não informado]\n**Réu:** [REVISAR: nome da incorporadora não informado]\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de ação de indenização por danos materiais e morais ajuizada por [REVISAR: nome do autor] em face de [REVISAR: nome da incorporadora], alegando atraso na entrega de apartamento adquirido na pla..."
+    },
+    {
+      "testCase": "generico_01",
+      "descricao": "Ação declaratória de inexistência de relação jurídica - caso atípico",
+      "agente": "agent_generico",
+      "success": true,
+      "executionTime": 31036,
+      "inputTokens": 812,
+      "outputTokens": 1953,
+      "validation": {
+        "totalScore": 90,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 886,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 95
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Ação Declaratória - Inexistência de relação jurídica societária\n**Requerente:** [REVISAR: nome completo do autor]\n**Requerido:** [REVISAR: identificação completa dos réus]\n\n---\n\n## I - RELATÓRIO\n\n[REVISAR: nome do autor], qualificado nos autos, ajuizou a presente AÇÃO DECLARATÓRIA DE INEXISTÊNCIA DE RELAÇÃO JURÍDICA SOCIETÁRIA em face de [REVISAR: identificação dos réus], alegando, em sín..."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "caso_id": "divorcio_01",
+  "descricao": "Divorcio litigioso com partilha de bens e guarda compartilhada",
+  "fatos": "A autora, casada com o reu desde 15/03/2018 sob o regime de comunhao parcial de bens, ajuizou acao de divorcio litigioso alegando ruptura irreversivel do vinculo conjugal. Da uniao advieram 2 filhos menores: Pedro (8 anos) e Maria (5 anos). Durante o casamento, o casal adquiriu: (1) imovel residencial avaliado em R$ 450.000,00, quitado, utilizado como residencia familiar; (2) veiculo Honda Civic 2022, valor de mercado R$ 120.000,00; (3) aplicacoes financeiras no valor de R$ 80.000,00. A autora requer: guarda compartilhada com residencia materna, pensao alimenticia de 30% dos rendimentos liquidos do reu em favor dos filhos, partilha igualitaria dos bens e retorno ao nome de solteira. O reu contestou pleiteando guarda compartilhada com residencia paterna, fixacao de alimentos em 20% e permanencia no imovel. Laudo psicossocial (fl. 145) recomendou guarda compartilhada com residencia materna. A renda do reu e de R$ 15.000,00 mensais (autonomo - contador). A autora aufere R$ 8.000,00 mensais (servidora publica).",
+  "questoes": "1) Qual o regime de guarda mais adequado ao melhor interesse das criancas? 2) Qual o valor adequado dos alimentos aos filhos menores? 3) Como deve ser partilhado o patrimonio do casal? 4) E cabivel o retorno ao nome de solteira?",
+  "pedidos": "a) Decretacao do divorcio; b) Guarda compartilhada com residencia materna; c) Alimentos de 30% dos rendimentos liquidos do genitor; d) Partilha igualitaria dos bens; e) Retorno ao nome de solteira; f) Honorarios advocaticios.",
+  "classe": "Acao de Divorcio Litigioso",
+  "assunto": "Divorcio - Partilha de Bens - Guarda Compartilhada - Alimentos",
+  "valor_causa": 650000.00,
+  "expectativa": {
+    "agente_esperado": "agent_divorcio",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["197", "377"],
+    "artigos_esperados": ["art. 226 CF", "art. 1.584 CC", "art. 1.694 CC"]
+  }
+}

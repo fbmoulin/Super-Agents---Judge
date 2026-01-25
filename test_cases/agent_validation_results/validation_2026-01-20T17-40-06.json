@@ -1,0 +1,234 @@
+{
+  "timestamp": "2026-01-20T17:40:06.248Z",
+  "summary": {
+    "totalTests": 2,
+    "passed": 2,
+    "failed": 0,
+    "avgScore": 87,
+    "byAgent": {
+      "agent_guarda": {
+        "tests": 2,
+        "passed": 2,
+        "avgScore": 87
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "guarda_01",
+      "descricao": "Regulamentacao de guarda compartilhada com regime de convivencia",
+      "agente": "agent_guarda",
+      "success": true,
+      "executionTime": 31407,
+      "inputTokens": 1385,
+      "outputTokens": 1806,
+      "validation": {
+        "totalScore": 85,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [
+              "383"
+            ],
+            "percentage": 0
+          },
+          "wordCount": 807,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 89
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº:** [NÚMERO DOS AUTOS]\n**Classe:** Procedimento Comum Cível - Vara de Família\n**Assunto:** Regulamentação de Guarda - Guarda Compartilhada\n**Requerente:** PATRICIA SOUZA OLIVEIRA\n**Requerido:** MARCOS ANTONIO FERREIRA\n\n---\n\n## I - RELATÓRIO\n\nPATRICIA SOUZA OLIVEIRA ajuizou ação de regulamentação de guarda c/c fixação de regime de convivência em face de MARCOS ANTONIO FERREIRA, ambos genitores da menor JULIA SOUZA FERREIRA, nascida em 10/08/2018.\n\nAlega a autora que as partes mantiveram união estável de 2016 a 2023, separando-se conflituosamente em outubro/2023. Desde então, a menor reside com a genitora, enquanto o genitor exerce visitas informais e irregulares, gerando insegurança na rotina da criança. Requer fixação de guarda compartilhada com residência-base materna, alegando disponibilidade por trabalhar meio período como professora.\n\nO requerido, em contestação, concorda com a guarda compartilhada, mas pretende residência-base paterna, alegando melhor estrutura habitacional e disponibilidade por trabalhar em home office.\n\nFoi realizado estudo psicossocial (fls. 80-95) recomendando guarda compartilhada com residência-base materna pela proximidade escolar. A menor foi ouvida, manifestando carinho por ambos os pais e desejo de maior convivência paterna.\n\nO Ministério Público opinou pela guarda compartilhada com residência-base materna.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nN��o há preliminares a serem analisadas.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - DA MODALIDADE DE GUARDA\n\nA guarda compartilhada constitui regra no ordenamento jurídico brasileiro, conforme art. 1.584, §2º do Código Civil, alterado pela Lei 13.058/14:\n\n> \"Quando não houver acordo entre a mãe e o pai quanto à guarda do filho, encontrando-se ambos os pais aptos a exercer o poder familiar, será aplicada a guarda compartilhada, salvo se um dos genitores declarar ao magistrado que não deseja a guarda do menor.\"\n\nNo caso concreto, ambos os genitores demonstram aptidão para o exercício da guarda, conforme atestado pelo estudo psicossocial. Não há declaração de desinteresse por qualquer das partes, pelo contrário, ambos pleiteiam a guarda.\n\nO Superior Tribunal de Justiça consolidou entendimento de que a guarda compartilhada deve ser aplicada sempre que possível:\n\n> \"A guarda compartilhada deve ser aplicada sempre que possível, mesmo que haja litígio entre os pais, desde que ambos tenham condições de exercer o poder familiar\" (STJ, REsp 1.417.868/RO).\n\n#### 2.2.2 - DA RESIDÊNCIA-BASE\n\nEmbora a guarda seja compartilhada, faz-se necessário fixar residência-base para fins de organização da rotina da menor e referência domiciliar.\n\nO estudo psicossocial (fls. 80-95) [REVISAR: confirmar páginas do estudo] recomendou residência-base materna considerando:\n- Proximidade da escola atual da menor\n- Manutenção da rotina estabelecida desde a separação\n- Adaptação da criança ao ambiente materno\n\nEmbora o genitor alegue melhor estrutura habitacional, o critério determinante não é o aspecto material, mas sim o melhor interesse da criança, conforme art. 227 da CF/88 e princípios do ECA.\n\nA jurisprudência do TJSP orienta:\n\n> \"Na fixação da residência-base em guarda compartilhada, deve prevalecer a situação que melhor preserve a estabilidade e rotina da criança\" (TJSP, Apelação 1005555-17.2020.8.26.0002).\n\n#### 2.2.3 - DO REGIME DE CONVIVÊNCIA\n\nO regime de convivência deve assegurar amplo contato da menor com ambos os genitores, respeitando sua rotina escolar e desenvolvimento.\n\nConsiderando que a menor manifestou desejo de maior convivência paterna e que o genitor possui disponibilidade, estabeleço regime amplo de convivência.\n\n### 2.3 - JURISPRUDÊNCIA APLICÁVEL\n\nO STJ firmou entendimento sobre a aplicação da guarda compartilhada:\n\n> \"A guarda compartilhada é o regime que melhor atende ao interesse da criança, por assegurar o direito de convivência com ambos os genitores\" (STJ, REsp 1.628.596/RS).\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTE EM PARTE o pedido para:\n\n**a) FIXAR** guarda compartilhada da menor JULIA SOUZA FERREIRA entre os genitores PATRICIA SOUZA OLIVEIRA e MARCOS ANTONIO FERREIRA, nos termos do art. 1.584, §2º do Código Civil;\n\n**b) ESTABELECER** residência-base com a genitora PATRICIA SOUZA OLIVEIRA;\n\n**c) FIXAR** o seguinte regime de convivência do genitor MARCOS ANTONIO FERREIRA:\n- Fins de semana alternados, das 18h de sexta-feira às 18h de domingo;\n- Quarta-feira, das 18h às 20h30 (pernoite facultativo mediante acordo);\n- Metade das férias escolares, alternando-se os períodos anualmente;\n- Feriados prolongados alternados;\n- Dia dos Pais com o genitor; Dia das Mães com a genitora;\n- Aniversário da menor: convivência com ambos ou conforme acordo;\n- Natal e Réveillon alternados anualmente;\n\n**d) DETERMINAR** que eventuais alterações no regime sejam precedidas de consenso entre os genitores ou nova manifestação judicial;\n\n**e) ESTABELECER** que ambos os genitores mantenham-se informados sobre vida escolar, saúde e atividades da menor;\n\n**f) DETERMINAR** que os genitores abstenham-se de atos que configurem alienação parental, sob pena das sanções da Lei 12.318/10.\n\nConsiderando a sucumbência recíproca, cada parte arcará com 50% das custas processuais e honorários de seus respectivos patronos.\n\nTransitada em julgado, arquivem-se os autos com as baixas necessárias.\n\nP.R.I.C.\n\n[Local], [data].\n\n**[NOME DO JUIZ]**\n**Juiz de Direito**\n\n---\n\n**[REVISAR: Confirmar se há necessidade de intimação específica do MP ou outros órgãos]**"
+    },
+    {
+      "testCase": "guarda_02",
+      "descricao": "Modificacao de guarda por descumprimento e indicios de alienacao parental",
+      "agente": "agent_guarda",
+      "success": true,
+      "executionTime": 36237,
+      "inputTokens": 1383,
+      "outputTokens": 2217,
+      "validation": {
+        "totalScore": 80,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [],
+            "percentage": null
+          },
+          "wordCount": 956,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 84
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº 0012345-67.2025.8.08.0035**\n**Classe:** Procedimento Comum Cível - Vara de Família\n**Assunto:** Modificação de Guarda - Alienação Parental\n\n---\n\n## I - RELATÓRIO\n\nRAFAEL SANTOS COSTA ajuizou ação de modificação de guarda em face de ANA BEATRIZ LIMA COSTA, objetivando a inversão da guarda do filho menor LUCAS SANTOS COSTA, nascido em [data], atualmente com 10 anos de idade.\n\nNarra o autor que em 2021 foi fixada guarda compartilhada com residência-base materna nos autos nº 0009876-54.2021.8.08.0035. Alega que a requerida vem sistematicamente descumprindo o regime de convivência e praticando atos de alienação parental, consistentes em: cancelamento unilateral de visitas sob pretextos variados (12 ocorrências documentadas), mudança de escola sem comunicação prévia, agendamento de atividades nos horários de visita paterna, falas depreciativas sobre o genitor na presença do menor, resultando em resistência da criança aos encontros paternos.\n\nJuntou documentos comprobatórios: mensagens eletrônicas, declaração escolar, relatório de professora e gravações autorizadas pelo Ministério Público.\n\nRequereu: a) inversão da guarda para o genitor; b) subsidiariamente, ampliação do regime de convivência; c) aplicação de medidas por alienação parental; d) acompanhamento psicológico obrigatório.\n\nA requerida contestou negando as alegações, sustentando que os cancelamentos decorreram de motivos de saúde do menor ou compromissos inadiáveis, e que a mudança escolar visou melhor qualidade de ensino.\n\nFoi determinado estudo psicossocial (fls. 100-125), que identificou indícios de alienação parental leve a moderada, recomendando acompanhamento psicológico e advertência à genitora.\n\nO menor foi ouvido em audiência, demonstrando confusão emocional e reprodução de narrativas maternas.\n\nO Ministério Público opinou pela procedência parcial, com manutenção da guarda compartilhada, ampliação do regime de convivência paterno e aplicação de medidas da Lei 12.318/10.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a apreciar.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Da Configuração da Alienação Parental\n\nA análise dos autos revela a configuração de atos de alienação parental praticados pela genitora, nos termos do art. 2º da Lei 12.318/10.\n\nO estudo psicossocial (fls. 100-125) identificou \"indícios de alienação parental leve a moderada\", destacando: cancelamentos sistemáticos de visitas (12 ocorrências documentadas), mudança unilateral de escola, agendamento proposital de atividades conflitantes e influência negativa sobre a percepção do menor acerca do genitor.\n\nA prova documental corrobora as alegações: as mensagens eletrônicas (fls. 40-55) demonstram padrão de cancelamentos sob justificativas frágeis; a declaração escolar (fl. 58) confirma mudança unilateral; o relatório da professora (fl. 35) registra falas depreciativas.\n\nEspecialmente relevante é a oitiva do menor, que reproduziu narrativas tipicamente adultas e demonstrou confusão emocional incompatível com sua idade, evidenciando interferência na formação psicológica.\n\nComo leciona Maria Berenice Dias: \"A alienação parental é uma das formas mais perversas de maltrato infantil, pois utiliza a criança como instrumento de agressividade direcionada ao ex-parceiro\" (Manual de Direito das Famílias, 14ª ed., p. 512).\n\n#### 2.2.2 - Da Modificação da Guarda\n\nEmbora configurada a alienação parental, não se justifica a inversão radical da guarda, mas sim a aplicação de medidas específicas da Lei 12.318/10.\n\nO art. 1.584, §2º do Código Civil estabelece a guarda compartilhada como regra, mesmo na ausência de consenso. A jurisprudência do STJ orienta que a inversão da guarda exige situação excepcional que comprometa gravemente o bem-estar do menor.\n\nNo caso, o estudo psicossocial classificou a alienação como \"leve a moderada\", não recomendando inversão, mas medidas corretivas e acompanhamento.\n\n**[REVISAR: verificar se há outros elementos no estudo psicossocial que contraindiquem a inversão]**\n\n#### 2.2.3 - Das Medidas Aplicáveis\n\nO art. 6º da Lei 12.318/10 prevê medidas específicas para casos de alienação parental, aplicáveis conforme a gravidade:\n\nI - Advertência ao alienador (aplicável);\nII - Ampliação do regime de convivência (necessária);\nIII - Multa (cabível em caso de descumprimento);\nIV - Acompanhamento psicológico (recomendado pelo estudo);\nV - Determinação de domicílio (desnecessária);\nVI - Inversão da guarda (desproporcional no caso).\n\n#### 2.2.4 - Do Regime de Convivência\n\nConsiderando os atos de alienação e a necessidade de fortalecer o vínculo paterno-filial, impõe-se ampliação do regime de convivência.\n\nO STJ tem entendido que \"a ampliação da convivência com o genitor alienado constitui medida eficaz para neutralizar os efeitos da alienação parental\" (REsp 1.628.230/RS).\n\n### 2.3 - JURISPRUDÊNCIA\n\n> \"ALIENAÇÃO PARENTAL. Configuração. Medidas da Lei 12.318/10. A alienação parental configura-se pela interferência na formação psicológica da criança, promovida por um dos genitores contra o outro. Aplicam-se as medidas do art. 6º conforme a gravidade.\" (TJSP, Apelação 1234567-89.2023.8.26.0000)\n\n> \"GUARDA COMPARTILHADA. Manutenção. A guarda compartilhada deve ser mantida mesmo em casos de alienação parental leve, aplicando-se medidas corretivas específicas.\" (STJ, REsp 1.745.123/SP)\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PARCIALMENTE PROCEDENTE o pedido para:\n\n**a)** MANTER a guarda compartilhada do menor LUCAS SANTOS COSTA, com residência-base materna;\n\n**b)** APLICAR ADVERTÊNCIA à requerida ANA BEATRIZ LIMA COSTA, nos termos do art. 6º, I da Lei 12.318/10, alertando-a sobre as consequências da prática de alienação parental;\n\n**c)** AMPLIAR o regime de convivência paterno para:\n- Fins de semana alternados (sexta 18h às segundas 8h);\n- Quarta-feira (17h às 20h);\n- Metade das férias escolares;\n- Feriados prolongados alternados;\n- Dia dos Pais com o genitor;\n\n**d)** DETERMINAR acompanhamento psicológico obrigatório para todos os envolvidos (genitores e menor) pelo prazo de 12 meses, com profissional a ser indicado pelo Juízo;\n\n**e)** FIXAR multa de R$ 500,00 por cada descumprimento injustificado do regime de convivência, reversível em favor do menor;\n\n**f)** DETERMINAR reavaliação em 06 meses para verificação do cumprimento das medidas.\n\n**[REVISAR: verificar se há necessidade de determinar busca e apreensão em caso de descumprimento]**\n\n### SUCUMBÊNCIA\n\nConsiderando a sucumbência recíproca, cada parte arcará com 50% das custas processuais e com os honorários de seus respectivos advogados.\n\nPublique-se. Registre-se. Intimem-se.\n\nApós o trânsito em julgado, arquivem-se os autos com as cautelas de praxe.\n\n[Cidade], [data].\n\n**[Nome do Juiz]**\n**Juiz de Direito**"
+    }
+  ]
+}

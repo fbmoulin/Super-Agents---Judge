@@ -1,0 +1,227 @@
+{
+  "timestamp": "2026-01-20T22:32:48.467Z",
+  "summary": {
+    "totalTests": 2,
+    "passed": 2,
+    "failed": 0,
+    "avgScore": 95,
+    "byAgent": {
+      "agent_generico": {
+        "tests": 2,
+        "passed": 2,
+        "avgScore": 95
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "generico_01",
+      "descricao": "Ação declaratória de inexistência de relação jurídica - caso atípico",
+      "agente": "agent_generico",
+      "success": true,
+      "executionTime": 32017,
+      "inputTokens": 812,
+      "outputTokens": 1903,
+      "validation": {
+        "totalScore": 90,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 817,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 95
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Ação Declaratória - Inexistência de relação jurídica societária\n**Autor:** [REVISAR: nome completo do autor]\n**Réus:** [REVISAR: identificar todos os réus - empresa XYZ Comércio Ltda. e demais sócios]\n\n---\n\n## I - RELATÓRIO\n\n[REVISAR: nome do autor], qualificado nos autos, ajuizou AÇÃO DECLARATÓRIA DE INEXISTÊNCIA DE RELAÇÃO JURÍDICA SOCIETÁRIA em face de XYZ COMÉRCIO LTDA. (CNPJ 12.345.678/0001-99) e [REVISAR: demais sócios], alegando, em síntese, que descobriu constar indevidamente como sócio da empresa ré, registrada na Junta Comercial do Espírito Santo desde 2020.\n\nSustenta que nunca participou da constituição da referida empresa, não assinou qualquer documento societário e desconhece os demais sócios. Tomou conhecimento da situação ao tentar obter certidão negativa de débitos para participação em licitação pública, descobrindo que a empresa possui débitos tributários superiores a R$ 500.000,00.\n\nRequereu: a) declaração de inexistência de relação societária; b) retificação do registro na Junta Comercial; c) suspensão de cobranças tributárias; d) condenação em danos morais; e) expedição de ofícios aos órgãos fazendários.\n\n[REVISAR: verificar se houve contestação e principais argumentos defensivos]\n\nOs autos vieram conclusos para sentença.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\n[REVISAR: analisar eventuais preliminares suscitadas na contestação]\n\nNão há preliminares a serem apreciadas, prosseguindo-se ao exame do mérito.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Da Ação Declaratória\n\nA ação declaratória encontra previsão no art. 20 do Código de Processo Civil, sendo cabível sempre que houver interesse do autor na declaração da existência ou inexistência de relação jurídica.\n\n[REVISAR: fundamentação] No caso, o interesse processual resta evidenciado pela necessidade de esclarecimento sobre a alegada participação societária indevida, que gera consequências jurídicas e patrimoniais ao autor.\n\n#### 2.2.2 - Da Inexistência de Relação Societária\n\n[REVISAR: fundamentação] A constituição de sociedade empresária exige manifestação de vontade expressa dos sócios, conforme arts. 981 e seguintes do Código Civil. A inclusão de pessoa como sócia sem sua anuência configura falsidade documental e vício de consentimento.\n\n[REVISAR: jurisprudência] O Superior Tribunal de Justiça tem entendimento consolidado sobre a matéria:\n\n\"A inclusão de pessoa como sócia de empresa sem o seu consentimento, mediante falsificação de sua assinatura em documentos constitutivos, configura ato ilícito passível de reparação\" (STJ, REsp 1.234.567/SP, Rel. Min. [REVISAR: identificar ministro e data]).\n\n#### 2.2.3 - Da Prova dos Autos\n\n[REVISAR: analisar provas produzidas] A análise dos elementos probatórios, especialmente [REVISAR: verificar se houve perícia grafotécnica ou outras provas], demonstra [REVISAR: conclusão sobre a prova da inexistência de participação societária].\n\n#### 2.2.4 - Dos Pedidos\n\n**a) Declaração de inexistência de relação societária:** [REVISAR: fundamentação] Procedente, ante a comprovação de que o autor não participou validamente da constituição da empresa.\n\n**b) Retificação na Junta Comercial:** [REVISAR: fundamentação] Procedente, como consequência lógica da declaração principal, com base no art. 35 da Lei 8.934/94.\n\n**c) Suspensão de cobranças tributárias:** [REVISAR: fundamentação] Procedente, pois reconhecida a inexistência de relação societária, não pode o autor responder por débitos da empresa.\n\n**d) Danos morais:** [REVISAR: fundamentação e valores] Procedente. A inclusão indevida como sócio causa abalo à honra objetiva, impedindo participação em licitações e gerando restrições creditícias. Fixo a indenização em R$ [REVISAR: quantificar entre R$ 10.000,00 e R$ 30.000,00], considerando os critérios de proporcionalidade e razoabilidade.\n\n**e) Expedição de ofícios:** [REVISAR: fundamentação] Procedente, como medida necessária à efetividade da decisão.\n\n#### 2.2.5 - Da Sucumbência\n\n[REVISAR: verificar resistência dos réus] Aplicável o art. 85, §2º, do CPC, fixando-se os honorários advocatícios em [REVISAR: percentual entre 10% e 20%] sobre o valor da condenação.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTES os pedidos formulados na inicial para:\n\na) DECLARAR a inexistência de relação jurídica societária entre o autor e a empresa XYZ COMÉRCIO LTDA. (CNPJ 12.345.678/0001-99);\n\nb) DETERMINAR a retificação do registro societário na Junta Comercial do Espírito Santo, excluindo-se o nome do autor do quadro social;\n\nc) DETERMINAR a suspensão de qualquer cobrança de débitos tributários federais, estaduais ou municipais em face do autor relacionados à referida empresa;\n\nd) CONDENAR os réus, solidariamente, ao pagamento de indenização por danos morais no valor de R$ [REVISAR: quantificar valor], corrigido monetariamente e acrescido de juros legais a partir desta data;\n\ne) DETERMINAR a expedição de ofícios à Receita Federal do Brasil e à SEFAZ/ES comunicando a presente decisão.\n\nCONDENO os réus ao pagamento das custas processuais e honorários advocatícios, fixados em [REVISAR: percentual]% sobre o valor da condenação, nos termos do art. 85, §2º, do CPC.\n\n[REVISAR: verificar necessidade de outras determinações específicas]\n\nPublique-se. Registre-se. Intimem-se.\n\n[Local], [data].\n\n[REVISAR: nome e assinatura do magistrado]\nJuiz de Direito\n\n---\n\n**OBSERVAÇÕES PARA REVISÃO:**\n- [REVISAR: classificação] Confirmar se todos os aspectos da ação declaratória foram adequadamente abordados\n- [REVISAR: pedidos] Verificar se todos os pedidos da inicial foram analisados\n- [REVISAR: valores] Quantificar adequadamente danos morais e honorários\n- [REVISAR: jurisprudência] Confirmar precedentes citados e incluir outros relevantes\n- [REVISAR: fundamentação] Reforçar base legal para todos os pontos decididos"
+    },
+    {
+      "testCase": "generico_02",
+      "descricao": "Obrigação de fazer atípica - entrega de documentos",
+      "agente": "agent_generico",
+      "success": true,
+      "executionTime": 25517,
+      "inputTokens": 943,
+      "outputTokens": 1616,
+      "validation": {
+        "totalScore": 90,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [],
+            "percentage": null
+          },
+          "wordCount": 712,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 95
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Obrigação de Fazer\n**Requerente:** EMPRESA LOGÍSTICA SUL LTDA\n**Requerido:** TRANSPORTES NORTE S/A\n\n---\n\n## I - RELATÓRIO\n\nEMPRESA LOGÍSTICA SUL LTDA ajuizou ação de obrigação de fazer em face de TRANSPORTES NORTE S/A, alegando que firmaram contrato de prestação de serviços de transporte em 15/06/2024, com prazo de 12 meses. Sustenta que a cláusula 15.2 do contrato obriga a ré a entregar, ao término da avença: (a) documentos fiscais dos fretes; (b) relatório de sinistros; (c) comprovantes de seguro; (d) planilha de quilometragem. Afirma que o contrato encerrou em 15/06/2025, mas a ré recusa-se a entregar os documentos, alegando serem \"internos\". Necessita dos documentos para prestação de contas, apuração de créditos tributários e eventual ação regressiva. Notificou extrajudicialmente em 01/07/2025, sem resposta.\n\nA ré contestou alegando que os documentos são de uso interno, sem obrigação de fornecimento, e que a autora já possui cópias dos documentos fiscais.\n\nRequer a autora: (a) entrega dos documentos; (b) multa diária de R$ 1.000,00; (c) honorários e custas.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a apreciar. [REVISAR: verificar se há outras questões processuais]\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Da Obrigação Contratual\n\nA questão central reside na interpretação da cláusula 15.2 do contrato firmado entre as partes (fls. 15-28), que estabelece expressamente a obrigação da ré de entregar os documentos especificados ao término da prestação de serviços.\n\nO princípio da força obrigatória dos contratos (pacta sunt servanda), consagrado no art. 422 do Código Civil [REVISAR: fundamentação - confirmar artigo correto], determina que as partes devem cumprir fielmente as obrigações assumidas.\n\n#### 2.2.2 - Da Interpretação Contratual\n\nA cláusula contratual é clara e não comporta interpretação dúbia. O art. 112 do Código Civil estabelece que \"nas declarações de vontade se atenderá mais à intenção nelas consubstanciada do que ao sentido literal da linguagem\". [REVISAR: jurisprudência - confirmar aplicabilidade]\n\nA alegação da ré de que os documentos são \"internos\" não afasta a obrigação contratualmente assumida. O caráter interno dos documentos não os torna indisponíveis quando há expressa previsão contratual de entrega.\n\n#### 2.2.3 - Da Necessidade dos Documentos\n\nA autora demonstrou interesse legítimo na obtenção dos documentos para: (a) prestação de contas a clientes; (b) apuração de créditos tributários; (c) eventual ação regressiva. Tais finalidades são compatíveis com a natureza dos serviços prestados e justificam a exigibilidade da obrigação.\n\n#### 2.2.4 - Das Astreintes\n\nO descumprimento de obrigação de fazer autoriza a fixação de multa diária (astreintes), conforme art. 537 do CPC. [REVISAR: fundamentação - confirmar dispositivo legal]\n\nO valor de R$ 1.000,00 diários mostra-se [REVISAR: valores - avaliar proporcionalidade] adequado considerando o valor da causa (R$ 20.000,00) e a necessidade de coerção para cumprimento da obrigação.\n\n#### 2.2.5 - Do Prazo para Cumprimento\n\n[REVISAR: classificação - definir prazo adequado] Considerando a natureza dos documentos e a necessidade de organização, fixo o prazo de 15 (quinze) dias para cumprimento da obrigação.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTE o pedido formulado por EMPRESA LOGÍSTICA SUL LTDA em face de TRANSPORTES NORTE S/A, para:\n\na) **CONDENAR** a ré na obrigação de fazer consistente em entregar à autora, no prazo de 15 (quinze) dias: (i) todos os documentos fiscais dos fretes realizados; (ii) relatório detalhado de sinistros; (iii) comprovantes de seguro das cargas; (iv) planilha de quilometragem dos veículos utilizados;\n\nb) **FIXAR** multa diária (astreintes) de R$ 1.000,00 (mil reais) em caso de descumprimento, limitada ao valor da causa [REVISAR: valores - confirmar limitação];\n\nc) **CONDENAR** a ré ao pagamento das custas processuais e honorários advocatícios, que fixo em 15% (quinze por cento) sobre o valor da causa, nos termos do art. 85, §2º, do CPC [REVISAR: fundamentação - confirmar percentual adequado].\n\nTransitada em julgado, arquivem-se os autos com as baixas de praxe.\n\nP.R.I.C.\n\n[Local], [data].\n\n**[Nome do Juiz]**\n**Juiz de Direito**\n\n---\n\n**OBSERVAÇÕES PARA REVISÃO:**\n- [REVISAR: pedidos] - Verificar se todos os pedidos foram analisados\n- [REVISAR: jurisprudência] - Incluir precedentes específicos sobre obrigações contratuais de entrega de documentos\n- [REVISAR: classificação] - Confirmar se não há aspectos de direito empresarial específicos\n- [REVISAR: valores] - Reavaliar proporcionalidade da multa diária\n- [REVISAR: fundamentação] - Confirmar todos os dispositivos legais citados"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "caso_id": "divorcio_02",
+  "descricao": "Dissolucao de uniao estavel com reconhecimento incidental e partilha",
+  "fatos": "O autor ajuizou acao de dissolucao de uniao estavel cumulada com partilha de bens em face da re, alegando que mantiveram convivencia publica, continua e duradoura com objetivo de constituir familia no periodo de janeiro de 2019 a dezembro de 2025 (7 anos). Nao houve contrato de convivencia, aplicando-se o regime da comunhao parcial (art. 1.725 CC). Nao ha filhos da uniao. Durante a convivencia, adquiriram: (1) apartamento financiado em nome de ambos, valor de mercado R$ 380.000,00, com saldo devedor de R$ 120.000,00; (2) dois veiculos: Fiat Argo 2023 (R$ 75.000,00) em nome do autor e VW Polo 2022 (R$ 85.000,00) em nome da re; (3) moveis e utensilios domesticos (R$ 40.000,00). A re contestou alegando que a uniao teria durado apenas 4 anos (2021-2025), negando o periodo anterior. Prova testemunhal (fls. 180-195) confirmou a convivencia desde 2019, com declaracoes de vizinhos, amigos e familiares. Juntados: fotos de viagens, declaracao conjunta de IR (2020-2025), comprovantes de residencia comum.",
+  "questoes": "1) Esta configurada a uniao estavel nos termos do art. 1.723 CC? 2) Qual o periodo da uniao? 3) Quais bens sao comunicaveis e devem ser partilhados? 4) Como tratar o saldo devedor do financiamento?",
+  "pedidos": "a) Reconhecimento da uniao estavel (jan/2019 a dez/2025); b) Declaracao de dissolucao da uniao; c) Partilha igualitaria dos bens adquiridos; d) Divisao proporcional do saldo devedor; e) Honorarios advocaticios.",
+  "classe": "Acao de Dissolucao de Uniao Estavel",
+  "assunto": "Uniao Estavel - Reconhecimento - Dissolucao - Partilha",
+  "valor_causa": 460000.00,
+  "expectativa": {
+    "agente_esperado": "agent_divorcio",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["380"],
+    "artigos_esperados": ["art. 1.723 CC", "art. 1.725 CC"]
+  }
+}

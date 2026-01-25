@@ -1,0 +1,16 @@
+{
+  "caso_id": "cobranca_01",
+  "descricao": "Ação de cobrança por inadimplemento contratual - prestação de serviços",
+  "fatos": "A autora, empresa de consultoria empresarial, celebrou contrato de prestação de serviços de assessoria contábil e tributária com a empresa ré em janeiro de 2025, pelo prazo de 12 meses, com valor mensal de R$ 5.000,00. Os serviços foram regularmente prestados durante 8 meses (janeiro a agosto/2025), conforme relatórios mensais anexados. A ré efetuou o pagamento das 3 primeiras parcelas, deixando de pagar as parcelas de abril a agosto de 2025, totalizando R$ 25.000,00. A autora notificou extrajudicialmente a ré em 15/09/2025 (AR anexo), concedendo prazo de 15 dias para pagamento, sem resposta. Juntou aos autos: contrato assinado pelas partes, relatórios de serviços prestados com aceite da ré, notas fiscais emitidas, comprovantes dos 3 pagamentos realizados e notificação extrajudicial com AR.",
+  "questoes": "1) Está comprovada a existência do contrato e a prestação dos serviços? 2) O inadimplemento da ré está configurado? 3) É devida a correção monetária e juros de mora? 4) Qual o termo inicial dos encargos moratórios?",
+  "pedidos": "a) Condenação da ré ao pagamento de R$ 25.000,00 (cinco parcelas inadimplidas); b) Correção monetária pelo IPCA-E desde cada vencimento; c) Juros de mora de 1% ao mês desde a citação; d) Honorários advocatícios de 20%.",
+  "classe": "Procedimento Comum Cível",
+  "assunto": "Cobrança - Prestação de Serviços - Inadimplemento",
+  "valor_causa": 25000.00,
+  "expectativa": {
+    "agente_esperado": "agent_cobranca",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["362", "379"],
+    "artigos_esperados": ["art. 389 CC", "art. 394 CC"]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "timestamp": "2026-01-19T22:26:42.480Z",
+  "total_pdfs": 13,
+  "por_categoria": {
+    "bancario": 4,
+    "consumidor": 1,
+    "execucao": 2,
+    "possessorias": 2,
+    "saude_cobertura": 1,
+    "transito": 1,
+    "generico": 2
+  },
+  "processos": [
+    {
+      "caso_id": "real_bancario_5001390_16_2022_8_08_0012",
+      "processo": "5001390-16.2022.8.08.0012",
+      "categoria": "bancario",
+      "fonte_pdf": "5001390-16.2022.8.08.0012.pdf"
+    },
+    {
+      "caso_id": "real_bancario_5002101_16_2025_8_08_0012",
+      "processo": "5002101-16.2025.8.08.0012",
+      "categoria": "bancario",
+      "fonte_pdf": "5002101-16.2025.8.08.0012.pdf"
+    },
+    {
+      "caso_id": "real_bancario_5011411_46_2025_8_08_0012",
+      "processo": "5011411-46.2025.8.08.0012",
+      "categoria": "bancario",
+      "fonte_pdf": "5011411-46.2025.8.08.0012.pdf"
+    },
+    {
+      "caso_id": "real_bancario_5015129_51_2025_8_08_0012",
+      "processo": "5015129-51.2025.8.08.0012",
+      "categoria": "bancario",
+      "fonte_pdf": "5015129-51.2025.8.08.0012.pdf"
+    },
+    {
+      "caso_id": "real_consumidor_5020605_70_2025_8_08_0012",
+      "processo": "5020605-70.2025.8.08.0012",
+      "categoria": "consumidor",
+      "fonte_pdf": "5020605-70.2025.8.08.0012.pdf"
+    },
+    {
+      "caso_id": "real_execucao_5007167_16_2021_8_08_0012",
+      "processo": "5007167-16.2021.8.08.0012",
+      "categoria": "execucao",
+      "fonte_pdf": "5007167-16.2021.8.08.0012.pdf"
+    },
+    {
+      "caso_id": "real_execucao_5013301_20_2025_8_08_0012",
+      "processo": "5013301-20.2025.8.08.0012",
+      "categoria": "execucao",
+      "fonte_pdf": "5013301-20.2025.8.08.0012.pdf"
+    },
+    {
+      "caso_id": "real_possessorias_5006247_71_2023_8_08_0012",
+      "processo": "5006247-71.2023.8.08.0012",
+      "categoria": "possessorias",
+      "fonte_pdf": "5006247-71.2023.8.08.0012.pdf"
+    },
+    {
+      "caso_id": "real_possessorias_5017860_20_2025_8_08_0012",
+      "processo": "5017860-20.2025.8.08.0012",
+      "categoria": "possessorias",
+      "fonte_pdf": "5017860-20.2025.8.08.0012.pdf"
+    },
+    {
+      "caso_id": "real_saude_cobertura_5020204_71_2025_8_08_0012",
+      "processo": "5020204-71.2025.8.08.0012",
+      "categoria": "saude_cobertura",
+      "fonte_pdf": "5020204-71.2025.8.08.0012.pdf"
+    },
+    {
+      "caso_id": "real_transito_5026849_20_2022_8_08_0012",
+      "processo": "5026849-20.2022.8.08.0012",
+      "categoria": "transito",
+      "fonte_pdf": "5026849-20.2022.8.08.0012.pdf"
+    },
+    {
+      "caso_id": "real_generico_5016339_45_2022_8_08_0012",
+      "processo": "5016339-45.2022.8.08.0012",
+      "categoria": "generico",
+      "fonte_pdf": "5016339-45.2022.8.08.0012.pdf"
+    },
+    {
+      "caso_id": "real_generico_5023003_24_2024_8_08_0012",
+      "processo": "5023003-24.2024.8.08.0012",
+      "categoria": "generico",
+      "fonte_pdf": "5023003-24.2024.8.08.0012.pdf"
+    }
+  ]
+}

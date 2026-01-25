@@ -1,0 +1,16 @@
+{
+  "caso_id": "guarda_01",
+  "descricao": "Regulamentacao de guarda compartilhada com regime de convivencia",
+  "fatos": "PATRICIA SOUZA OLIVEIRA ajuizou acao de regulamentacao de guarda c/c fixacao de regime de convivencia em face de MARCOS ANTONIO FERREIRA. As partes sao genitores da menor JULIA SOUZA FERREIRA, nascida em 10/08/2018, atualmente com 7 anos. Relata que as partes mantiveram uniao estavel de 2016 a 2023, tendo se separado em outubro/2023 de forma conflituosa. Desde a separacao, a menor reside com a autora, e o reu exerce visitas informais e irregulares, gerando inseguranca na rotina da crianca. A autora requer a fixacao de guarda compartilhada com residencia-base materna, alegando que trabalha meio periodo (professora, saindo as 12h30) e possui disponibilidade para cuidar da filha. Apresenta: (a) certidao de nascimento (fl. 15); (b) comprovante de matricula escolar (fl. 18); (c) laudo de acompanhamento psicologico indicando ansiedade na crianca pela irregularidade das visitas (fl. 22); (d) comprovantes de despesas mensais de R$ 3.200,00 (fls. 25-35). O reu, em contestacao, concorda com a guarda compartilhada, mas pretende que a residencia-base seja paterna, alegando que sua casa possui melhor estrutura (3 quartos, quintal) enquanto a autora reside em apartamento de 2 quartos. Afirma disponibilidade, pois trabalha em home office. Foi realizado estudo psicossocial (fls. 80-95) concluindo que ambos os genitores possuem condicoes de exercer a guarda, recomendando a modalidade compartilhada com residencia-base materna pela proximidade da escola. A crianca foi ouvida em ambiente adequado, manifestando carinho por ambos os pais e desejo de ver o pai com mais frequencia. O MP opinou pela guarda compartilhada com residencia-base materna.",
+  "questoes": "1) Qual a modalidade de guarda mais adequada ao caso? 2) Com qual genitor deve ser fixada a residencia-base? 3) Qual o regime de convivencia adequado? 4) Como ficam as ferias e datas comemorativas?",
+  "pedidos": "a) Fixacao de guarda compartilhada; b) Residencia-base com a genitora; c) Regime de visitas quinzenais (fins de semana alternados); d) Divisao de ferias e datas comemorativas.",
+  "classe": "Procedimento Comum Civel - Vara de Familia",
+  "assunto": "Regulamentacao de Guarda - Guarda Compartilhada",
+  "valor_causa": 1000.00,
+  "expectativa": {
+    "agente_esperado": "agent_guarda",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["383"],
+    "artigos_esperados": ["art. 1.583 CC", "art. 1.584 CC", "Lei 13.058/14"]
+  }
+}

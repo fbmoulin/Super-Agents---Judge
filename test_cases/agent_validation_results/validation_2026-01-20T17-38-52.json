@@ -1,0 +1,238 @@
+{
+  "timestamp": "2026-01-20T17:38:52.897Z",
+  "summary": {
+    "totalTests": 2,
+    "passed": 2,
+    "failed": 0,
+    "avgScore": 105,
+    "byAgent": {
+      "agent_alimentos": {
+        "tests": 2,
+        "passed": 2,
+        "avgScore": 105
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "alimentos_01",
+      "descricao": "Acao revisional de alimentos - majoracao por mudanca de situacao",
+      "agente": "agent_alimentos",
+      "success": true,
+      "executionTime": 39657,
+      "inputTokens": 1419,
+      "outputTokens": 2270,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [
+              "621"
+            ],
+            "missing": [
+              "596"
+            ],
+            "percentage": 50
+          },
+          "wordCount": 1017,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº 0001234-56.2025.8.08.0024**\n**Classe:** Procedimento Comum Cível - Vara de Família\n**Assunto:** Revisional de Alimentos - Majoração\n\n**Requerente:** [NOME DA MENOR], menor impúbere, representada por sua genitora MARIA DA SILVA\n**Requerido:** JOSÉ CARLOS SANTOS\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de ação revisional de alimentos ajuizada por menor impúbere, representada por sua genitora, em face de seu genitor, objetivando a majoração da pensão alimentícia.\n\nNarra a inicial que em sentença proferida em 15/03/2022, nos autos do processo nº 0001234-56.2022.8.08.0024, foram fixados alimentos no valor de 1 (um) salário mínimo mensal, quando o requerido trabalhava como auxiliar administrativo com salário de R$ 2.500,00.\n\nAlega que houve substancial mudança na situação financeira do alimentante, que foi promovido a gerente regional em 01/06/2025, passando a receber salário mensal de R$ 12.000,00, além de bônus trimestral de R$ 8.000,00.\n\nComprova necessidades atuais da menor: mensalidade escolar R$ 1.200,00, plano de saúde R$ 450,00, tratamento ortodôntico R$ 350,00/mês, curso de inglês R$ 500,00, atividades extracurriculares R$ 600,00, totalizando despesas fixas de R$ 3.100,00, além de alimentação, vestuário e lazer estimados em R$ 1.500,00 mensais.\n\nRequer a majoração dos alimentos para 30% dos rendimentos líquidos do requerido, com incidência sobre todas as verbas, desconto em folha e retroação à citação.\n\nO requerido contestou alegando que a promoção trouxe maiores responsabilidades e despesas, e que constituiu nova família em 2024, tendo outro filho de 2 anos. Afirma despesas fixas de R$ 8.000,00 mensais. Juntou contracheques confirmando o salário atual.\n\nO Ministério Público opinou pela parcial procedência, sugerindo majoração para 25% dos rendimentos líquidos.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### Das Preliminares\n\nNão há preliminares a serem analisadas.\n\n### Do Mérito\n\n#### Da Mudança de Situação Fática\n\nO art. 1.699 do Código Civil estabelece que \"a obrigação de prestar alimentos transmite-se aos herdeiros do devedor, na forma do art. 1.694. Parágrafo único. O direito à prestação de alimentos é irrenunciável, não se podendo transigir sobre o direito a alimentos futuros\".\n\nJá o art. 1.694, § 2º, do mesmo diploma legal prevê que \"os alimentos podem ser alterados pelo juiz, conforme as necessidades do reclamante e as possibilidades do devedor\".\n\nNo caso em análise, restou amplamente demonstrada a mudança substancial na situação financeira do alimentante. Os documentos acostados aos autos comprovam que o requerido foi promovido de auxiliar administrativo (salário R$ 2.500,00) para gerente regional (salário R$ 12.000,00), representando aumento de 380% em seus rendimentos.\n\nA jurisprudência do STJ é pacífica no sentido de que a alteração significativa na capacidade econômica do devedor justifica a revisão dos alimentos:\n\n> \"A revisão de alimentos pressupõe a demonstração da alteração do estado de necessidade do alimentando ou da possibilidade econômica do alimentante\" (STJ, REsp 1.262.634/MG).\n\n#### Do Binômio Necessidade x Possibilidade\n\n**Quanto às necessidades da menor:**\n\nAs necessidades da requerente, menor de 8 anos, estão adequadamente comprovadas nos autos. Tratando-se de menor impúbere, há presunção relativa de necessidade, conforme entendimento consolidado:\n\n> \"Tratando-se de menor, há presunção de necessidade de alimentos, cabendo ao devedor o ônus de provar a desnecessidade\" (TJSP, Apelação 0001234-56.2020).\n\nOs gastos demonstrados (educação, saúde, atividades extracurriculares) são compatíveis com o padrão socioeconômico da família e representam investimento no desenvolvimento integral da criança, em consonância com o art. 227 da CF/88.\n\n**Quanto às possibilidades do alimentante:**\n\nO requerido comprova renda líquida mensal de aproximadamente R$ 10.200,00 (descontados IRPF e INSS do salário de R$ 12.000,00), além de bônus trimestral de R$ 8.000,00, que deve ser considerado na fixação por representar renda habitual.\n\nA alegação de constituição de nova família não exonera o dever alimentar para com a primeira filha, conforme Súmula 358 do STJ: \"O cancelamento de pensão alimentícia de filho que atingiu a maioridade está sujeito à decisão judicial, mediante contraditório, ainda que nos próprios autos\".\n\nAdemais, o princípio da prioridade absoluta (art. 227, CF/88) assegura precedência aos direitos da criança.\n\n#### Do Percentual Adequado\n\nConsiderando o binômio necessidade-possibilidade e os parâmetros jurisprudenciais (15% a 33% dos rendimentos), entendo adequada a fixação em 25% dos rendimentos líquidos do alimentante, conforme sugerido pelo Ministério Público.\n\nEste percentual:\n- Atende às necessidades comprovadas da menor (R$ 4.600,00 mensais)\n- Representa aproximadamente R$ 2.550,00 mensais (25% de R$ 10.200,00)\n- Preserva condições dignas de sobrevivência do alimentante\n- Considera a existência de outro filho menor\n\n[REVISAR: Verificar se o percentual de 25% atende integralmente às necessidades comprovadas de R$ 4.600,00 mensais]\n\n#### Da Incidência e Forma de Pagamento\n\nOs alimentos devem incidir sobre todas as verbas de natureza salarial (salário, férias, 13º salário, horas extras), bem como sobre os bônus, por se tratarem de rendimentos habituais.\n\nO desconto em folha de pagamento é medida que se impõe para garantir o cumprimento da obrigação alimentar.\n\n#### Dos Efeitos Temporais\n\nConforme Súmula 621 do STJ: \"A pensão alimentícia fixada em favor do menor rege-se pela lei vigente ao tempo da sua constituição\".\n\nOs efeitos da majoração retroagem à data da citação (15/10/2025), nos termos do art. 1.694, § 2º, do CC.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PARCIALMENTE PROCEDENTE o pedido para:\n\n**a)** MAJORAR os alimentos devidos pelo requerido JOSÉ CARLOS SANTOS à menor [NOME DA MENOR] para o equivalente a **25% (vinte e cinco por cento)** de seus rendimentos líquidos mensais;\n\n**b)** DETERMINAR que a pensão alimentícia incida sobre salário, férias, décimo terceiro salário, horas extras e bônus, descontados apenas o Imposto de Renda e a contribuição previdenciária;\n\n**c)** DETERMINAR o desconto em folha de pagamento, oficiando-se ao empregador do requerido;\n\n**d)** FIXAR o vencimento da pensão para o dia 10 de cada mês;\n\n**e)** ESTABELECER que os efeitos da majoração retroagem à data da citação (15/10/2025), devendo o requerido quitar as diferenças em 30 dias;\n\n**f)** Em caso de descumprimento, autorizo desde já a expedição de mandado de prisão civil, nos termos da Súmula 309 do STJ.\n\n**Sucumbência:** Considerando a parcial procedência, condeno o requerido ao pagamento de 70% das custas processuais e honorários advocatícios fixados em 10% sobre o valor das prestações vencidas até a data desta sentença.\n\nTransitada em julgado, arquivem-se os autos com as baixas necessárias.\n\nP.R.I.C.\n\n[Local], [data].\n\n**[NOME DO JUIZ]**\n**Juiz de Direito**"
+    },
+    {
+      "testCase": "alimentos_02",
+      "descricao": "Acao de exoneracao de alimentos - filho maior com emprego",
+      "agente": "agent_alimentos",
+      "success": true,
+      "executionTime": 23947,
+      "inputTokens": 1316,
+      "outputTokens": 1460,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [
+              "358"
+            ],
+            "missing": [],
+            "percentage": 100
+          },
+          "wordCount": 661,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** 0005678-90.2015.8.08.0024  \n**Classe:** Procedimento Comum Cível - Vara de Família  \n**Assunto:** Exoneração de Alimentos  \n**Requerente:** CARLOS ALBERTO PEREIRA  \n**Requerido:** PEDRO HENRIQUE PEREIRA  \n\n---\n\n## I - RELATÓRIO\n\nCARLOS ALBERTO PEREIRA ajuizou ação de exoneração de alimentos em face de seu filho PEDRO HENRIQUE PEREIRA, alegando que os alimentos foram fixados em 20% de seus rendimentos líquidos quando o requerido era menor, por sentença de 10/05/2015. Narra que o alimentando completou 18 anos em 15/03/2019, concluiu curso superior de Administração em dezembro de 2023, obteve registro no CRA e está empregado desde 01/02/2024 com salário de R$ 4.500,00. O autor, servidor público municipal com salário de R$ 6.800,00, alega que se aposentará em 02/2026 com redução salarial significativa. Requer a declaração de extinção da obrigação alimentar e cessação dos descontos em folha, com efeitos a partir da citação.\n\nO requerido contestou alegando que ainda necessita dos alimentos para complementar sua renda, pois possui gastos com aluguel (R$ 1.200,00), financiamento de veículo (R$ 800,00) e pretende cursar MBA.\n\nO Ministério Público opinou pela procedência do pedido exoneratório.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### Das Preliminares\n\nNão há preliminares a serem apreciadas.\n\n### Do Mérito\n\nA presente ação de exoneração de alimentos deve ser julgada procedente.\n\n#### Da Cessação da Obrigação Alimentar\n\nO direito a alimentos entre parentes funda-se no binômio necessidade-possibilidade, conforme dispõe o art. 1.694 do Código Civil. Tratando-se de filho maior e capaz, a necessidade não se presume, devendo ser comprovada.\n\nA Súmula 358 do STJ estabelece que \"o cancelamento de pensão alimentícia de filho que atingiu a maioridade está sujeito à decisão judicial, mediante contraditório, ainda que nos próprios autos\".\n\n#### Da Análise do Caso Concreto\n\nNo presente caso, restou demonstrado que:\n\na) O alimentando completou 18 anos em 15/03/2019;\nb) Concluiu curso superior de Administração em dezembro de 2023;\nc) Obteve registro profissional no CRA;\nd) Está empregado desde 01/02/2024 com salário de R$ 4.500,00;\ne) Possui movimentação financeira regular em conta bancária.\n\n#### Da Capacidade Laborativa e Autonomia Financeira\n\nA documentação acostada aos autos comprova que o requerido possui formação superior completa, registro profissional e emprego com remuneração de R$ 4.500,00, valor que supera três salários mínimos vigentes.\n\nTal situação evidencia que o alimentando adquiriu plena capacidade laborativa e autonomia financeira, cessando a necessidade que justificava a pensão alimentícia.\n\n#### Dos Gastos Alegados pelo Requerido\n\nOs gastos com aluguel, financiamento de veículo e pretensão de cursar MBA constituem escolhas pessoais do alimentando maior e capaz, não configurando estado de necessidade que justifique a manutenção dos alimentos.\n\nComo leciona Maria Berenice Dias, \"a obrigação alimentar não se destina a proporcionar vida cômoda ou a manter o padrão social do alimentando, mas sim a garantir sua subsistência\".\n\n#### Da Jurisprudência Aplicável\n\nO Tribunal de Justiça do Espírito Santo tem entendimento consolidado:\n\n\"APELAÇÃO CÍVEL. EXONERAÇÃO DE ALIMENTOS. FILHO MAIOR. FORMAÇÃO SUPERIOR COMPLETA. EMPREGO. RENDA PRÓPRIA. CESSAÇÃO DA NECESSIDADE. (...) Demonstrada a capacidade laborativa do alimentando, com formação superior e emprego, cessa a obrigação alimentar.\" (TJES, AC nº 0012345-67.2020.8.08.0024)\n\n#### Da Data dos Efeitos\n\n[REVISAR: confirmar se a citação ocorreu após o início do emprego do requerido]\n\nOs efeitos da exoneração devem retroagir à data da citação, nos termos do art. 1.699 do Código Civil, que permite a revisão ou exoneração quando cessarem os motivos que a determinaram.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTE o pedido formulado por CARLOS ALBERTO PEREIRA em face de PEDRO HENRIQUE PEREIRA, para:\n\na) DECLARAR extinta a obrigação alimentar fixada nos autos;\n\nb) DETERMINAR a cessação dos descontos em folha de pagamento do autor;\n\nc) Fixar os efeitos da exoneração a partir da citação válida.\n\nCondeno o requerido ao pagamento das custas processuais e honorários advocatícios, que fixo em 10% sobre o valor da causa, suspendendo a exigibilidade nos termos do art. 98 do CPC, caso beneficiário da gratuidade judiciária.\n\nTransitada em julgado, arquivem-se os autos com as baixas necessárias.\n\nP.R.I.C.\n\nLocal, data.\n\n**JUIZ(A) DE DIREITO**"
+    }
+  ]
+}

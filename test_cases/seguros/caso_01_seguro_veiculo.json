@@ -1,0 +1,16 @@
+{
+  "caso_id": "seguros_01",
+  "descricao": "Cobranca de seguro de veiculo por furto com recusa por agravamento de risco",
+  "fatos": "O autor ajuizou acao de cobranca de seguro em face da seguradora XYZ Seguros S/A, alegando que contratou seguro auto (apolice 2025.001.234) para seu veiculo Volkswagen T-Cross 2024, placa ABC-1234, com vigencia de 01/01/2025 a 31/12/2025, valor segurado de R$ 145.000,00 (Tabela FIPE), franquia de R$ 3.500,00 para colisao. Em 15/06/2025, o veiculo foi furtado em estacionamento de shopping center (BO fl. 18). O autor comunicou o sinistro em 16/06/2025 e entregou toda documentacao exigida em 25/06/2025. Apos 45 dias sem resposta, a seguradora negou o pagamento em 10/08/2025, alegando: (1) o autor havia transferido o veiculo para seu filho sem comunicacao previa; (2) o filho nao constava como condutor principal. Documentos juntados: apolice, proposta de seguro, BO, comunicacao do sinistro, negativa da seguradora. O autor alega que a transferencia foi apenas para fins de IPVA (domicilio fiscal), permanecendo como possuidor e condutor habitual. Sustenta que a seguradora extrapolou o prazo de 30 dias para regulacao (Circular SUSEP 256/2004) e que a transferencia sem comunicacao, por si so, nao exime a seguradora (Sumula 465/STJ).",
+  "questoes": "1) A transferencia do veiculo sem comunicacao a seguradora afasta o dever de indenizar? 2) A seguradora extrapolou o prazo de regulacao do sinistro? 3) Qual o valor da indenizacao devida? 4) Sao cabives danos morais pela recusa?",
+  "pedidos": "a) Condenacao ao pagamento de R$ 145.000,00 (indenizacao integral); b) Correcao monetaria desde o sinistro; c) Juros de mora desde a citacao; d) Danos morais de R$ 10.000,00; e) Honorarios advocaticios de 20%.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Seguro - Veiculo - Furto - Recusa de Cobertura",
+  "valor_causa": 155000.00,
+  "expectativa": {
+    "agente_esperado": "agent_seguros",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["465"],
+    "artigos_esperados": ["art. 757 CC", "art. 768 CC"]
+  }
+}

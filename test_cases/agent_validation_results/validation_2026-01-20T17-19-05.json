@@ -1,0 +1,231 @@
+{
+  "timestamp": "2026-01-20T17:19:05.145Z",
+  "summary": {
+    "totalTests": 2,
+    "passed": 2,
+    "failed": 0,
+    "avgScore": 105,
+    "byAgent": {
+      "agent_cobranca": {
+        "tests": 2,
+        "passed": 2,
+        "avgScore": 105
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "cobranca_01",
+      "descricao": "Ação de cobrança por inadimplemento contratual - prestação de serviços",
+      "agente": "agent_cobranca",
+      "success": true,
+      "executionTime": 28670,
+      "inputTokens": 1103,
+      "outputTokens": 1738,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [
+              "379"
+            ],
+            "missing": [
+              "362"
+            ],
+            "percentage": 50
+          },
+          "wordCount": 791,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [NÚMERO DO PROCESSO]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Cobrança - Prestação de Serviços - Inadimplemento\n**Requerente:** [NOME DA EMPRESA AUTORA]\n**Requerido:** [NOME DA EMPRESA RÉ]\n\n---\n\n## I - RELATÓRIO\n\n[NOME DA EMPRESA AUTORA], pessoa jurídica de direito privado, ajuizou ação de cobrança em face de [NOME DA EMPRESA RÉ], também pessoa jurídica de direito privado, alegando que celebrou contrato de prestação de serviços de assessoria contábil e tributária com a ré em janeiro de 2025, pelo prazo de 12 meses, com valor mensal de R$ 5.000,00.\n\nSustenta que prestou regularmente os serviços durante 8 meses (janeiro a agosto/2025), conforme relatórios mensais anexados, tendo a ré efetuado o pagamento apenas das 3 primeiras parcelas, deixando de pagar as parcelas de abril a agosto de 2025, totalizando R$ 25.000,00.\n\nInforma que notificou extrajudicialmente a ré em 15/09/2025, concedendo prazo de 15 dias para pagamento, sem resposta.\n\nRequer a condenação da ré ao pagamento de R$ 25.000,00, com correção monetária pelo IPCA-E desde cada vencimento, juros de mora de 1% ao mês desde a citação e honorários advocatícios de 20%.\n\nA ré foi citada e apresentou contestação, alegando [REVISAR: inserir defesa apresentada ou indicar revelia se não contestou].\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1. PRELIMINARES\n\nNão há preliminares a serem apreciadas. [REVISAR: verificar se há preliminares na contestação]\n\n### 2.2. MÉRITO\n\n#### 2.2.1. Da existência do contrato e prestação dos serviços\n\nA existência da relação jurídica entre as partes restou devidamente comprovada pelo contrato de prestação de serviços juntado aos autos, devidamente assinado pelas partes.\n\nA prestação dos serviços também está demonstrada pelos relatórios mensais de atividades com aceite da ré, bem como pelas notas fiscais emitidas mensalmente, evidenciando que a autora cumpriu sua obrigação contratual durante o período de janeiro a agosto de 2025.\n\n#### 2.2.2. Do inadimplemento\n\nO inadimplemento da ré está cabalmente demonstrado nos autos. Os comprovantes de pagamento juntados evidenciam que foram quitadas apenas as três primeiras parcelas (janeiro, fevereiro e março de 2025), permanecendo em aberto as parcelas de abril a agosto de 2025, no valor de R$ 5.000,00 cada, totalizando R$ 25.000,00.\n\nA notificação extrajudicial de 15/09/2025, com aviso de recebimento, comprova que a ré foi constituída em mora, tendo sido concedido prazo de 15 dias para pagamento, sem que houvesse qualquer manifestação ou quitação do débito.\n\nNos termos do art. 394 do Código Civil, \"considera-se em mora o devedor que não efetuar o pagamento no tempo, lugar e forma que a lei ou a convenção estabelecer\". No caso dos autos, o inadimplemento é incontroverso.\n\n#### 2.2.3. Dos encargos moratórios\n\n**Correção Monetária:** É devida a correção monetária desde cada vencimento das parcelas inadimplidas, pois visa apenas à recomposição do poder aquisitivo da moeda, não constituindo acréscimo patrimonial. Aplicável o IPCA-E, conforme orientação do STJ no Tema 1.368.\n\n**Juros de Mora:** Os juros moratórios são devidos à taxa de 1% ao mês, nos termos do art. 406 do Código Civil c/c art. 161, §1º do CTN, tendo como termo inicial a citação válida, conforme art. 405 do CC.\n\nNesse sentido, a Súmula 379 do STJ: \"Nos contratos bancários não regidos por legislação específica, os juros moratórios poderão ser fixados até o limite de 1% ao mês\".\n\n### 2.3. JURISPRUDÊNCIA APLICÁVEL\n\nO Tribunal de Justiça do Espírito Santo tem entendimento consolidado sobre a matéria:\n\n\"APELAÇÃO CÍVEL. AÇÃO DE COBRANÇA. PRESTAÇÃO DE SERVIÇOS. INADIMPLEMENTO COMPROVADO. CORREÇÃO MONETÁRIA E JUROS DE MORA DEVIDOS. SENTENÇA MANTIDA.\" (TJES, AC nº [...], Rel. Des. [...])\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTE o pedido formulado por [NOME DA EMPRESA AUTORA] em face de [NOME DA EMPRESA RÉ], para CONDENAR a ré ao pagamento de:\n\na) **Principal:** R$ 25.000,00 (vinte e cinco mil reais);\n\nb) **Correção monetária:** pelo IPCA-E, desde cada vencimento das parcelas inadimplidas (abril a agosto de 2025);\n\nc) **Juros de mora:** de 1% (um por cento) ao mês, desde a citação;\n\nd) **Custas processuais** e **honorários advocatícios**, estes fixados em 10% (dez por cento) sobre o valor da condenação, nos termos do art. 85, §2º, I do CPC.\n\n[REVISAR: percentual de honorários - verificar se 10% é adequado considerando o valor da causa e complexidade]\n\nO valor da condenação deverá ser atualizado até a data do efetivo pagamento.\n\nTransitada em julgado, intime-se a parte vencida para pagamento voluntário no prazo de 15 (quinze) dias, sob pena de acréscimo de 10% sobre o valor da condenação e início da fase de cumprimento de sentença.\n\nPublique-se. Registre-se. Intimem-se.\n\n[LOCAL], [DATA].\n\n**[NOME DO JUIZ]**\nJuiz de Direito\n\n---\n\n**OBSERVAÇÕES:**\n- [REVISAR: confirmar se houve contestação ou se é caso de revelia]\n- [REVISAR: ajustar percentual de honorários conforme complexidade da causa]\n- [REVISAR: verificar se há pedido de antecipação de tutela não analisado]"
+    },
+    {
+      "testCase": "cobranca_02",
+      "descricao": "Ação monitória baseada em cheque prescrito",
+      "agente": "agent_cobranca",
+      "success": true,
+      "executionTime": 28273,
+      "inputTokens": 1070,
+      "outputTokens": 1628,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 687,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo]\n**Classe:** Ação Monitória\n**Requerente:** [REVISAR: nome do autor]\n**Requerido:** [REVISAR: nome da ré]\n\n---\n\n## I - RELATÓRIO\n\n[REVISAR: nome do autor] ajuizou ação monitória contra [REVISAR: nome da ré], objetivando a cobrança de R$ 15.000,00, representados por cheque emitido pela requerida em 10/01/2024, devolvido pelo motivo 12 (conta encerrada) quando apresentado em 20/01/2024.\n\nDevidamente citada, a requerida não ofereceu embargos no prazo legal de 15 dias, quedando-se inerte.\n\nO Ministério Público não se manifestou por não se tratar de caso de sua intervenção obrigatória.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a serem analisadas. O processo tramitou regularmente, com citação válida da requerida, que deixou transcorrer in albis o prazo para oferecimento de embargos monitórios.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Da Natureza Jurídica da Ação Monitória\n\nA ação monitória, disciplinada nos arts. 700 a 702 do CPC, destina-se à cobrança de quantia certa ou entrega de coisa fungível, com base em prova escrita sem eficácia de título executivo.\n\nO cheque prescrito, embora tenha perdido sua executividade, mantém força probatória da obrigação subjacente, constituindo prova escrita idônea para fundamentar a pretensão monitória, conforme pacífico entendimento jurisprudencial:\n\n> \"O cheque prescrito, embora desprovido de executividade, conserva a eficácia probatória da obrigação que lhe deu origem, prestando-se, assim, ao ajuizamento da competente ação de cobrança ou monitória\" (STJ, REsp 1.235.887/RS).\n\n#### 2.2.2 - Da Prescrição\n\nO prazo prescricional para cobrança de cheque prescrito é de 3 (três) anos, contados da data em que se consumou a prescrição executiva (art. 206, §3º, VIII do CC).\n\nNo caso, o cheque foi emitido em 10/01/2024 e apresentado em 20/01/2024. O prazo de 6 meses para execução expirou em 20/07/2024. A presente ação foi ajuizada em 15/10/2025, dentro do prazo trienal que se encerrará em 20/07/2027.\n\nPortanto, não há que se falar em prescrição.\n\n#### 2.2.3 - Da Constituição do Título Executivo\n\nCitada regularmente, a requerida não ofereceu embargos monitórios no prazo de 15 dias estabelecido no art. 701 do CPC, operando-se a preclusão temporal.\n\nNos termos do art. 701, §1º do CPC, \"não oferecidos os embargos, constituir-se-á, de pleno direito, o título executivo judicial, convertendo-se o mandado inicial em mandado executivo\".\n\n#### 2.2.4 - Dos Encargos Moratórios\n\n**Correção Monetária:** Devida desde a emissão do cheque (10/01/2024), pelo IPCA-E, conforme orientação do STF no Tema 1.368 de Repercussão Geral.\n\n**Juros de Mora:** Aplicáveis desde a apresentação do cheque (20/01/2024), momento em que se caracterizou a mora da devedora. Pela taxa de 1% ao mês, nos termos do art. 406 do CC c/c art. 161, §1º do CTN.\n\n[REVISAR: verificar se há orientação específica do TJES sobre taxa de juros]\n\n### 2.3 - JURISPRUDÊNCIA APLICÁVEL\n\n- STJ, Súmula 379: \"Nos contratos bancários não regidos por legislação específica, os juros moratórios poderão ser fixados até o limite de 1% ao mês\"\n- STJ, REsp 1.235.887/RS: Cheque prescrito como prova escrita para monitória\n- STF, Tema 1.368: Correção monetária pelo IPCA-E\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTE o pedido inicial para:\n\n**a)** CONSTITUIR título executivo judicial no valor de R$ 15.000,00 (quinze mil reais);\n\n**b)** CONDENAR a requerida ao pagamento de R$ 15.000,00, corrigidos monetariamente pelo IPCA-E desde 10/01/2024 e acrescidos de juros de mora de 1% ao mês desde 20/01/2024;\n\n**c)** CONDENAR a requerida ao pagamento de honorários advocatícios, fixados em 10% sobre o valor da condenação, nos termos do art. 827, parágrafo único do CPC;\n\n**d)** CONDENAR a requerida ao pagamento das custas processuais.\n\nConverto o mandado monitório em mandado executivo, nos termos do art. 701, §1º do CPC.\n\nTransitada em julgado, arquivem-se os autos com as cautelas de praxe.\n\nPublique-se. Registre-se. Intimem-se.\n\n[REVISAR: local e data]\n\n**[REVISAR: nome do juiz]**\nJuiz de Direito\n\n---\n\n**MARCADORES DE REVISÃO:**\n- [REVISAR: número do processo] - Incluir numeração\n- [REVISAR: nome do autor] - Identificar requerente  \n- [REVISAR: nome da ré] - Identificar requerida\n- [REVISAR: verificar orientação TJES sobre juros] - Confirmar taxa aplicável\n- [REVISAR: local e data] - Completar dados da sentença\n- [REVISAR: nome do juiz] - Identificar magistrado"
+    }
+  ]
+}

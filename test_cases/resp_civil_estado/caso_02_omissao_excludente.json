@@ -1,0 +1,35 @@
+{
+  "id": "resp_civil_estado_002",
+  "tipo_acao": "Ação Indenizatória - Omissão Estatal com Excludente",
+  "agente": "agent_RESP_CIVIL_ESTADO",
+  "fatos": "MARIA DOS SANTOS ajuizou ação indenizatória em face do MUNICÍPIO DE VILA VELHA alegando que seu filho foi vítima de assalto em via pública em 20/08/2024, resultando em lesões corporais leves. Sustenta omissão do Poder Público na segurança pública da região. O Município contesta alegando que: (i) a segurança pública é dever genérico do Estado; (ii) não havia qualquer situação específica de risco que exigisse atuação diferenciada; (iii) o assalto foi praticado por terceiro, caracterizando fato exclusivo de terceiro. Provas demonstram que a região não era conhecida por índices elevados de criminalidade e não havia qualquer solicitação prévia de reforço policial.",
+  "questoes": "1) A omissão estatal genérica gera responsabilidade civil? 2) Está caracterizada a faute du service? 3) O fato exclusivo de terceiro exclui a responsabilidade?",
+  "pedidos": "Condenação do Município ao pagamento de R$ 30.000,00 por danos morais.",
+  "defesas": "Fato exclusivo de terceiro; omissão genérica; ausência de nexo causal.",
+  "documentos": [
+    "Boletim de ocorrência - fls. 05/07",
+    "Atestado médico - fl. 10",
+    "Estatísticas criminais da região - fls. 15/20",
+    "Contestação municipal - fls. 25/40"
+  ],
+  "resultado_esperado": "improcedente",
+  "fundamentos_esperados": [
+    "Responsabilidade subjetiva por omissão",
+    "Faute du service não caracterizada",
+    "Fato exclusivo de terceiro",
+    "Tema 366/STJ"
+  ],
+  "validacao": {
+    "deve_conter": [
+      "omissão",
+      "responsabilidade subjetiva",
+      "fato de terceiro",
+      "IMPROCEDENTE"
+    ],
+    "nao_deve_conter": [
+      "CONDENO",
+      "PROCEDENTE"
+    ],
+    "min_paragrafos": 3
+  }
+}

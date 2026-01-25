@@ -1,0 +1,241 @@
+{
+  "timestamp": "2026-01-20T22:31:43.644Z",
+  "summary": {
+    "totalTests": 3,
+    "passed": 2,
+    "failed": 1,
+    "avgScore": 100,
+    "byAgent": {
+      "agent_incorporacao": {
+        "tests": 3,
+        "passed": 2,
+        "avgScore": 100
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "INCORPORACAO_001",
+      "descricao": "Atraso de 18 meses na entrega de imovel na planta",
+      "agente": "agent_incorporacao",
+      "success": false,
+      "error": "connect ENETUNREACH 2607:6bc0::10:443 - Local (:::0)"
+    },
+    {
+      "testCase": "incorporacao_01",
+      "descricao": "Atraso na entrega de imóvel na planta",
+      "agente": "agent_incorporacao",
+      "success": true,
+      "executionTime": 32630,
+      "inputTokens": 1051,
+      "outputTokens": 1967,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [
+              "543"
+            ],
+            "percentage": 0
+          },
+          "wordCount": 860,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº:** [número do processo]\n**Classe:** Procedimento Comum Cível\n**Requerentes:** PAULO HENRIQUE MARTINS e CARLA REGINA MARTINS\n**Requerida:** CONSTRUTORA ALPHAVILLE LTDA.\n\n---\n\n## I - RELATÓRIO\n\nPAULO HENRIQUE MARTINS e CARLA REGINA MARTINS ajuizaram ação de indenização por danos materiais e morais em face de CONSTRUTORA ALPHAVILLE LTDA., alegando, em síntese, que firmaram em 10/05/2022 contrato de compra e venda de unidade autônoma (apartamento 501, Bloco B) no empreendimento \"Residencial Vista Mar\", pelo valor de R$ 450.000,00, com previsão de entrega em dezembro/2024 e tolerância de 180 dias (até junho/2025).\n\nNarram que pagaram R$ 180.000,00 de entrada e financiaram o restante pela CEF, mas o imóvel não foi entregue até janeiro/2026, configurando atraso de 13 meses além do prazo de tolerância. Informam que residem de aluguel desde dezembro/2024, pagando R$ 2.500,00 mensais.\n\nPleiteiam: a) lucros cessantes de R$ 30.000,00 (aluguéis pagos); b) lucros cessantes futuros até a entrega; c) danos morais de R$ 20.000,00.\n\nA requerida contestou alegando caso fortuito decorrente da pandemia e guerra na Ucrânia, oferecendo acordo para entrega em 6 meses com desconto de R$ 10.000,00, recusado pelos autores.\n\nJuntaram-se aos autos: contrato (fl. 20), comprovantes de pagamento (fls. 30-50), contrato de locação (fl. 60) e recibos de aluguel (fls. 65-76).\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a serem analisadas.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Do atraso na entrega e prazo de tolerância\n\nÉ incontroverso que o prazo contratual de entrega era dezembro/2024, com tolerância de 180 dias (junho/2025), e que até janeiro/2026 o imóvel não foi entregue, configurando atraso de 13 meses além da tolerância.\n\nA cláusula de tolerância de 180 dias é válida, conforme jurisprudência consolidada do STJ, por representar praxe do setor e considerar peculiaridades da atividade de incorporação imobiliária.\n\n#### 2.2.2 - Da alegação de caso fortuito\n\nA requerida alega caso fortuito decorrente da pandemia de COVID-19 e guerra na Ucrânia. Contudo, tal alegação não prospera pelos seguintes fundamentos:\n\na) **Pandemia**: O contrato foi firmado em maio/2022, quando a pandemia já era realidade conhecida, não podendo ser invocada como evento imprevisível;\n\nb) **Guerra na Ucrânia**: Iniciada em fevereiro/2022, também era fato conhecido quando da contratação;\n\nc) **Ausência de prova específica**: A ré não demonstrou nexo causal direto entre os eventos alegados e o atraso específico desta obra.\n\nO STJ tem entendimento consolidado de que eventos de conhecimento público quando da contratação não configuram caso fortuito (REsp 1.731.072/SP).\n\n#### 2.2.3 - Dos lucros cessantes\n\nO **Tema 996 do STJ** estabelece que \"o atraso na entrega de unidade imobiliária após o decurso do prazo de tolerância gera o dever de indenizar, independente da demonstração específica de prejuízo do promissário comprador\".\n\n**Fundamentação jurisprudencial:**\n- **Tema 970/STJ**: \"É devida indenização por lucros cessantes em razão do atraso na entrega do imóvel objeto de promessa de compra e venda\"\n- **REsp 1.737.428/SP**: Lucros cessantes presumidos durante período de mora\n\n**Cálculo dos lucros cessantes:**\n\na) **Período já decorrido**: 13 meses de atraso × R$ 2.500,00 = **R$ 32.500,00**\n\n[REVISAR: verificar se há diferença entre o valor pleiteado (R$ 30.000,00) e o calculado (R$ 32.500,00) - considerar apenas 12 meses efetivamente comprovados]\n\nb) **Lucros cessantes futuros**: Devidos até a efetiva entrega, no valor de R$ 2.500,00 mensais, com correção monetária e juros de mora.\n\n#### 2.2.4 - Dos danos morais\n\nO atraso superior a 1 ano na entrega de imóvel gera dano moral *in re ipsa*, independente de prova específica, conforme jurisprudência do STJ:\n\n**\"O inadimplemento de contrato de promessa de compra e venda de imóvel, por si só, pode gerar danos morais, que decorrem da frustração da justa expectativa de recebimento da unidade habitacional na data contratada\"** (REsp 1.804.082/SP).\n\nConsiderando:\n- Atraso de 13 meses além da tolerância\n- Necessidade de manutenção de aluguel\n- Frustração da expectativa legítima\n- Capacidade econômica das partes\n\nFixo os danos morais em **R$ 25.000,00**, valor que atende aos princípios da proporcionalidade e razoabilidade.\n\n#### 2.2.5 - Da correção monetária e juros\n\n**Lucros cessantes**: Correção monetária pelo IPCA desde cada desembolso + juros de mora de 1% a.m. desde a citação.\n\n**Danos morais**: Correção monetária pelo IPCA desde a sentença + juros de mora de 1% a.m. desde a citação (Súmula 362/STJ).\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, **JULGO PROCEDENTES** os pedidos para:\n\n**a) CONDENAR** a requerida ao pagamento de **R$ 30.000,00** a título de lucros cessantes pelos aluguéis já pagos, com correção monetária pelo IPCA desde cada desembolso e juros de mora de 1% ao mês desde a citação;\n\n**b) CONDENAR** a requerida ao pagamento de lucros cessantes futuros no valor de **R$ 2.500,00 mensais** até a efetiva entrega do imóvel, com correção monetária pelo IPCA e juros de mora de 1% ao mês;\n\n**c) CONDENAR** a requerida ao pagamento de **R$ 25.000,00** a título de danos morais, com correção monetária pelo IPCA desde esta sentença e juros de mora de 1% ao mês desde a citação;\n\n**d) CONDENAR** a requerida ao pagamento das custas processuais e honorários advocatícios, fixados em **10%** sobre o valor da condenação, nos termos do art. 85, §2º, do CPC.\n\nPublique-se. Registre-se. Intimem-se.\n\n[Local], [data].\n\n**[Nome do Juiz]**\n**Juiz de Direito**"
+    },
+    {
+      "testCase": "incorporacao_02",
+      "descricao": "Vícios construtivos em imóvel entregue",
+      "agente": "agent_incorporacao",
+      "success": true,
+      "executionTime": 35961,
+      "inputTokens": 1045,
+      "outputTokens": 2016,
+      "validation": {
+        "totalScore": 90,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [],
+            "percentage": null
+          },
+          "wordCount": 901,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 95
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [NÚMERO DO PROCESSO]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Incorporação Imobiliária - Vícios Construtivos\n**Requerente:** ANDRÉ LUÍS PEREIRA\n**Requerido:** MRV ENGENHARIA LTDA.\n\n---\n\n## I - RELATÓRIO\n\nANDRÉ LUÍS PEREIRA ajuizou ação de obrigação de fazer c/c indenização por danos morais em face de MRV ENGENHARIA LTDA., alegando, em síntese, que adquiriu apartamento 203, Bloco C, do empreendimento \"Parque das Flores\" em 2022 pelo valor de R$ 280.000,00, recebendo as chaves em 15/08/2024.\n\nNarra que após um mês de moradia surgiram diversos vícios construtivos: infiltrações no teto, trincas nas paredes, descolamento de pisos, vazamento na tubulação e folgas em portas e janelas. Comunicou a ré em 20/09/2024, que realizou reparos superficiais sem solucionar os problemas.\n\nContratou engenheiro particular que elaborou laudo técnico estimando o custo de reparação em R$ 45.000,00. Os vícios tornaram o imóvel impróprio para moradia, obrigando-o a se mudar temporariamente.\n\nRequer: a) reparação integral dos vícios; b) subsidiariamente, abatimento de R$ 45.000,00; c) danos morais de R$ 10.000,00.\n\nA ré foi citada e apresentou contestação alegando: a) decadência do direito do autor; b) vícios decorrentes de mau uso; c) reparos já realizados; d) inexistência de danos morais; e) valor excessivo da indenização.\n\nHouve tréplica. Deferida prova pericial de engenharia, cujo laudo concluiu pela existência de v��cios construtivos decorrentes de falhas na execução da obra, confirmando a necessidade de reparos no valor de R$ 42.000,00.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\n**Decadência**\n\nA ré alega decadência do direito do autor com base no art. 26, II, do CDC, sustentando que os vícios aparentes deveriam ter sido reclamados em 30 dias.\n\nA preliminar não prospera. Os vícios narrados são ocultos, manifestando-se apenas após período de uso normal do imóvel. Como bem estabelece o art. 26, §3º, do CDC, o prazo decadencial inicia-se do conhecimento do vício, não da entrega do bem.\n\nAdemais, tratando-se de vícios em imóvel, aplica-se o prazo quinquenal do art. 618 do Código Civil, por se tratar de vício redibitório em bem imóvel, conforme entendimento consolidado do STJ.\n\nRejeito a preliminar.\n\n### 2.2 - MÉRITO\n\n**Responsabilidade da Construtora**\n\nA responsabilidade da incorporadora/construtora pelos vícios construtivos é objetiva, nos termos dos arts. 12 e 18 do CDC, bem como do art. 618 do Código Civil.\n\nO laudo pericial foi conclusivo ao identificar vícios construtivos decorrentes de falhas na execução da obra: \"as infiltrações decorrem de impermeabilização inadequada da laje de cobertura\", \"as trincas resultam de movimentação estrutural por deficiência na cura do concreto\", \"o descolamento dos pisos evidencia aplicação inadequada de argamassa colante\".\n\nTais vícios comprometem a habitabilidade do imóvel e decorrem inequivocamente de defeitos na construção, não de mau uso pelo adquirente.\n\n**Prazo de Garantia**\n\nO art. 618 do Código Civil estabelece prazo de garantia de 5 anos para vícios estruturais e de 3 anos para vícios de acabamento, contados da entrega da obra.\n\nConsiderando que o imóvel foi entregue em agosto/2024 e a ação ajuizada em período inferior a 1 ano, não há que se falar em decurso do prazo de garantia.\n\n**Obrigação de Reparar**\n\nCaracterizada a responsabilidade da ré pelos vícios construtivos, surge o dever de reparação integral, conforme art. 18, §1º, I, do CDC.\n\nO laudo pericial confirmou a necessidade de reparos no valor de R$ 42.000,00, montante técnico e razoável para solução definitiva dos problemas identificados.\n\nA jurisprudência é pacífica neste sentido:\n\n> \"CIVIL. INCORPORAÇÃO IMOBILIÁRIA. VÍCIOS CONSTRUTIVOS. RESPONSABILIDADE OBJETIVA. OBRIGAÇÃO DE REPARAR. A construtora responde objetivamente pelos vícios construtivos que comprometem a habitabilidade do imóvel, devendo proceder aos reparos necessários.\" (STJ, REsp 1.565.781/SP)\n\n**Danos Morais**\n\nOs vícios construtivos que tornam o imóvel impróprio para moradia geram dano moral *in re ipsa*, dispensando prova específica do abalo psíquico.\n\nO autor foi privado do uso adequado de sua residência, sendo obrigado a se mudar temporariamente, situação que extrapola o mero aborrecimento e configura violação à dignidade da pessoa humana.\n\nA jurisprudência do STJ é consolidada:\n\n> \"CIVIL. VÍCIOS CONSTRUTIVOS. DANO MORAL. CONFIGURAÇÃO. Os vícios construtivos que impedem o uso adequado do imóvel geram dano moral presumido, independentemente de prova específica do abalo psíquico.\" (STJ, REsp 1.737.412/SP)\n\nConsiderando a extensão dos vícios, o valor do imóvel (R$ 280.000,00) e o período de privação do uso, fixo os danos morais em R$ 8.000,00, montante proporcional e adequado às circunstâncias.\n\n**Pedido Subsidiário**\n\nDiante do acolhimento do pedido principal de reparação integral, resta prejudicado o pedido subsidiário de abatimento do preço.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTES EM PARTE os pedidos para:\n\n**a)** CONDENAR a ré MRV ENGENHARIA LTDA. na obrigação de fazer consistente em reparar integralmente os vícios construtivos identificados no laudo pericial (infiltrações, trincas, descolamento de pisos, vazamentos e folgas), no prazo de 90 (noventa) dias, sob pena de multa diária de R$ 500,00, limitada a R$ 50.000,00;\n\n**b)** CONDENAR a ré ao pagamento de R$ 8.000,00 (oito mil reais) a título de danos morais, com correção monetária pela Tabela do TJSP desde esta data e juros de mora de 1% ao mês desde a citação;\n\n**c)** CONDENAR a ré ao pagamento das custas processuais e honorários advocatícios, fixados em 15% sobre o valor da condenação, nos termos do art. 85, §2º, do CPC.\n\nTransitada em julgado, arquivem-se os autos com as baixas de praxe.\n\nP.R.I.C.\n\n[Local], [data].\n\n**[NOME DO JUIZ]**\nJuiz de Direito\n\n[REVISAR: Verificar se há necessidade de intimação do MP ou outros órgãos específicos para este tipo de ação]"
+    }
+  ]
+}

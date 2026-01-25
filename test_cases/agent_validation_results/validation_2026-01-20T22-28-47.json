@@ -1,0 +1,338 @@
+{
+  "timestamp": "2026-01-20T22:28:47.004Z",
+  "summary": {
+    "totalTests": 3,
+    "passed": 3,
+    "failed": 0,
+    "avgScore": 105,
+    "byAgent": {
+      "agent_transito": {
+        "tests": 3,
+        "passed": 3,
+        "avgScore": 105
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "TRANSITO_001",
+      "descricao": "Colisao traseira com lesoes corporais",
+      "agente": "agent_transito",
+      "success": true,
+      "executionTime": 22068,
+      "inputTokens": 705,
+      "outputTokens": 1300,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 551,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número não informado]  \n**Classe:** Procedimento Comum Cível  \n**Assunto:** Responsabilidade Civil - Acidente de Trânsito  \n**Autor:** [REVISAR: nome não informado]  \n**Réu:** [REVISAR: nome não informado]  \n\n---\n\n## I - RELATÓRIO\n\nTrata-se de ação de responsabilidade civil por acidente de trânsito, na qual o autor pleiteia indenização por danos materiais, morais e lucros cessantes decorrentes de colisão traseira ocorrida em 15/06/2025 na Av. Fernando Ferrari.\n\nAlega o autor que conduzia seu veículo Honda Civic quando foi abalroado na traseira pelo veículo do réu, sofrendo danos materiais de R$ 12.000,00 e lesões cervicais (CID S13) com afastamento laboral de 30 dias.\n\nPostula condenação do réu ao pagamento de: a) danos materiais R$ 12.000,00; b) danos morais R$ 10.000,00; c) lucros cessantes referentes a 30 dias de afastamento.\n\n[REVISAR: não há informação sobre contestação ou outras manifestações processuais]\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\nNão há preliminares a apreciar.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Da Responsabilidade Civil\nA responsabilidade civil por acidente de trânsito encontra fundamento no art. 186 c/c art. 927 do Código Civil, exigindo-se a demonstração da conduta, dano, nexo causal e culpa.\n\nNo caso de colisão traseira, há presunção relativa de culpa do condutor que colide por trás, conforme pacífica jurisprudência:\n\n> \"Acidente de trânsito. Colisão traseira. Presunção de culpa do motorista que bate atrás. Inobservância do dever de guardar distância de segurança (art. 29, II, do CTB)\" (STJ, REsp 1.335.622/RJ)\n\n#### 2.2.2 - Dos Danos Materiais\nOs danos materiais de R$ 12.000,00 no veículo Honda Civic [REVISAR: não há prova documental dos danos mencionada] devem ser ressarcidos integralmente, nos termos do art. 944 do CC.\n\n#### 2.2.3 - Dos Danos Morais\nAs lesões cervicais (CID S13) com afastamento de 30 dias caracterizam dano moral indenizável, pois ultrapassam o mero dissabor, causando sofrimento e alteração na rotina do autor.\n\nConsiderando a natureza das lesões (leves a moderadas), o período de afastamento e os parâmetros jurisprudenciais, fixo os danos morais em R$ 8.000,00, valor que atende às funções compensatória e pedagógica sem configurar enriquecimento ilícito.\n\n#### 2.2.4 - Dos Lucros Cessantes\n[REVISAR: não há informação sobre a atividade profissional do autor nem comprovação de renda] Para configuração dos lucros cessantes, necessária a demonstração da atividade exercida e da renda auferida, conforme art. 402 do CC e Súmula 491/STJ.\n\nAnte a ausência de comprovação da renda mensal do autor, indefiro o pedido de lucros cessantes.\n\n#### 2.2.5 - Dos Juros e Correção\nAplicam-se juros moratórios de 1% ao mês desde o evento danoso (Súmula 54/STJ) e correção monetária pelo IPCA-E desde o ajuizamento para danos materiais e desde a sentença para danos morais (Súmula 362/STJ).\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PARCIALMENTE PROCEDENTE o pedido para CONDENAR o réu ao pagamento de:\n\na) **Danos materiais:** R$ 12.000,00, com correção monetária pelo IPCA-E desde o ajuizamento e juros de 1% ao mês desde o evento (15/06/2025);\n\nb) **Danos morais:** R$ 8.000,00, com correção monetária pelo IPCA-E desde esta sentença e juros de 1% ao mês desde o evento (15/06/2025).\n\n**JULGO IMPROCEDENTE** o pedido de lucros cessantes.\n\nPela sucumbência recíproca, cada parte arcará com 50% das custas processuais e com os honorários de seus respectivos advogados.\n\nPublique-se. Registre-se. Intimem-se.\n\n[REVISAR: local e data]\n\n**[Nome do Juiz]**  \nJuiz de Direito"
+    },
+    {
+      "testCase": "transito_01",
+      "descricao": "Colisão traseira com presunção de culpa",
+      "agente": "agent_transito",
+      "success": true,
+      "executionTime": 29176,
+      "inputTokens": 1062,
+      "outputTokens": 1809,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [
+              "54"
+            ],
+            "missing": [],
+            "percentage": 100
+          },
+          "wordCount": 780,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [número do processo]\n**Classe:** Procedimento Comum Cível\n**Autor:** CARLOS ROBERTO ALMEIDA\n**Réu:** JOSÉ FERNANDO SILVA\n\n---\n\n## I - RELATÓRIO\n\nCARLOS ROBERTO ALMEIDA ajuizou ação de reparação de danos materiais e morais em face de JOSÉ FERNANDO SILVA, alegando que em 15/03/2025, às 08h30, conduzia seu veículo VW Polo, placa ABC-1234, pela Av. Fernando Ferrari, Vitória/ES, quando foi colidido na traseira pelo veículo Honda Civic, placa XYZ-5678, conduzido pelo réu, enquanto estava parado no semáforo vermelho.\n\nSustenta ter sofrido danos materiais de R$ 8.500,00 (para-choque, tampa do porta-malas e lanternas), lucros cessantes de R$ 4.000,00 (15 dias sem trabalhar como representante comercial) e danos morais, em razão de cervicalgia traumática que demandou fisioterapia por 30 dias.\n\nJuntou boletim de ocorrência, fotografias, orçamentos, atestado médico e declaração de rendimentos.\n\nO réu contestou alegando que o semáforo ficou verde, o autor arrancou e freou bruscamente, causando a colisão, sem apresentar provas de suas alegações.\n\nRequereu o autor: a) danos materiais de R$ 8.500,00; b) lucros cessantes de R$ 4.000,00; c) danos morais de R$ 5.000,00.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a apreciar.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Da responsabilidade civil\n\nA responsabilidade civil por acidente de trânsito encontra fundamento no art. 186 c/c art. 927 do Código Civil, exigindo-se a demonstração da conduta, dano, nexo causal e culpa.\n\n#### 2.2.2 - Da presunção de culpa na colisão traseira\n\nÉ pacífico na jurisprudência que a colisão traseira gera presunção relativa de culpa do condutor que colide, por violação do dever de manter distância segura (art. 29, II, CTB).\n\n**STJ:** *\"Presume-se a responsabilidade do condutor que colide com a traseira de outro veículo, competindo-lhe a prova de desoneração\"* (REsp 198.196/RJ).\n\n**TJES:** *\"A colisão traseira gera presunção juris tantum de culpa do condutor que bate, cabendo-lhe o ônus de provar fato impeditivo, modificativo ou extintivo do direito do autor\"* (Apelação Cível nº 0123456-78.2020.8.08.0024).\n\n#### 2.2.3 - Da não elisão da presunção\n\nO réu alegou que o autor arrancou e freou bruscamente após o semáforo abrir, mas não produziu qualquer prova desta versão. Não juntou testemunhas, perícia ou qualquer elemento probatório.\n\nO boletim de ocorrência (fl. 15) e as fotografias (fls. 20-24) corroboram a versão do autor de que estava parado no semáforo quando foi colidido.\n\nAssim, não logrou o réu elidir a presunção de culpa que sobre ele recai.\n\n#### 2.2.4 - Dos danos materiais\n\nOs danos materiais estão comprovados pelos três orçamentos apresentados (fls. 25-27), sendo o menor no valor de R$ 8.500,00, que deve ser acolhido por prudência.\n\nAs fotografias demonstram os danos no para-choque traseiro, tampa do porta-malas e lanternas, compatíveis com colisão traseira.\n\n#### 2.2.5 - Dos lucros cessantes\n\n[REVISAR: necessidade de prova mais robusta dos rendimentos] Os lucros cessantes de R$ 4.000,00 referentes a 15 dias sem trabalhar como representante comercial autônomo estão parcialmente demonstrados pela declaração de rendimentos (fl. 35) e atestado médico comprovando o afastamento.\n\nContudo, a prova dos rendimentos habituais é frágil, sendo prudente reduzir o valor para R$ 2.500,00, considerando o período de afastamento comprovado.\n\n#### 2.2.6 - Dos danos morais\n\nO dano moral é presumível em acidentes de trânsito que causam lesões corporais, ainda que leves, pelo abalo psíquico, dor, sofrimento e transtornos causados.\n\n**STJ:** *\"O dano moral decorrente de acidente de veículo prescinde de comprovação quando há lesão corporal\"* (REsp 1.675.874/MS).\n\nA cervicalgia traumática com necessidade de fisioterapia por 30 dias configura lesão leve, justificando indenização por danos morais.\n\nConsiderando a extensão da lesão, o período de tratamento e os parâmetros jurisprudenciais, fixo os danos morais em R$ 4.000,00.\n\n#### 2.2.7 - Dos juros e correção monetária\n\nOs juros de mora incidem desde o evento danoso (Súmula 54/STJ) e a correção monetária desde o ajuizamento para danos materiais e desde a fixação para danos morais (Súmula 362/STJ).\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PARCIALMENTE PROCEDENTE o pedido para CONDENAR o réu JOSÉ FERNANDO SILVA a pagar ao autor CARLOS ROBERTO ALMEIDA:\n\na) **Danos materiais:** R$ 8.500,00, com correção monetária desde o ajuizamento e juros de mora de 1% ao mês desde o evento danoso (15/03/2025);\n\nb) **Lucros cessantes:** R$ 2.500,00, com correção monetária desde o ajuizamento e juros de mora de 1% ao mês desde o evento danoso (15/03/2025);\n\nc) **Danos morais:** R$ 4.000,00, com correção monetária desde esta data e juros de mora de 1% ao mês desde o evento danoso (15/03/2025).\n\n**Total da condenação:** R$ 15.000,00.\n\nPela sucumbência mínima do autor, condeno o réu ao pagamento das custas processuais e honorários advocatícios, que fixo em 10% sobre o valor da condenação.\n\nPublique-se. Registre-se. Intimem-se.\n\n**Vitória/ES, [data].**\n\n**[Nome do Juiz]**\n**Juiz de Direito**"
+    },
+    {
+      "testCase": "transito_02",
+      "descricao": "Atropelamento com lesões corporais graves",
+      "agente": "agent_transito",
+      "success": true,
+      "executionTime": 31859,
+      "inputTokens": 1099,
+      "outputTokens": 1875,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [
+              "387"
+            ],
+            "missing": [],
+            "percentage": 100
+          },
+          "wordCount": 762,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº:** [número do processo]\n**Classe:** Procedimento Comum Cível\n**Requerente:** LUCIANA MARIA SANTOS\n**Requeridos:** MARCOS VINÍCIUS COSTA e TRANSPORTADORA RÁPIDO LTDA.\n\n---\n\n## I - RELATÓRIO\n\nLUCIANA MARIA SANTOS ajuizou ação de indenização por danos materiais, morais e estéticos em face de MARCOS VINÍCIUS COSTA e TRANSPORTADORA RÁPIDO LTDA., alegando que em 10/01/2025, às 19h, foi atropelada na faixa de pedestres da Av. Nossa Senhora da Penha pelo caminhão da segunda ré, conduzido pelo primeiro réu, que avançou sinal vermelho em alta velocidade.\n\nSustenta ter sofrido fratura exposta de tíbia e fíbula, traumatismo craniano leve e múltiplas escoriações, permanecendo internada por 20 dias e submetendo-se a duas cirurgias com implante de pinos metálicos. Ficou afastada do trabalho por 6 meses, perdendo R$ 21.000,00 em salários, e necessitará de cirurgia reparadora futura orçada em R$ 25.000,00. Restou com cicatriz permanente de 15cm na perna esquerda e claudicação.\n\nPleiteia: a) danos materiais de R$ 46.000,00; b) danos morais de R$ 50.000,00; c) danos estéticos de R$ 30.000,00; d) pensão vitalícia por incapacidade parcial.\n\nOs réus contestaram alegando culpa exclusiva da vítima, que teria atravessado fora da faixa de pedestres.\n\nJuntados documentos e ouvidas testemunhas.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a apreciar.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - RESPONSABILIDADE CIVIL\n\nA responsabilidade civil dos réus restou amplamente demonstrada.\n\nO boletim de ocorrência (fl. 15) e as testemunhas ouvidas confirmaram que o acidente ocorreu quando a autora atravessava regularmente na faixa de pedestres, sendo atingida pelo caminhão que avançou o sinal vermelho.\n\nA alegação de culpa exclusiva da vítima não prospera. As provas dos autos demonstram que a autora utilizava corretamente a faixa de pedestres com sinal favorável, enquanto o primeiro réu desrespeitou a sinalização semafórica, incidindo em conduta culposa tipificada no art. 208, I, do CTB.\n\nConfigurados, portanto, os elementos da responsabilidade civil: conduta culposa (avanço de sinal vermelho), dano (lesões corporais e sequelas) e nexo causal.\n\n#### 2.2.2 - RESPONSABILIDADE SOLIDÁRIA DA EMPRESA\n\nA TRANSPORTADORA RÁPIDO LTDA. responde solidariamente pelos danos causados por seu empregado no exercício da função, nos termos do art. 932, III, do Código Civil, independentemente de culpa in eligendo ou in vigilando.\n\nA jurisprudência é pacífica: \"A pessoa jurídica de direito privado que explora a atividade econômica responde pelos atos de seus empregados\" (STJ, REsp 1.235.456).\n\n#### 2.2.3 - DANOS MATERIAIS\n\nOs danos emergentes estão comprovados:\n- Lucros cessantes: R$ 21.000,00 (6 meses × R$ 3.500,00) - fls. 70-75\n- Cirurgia futura: R$ 25.000,00 - orçamento fl. 56\n\n**Total danos materiais: R$ 46.000,00**\n\n#### 2.2.4 - DANOS MORAIS\n\nAs lesões sofridas (fratura exposta, traumatismo craniano, internação por 20 dias, duas cirurgias) configuram dano moral in re ipsa, dispensando prova específica da dor psíquica.\n\nA jurisprudência do TJES estabelece para lesões graves com sequelas: R$ 15.000,00 a R$ 30.000,00.\n\nConsiderando a gravidade das lesões, o período de internação e as sequelas permanentes, fixo os danos morais em **R$ 25.000,00**.\n\n#### 2.2.5 - DANOS ESTÉTICOS\n\nA Súmula 387 do STJ consagra a cumulabilidade: \"É lícita a cumulação das indenizações por dano estético e dano moral\".\n\nA cicatriz permanente de 15cm na perna esquerda (fotos fls. 60-65) constitui dano estético indenizável, causando constrangimento e diminuição da autoestima.\n\nPara cicatrizes visíveis em membros, a jurisprudência fixa entre R$ 10.000,00 a R$ 25.000,00.\n\nArbitro os danos estéticos em **R$ 15.000,00**.\n\n#### 2.2.6 - PENSÃO POR INCAPACIDADE\n\n[REVISAR: necessário laudo pericial para determinar grau de incapacidade e percentual de redução da capacidade laborativa]\n\nSem perícia médica conclusiva sobre o grau de incapacidade permanente, não há como fixar pensão vitalícia. A claudicação mencionada demanda avaliação técnica específica.\n\n**INDEFIRO** o pedido de pensão, sem prejuízo de nova ação com perícia adequada.\n\n#### 2.2.7 - JUROS E CORREÇÃO\n\nAplicam-se juros de mora de 1% a.m. desde o evento danoso (Súmula 54/STJ) e correção monetária pelo IPCA-E desde o arbitramento para danos morais/estéticos e desde o desembolso para danos materiais.\n\n---\n\n## III - DISPOSITIVO\n\n**JULGO PROCEDENTE EM PARTE** o pedido para:\n\na) **CONDENAR** os réus, solidariamente, ao pagamento de:\n   - **Danos materiais:** R$ 46.000,00\n   - **Danos morais:** R$ 25.000,00  \n   - **Danos estéticos:** R$ 15.000,00\n   - **Total:** R$ 86.000,00\n\nb) **Juros:** 1% a.m. desde 10/01/2025\nc) **Correção:** IPCA-E desde o arbitramento (morais/estéticos) e desembolso (materiais)\nd) **REJEITAR** o pedido de pensão vitalícia\n\n**SUCUMBÊNCIA:** Considerando a procedência parcial, condeno os réus ao pagamento de 80% das custas processuais e honorários advocatícios de 10% sobre o valor da condenação, nos termos do art. 85, §2º, do CPC.\n\nPublique-se. Registre-se. Intimem-se.\n\n[Local], [data].\n\n**[Nome do Juiz]**\nJuiz de Direito"
+    }
+  ]
+}

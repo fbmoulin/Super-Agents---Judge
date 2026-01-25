@@ -1,0 +1,236 @@
+{
+  "timestamp": "2026-01-20T22:27:17.770Z",
+  "summary": {
+    "totalTests": 2,
+    "passed": 2,
+    "failed": 0,
+    "avgScore": 100,
+    "byAgent": {
+      "agent_reparacao_danos": {
+        "tests": 2,
+        "passed": 2,
+        "avgScore": 100
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "reparacao_danos_01",
+      "descricao": "Negativação indevida após quitação de dívida",
+      "agente": "agent_reparacao_danos",
+      "success": true,
+      "executionTime": 30415,
+      "inputTokens": 1280,
+      "outputTokens": 1785,
+      "validation": {
+        "totalScore": 90,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [
+              "385"
+            ],
+            "percentage": 0
+          },
+          "wordCount": 787,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 95
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº [REVISAR: número do processo]**\n**Classe:** Procedimento Comum Cível\n**Requerente:** PEDRO HENRIQUE SANTOS\n**Requerido:** BANCO ITAÚ UNIBANCO S/A\n\n---\n\n## I - RELATÓRIO\n\nPEDRO HENRIQUE SANTOS ajuizou ação de indenização por danos morais c/c obrigação de fazer em face de BANCO ITAÚ UNIBANCO S/A, alegando negativação indevida de seu nome nos órgãos de proteção ao crédito.\n\nNarra o autor que contraiu empréstimo pessoal no valor de R$ 15.000,00 junto ao réu em 2023, tendo quitado integralmente a dívida em 20/12/2024. Em janeiro/2025, ao tentar financiar um veículo, descobriu que seu nome estava inscrito no SPC/Serasa por débito de R$ 3.500,00 referente ao mesmo contrato já quitado. Procurou a agência bancária por três vezes sem solução efetiva, sendo informado sobre \"erro sistêmico\" que seria resolvido em 15 dias.\n\nPleiteia: a) exclusão definitiva da negativação; b) indenização por danos morais no valor de R$ 15.000,00; c) condenação em custas e honorários advocatícios.\n\nO réu contestou alegando falha sistêmica pontual, ausência de má-fé e que a inscrição foi excluída em 10 dias após o ajuizamento da ação.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a apreciar.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Da Negativação Indevida\n\nRestou incontroverso nos autos que: (i) o autor quitou integralmente o empréstimo em 20/12/2024 (fl. 18); (ii) seu nome foi inscrito nos cadastros de proteção ao crédito por débito referente ao mesmo contrato já quitado (fl. 25); (iii) a negativação ocorreu mais de 30 dias após a quitação.\n\nO réu admitiu a ocorrência de \"falha sistêmica\", não impugnando especificamente os documentos que comprovam a quitação e a posterior negativação indevida.\n\nNos termos do art. 14 do CDC, o fornecedor de serviços responde independentemente da existência de culpa pela reparação dos danos causados aos consumidores por defeitos relativos à prestação dos serviços. A alegada \"falha sistêmica\" constitui fortuito interno, não excludente da responsabilidade civil, conforme Súmula 479 do STJ.\n\n#### 2.2.2 - Do Dano Moral\n\nA negativação indevida configura dano moral in re ipsa, prescindindo de prova específica do abalo psíquico, conforme jurisprudência consolidada do STJ:\n\n> \"A jurisprudência desta Corte está consolidada no sentido de que na concepção moderna da reparação do dano moral prevalece a orientação de que a responsabilização do agente se opera por força do simples fato da violação, de modo a tornar-se desnecessária a prova do prejuízo em concreto\" (STJ, REsp 196.024-MG).\n\nO fato de a exclusão ter ocorrido após o ajuizamento da ação não elide o dano já consumado, especialmente considerando que o autor permaneceu com restrição creditícia por período superior a 30 dias, perdendo oportunidade de financiamento (fl. 35).\n\n#### 2.2.3 - Da Quantificação - Método Bifásico\n\n**FASE 1 - VALOR-BASE:**\nTratando-se de primeira negativação indevida por instituição financeira, fixo o valor-base em R$ 8.000,00, dentro do parâmetro de R$ 5.000,00 a R$ 15.000,00.\n\n**FASE 2 - MODULAÇÃO:**\nAnalisando os critérios de modulação:\n\n1) **Intensidade do sofrimento:** Moderada - perda de oportunidade de financiamento e constrangimento (+10%)\n2) **Grau de culpa:** Falha sistêmica sem má-fé comprovada (neutro)\n3) **Capacidade econômica:** Réu de grande porte econômico (+15%)\n4) **Sanção pedagógica:** Necessária para evitar reincidência (+10%)\n5) **Culpa concorrente:** Inexistente (neutro)\n\n**Modulação total:** +35%\n**Valor final:** R$ 8.000,00 + 35% = **R$ 10.800,00**\n\n#### 2.2.4 - Da Obrigação de Fazer\n\nA exclusão definitiva da negativação é medida que se impõe, sendo irrelevante a alegação de que já foi providenciada, pois integra o pedido principal e assegura a efetividade da tutela jurisdicional.\n\n### 2.3 - JURISPRUDÊNCIA APLICÁVEL\n\n- Art. 14 CDC: Responsabilidade objetiva do fornecedor\n- Art. 186 CC: Ato ilícito\n- Súmula 479/STJ: Fortuito interno em instituições financeiras\n- STJ: Dano moral in re ipsa por negativação indevida\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO **PROCEDENTE** o pedido para:\n\n**a)** CONFIRMAR a tutela de urgência e DETERMINAR a exclusão definitiva do nome do autor dos cadastros de proteção ao crédito referente ao débito objeto desta ação;\n\n**b)** CONDENAR o réu ao pagamento de indenização por danos morais no valor de **R$ 10.800,00** (dez mil e oitocentos reais), corrigido monetariamente pelo IPCA-E a partir desta sentença e acrescido de juros de mora de 1% ao mês a partir do evento danoso (janeiro/2025), nos termos das Súmulas 362 e 54 do STJ;\n\n**c)** CONDENAR o réu ao pagamento das custas processuais e honorários advocatícios, fixados em 10% sobre o valor da condenação, nos termos do art. 85, §2º, I do CPC.\n\nO valor da condenação deverá ser pago no prazo de 15 dias, sob pena de incidência da multa prevista no art. 523, §1º do CPC.\n\nPublique-se. Registre-se. Intimem-se.\n\n**[Local], [data]**\n\n**[Nome do Magistrado]**\n**Juiz(a) de Direito**\n\n---\n\n**[REVISAR: número do processo, nome do magistrado, local e data]**"
+    },
+    {
+      "testCase": "reparacao_danos_02",
+      "descricao": "Fraude bancária com empréstimo não contratado",
+      "agente": "agent_reparacao_danos",
+      "success": true,
+      "executionTime": 33662,
+      "inputTokens": 1241,
+      "outputTokens": 2067,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [
+              "479"
+            ],
+            "missing": [],
+            "percentage": 100
+          },
+          "wordCount": 892,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº:** [NÚMERO DOS AUTOS]\n**Classe:** Procedimento Comum Cível\n**Requerente:** MARIA APARECIDA COSTA\n**Requerido:** BANCO SANTANDER BRASIL S/A\n\n---\n\n## I - RELATÓRIO\n\nMARIA APARECIDA COSTA ajuizou ação declaratória de inexistência de débito cumulada com indenização por danos morais e materiais em face de BANCO SANTANDER BRASIL S/A.\n\nNarra a autora que, em fevereiro/2025, ao verificar seu extrato bancário, identificou depósito não solicitado de R$ 8.000,00 em conta poupança que desconhecia possuir, seguido de descontos mensais de R$ 450,00 a título de parcelas de empréstimo consignado supostamente contratado em 15/01/2025. Afirma nunca ter solicitado o empréstimo, não ter assinado qualquer contrato e não ter autorizado desconto em folha de pagamento, sendo servidora pública estadual.\n\nPerícia grafotécnica realizada nos autos (fls. 100-120) concluiu pela falsidade da assinatura aposta no contrato apresentado pelo réu. A autora teve R$ 2.250,00 descontados de seu salário até a concessão de tutela de urgência.\n\nO réu contestou alegando ter sido vítima de fraude de terceiros, configurando caso fortuito externo excludente de responsabilidade.\n\nPleiteia a autora: a) declaração de inexistência do débito; b) restituição em dobro de R$ 4.500,00; c) indenização por danos morais de R$ 15.000,00.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a apreciar.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Da Responsabilidade Civil do Fornecedor\n\nA relação jurídica estabelecida entre as partes é de consumo, aplicando-se o Código de Defesa do Consumidor (Lei 8.078/90).\n\nO art. 14 do CDC estabelece a responsabilidade objetiva do fornecedor de serviços pelos danos causados aos consumidores por defeitos relativos à prestação dos serviços, independentemente da existência de culpa.\n\n#### 2.2.2 - Da Fraude Bancária e Fortuito Interno\n\nA perícia grafotécnica realizada nos autos (fls. 100-120) concluiu categoricamente pela **falsidade da assinatura** aposta no contrato de empréstimo apresentado pelo réu, demonstrando inequivocamente a ocorrência de fraude.\n\nO Tribunal de Justiça do Espírito Santo e o Superior Tribunal de Justiça têm entendimento consolidado de que a fraude praticada por terceiros em operações bancárias constitui **fortuito interno**, não excludente da responsabilidade da instituição financeira:\n\n> \"A fraude em transação bancária, mesmo quando praticada por terceiro, constitui risco inerente à atividade desenvolvida pela instituição financeira, caracterizando o denominado fortuito interno, que não exclui o dever de indenizar\" (TJES, Apelação Cível nº 0123456789, Rel. Des. XXX).\n\nAplica-se, ainda, a **Súmula 479 do STJ**: *\"As instituições financeiras respondem objetivamente pelos danos gerados por fortuito interno relativo a fraudes e delitos praticados por terceiros no âmbito de operações bancárias\"*.\n\n#### 2.2.3 - Dos Danos Materiais e Repetição do Indébito\n\nRestou comprovado que a autora teve descontados de seu salário o valor de R$ 2.250,00 (cinco parcelas de R$ 450,00), referentes a empréstimo fraudulento que não contratou.\n\nAplica-se o art. 42, parágrafo único, do CDC: *\"O consumidor cobrado em quantia indevida tem direito à repetição do indébito, por valor igual ao dobro do que pagou em excesso, acrescido de correção monetária e juros legais, salvo hipótese de engano justificável\"*.\n\nNão há engano justificável quando a cobrança decorre de contrato com assinatura falsa, conforme perícia técnica. A restituição em dobro é devida no valor de **R$ 4.500,00** (dobro de R$ 2.250,00).\n\n#### 2.2.4 - Dos Danos Morais\n\nA contratação fraudulenta de empréstimo com desconto em folha de pagamento configura dano moral *in re ipsa*, dispensando prova do abalo psíquico.\n\nO desconto indevido no salário da autora, servidora pública, causou-lhe constrangimento, aflição e abalo em sua dignidade, configurando dano extrapatrimonial indenizável.\n\n**Aplicação do Método Bifásico:**\n\n**Fase 1 - Valor-Base:** Considerando tratar-se de fraude bancária com desconto em folha, estabeleço valor-base de **R$ 8.000,00**.\n\n**Fase 2 - Modulação pelos critérios:**\n1. **Intensidade do sofrimento:** Moderada - desconto em salário causa aflição significativa (+10%)\n2. **Grau de culpa:** Elevado - falha grave nos sistemas de segurança (+15%)\n3. **Capacidade econômica:** Réu de grande porte econômico (+10%)\n4. **Sanção pedagógica:** Necessária para coibir práticas similares (+10%)\n5. **Culpa concorrente:** Inexistente (0%)\n\n**Valor final:** R$ 8.000,00 + 45% = **R$ 11.600,00**\n\n#### 2.2.5 - Da Declaração de Inexistência do Débito\n\nComprovada a falsidade da assinatura no contrato, é procedente o pedido declaratório de inexistência do débito referente ao empréstimo consignado nº [NÚMERO], no valor de R$ 8.000,00.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO **PROCEDENTES** os pedidos formulados por MARIA APARECIDA COSTA em face de BANCO SANTANDER BRASIL S/A, para:\n\n**a)** DECLARAR a inexistência do débito referente ao contrato de empréstimo consignado nº [NÚMERO], no valor de R$ 8.000,00, tornando definitiva a tutela de urgência;\n\n**b)** CONDENAR o réu ao pagamento de **R$ 4.500,00** (quatro mil e quinhentos reais) a título de repetição do indébito, com correção monetária pelo IPCA-E desde cada desconto indevido e juros de mora de 1% ao mês desde a citação;\n\n**c)** CONDENAR o réu ao pagamento de **R$ 11.600,00** [REVISAR: aplicação método bifásico] (onze mil e seiscentos reais) a título de danos morais, com correção monetária pelo IPCA-E desde esta sentença (Súmula 362/STJ) e juros de mora de 1% ao mês desde a citação.\n\n**SUCUMBÊNCIA:** Condeno o réu ao pagamento das custas processuais e honorários advocatícios, que fixo em 15% sobre o valor da condenação, nos termos do art. 85, §2º, do CPC.\n\nPublique-se. Registre-se. Intimem-se.\n\n**Local e data**\n\n**[NOME DO JUIZ]**\n**Juiz de Direito**\n\n---\n\n**MARCADORES DE REVISÃO:**\n- [REVISAR: aplicação método bifásico] - Verificar se os percentuais de modulação estão adequados ao caso concreto"
+    }
+  ]
+}

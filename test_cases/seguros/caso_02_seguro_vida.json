@@ -1,0 +1,16 @@
+{
+  "caso_id": "seguros_02",
+  "descricao": "Cobranca de seguro de vida com alegacao de doenca preexistente",
+  "fatos": "A autora, viuva e beneficiaria designada, ajuizou acao de cobranca de seguro de vida em face da Seguradora ABC Vida S/A. Alega que seu falecido marido, Jose Carlos Souza, contratou seguro de vida individual (apolice 2023.VID.5678) em 15/03/2023, com capital segurado de R$ 500.000,00, designando a autora como unica beneficiaria. O segurado faleceu em 20/10/2025 em decorrencia de infarto agudo do miocardio, conforme certidao de obito e laudo medico (fls. 15-18). A seguradora negou o pagamento alegando doenca preexistente nao declarada: segundo a re, o segurado era portador de hipertensao arterial desde 2018, fato omitido no questionario de saude. A autora contesta alegando que: (1) a seguradora nao exigiu exames medicos previos a contratacao; (2) o segurado desconhecia sua condicao de hipertenso, pois nunca havia sido diagnosticado formalmente; (3) a contratacao ocorreu ha mais de 2 anos do obito, superando eventual periodo de contestabilidade. Juntados: apolice, proposta de seguro sem exigencia de exames, certidao de obito, negativa da seguradora, historico medico do SUS mostrando primeira consulta por hipertensao apenas em 2024. O capital segurado era de R$ 500.000,00, estando o premio em dia ate o obito.",
+  "questoes": "1) A alegacao de doenca preexistente afasta a cobertura? 2) A ausencia de exigencia de exames previos pela seguradora impede a recusa? 3) O segurado tinha ciencia da doenca a epoca da contratacao? 4) E devida a indenizacao integral?",
+  "pedidos": "a) Condenacao ao pagamento de R$ 500.000,00 (capital segurado); b) Correcao monetaria desde o obito; c) Juros de mora desde a citacao; d) Honorarios advocaticios de 15%.",
+  "classe": "Procedimento Comum Civel",
+  "assunto": "Seguro de Vida - Doenca Preexistente - Cobranca",
+  "valor_causa": 500000.00,
+  "expectativa": {
+    "agente_esperado": "agent_seguros",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["610"],
+    "artigos_esperados": ["art. 766 CC", "art. 794 CC"]
+  }
+}

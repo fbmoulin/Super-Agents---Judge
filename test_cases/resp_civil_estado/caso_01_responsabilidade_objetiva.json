@@ -1,0 +1,37 @@
+{
+  "id": "resp_civil_estado_001",
+  "tipo_acao": "Ação Indenizatória - Responsabilidade Objetiva",
+  "agente": "agent_RESP_CIVIL_ESTADO",
+  "fatos": "JOÃO DA SILVA ajuizou ação indenizatória em face do ESTADO DO ESPÍRITO SANTO alegando que em 15/06/2024, por volta das 14h, transitava pela Rodovia ES-080 quando seu veículo foi atingido por uma árvore que caiu sobre a pista. A árvore estava em área de domínio público e apresentava sinais visíveis de deterioração, conforme laudo pericial. O autor sofreu lesões corporais de natureza grave, ficando internado por 30 dias e com sequelas permanentes (perda de 40% da capacidade laborativa). Despesas médicas documentadas: R$ 45.000,00. Requer indenização por danos materiais, morais e pensionamento vitalício.",
+  "questoes": "1) Há responsabilidade civil objetiva do Estado? 2) Está caracterizado o nexo causal? 3) Existem excludentes de responsabilidade? 4) Qual o quantum indenizatório adequado?",
+  "pedidos": "Condenação do Estado ao pagamento de: (i) R$ 45.000,00 por danos materiais; (ii) R$ 150.000,00 por danos morais; (iii) pensionamento mensal de 40% do salário mínimo vitalício.",
+  "defesas": "O Estado alega caso fortuito (ventos fortes) e culpa concorrente da vítima (velocidade inadequada).",
+  "documentos": [
+    "Boletim de ocorrência - fls. 10/12",
+    "Laudo pericial da árvore - fls. 20/25",
+    "Prontuário médico - fls. 30/50",
+    "Notas fiscais de despesas - fls. 55/70",
+    "Laudo de incapacidade INSS - fl. 75"
+  ],
+  "resultado_esperado": "procedente",
+  "fundamentos_esperados": [
+    "Art. 37, §6º CF",
+    "Art. 43 CC",
+    "Responsabilidade objetiva",
+    "Teoria do risco administrativo",
+    "Súmula 37 STJ"
+  ],
+  "validacao": {
+    "deve_conter": [
+      "Art. 37",
+      "responsabilidade objetiva",
+      "nexo causal",
+      "danos morais",
+      "CONDENO"
+    ],
+    "nao_deve_conter": [
+      "IMPROCEDENTE"
+    ],
+    "min_paragrafos": 3
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "timestamp": "2026-01-20T17:22:43.460Z",
+  "summary": {
+    "totalTests": 2,
+    "passed": 2,
+    "failed": 0,
+    "avgScore": 105,
+    "byAgent": {
+      "agent_seguros": {
+        "tests": 2,
+        "passed": 2,
+        "avgScore": 105
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "seguros_01",
+      "descricao": "Cobranca de seguro de veiculo por furto com recusa por agravamento de risco",
+      "agente": "agent_seguros",
+      "success": true,
+      "executionTime": 36350,
+      "inputTokens": 1307,
+      "outputTokens": 2233,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [
+              "465"
+            ],
+            "missing": [],
+            "percentage": 100
+          },
+          "wordCount": 1004,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº:** [REVISAR: número dos autos]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Seguro - Veículo - Furto - Recusa de Cobertura\n**Autor:** [REVISAR: nome do autor]\n**Réu:** XYZ Seguros S/A\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de ação de cobrança de seguro ajuizada por [REVISAR: nome do autor] em face de XYZ Seguros S/A, objetivando o recebimento de indenização securitária decorrente de furto de veículo.\n\nAlega o autor que contratou seguro auto (apólice 2025.001.234) para seu veículo Volkswagen T-Cross 2024, placa ABC-1234, com vigência de 01/01/2025 a 31/12/2025, valor segurado de R$ 145.000,00 conforme Tabela FIPE, com franquia de R$ 3.500,00 para colisão.\n\nNarra que em 15/06/2025 o veículo foi furtado em estacionamento de shopping center, tendo comunicado o sinistro em 16/06/2025 e entregue toda documentação em 25/06/2025. Após 45 dias sem resposta, a seguradora negou o pagamento em 10/08/2025, alegando transferência do veículo para seu filho sem comunicação prévia e que o filho não constava como condutor principal.\n\nSustenta que a transferência foi apenas para fins de IPVA (domicílio fiscal), permanecendo como possuidor e condutor habitual, e que a seguradora extrapolou o prazo de 30 dias para regulação.\n\nPostula: a) condenação ao pagamento de R$ 145.000,00; b) correção monetária desde o sinistro; c) juros de mora desde a citação; d) danos morais de R$ 10.000,00; e) honorários advocatícios de 20%.\n\nA ré contestou alegando que a transferência sem comunicação configura agravamento do risco e quebra do dever de boa-fé, eximindo-a do pagamento. Subsidiariamente, impugna os danos morais e o percentual de honorários.\n\nRéplica às fls. [REVISAR: folhas].\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a apreciar.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Da Transferência do Veículo e Comunicação à Seguradora\n\nA questão central reside em definir se a transferência do veículo para terceiro, sem comunicação à seguradora, afasta o dever de indenizar.\n\nO art. 769 do Código Civil estabelece que \"o segurado é obrigado a comunicar ao segurador, logo que saiba, todo incidente suscetível de agravar consideravelmente o risco coberto, sob pena de perder o direito à garantia, se provar que silenciou de má-fé\".\n\nContudo, a jurisprudência do STJ consolidou entendimento de que a mera transferência da propriedade do veículo, por si só, não configura agravamento do risco capaz de eximir a seguradora do pagamento da indenização, conforme Súmula 465: \"Ressalvada a hipótese de efetivo agravamento do risco, a seguradora não se exime do dever de indenizar em razão da transferência do veículo sem a sua prévia comunicação\".\n\nNo caso concreto, verifica-se que a transferência ocorreu apenas para fins de domicílio fiscal (IPVA), permanecendo o autor como possuidor e condutor habitual do veículo, conforme documentação acostada aos autos.\n\nNão restou demonstrado pela ré efetivo agravamento do risco, ônus que lhe competia nos termos do art. 373, II, do CPC. A alteração meramente formal da propriedade, sem mudança da posse e uso do bem, não caracteriza agravamento significativo do risco segurado.\n\n#### 2.2.2 - Do Prazo de Regulação do Sinistro\n\nA Circular SUSEP nº 256/2004 estabelece prazo de 30 dias para regulação de sinistros, contados da entrega da documentação completa.\n\nNo caso, o autor entregou a documentação em 25/06/2025 e a seguradora somente se manifestou em 10/08/2025, ou seja, 46 dias após, extrapolando o prazo regulamentar.\n\nO descumprimento do prazo não gera automaticamente o dever de pagar, mas constitui elemento indicativo de má-fé da seguradora na condução do processo de regulação.\n\n#### 2.2.3 - Do Valor da Indenização\n\nComprovado o sinistro (furto) e a cobertura contratual, é devida a indenização no valor segurado de R$ 145.000,00, conforme Tabela FIPE vigente à época do sinistro.\n\n[REVISAR: verificar se o valor da Tabela FIPE corresponde efetivamente ao valor segurado na apólice]\n\nA correção monetária incide desde a data do sinistro (15/06/2025), por se tratar de dívida de valor, e os juros de mora desde a citação, nos termos da Súmula 426 do STJ.\n\n#### 2.2.4 - Dos Danos Morais\n\nA recusa injustificada no pagamento de indenização securitária gera danos morais indenizáveis, conforme jurisprudência consolidada do STJ (Súmula 402).\n\nA conduta da seguradora, negando cobertura com base em fundamento inconsistente e após extrapolação do prazo regulamentar, caracteriza abalo à dignidade do segurado, que se viu privado do bem segurado sem justa causa.\n\nConsiderando as circunstâncias do caso, o valor do contrato e os parâmetros adotados pelo TJES, fixo os danos morais em R$ 10.000,00, valor adequado às funções compensatória e pedagógica da indenização.\n\n### 2.3 - JURISPRUDÊNCIA APLICÁVEL\n\n\"SEGURO DE VEÍCULO. TRANSFERÊNCIA SEM COMUNICAÇÃO. SÚMULA 465/STJ. Ressalvada a hipótese de efetivo agravamento do risco, a seguradora não se exime do dever de indenizar em razão da transferência do veículo sem a sua prévia comunicação.\" (STJ, REsp 1.648.721/RS)\n\n\"SEGURO. DANOS MORAIS. SÚMULA 402/STJ. O contrato de seguro por danos pessoais compreende os danos morais, salvo cláusula expressa de exclusão que, no entanto, não prevalece se o dano decorre de conduta dolosa do segurador.\" (STJ, AgInt no REsp 1.781.213/SP)\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTES os pedidos para:\n\na) **CONDENAR** a ré XYZ Seguros S/A ao pagamento de **R$ 145.000,00** (cento e quarenta e cinco mil reais) a título de indenização securitária, com correção monetária pelo IPCA-E desde a data do sinistro (15/06/2025) e juros de mora de 1% ao mês desde a citação;\n\nb) **CONDENAR** a ré ao pagamento de **R$ 10.000,00** (dez mil reais) a título de danos morais, com correção monetária pelo IPCA-E desde esta sentença (Súmula 362/STJ) e juros de mora de 1% ao mês desde a citação;\n\nc) **CONDENAR** a ré ao pagamento das custas processuais e honorários advocatícios, que fixo em **15%** sobre o valor da condenação, nos termos do art. 85, §2º, do CPC.\n\nPublique-se. Registre-se. Intimem-se.\n\n[REVISAR: local e data]\n\n**[Nome do Juiz]**\n**Juiz de Direito**\n\n---\n\n**OBSERVAÇÕES:**\n- [REVISAR: confirmar valor exato da Tabela FIPE na data do sinistro]\n- [REVISAR: verificar se há outras coberturas na apólice que possam influenciar o valor]\n- [REVISAR: confirmar se a documentação do sinistro está completa nos autos]"
+    },
+    {
+      "testCase": "seguros_02",
+      "descricao": "Cobranca de seguro de vida com alegacao de doenca preexistente",
+      "agente": "agent_seguros",
+      "success": true,
+      "executionTime": 34132,
+      "inputTokens": 1287,
+      "outputTokens": 2041,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [
+              "610"
+            ],
+            "percentage": 0
+          },
+          "wordCount": 940,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [NÚMERO DO PROCESSO]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Seguro de Vida - Doença Preexistente - Cobrança\n**Requerente:** [NOME DA AUTORA]\n**Requerida:** Seguradora ABC Vida S/A\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de ação de cobrança de seguro de vida ajuizada por [NOME DA AUTORA], viúva e beneficiária designada, em face de SEGURADORA ABC VIDA S/A.\n\nAlega a autora que seu falecido marido, José Carlos Souza, contratou seguro de vida individual (apólice 2023.VID.5678) em 15/03/2023, com capital segurado de R$ 500.000,00, designando-a como única beneficiária. O segurado faleceu em 20/10/2025 em decorrência de infarto agudo do miocárdio.\n\nA seguradora negou o pagamento alegando doença preexistente não declarada, sustentando que o segurado era portador de hipertensão arterial desde 2018, fato omitido no questionário de saúde.\n\nA autora contesta alegando que: (1) a seguradora não exigiu exames médicos prévios à contratação; (2) o segurado desconhecia sua condição de hipertenso; (3) a contratação ocorreu há mais de 2 anos do óbito, superando eventual período de contestabilidade.\n\nPostula a condenação da ré ao pagamento de R$ 500.000,00, com correção monetária desde o óbito, juros de mora desde a citação e honorários advocatícios de 15%.\n\nA ré contestou sustentando a validade da recusa por omissão dolosa de informação relevante sobre o estado de saúde do segurado.\n\nNão houve conciliação. O feito foi saneado e instruído com documentos.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - Das Preliminares\n\nNão há preliminares a serem apreciadas.\n\n### 2.2 - Do Mérito\n\nA questão central cinge-se à validade da recusa da seguradora em pagar a indenização securitária sob alegação de doença preexistente omitida pelo segurado.\n\n#### 2.2.1 - Do Contrato de Seguro e Boa-fé\n\nO contrato de seguro é regido pelo princípio da boa-fé objetiva e da máxima boa-fé (*uberrimae fidei*), conforme dispõe o art. 765 do Código Civil: \"O segurado e o segurador são obrigados a guardar na conclusão e na execução do contrato, a mais estrita boa-fé e veracidade, tanto a respeito do objeto como das circunstâncias e declarações a ele concernentes.\"\n\nO art. 766 do CC estabelece que \"se o segurado, por si ou por seu representante, fizer declarações inexatas ou omitir circunstâncias que possam influir na aceitação da proposta ou na taxa do prêmio, perderá o direito à garantia, além de ficar obrigado ao prêmio vencido.\"\n\n#### 2.2.2 - Da Análise do Caso Concreto\n\nNo presente caso, restou demonstrado que:\n\n1) O segurado contratou o seguro em 15/03/2023 e faleceu em 20/10/2025, decorridos mais de 2 anos da contratação;\n\n2) A seguradora não exigiu exames médicos prévios à contratação, limitando-se ao questionário de saúde;\n\n3) O histórico médico do SUS demonstra que a primeira consulta por hipertensão ocorreu apenas em 2024, posterior à contratação;\n\n4) Não há prova de que o segurado tivesse conhecimento de sua condição hipertensiva à época da contratação.\n\n#### 2.2.3 - Da Contestabilidade e Conhecimento da Doença\n\nA jurisprudência consolidou o entendimento de que a recusa por doença preexistente exige a comprovação de dois elementos: (1) a existência da doença à época da contratação e (2) o conhecimento do segurado sobre tal condição.\n\nNesse sentido, o Superior Tribunal de Justiça:\n\n> \"Para que se configure a omissão dolosa apta a liberar a seguradora do pagamento da indenização, é necessário que se comprove que o segurado tinha conhecimento inequívoco da doença preexistente e, mesmo assim, deixou de declará-la\" (STJ, REsp 1.290.421/SP).\n\nNo caso em análise, embora possa ter existido hipertensão prévia, não restou comprovado o conhecimento do segurado sobre tal condição, considerando que o primeiro registro médico formal ocorreu apenas em 2024.\n\n#### 2.2.4 - Da Ausência de Exames Prévios\n\nA não exigência de exames médicos pela seguradora constitui elemento relevante na análise da boa-fé contratual. Conforme precedente do TJSP:\n\n> \"A seguradora que não exige exames médicos prévios assume o risco de contratar com pessoa portadora de doença preexistente desconhecida\" (TJSP, Apelação 1005123-89.2016.8.26.0002).\n\n[REVISAR: verificar se há precedente específico do TJES sobre este tema]\n\n#### 2.2.5 - Do Período de Contestabilidade\n\nEmbora não se trate de seguro em grupo, aplica-se por analogia o princípio da contestabilidade, segundo o qual, decorrido prazo razoável da contratação sem manifestação da seguradora, presume-se a aceitação do risco.\n\nNo presente caso, transcorreram mais de 2 anos entre a contratação e o óbito, período em que a seguradora recebeu regularmente os prêmios sem questionar a saúde do segurado.\n\n#### 2.2.6 - Dos Valores Devidos\n\nComprovada a obrigação de indenizar, o valor devido corresponde ao capital segurado de R$ 500.000,00, com correção monetária desde o óbito (20/10/2025) pela Tabela Prática do TJES e juros de mora de 1% ao mês desde a citação, nos termos da Súmula 426 do STJ.\n\n#### 2.2.7 - Dos Honorários Advocatícios\n\nOs honorários advocatícios devem ser fixados em 10% sobre o valor da condenação, considerando a complexidade da causa e o trabalho desenvolvido, nos termos do art. 85, §2º, do CPC.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTE o pedido para CONDENAR a ré SEGURADORA ABC VIDA S/A ao pagamento de R$ 500.000,00 (quinhentos mil reais) à autora, com correção monetária pela Tabela Prática do TJES desde o óbito (20/10/2025) e juros de mora de 1% ao mês desde a citação.\n\nCondeno a ré ao pagamento das custas processuais e honorários advocatícios fixados em 10% sobre o valor da condenação.\n\nPublique-se. Registre-se. Intimem-se.\n\n[LOCAL], [DATA].\n\n[NOME DO JUIZ]\nJuiz de Direito\n\n---\n\n**Observações:**\n- [REVISAR: confirmar data do óbito - consta 2025 mas processo parece atual]\n- [REVISAR: verificar precedentes específicos do TJES sobre contestabilidade em seguro individual]\n- [REVISAR: confirmar se há outros documentos médicos nos autos que possam alterar a conclusão]"
+    }
+  ]
+}

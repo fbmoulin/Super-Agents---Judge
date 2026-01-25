@@ -1,0 +1,16 @@
+{
+  "caso_id": "cobranca_02",
+  "descricao": "Ação monitória baseada em cheque prescrito",
+  "fatos": "O autor apresenta cheque nominal no valor de R$ 15.000,00, emitido pela ré em 10/01/2024, com prazo de apresentação de 30 dias (mesma praça). O cheque foi apresentado ao banco sacado em 20/01/2024, sendo devolvido pelo motivo 12 (conta encerrada). Não houve protesto. O prazo para execução do cheque (6 meses da apresentação) expirou em 20/07/2024. O autor ingressou com a presente ação monitória em 15/10/2025, dentro do prazo prescricional trienal para ação de cobrança (art. 206, §3º, VIII CC). Juntou: cheque original, comprovante de devolução bancária, cópias de mensagens de cobrança amigável enviadas à ré entre fevereiro e setembro de 2024.",
+  "questoes": "1) O cheque prescrito constitui prova escrita apta a embasar a monitória? 2) A ré foi regularmente citada? 3) Houve constituição de título executivo pelo não oferecimento de embargos? 4) Quais os encargos moratórios aplicáveis?",
+  "pedidos": "a) Expedição de mandado de pagamento no valor de R$ 15.000,00; b) Constituição de título executivo judicial pelo não oferecimento de embargos; c) Correção monetária desde a emissão do cheque; d) Juros de mora de 1% ao mês desde a apresentação; e) Honorários advocatícios.",
+  "classe": "Ação Monitória",
+  "assunto": "Cobrança - Cheque Prescrito - Monitória",
+  "valor_causa": 15000.00,
+  "expectativa": {
+    "agente_esperado": "agent_cobranca",
+    "score_minimo": 75,
+    "artigos_esperados": ["art. 700 CPC", "art. 702 CPC"],
+    "verificar_prescricao": true
+  }
+}

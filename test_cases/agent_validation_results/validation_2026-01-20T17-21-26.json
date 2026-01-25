@@ -1,0 +1,229 @@
+{
+  "timestamp": "2026-01-20T17:21:26.257Z",
+  "summary": {
+    "totalTests": 2,
+    "passed": 2,
+    "failed": 0,
+    "avgScore": 84,
+    "byAgent": {
+      "agent_inventario": {
+        "tests": 2,
+        "passed": 2,
+        "avgScore": 84
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "inventario_01",
+      "descricao": "Inventario judicial com herdeiro menor e concorrencia do conjuge",
+      "agente": "agent_inventario",
+      "success": true,
+      "executionTime": 31534,
+      "inputTokens": 1243,
+      "outputTokens": 1915,
+      "validation": {
+        "totalScore": 80,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [
+              "112"
+            ],
+            "percentage": 0
+          },
+          "wordCount": 745,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 84
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº [REVISAR: número do processo]**\n**Classe:** Inventário\n**Requerente:** Maria Helena da Silva e outros\n**Inventariado:** João Carlos da Silva\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de inventário dos bens deixados por **João Carlos da Silva**, falecido em 15/08/2025, conforme certidão de óbito de fl. 12.\n\nO *de cujus* era casado com **Maria Helena da Silva** (inventariante nomeada) sob o regime de comunhão parcial de bens desde 2005. Da união advieram três filhos: **Lucas** (25 anos), **Julia** (22 anos) e **Pedro** (16 anos - menor impúbere).\n\nNão há testamento, aplicando-se a sucessão legítima.\n\nO monte-mor é composto por:\n- Imóvel residencial (matrícula 45.678): R$ 600.000,00 (adquirido em 2015)\n- Apartamento de praia (matrícula 89.012): R$ 350.000,00 (recebido por herança em 2018)\n- Veículo Toyota Corolla 2023: R$ 150.000,00\n- Saldo em conta corrente: R$ 80.000,00\n- **Total do ativo:** R$ 1.180.000,00\n\n**Passivo do espólio:**\n- Empréstimo consignado: R$ 25.000,00\n- Despesas funerárias: R$ 15.000,00\n- **Total do passivo:** R$ 40.000,00\n\n**Monte-mor líquido:** R$ 1.140.000,00\n\nA Fazenda Estadual calculou ITCMD de R$ 38.400,00 (alíquota 4%). O Ministério Público opinou pela homologação. Todos os herdeiros concordam com a partilha proposta.\n\nÉ o relatório.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nPresentes os pressupostos processuais e condições da ação. O inventário foi tempestivamente aberto dentro do prazo legal (art. 610, CPC). A inventariante possui legitimidade como cônjuge sobrevivente (art. 615, I, CPC).\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Ordem de Vocação Hereditária\n\nAplica-se a **Classe I** da ordem de vocação hereditária (art. 1.829, I, CC): descendentes em concorrência com o cônjuge sobrevivente.\n\nO cônjuge sobrevivente concorre com os descendentes quando casado sob regime de comunhão parcial, tendo direito à herança sobre os bens particulares do falecido (art. 1.829, I, c/c art. 1.832, CC).\n\n#### 2.2.2 - Regime de Bens e Meação\n\nO casamento sob **comunhão parcial** (desde 2005) determina que:\n\n**BENS COMUNS (sujeitos à meação):**\n- Imóvel residencial (R$ 600.000,00) - adquirido na constância do casamento (2015)\n- Veículo Toyota Corolla (R$ 150.000,00) - adquirido na constância\n- Saldo em conta (R$ 80.000,00)\n- **Subtotal:** R$ 830.000,00\n\n**BENS PARTICULARES (não sujeitos à meação):**\n- Apartamento de praia (R$ 350.000,00) - recebido por herança (art. 1.659, I, CC)\n\n#### 2.2.3 - Cálculo dos Quinhões\n\n[REVISAR: conferir cálculos detalhados]\n\n**MEAÇÃO da viúva:** R$ 415.000,00 (50% dos bens comuns)\n\n**HERANÇA a ser partilhada:** R$ 725.000,00\n- Bens particulares: R$ 350.000,00\n- 50% dos bens comuns: R$ 415.000,00\n- (-) Passivo: R$ 40.000,00\n\n**Divisão da herança:**\n- Cônjuge sobrevivente: R$ 181.250,00 (1/4)\n- Cada filho: R$ 181.250,00 (1/4 cada)\n\n**QUINHÕES FINAIS:**\n- **Maria Helena:** R$ 596.250,00 (meação + herança)\n- **Lucas:** R$ 181.250,00\n- **Julia:** R$ 181.250,00  \n- **Pedro:** R$ 181.250,00\n\n#### 2.2.4 - ITCMD\n\nO ITCMD de R$ 38.400,00 (alíquota 4%) está correto, incidindo sobre o monte-mor líquido transmitido aos herdeiros (R$ 725.000,00 × 4% = R$ 29.000,00). [REVISAR: base de cálculo do ITCMD estadual]\n\n#### 2.2.5 - Plano de Partilha\n\nA partilha proposta respeita os quinhões hereditários:\n- Imóvel residencial à viúva (dentro de seu quinhão)\n- Apartamento dividido entre os três filhos\n- Veículo a Lucas com eventual torna\n- Demais valores conforme acordo\n\n### 2.3 - JURISPRUDÊNCIA\n\n> \"O cônjuge sobrevivente, casado pelo regime da comunhão parcial de bens, tem direito real de herança, qualquer que seja o número de descendentes, sobre a totalidade dos bens particulares e sobre a quota-parte dos aquestos que couber ao falecido\" (STJ, REsp 1.368.123/SP).\n\n---\n\n## III - DISPOSITIVO\n\n**JULGO PROCEDENTE** o pedido para:\n\n**a)** HOMOLOGAR a partilha dos bens conforme plano apresentado;\n\n**b)** DETERMINAR o pagamento do ITCMD de R$ 38.400,00 antes da expedição dos formais;\n\n**c)** Após comprovação do recolhimento tributário, EXPEDIR:\n- Formal de partilha do imóvel residencial em favor de Maria Helena da Silva\n- Formal de partilha do apartamento de praia em favor dos três filhos (1/3 cada)\n- Alvará para transferência do veículo\n- Alvará para levantamento dos valores em conta\n\n**d)** DETERMINAR averbação das transferências nos órgãos competentes;\n\n**e)** Após cumprimento integral, JULGAR EXTINTO o processo com resolução de mérito (art. 487, I, CPC).\n\n**SUCUMBÊNCIA:** Inexistente ante a concordância de todos os interessados.\n\nPublique-se. Registre-se. Intimem-se.\n\nApós o trânsito em julgado e cumprimento das determinações, arquivem-se os autos.\n\n[Comarca], [data].\n\n**[Nome do Juiz]**\nJuiz de Direito\n\n---\n\n**Observações:**\n- [REVISAR: Verificar alíquota exata do ITCMD no ES]\n- [REVISAR: Confirmar base de cálculo tributária]\n- [REVISAR: Validar cálculos dos quinhões]\n- [REVISAR: Necessidade de curador especial para o menor Pedro]"
+    },
+    {
+      "testCase": "inventario_02",
+      "descricao": "Arrolamento sumario com herdeiros maiores e concordes",
+      "agente": "agent_inventario",
+      "success": true,
+      "executionTime": 29354,
+      "inputTokens": 1179,
+      "outputTokens": 1738,
+      "validation": {
+        "totalScore": 80,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 673,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 84
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº [REVISAR: número do processo]**\n**Classe:** Arrolamento Sumário\n**Assunto:** Sucessão - Arrolamento - Partilha Amigável\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de **arrolamento sumário** dos bens deixados por **ANA MARIA FERREIRA**, falecida em 20/09/2025, requerido pelos herdeiros ROBERTO e CLAUDIA.\n\nA *de cujus* era viúva (cônjuge pré-morto em 2020) e deixou como únicos herdeiros dois filhos maiores e capazes: **ROBERTO** (45 anos) e **CLAUDIA** (42 anos). Não há testamento.\n\nOs requerentes apresentaram **declaração de bens** com os seguintes valores atribuídos:\n- Apartamento em Vitória (matrícula 23.456): R$ 480.000,00\n- Veículo Hyundai HB20 2021: R$ 65.000,00  \n- Saldo em poupança: R$ 45.000,00\n- Joias e objetos pessoais: R$ 10.000,00\n- **Total do monte-mor**: R$ 600.000,00\n\nFoi apresentada **partilha amigável** (fl. 28), pela qual:\n- ROBERTO fica com o apartamento (R$ 480.000,00)\n- CLAUDIA fica com veículo, poupança e joias (R$ 120.000,00)\n- ROBERTO pagará torna de R$ 180.000,00 à irmã em 12 parcelas\n\nO **ITCMD** foi recolhido no valor de R$ 24.000,00 (alíquota 4%), com certidão negativa da Fazenda juntada (fl. 35).\n\nRequerem a **homologação da partilha amigável** e **julgamento do arrolamento**.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\n#### 2.1.1 - Pressupostos do Arrolamento Sumário\n\nO **arrolamento sumário** está disciplinado no art. 659 do CPC, exigindo:\n- Herdeiros maiores e capazes\n- Concordância sobre partilha\n- Dispensa de avaliação judicial\n\nNo caso, estão **preenchidos todos os requisitos**: ROBERTO (45 anos) e CLAUDIA (42 anos) são maiores e capazes, apresentaram partilha consensual e dispensaram avaliação judicial.\n\n#### 2.1.2 - Legitimidade e Interesse\n\nOs requerentes são **filhos únicos** da *de cujus*, portanto **herdeiros necessários** na primeira classe da ordem de vocação hereditária (art. 1.829, I, CC), possuindo legitimidade e interesse para o arrolamento.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Sucessão Legítima\n\nNão havendo testamento, aplica-se a **sucessão legítima**. Com o falecimento do cônjuge em 2020, os filhos ROBERTO e CLAUDIA são os **únicos herdeiros**, cada um com direito a **50% da herança** (art. 1.829, I, CC).\n\n#### 2.2.2 - Monte-mor e Quinhões\n\n[REVISAR: Verificar se os valores declarados correspondem aos documentos] O **monte-mor** declarado é de R$ 600.000,00, cabendo a cada herdeiro R$ 300.000,00.\n\nA **partilha amigável** apresentada respeita os quinhões hereditários:\n- ROBERTO: R$ 480.000,00 (apartamento) - R$ 180.000,00 (torna) = R$ 300.000,00\n- CLAUDIA: R$ 120.000,00 (demais bens) + R$ 180.000,00 (torna) = R$ 300.000,00\n\n#### 2.2.3 - Torna\n\nA **torna** de R$ 180.000,00 a ser paga por ROBERTO à CLAUDIA em 12 parcelas é **válida** e encontra amparo no art. 2.017 do CC, que permite o pagamento em dinheiro quando há desproporção entre bens e quinhões.\n\n#### 2.2.4 - Aspectos Tributários\n\nO **ITCMD** foi devidamente recolhido no valor de R$ 24.000,00 [REVISAR: Confirmar alíquota de 4% aplicável no ES], com apresentação de certidão negativa da Fazenda (fl. 35), atendendo ao art. 155, I, da CF e legislação estadual.\n\n#### 2.2.5 - Jurisprudência\n\nO **STJ** consolidou entendimento sobre arrolamento sumário:\n\n> \"O arrolamento sumário é procedimento simplificado que dispensa avaliação quando os herdeiros maiores e capazes concordam com os valores atribuídos aos bens\" (REsp 1.545.069/SP).\n\n### 2.3 - CONCLUSÃO\n\nPreenchidos os requisitos legais do arrolamento sumário, com partilha amigável que respeita os quinhões hereditários e recolhimento do ITCMD, **JULGO PROCEDENTE** o pedido.\n\n---\n\n## III - DISPOSITIVO\n\n**JULGO PROCEDENTE** o pedido de arrolamento sumário para:\n\n**a) HOMOLOGAR** a partilha amigável apresentada pelos herdeiros;\n\n**b) ADJUDICAR** os bens conforme partilha:\n- A **ROBERTO**: apartamento matrícula 23.456 (R$ 480.000,00), com obrigação de pagar torna de R$ 180.000,00 à irmã em 12 parcelas\n- A **CLAUDIA**: veículo Hyundai HB20 2021, saldo em poupança e joias (R$ 120.000,00), com direito à torna de R$ 180.000,00\n\n**c) DETERMINAR** a expedição de **FORMAL DE PARTILHA** para registro imobiliário e transferência de bens;\n\n**d) DECLARAR** **extinta** a sucessão de ANA MARIA FERREIRA, com resolução de mérito (art. 487, I, CPC).\n\n**SUCUMBÊNCIA**: Inexistente, por se tratar de jurisdição voluntária com interesse comum dos requerentes.\n\nApós o trânsito em julgado, **ARQUIVEM-SE** os autos.\n\n**P.R.I.C.**\n\n[Local], [data].\n\n**[Nome do Magistrado]**\n**Juiz(a) de Direito**"
+    }
+  ]
+}

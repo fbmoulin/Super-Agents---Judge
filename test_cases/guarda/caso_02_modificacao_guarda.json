@@ -1,0 +1,16 @@
+{
+  "caso_id": "guarda_02",
+  "descricao": "Modificacao de guarda por descumprimento e indicios de alienacao parental",
+  "fatos": "RAFAEL SANTOS COSTA ajuizou acao de modificacao de guarda em face de ANA BEATRIZ LIMA COSTA, requerendo a inversao da guarda do filho menor LUCAS SANTOS COSTA, 10 anos. Relata que em 2021 foi fixada guarda compartilhada com residencia-base materna (processo 0009876-54.2021.8.08.0035). Desde entao, alega que a re vem sistematicamente descumprindo o regime de convivencia e praticando atos de alienacao parental: (a) cancelamento unilateral de visitas sob pretextos variados (12 ocorrencias documentadas em 2025); (b) mudanca de escola sem comunicacao previa (fl. 28); (c) agendamento de atividades nos horarios de visita paterna; (d) falas depreciativas sobre o pai na presenca do menor, conforme relato da professora (fl. 35); (e) o menor passou a demonstrar resistencia em ir com o pai, usando expressoes tipicas de discurso adulto. O autor juntou: prints de mensagens onde a re cancela visitas (fls. 40-55), declaracao da escola sobre a mudanca unilateral (fl. 58), relatorio da professora (fl. 35), e gravacoes de audio autorizadas pelo MP (fl. 62). A re contestou negando as alegacoes, afirmando que os cancelamentos foram por motivos de saude do menor ou compromissos inadiaveis, e que a mudanca de escola foi necessaria pela melhor qualidade de ensino. Foi determinado estudo psicossocial (fls. 100-125) que identificou indicios de alienacao parental leve a moderada, recomendando acompanhamento psicologico para todos e advertencia a genitora. O menor foi ouvido, demonstrando confusao e reproducao de narrativas maternas. O MP opinou pela procedencia parcial, com manuencao da guarda compartilhada, ampliacao do regime de convivencia paterno e aplicacao de medidas da Lei 12.318/10.",
+  "questoes": "1) Restaram configurados atos de alienacao parental? 2) E caso de inversao da guarda ou aplicacao de outras medidas? 3) Quais medidas da Lei 12.318/10 sao adequadas? 4) Como deve ser ajustado o regime de convivencia?",
+  "pedidos": "a) Inversao da guarda para o genitor; b) Subsidiariamente, ampliacao do regime de convivencia; c) Aplicacao de medidas por alienacao parental; d) Acompanhamento psicologico obrigatorio.",
+  "classe": "Procedimento Comum Civel - Vara de Familia",
+  "assunto": "Modificacao de Guarda - Alienacao Parental",
+  "valor_causa": 1000.00,
+  "expectativa": {
+    "agente_esperado": "agent_guarda",
+    "score_minimo": 75,
+    "sumulas_esperadas": [],
+    "artigos_esperados": ["art. 1.584 CC", "Lei 12.318/10", "Lei 13.058/14"]
+  }
+}

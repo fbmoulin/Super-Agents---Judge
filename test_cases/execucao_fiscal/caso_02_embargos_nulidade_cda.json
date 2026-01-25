@@ -1,0 +1,33 @@
+{
+  "id": "execucao_fiscal_002",
+  "tipo_acao": "Embargos à Execução Fiscal - Nulidade CDA",
+  "agente": "agent_EXECUCAO_FISCAL",
+  "fatos": "O ESTADO DO ESPÍRITO SANTO ajuizou execução fiscal em face de COMÉRCIO XYZ LTDA cobrando ICMS do período de 01/2020 a 12/2020, no valor de R$ 180.000,00. A empresa foi citada e ofereceu embargos à execução alegando nulidade da CDA por: (i) ausência de fundamentação legal específica do tributo; (ii) não discriminação dos valores de principal, multa e juros; (iii) ausência de termo inicial de incidência dos encargos. A Fazenda Estadual impugnou os embargos sustentando que a CDA preenche todos os requisitos legais e goza de presunção de certeza e liquidez.",
+  "questoes": "1) A CDA preenche os requisitos do art. 2º, §5º da LEF? 2) É possível a substituição da CDA? 3) A nulidade formal acarreta extinção do crédito?",
+  "pedidos": "Procedência dos embargos para declarar nula a CDA e extinguir a execução fiscal.",
+  "defesas": "Nulidade da CDA por vícios formais insanáveis",
+  "documentos": [
+    "CDA nº 67890/2021 - fls. 02/03",
+    "Petição inicial da execução - fls. 04/08",
+    "Embargos à execução - fls. 20/35",
+    "Impugnação da Fazenda - fls. 40/50"
+  ],
+  "resultado_esperado": "parcialmente_procedente",
+  "fundamentos_esperados": [
+    "Art. 2º, §5º LEF",
+    "Art. 2º, §8º LEF",
+    "Súmula 392/STJ",
+    "Art. 203 CTN"
+  ],
+  "validacao": {
+    "deve_conter": [
+      "CDA",
+      "requisitos",
+      "Art. 2",
+      "LEF",
+      "substituição"
+    ],
+    "nao_deve_conter": [],
+    "min_paragrafos": 3
+  }
+}

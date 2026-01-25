@@ -1,0 +1,16 @@
+{
+  "caso_id": "alimentos_02",
+  "descricao": "Acao de exoneracao de alimentos - filho maior com emprego",
+  "fatos": "CARLOS ALBERTO PEREIRA ajuizou acao de exoneracao de alimentos em face de seu filho PEDRO HENRIQUE PEREIRA, maior, atualmente com 24 anos. Narra que os alimentos foram fixados em 20% de seus rendimentos liquidos quando o reu era menor, em sentenca de 10/05/2015 (processo 0005678-90.2015.8.08.0024). O alimentando completou 18 anos em 15/03/2019 e concluiu o curso superior de Administracao em dezembro de 2023. Conforme documentos juntados: (a) diploma de graduacao (fl. 18); (b) registro no CRA (fl. 20); (c) carteira de trabalho do reu demonstrando vinculo empregaticio desde 01/02/2024 com salario de R$ 4.500,00 (fls. 22-25); (d) extrato bancario do reu demonstrando movimentacao financeira regular (fl. 28). O autor, servidor publico municipal com salario de R$ 6.800,00, alega que nao possui mais condicoes de arcar com a pensao, pois se aposentara em 02/2026 com reducao salarial significativa. Em contestacao, o reu alega que ainda necessita dos alimentos para complementar sua renda, pois mora de aluguel (R$ 1.200,00), possui financiamento de veiculo (R$ 800,00), e pretende cursar MBA. Afirma que o pai tem condicoes financeiras de continuar pagando. O MP opinou pela procedencia do pedido exoneratorio, considerando que o reu ja possui emprego e renda propria, estando cessada a necessidade.",
+  "questoes": "1) A maioridade civil extingue automaticamente a obrigacao alimentar? 2) A conclusao do curso superior e a obtencao de emprego cessam a necessidade? 3) A pretensao de cursar MBA justifica a manutencao dos alimentos? 4) A partir de quando cessa a obrigacao?",
+  "pedidos": "a) Declaracao de extincao da obrigacao alimentar; b) Cessacao dos descontos em folha; c) Efeitos a partir da citacao.",
+  "classe": "Procedimento Comum Civel - Vara de Familia",
+  "assunto": "Exoneracao de Alimentos",
+  "valor_causa": 16320.00,
+  "expectativa": {
+    "agente_esperado": "agent_alimentos",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["358"],
+    "artigos_esperados": ["art. 1.708 CC", "art. 1.699 CC"]
+  }
+}

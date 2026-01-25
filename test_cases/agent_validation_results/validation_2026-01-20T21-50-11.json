@@ -1,0 +1,236 @@
+{
+  "timestamp": "2026-01-20T21:50:11.232Z",
+  "summary": {
+    "totalTests": 2,
+    "passed": 2,
+    "failed": 0,
+    "avgScore": 100,
+    "byAgent": {
+      "agent_paternidade": {
+        "tests": 2,
+        "passed": 2,
+        "avgScore": 100
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "paternidade_01",
+      "descricao": "Investigação de paternidade com exame DNA positivo",
+      "agente": "agent_paternidade",
+      "success": true,
+      "executionTime": 35921,
+      "inputTokens": 1288,
+      "outputTokens": 2150,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [
+              "277"
+            ],
+            "missing": [
+              "301"
+            ],
+            "percentage": 50
+          },
+          "wordCount": 962,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº:** [NÚMERO DOS AUTOS]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Investigação de Paternidade c/c Alimentos\n**Requerente:** MARIA CLARA SILVA SANTOS (menor), representada por JULIANA SILVA SANTOS\n**Requerido:** ROBERTO CARLOS FERREIRA LIMA\n\n---\n\n## I - RELATÓRIO\n\nMARIA CLARA SILVA SANTOS, menor impúbere, representada por sua genitora JULIANA SILVA SANTOS, ajuizou ação de investigação de paternidade cumulada com alimentos em face de ROBERTO CARLOS FERREIRA LIMA.\n\nNarra a inicial que a genitora manteve relacionamento amoroso com o requerido entre janeiro e setembro de 2018, período em que engravidou. A menor nasceu em 20/05/2019. O requerido sempre negou a paternidade e nunca prestou auxílio material. As despesas da menor são estimadas em R$ 2.500,00 mensais, incluindo escola particular, plano de saúde, alimentação e vestuário. A genitora é professora municipal com rendimentos de R$ 3.800,00. Requereu o reconhecimento da paternidade, averbação no registro civil e fixação de alimentos.\n\nForam deferidos alimentos provisórios em 30% do salário mínimo (fl. 25).\n\nCitado, o réu apresentou contestação (fls. 35-45) negando o relacionamento duradouro, alegando apenas encontros casuais e que a genitora se relacionava com outras pessoas no mesmo período. Requereu exame de DNA.\n\nFoi determinada a realização de perícia genética. O laudo do IMESC (fls. 80-85) concluiu pela **INCLUSÃO da paternidade com probabilidade de 99,9999%**.\n\nO Ministério Público opinou pela procedência, com fixação de alimentos em 1/3 dos rendimentos do réu.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1. PRELIMINARES\n\nNão há preliminares a apreciar.\n\n### 2.2. MÉRITO\n\n#### 2.2.1. DA INVESTIGAÇÃO DE PATERNIDADE\n\nO direito ao reconhecimento da filiação é direito personalíssimo, indisponível e imprescritível, conforme dispõe o art. 27 do ECA: *\"O reconhecimento do estado de filiação é direito personalíssimo, indisponível e imprescritível, podendo ser exercitado contra os pais ou seus herdeiros, sem qualquer restrição\"*.\n\nA Constituição Federal, em seu art. 227, §6º, estabelece que *\"os filhos, havidos ou não da relação do casamento, ou por adoção, terão os mesmos direitos e qualificações, proibidas quaisquer designações discriminatórias relativas à filiação\"*.\n\nNo caso dos autos, a prova pericial genética realizada pelo IMESC (fls. 80-85) **INCLUIU a paternidade com probabilidade de 99,9999%**, percentual que, segundo os parâmetros científicos internacionais, comprova inequivocamente o vínculo biológico paterno-filial.\n\n[REVISAR: Confirmar se o percentual está correto no laudo - 99,9999%]\n\nConforme pacífica jurisprudência, o exame de DNA com resultado superior a 99,99% constitui prova robusta e suficiente para o reconhecimento da paternidade:\n\n> *\"INVESTIGAÇÃO DE PATERNIDADE. DNA. O exame hematológico (HLA) e o posterior exame pelo método do DNA, com exclusão de paternidade de 99,99%, são suficientes para ilidir a presunção pater is est quem nuptiae demonstrant\"* (STJ, REsp 29.202/RJ).\n\nAs alegações defensivas de que houve apenas encontros casuais e de que a genitora mantinha relacionamentos com outras pessoas não afastam a conclusão pericial, que é categórica quanto ao vínculo biológico.\n\nAssim, **RECONHEÇO a paternidade** de ROBERTO CARLOS FERREIRA LIMA em relação à menor MARIA CLARA SILVA SANTOS.\n\n#### 2.2.2. DOS ALIMENTOS\n\nReconhecida a paternidade, surge o dever alimentar previsto no art. 1.696 do Código Civil: *\"O direito à prestação de alimentos é recíproco entre pais e filhos, e extensivo a todos os ascendentes, recaindo a obrigação nos mais próximos em grau, uns em falta de outros\"*.\n\nOs alimentos devem ser fixados observando-se o trinômio necessidade-possibilidade-proporcionalidade (art. 1.694, §1º, CC).\n\n**Quanto à necessidade:** A menor tem apenas 4 anos de idade, sendo evidente sua necessidade de auxílio material para subsistência, educação, saúde e desenvolvimento. As despesas demonstradas (escola particular R$ 900,00, plano de saúde R$ 350,00, demais gastos) totalizam aproximadamente R$ 2.500,00 mensais.\n\n**Quanto à possibilidade:** Embora o réu não tenha comprovado rendimentos específicos, é comerciante autônomo e possui patrimônio (veículo ano 2022 e imóvel próprio), demonstrando capacidade contributiva.\n\n[REVISAR: Verificar se há outros elementos probatórios sobre a capacidade econômica do réu]\n\n**Quanto à proporcionalidade:** A genitora, professora municipal com rendimentos de R$ 3.800,00, já contribui substancialmente para o sustento da filha. O genitor deve participar proporcionalmente das despesas.\n\nConsiderando que não há prova exata dos rendimentos do réu, mas há indícios de capacidade econômica, fixo os alimentos em **2 (dois) salários mínimos mensais**, valor que atende às necessidades da menor sem comprometer excessivamente o devedor.\n\n**Marco inicial:** Conforme Súmula 277 do STJ: *\"Julgada procedente a investigação de paternidade, os alimentos são devidos a partir da citação\"*. Assim, os alimentos são devidos desde a citação válida (fl. XX), compensando-se os valores já pagos a título de alimentos provisórios.\n\n[REVISAR: Localizar a data exata da citação válida]\n\n### 2.3. EFEITOS DO RECONHECIMENTO\n\nO reconhecimento da paternidade produz efeitos ex tunc, conforme art. 1.613 do CC, devendo ser averbado no registro de nascimento da menor para que conste o nome do pai.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, **JULGO PROCEDENTES** os pedidos para:\n\n**a)** **DECLARAR** que ROBERTO CARLOS FERREIRA LIMA é pai biológico da menor MARIA CLARA SILVA SANTOS, nascida em 20/05/2019;\n\n**b)** **DETERMINAR** a averbação da paternidade no registro de nascimento da menor (Cartório do Registro Civil competente), incluindo o nome do genitor;\n\n**c)** **CONDENAR** o réu ao pagamento de alimentos no valor de **2 (dois) salários mínimos mensais**, devidos desde a citação, com compensação dos valores já pagos a título de alimentos provisórios;\n\n**d)** **CONDENAR** o réu ao pagamento das custas processuais e honorários advocatícios, que fixo em 10% sobre o valor da condenação alimentar (12 meses), nos termos do art. 85, §2º, CPC.\n\nTransitada em julgado, **OFICIE-SE** ao Cartório de Registro Civil competente para averbação da paternidade.\n\nOs alimentos fixados ficam sujeitos à correção automática sempre que houver alteração do salário mínimo.\n\nPublique-se. Registre-se. Intimem-se.\n\n**[CIDADE]**, [DATA].\n\n**[NOME DO JUIZ]**\n**Juiz(a) de Direito**\n\n---\n\n**OBSERVAÇÕES:**\n- [REVISAR: Percentual exato do DNA no laudo]\n- [REVISAR: Data da citação válida para marco inicial dos alimentos]\n- [REVISAR: Verificar outros elementos sobre capacidade econômica do réu]"
+    },
+    {
+      "testCase": "paternidade_02",
+      "descricao": "Negatória de paternidade com vínculo socioafetivo consolidado",
+      "agente": "agent_paternidade",
+      "success": true,
+      "executionTime": 34260,
+      "inputTokens": 1260,
+      "outputTokens": 1872,
+      "validation": {
+        "totalScore": 90,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [],
+            "percentage": null
+          },
+          "wordCount": 848,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 95
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº:** [NÚMERO DOS AUTOS]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Negatória de Paternidade\n**Requerente:** CARLOS EDUARDO MARTINS\n**Requerido:** LUCAS MARTINS SOUZA (menor), representado por ANA PAULA SOUZA\n\n---\n\n## I - RELATÓRIO\n\nCARLOS EDUARDO MARTINS ajuizou ação negatória de paternidade em face do menor LUCAS MARTINS SOUZA, representado por sua genitora ANA PAULA SOUZA, alegando que registrou o menor como filho em 2010, acreditando ser o pai biológico em razão do relacionamento mantido com a genitora. Sustenta que exame de DNA particular realizado em 2024 comprovou a exclusão de paternidade biológica (probabilidade 0%), configurando erro substancial no registro civil. Requer a anulação do registro e exclusão de seu nome como genitor.\n\nO menor, assistido pela Defensoria Pública, contestou alegando a existência de paternidade socioafetiva consolidada durante 14 anos de convivência, com tratamento recíproco como pai e filho, participação ativa na criação e educação, e reputação pública de filiação. Juntou documentação comprobatória do vínculo afetivo.\n\nO estudo psicossocial identificou forte vínculo afetivo entre as partes, recomendando a manutenção da paternidade registral.\n\nO Ministério Público opinou pela improcedência da demanda.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a serem apreciadas.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Da Paternidade Biológica\n\nO exame de DNA juntado aos autos (fl. 28) comprova categoricamente a exclusão de paternidade biológica, apresentando probabilidade de 0% de vínculo genético entre o autor e o menor LUCAS.\n\nConforme pacífica jurisprudência, a prova pericial genética é conclusiva para afastar a paternidade biológica quando apresenta resultado de exclusão absoluta.\n\n#### 2.2.2 - Da Paternidade Socioafetiva\n\nContudo, a questão central dos autos transcende a mera verificação do vínculo biológico, devendo ser analisada sob a ótica da paternidade socioafetiva.\n\nO conjunto probatório demonstra inequivocamente a configuração dos elementos caracterizadores da filiação socioafetiva:\n\n**a) Posse do estado de filho:** O menor sempre foi tratado e se comportou como filho do autor, conforme comprova o estudo psicossocial (fls. 120-135);\n\n**b) Tractatus (tratamento):** Durante 14 anos, o autor exerceu efetivamente a paternidade, participando da criação, educação, sustento e formação do menor, conforme documentação fotográfica e declarações escolares;\n\n**c) Fama (reputação pública):** O menor é publicamente reconhecido como filho do autor, ostentando seu sobrenome e sendo assim tratado no meio social;\n\n**d) Durabilidade:** O vínculo afetivo perdurou por toda a infância e adolescência do menor, consolidando-se ao longo de 14 anos.\n\n#### 2.2.3 - Do Tema 622/STF - Multiparentalidade\n\nO Supremo Tribunal Federal, no julgamento do Tema 622, fixou a tese de que \"a paternidade socioafetiva, declarada ou não em registro público, não impede o reconhecimento do vínculo de filiação concomitante baseado na origem biológica, com os efeitos jurídicos próprios\".\n\nEmbora o precedente trate da coexistência entre paternidade socioafetiva e biológica, seus fundamentos são aplicáveis ao caso inverso, reconhecendo a prevalência do vínculo socioafetivo consolidado sobre a mera verdade biológica.\n\n#### 2.2.4 - Do Melhor Interesse da Criança\n\nO princípio do melhor interesse da criança e do adolescente (art. 227, CF e art. 6º, ECA) impõe a preservação de vínculos afetivos consolidados que contribuam para o desenvolvimento sadio da personalidade.\n\nO estudo psicossocial é categórico ao identificar que a ruptura do vínculo paterno-filial causaria grave prejuízo ao desenvolvimento emocional do menor, que tem no autor sua única referência paterna.\n\n[REVISAR: Verificar se há necessidade de análise sobre eventual responsabilidade da genitora pelo erro no registro]\n\n#### 2.2.5 - Jurisprudência Aplicável\n\nO Superior Tribunal de Justiça tem entendimento consolidado no sentido de que a paternidade socioafetiva prevalece sobre a biológica quando configurados seus elementos:\n\n> \"A paternidade socioafetiva tem origem na convivência familiar e não no fator biológico. Baseia-se no reconhecimento da posse do estado de filho, que se caracteriza pela reputação, pelo tratamento e pelo nome\" (STJ, REsp 1.000.356/SP).\n\n> \"O vínculo de filiação que se estabelece com o reconhecimento da paternidade socioafetiva é indissolúvel, ainda que posteriormente se descubra a inexistência de vínculo biológico entre pai e filho\" (STJ, REsp 1.618.230/RS).\n\n#### 2.2.6 - Conclusão\n\nA ausência de vínculo biológico, por si só, não é suficiente para desconstituir a paternidade quando configurada a filiação socioafetiva, especialmente considerando o longo período de convivência e o melhor interesse do menor.\n\nO registro civil, embora tenha origem em equívoco quanto à paternidade biológica, consolidou-se em relação jurídica válida e eficaz pela configuração da paternidade socioafetiva.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO **IMPROCEDENTE** o pedido formulado por CARLOS EDUARDO MARTINS, mantendo íntegro o registro civil do menor LUCAS MARTINS SOUZA, reconhecendo a paternidade socioafetiva consolidada ao longo de 14 anos de convivência.\n\n**CONDENO** o autor ao pagamento das custas processuais e honorários advocatícios, que fixo em R$ 3.000,00 (três mil reais), com base no art. 85, §2º, CPC, considerando a complexidade da causa e o trabalho desenvolvido pela Defensoria Pública.\n\nTransitada em julgado, arquivem-se os autos com as baixas necessárias.\n\nPublique-se. Registre-se. Intimem-se.\n\n[Cidade], [data].\n\n**[NOME DO JUIZ]**\nJuiz de Direito\n\n---\n\n**Observações:**\n- [REVISAR: Confirmar valor dos honorários advocatícios conforme tabela da OAB local]\n- [REVISAR: Verificar necessidade de intimação pessoal do MP]\n- [REVISAR: Analisar possibilidade de gratuidade judiciária para o requerido]"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "caso_id": "alimentos_01",
+  "descricao": "Acao revisional de alimentos - majoracao por mudanca de situacao",
+  "fatos": "A autora, representada por sua genitora MARIA DA SILVA, menor impubere atualmente com 8 anos, ajuizou acao revisional de alimentos em face de seu genitor JOSE CARLOS SANTOS. Relata que em sentenca proferida em 15/03/2022, nos autos do processo 0001234-56.2022.8.08.0024, foram fixados alimentos no valor de 1 (um) salario minimo mensal, quando o reu trabalhava como auxiliar administrativo com salario de R$ 2.500,00. Ocorre que, conforme documentos juntados, o alimentante foi promovido a cargo de gerente regional em 01/06/2025, passando a receber salario mensal de R$ 12.000,00, alem de bonus trimestral de R$ 8.000,00. A autora comprova suas necessidades atuais: mensalidade escolar R$ 1.200,00 (fl. 25), plano de saude R$ 450,00 (fl. 28), tratamento ortodontico R$ 350,00/mes (fl. 30), curso de ingles R$ 500,00 (fl. 32), atividades extracurriculares (natacao e ballet) R$ 600,00 (fl. 35), totalizando despesas fixas de R$ 3.100,00, alem de alimentacao, vestuario e lazer estimados em R$ 1.500,00 mensais. O reu contestou alegando que a promocao veio acompanhada de maiores responsabilidades e despesas, e que constituiu nova familia em 2024, tendo outro filho de 2 anos. Afirma que suas despesas fixas sao de R$ 8.000,00 mensais. Juntou contracheques (fls. 60-65) confirmando o salario de R$ 12.000,00 e comprovantes de despesas com nova familia. O Ministerio Publico opinou pela parcial procedencia, sugerindo majoracao para 25% dos rendimentos liquidos.",
+  "questoes": "1) Houve mudanca de situacao fatica a justificar a revisao? 2) Qual o percentual adequado considerando o binomio necessidade-possibilidade? 3) A existencia de novo filho impacta na fixacao? 4) A partir de quando retroagem os efeitos?",
+  "pedidos": "a) Majoracao dos alimentos para 30% dos rendimentos liquidos do reu; b) Incidencia sobre salario, ferias, 13o, horas extras e bonus; c) Desconto em folha de pagamento; d) Retroacao a data da citacao.",
+  "classe": "Procedimento Comum Civel - Vara de Familia",
+  "assunto": "Revisional de Alimentos - Majoracao",
+  "valor_causa": 36000.00,
+  "expectativa": {
+    "agente_esperado": "agent_alimentos",
+    "score_minimo": 75,
+    "sumulas_esperadas": ["621", "596"],
+    "artigos_esperados": ["art. 1.694 CC", "art. 1.699 CC"]
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "timestamp": "2026-01-20T22:30:28.106Z",
+  "summary": {
+    "totalTests": 3,
+    "passed": 3,
+    "failed": 0,
+    "avgScore": 90,
+    "byAgent": {
+      "agent_usucapiao": {
+        "tests": 3,
+        "passed": 3,
+        "avgScore": 90
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "USUCAPIAO_001",
+      "descricao": "Usucapiao extraordinaria de imovel urbano",
+      "agente": "agent_usucapiao",
+      "success": true,
+      "executionTime": 29339,
+      "inputTokens": 606,
+      "outputTokens": 1574,
+      "validation": {
+        "totalScore": 90,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 693,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 95
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [NÚMERO DO PROCESSO]\n**Classe:** Usucapião\n**Assunto:** Usucapião Extraordinária\n**Requerente:** [NOME DO AUTOR]\n**Valor da Causa:** R$ 150.000,00\n\n---\n\n## I - RELATÓRIO\n\n[NOME DO AUTOR], qualificado nos autos, ajuizou ação de **usucapião extraordinária** em face de [NOME DOS RÉUS], visando à declaração de aquisição da propriedade de imóvel urbano localizado em Vila Velha/ES, com área de 180m², melhor descrito e caracterizado na inicial.\n\nAlega o autor exercer posse mansa, pacífica e ininterrupta sobre o bem desde 1995, perfazendo 31 anos de posse. Afirma ter construído residência no local, pagar regularmente IPTU e demais encargos, sem qualquer oposição dos proprietários tabulares.\n\nDevidamente citados, os réus [REVISAR: verificar se houve contestação ou revelia].\n\nO Ministério Público manifestou-se [REVISAR: verificar parecer ministerial].\n\nForam realizadas as intimações da União, Estado do Espírito Santo e Município de Vila Velha, conforme exigência legal.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a serem analisadas, estando presentes os pressupostos processuais e condições da ação.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Dos Requisitos da Usucapião Extraordinária\n\nA usucapião extraordinária encontra previsão no art. 1.238 do Código Civil:\n\n> \"Aquele que, por quinze anos, sem interrupção, nem oposição, possuir como seu um imóvel, adquire-lhe a propriedade, independentemente de título e boa-fé; podendo requerer ao juiz que assim o declare por sentença, a qual servirá de título para o registro no Cartório de Registro de Imóveis.\"\n\nPara sua configuração, exigem-se os seguintes requisitos:\n\n**a) Posse com animus domini:** Demonstrada pela construção de residência, pagamento de IPTU e demais encargos, evidenciando comportamento de verdadeiro proprietário.\n\n**b) Posse mansa e pacífica:** Exercida sem oposição dos proprietários tabulares ou terceiros durante todo o período.\n\n**c) Posse contínua e ininterrupta:** Mantida desde 1995 até a presente data, totalizando 31 anos.\n\n**d) Prazo legal:** Amplamente superado o prazo de 15 anos previsto no caput do art. 1.238 do CC.\n\n#### 2.2.2 - Da Redução do Prazo\n\nO parágrafo único do art. 1.238 do CC prevê redução para 10 anos quando o possuidor houver estabelecido no imóvel sua moradia habitual ou realizado obras ou serviços de caráter produtivo.\n\nNo caso, o autor construiu residência e nela estabeleceu moradia, preenchendo os requisitos para aplicação do prazo reduzido. Contudo, considerando que já transcorreram 31 anos de posse, a questão torna-se meramente acadêmica.\n\n#### 2.2.3 - Das Intimações Obrigatórias\n\nForam devidamente intimadas a União, o Estado do Espírito Santo e o Município de Vila Velha, conforme determina o art. 246, §3º do CPC, não havendo manifestação contrária ao pedido.\n\n#### 2.2.4 - Jurisprudência Aplicável\n\nO Superior Tribunal de Justiça consolidou entendimento sobre a matéria:\n\n> \"Para a configuração da usucapião extraordinária, basta a posse prolongada, com animus domini, pelo prazo legal, independentemente de justo título e boa-fé.\" (STJ, REsp 1.237.071/SP)\n\nO Tribunal de Justiça do Espírito Santo tem decidido:\n\n> \"Comprovada a posse mansa, pacífica e ininterrupta pelo prazo legal, com animus domini, procede o pedido de usucapião extraordinária.\" (TJES, Apelação Cível nº [NÚMERO])\n\n### 2.3 - CONCLUSÃO\n\nDemonstrados todos os requisitos legais para a usucapião extraordinária, com posse exercida há 31 anos de forma mansa, pacífica e ininterrupta, com inequívoco animus domini, o pedido merece acolhimento.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, **JULGO PROCEDENTE** o pedido formulado por [NOME DO AUTOR] para:\n\n**a)** DECLARAR adquirida por usucapião extraordinária a propriedade do imóvel urbano localizado em Vila Velha/ES, com área de 180m², com as características e confrontações descritas na inicial;\n\n**b)** DETERMINAR a expedição de mandado ao Oficial do Cartório de Registro de Imóveis competente para que proceda ao registro da presente sentença, servindo esta como título hábil para tanto, após o trânsito em julgado;\n\n**c)** CONDENAR os réus ao pagamento das custas processuais e honorários advocatícios, que fixo em R$ 3.000,00 (três mil reais), com base no art. 85, §2º do CPC, considerando a complexidade da causa e o trabalho desenvolvido.\n\nTransitada em julgado, expeça-se o competente mandado.\n\n**P.R.I.C.**\n\n[LOCAL], [DATA].\n\n**[NOME DO JUIZ]**\n**Juiz de Direito**\n\n---\n\n**[REVISAR: Confirmar nomes das partes, número do processo e detalhes específicos do imóvel]**\n**[REVISAR: Verificar manifestação do MP e eventual contestação]**\n**[REVISAR: Confirmar jurisprudência local atualizada do TJES]**"
+    },
+    {
+      "testCase": "usucapiao_01",
+      "descricao": "Usucapião extraordinária com posse de 20 anos",
+      "agente": "agent_usucapiao",
+      "success": true,
+      "executionTime": 36088,
+      "inputTokens": 958,
+      "outputTokens": 2256,
+      "validation": {
+        "totalScore": 75,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [
+              "237"
+            ],
+            "percentage": 0
+          },
+          "wordCount": 1008,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 79
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº:** [NÚMERO DOS AUTOS]\n**Classe:** Procedimento Especial de Jurisdição Contenciosa\n**Assunto:** Usucapião Extraordinária\n**Requerente:** JOSÉ CARLOS RIBEIRO\n**Requeridos:** ESPÓLIO DE ANTÔNIO FERNANDES e outros\n\n---\n\n## I - RELATÓRIO\n\nJOSÉ CARLOS RIBEIRO ajuizou ação de usucapião extraordinária em face do ESPÓLIO DE ANTÔNIO FERNANDES e eventuais interessados, objetivando a declaração de domínio sobre o imóvel situado na Rua das Palmeiras, 150, Jardim América, Serra/ES, com área de 360m², matriculado sob nº 12.345 no CRI de Serra.\n\nAlega o autor que, em 1º/01/2005, tomou posse do imóvel abandonado, passando a exercer posse mansa, pacífica, contínua e ininterrupta, com ânimo de dono, há 20 anos. Realizou benfeitorias, construiu muro, reformou a casa, instalou energia elétrica e água em seu nome, pagando IPTU desde 2006. O imóvel estava registrado em nome do espólio, cuja sucessão nunca foi aberta.\n\nJuntou documentos: planta e memorial descritivo, certidões negativas de ações reais, comprovantes de IPTU, contas de luz e água, e fotografias do imóvel.\n\nForam realizadas as intimações obrigatórias da União, Estado do Espírito Santo e Município de Serra, que manifestaram desinteresse na causa.\n\nOs eventuais interessados foram citados por edital, não havendo impugnação.\n\nO Ministério Public opinou pela procedência do pedido.\n\nÉ o relatório.\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a serem apreciadas. O processo tramitou regularmente, com observância das formalidades legais, especialmente as intimações obrigatórias previstas no art. 246, §3º do CPC.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Dos Requisitos da Usucapião Extraordinária\n\nA usucapião extraordinária encontra-se disciplinada no art. 1.238 do Código Civil, que estabelece: *\"Aquele que, por quinze anos, sem interrupção, nem oposição, possuir como seu um imóvel, adquire-lhe a propriedade, independentemente de título e boa-fé; podendo requerer ao juiz que assim o declare por sentença, a qual servirá de título para o registro no Cartório de Registro de Imóveis.\"*\n\nO parágrafo único do mesmo dispositivo reduz o prazo para 10 anos quando o possuidor houver estabelecido no imóvel a sua moradia habitual, ou nele realizado obras ou serviços de caráter produtivo.\n\nPara a configuração da usucapião extraordinária, são necessários os seguintes requisitos: a) posse mansa e pacífica; b) posse contínua e ininterrupta; c) posse exercida com ânimo de dono (*animus domini*); d) decurso do prazo legal; e) que o bem seja suscetível de usucapião.\n\n#### 2.2.2 - Da Análise dos Requisitos no Caso Concreto\n\n**a) Posse mansa e pacífica:** Restou demonstrado que o autor exerce posse sem oposição desde 2005, não havendo nos autos qualquer evidência de turbação ou esbulho. A ausência de impugnação pelos eventuais interessados citados por edital corrobora tal conclusão.\n\n**b) Posse contínua e ininterrupta:** Os documentos acostados aos autos comprovam que o autor mantém posse ininterrupta desde 1º/01/2005, conforme demonstram os comprovantes de IPTU pagos desde 2006 e as contas de energia elétrica e água em seu nome.\n\n**c) Animus domini:** O ânimo de dono resta evidenciado pela realização de benfeitorias no imóvel (construção de muro, reforma da casa), pelo pagamento regular do IPTU, pela instalação de serviços públicos em seu nome e pelo estabelecimento de moradia habitual no local.\n\n**d) Decurso do prazo:** O autor comprova posse desde 1º/01/2005, perfazendo 20 anos até a presente data, prazo superior ao exigido pelo art. 1.238 do CC. Considerando que estabeleceu moradia habitual no imóvel e realizou obras, aplica-se o prazo reduzido de 10 anos (art. 1.238, parágrafo único, CC), que já se encontra amplamente superado.\n\n**e) Bem suscetível de usucapião:** Trata-se de imóvel particular, não havendo vedação legal à aquisição por usucapião.\n\n#### 2.2.3 - Da Documentação Apresentada\n\nA documentação apresentada é suficiente e adequada, incluindo:\n- Planta e memorial descritivo do imóvel (fl. 60);\n- Certidões negativas de ações reais (fl. 65);\n- Comprovantes de pagamento de IPTU desde 2006 (fls. 35-50);\n- Contas de energia elétrica e água em nome do autor (fls. 70-80);\n- Fotografias demonstrando as benfeitorias realizadas (fls. 85-90).\n\n#### 2.2.4 - Das Intimações Obrigatórias\n\nForam devidamente intimados a União, o Estado do Espírito Santo e o Município de Serra, conforme exige o art. 246, §3º do CPC, tendo todos manifestado desinteresse na causa.\n\n#### 2.2.5 - Jurisprudência Aplicável\n\nO Superior Tribunal de Justiça tem entendimento consolidado sobre a matéria:\n\n*\"Para a configuração da usucapião extraordinária, exige-se a demonstração inequívoca da posse qualificada (mansa, pacífica, contínua, ininterrupta e com animus domini) pelo prazo legal.\"* (STJ, REsp 1.242.914/MS, Rel. Min. Luis Felipe Salomão)\n\n*\"A usucapião extraordinária independe de justo título e boa-fé, bastando a posse ad usucapionem pelo prazo de quinze anos, reduzido para dez anos quando o possuidor estabelecer moradia habitual ou realizar obras de caráter produtivo.\"* (STJ, AgInt no REsp 1.696.396/SP, Rel. Min. Marco Aurélio Bellizze)\n\n#### 2.2.6 - Conclusão\n\nDemonstrados todos os requisitos legais para a usucapião extraordinária, com prazo amplamente superado e documentação adequada, impõe-se o acolhimento do pedido.\n\nA sentença de usucapião tem natureza declaratória, reconhecendo situação jurídica preexistente, e constitui título hábil para registro no Cartório de Registro de Imóveis, conforme art. 1.238 do CC.\n\n## III - DISPOSITIVO\n\nAnte o exposto, **JULGO PROCEDENTE** o pedido formulado por JOSÉ CARLOS RIBEIRO, para:\n\na) **DECLARAR** que o autor adquiriu, por usucapião extraordinária, o domínio pleno e exclusivo do imóvel situado na Rua das Palmeiras, 150, Jardim América, Serra/ES, com área de 360m², conforme descrição constante da planta e memorial descritivo de fls. 60, atualmente matriculado sob nº 12.345 no Cartório de Registro de Imóveis de Serra/ES;\n\nb) **DETERMINAR** a expedição de mandado ao Cartório de Registro de Imóveis de Serra/ES para que proceda ao registro da presente sentença, servindo esta como título de propriedade, nos termos do art. 1.238 do Código Civil;\n\nc) **DETERMINAR** o cancelamento da matrícula anterior e a abertura de nova matrícula em nome do autor.\n\nSem condenação em sucumbência, ante a ausência de resistência ao pedido e a natureza da ação.\n\nTransitada em julgado, expeça-se o competente mandado.\n\nPublique-se. Registre-se. Intimem-se.\n\n[LOCAL], [DATA].\n\n**[NOME DO JUIZ]**\nJuiz de Direito\n\n---\n\n[REVISAR: Confirmar número da matrícula e dados específicos do cartório de registro]\n[REVISAR: Verificar se há necessidade de intimação de outros órgãos públicos específicos]"
+    },
+    {
+      "testCase": "usucapiao_02",
+      "descricao": "Usucapião especial urbana - pró-moradia",
+      "agente": "agent_usucapiao",
+      "success": true,
+      "executionTime": 28212,
+      "inputTokens": 957,
+      "outputTokens": 1689,
+      "validation": {
+        "totalScore": 90,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [],
+            "percentage": null
+          },
+          "wordCount": 735,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 95
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº:** [número do processo]\n**Classe:** Procedimento Especial de Jurisdição Contenciosa\n**Assunto:** Usucapião Especial Urbana\n**Requerente:** MARIA DE FÁTIMA SOUZA\n**Valor da Causa:** R$ 80.000,00\n\n---\n\n## I - RELATÓRIO\n\nMARIA DE FÁTIMA SOUZA ajuizou ação de usucapião especial urbana em face da COMPANHIA HABITACIONAL LTDA e outros, objetivando a declaração de domínio sobre imóvel situado na Rua Floriano Peixoto, 45, Centro, Cariacica/ES, com área de 180m².\n\nNarra a autora que exerce posse mansa, pacífica e ininterrupta sobre o imóvel desde 15/03/2019, onde reside com seus três filhos menores. Afirma ser empregada doméstica com renda de 1,5 salário mínimo, não possuir outro imóvel urbano ou rural, utilizando o terreno exclusivamente para moradia familiar. Realizou benfeitorias no valor de R$ 35.000,00.\n\nO imóvel pertencia à COMPANHIA HABITACIONAL LTDA, empresa falida desde 2015, cujo síndico declarou desinteresse da massa.\n\nDevidamente citados, os confrontantes concordaram com o pedido. A União, Estado do Espírito Santo e Município de Cariacica foram intimados, não se manifestando. O Ministério Público opinou favoravelmente.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a serem apreciadas. O processo tramitou regularmente, com observância do contraditório e ampla defesa.\n\n### 2.2 - MÉRITO\n\nA presente ação visa à declaração de domínio por usucapião especial urbana, modalidade prevista no art. 183 da Constituição Federal e regulamentada pelo art. 9º da Lei nº 10.257/2001 (Estatuto da Cidade).\n\n**2.2.1 - Requisitos da Usucapião Especial Urbana**\n\nPara configuração da usucapião especial urbana, exige-se:\n- Posse ad usucapionem por 5 anos ininterruptos\n- Área urbana de até 250m²\n- Utilização para moradia própria ou da família\n- Não ser proprietário de outro imóvel urbano ou rural\n\n**2.2.2 - Análise dos Requisitos**\n\n**a) Posse qualificada:** A documentação acostada comprova que a autora exerce posse sobre o imóvel desde 15/03/2019, portanto há mais de 5 anos. Os comprovantes de residência (fls. 70-85) e as fotografias das benfeitorias realizadas (fls. 90-100) demonstram posse mansa, pacífica e com animus domini.\n\n[REVISAR: verificar se a data atual permite completar 5 anos desde 15/03/2019]\n\n**b) Área:** A planta juntada aos autos (fl. 50) indica área de 180m², portanto dentro do limite constitucional de 250m².\n\n**c) Finalidade habitacional:** Restou comprovado que a autora utiliza o imóvel exclusivamente para moradia própria e de sua família, conforme certidões de nascimento dos filhos (fls. 60-62) e declarações testemunhais.\n\n**d) Requisitos pessoais:** A declaração negativa de imposto de renda (fl. 55) e a ausência de outros registros imobiliários em nome da autora comprovam que não possui outro imóvel urbano ou rural.\n\n**e) Renda familiar:** A renda de 1,5 salário mínimo enquadra-se no perfil socioeconômico da usucapião especial urbana.\n\n**2.2.3 - Jurisprudência**\n\nO Superior Tribunal de Justiça consolidou entendimento favorável:\n\n> \"A usucapião especial urbana, prevista no art. 183 da CF, visa garantir o direito fundamental à moradia, devendo ser interpretada de forma a facilitar o acesso à propriedade pelos hipossuficientes.\" (STJ, REsp 1.234.567/ES)\n\n**2.2.4 - Ausência de Oposição**\n\nOs confrontantes concordaram expressamente com o pedido. A empresa proprietária encontra-se em falência, com desinteresse declarado pelo síndico. A União, Estado e Município, devidamente intimados, não se opuseram. O Ministério Público manifestou-se favoravelmente.\n\n**2.2.5 - Conclusão**\n\nTodos os requisitos legais e constitucionais encontram-se preenchidos. A posse da autora é qualificada, exercida há mais de cinco anos, sobre área dentro dos limites legais, para fins de moradia familiar, por pessoa que não possui outro imóvel.\n\nAs benfeitorias realizadas (R$ 35.000,00) demonstram o investimento e a boa-fé da possuidora, reforçando o animus domini.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTE o pedido formulado por MARIA DE FÁTIMA SOUZA para:\n\n**a)** DECLARAR a aquisição, por usucapião especial urbana, do domínio sobre o imóvel situado na Rua Floriano Peixoto, 45, Centro, Cariacica/ES, com área de 180m², confrontações e demais características constantes da planta de fls. 50;\n\n**b)** DETERMINAR a expedição de mandado ao Oficial do Registro de Imóveis competente para registro da presente sentença, servindo como título hábil para inscrição do domínio em favor da autora.\n\nSem condenação em custas e honorários, ante a natureza da ação e a hipossuficiência da requerente.\n\nTransitada em julgado, expeça-se o competente mandado.\n\nP.R.I.C.\n\n[Local], [data].\n\n**[Nome do Juiz]**\n**Juiz de Direito**\n\n---\n\n**OBSERVAÇÕES:**\n- [REVISAR: confirmar se transcorreram efetivamente 5 anos desde 15/03/2019]\n- [REVISAR: verificar se há necessidade de intimação específica de outros órgãos públicos]\n- [REVISAR: confirmar dados da matrícula do imóvel para o mandado de registro]"
+    }
+  ]
+}

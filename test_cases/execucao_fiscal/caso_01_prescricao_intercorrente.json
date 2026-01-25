@@ -1,0 +1,37 @@
+{
+  "id": "execucao_fiscal_001",
+  "tipo_acao": "Execução Fiscal - Prescrição Intercorrente",
+  "agente": "agent_EXECUCAO_FISCAL",
+  "fatos": "O MUNICÍPIO DE VITÓRIA ajuizou execução fiscal em face de EMPRESA ABC LTDA em 15/03/2015, cobrando IPTU dos exercícios de 2012, 2013 e 2014, no valor total de R$ 45.000,00. O despacho citatório foi proferido em 20/03/2015. Após diversas tentativas de citação e localização de bens infrutíferas, o processo foi suspenso em 10/08/2016 por não localização do devedor. Em 15/09/2017, foi determinado o arquivamento provisório. Até a presente data (janeiro/2026), não houve qualquer movimentação útil no processo. A Fazenda Municipal foi intimada pessoalmente em 10/01/2026 para se manifestar sobre eventual prescrição intercorrente, mas quedou-se inerte.",
+  "questoes": "1) Ocorreu a prescrição intercorrente? 2) Qual o termo inicial da contagem do prazo prescricional? 3) A intimação pessoal da Fazenda foi observada?",
+  "pedidos": "Reconhecimento da prescrição intercorrente e extinção da execução fiscal.",
+  "documentos": [
+    "CDA nº 12345/2015 - fls. 02/04",
+    "Despacho citatório - fl. 05",
+    "Certidões negativas de citação - fls. 10/15",
+    "Decisão de suspensão art. 40 LEF - fl. 20",
+    "Decisão de arquivamento provisório - fl. 25",
+    "Intimação pessoal da Fazenda - fl. 30"
+  ],
+  "resultado_esperado": "procedente",
+  "fundamentos_esperados": [
+    "Art. 40, §4º, LEF",
+    "Súmula 314/STJ",
+    "Tema 566/STJ",
+    "Art. 174 CTN"
+  ],
+  "validacao": {
+    "deve_conter": [
+      "prescrição intercorrente",
+      "Art. 40",
+      "Súmula 314",
+      "EXTINGO",
+      "Lei 6.830"
+    ],
+    "nao_deve_conter": [
+      "IMPROCEDENTE",
+      "prosseguimento"
+    ],
+    "min_paragrafos": 3
+  }
+}

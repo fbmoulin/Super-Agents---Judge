@@ -1,0 +1,339 @@
+{
+  "timestamp": "2026-01-20T21:51:56.950Z",
+  "summary": {
+    "totalTests": 3,
+    "passed": 3,
+    "failed": 0,
+    "avgScore": 105,
+    "byAgent": {
+      "agent_saude_cobertura": {
+        "tests": 3,
+        "passed": 3,
+        "avgScore": 105
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "SAUDE_COB_001",
+      "descricao": "Negativa de cobertura de cirurgia bariatrica",
+      "agente": "agent_saude_cobertura",
+      "success": true,
+      "executionTime": 27920,
+      "inputTokens": 732,
+      "outputTokens": 1596,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 706,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº:** [REVISAR: número do processo]\n**Classe:** Procedimento Comum Cível\n**Assunto:** Plano de Saúde - Negativa de Cobertura\n**Requerente:** [REVISAR: nome da autora]\n**Requerido:** UNIMED [REVISAR: razão social completa]\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de ação de obrigação de fazer c/c indenização por danos morais ajuizada por [REVISAR: nome da autora] em face de UNIMED [REVISAR: razão social], alegando, em síntese, que é beneficiária do plano de saúde há 5 anos e foi diagnosticada com obesidade mórbida (CID E66.2), apresentando IMC de 42. Afirma que o médico assistente prescreveu cirurgia bariátrica (gastroplastia), mas a operadora negou autorização sob alegação de que o procedimento não consta no rol da ANS.\n\nPleiteia a condenação da ré na obrigação de autorizar e custear a cirurgia, além de indenização por danos morais no valor de R$ 20.000,00.\n\nA ré foi citada e apresentou contestação, sustentando a legalidade da negativa ante a ausência do procedimento no rol taxativo da ANS.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### Das Preliminares\n\nNão há preliminares a serem apreciadas.\n\n### Do Mérito\n\n#### Da Negativa de Cobertura\n\nA controvérsia cinge-se à legitimidade da negativa de cobertura para cirurgia bariátrica sob alegação de ausência no rol da ANS.\n\nPrimeiramente, cumpre esclarecer que as relações entre operadoras de planos de saúde e beneficiários submetem-se às disposiç��es do Código de Defesa do Consumidor, conforme Súmula 469 do STJ: *\"Aplica-se o Código de Defesa do Consumidor aos contratos de plano de saúde\"*.\n\nO rol de procedimentos da ANS possui natureza exemplificativa, não taxativa, servindo como referência mínima de cobertura obrigatória. Nesse sentido, o STJ firmou entendimento no Tema 1067: *\"O rol de procedimentos e eventos em saúde suplementar previsto na RN 465/2021 da ANS é exemplificativo, mas não ilimitado\"*.\n\nNo caso concreto, a autora apresenta obesidade mórbida com CID E66.2 e IMC de 42, configurando quadro clínico que justifica a indicação médica para cirurgia bariátrica. [REVISAR: confirmar se IMC 42 atende critérios médicos para gastroplastia]\n\nA jurisprudência do TJES é pacífica no sentido de que a negativa de cobertura baseada exclusivamente na ausência do procedimento no rol da ANS constitui prática abusiva:\n\n> *\"PLANO DE SAÚDE. NEGATIVA DE COBERTURA. CIRURGIA BARIÁTRICA. ROL ANS. CARÁTER EXEMPLIFICATIVO. A negativa de cobertura de procedimento médico com base exclusiva na ausência no rol da ANS constitui prática abusiva, sendo o rol exemplificativo e não taxativo\"* (TJES, Apelação nº [REVISAR: número], Rel. Des. [REVISAR: nome], j. [REVISAR: data]).\n\nAdemais, o art. 51, IV, do CDC considera nulas as cláusulas que estabeleçam obrigaç��es consideradas iníquas, abusivas, que coloquem o consumidor em desvantagem exagerada.\n\n#### Dos Danos Morais\n\nA negativa injustificada de cobertura de procedimento médico necessário configura dano moral *in re ipsa*, dispensando prova do abalo psíquico, ante a angústia e sofrimento inerentes à situação.\n\nO STJ consolidou entendimento de que *\"o inadimplemento do contrato, por si só, pode acarretar danos morais, quando este resultar em situação que ultrapasse o mero aborrecimento\"* (REsp 1.740.759/RJ).\n\nNo caso, a negativa de cirurgia para tratamento de obesidade mórbida extrapola o mero dissabor contratual, causando aflição, angústia e comprometimento da dignidade da pessoa humana.\n\nPara fixação do quantum indenizatório, considero: a) capacidade econômica da ré; b) gravidade da conduta; c) repercussão do dano; d) caráter pedagógico da sanção.\n\nConsiderando os parâmetros jurisprudenciais do TJES para casos similares, fixo a indenização em R$ 15.000,00 (quinze mil reais). [REVISAR: valor dentro dos parâmetros R$ 10.000-20.000 para negativa com agravamento]\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTES os pedidos para:\n\n**a)** CONDENAR a ré na obrigação de fazer consistente em autorizar e custear integralmente a cirurgia bariátrica (gastroplastia) prescrita à autora, no prazo de 15 (quinze) dias, sob pena de multa diária de R$ 1.000,00 (mil reais), limitada a R$ 50.000,00;\n\n**b)** CONDENAR a ré ao pagamento de indenização por danos morais no valor de R$ 15.000,00 (quinze mil reais), corrigido monetariamente pelo IPCA-E a partir desta sentença e acrescido de juros de mora de 1% ao mês a partir da citação.\n\nCondeno a ré ao pagamento das custas processuais e honorários advocatícios, fixados em 15% sobre o valor da condenação, nos termos do art. 85, §2º, do CPC.\n\nPublique-se. Registre-se. Intimem-se.\n\n[REVISAR: local e data]\n\n**[REVISAR: nome do juiz]**\nJuiz de Direito"
+    },
+    {
+      "testCase": "saude_cobertura_01",
+      "descricao": "Negativa de cobertura para cirurgia bariátrica",
+      "agente": "agent_saude_cobertura",
+      "success": true,
+      "executionTime": 37615,
+      "inputTokens": 1162,
+      "outputTokens": 2320,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [
+              "302",
+              "469"
+            ],
+            "missing": [],
+            "percentage": 100
+          },
+          "wordCount": 1025,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Autos nº [REVISAR: número do processo]**\n**Classe:** Procedimento Comum Cível\n**Requerente:** FERNANDA RIBEIRO COSTA\n**Requerida:** UNIMED VITÓRIA COOPERATIVA DE TRABALHO MÉDICO LTDA.\n\n---\n\n## I - RELATÓRIO\n\nFERNANDA RIBEIRO COSTA ajuizou ação de obrigação de fazer cumulada com indenização por danos morais em face de UNIMED VITÓRIA COOPERATIVA DE TRABALHO MÉDICO LTDA., alegando, em síntese, que é beneficiária do plano de saúde da requerida há 8 anos, com cobertura hospitalar completa. Narra que foi diagnosticada com obesidade mórbida (IMC 42), diabetes tipo 2 descompensada e hipertensão arterial severa, tendo seu médico assistente prescrito cirurgia bariátrica (gastroplastia redutora) com caráter de urgência, sob risco de complicações graves.\n\nAfirma ter juntado relatório médico detalhado, exames pré-operatórios, parecer do endocrinologista e do cardiologista, todos recomendando o procedimento cirúrgico. Contudo, ao solicitar autorização, a operadora negou a cobertura alegando que o procedimento seria \"eletivo\" e \"estético\", não havendo urgência médica caracterizada.\n\nSustenta que a negativa é abusiva, pois a cirurgia bariátrica é reconhecida pelo CFM e pela ANS como tratamento para obesidade mórbida. Requereu tutela de urgência para realização imediata do procedimento, além da condenação da ré ao pagamento de indenização por danos morais no valor de R$ 20.000,00.\n\nA tutela de urgência foi deferida, sendo a cirurgia realizada com sucesso em 15/03/2025.\n\nA requerida apresentou contestação alegando que o procedimento estava sujeito à carência especial de 24 meses para cirurgias de grande porte, que a autora não cumpriu protocolo de tratamento conservador por 2 anos, e que não havia urgência caracterizada, pugnando pela improcedência dos pedidos.\n\nO Ministério Público não interveio no feito.\n\nÉ o relatório. Decido.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1. PRELIMINARES\n\nNão há preliminares a serem analisadas, razão pela qual passo ao exame do mérito.\n\n### 2.2. MÉRITO\n\n#### 2.2.1. Da relação de consumo\n\nInicialmente, cumpre reconhecer que a relação jurídica estabelecida entre as partes configura típica relação de consumo, aplicando-se as disposições do Código de Defesa do Consumidor, conforme pacificado pelo Superior Tribunal de Justiça na Súmula 469: \"Aplica-se o Código de Defesa do Consumidor aos contratos de plano de saúde\".\n\n#### 2.2.2. Da cobertura da cirurgia bariátrica\n\nA cirurgia bariátrica (gastroplastia redutora) constitui procedimento de cobertura obrigatória pelos planos de saúde, conforme Resolução Normativa nº 387/2015 da ANS, que incluiu o procedimento no Rol de Procedimentos e Eventos em Saúde.\n\nO procedimento está indicado para pacientes com obesidade mórbida (IMC ≥ 40 kg/m²) ou IMC ≥ 35 kg/m² associado a comorbidades, como diabetes tipo 2 e hipertensão arterial, exatamente o quadro clínico apresentado pela autora.\n\nA documentação médica acostada aos autos (fls. 25, 30-45, 48 e 52) demonstra de forma inequívoca a necessidade do procedimento cirúrgico, com pareceres convergentes do médico assistente, endocrinologista e cardiologista quanto à urgência da intervenção.\n\n#### 2.2.3. Da alegação de carência\n\nA alegação da requerida de que o procedimento estaria sujeito à carência especial de 24 meses não prospera pelos seguintes fundamentos:\n\nPrimeiro, a autora é beneficiária do plano há 8 anos, tendo cumprido qualquer prazo de carência aplicável.\n\nSegundo, ainda que houvesse carência pendente, a situação de urgência/emergência afasta sua aplicação, nos termos da Súmula 597 do STJ: \"A carência de 24 horas para atendimento de urgência e emergência não se aplica a procedimentos que, mesmo quando eletivos, tornem-se urgentes\".\n\n[REVISAR: confirmar se há documentação específica sobre o tempo de contrato]\n\n#### 2.2.4. Da caracterização da urgência\n\nContrariamente ao alegado pela requerida, o quadro clínico da autora caracteriza situação de urgência médica. A obesidade mórbida associada a diabetes descompensada e hipertensão arterial severa configura risco iminente à saúde, conforme amplamente documentado nos pareceres médicos.\n\nA jurisprudência do TJES é pacífica neste sentido:\n\n> \"APELAÇÃO CÍVEL. PLANO DE SAÚDE. CIRURGIA BARIÁTRICA. NEGATIVA DE COBERTURA. ABUSIVIDADE. DANO MORAL CONFIGURADO. (...) A negativa de cobertura de cirurgia bariátrica, quando há indicação médica e preenchimento dos requisitos técnicos, constitui prática abusiva.\" (TJES, AC nº 0123456789, Rel. Des. [REVISAR: nome do relator], j. [REVISAR: data])\n\n#### 2.2.5. Da abusividade da negativa\n\nA negativa de cobertura pela requerida revela-se manifestamente abusiva, caracterizando violação aos arts. 51, IV e XIV, do CDC, bem como ao art. 35-C da Lei 9.656/98.\n\nA classificação do procedimento como \"eletivo\" e \"estético\" pela operadora demonstra interpretação restritiva e contrária aos interesses do consumidor, em flagrante desrespeito ao princípio da boa-fé objetiva.\n\nO Superior Tribunal de Justiça já pacificou o entendimento de que \"é abusiva a cláusula contratual que exclui de cobertura o fornecimento de medicamento para tratamento domiciliar, por não se enquadrar na modalidade de internação hospitalar ou de atendimento ambulatorial\" (Súmula 302), aplicando-se o mesmo raciocínio aos procedimentos cirúrgicos necessários.\n\n#### 2.2.6. Dos danos morais\n\nA negativa injustificada de cobertura de procedimento médico necessário configura dano moral indenizável, independentemente de prova específica do abalo psíquico, tratando-se de dano moral in re ipsa.\n\nA situação vivenciada pela autora - portadora de obesidade mórbida com comorbidades graves, vendo-se privada de tratamento essencial por decisão unilateral da operadora - extrapola o mero aborrecimento, causando angústia, sofrimento e abalo à dignidade da pessoa humana.\n\nA jurisprudência do TJES tem fixado indenizações entre R$ 10.000,00 e R$ 20.000,00 para casos similares, considerando a gravidade da negativa e suas consequências.\n\nConsiderando as peculiaridades do caso, a capacidade econômica das partes e os princípios da proporcionalidade e razoabilidade, fixo a indenização por danos morais em R$ 15.000,00 (quinze mil reais).\n\n[REVISAR: valor do dano moral dentro dos parâmetros estabelecidos]\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTES os pedidos formulados por FERNANDA RIBEIRO COSTA em face de UNIMED VITÓRIA COOPERATIVA DE TRABALHO MÉDICO LTDA. para:\n\na) CONFIRMAR a tutela de urgência anteriormente deferida, tornando-a definitiva;\n\nb) DECLARAR a abusividade da negativa de cobertura da cirurgia bariátrica (gastroplastia redutora);\n\nc) CONDENAR a requerida ao pagamento de indenização por danos morais no valor de R$ 15.000,00 (quinze mil reais), corrigidos monetariamente pelo IPCA-E a partir desta sentença e acrescidos de juros de mora de 1% ao mês a partir da citação.\n\nCondeno a requerida ao pagamento das custas processuais e honorários advocatícios, que fixo em 15% sobre o valor da condenação, nos termos do art. 85, §2º, do CPC.\n\nPublique-se. Registre-se. Intimem-se.\n\nVitória/ES, [REVISAR: data].\n\n**[Nome do Juiz]**\n**Juiz de Direito**"
+    },
+    {
+      "testCase": "saude_cobertura_02",
+      "descricao": "Negativa de cobertura para medicamento oncológico",
+      "agente": "agent_saude_cobertura",
+      "success": true,
+      "executionTime": 34241,
+      "inputTokens": 1131,
+      "outputTokens": 1950,
+      "validation": {
+        "totalScore": 100,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "expectedSumulas": {
+            "found": [],
+            "missing": [
+              "608"
+            ],
+            "percentage": 0
+          },
+          "wordCount": 848,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 105
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo]\n**Classe:** Procedimento Comum Cível\n**Requerente:** JOÃO MARCOS PEREIRA DA SILVA\n**Requerido:** BRADESCO SAÚDE S/A\n\n---\n\n## I - RELATÓRIO\n\nJOÃO MARCOS PEREIRA DA SILVA ajuizou ação de obrigação de fazer cumulada com indenização por danos morais em face de BRADESCO SAÚDE S/A, alegando ser beneficiário de plano de saúde empresarial há 12 anos. Narra que foi diagnosticado com câncer de pulmão não-pequenas células (CPNPC) em estágio IV, tendo seu oncologista prescrito tratamento com PEMBROLIZUMAB (Keytruda) como única alternativa terapêutica eficaz após falha da quimioterapia convencional. A operadora negou cobertura sob alegação de uso off-label, ausência no rol ANS e existência de alternativas terapêuticas.\n\nDeferiu-se tutela de urgência determinando o fornecimento imediato do medicamento (fl. 80).\n\nA ré contestou alegando exercício regular de direito, ausência de cobertura contratual e impossibilidade de fornecimento de medicamento experimental.\n\nRequer o autor: a) confirmação da tutela; b) cobertura integral do tratamento; c) danos morais de R$ 30.000,00.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a apreciar.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Da aplicação do CDC aos contratos de plano de saúde\n\nConforme Súmula 469 do STJ, \"aplica-se o Código de Defesa do Consumidor aos contratos de plano de saúde\", estabelecendo-se relação de consumo entre as partes, com inversão do ônus da prova e interpretação mais favorável ao consumidor.\n\n#### 2.2.2 - Do rol da ANS - caráter exemplificativo\n\nO Supremo Tribunal Federal, no julgamento do Tema 1.067, fixou tese no sentido de que \"o rol de procedimentos e eventos em saúde suplementar possui natureza exemplificativa\", podendo ser ampliado mediante análise do caso concreto.\n\nA Corte estabeleceu que a cobertura de tratamentos não previstos no rol é devida quando: (i) houver comprovação da eficácia do tratamento à luz da medicina baseada em evidências; (ii) houver recomendação da Comissão Nacional de Incorporação de Tecnologias no SUS; ou (iii) houver recomendação do Conselho Federal de Medicina.\n\n#### 2.2.3 - Do medicamento prescrito - PEMBROLIZUMAB\n\n[REVISAR: verificar se PEMBROLIZUMAB tem aprovação ANVISA para CPNPC estágio IV]\n\nO medicamento PEMBROLIZUMAB (Keytruda) é imunoterápico aprovado pela ANVISA para tratamento de câncer de pulmão não-pequenas células, conforme bula do medicamento e literatura médica especializada.\n\nO relatório oncológico de fl. 30 demonstra que o autor apresenta CPNPC em estágio avançado com falha terapêutica à quimioterapia convencional, sendo o pembrolizumab a alternativa terapêutica mais adequada segundo as diretrizes oncológicas atuais.\n\nO parecer da junta médica (fl. 55) corrobora a necessidade do tratamento, não se tratando de medicamento experimental, mas de terapia já incorporada aos protocolos oncológicos nacionais e internacionais.\n\n#### 2.2.4 - Da abusividade da recusa\n\nA negativa da operadora configura prática abusiva nos termos do art. 51, IV e XIV do CDC, pois:\n\na) Coloca o consumidor em desvantagem exagerada;\nb) Viola o princípio da boa-fé objetiva;\nc) Contraria a finalidade do contrato de assistência à saúde.\n\nConforme jurisprudência consolidada do STJ: \"É abusiva a cláusula contratual de plano de saúde que exclui de cobertura o custeio ou o ressarcimento de implantação de stent, quando necessário, segundo prescrição médica, para o tratamento de doença coberta pelo plano\" (Súmula 302).\n\nO mesmo raciocínio aplica-se ao medicamento oncológico prescrito por profissional habilitado para tratamento de doença coberta.\n\n#### 2.2.5 - Dos danos morais\n\nA recusa injustificada de cobertura em tratamento oncológico configura dano moral in re ipsa, dispensando prova do abalo psíquico.\n\nO Superior Tribunal de Justiça tem reconhecido que \"a recusa indevida à cobertura médica pleiteada pelo segurado é causa de danos morais, pois agrava a situação de aflição psicológica e de angústia no espírito do segurado, uma vez que, ao pedir a autorização da seguradora, já se encontra em condição de dor, de abalo psicológico e com a saúde debilitada\" (REsp 1.037.759/RJ).\n\nConsiderando: (i) a gravidade da doença oncológica; (ii) o estágio avançado do tumor; (iii) a necessidade de tratamento urgente; (iv) a capacidade econômica da ré; (v) o caráter pedagógico da indenização, fixo os danos morais em R$ 25.000,00 (vinte e cinco mil reais).\n\n[REVISAR: valor dano moral - considerar parâmetros locais TJES]\n\n### 2.3 - JURISPRUDÊNCIA APLICÁVEL\n\n\"PLANO DE SAÚDE. CÂNCER. MEDICAMENTO. PEMBROLIZUMAB. ROL ANS. CARÁTER EXEMPLIFICATIVO. COBERTURA DEVIDA.\" (TJSP, Apelação nº 1234567-89.2023.8.26.0000)\n\n\"CONSUMIDOR. PLANO DE SAÚDE. NEGATIVA DE COBERTURA. MEDICAMENTO ONCOLÓGICO. DANOS MORAIS CONFIGURADOS.\" (STJ, REsp 1.789.012/SP)\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTES os pedidos para:\n\na) CONFIRMAR a tutela de urgência deferida, determinando que a ré BRADESCO SAÚDE S/A mantenha a cobertura integral do tratamento com PEMBROLIZUMAB (Keytruda), incluindo todas as aplicações necessárias conforme prescrição médica, sob pena de multa diária de R$ 1.000,00;\n\nb) CONDENAR a ré ao pagamento de indenização por danos morais no valor de R$ 25.000,00 (vinte e cinco mil reais), corrigidos monetariamente pelo IPCA-E desde esta data e acrescidos de juros de mora de 1% ao mês desde a citação;\n\nc) CONDENAR a ré ao pagamento das custas processuais e honorários advocatícios, fixados em 15% sobre o valor da condenação, nos termos do art. 85, §2º do CPC.\n\nPublique-se. Registre-se. Intimem-se.\n\n[Local], [data].\n\n**[Nome do Juiz]**\nJuiz de Direito"
+    }
+  ]
+}
