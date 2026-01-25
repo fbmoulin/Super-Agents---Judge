@@ -4,6 +4,7 @@
 .env
 .env.*
 !.env.*.template
+!.env.example
 *.keys
 credentials.json
 secrets.json
