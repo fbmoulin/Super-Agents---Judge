@@ -1,0 +1,2289 @@
+{
+  "name": "Lex Intelligentia v4.0 - Redis Caching",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "# 🏛️ LEX INTELLIGENTIA JUDICIÁRIO v4.0\n## Pipeline Multi-Agente com Redis Caching\n\n**Versão:** 4.0.0 - Janeiro 2026\n**Compliance:** CNJ 615/2025\n\n### Mudanças v4.0.0:\n- ✅ Redis Cache Layer (Upstash)\n- ✅ Cache Key Generator\n- ✅ Cache Check antes do RAG\n- ✅ Cache Store após AI Agents\n- ✅ cache_hit tracking nas métricas\n- ✅ TTL: 1h para RAG results\n\n### Herdado v3.1:\n- ✅ Quality Validator\n- ✅ Metrics Logger (Supabase)\n- ✅ Gemini 2.5 Flash Router\n- ✅ 13 Agentes Especializados\n- ✅ QA Híbrido\n\n### Cache Strategy:\n- RAG Results: 1h TTL\n- Query normalization\n- Domain-based keys",
+        "height": 420,
+        "width": 420
+      },
+      "id": "sticky-header",
+      "name": "📋 INFO v2.2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        80,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lex-intelligentia-agentes",
+        "responseMode": "responseNode",
+        "options": {
+          "rawBody": false
+        }
+      },
+      "id": "webhook-entrada",
+      "name": "Webhook: Recebe FIRAC",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        540,
+        300
+      ],
+      "webhookId": "lex-agentes-v21"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  \"contents\": [{\n    \"parts\": [{\n      \"text\": `Você é um classificador jurídico especializado em Vara Cível.\n\nTAREFA: Classifique o caso abaixo em EXATAMENTE uma ÁREA JURÍDICA.\n\nÁREAS VÁLIDAS (8 categorias):\n- BANCARIO: contratos bancários, empréstimos, financiamentos, juros abusivos\n- CONSUMIDOR: CDC geral, danos morais, negativação, falha de serviço (exceto saúde)\n- EXECUCAO: títulos extrajudiciais, cumprimento de sentença, embargos\n- LOCACAO: despejo, renovatória, Lei 8.245/91\n- POSSESSORIAS: reintegração, manutenção de posse (NÃO usucapião)\n- SAUDE: planos de saúde, operadoras, ANS, cobertura, reajuste\n- TRANSITO: acidentes de trânsito, responsabilidade civil, DPVAT\n- IMOBILIARIO: usucapião, incorporação, atraso entrega imóvel na planta\n- GENERICO: casos atípicos que não se encaixam claramente\n\nCASO (FIRAC):\nFATOS: ${$json.body?.fatos || $json.fatos || 'Não informado'}\nQUESTÕES: ${$json.body?.questoes || $json.questoes || 'Não informado'}\nPEDIDOS: ${$json.body?.pedidos || $json.pedidos || 'Não informado'}\nCLASSE: ${$json.body?.classe_processual || $json.classe || 'Não informado'}\nASSUNTO: ${$json.body?.assunto || $json.assunto || 'Não informado'}\n\nRESPONDA APENAS com JSON válido:\n{\n  \"area\": \"string (uma das 8 áreas acima)\",\n  \"confianca\": number (0.0 a 1.0),\n  \"needs_stage2\": boolean (true se area == SAUDE ou IMOBILIARIO),\n  \"entidades_extraidas\": {\n    \"valores_monetarios\": [],\n    \"datas_relevantes\": [],\n    \"partes\": [],\n    \"leis_mencionadas\": [],\n    \"sumulas_aplicaveis\": []\n  }\n}`\n    }]\n  }],\n  \"generationConfig\": {\n    \"temperature\": 0.1,\n    \"maxOutputTokens\": 2000,\n    \"responseMimeType\": \"application/json\"\n  }\n} }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "gemini-router",
+      "name": "Gemini Router",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        760,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GEMINI_CREDENTIALS_ID",
+          "name": "Gemini API Key"
+        }
+      },
+      "notes": "Classificação semântica com Gemini 2.5 Flash. Substitui router de keywords."
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================================\n// CONTEXT BUFFER - Memória Persistente do Workflow\n// Lex Intelligentia Judiciário v2.1 - FIXED\n// ============================================================================\n\n// Null-safe data extraction\nconst webhookData = $('Webhook: Recebe FIRAC').item?.json || {};\nconst geminiResponse = $('Gemini Router').item?.json || {};\n\n// Extrair dados do webhook (suporta body wrapper ou direto)\nconst firacInput = webhookData.body || webhookData;\n\n// Default fallback result\nconst defaultResult = {\n  area: 'generico',\n  confianca: 0.3,\n  subcategoria: null,\n  entidades_extraidas: {\n    valores_monetarios: [],\n    datas_relevantes: [],\n    partes: [],\n    leis_mencionadas: [],\n    sumulas_aplicaveis: []\n  }\n};\n\n// Parsear resposta do Gemini com validação completa\nlet geminiResult = defaultResult;\nlet routerStatus = 'fallback';\n\ntry {\n  const candidate = geminiResponse.candidates?.[0];\n  \n  // Check if we have a valid candidate\n  if (!candidate) {\n    console.log('Gemini: Nenhum candidate retornado');\n  } else {\n    // Check finishReason\n    const finishReason = candidate.finishReason;\n    if (finishReason === 'SAFETY') {\n      console.log('Gemini: Resposta bloqueada por SAFETY');\n    } else if (finishReason === 'MAX_TOKENS') {\n      console.log('Gemini: Resposta truncada por MAX_TOKENS');\n    } else if (finishReason === 'STOP' || finishReason === 'END_TURN' || !finishReason) {\n      // Valid completion - parse content\n      const content = candidate.content;\n      const text = content?.parts?.[0]?.text;\n      \n      if (text) {\n        // Remove possible markdown code blocks\n        const cleanJson = text.replace(/```json\\n?|```\\n?/g, '').trim();\n        const parsed = JSON.parse(cleanJson);\n        \n        // Validate required fields\n        if (parsed.area && typeof parsed.area === 'string') {\n          geminiResult = parsed;\n          routerStatus = 'success';\n        } else {\n          console.log('Gemini: Resposta sem area válida');\n        }\n      }\n    } else {\n      console.log('Gemini: finishReason inesperado:', finishReason);\n    }\n  }\n} catch (e) {\n  console.log('Erro ao parsear Gemini:', e.message);\n}\n\n// ============================================================================\n// CONSTRUIR CONTEXT BUFFER\n// ============================================================================\n\nconst contextBuffer = {\n  // BLOCO 1: FIRAC COMPLETO (imutável)\n  firac: {\n    fatos: firacInput.fatos || '',\n    questoes: firacInput.questoes || firacInput.issues || '',\n    regras: firacInput.regras_aplicaveis || firacInput.aplicacao_normas || firacInput.regras || '',\n    aplicacao: firacInput.aplicacao || firacInput.analise_juridica || '',\n    conclusao: firacInput.conclusao || firacInput.conclusao_firac || ''\n  },\n  \n  // BLOCO 2: METADADOS DO PROCESSO\n  processo: {\n    numero: firacInput.processo_numero || firacInput.numero || '[NÃO INFORMADO]',\n    classe: firacInput.classe_processual || firacInput.classe || '',\n    assunto: firacInput.assunto || '',\n    valor_causa: firacInput.valor_causa || null,\n    rito: firacInput.rito || 'comum',\n    pedidos: firacInput.pedidos || ''\n  },\n  \n  // BLOCO 3: CLASSIFICAÇÃO DO ROUTER (Gemini)\n  classificacao: {\n    agente: `agent_${geminiResult.area || 'generico'}`,\n    categoria: geminiResult.area || 'generico',\n    subcategoria: geminiResult.subcategoria || null,\n    confianca: geminiResult.confianca || 0.5,\n    needs_stage2: geminiResult.needs_stage2 || false,\n    metodo: 'gemini-2.5-flash',\n    router_status: routerStatus\n  },\n  \n  // BLOCO 4: ENTIDADES EXTRAÍDAS (Gemini)\n  entidades: {\n    valores: geminiResult.entidades_extraidas?.valores_monetarios || [],\n    datas: geminiResult.entidades_extraidas?.datas_relevantes || [],\n    partes: geminiResult.entidades_extraidas?.partes || [],\n    leis: geminiResult.entidades_extraidas?.leis_mencionadas || [],\n    sumulas: geminiResult.entidades_extraidas?.sumulas_aplicaveis || []\n  },\n  \n  // BLOCO 5: CONTROLE DE EXECUÇÃO\n  execucao: {\n    timestamp_inicio: new Date().toISOString(),\n    workflow_id: $execution.id,\n    tentativa: 1\n  }\n};\n\nreturn [{ json: contextBuffer }];"
+      },
+      "id": "context-buffer",
+      "name": "Set Context Buffer",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        980,
+        300
+      ],
+      "notes": "Memória persistente com FIRAC completo + classificação + entidades"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================================\n// SYSTEM PROMPTS OTIMIZADOS (~380 tokens cada)\n// Lex Intelligentia Judiciário v2.2\n// ============================================================================\n\nconst ctx = $input.first().json;\nconst agente = ctx.classificacao.agente;\n\n// ============================================================================\n// PROMPTS POR AGENTE (13 agentes especializados)\n// ============================================================================\n\nconst PROMPTS = {\n\n  agent_bancario: `# AGENTE JUDICIAL: BANCÁRIO\n\n## FUNÇÃO\nGerar minutas de decisões/sentenças em ações bancárias para Vara Cível do TJES.\n\n## REGRAS OBRIGATÓRIAS\n1. Estrutura: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO\n2. Citar base legal expressa (artigos, súmulas STJ)\n3. Juros abusivos: >1,5x taxa média BACEN\n4. Danos morais TJES: negativação R$5k-15k, fraude R$8k-25k\n5. Honorários: 10-20% sobre condenação (art. 85 CPC)\n\n## SÚMULAS PRIORITÁRIAS\n297, 381, 382, 379, 539, 565, 603/STJ\n\n## REPETIÇÃO INDÉBITO\n- Simples: se boa-fé (art. 876 CC)\n- Em dobro: se má-fé comprovada (art. 42 CDC)\n\n## MARCADORES\n[REVISAR: motivo] para incertezas.`,\n\n  agent_consumidor: `# AGENTE JUDICIAL: CONSUMIDOR\n\n## FUNÇÃO\nGerar minutas em ações de consumo e danos morais para Vara Cível do TJES.\n\n## REGRAS OBRIGATÓRIAS\n1. Estrutura: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO\n2. Responsabilidade objetiva (art. 14 CDC)\n3. Dano moral in re ipsa para negativação indevida\n4. Tríplice função: compensatória, punitiva, pedagógica\n5. Correção: do arbitramento (Súmula 362 STJ)\n6. Juros: da citação (contratual) ou evento (extracontratual - Súmula 54 STJ)\n\n## PARÂMETROS TJES\nNegativação: R$5k-15k | Fraude: R$5k-20k | Plano saúde: R$10k-30k\n\n## SÚMULAS PRIORITÁRIAS\n385, 388, 479, 469/STJ\n\n## MARCADORES\n[REVISAR: motivo] para incertezas.`,\n\n  agent_possessorias: `# AGENTE JUDICIAL: POSSESSÓRIAS\n\n## FUNÇÃO\nGerar minutas em ações possessórias e usucapião para Vara Cível do TJES.\n\n## REGRAS OBRIGATÓRIAS\n1. Estrutura: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO\n2. Requisitos art. 561 CPC (reintegração): posse anterior, esbulho, data, perda\n3. Liminar: força nova (<ano e dia) - art. 562 CPC\n4. Caráter dúplice (art. 556 CPC)\n5. Conflitos coletivos: intimar MP e Defensoria (art. 554 CPC)\n\n## USUCAPIÃO - PRAZOS\nExtraordinária: 15a (10a c/ moradia) | Ordinária: 10a (5a c/ registro)\nEspecial urbana: 5a até 250m² | Rural: 5a até 50ha | Familiar: 2a\n\n## MARCADORES\n[REVISAR: motivo] para incertezas.`,\n\n  agent_locacao: `# AGENTE JUDICIAL: LOCAÇÃO\n\n## FUNÇÃO\nGerar minutas em ações locatícias (Lei 8.245/91) para Vara Cível do TJES.\n\n## REGRAS OBRIGATÓRIAS\n1. Estrutura: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO\n2. Despejo falta pgto: purgação até contestação (art. 62)\n3. Denúncia vazia: só contratos ≥30 meses (art. 46) ou hipóteses art. 47\n4. Renovatória: 5 requisitos cumulativos (art. 51)\n5. Prazo desocupação: 15 dias com caução de 3 aluguéis (art. 64)\n\n## PRAZOS DECADENCIAIS\nRenovatória: 1 ano a 6 meses antes do término (art. 51, §5º)\n\n## PURGAÇÃO DA MORA\nVedada se usada nos últimos 24 meses (art. 62, parágrafo único)\n\n## MARCADORES\n[REVISAR: motivo] para incertezas.`,\n\n  agent_execucao: `# AGENTE JUDICIAL: EXECUÇÃO\n\n## FUNÇÃO\nGerar minutas em execuções e cumprimento de sentença para Vara Cível do TJES.\n\n## REGRAS OBRIGATÓRIAS\n1. Estrutura: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO\n2. Requisitos título: certeza, liquidez, exigibilidade (art. 786 CPC)\n3. Cumprimento: 15 dias para pagar, multa 10% + honorários 10% (art. 523)\n4. Prescrição intercorrente: 1 ano suspensão + prazo prescricional (art. 921, §4º)\n5. Embargos: efeito suspensivo não automático (art. 919)\n\n## PRESCRIÇÃO\nCheque: 6m | Nota promissória: 3a | Duplicata: 3a\n\n## TÍTULOS EXTRAJUDICIAIS\nArt. 784 CPC - cheque, NP, duplicata, escritura, confissão de dívida\n\n## MARCADORES\n[REVISAR: motivo] para incertezas.`,\n\n  agent_saude_cobertura: `# AGENTE SAÚDE - COBERTURA\n## Vara Cível - TJES\n\n### PAPEL\nAgente especializado em negativa de cobertura de planos de saúde.\n\n### COMPETÊNCIAS\n- Negativa de autorização de procedimentos/cirurgias\n- Recusa de cobertura de medicamentos/tratamentos\n- Negativa de home care, UTI, próteses\n- Negativa de tratamentos oncológicos\n\n### BASE JURISPRUDENCIAL\n- Súmula 302/STJ: Abusiva limitação de internação\n- Súmula 469/STJ: CDC aplica-se a planos de saúde\n- Súmula 597/STJ: Carência máx 24h urgência\n- Súmula 608/STJ: CDC aplica-se exceto autogestão\n- Súmula 609/STJ: Preexistência ilícita sem exames\n- Lei 9.656/98 arts. 10, 12, 35-C\n\n### PARÂMETROS DANOS MORAIS\n- Negativa simples: R$ 5.000-10.000\n- Com agravamento: R$ 10.000-20.000\n- Oncológico/UTI: R$ 20.000-30.000\n- Óbito: R$ 50.000-100.000\n\n### ESTRUTURA\nI - RELATÓRIO / II - FUNDAMENTAÇÃO / III - DISPOSITIVO\nMarcar [REVISAR] em CID, procedimento, valor dano moral`,\n\n  agent_saude_contratual: `# AGENTE SAÚDE - CONTRATUAL\n## Vara Cível - TJES\n\n### PAPEL\nAgente especializado em questões contratuais de planos de saúde.\n\n### COMPETÊNCIAS\n- Reajuste abusivo por faixa etária\n- Reajuste anual acima do índice ANS\n- Rescisão unilateral do contrato\n- Carência e portabilidade\n- Manutenção aposentados/demitidos\n\n### BASE JURISPRUDENCIAL\n- Súmulas 469, 608/STJ\n- Tema 952/STJ: Reajuste etário válido se previsto\n- Art. 15 Lei 9.656/98: Vedado reajuste >60 anos com +10 anos plano\n- Art. 13 Lei 9.656/98: Vedada rescisão unilateral\n- RN ANS 438/2018: Portabilidade\n\n### PARÂMETROS DANOS MORAIS\n- Rescisão indevida: R$ 10.000-20.000\n- Reajuste abusivo: R$ 8.000-15.000\n- Recusa portabilidade: R$ 5.000-10.000\n\n### ESTRUTURA\nI - RELATÓRIO / II - FUNDAMENTAÇÃO / III - DISPOSITIVO`,\n\n  agent_transito: `# AGENTE TRÂNSITO\n## Vara Cível - TJES\n\n### PAPEL\nAgente especializado em responsabilidade civil por acidentes de trânsito.\n\n### COMPETÊNCIAS\n- Colisão de veículos\n- Atropelamento\n- Danos materiais, morais, estéticos\n- Pensionamento por incapacidade\n- Ações contra seguradoras (DPVAT)\n\n### BASE JURISPRUDENCIAL\n- CC arts. 186, 927, 932, 944, 950\n- CTB arts. 29, 34, 44, 215\n- Súmula 246/STJ: DPVAT deduzido\n- Súmula 257/STJ: DPVAT pago mesmo sem prêmio\n- Súmula 387/STJ: Dano estético cumulável\n- Súmula 54/STJ: Juros do evento\n\n### PARÂMETROS DANOS\nMorais: Lesão leve R$3-8k, média R$8-15k, grave R$15-30k\nIncapacidade: parcial R$30-80k, total R$80-200k\nMorte: R$100-300k\nEstéticos: cicatriz R$5-40k, deformidade R$40-150k\n\n### ESTRUTURA\nI - RELATÓRIO / II - FUNDAMENTAÇÃO / III - DISPOSITIVO`,\n\n  agent_usucapiao: `# AGENTE USUCAPIÃO\n## Vara Cível - TJES\n\n### PAPEL\nAgente especializado em ações de usucapião em todas as modalidades.\n\n### COMPETÊNCIAS\n- Extraordinária (15 anos) / reduzida (10 anos)\n- Ordinária (10 anos) / reduzida (5 anos)\n- Especial urbana (5 anos, 250m²)\n- Especial rural (5 anos, 50ha)\n- Coletiva, Familiar\n\n### BASE JURISPRUDENCIAL\n- CC arts. 1.238-1.244\n- CF arts. 183, 191\n- Estatuto da Cidade art. 10\n- Súmula 237/STJ: Pode arguir em defesa\n- Art. 183, §3º CF: Bem público vedado\n\n### REQUISITOS\n- Posse mansa, pacífica, contínua\n- Animus domini\n- Prazo conforme modalidade\n- Intimações: União, Estado, Município, MP\n\n### ESTRUTURA\nI - RELATÓRIO / II - FUNDAMENTAÇÃO / III - DISPOSITIVO\nMandado para registro no RI`,\n\n  agent_incorporacao: `# AGENTE INCORPORAÇÃO\n## Vara Cível - TJES\n\n### PAPEL\nAgente especializado em ações contra incorporadoras por atraso na entrega.\n\n### COMPETÊNCIAS\n- Atraso na entrega do imóvel\n- Lucros cessantes (aluguéis)\n- Defeitos construtivos\n- Distrato e devolução de valores\n- Comissão de corretagem\n\n### BASE JURISPRUDENCIAL\n- Tema 996/STJ: Atraso gera lucros cessantes + devolução corretagem\n- Tema 970/STJ: Lucros cessantes durante mora\n- Súmula 543/STJ: Resolução = devolução integral se culpa vendedor\n- Lei 4.591/64 art. 43: Tolerância 180 dias\n- Lei 13.786/2018: Distrato (retenção 25-50%)\n\n### PARÂMETROS\nLucros cessantes: 0,5-1% valor imóvel/mês\nDanos morais: até 6m R$5-10k, 6-12m R$10-20k, >12m R$20-40k\n\n### ESTRUTURA\nI - RELATÓRIO / II - FUNDAMENTAÇÃO / III - DISPOSITIVO`,\n\n  \n  agent_mandado_seguranca: `# AGENTE JUDICIAL: MANDADO DE SEGURANCA\n## Vara de Fazenda Publica - TJES\n\n### PAPEL\nAgente especializado em mandados de seguranca.\n\n### COMPETENCIAS\n- MS Individual e Coletivo\n- Liminar em MS\n- Servidor publico: concurso, nomeacao\n- Licitacao: habilitacao, desclassificacao\n- Tributario: compensacao\n\n### BASE JURISPRUDENCIAL\n- Lei 12.016/2009\n- Sumulas 266, 267, 271, 512, 625/STF\n- Sumulas 105, 213, 333/STJ\n- Prazo decadencial: 120 dias\n\n### PARAMETROS\n- Sem honorarios (Sumula 512/STF)\n- Reexame necessario obrigatorio\n- Liminar: fumus + periculum + reversibilidade\n\n### ESTRUTURA\nI - RELATORIO / II - FUNDAMENTACAO / III - DISPOSITIVO`,\n\n  agent_saude_medicamentos: `# AGENTE JUDICIAL: SAUDE/MEDICAMENTOS\n## Vara de Fazenda Publica - TJES\n\n### PAPEL\nAgente especializado em acoes de saude contra o Poder Publico.\n\n### COMPETENCIAS\n- Fornecimento de medicamentos (SUS e alto custo)\n- Tratamentos medicos (cirurgias, terapias)\n- Insumos e equipamentos\n- Leitos de UTI\n\n### BASE JURISPRUDENCIAL\n- CF art. 196 (direito a saude)\n- Lei 8.080/1990 (Lei do SUS)\n- Tema 6/STF: Responsabilidade solidaria\n- Tema 500/STF: Medicamentos sem ANVISA\n- Tema 793/STF: Legitimidade passiva solidaria\n- Tema 1234/STF: Medicamentos fora lista SUS\n\n### PARAMETROS\n- Multa medicamento: R$500-1.000/dia\n- Multa UTI/cirurgia: R$5.000-10.000/dia\n- Prazo medicamento: 15-30 dias\n- Consultar NAT-JUS quando indicado\n\n### ESTRUTURA\nI - RELATORIO / II - FUNDAMENTACAO / III - DISPOSITIVO`,\n\n  agent_generico: `# AGENTE JUDICIAL: GENÉRICO\n\n## FUNÇÃO\nGerar minutas para casos não especializados. PRIORIZAR SEGURANÇA.\n\n## REGRAS OBRIGATÓRIAS\n1. Estrutura: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO\n2. Fundamentar com base legal expressa\n3. Usar ABUNDANTEMENTE marcadores [REVISAR]\n4. Sinalizar classificação incerta\n5. Honorários: 10-20% sobre valor da causa/condenação\n\n## MARCADORES OBRIGATÓRIOS\n- [REVISAR: fundamentação] - base legal incerta\n- [REVISAR: valores] - quantificação a verificar\n- [REVISAR: classificação] - tipo de ação a reavaliar\n- [REVISAR: jurisprudência] - precedentes a confirmar\n- [REVISAR: pedidos] - verificar se todos foram analisados\n\n## OUTPUT\nMinuta conservadora com múltiplos pontos de revisão humana.`\n\n};\n\n// ============================================================================\n// SELECIONAR PROMPT E CONSTRUIR HUMAN MESSAGE\n// ============================================================================\n\nconst systemPrompt = PROMPTS[agente] || PROMPTS.agent_generico;\n\n// Construir human message estruturado com Context Buffer\nconst humanMessage = `## PROCESSO\n\n**Número:** ${ctx.processo.numero}\n**Classe:** ${ctx.processo.classe || 'Não informada'}\n**Assunto:** ${ctx.processo.assunto || 'Não informado'}\n**Valor da Causa:** ${ctx.processo.valor_causa ? 'R$ ' + Number(ctx.processo.valor_causa).toLocaleString('pt-BR', {minimumFractionDigits: 2}) : 'Não informado'}\n**Rito:** ${ctx.processo.rito}\n\n---\n\n## ANÁLISE FIRAC\n\n### FATOS\n${ctx.firac.fatos || '[Não fornecido - REVISAR]'}\n\n### QUESTÕES JURÍDICAS\n${ctx.firac.questoes || '[Não fornecido - REVISAR]'}\n\n### PEDIDOS\n${ctx.processo.pedidos || '[Não fornecido - REVISAR]'}\n\n### REGRAS APLICÁVEIS\n${ctx.firac.regras || '[Identificar na análise]'}\n\n### APLICAÇÃO AO CASO\n${ctx.firac.aplicacao || '[Desenvolver na fundamentação]'}\n\n### CONCLUSÃO PRELIMINAR\n${ctx.firac.conclusao || '[Definir no dispositivo]'}\n\n---\n\n## ENTIDADES IDENTIFICADAS (via IA)\n\n- **Leis citadas:** ${ctx.entidades.leis.length > 0 ? ctx.entidades.leis.join(', ') : 'Nenhuma identificada automaticamente'}\n- **Súmulas aplicáveis:** ${ctx.entidades.sumulas.length > 0 ? ctx.entidades.sumulas.join(', ') : 'Verificar conforme o caso'}\n- **Valores monetários:** ${ctx.entidades.valores.length > 0 ? ctx.entidades.valores.join(', ') : 'Não especificados'}\n- **Datas relevantes:** ${ctx.entidades.datas.length > 0 ? ctx.entidades.datas.join(', ') : 'Não identificadas'}\n- **Partes:** ${ctx.entidades.partes.length > 0 ? ctx.entidades.partes.join(' x ') : 'Ver processo'}\n\n---\n\n## TAREFA\n\nGere a **minuta completa de sentença/decisão** para este caso.\n\n**Classificação automática:** ${ctx.classificacao.categoria.toUpperCase()} (confiança: ${(ctx.classificacao.confianca * 100).toFixed(0)}%)\n${ctx.classificacao.subcategoria ? '**Subcategoria:** ' + ctx.classificacao.subcategoria : ''}\n\n**Siga rigorosamente a estrutura:**\n- I - RELATÓRIO (síntese objetiva)\n- II - FUNDAMENTAÇÃO (preliminares + mérito + jurisprudência)\n- III - DISPOSITIVO (julgamento + sucumbência)\n\n**Use marcadores [REVISAR: motivo] para qualquer ponto de incerteza.**`;\n\nreturn [{\n  json: {\n    system_prompt: systemPrompt,\n    human_message: humanMessage,\n    agente: agente,\n    context: ctx\n  }\n}];"
+      },
+      "id": "set-prompts",
+      "name": "Set System Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2620,
+        400
+      ],
+      "notes": "Prompts otimizados (~380 tokens) + Human Message estruturado"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "rules": [
+            {
+              "value": "agent_bancario",
+              "outputKey": "Bancário"
+            },
+            {
+              "value": "agent_consumidor",
+              "outputKey": "Consumidor"
+            },
+            {
+              "value": "agent_execucao",
+              "outputKey": "Execução"
+            },
+            {
+              "value": "agent_locacao",
+              "outputKey": "Locação"
+            },
+            {
+              "value": "agent_possessorias",
+              "outputKey": "Possessórias"
+            },
+            {
+              "value": "agent_saude_cobertura",
+              "outputKey": "Saúde - Cobertura"
+            },
+            {
+              "value": "agent_saude_contratual",
+              "outputKey": "Saúde - Contratual"
+            },
+            {
+              "value": "agent_transito",
+              "outputKey": "Trânsito"
+            },
+            {
+              "value": "agent_usucapiao",
+              "outputKey": "Usucapião"
+            },
+            {
+              "value": "agent_incorporacao",
+              "outputKey": "Incorporação"
+            },
+            {
+              "value": "agent_mandado_seguranca",
+              "outputKey": "Mandado de Seguranca"
+            },
+            {
+              "value": "agent_saude_medicamentos",
+              "outputKey": "Saude - Medicamentos"
+            },
+            {
+              "value": "agent_generico",
+              "outputKey": "Genérico"
+            }
+          ],
+          "fallbackOutput": {
+            "mode": "extra"
+          }
+        },
+        "dataPropertyName": "={{ $json.classificacao?.agente }}"
+      },
+      "id": "switch-agentes",
+      "name": "Switch: Seleciona Agente",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2840,
+        400
+      ],
+      "notes": "v2.6: Expandido para 13 agentes + fallback. Inclui Mandado de Seguranca e Saude/Medicamentos"
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ $json.human_message }}",
+        "options": {
+          "systemMessage": "={{ $json.system_prompt }}\\n\\n## FERRAMENTAS DISPONÍVEIS\\n- Você pode usar a ferramenta `busca_jurisprudencia_stj` para encontrar precedentes e acórdãos do STJ. Use-a para validar sua linha de raciocínio e para fundamentar a minuta com jurisprudência relevante e atualizada."
+        },
+        "tools": {
+          "values": [
+            {
+              "tool": "webhook",
+              "name": "busca_jurisprudencia_stj",
+              "description": "Busca jurisprudência relevante do STJ (Superior Tribunal de Justiça) por similaridade semântica. Use para encontrar precedentes, teses e acórdãos sobre um tema específico.",
+              "webhook": {
+                "method": "POST",
+                "url": "={{ $env.N8N_WEBHOOK_URL + 'stj-search' }}",
+                "body": "{\n  \"query\": \"{{$args.query}}\",\n  \"top_k\": {{$args.top_k || 3}},\n  \"tipo\": \"{{$args.tipo || 'todos'}}\"\n}",
+                "json": true
+              },
+              "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"query\": {\n      \"type\": \"string\",\n      \"description\": \"A pergunta ou os termos de busca para encontrar jurisprudência. Deve ser detalhado e específico.\"\n    },\n    \"top_k\": {\n      \"type\": \"number\",\n      \"description\": \"Número de resultados a retornar. Padrão é 3.\"\n    },\n    \"tipo\": {\n      \"type\": \"string\",\n      \"description\": \"Filtra o tipo de documento. Pode ser 'precedente_qualificado', 'acordao' ou 'todos'. Padrão é 'todos'.\"\n    }\n  },\n  \"required\": [\"query\"]\n}"
+            }
+          ]
+        }
+      },
+      "id": "agent-bancario",
+      "name": "AI Agent: Bancário",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        3100,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ $json.human_message }}",
+        "options": {
+          "systemMessage": "={{ $json.system_prompt }}\\n\\n## FERRAMENTAS DISPONÍVEIS\\n- Você pode usar a ferramenta `busca_jurisprudencia_stj` para encontrar precedentes e acórdãos do STJ. Use-a para validar sua linha de raciocínio e para fundamentar a minuta com jurisprudência relevante e atualizada."
+        },
+        "tools": {
+          "values": [
+            {
+              "tool": "webhook",
+              "name": "busca_jurisprudencia_stj",
+              "description": "Busca jurisprudência relevante do STJ (Superior Tribunal de Justiça) por similaridade semântica. Use para encontrar precedentes, teses e acórdãos sobre um tema específico.",
+              "webhook": {
+                "method": "POST",
+                "url": "={{ $env.N8N_WEBHOOK_URL + 'stj-search' }}",
+                "body": "{\n  \"query\": \"{{$args.query}}\",\n  \"top_k\": {{$args.top_k || 3}},\n  \"tipo\": \"{{$args.tipo || 'todos'}}\"\n}",
+                "json": true
+              },
+              "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"query\": {\n      \"type\": \"string\",\n      \"description\": \"A pergunta ou os termos de busca para encontrar jurisprudência. Deve ser detalhado e específico.\"\n    },\n    \"top_k\": {\n      \"type\": \"number\",\n      \"description\": \"Número de resultados a retornar. Padrão é 3.\"\n    },\n    \"tipo\": {\n      \"type\": \"string\",\n      \"description\": \"Filtra o tipo de documento. Pode ser 'precedente_qualificado', 'acordao' ou 'todos'. Padrão é 'todos'.\"\n    }\n  },\n  \"required\": [\"query\"]\n}"
+            }
+          ]
+        }
+      },
+      "id": "agent-consumidor",
+      "name": "AI Agent: Consumidor",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        3100,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ $json.human_message }}",
+        "options": {
+          "systemMessage": "={{ $json.system_prompt }}\\n\\n## FERRAMENTAS DISPONÍVEIS\\n- Você pode usar a ferramenta `busca_jurisprudencia_stj` para encontrar precedentes e acórdãos do STJ. Use-a para validar sua linha de raciocínio e para fundamentar a minuta com jurisprudência relevante e atualizada."
+        },
+        "tools": {
+          "values": [
+            {
+              "tool": "webhook",
+              "name": "busca_jurisprudencia_stj",
+              "description": "Busca jurisprudência relevante do STJ (Superior Tribunal de Justiça) por similaridade semântica. Use para encontrar precedentes, teses e acórdãos sobre um tema específico.",
+              "webhook": {
+                "method": "POST",
+                "url": "={{ $env.N8N_WEBHOOK_URL + 'stj-search' }}",
+                "body": "{\n  \"query\": \"{{$args.query}}\",\n  \"top_k\": {{$args.top_k || 3}},\n  \"tipo\": \"{{$args.tipo || 'todos'}}\"\n}",
+                "json": true
+              },
+              "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"query\": {\n      \"type\": \"string\",\n      \"description\": \"A pergunta ou os termos de busca para encontrar jurisprudência. Deve ser detalhado e específico.\"\n    },\n    \"top_k\": {\n      \"type\": \"number\",\n      \"description\": \"Número de resultados a retornar. Padrão é 3.\"\n    },\n    \"tipo\": {\n      \"type\": \"string\",\n      \"description\": \"Filtra o tipo de documento. Pode ser 'precedente_qualificado', 'acordao' ou 'todos'. Padrão é 'todos'.\"\n    }\n  },\n  \"required\": [\"query\"]\n}"
+            }
+          ]
+        }
+      },
+      "id": "agent-possessorias",
+      "name": "AI Agent: Possessórias",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        3100,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ $json.human_message }}",
+        "options": {
+          "systemMessage": "={{ $json.system_prompt }}\\n\\n## FERRAMENTAS DISPONÍVEIS\\n- Você pode usar a ferramenta `busca_jurisprudencia_stj` para encontrar precedentes e acórdãos do STJ. Use-a para validar sua linha de raciocínio e para fundamentar a minuta com jurisprudência relevante e atualizada."
+        },
+        "tools": {
+          "values": [
+            {
+              "tool": "webhook",
+              "name": "busca_jurisprudencia_stj",
+              "description": "Busca jurisprudência relevante do STJ (Superior Tribunal de Justiça) por similaridade semântica. Use para encontrar precedentes, teses e acórdãos sobre um tema específico.",
+              "webhook": {
+                "method": "POST",
+                "url": "={{ $env.N8N_WEBHOOK_URL + 'stj-search' }}",
+                "body": "{\n  \"query\": \"{{$args.query}}\",\n  \"top_k\": {{$args.top_k || 3}},\n  \"tipo\": \"{{$args.tipo || 'todos'}}\"\n}",
+                "json": true
+              },
+              "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"query\": {\n      \"type\": \"string\",\n      \"description\": \"A pergunta ou os termos de busca para encontrar jurisprudência. Deve ser detalhado e específico.\"\n    },\n    \"top_k\": {\n      \"type\": \"number\",\n      \"description\": \"Número de resultados a retornar. Padrão é 3.\"\n    },\n    \"tipo\": {\n      \"type\": \"string\",\n      \"description\": \"Filtra o tipo de documento. Pode ser 'precedente_qualificado', 'acordao' ou 'todos'. Padrão é 'todos'.\"\n    }\n  },\n  \"required\": [\"query\"]\n}"
+            }
+          ]
+        }
+      },
+      "id": "agent-locacao",
+      "name": "AI Agent: Locação",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        3100,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ $json.human_message }}",
+        "options": {
+          "systemMessage": "={{ $json.system_prompt }}\\n\\n## FERRAMENTAS DISPONÍVEIS\\n- Você pode usar a ferramenta `busca_jurisprudencia_stj` para encontrar precedentes e acórdãos do STJ. Use-a para validar sua linha de raciocínio e para fundamentar a minuta com jurisprudência relevante e atualizada."
+        },
+        "tools": {
+          "values": [
+            {
+              "tool": "webhook",
+              "name": "busca_jurisprudencia_stj",
+              "description": "Busca jurisprudência relevante do STJ (Superior Tribunal de Justiça) por similaridade semântica. Use para encontrar precedentes, teses e acórdãos sobre um tema específico.",
+              "webhook": {
+                "method": "POST",
+                "url": "={{ $env.N8N_WEBHOOK_URL + 'stj-search' }}",
+                "body": "{\n  \"query\": \"{{$args.query}}\",\n  \"top_k\": {{$args.top_k || 3}},\n  \"tipo\": \"{{$args.tipo || 'todos'}}\"\n}",
+                "json": true
+              },
+              "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"query\": {\n      \"type\": \"string\",\n      \"description\": \"A pergunta ou os termos de busca para encontrar jurisprudência. Deve ser detalhado e específico.\"\n    },\n    \"top_k\": {\n      \"type\": \"number\",\n      \"description\": \"Número de resultados a retornar. Padrão é 3.\"\n    },\n    \"tipo\": {\n      \"type\": \"string\",\n      \"description\": \"Filtra o tipo de documento. Pode ser 'precedente_qualificado', 'acordao' ou 'todos'. Padrão é 'todos'.\"\n    }\n  },\n  \"required\": [\"query\"]\n}"
+            }
+          ]
+        }
+      },
+      "id": "agent-execucao",
+      "name": "AI Agent: Execução",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        3100,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ $json.human_message }}",
+        "options": {
+          "systemMessage": "={{ $json.system_prompt }}\\n\\n## FERRAMENTAS DISPONÍVEIS\\n- Você pode usar a ferramenta `busca_jurisprudencia_stj` para encontrar precedentes e acórdãos do STJ. Use-a para validar sua linha de raciocínio e para fundamentar a minuta com jurisprudência relevante e atualizada."
+        },
+        "tools": {
+          "values": [
+            {
+              "tool": "webhook",
+              "name": "busca_jurisprudencia_stj",
+              "description": "Busca jurisprudência relevante do STJ (Superior Tribunal de Justiça) por similaridade semântica. Use para encontrar precedentes, teses e acórdãos sobre um tema específico.",
+              "webhook": {
+                "method": "POST",
+                "url": "={{ $env.N8N_WEBHOOK_URL + 'stj-search' }}",
+                "body": "{\n  \"query\": \"{{$args.query}}\",\n  \"top_k\": {{$args.top_k || 3}},\n  \"tipo\": \"{{$args.tipo || 'todos'}}\"\n}",
+                "json": true
+              },
+              "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"query\": {\n      \"type\": \"string\",\n      \"description\": \"A pergunta ou os termos de busca para encontrar jurisprudência. Deve ser detalhado e específico.\"\n    },\n    \"top_k\": {\n      \"type\": \"number\",\n      \"description\": \"Número de resultados a retornar. Padrão é 3.\"\n    },\n    \"tipo\": {\n      \"type\": \"string\",\n      \"description\": \"Filtra o tipo de documento. Pode ser 'precedente_qualificado', 'acordao' ou 'todos'. Padrão é 'todos'.\"\n    }\n  },\n  \"required\": [\"query\"]\n}"
+            }
+          ]
+        }
+      },
+      "id": "agent-generico",
+      "name": "AI Agent: Genérico",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        3100,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": {
+          "temperature": 0.3,
+          "maxTokensToSample": 8000
+        }
+      },
+      "id": "llm-bancario",
+      "name": "Claude: Bancário",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        2920,
+        100
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIALS_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": {
+          "temperature": 0.3,
+          "maxTokensToSample": 8000
+        }
+      },
+      "id": "llm-consumidor",
+      "name": "Claude: Consumidor",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        2920,
+        220
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIALS_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": {
+          "temperature": 0.3,
+          "maxTokensToSample": 8000
+        }
+      },
+      "id": "llm-possessorias",
+      "name": "Claude: Possessórias",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        2920,
+        340
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIALS_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": {
+          "temperature": 0.3,
+          "maxTokensToSample": 8000
+        }
+      },
+      "id": "llm-locacao",
+      "name": "Claude: Locação",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        2920,
+        460
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIALS_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": {
+          "temperature": 0.3,
+          "maxTokensToSample": 8000
+        }
+      },
+      "id": "llm-execucao",
+      "name": "Claude: Execução",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        2920,
+        580
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIALS_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": {
+          "temperature": 0.4,
+          "maxTokensToSample": 8000
+        }
+      },
+      "id": "llm-generico",
+      "name": "Claude: Genérico",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        2920,
+        700
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIALS_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ $json.human_message }}",
+        "options": {
+          "systemMessage": "={{ $json.system_prompt }}\\n\\n## FERRAMENTAS DISPONÍVEIS\\n- Você pode usar a ferramenta `busca_jurisprudencia_stj` para encontrar precedentes e acórdãos do STJ. Use-a para validar sua linha de raciocínio e para fundamentar a minuta com jurisprudência relevante e atualizada."
+        },
+        "tools": {
+          "values": [
+            {
+              "tool": "webhook",
+              "name": "busca_jurisprudencia_stj",
+              "description": "Busca jurisprudência relevante do STJ (Superior Tribunal de Justiça) por similaridade semântica. Use para encontrar precedentes, teses e acórdãos sobre um tema específico.",
+              "webhook": {
+                "method": "POST",
+                "url": "={{ $env.N8N_WEBHOOK_URL + 'stj-search' }}",
+                "body": "{\n  \"query\": \"{{$args.query}}\",\n  \"top_k\": {{$args.top_k || 3}},\n  \"tipo\": \"{{$args.tipo || 'todos'}}\"\n}",
+                "json": true
+              },
+              "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"query\": {\n      \"type\": \"string\",\n      \"description\": \"A pergunta ou os termos de busca para encontrar jurisprudência. Deve ser detalhado e específico.\"\n    },\n    \"top_k\": {\n      \"type\": \"number\",\n      \"description\": \"Número de resultados a retornar. Padrão é 3.\"\n    },\n    \"tipo\": {\n      \"type\": \"string\",\n      \"description\": \"Filtra o tipo de documento. Pode ser 'precedente_qualificado', 'acordao' ou 'todos'. Padrão é 'todos'.\"\n    }\n  },\n  \"required\": [\"query\"]\n}"
+            }
+          ]
+        }
+      },
+      "id": "saude_cobertura_agent",
+      "name": "AI Agent: Saúde Cobertura",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        3100,
+        820
+      ]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": {
+          "temperature": 0.3,
+          "maxTokensToSample": 8000
+        }
+      },
+      "id": "claude_saude_cobertura",
+      "name": "Claude: Saúde Cobertura",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        2920,
+        820
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIALS_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ $json.human_message }}",
+        "options": {
+          "systemMessage": "={{ $json.system_prompt }}\\n\\n## FERRAMENTAS DISPONÍVEIS\\n- Você pode usar a ferramenta `busca_jurisprudencia_stj` para encontrar precedentes e acórdãos do STJ. Use-a para validar sua linha de raciocínio e para fundamentar a minuta com jurisprudência relevante e atualizada."
+        },
+        "tools": {
+          "values": [
+            {
+              "tool": "webhook",
+              "name": "busca_jurisprudencia_stj",
+              "description": "Busca jurisprudência relevante do STJ (Superior Tribunal de Justiça) por similaridade semântica. Use para encontrar precedentes, teses e acórdãos sobre um tema específico.",
+              "webhook": {
+                "method": "POST",
+                "url": "={{ $env.N8N_WEBHOOK_URL + 'stj-search' }}",
+                "body": "{\n  \"query\": \"{{$args.query}}\",\n  \"top_k\": {{$args.top_k || 3}},\n  \"tipo\": \"{{$args.tipo || 'todos'}}\"\n}",
+                "json": true
+              },
+              "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"query\": {\n      \"type\": \"string\",\n      \"description\": \"A pergunta ou os termos de busca para encontrar jurisprudência. Deve ser detalhado e específico.\"\n    },\n    \"top_k\": {\n      \"type\": \"number\",\n      \"description\": \"Número de resultados a retornar. Padrão é 3.\"\n    },\n    \"tipo\": {\n      \"type\": \"string\",\n      \"description\": \"Filtra o tipo de documento. Pode ser 'precedente_qualificado', 'acordao' ou 'todos'. Padrão é 'todos'.\"\n    }\n  },\n  \"required\": [\"query\"]\n}"
+            }
+          ]
+        }
+      },
+      "id": "saude_contratual_agent",
+      "name": "AI Agent: Saúde Contratual",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        3100,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": {
+          "temperature": 0.3,
+          "maxTokensToSample": 8000
+        }
+      },
+      "id": "claude_saude_contratual",
+      "name": "Claude: Saúde Contratual",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        2920,
+        940
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIALS_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ $json.human_message }}",
+        "options": {
+          "systemMessage": "={{ $json.system_prompt }}\\n\\n## FERRAMENTAS DISPONÍVEIS\\n- Você pode usar a ferramenta `busca_jurisprudencia_stj` para encontrar precedentes e acórdãos do STJ. Use-a para validar sua linha de raciocínio e para fundamentar a minuta com jurisprudência relevante e atualizada."
+        },
+        "tools": {
+          "values": [
+            {
+              "tool": "webhook",
+              "name": "busca_jurisprudencia_stj",
+              "description": "Busca jurisprudência relevante do STJ (Superior Tribunal de Justiça) por similaridade semântica. Use para encontrar precedentes, teses e acórdãos sobre um tema específico.",
+              "webhook": {
+                "method": "POST",
+                "url": "={{ $env.N8N_WEBHOOK_URL + 'stj-search' }}",
+                "body": "{\n  \"query\": \"{{$args.query}}\",\n  \"top_k\": {{$args.top_k || 3}},\n  \"tipo\": \"{{$args.tipo || 'todos'}}\"\n}",
+                "json": true
+              },
+              "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"query\": {\n      \"type\": \"string\",\n      \"description\": \"A pergunta ou os termos de busca para encontrar jurisprudência. Deve ser detalhado e específico.\"\n    },\n    \"top_k\": {\n      \"type\": \"number\",\n      \"description\": \"Número de resultados a retornar. Padrão é 3.\"\n    },\n    \"tipo\": {\n      \"type\": \"string\",\n      \"description\": \"Filtra o tipo de documento. Pode ser 'precedente_qualificado', 'acordao' ou 'todos'. Padrão é 'todos'.\"\n    }\n  },\n  \"required\": [\"query\"]\n}"
+            }
+          ]
+        }
+      },
+      "id": "transito_agent",
+      "name": "AI Agent: Trânsito",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        3100,
+        1060
+      ]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": {
+          "temperature": 0.3,
+          "maxTokensToSample": 8000
+        }
+      },
+      "id": "claude_transito",
+      "name": "Claude: Trânsito",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        2920,
+        1060
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIALS_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ $json.human_message }}",
+        "options": {
+          "systemMessage": "={{ $json.system_prompt }}\\n\\n## FERRAMENTAS DISPONÍVEIS\\n- Você pode usar a ferramenta `busca_jurisprudencia_stj` para encontrar precedentes e acórdãos do STJ. Use-a para validar sua linha de raciocínio e para fundamentar a minuta com jurisprudência relevante e atualizada."
+        },
+        "tools": {
+          "values": [
+            {
+              "tool": "webhook",
+              "name": "busca_jurisprudencia_stj",
+              "description": "Busca jurisprudência relevante do STJ (Superior Tribunal de Justiça) por similaridade semântica. Use para encontrar precedentes, teses e acórdãos sobre um tema específico.",
+              "webhook": {
+                "method": "POST",
+                "url": "={{ $env.N8N_WEBHOOK_URL + 'stj-search' }}",
+                "body": "{\n  \"query\": \"{{$args.query}}\",\n  \"top_k\": {{$args.top_k || 3}},\n  \"tipo\": \"{{$args.tipo || 'todos'}}\"\n}",
+                "json": true
+              },
+              "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"query\": {\n      \"type\": \"string\",\n      \"description\": \"A pergunta ou os termos de busca para encontrar jurisprudência. Deve ser detalhado e específico.\"\n    },\n    \"top_k\": {\n      \"type\": \"number\",\n      \"description\": \"Número de resultados a retornar. Padrão é 3.\"\n    },\n    \"tipo\": {\n      \"type\": \"string\",\n      \"description\": \"Filtra o tipo de documento. Pode ser 'precedente_qualificado', 'acordao' ou 'todos'. Padrão é 'todos'.\"\n    }\n  },\n  \"required\": [\"query\"]\n}"
+            }
+          ]
+        }
+      },
+      "id": "usucapiao_agent",
+      "name": "AI Agent: Usucapião",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        3100,
+        1180
+      ]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": {
+          "temperature": 0.3,
+          "maxTokensToSample": 8000
+        }
+      },
+      "id": "claude_usucapiao",
+      "name": "Claude: Usucapião",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        2920,
+        1180
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIALS_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ $json.human_message }}",
+        "options": {
+          "systemMessage": "={{ $json.system_prompt }}\\n\\n## FERRAMENTAS DISPONÍVEIS\\n- Você pode usar a ferramenta `busca_jurisprudencia_stj` para encontrar precedentes e acórdãos do STJ. Use-a para validar sua linha de raciocínio e para fundamentar a minuta com jurisprudência relevante e atualizada."
+        },
+        "tools": {
+          "values": [
+            {
+              "tool": "webhook",
+              "name": "busca_jurisprudencia_stj",
+              "description": "Busca jurisprudência relevante do STJ (Superior Tribunal de Justiça) por similaridade semântica. Use para encontrar precedentes, teses e acórdãos sobre um tema específico.",
+              "webhook": {
+                "method": "POST",
+                "url": "={{ $env.N8N_WEBHOOK_URL + 'stj-search' }}",
+                "body": "{\n  \"query\": \"{{$args.query}}\",\n  \"top_k\": {{$args.top_k || 3}},\n  \"tipo\": \"{{$args.tipo || 'todos'}}\"\n}",
+                "json": true
+              },
+              "schema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"query\": {\n      \"type\": \"string\",\n      \"description\": \"A pergunta ou os termos de busca para encontrar jurisprudência. Deve ser detalhado e específico.\"\n    },\n    \"top_k\": {\n      \"type\": \"number\",\n      \"description\": \"Número de resultados a retornar. Padrão é 3.\"\n    },\n    \"tipo\": {\n      \"type\": \"string\",\n      \"description\": \"Filtra o tipo de documento. Pode ser 'precedente_qualificado', 'acordao' ou 'todos'. Padrão é 'todos'.\"\n    }\n  },\n  \"required\": [\"query\"]\n}"
+            }
+          ]
+        }
+      },
+      "id": "incorporacao_agent",
+      "name": "AI Agent: Incorporação",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        3100,
+        1300
+      ]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": {
+          "temperature": 0.3,
+          "maxTokensToSample": 8000
+        }
+      },
+      "id": "claude_incorporacao",
+      "name": "Claude: Incorporação",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        2920,
+        1300
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIALS_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## 🤖 AGENTES v2.1\n\n**Mudanças:**\n- Cada agente tem seu próprio LLM node\n- System prompt otimizado (~380 tokens)\n- Human message com Context Buffer completo\n- Temperature: 0.3 (0.4 para genérico)\n\n**Modelos:**\n- Claude Sonnet 4 para geração\n- Gemini 2.5 Flash para router/QA",
+        "height": 240,
+        "width": 280
+      },
+      "id": "sticky-agentes",
+      "name": "📝 AGENTES",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3060,
+        820
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================================\n// PREPARAR OUTPUT DO AGENTE PARA QA\n// Lex Intelligentia Judiciário v2.1\n// ============================================================================\n\nconst agentOutput = $input.first().json;\nconst promptData = $('Set System Prompt').item.json;\n\n// Extrair minuta do output do agente\nconst minuta = agentOutput.output || agentOutput.text || agentOutput.response || '';\n\nreturn [{\n  json: {\n    minuta: minuta,\n    context: promptData.context,\n    agente: promptData.agente\n  }\n}];"
+      },
+      "id": "prepare-qa",
+      "name": "Prepare for QA",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3360,
+        400
+      ],
+      "notes": "Coleta output do agente e prepara para QA Check"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================================\n// QA CHECK ESTRUTURAL - Camada 1\n// Lex Intelligentia Judiciário v2.1 - FIXED\n// ============================================================================\n\nconst input = $input.first().json;\nconst minuta = input.minuta || '';\nconst ctx = input.context;\n\n// Normalize line endings (Windows -> Unix)\nconst normalizedMinuta = minuta.replace(/\\r\\n/g, '\\n').replace(/\\r/g, '\\n');\n\n// ============================================================================\n// VALIDAÇÕES ESTRUTURAIS (regex robusto)\n// ============================================================================\n\nconst validacoes = {\n  // Estrutura básica - múltiplos formatos aceitos\n  tem_relatorio: /(?:^|\\n)\\s*(?:I\\s*[-–.]\\s*|1[\\.)\\s]\\s*)?RELAT[ÓO]RIO/im.test(normalizedMinuta),\n  tem_fundamentacao: /(?:^|\\n)\\s*(?:II\\s*[-–.]\\s*|2[\\.)\\s]\\s*)?FUNDAMENTA[ÇC][ÃA]O/im.test(normalizedMinuta),\n  tem_dispositivo: /(?:^|\\n)\\s*(?:III\\s*[-–.]\\s*|3[\\.)\\s]\\s*)?DISPOSITIVO/im.test(normalizedMinuta),\n  \n  // Dispositivo completo\n  tem_julgamento: /JULGO\\s+(PROCEDENTE|IMPROCEDENTE|PARCIALMENTE\\s+PROCEDENTE|EXTINTO)/i.test(normalizedMinuta),\n  tem_fundamento_legal: /art(?:igo)?\\.?\\s*\\d+|lei\\s*(?:n[°º]?)?\\s*[\\d.]+/i.test(normalizedMinuta),\n  \n  // Sucumbência\n  tem_honorarios: /honor[áa]rios|art\\.?\\s*85/i.test(normalizedMinuta),\n  tem_custas: /custas/i.test(normalizedMinuta),\n  \n  // Qualidade\n  tamanho_minimo: normalizedMinuta.split(/\\s+/).length >= 150,\n  tamanho_maximo: normalizedMinuta.split(/\\s+/).length <= 3500,\n  sem_placeholders: !/\\[(?:NOME|DATA|VALOR|NÚMERO|XXX|INSERIR)\\]/i.test(normalizedMinuta)\n};\n\n// Contar marcadores de revisão\nconst marcadoresRevisar = (normalizedMinuta.match(/\\[REVISAR[:\\s][^\\]]+\\]/gi) || []).length;\n\n// ============================================================================\n// CÁLCULO DO SCORE ESTRUTURAL\n// ============================================================================\n\nconst pesos = {\n  tem_relatorio: 15,\n  tem_fundamentacao: 20,\n  tem_dispositivo: 20,\n  tem_julgamento: 15,\n  tem_fundamento_legal: 10,\n  tem_honorarios: 7,\n  tem_custas: 5,\n  tamanho_minimo: 5,\n  tamanho_maximo: 2,\n  sem_placeholders: 1\n};\n\nlet scoreEstrutural = 0;\nlet maxScore = 0;\n\nfor (const [check, passou] of Object.entries(validacoes)) {\n  const peso = pesos[check] || 0;\n  maxScore += peso;\n  if (passou) scoreEstrutural += peso;\n}\n\nscoreEstrutural = Math.round((scoreEstrutural / maxScore) * 100);\n\n// Penalização por muitos marcadores [REVISAR]\nif (marcadoresRevisar > 5) {\n  scoreEstrutural = Math.max(0, scoreEstrutural - 10);\n}\n\n// ============================================================================\n// IDENTIFICAR FALHAS CRÍTICAS\n// ============================================================================\n\nconst falhasCriticas = [\n  !validacoes.tem_relatorio && 'RELATÓRIO ausente',\n  !validacoes.tem_fundamentacao && 'FUNDAMENTAÇÃO ausente',\n  !validacoes.tem_dispositivo && 'DISPOSITIVO ausente',\n  !validacoes.tem_julgamento && 'Julgamento não declarado'\n].filter(Boolean);\n\n// ============================================================================\n// OUTPUT\n// ============================================================================\n\nconst palavras = normalizedMinuta.split(/\\s+/).length;\n\nreturn [{\n  json: {\n    minuta,\n    context: ctx,\n    agente: input.agente,\n    qa_estrutural: {\n      score: scoreEstrutural,\n      validacoes,\n      falhas_criticas: falhasCriticas,\n      marcadores_revisar: marcadoresRevisar,\n      palavras\n    },\n    // Skip semântico se estrutura muito ruim\n    skip_semantico: scoreEstrutural < 50 || falhasCriticas.length >= 3\n  }\n}];"
+      },
+      "id": "qa-estrutural",
+      "name": "QA Estrutural",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3580,
+        400
+      ],
+      "notes": "Validação estrutural com regex robusto - FIXED Windows line endings"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "skip-check",
+              "leftValue": "={{ $json.skip_semantico }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if-skip-semantico",
+      "name": "IF: Executar QA Semântico?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3800,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  \"contents\": [{\n    \"parts\": [{\n      \"text\": `Você é um revisor judicial especializado. Avalie esta minuta de decisão/sentença.\n\n## CONTEXTO DO CASO\nCategoria: ${$json.context.classificacao.categoria}\nClasse processual: ${$json.context.processo.classe || 'Não informada'}\nAssunto: ${$json.context.processo.assunto || 'Não informado'}\n\n## MINUTA PARA AVALIAÇÃO\n${$json.minuta.substring(0, 6000)}\n\n## CRITÉRIOS DE AVALIAÇÃO\n\nAvalie e responda APENAS com JSON válido (sem markdown):\n{\n  \"coerencia_juridica\": {\n    \"score\": número de 0 a 100,\n    \"fundamentacao_adequada\": true ou false,\n    \"dispositivo_coerente\": true ou false,\n    \"observacoes\": \"string com observações\"\n  },\n  \"precisao_tecnica\": {\n    \"score\": número de 0 a 100,\n    \"leis_corretas\": true ou false,\n    \"sumulas_aplicaveis\": true ou false,\n    \"valores_razoaveis\": true ou false,\n    \"erros_encontrados\": [\"lista de erros se houver\"]\n  },\n  \"completude\": {\n    \"score\": número de 0 a 100,\n    \"pedidos_respondidos\": true ou false,\n    \"sucumbencia_completa\": true ou false,\n    \"itens_faltantes\": [\"lista de itens faltantes se houver\"]\n  },\n  \"score_geral\": número de 0 a 100,\n  \"aprovado\": true ou false,\n  \"recomendacoes\": [\"lista de melhorias prioritárias\"]\n}`\n    }]\n  }],\n  \"generationConfig\": {\n    \"temperature\": 0.1,\n    \"maxOutputTokens\": 1000,\n    \"responseMimeType\": \"application/json\"\n  }\n} }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "qa-semantico-gemini",
+      "name": "QA Semântico - Gemini",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4040,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GEMINI_CREDENTIALS_ID",
+          "name": "Gemini API Key"
+        }
+      },
+      "notes": "Validação semântica com Gemini 2.5 Flash"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================================\n// QA CONSOLIDADO - Merge dos Scores\n// Lex Intelligentia Judiciário v2.1 - FIXED\n// ============================================================================\n\n// Use $input.first() which always works regardless of which branch we came from\nconst inputData = $input.first().json;\n\n// Check if this is Gemini response (has candidates) or estrutural data (has qa_estrutural)\nlet estruturalData, geminiData, semantico;\n\nif (inputData.candidates) {\n  // Came from QA Semântico - Gemini path\n  // Need to get estrutural data from the IF node\n  geminiData = inputData;\n  estruturalData = $('IF: Executar QA Semântico?').item?.json || $('QA Estrutural').item?.json;\n} else if (inputData.qa_estrutural) {\n  // Came from skip semantic path (direct from IF)\n  estruturalData = inputData;\n  geminiData = null;\n} else {\n  // Fallback - try to get from previous nodes\n  estruturalData = inputData;\n  geminiData = null;\n}\n\n// Safely extract data with fallbacks\nconst minuta = estruturalData?.minuta || '';\nconst ctx = estruturalData?.context || {};\nconst estrutural = estruturalData?.qa_estrutural || { score: 50, falhas_criticas: [], marcadores_revisar: 0, palavras: 0 };\nconst agente = estruturalData?.agente || 'agent_generico';\n\n// Parsear resposta do Gemini (se executou)\nsemantico = null;\nif (geminiData?.candidates?.[0]) {\n  try {\n    const candidate = geminiData.candidates[0];\n    const finishReason = candidate.finishReason;\n    \n    if (finishReason === 'STOP' || finishReason === 'END_TURN' || !finishReason) {\n      const text = candidate.content?.parts?.[0]?.text;\n      if (text) {\n        const cleanJson = text.replace(/```json\\n?|```\\n?/g, '').trim();\n        semantico = JSON.parse(cleanJson);\n      }\n    } else {\n      console.log('QA Semântico: finishReason =', finishReason);\n    }\n  } catch (e) {\n    console.log('Erro ao parsear QA semântico:', e.message);\n    semantico = null;\n  }\n}\n\n// ============================================================================\n// SCORE FINAL COMBINADO\n// ============================================================================\n\nlet scoreFinal;\nlet aprovado;\n\nif (semantico && semantico.score_geral !== undefined) {\n  // Peso: 40% estrutural + 60% semântico\n  scoreFinal = Math.round(\n    (estrutural.score * 0.4) + (semantico.score_geral * 0.6)\n  );\n  aprovado = scoreFinal >= 70 && \n             estrutural.falhas_criticas.length === 0 &&\n             semantico.aprovado;\n} else {\n  // Só estrutural (fallback)\n  scoreFinal = estrutural.score;\n  aprovado = scoreFinal >= 80 && estrutural.falhas_criticas.length === 0;\n}\n\n// ============================================================================\n// CLASSIFICAÇÃO DE RISCO CNJ 615/2025\n// ============================================================================\n\nconst confiancaRouter = ctx.classificacao?.confianca || 0.5;\nlet classificacaoRisco;\n\nif (scoreFinal >= 85 && confiancaRouter >= 0.85 && estrutural.marcadores_revisar <= 2) {\n  classificacaoRisco = 'BAIXO';\n} else if (scoreFinal >= 70 && confiancaRouter >= 0.65) {\n  classificacaoRisco = 'MEDIO';\n} else {\n  classificacaoRisco = 'ALTO';\n}\n\n// ============================================================================\n// OUTPUT\n// ============================================================================\n\nreturn [{\n  json: {\n    minuta_gerada: minuta,\n    \n    qa_result: {\n      score_final: scoreFinal,\n      score_estrutural: estrutural.score,\n      score_semantico: semantico?.score_geral || null,\n      aprovado,\n      \n      falhas_criticas: estrutural.falhas_criticas,\n      marcadores_revisar: estrutural.marcadores_revisar,\n      palavras: estrutural.palavras,\n      \n      // Detalhes semânticos (se disponível)\n      coerencia: semantico?.coerencia_juridica || null,\n      precisao: semantico?.precisao_tecnica || null,\n      completude: semantico?.completude || null,\n      recomendacoes: semantico?.recomendacoes || []\n    },\n    \n    compliance_cnj615: {\n      classificacao_risco: classificacaoRisco,\n      requer_revisao_humana: true,\n      agente_utilizado: agente,\n      confianca_classificacao: confiancaRouter,\n      modelos_utilizados: {\n        router: 'gemini-2.5-flash',\n        geracao: 'claude-sonnet-4',\n        qa: semantico ? 'gemini-2.5-flash' : 'estrutural-only'\n      }\n    },\n    \n    contexto: ctx\n  }\n}];"
+      },
+      "id": "qa-consolidado",
+      "name": "QA Consolidado",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4300,
+        400
+      ],
+      "notes": "Merge dos scores: 40% estrutural + 60% semântico - FIXED null safety"
+    },
+    {
+      "parameters": {
+        "jsCode": "// QUALITY VALIDATOR - Structure, Citations, Reasoning\n// Lex Intelligentia v3.1 - Metrics Integration\n\nconst inputItem = $input.first();\nif (!inputItem || !inputItem.json) {\n  return [{ json: { \n    quality_validation: { \n      structure_score: 0,\n      citation_score: 0,\n      reasoning_score: 0,\n      overall_score: 0, \n      issues: [{ type: 'error', message: 'No input data received' }],\n      citations_found: { sumulas: 0, temas: 0, artigos: 0 }\n    }\n  }}];\n}\nconst data = inputItem.json;\nconst minuta = data.minuta_gerada || '';\n\n// 1. STRUCTURE VALIDATION\nconst requiredSections = [\n  { name: 'RELATÓRIO', pattern: /^##?\\s*I\\s*[-–]?\\s*REL[AÁ]T[OÓ]RIO|^##?\\s*REL[AÁ]T[OÓ]RIO/mi },\n  { name: 'FUNDAMENTAÇÃO', pattern: /^##?\\s*II\\s*[-–]?\\s*FUNDAMENTA[CÇ][AÃ]O|^##?\\s*FUNDAMENTA[CÇ][AÃ]O/mi },\n  { name: 'DISPOSITIVO', pattern: /^##?\\s*III\\s*[-–]?\\s*DISPOSITIVO|^##?\\s*DISPOSITIVO/mi }\n];\n\nconst structureIssues = [];\nlet structureScore = 1.0;\n\nfor (const section of requiredSections) {\n  if (!section.pattern.test(minuta)) {\n    structureIssues.push(`Missing: ${section.name}`);\n    structureScore -= 0.33;\n  }\n}\nstructureScore = Math.max(0, structureScore);\n\n// 2. CITATION VALIDATION\nconst citedSumulas = minuta.match(/S[úu]mula\\s+(\\d+)/gi) || [];\nconst citedTemas = minuta.match(/Tema\\s+(\\d+)/gi) || [];\nconst citedArtigos = minuta.match(/art(?:igo)?\\.?\\s*(\\d+)/gi) || [];\n\nlet citationScore = 0.5;\nconst citationIssues = [];\n\nif (citedSumulas.length > 0 || citedTemas.length > 0) citationScore += 0.3;\nif (citedArtigos.length > 0) citationScore += 0.2;\nif (minuta.includes('[REVISAR: jurisprudência]') || minuta.includes('[REVISAR: fundamentação]')) {\n  citationScore -= 0.15;\n  citationIssues.push('Contains unverified citation markers');\n}\ncitationScore = Math.min(1, Math.max(0, citationScore));\n\n// 3. REASONING VALIDATION\nconst fundamentacaoMatch = minuta.match(/FUNDAMENTA[CÇ][AÃ]O[\\s\\S]*?(?=DISPOSITIVO|$)/i);\nconst fundamentacaoText = fundamentacaoMatch ? fundamentacaoMatch[0] : '';\nconst paragraphs = fundamentacaoText.split(/\\n\\n+/).filter(p => p.trim().length > 50);\n\nlet reasoningScore = 0.5;\nconst reasoningIssues = [];\n\nif (paragraphs.length >= 5) reasoningScore += 0.3;\nelse if (paragraphs.length >= 3) reasoningScore += 0.15;\nelse reasoningIssues.push(`Fundamentação shallow: only ${paragraphs.length} paragraphs`);\n\nconst hasLegalPattern = /(?:conforme|nos termos|segundo|de acordo com)[\\s\\S]{10,200}(?:portanto|assim|desta forma|destarte)/i.test(fundamentacaoText);\nif (hasLegalPattern) reasoningScore += 0.2;\nreasoningScore = Math.min(1, Math.max(0, reasoningScore));\n\n// 4. COMPILE RESULT\nconst overallScore = (structureScore + citationScore + reasoningScore) / 3;\n\nconst allIssues = [\n  ...structureIssues.map(i => ({ type: 'structure', message: i })),\n  ...citationIssues.map(i => ({ type: 'citation', message: i })),\n  ...reasoningIssues.map(i => ({ type: 'reasoning', message: i }))\n];\n\nconst quality = {\n  structure_score: Math.round(structureScore * 100) / 100,\n  citation_score: Math.round(citationScore * 100) / 100,\n  reasoning_score: Math.round(reasoningScore * 100) / 100,\n  overall_score: Math.round(overallScore * 100) / 100,\n  issues: allIssues,\n  citations_found: { sumulas: citedSumulas.length, temas: citedTemas.length, artigos: citedArtigos.length }\n};\n\nreturn [{ json: { ...data, quality_validation: quality } }];"
+      },
+      "id": "quality-validator",
+      "name": "Quality Validator",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4340,
+        400
+      ],
+      "notes": "Validates structure/citations/reasoning for metrics dashboard"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.SUPABASE_URL }}/rest/v1/rpc/log_execution",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey", "value": "={{ $env.SUPABASE_ANON_KEY }}" },
+            { "name": "Authorization", "value": "={{ 'Bearer ' + $env.SUPABASE_ANON_KEY }}" },
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "Prefer", "value": "return=representation" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  p_workflow_id: $execution.id,\n  p_agent_name: $json.compliance_cnj615?.agente_utilizado || 'agent_generico',\n  p_domain: $json.contexto?.classificacao?.categoria || 'generico',\n  p_started_at: $json.contexto?.execucao?.timestamp_inicio || new Date().toISOString(),\n  p_finished_at: new Date().toISOString(),\n  p_duration_ms: $json.audit_log?.tempo_execucao_ms || 0,\n  p_status: $json.qa_result?.aprovado ? 'success' : 'warning',\n  p_error_message: null,\n  p_tokens_used: 0,\n  p_rag_results_count: 0,\n  p_cache_hit: false,\n  p_quality: {\n    structure_score: $json.quality_validation?.structure_score || 0,\n    citation_score: $json.quality_validation?.citation_score || 0,\n    reasoning_score: $json.quality_validation?.reasoning_score || 0,\n    issues: $json.quality_validation?.issues || []\n  }\n} }}",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "metrics-logger",
+      "name": "Metrics Logger",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4400,
+        400
+      ],
+      "onError": "continueRegularOutput",
+      "notes": "Sends execution metrics to Supabase for dashboard"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================================\n// AUDIT LOG CNJ 615/2025\n// Lex Intelligentia Judiciário v2.1 - FIXED\n// ============================================================================\n\nconst data = $input.first().json;\nconst ctx = data.contexto || {};\n\n// ============================================================================\n// IMPROVED HASH FUNCTION (djb2 + metadata for uniqueness)\n// ============================================================================\n\nfunction computeHash(str) {\n  if (!str || typeof str !== 'string') {\n    return '0'.repeat(32);\n  }\n  \n  // djb2 hash algorithm\n  let hash1 = 5381;\n  for (let i = 0; i < str.length; i++) {\n    hash1 = ((hash1 << 5) + hash1) + str.charCodeAt(i);\n    hash1 = hash1 & 0xFFFFFFFF;\n  }\n  \n  // FNV-1a hash for additional uniqueness\n  let hash2 = 2166136261;\n  for (let i = 0; i < str.length; i++) {\n    hash2 ^= str.charCodeAt(i);\n    hash2 = Math.imul(hash2, 16777619);\n    hash2 = hash2 >>> 0;\n  }\n  \n  // Combine: djb2(16 hex) + length(4 hex) + fnv(12 hex)\n  const h1 = (hash1 >>> 0).toString(16).padStart(8, '0');\n  const h2 = (hash2 >>> 0).toString(16).padStart(8, '0');\n  const len = (str.length & 0xFFFF).toString(16).padStart(4, '0');\n  const checksum = ((hash1 ^ hash2) >>> 0).toString(16).padStart(8, '0');\n  \n  return `${h1}${len}${h2}${checksum}`;\n}\n\n// ============================================================================\n// SAFE TIME CALCULATION\n// ============================================================================\n\nlet tempoExecucaoMs = 0;\ntry {\n  const inicio = ctx.execucao?.timestamp_inicio;\n  if (inicio) {\n    const startTime = new Date(inicio).getTime();\n    if (!isNaN(startTime)) {\n      tempoExecucaoMs = Math.max(0, Date.now() - startTime);\n    }\n  }\n} catch (e) {\n  tempoExecucaoMs = 0;\n}\n\n// ============================================================================\n// ESTRUTURA DO AUDIT LOG\n// ============================================================================\n\nconst auditLog = {\n  // IDENTIFICAÇÃO\n  id: `LEX-${Date.now()}-${Math.random().toString(36).substr(2, 8)}`,\n  timestamp: new Date().toISOString(),\n  \n  // SISTEMA\n  sistema: 'Lex Intelligentia Judiciário',\n  versao: '2.1',\n  workflow_id: $execution.id,\n  \n  // PROCESSO\n  processo_numero: ctx.processo?.numero || '[NÃO INFORMADO]',\n  processo_classe: ctx.processo?.classe || '',\n  processo_assunto: ctx.processo?.assunto || '',\n  \n  // OPERAÇÃO\n  operacao: 'GERACAO_MINUTA',\n  agente: data.compliance_cnj615?.agente_utilizado || 'agent_generico',\n  categoria: ctx.classificacao?.categoria || 'generico',\n  subcategoria: ctx.classificacao?.subcategoria || null,\n  router_status: ctx.classificacao?.router_status || 'unknown',\n  \n  // MODELOS\n  modelo_router: 'gemini-2.5-flash',\n  modelo_geracao: 'claude-sonnet-4',\n  modelo_qa: data.compliance_cnj615?.modelos_utilizados?.qa || 'estrutural-only',\n  \n  // QUALIDADE\n  score_final: data.qa_result?.score_final || 0,\n  score_estrutural: data.qa_result?.score_estrutural || 0,\n  score_semantico: data.qa_result?.score_semantico || null,\n  aprovado: data.qa_result?.aprovado || false,\n  marcadores_revisao: data.qa_result?.marcadores_revisar || 0,\n  \n  // RISCO CNJ 615\n  risco: data.compliance_cnj615?.classificacao_risco || 'ALTO',\n  confianca_router: data.compliance_cnj615?.confianca_classificacao || 0,\n  \n  // SUPERVISÃO\n  requer_revisao_humana: true,\n  revisao_realizada: false,\n  \n  // INTEGRIDADE (improved hash)\n  hash_input: computeHash(JSON.stringify(ctx.firac || {})),\n  hash_output: computeHash(data.minuta_gerada || ''),\n  \n  // MÉTRICAS\n  palavras_minuta: data.qa_result?.palavras || 0,\n  tempo_execucao_ms: tempoExecucaoMs\n};\n\nreturn [{\n  json: {\n    ...data,\n    audit_log: auditLog\n  }\n}];"
+      },
+      "id": "audit-log",
+      "name": "Audit Log CNJ 615",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4520,
+        400
+      ],
+      "notes": "Gera log de auditoria CNJ 615/2025 - FIXED hash + null safety"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $env.AUDIT_SHEET_ID }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Logs",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID": "={{ $json.audit_log.id }}",
+            "Timestamp": "={{ $json.audit_log.timestamp }}",
+            "Processo": "={{ $json.audit_log.processo_numero }}",
+            "Categoria": "={{ $json.audit_log.categoria }}",
+            "Agente": "={{ $json.audit_log.agente }}",
+            "Risco": "={{ $json.audit_log.risco }}",
+            "Score": "={{ $json.audit_log.score_final }}",
+            "Aprovado": "={{ $json.audit_log.aprovado }}",
+            "Palavras": "={{ $json.audit_log.palavras_minuta }}",
+            "Tempo_ms": "={{ $json.audit_log.tempo_execucao_ms }}",
+            "Hash_Input": "={{ $json.audit_log.hash_input }}",
+            "Hash_Output": "={{ $json.audit_log.hash_output }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "sheets-audit",
+      "name": "Google Sheets: Audit Log",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        4740,
+        400
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GOOGLE_SHEETS_CREDENTIALS_ID",
+          "name": "Google Sheets"
+        }
+      },
+      "notes": "Persiste audit log no Google Sheets"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================================\n// BUILD RESPONSE - Resposta Final Estruturada\n// Lex Intelligentia Judiciário v2.1\n// ============================================================================\n\nconst data = $input.first().json;\nconst qa = data.qa_result;\nconst compliance = data.compliance_cnj615;\nconst audit = data.audit_log;\n\n// ============================================================================\n// RESPONSE ESTRUTURADO\n// ============================================================================\n\nconst response = {\n  success: true,\n  timestamp: new Date().toISOString(),\n  \n  // MINUTA GERADA\n  minuta: {\n    conteudo: data.minuta_gerada,\n    palavras: qa.palavras,\n    formato: 'markdown'\n  },\n  \n  // QUALIDADE (QA)\n  qualidade: {\n    score: qa.score_final,\n    aprovado: qa.aprovado,\n    detalhes: {\n      estrutural: qa.score_estrutural,\n      semantico: qa.score_semantico\n    },\n    marcadores_revisao: qa.marcadores_revisar,\n    falhas_criticas: qa.falhas_criticas,\n    recomendacoes: qa.recomendacoes\n  },\n  \n  // COMPLIANCE CNJ 615/2025\n  compliance: {\n    risco: compliance.classificacao_risco,\n    requer_revisao_humana: true,\n    agente: compliance.agente_utilizado,\n    confianca_classificacao: compliance.confianca_classificacao,\n    categoria: data.contexto.classificacao.categoria,\n    subcategoria: data.contexto.classificacao.subcategoria\n  },\n  \n  // RASTREABILIDADE\n  rastreabilidade: {\n    audit_id: audit.id,\n    workflow_id: audit.workflow_id,\n    processo: audit.processo_numero,\n    tempo_execucao_ms: audit.tempo_execucao_ms,\n    modelos: compliance.modelos_utilizados\n  },\n  \n  // ENTIDADES EXTRAÍDAS\n  entidades: data.contexto.entidades,\n  \n  // METADADOS\n  meta: {\n    versao_api: '2.1',\n    sistema: 'Lex Intelligentia Judiciário'\n  }\n};\n\nreturn [{ json: response }];"
+      },
+      "id": "build-response",
+      "name": "Build Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4960,
+        400
+      ],
+      "notes": "Monta resposta final estruturada"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}",
+        "responseCode": 200,
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "X-Audit-Id",
+                "value": "={{ $('Audit Log CNJ 615').item.json.audit_log.id }}"
+              },
+              {
+                "name": "X-Risk-Level",
+                "value": "={{ $json.compliance.risco }}"
+              },
+              {
+                "name": "X-QA-Score",
+                "value": "={{ $json.qualidade.score }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond-success",
+      "name": "Respond: Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        5180,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## ✅ QA CHECK v2.1\n\n**Camada 1 - Estrutural:**\n- Regex robusto (R/F/D)\n- Verifica julgamento\n- Conta marcadores [REVISAR]\n\n**Camada 2 - Semântico:**\n- Gemini 2.5 Flash\n- Coerência jurídica\n- Precisão técnica\n- Completude\n\n**Score Final:**\n40% estrutural + 60% semântico\n\n**CNJ 615:**\n- BAIXO: ≥85, conf ≥0.85\n- MEDIO: ≥70, conf ≥0.65\n- ALTO: demais",
+        "height": 360,
+        "width": 240
+      },
+      "id": "sticky-qa",
+      "name": "✅ QA CHECK",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3560,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 📋 AUDIT LOG\n\n**Persistência:** Google Sheets\n\n**Campos:**\n- ID único\n- Timestamp\n- Processo\n- Categoria/Agente\n- Scores (QA)\n- Risco CNJ 615\n- Hashes I/O\n- Tempo execução\n\n**Variável necessária:**\n`AUDIT_SHEET_ID`",
+        "height": 280,
+        "width": 200
+      },
+      "id": "sticky-audit",
+      "name": "📋 AUDIT",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4720,
+        600
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "error-trigger",
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        540,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================================\n// ERROR HANDLER - Retry Logic\n// Lex Intelligentia Judiciário v2.1\n// ============================================================================\n\nconst errorData = $input.first().json;\n\n// Extrair informações do erro\nconst errorMessage = errorData.execution?.error?.message || 'Erro desconhecido';\nconst errorNode = errorData.execution?.lastNodeExecuted || 'Desconhecido';\nconst workflowId = errorData.workflow?.id || $execution.id;\n\n// Extrair tentativa atual do Context Buffer (se disponível)\nlet tentativaAtual = 1;\ntry {\n  // Tentar buscar do workflow original\n  const contextBuffer = errorData.execution?.data?.resultData?.runData?.['Set Context Buffer']?.[0]?.data?.main?.[0]?.[0]?.json;\n  if (contextBuffer && contextBuffer.execucao) {\n    tentativaAtual = contextBuffer.execucao.tentativa || 1;\n  }\n} catch (e) {\n  tentativaAtual = 1;\n}\n\nconst MAX_TENTATIVAS = 3;\nconst shouldRetry = tentativaAtual < MAX_TENTATIVAS;\n\n// ============================================================================\n// LOG DO ERRO\n// ============================================================================\n\nconst errorLog = {\n  timestamp: new Date().toISOString(),\n  workflow_id: workflowId,\n  error: {\n    message: errorMessage,\n    node: errorNode,\n    tentativa: tentativaAtual,\n    max_tentativas: MAX_TENTATIVAS\n  },\n  action: shouldRetry ? 'RETRY' : 'FAIL',\n  next_tentativa: shouldRetry ? tentativaAtual + 1 : null\n};\n\nconsole.log('Error Handler:', JSON.stringify(errorLog));\n\n// ============================================================================\n// DECISÃO: RETRY OU FAIL\n// ============================================================================\n\nif (shouldRetry) {\n  // Sinalizar para retry\n  return [{\n    json: {\n      should_retry: true,\n      tentativa: tentativaAtual + 1,\n      error_log: errorLog,\n      original_error: errorMessage,\n      failed_node: errorNode\n    }\n  }];\n} else {\n  // Falha final\n  return [{\n    json: {\n      should_retry: false,\n      tentativa: tentativaAtual,\n      error_log: errorLog,\n      original_error: errorMessage,\n      failed_node: errorNode,\n      final_failure: true\n    }\n  }];\n}"
+      },
+      "id": "handle-error",
+      "name": "Handle Error",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        760,
+        700
+      ],
+      "notes": "Lógica de retry até 3 tentativas"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "retry-check",
+              "leftValue": "={{ $json.should_retry }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if-retry",
+      "name": "IF: Retry?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        980,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({\n  success: false,\n  timestamp: new Date().toISOString(),\n  error: {\n    message: $json.original_error,\n    node: $json.failed_node,\n    tentativas: $json.tentativa,\n    codigo: 'MAX_RETRIES_EXCEEDED'\n  },\n  compliance: {\n    risco: 'ALTO',\n    requer_revisao_humana: true,\n    motivo: 'Falha de processamento após múltiplas tentativas'\n  },\n  rastreabilidade: {\n    workflow_id: $execution.id,\n    error_log: $json.error_log\n  },\n  meta: {\n    versao_api: '2.1',\n    sistema: 'Lex Intelligentia Judiciário'\n  }\n}) }}",
+        "responseCode": 500,
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "X-Error-Code",
+                "value": "MAX_RETRIES_EXCEEDED"
+              },
+              {
+                "name": "X-Risk-Level",
+                "value": "ALTO"
+              },
+              {
+                "name": "X-Retry-Count",
+                "value": "={{ $json.tentativa }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond-error",
+      "name": "Respond: Error",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1200,
+        800
+      ],
+      "notes": "Resposta de erro após esgotar retries"
+    },
+    {
+      "parameters": {
+        "content": "## ⚠️ ERROR HANDLING\n\n**Estratégia:** Retry até 3x\n\n**Fluxo:**\n```\n[Erro] → [Error Trigger]\n    ↓\n[Handle Error]\n    ↓\n[IF: Retry?]\n  ├→ SIM: [Log + Notify]\n  └→ NÃO: [Respond: Error]\n```\n\n**Após 3 falhas:**\n- Response 500\n- Risco: ALTO\n- Log completo do erro",
+        "height": 300,
+        "width": 240
+      },
+      "id": "sticky-error",
+      "name": "⚠️ ERROR HANDLING",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        540,
+        900
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "={{ $env.AUDIT_SHEET_ID }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Errors",
+          "mode": "list"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Timestamp": "={{ $json.error_log.timestamp }}",
+            "Workflow_ID": "={{ $json.error_log.workflow_id }}",
+            "Error_Node": "={{ $json.failed_node }}",
+            "Error_Message": "={{ $json.original_error }}",
+            "Tentativa": "={{ $json.tentativa }}",
+            "Action": "={{ $json.error_log.action }}",
+            "Final_Failure": "={{ $json.final_failure || false }}"
+          }
+        },
+        "options": {}
+      },
+      "id": "sheets-error-log",
+      "name": "Google Sheets: Error Log",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1200,
+        600
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "GOOGLE_SHEETS_CREDENTIALS_ID",
+          "name": "Google Sheets"
+        }
+      },
+      "notes": "Log de erros no Google Sheets (aba Errors)"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({\n  success: false,\n  timestamp: new Date().toISOString(),\n  error: {\n    message: $('Handle Error').item.json.original_error,\n    node: $('Handle Error').item.json.failed_node,\n    tentativa: $('Handle Error').item.json.tentativa,\n    codigo: 'TRANSIENT_ERROR'\n  },\n  retry: {\n    should_retry: true,\n    tentativas_restantes: 3 - $('Handle Error').item.json.tentativa,\n    retry_after_seconds: 5\n  },\n  compliance: {\n    risco: 'MEDIO',\n    requer_revisao_humana: true,\n    motivo: 'Erro transiente - retry recomendado'\n  },\n  rastreabilidade: {\n    workflow_id: $execution.id,\n    error_logged: true\n  },\n  meta: {\n    versao_api: '2.1',\n    sistema: 'Lex Intelligentia Judiciário'\n  }\n}) }}",
+        "responseCode": 503,
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "X-Error-Code",
+                "value": "TRANSIENT_ERROR"
+              },
+              {
+                "name": "X-Risk-Level",
+                "value": "MEDIO"
+              },
+              {
+                "name": "Retry-After",
+                "value": "5"
+              },
+              {
+                "name": "X-Retry-Count",
+                "value": "={{ $('Handle Error').item.json.tentativa }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond-retry",
+      "name": "Respond: Retry",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1420,
+        600
+      ],
+      "notes": "Resposta 503 indicando erro transiente - caller deve retry"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.ERROR_WEBHOOK_URL || 'https://your-alerting-system.com/webhook/n8n-failure' }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ \n  text: `🚨 Alerta: Falha Persistente no Workflow Lex Intelligentia 🚨\\n\\nWorkflow ID: ${$json.error_log.workflow_id}\\nNó com Erro: ${$json.failed_node}\\nTentativas: ${$json.tentativa}\\n\\nMensagem:\\n${$json.original_error}`\n}) }}",
+        "options": {}
+      },
+      "id": "notify-failure",
+      "name": "Notify: Failure",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        820
+      ],
+      "notes": "Envia notificação para sistema de alerta (e.g., Slack, Teams)"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "stage2_condition",
+              "leftValue": "={{ $json.classificacao?.needs_stage2 }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "needs_stage2_check",
+      "name": "IF: Needs Stage 2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1090,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  \"contents\": [{\n    \"parts\": [{\n      \"text\": `Você é um sub-classificador jurídico.\n\nÁREA IDENTIFICADA: ${$json.classificacao?.area || 'GENERICO'}\n\nTAREFA: Refine a classificação para o SUBTIPO específico.\n\n${$json.classificacao?.area === 'SAUDE' ? `SUBTIPOS VÁLIDOS:\n- COBERTURA: negativa de procedimento, cirurgia, medicamento, home care, UTI\n- CONTRATUAL: reajuste abusivo, rescisão unilateral, carência, portabilidade` : ''}${$json.classificacao?.area === 'IMOBILIARIO' ? `SUBTIPOS VÁLIDOS:\n- USUCAPIAO: aquisição de propriedade por posse prolongada (qualquer modalidade)\n- INCORPORACAO: atraso na entrega, defeitos construtivos, distrato` : ''}\n\nCASO (FIRAC):\nFATOS: ${$json.firac?.fatos || 'Não informado'}\nQUESTÕES: ${$json.firac?.questoes || 'Não informado'}\nPEDIDOS: ${$json.processo?.pedidos || 'Não informado'}\n\nRESPONDA APENAS com JSON válido:\n{\n  \"subtipo\": \"string (COBERTURA, CONTRATUAL, USUCAPIAO, ou INCORPORACAO)\",\n  \"confianca_subtipo\": number (0.0 a 1.0)\n}`\n    }]\n  }],\n  \"generationConfig\": {\n    \"temperature\": 0.1,\n    \"maxOutputTokens\": 500\n  }\n} }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "gemini_stage2_router",
+      "name": "Gemini Stage 2 Router",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1300,
+        200
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GEMINI_CREDENTIALS_ID",
+          "name": "Gemini API Key"
+        }
+      },
+      "notes": "Stage 2 subtype classification for SAUDE and IMOBILIARIO areas"
+    },
+    {
+      "parameters": {
+        "jsCode": "// ============================================================================\n// PROCESS STAGE 2 RESULT - Merge subtype into context\n// Lex Intelligentia Judiciário v2.2 - Stage 2 Router\n// ============================================================================\n\n// Get original context from IF node\nconst ctx = $('IF: Needs Stage 2').item.json;\nconst stage2Response = $input.first().json;\n\n// Parse Stage 2 response\nlet subtipo = null;\nlet confianca_subtipo = 0;\n\ntry {\n  const responseText = stage2Response?.candidates?.[0]?.content?.parts?.[0]?.text || '';\n  const cleanJson = responseText.replace(/```json\\n?/g, '').replace(/```\\n?/g, '').trim();\n  const parsed = JSON.parse(cleanJson);\n  subtipo = parsed.subtipo;\n  confianca_subtipo = parsed.confianca_subtipo || 0;\n} catch (e) {\n  console.log('Stage 2 parse error:', e.message);\n}\n\n// Create a copy of context to modify\nconst updatedCtx = JSON.parse(JSON.stringify(ctx));\n\n// Update context with subtype\nif (subtipo && updatedCtx.classificacao) {\n  updatedCtx.classificacao.subtipo = subtipo;\n  updatedCtx.classificacao.confianca_subtipo = confianca_subtipo;\n  updatedCtx.classificacao.needs_stage2 = false; // Mark as processed\n  \n  // Update agente name based on area + subtipo\n  const area = updatedCtx.classificacao.categoria;\n  if (area === 'saude' || area === 'SAUDE') {\n    updatedCtx.classificacao.agente = `agent_saude_${subtipo.toLowerCase()}`;\n  } else if (area === 'imobiliario' || area === 'IMOBILIARIO') {\n    updatedCtx.classificacao.agente = `agent_${subtipo.toLowerCase()}`;\n  }\n}\n\nreturn [{ json: updatedCtx }];"
+      },
+      "id": "process_stage2_result",
+      "name": "Process Stage 2 Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1520,
+        200
+      ],
+      "notes": "Merges Stage 2 subtype classification into context buffer"
+    },
+    {
+      "parameters": {
+        "mode": "chooseBranch",
+        "output": "input0"
+      },
+      "id": "merge_stage2",
+      "name": "Merge Stage 2",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        1740,
+        300
+      ],
+      "notes": "Merges Stage 2 branch (processed) with direct pass-through branch"
+    },
+    {
+      "parameters": {
+        "jsCode": "const crypto = require('crypto');\nconst ctx = $input.first().json;\n\nconst inputParaHash = JSON.stringify({\n  fatos: ctx.firac.fatos,\n  questoes: ctx.firac.questoes,\n  pedidos: (ctx.entidades.valores || []).join(',')\n});\n\nconst hash = crypto.createHash('sha256').update(inputParaHash).digest('hex');\nconst cacheKey = `lex_minuta:${ctx.classificacao.categoria}:${hash}`;\n\nreturn [{ json: { ...ctx, cache_key: cacheKey } }];"
+      },
+      "id": "calculate-hash",
+      "name": "Calcular Hash do Input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1960,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $env.REDIS_REST_URL }}/get/{{ $json.cache_key }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.REDIS_REST_TOKEN }}"
+            }
+          ]
+        },
+        "options": {
+          "continueOnFail": true
+        }
+      },
+      "id": "read-cache",
+      "name": "Ler do Cache (GET)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2180,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "value1": "={{ $json.result }}",
+              "operation": "isNotNull"
+            }
+          ]
+        }
+      },
+      "id": "cache-hit",
+      "name": "Cache Hit?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2400,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.REDIS_REST_URL }}/set/{{ $json.contexto.cache_key }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.REDIS_REST_TOKEN }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { value: JSON.stringify({ minuta_gerada: $json.minuta_gerada, score: $json.qa_result.score_final, cached_at: new Date().toISOString() }), ex: 3600 } }}",
+        "options": {
+          "timeout": 5000,
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          }
+        }
+      },
+      "id": "write-cache",
+      "name": "Escrever no Cache (SET)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3100,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const cacheData = JSON.parse($('Ler do Cache (GET)').item.json.result);\nconst ctx = $('Calcular Hash do Input').item.json;\n\nconst response = {\n  success: true,\n  timestamp: new Date().toISOString(),\n  minuta: {\n    conteudo: cacheData.minuta_gerada,\n    palavras: cacheData.minuta_gerada.split(/\\s+/).length,\n    formato: 'markdown'\n  },\n  qualidade: {\n    score: cacheData.score,\n    aprovado: true,\n    detalhes: { \"fonte\": \"cache\" }\n  },\n  compliance: {\n    risco: \"BAIXO\",\n    agente: ctx.classificacao.agente\n  },\n  rastreabilidade: {\n    \"fonte\": \"cache\",\n    \"cache_key\": ctx.cache_key\n  }\n};\n\nreturn [{ json: response }];"
+      },
+      "id": "format-cache-response",
+      "name": "Formatar Resposta do Cache",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2620,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "conditions": [
+            {
+              "value1": "={{ $json.qa_result.score_final }}",
+              "operation": "largerEqual",
+              "value2": 95
+            }
+          ]
+        }
+      },
+      "id": "if-score-95",
+      "name": "Score > 95?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4300,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## 🔀 STAGE 2 ROUTER v2.2\n\n**Objetivo:** Sub-classificação condicional\n\n**Áreas com Stage 2:**\n- SAUDE → COBERTURA | CONTRATUAL\n- IMOBILIARIO → USUCAPIAO | INCORPORACAO\n\n**Fluxo:**\n```\n[Set Context Buffer]\n       ↓\n[IF: needs_stage2?]\n  ├→ TRUE: [Gemini Stage 2]\n  │            ↓\n  │     [Process Result]\n  │            ↓\n  └→ FALSE ─→ [Merge]\n                 ↓\n         [Hash/Cache]\n```\n\n**Modelo:** gemini-2.0-flash\n**Temp:** 0.1",
+        "height": 420,
+        "width": 280
+      },
+      "id": "sticky-stage2",
+      "name": "🔀 STAGE 2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.SUPABASE_URL }}/rest/v1/rpc/log_execution",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "apikey", "value": "={{ $env.SUPABASE_ANON_KEY }}" },
+            { "name": "Authorization", "value": "={{ 'Bearer ' + $env.SUPABASE_ANON_KEY }}" },
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "Prefer", "value": "return=representation" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  p_workflow_id: $execution.id,\n  p_agent_name: $json.failed_node || 'unknown',\n  p_domain: 'error',\n  p_started_at: new Date().toISOString(),\n  p_finished_at: new Date().toISOString(),\n  p_duration_ms: 0,\n  p_status: 'error',\n  p_error_message: $json.original_error || 'Unknown error',\n  p_tokens_used: 0,\n  p_rag_results_count: 0,\n  p_cache_hit: false,\n  p_quality: null\n} }}",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "metrics-logger-error",
+      "name": "Metrics Logger (Error)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [980, 700],
+      "onError": "continueRegularOutput",
+      "notes": "Logs failed executions to Supabase for error rate tracking"
+    }
+  ],
+  "connections": {
+    "Webhook: Recebe FIRAC": {
+      "main": [
+        [
+          {
+            "node": "Gemini Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini Router": {
+      "main": [
+        [
+          {
+            "node": "Set Context Buffer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Context Buffer": {
+      "main": [
+        [
+          {
+            "node": "IF: Needs Stage 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF: Needs Stage 2": {
+      "main": [
+        [
+          {
+            "node": "Gemini Stage 2 Router",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge Stage 2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Gemini Stage 2 Router": {
+      "main": [
+        [
+          {
+            "node": "Process Stage 2 Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Stage 2 Result": {
+      "main": [
+        [
+          {
+            "node": "Merge Stage 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Stage 2": {
+      "main": [
+        [
+          {
+            "node": "Calcular Hash do Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calcular Hash do Input": {
+      "main": [
+        [
+          {
+            "node": "Ler do Cache (GET)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ler do Cache (GET)": {
+      "main": [
+        [
+          {
+            "node": "Cache Hit?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cache Hit?": {
+      "main": [
+        [
+          {
+            "node": "Formatar Resposta do Cache",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set System Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Formatar Resposta do Cache": {
+      "main": [
+        [
+          {
+            "node": "Respond: Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set System Prompt": {
+      "main": [
+        [
+          {
+            "node": "Switch: Seleciona Agente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch: Seleciona Agente": {
+      "main": [
+        [
+          {
+            "node": "AI Agent: Bancário",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Consumidor",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Execução",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Locação",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Possessórias",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Saúde Cobertura",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Saúde Contratual",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Trânsito",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Usucapião",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Incorporação",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Genérico",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Agent: Genérico",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude: Bancário": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent: Bancário",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude: Consumidor": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent: Consumidor",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude: Possessórias": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent: Possessórias",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude: Locação": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent: Locação",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude: Execução": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent: Execução",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude: Genérico": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent: Genérico",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude: Saúde Cobertura": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent: Saúde Cobertura",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude: Saúde Contratual": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent: Saúde Contratual",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude: Trânsito": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent: Trânsito",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude: Usucapião": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent: Usucapião",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude: Incorporação": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent: Incorporação",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Bancário": {
+      "main": [
+        [
+          {
+            "node": "Prepare for QA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Consumidor": {
+      "main": [
+        [
+          {
+            "node": "Prepare for QA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Possessórias": {
+      "main": [
+        [
+          {
+            "node": "Prepare for QA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Locação": {
+      "main": [
+        [
+          {
+            "node": "Prepare for QA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Execução": {
+      "main": [
+        [
+          {
+            "node": "Prepare for QA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Genérico": {
+      "main": [
+        [
+          {
+            "node": "Prepare for QA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Saúde Cobertura": {
+      "main": [
+        [
+          {
+            "node": "Prepare for QA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Saúde Contratual": {
+      "main": [
+        [
+          {
+            "node": "Prepare for QA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Trânsito": {
+      "main": [
+        [
+          {
+            "node": "Prepare for QA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Usucapião": {
+      "main": [
+        [
+          {
+            "node": "Prepare for QA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent: Incorporação": {
+      "main": [
+        [
+          {
+            "node": "Prepare for QA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare for QA": {
+      "main": [
+        [
+          {
+            "node": "QA Estrutural",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QA Estrutural": {
+      "main": [
+        [
+          {
+            "node": "IF: Executar QA Semântico?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF: Executar QA Semântico?": {
+      "main": [
+        [
+          {
+            "node": "QA Semântico - Gemini",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "QA Consolidado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QA Semântico - Gemini": {
+      "main": [
+        [
+          {
+            "node": "QA Consolidado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QA Consolidado": {
+      "main": [
+        [
+          {
+            "node": "Quality Validator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Quality Validator": {
+      "main": [
+        [
+          {
+            "node": "Metrics Logger",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Metrics Logger": {
+      "main": [
+        [
+          {
+            "node": "Audit Log CNJ 615",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Audit Log CNJ 615": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets: Audit Log",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets: Audit Log": {
+      "main": [
+        [
+          {
+            "node": "Build Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Response": {
+      "main": [
+        [
+          {
+            "node": "Respond: Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Handle Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle Error": {
+      "main": [
+        [
+          {
+            "node": "IF: Retry?",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Metrics Logger (Error)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF: Retry?": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets: Error Log",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Notify: Failure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets: Error Log": {
+      "main": [
+        [
+          {
+            "node": "Respond: Retry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notify: Failure": {
+      "main": [
+        [
+          {
+            "node": "Respond: Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "name": "Lex Intelligentia"
+    },
+    {
+      "name": "v2.1"
+    },
+    {
+      "name": "Judicial"
+    },
+    {
+      "name": "Multi-Model"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2026-01-19T00:00:00.000Z",
+  "versionId": "2.2.0",
+  "meta": {
+    "instanceId": ""
+  }
+}
