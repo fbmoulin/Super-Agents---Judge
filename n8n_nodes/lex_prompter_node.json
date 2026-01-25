@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "name": "LEX PROMPTER Node",
+    "description": "Agente de geração dinâmica de prompts jurídicos usando Anthropic Claude API",
+    "version": "1.0",
+    "author": "Lex Intelligentia",
+    "created": "2026-01-19"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": {
+          "maxTokens": 8000,
+          "temperature": 0.3
+        }
+      },
+      "id": "lex-prompter-llm",
+      "name": "Claude LLM - LEX PROMPTER",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.2,
+      "position": [620, 680],
+      "credentials": {
+        "anthropicApi": {
+          "id": "ANTHROPIC_CREDENTIAL_ID",
+          "name": "Anthropic API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "={{ $json.lex_prompter_system }}"
+        }
+      },
+      "id": "lex-prompter-agent",
+      "name": "LEX PROMPTER Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [840, 680]
+    },
+    {
+      "parameters": {
+        "jsCode": "// LEX PROMPTER System Prompt Generator\n// Generates the system prompt for dynamic legal prompt creation\n\nconst firac = $input.first().json.firac || {};\nconst classificacao = $input.first().json.classificacao || {};\n\nconst systemPrompt = `# LEX PROMPTER - Agente Gerador Dinâmico de Prompts Jurídicos v1.0\n\n## IDENTIDADE\nVocê é o LEX PROMPTER, um engenheiro de prompts jurídicos especializado em criar templates enterprise-grade para o sistema judiciário brasileiro.\n\n## MISSÃO\nGere um prompt completo e especializado para minutar a decisão/sentença do caso apresentado.\n\n## DADOS DO CASO\n\n### FIRAC\n- **Fatos:** ${firac.fatos || '[Não fornecido]'}\n- **Questões:** ${firac.questoes || '[Não fornecido]'}\n- **Regras Aplicáveis:** ${firac.regras_aplicaveis || '[Não identificadas]'}\n- **Análise:** ${firac.analise || '[Não fornecida]'}\n- **Conclusão Preliminar:** ${firac.conclusao_preliminar || '[Não fornecida]'}\n\n### CLASSIFICAÇÃO\n- **Domínio Identificado:** ${classificacao.dominio_identificado || 'NÃO IDENTIFICADO'}\n- **Confiança:** ${classificacao.confianca || 0}\n- **Keywords:** ${(classificacao.keywords_extraidas || []).join(', ') || '[Nenhuma]'}\n\n## FRAMEWORK OBRIGATÓRIO\n\nTodo prompt gerado DEVE conter as 5 camadas:\n\n### CAMADA 0: INICIALIZAÇÃO\n- Role: Juiz de Direito Titular, 15 anos experiência\n- Versão: LEX MAGISTER v2.0 - Gerado Dinamicamente\n- Compliance: CNJ 615/2025, LGPD, Art. 489 CPC\n\n### CAMADA 1: CONTEXTO NORMATIVO\n- Base legal específica do caso\n- Súmulas aplicáveis (buscar na base de conhecimento)\n- Temas repetitivos vinculantes\n- Resoluções administrativas (se houver)\n\n### CAMADA 2: METODOLOGIA\n- REGRA DE OURO: 3 parágrafos por questão\n  1. Fundamento jurídico abstrato\n  2. Jurisprudência com citação literal\n  3. Subsunção aos fatos\n- VEDAÇÕES do Art. 489, §1º CPC\n- Método bifásico para danos morais (se aplicável)\n\n### CAMADA 3: TEMPLATES DE SAÍDA\n- Estrutura: Relatório → Fundamentação → Dispositivo\n- Exemplos de redação profissional\n\n### CAMADA 4: CONTROLE DE QUALIDADE\n- Checklist de validação\n- Critérios de completude\n\n## SÚMULAS DISPONÍVEIS NA BASE\n\n### STJ\n- 297: CDC aplicável a instituições financeiras\n- 302: Abusiva limitação de tempo de internação\n- 362: Correção monetária dano moral desde arbitramento\n- 382: Juros >12% não indica abusividade por si só\n- 469: CDC aplicável a planos de saúde\n- 539: Capitalização de juros permitida desde 31/3/2000\n- 543: Restituição imediata na resolução de imóvel\n\n### STF\n- 340: Bens públicos não podem ser usucapidos\n\n## TEMAS REPETITIVOS DISPONÍVEIS\n\n- Tema 952: Reajuste por faixa etária em planos de saúde\n- Tema 970: Tolerância 180 dias para entrega de imóvel\n- Tema 972: Venda casada de seguros em financiamentos\n- Tema 985: Dispensa de área mínima em usucapião urbana\n- Tema 996: Atraso na entrega de imóvel - consequências\n- Tema 1062: Correção monetária e juros em indenizações\n- Tema 1069: Rol ANS é exemplificativo\n- Tema 1368: SELIC engloba juros e correção monetária\n\n## FORMATO DE SAÍDA\n\nRetorne o prompt completo em MARKDOWN, pronto para uso imediato.\n\nO prompt deve ser AUTOCONTIDO e seguir rigorosamente o framework de 5 camadas.`;\n\nreturn {\n  json: {\n    lex_prompter_system: systemPrompt,\n    firac: firac,\n    classificacao: classificacao\n  }\n};"
+      },
+      "id": "lex-prompter-prepare",
+      "name": "Prepare LEX PROMPTER",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [400, 680]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Process LEX PROMPTER output\n// Extract generated prompt and prepare for execution\n\nconst agentOutput = $input.first().json;\nconst generatedPrompt = agentOutput.output || agentOutput.text || '';\n\n// Validate prompt has required layers\nconst hasLayer0 = generatedPrompt.includes('CAMADA 0') || generatedPrompt.includes('INICIALIZAÇÃO');\nconst hasLayer1 = generatedPrompt.includes('CONTEXTO NORMATIVO') || generatedPrompt.includes('BASE LEGAL');\nconst hasLayer2 = generatedPrompt.includes('METODOLOGIA') || generatedPrompt.includes('3 parágrafos');\nconst hasLayer3 = generatedPrompt.includes('TEMPLATE') || generatedPrompt.includes('RELATÓRIO');\nconst hasLayer4 = generatedPrompt.includes('CHECKLIST') || generatedPrompt.includes('QUALIDADE');\n\nconst validationScore = [hasLayer0, hasLayer1, hasLayer2, hasLayer3, hasLayer4].filter(Boolean).length / 5;\n\nreturn {\n  json: {\n    prompt_gerado: generatedPrompt,\n    validacao: {\n      score: validationScore,\n      has_layer_0: hasLayer0,\n      has_layer_1: hasLayer1,\n      has_layer_2: hasLayer2,\n      has_layer_3: hasLayer3,\n      has_layer_4: hasLayer4,\n      aprovado: validationScore >= 0.8\n    },\n    metadata: {\n      gerado_em: new Date().toISOString(),\n      modelo: 'claude-sonnet-4-20250514',\n      tokens_estimados: Math.ceil(generatedPrompt.length / 4)\n    }\n  }\n};"
+      },
+      "id": "lex-prompter-process",
+      "name": "Process LEX PROMPTER Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1060, 680]
+    }
+  ],
+  "connections": {
+    "Prepare LEX PROMPTER": {
+      "main": [
+        [
+          {
+            "node": "Claude LLM - LEX PROMPTER",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude LLM - LEX PROMPTER": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "LEX PROMPTER Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LEX PROMPTER Agent": {
+      "main": [
+        [
+          {
+            "node": "Process LEX PROMPTER Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "integration_instructions": {
+    "step_1": "Import this node configuration into your n8n workflow",
+    "step_2": "Connect to the Switch node output for unclassified cases (confiança < 0.6)",
+    "step_3": "Configure Anthropic API credential with your API key",
+    "step_4": "Connect output to the agent_GENERICO or a dedicated dynamic agent",
+    "step_5": "Test with cases that don't match existing specialized domains"
+  },
+  "credential_setup": {
+    "anthropic_api": {
+      "type": "anthropicApi",
+      "required_fields": {
+        "apiKey": "Your Anthropic API key from console.anthropic.com"
+      },
+      "instructions": [
+        "1. Go to console.anthropic.com",
+        "2. Navigate to API Keys",
+        "3. Create new key or copy existing",
+        "4. In n8n, go to Credentials > New",
+        "5. Select 'Anthropic API'",
+        "6. Paste your API key",
+        "7. Save and test connection"
+      ]
+    }
+  }
+}
