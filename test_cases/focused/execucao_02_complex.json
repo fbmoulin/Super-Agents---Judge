@@ -1,0 +1,17 @@
+{
+  "id": "execucao_02_complex",
+  "agent": "EXECUCAO",
+  "descricao": "Caso complexo: cumprimento de sentença com impugnação",
+  "fatos": "O exequente move cumprimento de sentença contra o executado, cobrando R$ 50.000,00 de condenação em ação de indenização transitada em julgado em agosto/2025. O executado foi intimado e não pagou no prazo de 15 dias. Apresentou impugnação alegando excesso de execução, afirmando que os juros foram calculados incorretamente.",
+  "questoes": "1) Incide a multa de 10%? 2) A impugnação tem efeito suspensivo? 3) Como calcular os juros?",
+  "pedidos": "Rejeição da impugnação. Aplicação da multa de 10%. Penhora de bens. Honorários de 10%.",
+  "classe": "Cumprimento de Sentença",
+  "assunto": "Execução de Título Judicial",
+  "valor_causa": 55000.00,
+  "expectativa": {
+    "agente_esperado": "agent_execucao",
+    "score_minimo": 90,
+    "sumulas_esperadas": [],
+    "resultado_esperado": "PROCEDENTE"
+  }
+}

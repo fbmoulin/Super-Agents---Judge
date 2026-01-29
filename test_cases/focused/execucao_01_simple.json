@@ -1,0 +1,17 @@
+{
+  "id": "execucao_01_simple",
+  "agent": "EXECUCAO",
+  "descricao": "Caso simples: execução de cheque",
+  "fatos": "O exequente recebeu do executado cheque no valor de R$ 5.000,00 com vencimento em janeiro/2025. O cheque foi apresentado e devolvido por insuficiência de fundos (alínea 11). O executado foi notificado extrajudicialmente mas não pagou.",
+  "questoes": "O cheque é título executivo extrajudicial? Estão presentes os requisitos da execução?",
+  "pedidos": "Citação do executado para pagar em 3 dias. Penhora de bens suficientes. Honorários de 10%.",
+  "classe": "Execução de Título Extrajudicial",
+  "assunto": "Cheque",
+  "valor_causa": 5000.00,
+  "expectativa": {
+    "agente_esperado": "agent_execucao",
+    "score_minimo": 90,
+    "sumulas_esperadas": [],
+    "resultado_esperado": "PROCEDENTE"
+  }
+}

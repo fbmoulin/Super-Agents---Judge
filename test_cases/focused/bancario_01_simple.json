@@ -1,0 +1,17 @@
+{
+  "id": "bancario_01_simple",
+  "agent": "BANCARIO",
+  "descricao": "Caso simples de juros abusivos em empréstimo pessoal",
+  "fatos": "O autor contratou empréstimo pessoal de R$ 10.000,00 em janeiro de 2025, com taxa de juros de 8% ao mês. A taxa média do BACEN para a modalidade era de 3,5% ao mês. O autor pagou 6 parcelas de R$ 1.800,00 cada.",
+  "questoes": "Os juros cobrados são abusivos? Cabe revisão contratual?",
+  "pedidos": "Revisão contratual para limitar juros a 1,5x a taxa média BACEN. Restituição dos valores pagos a maior.",
+  "classe": "Procedimento Comum Cível",
+  "assunto": "Contratos Bancários - Juros",
+  "valor_causa": 5400.00,
+  "expectativa": {
+    "agente_esperado": "agent_bancario",
+    "score_minimo": 90,
+    "sumulas_esperadas": ["382", "379"],
+    "resultado_esperado": "PROCEDENTE"
+  }
+}

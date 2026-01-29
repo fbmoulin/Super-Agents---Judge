@@ -1,0 +1,17 @@
+{
+  "id": "bancario_02_complex",
+  "agent": "BANCARIO",
+  "descricao": "Caso complexo: empréstimo consignado fraudulento com danos morais",
+  "fatos": "O autor, aposentado de 68 anos, descobriu descontos de R$ 600,00/mês em seu benefício referentes a empréstimo consignado de R$ 15.000,00 que nunca contratou. Não assinou contrato, não recebeu valores, não reconhece a biometria. Descontos iniciaram em março/2025. Registrou B.O. e reclamou no banco sem sucesso. Sofreu constrangimento e angústia.",
+  "questoes": "1) Houve falha na prestação do serviço bancário? 2) É cabível declaração de inexistência do débito? 3) São devidos danos morais? 4) Cabe repetição do indébito?",
+  "pedidos": "a) Declaração de inexistência do contrato; b) Cessação dos descontos; c) Restituição em dobro (R$ 3.600,00 descontados x 2 = R$ 7.200,00); d) Danos morais de R$ 15.000,00.",
+  "classe": "Procedimento Comum Cível",
+  "assunto": "Empréstimo Consignado - Fraude",
+  "valor_causa": 22200.00,
+  "expectativa": {
+    "agente_esperado": "agent_bancario",
+    "score_minimo": 90,
+    "sumulas_esperadas": ["297", "479"],
+    "resultado_esperado": "PROCEDENTE"
+  }
+}

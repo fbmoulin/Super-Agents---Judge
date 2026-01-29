@@ -1,0 +1,17 @@
+{
+  "id": "consumidor_02_complex",
+  "agent": "CONSUMIDOR",
+  "descricao": "Caso complexo: negativação indevida com danos morais",
+  "fatos": "O autor teve seu nome inscrito nos cadastros do SPC/Serasa pela empresa ré em razão de dívida de R$ 850,00 que alega já ter quitado. Apresenta comprovante de pagamento datado de outubro/2025. A negativação ocorreu em novembro/2025. O autor foi impedido de obter crédito para compra de veículo. Não possui outras negativações.",
+  "questoes": "1) A negativação foi indevida? 2) Configura dano moral in re ipsa? 3) Qual o valor adequado para indenização?",
+  "pedidos": "a) Declaração de inexigibilidade do débito; b) Exclusão do nome dos cadastros; c) Danos morais de R$ 10.000,00.",
+  "classe": "Procedimento Comum Cível",
+  "assunto": "Responsabilidade Civil - Negativação Indevida",
+  "valor_causa": 10850.00,
+  "expectativa": {
+    "agente_esperado": "agent_consumidor",
+    "score_minimo": 90,
+    "sumulas_esperadas": ["385", "388"],
+    "resultado_esperado": "PROCEDENTE"
+  }
+}

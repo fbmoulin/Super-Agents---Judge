@@ -1,0 +1,17 @@
+{
+  "id": "consumidor_01_simple",
+  "agent": "CONSUMIDOR",
+  "descricao": "Caso simples: produto com defeito - celular",
+  "fatos": "O autor comprou celular na loja ré por R$ 2.500,00 em dezembro/2025. Após 15 dias, o aparelho parou de funcionar. Levou à assistência técnica que constatou defeito de fabricação. A loja recusou troca ou devolução alegando que o prazo de 7 dias havia passado.",
+  "questoes": "O consumidor tem direito à troca ou devolução do valor? Aplica-se o CDC?",
+  "pedidos": "Restituição do valor pago (R$ 2.500,00) ou troca por produto equivalente.",
+  "classe": "Procedimento Comum Cível",
+  "assunto": "Responsabilidade do Fornecedor - Vício do Produto",
+  "valor_causa": 2500.00,
+  "expectativa": {
+    "agente_esperado": "agent_consumidor",
+    "score_minimo": 90,
+    "sumulas_esperadas": [],
+    "resultado_esperado": "PROCEDENTE"
+  }
+}
