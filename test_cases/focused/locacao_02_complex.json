@@ -1,0 +1,17 @@
+{
+  "id": "locacao_02_complex",
+  "agent": "LOCACAO",
+  "descricao": "Caso complexo: renovatória de locação comercial",
+  "fatos": "O autor explora comércio no imóvel locado há 8 anos, sempre no mesmo ramo (lanchonete). O contrato atual, de 5 anos, vence em março/2026. O locador notificou que não renovará. O autor investiu R$ 80.000,00 em benfeitorias. O ponto comercial é estabelecido na região.",
+  "questoes": "1) Estão presentes os requisitos da renovatória? 2) O locador pode recusar? 3) As benfeitorias são indenizáveis?",
+  "pedidos": "Renovação compulsória do contrato por mais 5 anos. Subsidiariamente, indenização pelas benfeitorias e fundo de comércio.",
+  "classe": "Ação Renovatória",
+  "assunto": "Locação Comercial",
+  "valor_causa": 90000.00,
+  "expectativa": {
+    "agente_esperado": "agent_locacao",
+    "score_minimo": 90,
+    "sumulas_esperadas": [],
+    "resultado_esperado": "PROCEDENTE"
+  }
+}

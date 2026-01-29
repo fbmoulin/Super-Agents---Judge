@@ -1,0 +1,17 @@
+{
+  "id": "generico_02_complex",
+  "agent": "GENERICO",
+  "descricao": "Caso complexo: ação de obrigação de fazer com multa cominatória",
+  "fatos": "O autor contratou empresa de mudanças para transporte de móveis. A empresa realizou o serviço mas reteve 3 caixas com pertences pessoais do autor, exigindo pagamento adicional de R$ 500,00 não previsto no contrato. O autor recusou pagar. A empresa não devolve os pertences há 30 dias.",
+  "questoes": "1) A retenção dos bens é lícita? 2) Cabe obrigação de fazer? 3) Qual o valor da multa cominatória adequada?",
+  "pedidos": "Tutela de urgência para devolução imediata. Obrigação de entregar os bens sob pena de multa de R$ 500,00/dia. Danos morais de R$ 5.000,00.",
+  "classe": "Ação de Obrigação de Fazer",
+  "assunto": "Prestação de Serviços",
+  "valor_causa": 5500.00,
+  "expectativa": {
+    "agente_esperado": "agent_generico",
+    "score_minimo": 90,
+    "sumulas_esperadas": [],
+    "resultado_esperado": "PROCEDENTE"
+  }
+}

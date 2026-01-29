@@ -1,0 +1,17 @@
+{
+  "id": "locacao_01_simple",
+  "agent": "LOCACAO",
+  "descricao": "Caso simples: despejo por falta de pagamento",
+  "fatos": "O autor é proprietário de imóvel residencial alugado ao réu por R$ 1.500,00/mês. O réu deixou de pagar os aluguéis de outubro, novembro e dezembro/2025, totalizando R$ 4.500,00 de débito. Foi notificado extrajudicialmente sem sucesso.",
+  "questoes": "É cabível a ação de despejo? O locatário pode purgar a mora?",
+  "pedidos": "Decretação do despejo. Condenação no pagamento dos aluguéis vencidos e vincendos. Honorários de 10%.",
+  "classe": "Ação de Despejo",
+  "assunto": "Locação de Imóvel",
+  "valor_causa": 4500.00,
+  "expectativa": {
+    "agente_esperado": "agent_locacao",
+    "score_minimo": 90,
+    "sumulas_esperadas": [],
+    "resultado_esperado": "PROCEDENTE"
+  }
+}

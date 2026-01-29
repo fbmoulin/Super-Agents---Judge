@@ -1,0 +1,17 @@
+{
+  "id": "saude_02_complex",
+  "agent": "SAUDE",
+  "descricao": "Caso complexo: negativa de tratamento oncológico",
+  "fatos": "O autor foi diagnosticado com câncer de pulmão em estágio III. O oncologista prescreveu imunoterapia (pembrolizumabe) como tratamento de primeira linha. O plano negou cobertura alegando que o medicamento não está no rol da ANS e que há alternativa mais barata. O autor está em risco de progressão da doença.",
+  "questoes": "1) A negativa é abusiva? 2) O médico assistente pode escolher o tratamento? 3) Cabem danos morais pela negativa em tratamento oncológico?",
+  "pedidos": "Tutela de urgência para cobertura imediata. Cobertura integral do tratamento. Danos morais de R$ 30.000,00.",
+  "classe": "Procedimento Comum Cível",
+  "assunto": "Plano de Saúde - Tratamento Oncológico",
+  "valor_causa": 150000.00,
+  "expectativa": {
+    "agente_esperado": "agent_saude",
+    "score_minimo": 90,
+    "sumulas_esperadas": ["302", "608"],
+    "resultado_esperado": "PROCEDENTE"
+  }
+}

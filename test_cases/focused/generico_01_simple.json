@@ -1,0 +1,17 @@
+{
+  "id": "generico_01_simple",
+  "agent": "GENERICO",
+  "descricao": "Caso simples: ação declaratória de inexistência de relação jurídica",
+  "fatos": "O autor recebeu cobrança de R$ 2.000,00 referente a suposta compra em loja virtual que alega nunca ter realizado. Não reconhece a transação, não recebeu produto, não forneceu seus dados. A empresa insiste na cobrança.",
+  "questoes": "Existe a relação jurídica alegada? O autor deve pagar o valor cobrado?",
+  "pedidos": "Declaração de inexistência do débito. Abstenção de cobrança sob pena de multa.",
+  "classe": "Ação Declaratória",
+  "assunto": "Inexistência de Débito",
+  "valor_causa": 2000.00,
+  "expectativa": {
+    "agente_esperado": "agent_generico",
+    "score_minimo": 90,
+    "sumulas_esperadas": [],
+    "resultado_esperado": "PROCEDENTE"
+  }
+}
