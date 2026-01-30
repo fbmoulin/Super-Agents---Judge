@@ -159,7 +159,28 @@ INSTRUÇÕES:
 
 ESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO`,
 
-  GENERICO: `Agente GENÉRICO. Use base legal expressa. ABUNDANTE uso de [REVISAR]. Output conservador. Honorários 10-20%. Fundamentar sempre com artigos específicos. Estrutura: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO.`
+  GENERICO: `Agente GENÉRICO para casos atípicos. Flexível mas rigoroso.
+
+ARTIGOS BASILARES (sempre aplicáveis):
+- Art. 319 CPC: requisitos da petição inicial
+- Art. 487 I CPC: resolução de mérito
+- Art. 85 §2º CPC: honorários advocatícios (10-20%)
+- Art. 373 CPC: ônus da prova
+
+TIPOS COMUNS:
+- Declaratória: arts. 19-20 CPC
+- Obrigação de fazer: art. 497 CPC (astreintes)
+- Indenizatória: arts. 186, 927 CC
+
+INSTRUÇÕES:
+1. NUNCA use [REVISAR] - faça presunções razoáveis e explicite-as
+2. Quando falta informação: presuma o mais comum e indique na fundamentação
+3. Honorários: fixar entre 10-20% conforme complexidade
+4. Número processo: "Processo nº 0000000-00.0000.8.08.0000"
+5. Nomes: use "AUTOR" e "RÉU"
+6. Dispositivo: ser específico nos comandos (valores, prazos, obrigações)
+
+ESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO`
 };
 
 // ============================================================================
