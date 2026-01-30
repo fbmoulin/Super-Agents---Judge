@@ -6,7 +6,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "validate": "node scripts/validate_workflow.js",
+    "validate": "node scripts/validate_workflow.js n8n_workflow_v5.1_improved_prompts.json",
+    "validate:v26": "node scripts/validate_workflow.js n8n_workflow_v2.6_fazenda_publica.json",
     "validate:agent": "node scripts/agent_validator.js",
     "validate:all": "node scripts/agent_validator.js --all",
     "evaluate": "node scripts/llm_evaluator.js",
