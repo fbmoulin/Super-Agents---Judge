@@ -5,10 +5,12 @@
  *   const config = require('./config');
  *   const prompt = config.getPrompt('BANCARIO');
  *   const settings = config.settings;
+ *   const { validateInput } = config.security;
  */
 
 const fs = require('fs');
 const path = require('path');
+const security = require('./security');
 
 // Load configuration files
 const settingsPath = path.join(__dirname, 'settings.json');
@@ -151,6 +153,7 @@ function getValidationConfig() {
 module.exports = {
   settings,
   prompts,
+  security,
   getPrompt,
   getMinimalPrompt,
   getAgentNames,

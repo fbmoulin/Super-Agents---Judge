@@ -1,32 +1,121 @@
 # Lex Intelligentia Judiciário - .gitignore
+# Security-hardened configuration
 
-# Credenciais e chaves (NUNCA commitar!)
+# =============================================================================
+# CREDENCIAIS E SEGREDOS (CRÍTICO - NUNCA commitar!)
+# =============================================================================
 .env
 .env.*
 !.env.*.template
 !.env.example
 *.keys
+*.key
+*.pem
+*.p12
+*.pfx
 credentials.json
 secrets.json
 config/secrets.json
 config/*.local.json
+**/service-account*.json
+**/*-credentials.json
+**/*_credentials.json
 
-# Node modules
+# API Keys patterns
+**/api_key*
+**/apikey*
+**/*.secret
+
+# OAuth tokens
+**/token.json
+**/tokens.json
+**/*_token.json
+
+# =============================================================================
+# NODE.JS
+# =============================================================================
 node_modules/
+.npm/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
 
-# Logs
+# =============================================================================
+# LOGS E DEBUG
+# =============================================================================
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+logs/
+debug/
 
-# OS files
+# =============================================================================
+# SISTEMA OPERACIONAL
+# =============================================================================
 .DS_Store
+.DS_Store?
+._*
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# IDE
+# =============================================================================
+# IDE E EDITORES
+# =============================================================================
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-workspace
 
-# Temporarios
+# =============================================================================
+# TEMPORÁRIOS E CACHE
+# =============================================================================
 *.tmp
 *.temp
+*.bak
+*.cache
+.cache/
+tmp/
+temp/
+
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.venv/
+venv/
+ENV/
+
+# =============================================================================
+# BUILD E DISTRIBUIÇÃO
+# =============================================================================
+dist/
+build/
+*.tgz
+
+# =============================================================================
+# TESTES
+# =============================================================================
+coverage/
+.nyc_output/
+*.lcov
+
+# =============================================================================
+# DADOS SENSÍVEIS DO PROJETO
+# =============================================================================
+# Resultados de teste com dados reais
+test_results/*_real_*.json
+test_cases/processos_reais/**/*.pdf
+
+# Backups de workflow com credenciais
+**/workflow_backup_*.json
