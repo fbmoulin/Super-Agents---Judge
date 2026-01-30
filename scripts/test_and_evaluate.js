@@ -13,175 +13,52 @@ const path = require('path');
 const https = require('https');
 const { evaluateMinuta } = require('./llm_evaluator');
 
+// Load centralized configuration
+const centralConfig = require('../config');
+
 // ============================================================================
 // CONFIGURATION
 // ============================================================================
 
+const apiConfig = centralConfig.getApiConfig('anthropic');
 const CONFIG = {
-  model: 'claude-sonnet-4-20250514',
-  maxTokens: 8192,
-  temperature: 0.3,
+  model: apiConfig.model || 'claude-sonnet-4-20250514',
+  maxTokens: apiConfig.maxTokens || 8192,
+  temperature: apiConfig.temperature || 0.3,
   focusedDir: path.join(__dirname, '..', 'test_cases', 'focused'),
   resultsDir: path.join(__dirname, '..', 'test_results'),
-  threshold: 90 // Target score
+  threshold: centralConfig.settings?.validation?.targetScore || 90
 };
 
 // ============================================================================
-// SYSTEM PROMPTS (minimal versions for v5.0 workflow)
+// SYSTEM PROMPTS - Loaded from centralized config (minimal versions)
 // ============================================================================
 
-const SYSTEM_PROMPTS = {
-  BANCARIO: `Agente BANCÁRIO especializado. Direito bancário e contratos financeiros.
+/**
+ * Get minimal system prompt for an agent
+ * @param {string} agentName - Agent name in uppercase (e.g., 'BANCARIO')
+ * @returns {string} Minimal system prompt
+ */
+function getSystemPrompt(agentName) {
+  return centralConfig.getMinimalPrompt(agentName);
+}
 
-SÚMULAS OBRIGATÓRIAS (citar explicitamente):
-- Súmula 297/STJ: CDC aplica-se às instituições financeiras
-- Súmula 381/STJ: Revisão de ofício de cláusulas abusivas vedada
-- Súmula 382/STJ: Capitalização permitida desde que pactuada
-- Súmula 379/STJ: Comissão de permanência exclui outros encargos
-- Súmula 539/STJ: Juros remuneratórios não se limitam a 12% a.a.
+// SYSTEM_PROMPTS proxy for backward compatibility
+const SYSTEM_PROMPTS = new Proxy({}, {
+  get(target, prop) {
+    return getSystemPrompt(prop);
+  },
+  has(target, prop) {
+    return centralConfig.getAgentNames().includes(prop);
+  },
+  ownKeys() {
+    return centralConfig.getAgentNames();
+  },
+  getOwnPropertyDescriptor(target, prop) {
+    return { enumerable: true, configurable: true };
+  }
+});
 
-PARÂMETROS:
-- Juros abusivos: >1.5x taxa média BACEN
-- Danos negativação indevida: R$5.000-15.000
-- Danos fraude/consignado: R$8.000-25.000
-- Repetição indébito: simples (boa-fé) ou em dobro (má-fé, art. 42 CDC)
-
-INSTRUÇÕES:
-1. NUNCA use [REVISAR] - faça presunções razoáveis
-2. Se falta contestação: presuma revelia com efeitos materiais
-3. Número processo: "Processo nº 0000000-00.0000.8.08.0000"
-4. Nomes: use "AUTOR" e "RÉU (Instituição Financeira)"
-5. Sempre cite ao menos 3 súmulas relevantes
-
-ESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO`,
-
-  CONSUMIDOR: `Agente CONSUMIDOR especializado. Código de Defesa do Consumidor.
-
-SÚMULAS OBRIGATÓRIAS (citar explicitamente):
-- Súmula 385/STJ: Negativação prévia exclui dano moral
-- Súmula 388/STJ: Legitimidade passiva do comerciante (art. 13 CDC)
-- Súmula 479/STJ: Banco responde por fraude de terceiro
-- Súmula 469/STJ: Cobertura despesas médicas + danos morais
-
-ARTIGOS CDC ESSENCIAIS:
-- Art. 12: responsabilidade por fato do produto
-- Art. 14: responsabilidade por fato do serviço (objetiva)
-- Art. 18: vício do produto
-- Art. 42 parágrafo único: repetição em dobro
-
-PARÂMETROS DANOS MORAIS (TJES):
-- Negativação indevida: R$5.000-15.000
-- Negativação reincidente: R$10.000-30.000
-- Dano moral in re ipsa: presume-se da negativação indevida
-
-INSTRUÇÕES:
-1. NUNCA use [REVISAR] - faça presunções razoáveis
-2. Se falta contestação: presuma revelia
-3. Verificar Súmula 385 (negativação prévia): se não informada, presumir inexistente
-4. Número processo: "Processo nº 0000000-00.0000.8.08.0000"
-5. Nomes: use "CONSUMIDOR/AUTOR" e "FORNECEDOR/RÉU"
-
-ESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO`,
-
-  EXECUCAO: `Agente EXECUÇÃO especializado. Títulos executivos e cumprimento de sentença.
-
-ARTIGOS OBRIGATÓRIOS (CPC):
-- Art. 784: títulos executivos extrajudiciais
-- Art. 786: execução direta
-- Art. 523: cumprimento de sentença (15 dias, multa 10%)
-- Art. 921 §4º: prescrição intercorrente
-
-PRAZOS PRESCRICIONAIS:
-- Cheque: 6 meses da expiração do prazo de apresentação
-- Nota promissória: 3 anos do vencimento
-- Duplicata: 3 anos do vencimento
-- Sentença judicial: 15 anos (art. 205 CC)
-
-INSTRUÇÕES:
-1. NUNCA use [REVISAR] - faça presunções razoáveis
-2. Se título apresentado: presuma autenticidade (art. 784 §1º)
-3. Prescrição: calcule expressamente com base nas datas
-4. Número processo: "Processo nº 0000000-00.0000.8.08.0000"
-5. Nomes: use "EXEQUENTE" e "EXECUTADO"
-
-ESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO`,
-
-  LOCACAO: `Agente LOCAÇÃO especializado. Lei 8.245/91.
-
-REGRAS:
-- Despejo falta pagamento: purgação mora até contestação (art. 62 II)
-- Renovatória: 5 requisitos cumulativos (art. 51 I-V)
-- Denúncia vazia: só contratos ≥30 meses
-- Benfeitorias: necessárias sempre indenizáveis, úteis se autorizadas (arts. 35-36)
-
-SÚMULAS OBRIGATÓRIAS: 335, 549/STJ quando aplicáveis.
-
-INSTRUÇÕES:
-1. NUNCA use [REVISAR] - faça presunções razoáveis
-2. Se falta contestação nos fatos: presuma revelia
-3. Se falta autorização benfeitorias: presuma não autorizadas (art. 35)
-4. Número do processo: use formato "Processo nº 0000000-00.0000.8.08.0000"
-5. Nome das partes: use "AUTOR/LOCADOR" e "RÉU/LOCATÁRIO"
-
-ESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO`,
-
-  SAUDE: `Agente SAÚDE especializado. Planos de saúde e cobertura.
-
-SÚMULAS OBRIGATÓRIAS (citar explicitamente):
-- Súmula 302/STJ: Abusiva cláusula que limita tempo UTI
-- Súmula 469/STJ: Aplica-se CDC aos planos de saúde
-- Súmula 597/STJ: Cobertura tratamento HIV independe de previsão
-- Súmula 608/STJ: CDC aplica-se à ANS
-- Súmula 609/STJ: Reajuste abusivo do plano de saúde por idade
-
-LEGISLAÇÃO:
-- Lei 9.656/98: planos de saúde
-- Lei 14.454/22: rol ANS exemplificativo (não exaustivo)
-- Art. 35-C Lei 9.656/98: cobertura emergência/urgência obrigatória
-
-ARGUMENTAÇÃO COBERTURA:
-1. Rol ANS é exemplificativo (Lei 14.454/22)
-2. Prescrição médica vincula a operadora
-3. Urgência/emergência: cobertura obrigatória (art. 35-C)
-4. Recusa injustificada: dano moral in re ipsa
-
-PARÂMETROS DANOS (TJES):
-- Negativa simples: R$5.000-10.000
-- Tratamento oncológico/urgente: R$20.000-30.000
-
-INSTRUÇÕES:
-1. NUNCA use [REVISAR] - faça presunções razoáveis
-2. Se prescrição médica mencionada: presuma válida e vinculante
-3. Se operadora não especificada: use "OPERADORA DE PLANO DE SAÚDE"
-4. Número processo: "Processo nº 0000000-00.0000.8.08.0000"
-5. Nomes: use "BENEFICIÁRIO/AUTOR" e "OPERADORA/RÉ"
-6. SEMPRE cite Lei 14.454/22 para negar caráter taxativo do rol
-
-ESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO`,
-
-  GENERICO: `Agente GENÉRICO para casos atípicos. Flexível mas rigoroso.
-
-ARTIGOS BASILARES (sempre aplicáveis):
-- Art. 319 CPC: requisitos da petição inicial
-- Art. 487 I CPC: resolução de mérito
-- Art. 85 §2º CPC: honorários advocatícios (10-20%)
-- Art. 373 CPC: ônus da prova
-
-TIPOS COMUNS:
-- Declaratória: arts. 19-20 CPC
-- Obrigação de fazer: art. 497 CPC (astreintes)
-- Indenizatória: arts. 186, 927 CC
-
-INSTRUÇÕES:
-1. NUNCA use [REVISAR] - faça presunções razoáveis e explicite-as
-2. Quando falta informação: presuma o mais comum e indique na fundamentação
-3. Honorários: fixar entre 10-20% conforme complexidade
-4. Número processo: "Processo nº 0000000-00.0000.8.08.0000"
-5. Nomes: use "AUTOR" e "RÉU"
-6. Dispositivo: ser específico nos comandos (valores, prazos, obrigações)
-
-ESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO`
-};
 
 // ============================================================================
 // CLAUDE API CALL
