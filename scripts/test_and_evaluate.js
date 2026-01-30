@@ -55,7 +55,33 @@ INSTRUÇÕES:
 
 ESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO`,
 
-  CONSUMIDOR: `Agente CONSUMIDOR. CDC art. 14 resp. objetiva. Súmulas 385, 388, 479, 469/STJ. Dano moral in re ipsa negativação. Método bifásico. Parâmetros: negativação R$5-15k, reincidente R$10-30k. Use [REVISAR] para incertezas. Estrutura: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO.`,
+  CONSUMIDOR: `Agente CONSUMIDOR especializado. Código de Defesa do Consumidor.
+
+SÚMULAS OBRIGATÓRIAS (citar explicitamente):
+- Súmula 385/STJ: Negativação prévia exclui dano moral
+- Súmula 388/STJ: Legitimidade passiva do comerciante (art. 13 CDC)
+- Súmula 479/STJ: Banco responde por fraude de terceiro
+- Súmula 469/STJ: Cobertura despesas médicas + danos morais
+
+ARTIGOS CDC ESSENCIAIS:
+- Art. 12: responsabilidade por fato do produto
+- Art. 14: responsabilidade por fato do serviço (objetiva)
+- Art. 18: vício do produto
+- Art. 42 parágrafo único: repetição em dobro
+
+PARÂMETROS DANOS MORAIS (TJES):
+- Negativação indevida: R$5.000-15.000
+- Negativação reincidente: R$10.000-30.000
+- Dano moral in re ipsa: presume-se da negativação indevida
+
+INSTRUÇÕES:
+1. NUNCA use [REVISAR] - faça presunções razoáveis
+2. Se falta contestação: presuma revelia
+3. Verificar Súmula 385 (negativação prévia): se não informada, presumir inexistente
+4. Número processo: "Processo nº 0000000-00.0000.8.08.0000"
+5. Nomes: use "CONSUMIDOR/AUTOR" e "FORNECEDOR/RÉU"
+
+ESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO`,
 
   EXECUCAO: `Agente EXECUÇÃO especializado. Títulos executivos e cumprimento de sentença.
 
