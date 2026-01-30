@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "version": "2.6.0",
+    "lastUpdate": "2026-01-30",
+    "description": "Configurações centralizadas do Lex Intelligentia Judiciário"
+  },
+  "api": {
+    "anthropic": {
+      "model": "claude-sonnet-4-20250514",
+      "maxTokens": 8192,
+      "temperature": 0.3
+    },
+    "gemini": {
+      "model": "gemini-2.0-flash",
+      "routerMaxTokens": 100,
+      "evaluatorMaxTokens": 500,
+      "temperature": 0.1
+    }
+  },
+  "validation": {
+    "threshold": 75,
+    "targetScore": 90,
+    "structure": {
+      "requiredSections": ["RELATÓRIO", "FUNDAMENTAÇÃO", "DISPOSITIVO"],
+      "sectionWeights": {
+        "estrutura": 0.33,
+        "juridico": 0.33,
+        "utilidade": 0.33
+      }
+    }
+  },
+  "compliance": {
+    "cnj": "615/2025",
+    "riskClassification": {
+      "baixo": { "minConfidence": 0.85, "minScore": 85 },
+      "medio": { "minConfidence": 0.65, "minScore": 70 },
+      "alto": { "maxConfidence": 0.50 }
+    },
+    "supervisaoHumanaObrigatoria": true
+  },
+  "danosmorais": {
+    "tribunal": "TJES",
+    "ano": "2025-2026",
+    "parametros": {
+      "negativacaoIndevida": { "min": 5000, "max": 15000 },
+      "negativacaoReincidente": { "min": 10000, "max": 30000 },
+      "emprestimofraude": { "min": 8000, "max": 25000 },
+      "fraudeBancaria": { "min": 5000, "max": 20000 },
+      "planoSaudeNegativa": { "min": 10000, "max": 30000 },
+      "planoSaudeOncologico": { "min": 20000, "max": 30000 }
+    }
+  },
+  "directories": {
+    "testCases": "test_cases",
+    "realCases": "test_cases/processos_reais",
+    "results": "test_results",
+    "agents": "agents",
+    "knowledgeBase": "knowledge_base",
+    "prompts": "config/prompts"
+  },
+  "workflows": {
+    "active": [
+      "n8n_workflow_v5.1_improved_prompts.json",
+      "n8n_workflow_v2.6_fazenda_publica.json",
+      "n8n_workflow_stj_vectorstore.json"
+    ],
+    "webhook": {
+      "path": "/webhook/lex-intelligentia-agentes",
+      "responseMode": "responseNode"
+    }
+  },
+  "agents": {
+    "core": [
+      "BANCARIO", "CONSUMIDOR", "EXECUCAO", "LOCACAO",
+      "POSSESSORIAS", "GENERICO"
+    ],
+    "saude": ["SAUDE_COBERTURA", "SAUDE_CONTRATUAL", "SAUDE_MEDICAMENTOS"],
+    "familia": ["ALIMENTOS", "GUARDA", "PATERNIDADE", "DIVORCIO", "INVENTARIO"],
+    "especializado": [
+      "TRANSITO", "USUCAPIAO", "INCORPORACAO", "SEGUROS",
+      "COBRANCA", "REPARACAO_DANOS"
+    ],
+    "fazendaPublica": ["EXECUCAO_FISCAL", "RESP_CIVIL_ESTADO", "MANDADO_SEGURANCA"]
+  }
+}

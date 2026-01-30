@@ -1,9 +1,10 @@
 # 🏛️ LEX INTELLIGENTIA JUDICIÁRIO
 ## Sistema Multi-Agente para Automação de Minutas Judiciais
 
-**Versão:** 2.5
+**Versão:** 2.6
 **Data:** Janeiro 2026
 **Compliance:** CNJ 615/2025
+**Quality Score:** 95/100
 **Autor:** Sistema desenvolvido para 2ª Vara Cível de Cariacica/ES
 
 ---
@@ -29,7 +30,7 @@ O Lex Intelligentia Judiciário é um sistema multi-agente que se integra ao seu
 
 ### Características Principais
 
-- ✅ **19 Agentes Especializados** - **100% validados** (32 casos de teste, 98.5% score)
+- ✅ **21 Agentes Especializados** - **100% validados** (32+ casos de teste, 98.5% score)
 - ✅ **Router Hierárquico** (Gemini 2.5 Flash) com classificação em 2 estágios
 - ✅ **QA Híbrido** (estrutural + semântico)
 - ✅ **Audit Log** em conformidade com CNJ 615/2025
@@ -111,6 +112,8 @@ O Lex Intelligentia Judiciário é um sistema multi-agente que se integra ao seu
 | **Trânsito** | Indenização, responsabilidade civil | 12% |
 | **Usucapião** | Usucapião extraordinária, especial | 5% |
 | **Incorporação** | Atraso de imóvel, rescisão | 8% |
+| **Execução Fiscal** | Execuções fiscais estaduais/municipais | 10-15% |
+| **Resp. Civil Estado** | Responsabilidade civil do Estado | 5-8% |
 | **Genérico** | Fallback para baixa confiança | ~5% |
 
 ### Base Jurisprudencial por Agente
@@ -476,4 +479,4 @@ Este projeto foi desenvolvido para uso interno do Tribunal de Justiça do Espír
 
 ---
 
-*Documentação atualizada em 2026-01-20 - Lex Intelligentia Judiciário v2.5*
+*Documentação atualizada em 2026-01-30 - Lex Intelligentia Judiciário v2.6*

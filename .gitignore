@@ -8,6 +8,8 @@
 *.keys
 credentials.json
 secrets.json
+config/secrets.json
+config/*.local.json
 
 # Node modules
 node_modules/
