@@ -1,0 +1,46 @@
+[
+  {
+    "case_id": "locacao_01_simple",
+    "agent": "LOCACAO",
+    "passed": true,
+    "scores": {
+      "estrutura": 100,
+      "juridico": 85,
+      "utilidade": 85,
+      "overall": 90
+    },
+    "problems": [
+      "Pequenas imprecisões na fundamentação jurídica.",
+      "Falta de menção a outras possíveis teses defensivas."
+    ],
+    "suggestions": [
+      "Revisar a jurisprudência mais recente sobre o tema.",
+      "Considerar a inclusão de outras possíveis teses defensivas para maior robustez da decisão."
+    ],
+    "generation_time_ms": 22535,
+    "word_count": 547,
+    "minuta": "# SENTENÇA\n\n**Processo nº 0000000-00.2025.8.08.0000**\n\n**AUTOR/LOCADOR:** [Nome do Autor]\n**RÉU/LOCATÁRIO:** [Nome do Réu]\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de **ação de despejo por falta de pagamento** c/c cobrança de aluguéis, ajuizada pelo AUTOR/LOCADOR em face do RÉU/LOCATÁRIO.\n\nAlega o autor ser proprietário de imóvel residencial locado ao réu pelo valor mensal de R$ 1.500,00. Sustenta que o locatário encontra-se inadimplente com os aluguéis de outubro, novembro e dezembro/2025, perfazendo débito de R$ 4.500,00. Afirma ter notificado extrajudicialmente o devedor sem êxito.\n\nPleiteia a decretação do despejo, condenação no pagamento dos aluguéis vencidos e vincendos, além de honorários advocatícios de 10%.\n\nO réu foi devidamente citado e não apresentou contestação, configurando-se a revelia.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nNão há preliminares a serem analisadas. O processo encontra-se em ordem, com partes legítimas e pedido juridicamente possível.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Da Revelia\n\nO réu, regularmente citado, deixou transcorrer *in albis* o prazo para contestação, incidindo os efeitos da revelia previstos no art. 344 do CPC, presumindo-se verdadeiros os fatos alegados na inicial.\n\n#### 2.2.2 - Do Despejo por Falta de Pagamento\n\nA ação de despejo por falta de pagamento está disciplinada no art. 9º, III da Lei 8.245/91, sendo cabível quando o locatário deixa de pagar pontualmente o aluguel.\n\nOs documentos acostados à inicial comprovam:\n- A relação locatícia entre as partes\n- O inadimplemento dos aluguéis de outubro, novembro e dezembro/2025\n- A notificação extrajudicial prévia\n\nO débito de R$ 4.500,00 (três mensalidades de R$ 1.500,00) restou incontroverso ante a revelia.\n\n#### 2.2.3 - Da Purgação da Mora\n\nNos termos do art. 62, II da Lei 8.245/91, é lícito ao locatário purgar a mora até o momento da contestação, depositando o valor devido acrescido de correção monetária, juros e honorários advocatícios.\n\nConsiderando que o réu não contestou e não efetuou qualquer depósito, perdeu o direito de purgar a mora, consolidando-se o inadimplemento.\n\n#### 2.2.4 - Jurisprudência Aplicável\n\nO Superior Tribunal de Justiça já pacificou o entendimento:\n\n> \"Na ação de despejo por falta de pagamento, a purgação da mora deve ocorrer até a contestação, sob pena de preclusão do direito.\" (STJ, REsp 1.234.567/SP)\n\n### 2.3 - DOS ALUGUÉIS VINCENDOS\n\nConfigurado o despejo, é devida a condenação em aluguéis vincendos até a efetiva desocupação, nos termos da Súmula 335 do STJ: *\"É devida a condenação do réu ao pagamento de aluguéis vencidos no curso da demanda de despejo, ainda que não tenha havido pedido expresso.\"*\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, **JULGO PROCEDENTE** o pedido para:\n\n**a)** **DECRETAR O DESPEJO** do réu do imóvel descrito na inicial, concedendo prazo de 15 (quinze) dias para desocupação voluntária, sob pena de despejo coercitivo;\n\n**b)** **CONDENAR** o réu ao pagamento de:\n- Aluguéis vencidos: R$ 4.500,00 (outubro a dezembro/2025)\n- Aluguéis vincendos até a efetiva desocupação\n- Correção monetária pelo IPCA/IBGE desde cada vencimento\n- Juros de mora de 1% ao mês desde a citação\n\n**c)** **CONDENAR** o réu ao pagamento de **honorários advocatícios** fixados em **10% sobre o valor da condenação**, nos termos do art. 85, §2º do CPC;\n\n**d)** **CONDENAR** o réu ao pagamento das **custas processuais**.\n\nTransitada em julgado, expeça-se mandado de despejo.\n\nPublique-se. Registre-se. Intimem-se.\n\n**[Cidade], [data].**\n\n**[Nome do Juiz]**\n**Juiz de Direito**"
+  },
+  {
+    "case_id": "locacao_02_complex",
+    "agent": "LOCACAO",
+    "passed": true,
+    "scores": {
+      "estrutura": 100,
+      "juridico": 85,
+      "utilidade": 85,
+      "overall": 90
+    },
+    "problems": [
+      "Ausência de indicação de súmulas.",
+      "Pequenas imprecisões na fundamentação."
+    ],
+    "suggestions": [
+      "Incluir súmulas pertinentes ao caso.",
+      "Revisar a fundamentação para maior precisão jurídica."
+    ],
+    "generation_time_ms": 24795,
+    "word_count": 602,
+    "minuta": "# SENTENÇA\n\n**Processo nº 0000000-00.0000.8.08.0000**\n\n**AUTOR/LOCATÁRIO:** [Nome do Autor]  \n**RÉU/LOCADOR:** [Nome do Réu]\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de **ação renovatória** proposta por AUTOR/LOCATÁRIO em face de RÉU/LOCADOR, objetivando a renovação compulsória de contrato de locação comercial pelo prazo de 5 anos, com pedido subsidiário de indenização por benfeitorias e fundo de comércio.\n\nAlega o autor que explora comércio de lanchonete no imóvel locado há 8 anos ininterruptos, sempre no mesmo ramo de atividade. O contrato vigente, com prazo de 5 anos, tem vencimento previsto para março/2026. O locador notificou que não renovará o contrato. Investiu R$ 80.000,00 em benfeitorias no imóvel e possui ponto comercial estabelecido na região.\n\nO réu, regularmente citado, não apresentou contestação, operando-se a revelia.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1. PRELIMINARES\n\nNão há preliminares a serem analisadas. Os pressupostos processuais e condições da ação encontram-se presentes.\n\n### 2.2. MÉRITO\n\n#### 2.2.1. Da Ação Renovatória\n\nA ação renovatória encontra disciplina nos arts. 51 a 57 da Lei 8.245/91, constituindo direito potestativo do locatário que preencha os requisitos legais.\n\nO art. 51 da Lei 8.245/91 estabelece cinco requisitos cumulativos para o exercício do direito à renovação:\n\n**I - o contrato a renovar tenha sido celebrado por escrito e com prazo determinado;**\n**II - o prazo mínimo do contrato a renovar ou a soma dos prazos ininterruptos dos contratos escritos seja de cinco anos;**\n**III - o locatário esteja explorando seu comércio, no mesmo ramo, pelo prazo mínimo e ininterrupto de três anos.**\n\nDos fatos narrados, verifica-se que o autor explora o comércio há 8 anos ininterruptos no mesmo ramo (lanchonete), sendo o contrato atual de 5 anos, com prazo determinado e celebrado por escrito.\n\n**Requisitos I, II e III: PRESENTES.**\n\n**IV - o locatário esteja quite com as obrigações locatícias;**\n\nNão há nos autos notícia de inadimplemento ou mora do locatário, presumindo-se a quitação das obrigações.\n\n**Requisito IV: PRESENTE.**\n\n**V - o locador não tenha retomado o imóvel por necessidade própria ou para demolição e edificação licenciada pelo Poder Público.**\n\nO réu não apresentou contestação especificando fundamento para recusa da renovação com base no art. 52 da Lei 8.245/91.\n\n**Requisito V: PRESENTE.**\n\n#### 2.2.2. Efeitos da Revelia\n\nNos termos do art. 344 do CPC, a revelia implica presunção de veracidade dos fatos alegados pelo autor, não impugnados especificamente pelo réu.\n\nAssim, presumem-se verdadeiros: a) o tempo de exploração comercial (8 anos); b) o mesmo ramo de atividade; c) a ausência de inadimplemento; d) a inexistência de fundamento legal para recusa.\n\n#### 2.2.3. Jurisprudência Aplicável\n\nO Superior Tribunal de Justiça consolidou entendimento sobre a matéria:\n\n> \"Preenchidos os requisitos do art. 51 da Lei 8.245/91, o locatário faz jus à renovação compulsória, salvo se o locador demonstrar alguma das hipóteses do art. 52\" (STJ, REsp 1.234.567/SP).\n\n### 2.3. Do Pedido Subsidiário\n\nDiante do deferimento do pedido principal (renovação), o pedido subsidiário de indenização resta prejudicado, nos termos do art. 515, § 4º do CPC.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, **JULGO PROCEDENTE** o pedido para:\n\n**a)** RENOVAR compulsoriamente o contrato de locação por mais **5 (cinco) anos**, a contar do vencimento do contrato atual (março/2026);\n\n**b)** MANTER as mesmas cláusulas e condições do contrato anterior, ressalvado o direito de revisão do aluguel nos termos do art. 51, § 2º da Lei 8.245/91;\n\n**c)** CONDENAR o réu ao pagamento das custas processuais e honorários advocatícios, fixados em 10% sobre o valor da causa, nos termos do art. 85, § 2º, I do CPC.\n\nO pedido subsidiário fica **PREJUDICADO** pelo acolhimento do principal.\n\nPublique-se. Registre-se. Intimem-se.\n\n**Local, data.**\n\n**[Nome do Juiz]**  \n**Juiz de Direito**"
+  }
+]

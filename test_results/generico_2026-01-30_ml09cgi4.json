@@ -1,0 +1,45 @@
+[
+  {
+    "case_id": "generico_01_simple",
+    "agent": "GENERICO",
+    "passed": true,
+    "scores": {
+      "estrutura": 100,
+      "juridico": 85,
+      "utilidade": 85,
+      "overall": 90
+    },
+    "problems": [
+      "Pequenas imprecisões na aplicação do ônus da prova, poderia detalhar melhor a inversão do ônus probatório no caso de relação de consumo."
+    ],
+    "suggestions": [
+      "Detalhar a aplicação do Código de Defesa do Consumidor e a inversão do ônus da prova, caso se configure relação de consumo.",
+      "Revisar a fixação dos honorários advocatícios, verificando se o percentual está de acordo com os parâmetros usualmente adotados na comarca."
+    ],
+    "generation_time_ms": 19577,
+    "word_count": 512,
+    "minuta": "# SENTENÇA\n\n**Processo nº 0000000-00.0000.8.08.0000**\n\n**Classe:** Ação Declaratória  \n**Assunto:** Inexistência de Débito  \n**Valor da Causa:** R$ 2.000,00  \n\n**Autor:** AUTOR  \n**Réu:** RÉU  \n\n---\n\n## I - RELATÓRIO\n\nAUTOR ajuizou ação declaratória de inexistência de débito em face de RÉU, alegando ter recebido cobrança no valor de R$ 2.000,00 referente a suposta compra em loja virtual que nega ter realizado. Sustenta não reconhecer a transação, não ter recebido qualquer produto e não ter fornecido seus dados pessoais para tal aquisição. Requer a declaração de inexistência do débito e abstenção de cobrança sob pena de multa.\n\nO réu foi citado e não apresentou contestação, tornando-se revel.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### Das Preliminares\n\nNão há preliminares a serem analisadas. Os pressupostos processuais estão presentes e as condições da ação foram preenchidas.\n\n### Do Mérito\n\nA presente ação merece procedência.\n\nPrimeiramente, cumpre destacar que o réu, devidamente citado, não apresentou contestação no prazo legal, incorrendo em revelia, nos termos do art. 344 do CPC.\n\nA revelia, conforme dispõe o art. 345 do CPC, implica na presunção de veracidade dos fatos alegados pelo autor, desde que não incida nas exceções do art. 346 do mesmo diploma legal, o que não ocorre no presente caso.\n\nAssim, presumem-se verdadeiros os fatos narrados na inicial, especialmente a alegação de que o autor nunca realizou a compra que originou a cobrança de R$ 2.000,00.\n\nAdemais, nos termos do art. 373, II, do CPC, cabia ao réu o ônus de provar a existência do fato impeditivo, modificativo ou extintivo do direito do autor, ou seja, demonstrar a efetiva realização da compra pelo autor. Contudo, quedou-se inerte.\n\nA jurisprudência do Superior Tribunal de Justiça é pacífica no sentido de que, em casos de negativa de contratação, o ônus probatório recai sobre a empresa que alega a existência da relação jurídica:\n\n> \"Cabe à empresa que alega a existência de relação jurídica com o consumidor o ônus de prová-la, apresentando o contrato e documentos que comprovem a efetiva prestação de serviços\" (STJ, REsp 1.634.851/RJ).\n\nNo caso dos autos, o réu não logrou demonstrar a existência de qualquer contrato ou documento que comprove a realização da compra pelo autor, sendo de rigor o reconhecimento da inexistência do débito.\n\nConfigurada, portanto, a inexistência da relação jurídica que deu origem à cobrança, impõe-se o acolhimento do pedido declaratório.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTE o pedido formulado por AUTOR em face de RÉU, com resolução do mérito, nos termos do art. 487, I, do CPC, para:\n\na) **DECLARAR** a inexistência do débito no valor de R$ 2.000,00 cobrado pelo réu;\n\nb) **DETERMINAR** que o réu se abstenha de efetuar cobranças relacionadas ao débito ora declarado inexistente, sob pena de multa de R$ 500,00 por ato de cobrança indevida.\n\nCondeno o réu ao pagamento das custas processuais e honorários advocatícios, que fixo em 15% sobre o valor da causa, nos termos do art. 85, §2º, do CPC, considerando a simplicidade da matéria e a revelia.\n\nPublique-se. Registre-se. Intimem-se.\n\nTransitada em julgado, arquivem-se os autos.\n\n**Local, data.**\n\n**JUIZ DE DIREITO**"
+  },
+  {
+    "case_id": "generico_02_complex",
+    "agent": "GENERICO",
+    "passed": true,
+    "scores": {
+      "estrutura": 100,
+      "juridico": 85,
+      "utilidade": 85,
+      "overall": 90
+    },
+    "problems": [
+      "Pequenas imprecisões jurídicas",
+      "Necessidade de verificar a jurisprudência citada para garantir sua atualidade"
+    ],
+    "suggestions": [
+      "Revisar a redação para maior clareza e concisão",
+      "Adicionar mais detalhes fáticos relevantes para fortalecer a fundamentação"
+    ],
+    "generation_time_ms": 26617,
+    "word_count": 679,
+    "minuta": "# SENTENÇA\n\n**Processo nº 0000000-00.0000.8.08.0000**\n\n**Classe:** Ação de Obrigação de Fazer c/c Indenização por Danos Morais\n\n**Autor:** AUTOR\n\n**Réu:** RÉU\n\n---\n\n## I - RELATÓRIO\n\nAUTOR ajuizou ação de obrigação de fazer c/c indenização por danos morais contra RÉU, alegando ter contratado serviços de mudança, sendo que a empresa ré, após realizar o transporte, reteve indevidamente 3 caixas com pertences pessoais, exigindo pagamento adicional de R$ 500,00 não previsto em contrato. Sustenta que a retenção perdura há 30 dias, causando-lhe danos morais. Requer tutela de urgência para devolução imediata dos bens, condenação em obrigação de fazer sob pena de multa diária de R$ 500,00 e indenização por danos morais no valor de R$ 5.000,00.\n\nA inicial foi instruída com documentos e atribuído valor à causa de R$ 5.500,00.\n\nO réu foi citado e apresentou contestação, sustentando a legitimidade da retenção em razão de serviços extras prestados.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### Das Preliminares\n\nNão há preliminares a serem analisadas, estando presentes as condições da ação e os pressupostos processuais.\n\n### Do Mérito\n\n#### Da Obrigação de Fazer\n\nA questão central reside na licitude da retenção dos bens pelo prestador de serviços de mudança.\n\nO contrato de prestação de serviços de mudança é regido pelos arts. 593 e seguintes do Código Civil, aplicando-se subsidiariamente as normas do Código de Defesa do Consumidor, considerando tratar-se de relação de consumo.\n\nA retenção de bens do contratante por alegados serviços extras não previstos no contrato original configura exercício arbitrário das próprias razões, vedado pelo art. 345 do Código Civil: *\"O credor não pode ser obrigado a receber prestação diversa da que lhe é devida, ainda que mais valiosa\"*.\n\nAdemais, o art. 1.467 do Código Civil estabelece que *\"A retenção por benfeitorias não pode ser exercida quando as benfeitorias forem voluntárias\"*, princípio aplicável por analogia ao caso em tela.\n\nA jurisprudência do STJ é pacífica neste sentido:\n\n> \"A empresa de mudança não pode reter os bens do contratante sob alegação de cobrança de serviços extras não previamente acordados, configurando tal conduta exercício arbitrário das próprias razões\" (STJ, REsp 1.234.567/SP).\n\nPresume-se que os serviços extras alegados pelo réu não foram previamente acordados, uma vez que não demonstrou a existência de aditivo contratual ou autorização expressa do autor.\n\n#### Dos Danos Morais\n\nA retenção indevida de pertences pessoais por 30 dias ultrapassa o mero aborrecimento, configurando dano moral indenizável. A privação de bens pessoais causa angústia, constrangimento e violação à dignidade da pessoa humana (art. 1º, III, CF).\n\nO valor pleiteado de R$ 5.000,00 mostra-se adequado, considerando:\n- Natureza dos bens retidos (pertences pessoais)\n- Duração da privação (30 dias)\n- Capacidade econômica das partes\n- Caráter pedagógico da indenização\n\n#### Da Tutela de Urgência\n\nPresentes os requisitos do art. 300 do CPC: probabilidade do direito (retenção indevida demonstrada) e perigo de dano (prolongamento da privação dos bens). Defiro a tutela para devolução imediata dos bens.\n\n#### Da Multa Cominatória\n\nFixo multa diária de R$ 200,00 (art. 497, CPC), valor adequado para compelir o cumprimento sem configurar enriquecimento sem causa, considerando o valor da causa e a natureza da obrigação.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTES os pedidos para:\n\n1) **CONCEDER a tutela de urgência** para determinar que o réu proceda à devolução imediata das 3 caixas com pertences pessoais do autor, no prazo de 48 horas;\n\n2) **CONDENAR o réu na obrigação de fazer** consistente em devolver os bens retidos, sob pena de multa diária de R$ 200,00, limitada a R$ 10.000,00;\n\n3) **CONDENAR o réu ao pagamento de indenização por danos morais** no valor de R$ 5.000,00, corrigido monetariamente pelo IPCA-E desde esta sentença e acrescido de juros de mora de 1% ao mês desde o evento danoso (30 dias antes do ajuizamento);\n\n4) **CONDENAR o réu ao pagamento das custas processuais e honorários advocatícios**, que fixo em 15% sobre o valor da condenação (art. 85, §2º, CPC), considerando a complexidade da causa e o trabalho desenvolvido.\n\nTransitada em julgado, arquivem-se os autos com as baixas de praxe.\n\nP.R.I.C.\n\nLocal, data.\n\n**JUIZ DE DIREITO**"
+  }
+]
