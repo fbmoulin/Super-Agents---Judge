@@ -1,0 +1,50 @@
+[
+  {
+    "case_id": "execucao_01_simple",
+    "agent": "EXECUCAO",
+    "passed": false,
+    "scores": {
+      "estrutura": 100,
+      "juridico": 85,
+      "utilidade": 70,
+      "overall": 85
+    },
+    "problems": [
+      "Falta de informações básicas como número do processo e nomes das partes.",
+      "Necessidade de verificar a ocorrência de prescrição.",
+      "Dispositivo carece de clareza em relação aos índices de correção monetária e juros de mora a serem aplicados."
+    ],
+    "suggestions": [
+      "Preencher as informações faltantes (número do processo, nomes das partes).",
+      "Verificar a data de vencimento do cheque e a data de propositura da ação para analisar a ocorrência de prescrição.",
+      "Especificar os índices de correção monetária e juros de mora a serem aplicados no dispositivo."
+    ],
+    "generation_time_ms": 26113,
+    "word_count": 638,
+    "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo não informado]\n**Classe:** Execução de Título Extrajudicial\n**Assunto:** Cheque\n**Exequente:** [REVISAR: nome não informado]\n**Executado:** [REVISAR: nome não informado]\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de execução de título extrajudicial movida por [REVISAR: nome do exequente] em face de [REVISAR: nome do executado], objetivando o recebimento da quantia de R$ 5.000,00, representada por cheque com vencimento em janeiro/2025.\n\nSegundo a inicial, o cheque foi apresentado ao banco sacado e devolvido por insuficiência de fundos (alínea 11). O executado foi notificado extrajudicialmente, mas permaneceu inerte.\n\nO exequente requer a citação do executado para pagamento em 3 dias, sob pena de penhora de bens suficientes à satisfação do débito, além de honorários advocatícios de 10%.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### Das Preliminares\n\nNão há preliminares a serem analisadas.\n\n### Do Mérito\n\n#### Dos Requisitos da Execução\n\nA execução de título extrajudicial rege-se pelos arts. 783 e seguintes do Código de Processo Civil, exigindo-se a presença cumulativa dos seguintes requisitos: (i) título executivo extrajudicial; (ii) obrigação certa; (iii) obrigação líquida; e (iv) obrigação exigível.\n\n#### Do Título Executivo\n\nO cheque constitui título executivo extrajudicial, nos termos do art. 784, I, do CPC. Conforme pacífica jurisprudência do Superior Tribunal de Justiça, o cheque prescrito como título cambial mantém sua executividade como título executivo extrajudicial pelo prazo de dois anos, contados do vencimento do prazo prescricional cambial.\n\nNesse sentido:\n\n> \"O cheque prescrito como título cambial (seis meses após a apresentação - art. 59 da Lei 7.357/85) permanece como título executivo extrajudicial pelo prazo de dois anos (art. 206, § 5º, I, do CC/02)\" (STJ, REsp 1.340.553/RS, Rel. Min. Luis Felipe Salomão).\n\n#### Da Liquidez, Certeza e Exigibilidade\n\nA obrigação é líquida, pois o valor está determinado (R$ 5.000,00). É certa, uma vez que não há dúvida sobre sua existência. É exigível, considerando que o cheque foi apresentado e devolvido por insuficiência de fundos.\n\n[REVISAR: necessário verificar se o prazo prescricional de 6 meses do cheque já transcorreu, considerando que o vencimento foi em janeiro/2025 e não foi informada a data atual]\n\n#### Da Prescrição\n\nTratando-se de cheque, a prescrição da ação cambial ocorre em 6 meses, contados da expiração do prazo de apresentação (art. 59 da Lei 7.357/85). Após esse prazo, subsiste a ação de enriquecimento sem causa pelo prazo de 2 anos (art. 61 da Lei 7.357/85).\n\n[REVISAR: é necessário verificar se houve prescrição, pois o cheque venceu em janeiro/2025 e não foi informada a data de propositura da ação]\n\n#### Da Jurisprudência Aplicável\n\nO Tribunal de Justiça tem decidido reiteradamente:\n\n> \"EXECUÇÃO. CHEQUE PRESCRITO. TÍTULO EXECUTIVO EXTRAJUDICIAL. POSSIBILIDADE. O cheque prescrito como título cambial mantém sua força executiva como título executivo extrajudicial, desde que não ultrapassado o prazo de dois anos para a ação de enriquecimento sem causa\" (TJSP, Apelação nº 1000000-00.0000.0.00.0000).\n\n### Conclusão\n\nPresentes os requisitos legais para a execução, deve ser deferido o processamento do feito.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, **DEFIRO** o processamento da execução.\n\n**DETERMINO** a citação do executado para, no prazo de 3 (três) dias, efetuar o pagamento da dívida no valor de R$ 5.000,00, acrescida de correção monetária, juros de mora e honorários advocatícios, ou nomear bens à penhora (art. 829 do CPC).\n\nNão efetuado o pagamento no prazo legal, **DETERMINO** a aplicação de multa de 10% sobre o valor do débito (art. 523, §1º do CPC).\n\n**FIXO** os honorários advocatícios em 10% sobre o valor atualizado do débito (art. 827 do CPC).\n\nCustas pelo executado.\n\nIntime-se. Cumpra-se.\n\n[Local], [data].\n\n**[Nome do Juiz]**\nJuiz de Direito\n\n---\n\n**Observações importantes:**\n- [REVISAR: Verificar data de vencimento do cheque e data atual para análise de prescrição]\n- [REVISAR: Confirmar nomes das partes e número do processo]\n- [REVISAR: Verificar se há outros documentos nos autos que possam influenciar a decisão]"
+  },
+  {
+    "case_id": "execucao_02_complex",
+    "agent": "EXECUCAO",
+    "passed": false,
+    "scores": {
+      "estrutura": 85,
+      "juridico": 85,
+      "utilidade": 70,
+      "overall": 80
+    },
+    "problems": [
+      "Número do processo, nome do exequente e executado não informados.",
+      "Necessidade de analisar os cálculos apresentados pelas partes para verificar a correção dos juros.",
+      "Necessidade de analisar se há elementos concretos para deferir o efeito suspensivo."
+    ],
+    "suggestions": [
+      "Preencher os dados faltantes (número do processo, nome do exequente e executado).",
+      "Realizar uma análise detalhada dos cálculos apresentados pelas partes para verificar a correção dos juros, confrontando-os com a sentença originária.",
+      "Analisar cuidadosamente os argumentos apresentados pelo executado para verificar se estão presentes os requisitos para a concessão do efeito suspensivo à impugnação."
+    ],
+    "generation_time_ms": 20521,
+    "word_count": 532,
+    "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número não informado]  \n**Classe:** Cumprimento de Sentença  \n**Assunto:** Execução de Título Judicial  \n**Exequente:** [REVISAR: nome não informado]  \n**Executado:** [REVISAR: nome não informado]  \n**Valor da Causa:** R$ 55.000,00\n\n---\n\n## I - RELATÓRIO\n\nO exequente move cumprimento de sentença contra o executado, cobrando R$ 50.000,00 decorrente de condenação em ação de indenização transitada em julgado em agosto/2025.\n\nO executado foi devidamente intimado para pagamento no prazo de 15 dias e quedou-se inerte, sendo aplicada a multa de 10% prevista no art. 523, §1º do CPC.\n\nPosteriormente, o executado apresentou impugnação ao cumprimento de sentença, alegando excesso de execução por incorreto cálculo dos juros.\n\nO exequente requereu a rejeição da impugnação, aplicação da multa de 10%, penhora de bens e condenação em honorários advocatícios de 10%.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### Das Preliminares\n\nNão há preliminares a serem analisadas.\n\n### Do Mérito\n\n#### Da Multa de 10%\n\nO art. 523, §1º do CPC estabelece que \"não ocorrendo o pagamento voluntário no prazo do caput, o débito será acrescido de multa de dez por cento e, também, de honorários de advogado de dez por cento\".\n\nNo caso dos autos, o executado foi regularmente intimado para pagamento em 15 dias e não cumpriu a obrigação no prazo legal, incidindo automaticamente a multa de 10% sobre o valor da condenação.\n\n#### Da Impugnação - Efeito Suspensivo\n\nNos termos do art. 525, §6º do CPC, a impugnação somente terá efeito suspensivo quando \"relevantes seus fundamentos e o prosseguimento da execução seja manifestamente suscetível de causar ao executado grave dano de difícil ou incerta reparação\".\n\n[REVISAR: necessário analisar se há elementos concretos para deferir efeito suspensivo]\n\n#### Do Cálculo dos Juros\n\nO título executivo judicial deve ser cumprido pelos seus próprios termos (art. 523, caput, CPC). Os juros devem ser calculados conforme determinado na sentença condenatória.\n\n[REVISAR: necessário verificar os termos da sentença originária para análise do cálculo correto]\n\nAnalisando a impugnação apresentada, verifica-se que [REVISAR: necessária análise específica dos cálculos apresentados pelo executado versus exequente].\n\n#### Dos Honorários Advocatícios\n\nO art. 523, §1º do CPC prevê a incidência automática de honorários advocatícios de 10% sobre o valor da execução quando não há pagamento voluntário no prazo de 15 dias.\n\n### Jurisprudência\n\nO Superior Tribunal de Justiça já decidiu que \"a multa prevista no art. 523, §1º, do CPC/2015 incide automaticamente com o descumprimento da obrigação de pagar no prazo de quinze dias\" (STJ, REsp 1.680.072/SP).\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, **JULGO PROCEDENTE** a impugnação **EM PARTE** [REVISAR: dependendo da análise dos cálculos], para:\n\na) **CONFIRMAR** a incidência da multa de 10% prevista no art. 523, §1º do CPC;\n\nb) **DETERMINAR** [REVISAR: se há correção nos cálculos] o recálculo do débito conforme fundamentação;\n\nc) **CONDENAR** o executado ao pagamento de honorários advocatícios de 10% sobre o valor da execução, nos termos do art. 523, §1º do CPC;\n\nd) **DETERMINAR** o prosseguimento da execução para penhora de bens suficientes à satisfação do crédito, caso não haja pagamento voluntário em 15 dias.\n\n**DEFIRO** [REVISAR: analisar se cabível] o efeito suspensivo da impugnação até o trânsito em julgado desta decisão.\n\nIntimem-se.\n\n[Local], [data].\n\n**[Nome do Juiz]**  \nJuiz de Direito"
+  }
+]
