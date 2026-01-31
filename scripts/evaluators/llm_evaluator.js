@@ -9,11 +9,12 @@
  */
 
 const { GoogleGenerativeAI } = require('@google/generative-ai');
+const logger = require('../../lib/logger');
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
 
 if (!GEMINI_API_KEY) {
-  console.error('Error: GEMINI_API_KEY or GOOGLE_API_KEY environment variable required');
+  logger.error('GEMINI_API_KEY or GOOGLE_API_KEY environment variable required');
   process.exit(1);
 }
 
@@ -88,7 +89,7 @@ async function evaluateMinuta(minuta, domain, expectedSumulas = []) {
 
     return evaluation;
   } catch (error) {
-    console.error('Evaluation error:', error.message);
+    logger.error('Evaluation error', { error: error.message });
     return {
       estrutura: 0,
       juridico: 0,
@@ -109,8 +110,7 @@ if (require.main === module) {
 
   const args = process.argv.slice(2);
   if (args.length < 1) {
-    console.log('Usage: node llm_evaluator.js <minuta_file.txt> [domain] [sumulas]');
-    console.log('Example: node llm_evaluator.js output.txt BANCARIO "297,382"');
+    logger.info('Usage: node llm_evaluator.js <minuta_file.txt> [domain] [sumulas]');
     process.exit(1);
   }
 
@@ -119,29 +119,27 @@ if (require.main === module) {
   const sumulas = args[2] ? args[2].split(',') : [];
 
   if (!fs.existsSync(minutaFile)) {
-    console.error(`File not found: ${minutaFile}`);
+    logger.error('File not found', { file: minutaFile });
     process.exit(1);
   }
 
   const minuta = fs.readFileSync(minutaFile, 'utf-8');
 
   evaluateMinuta(minuta, domain, sumulas).then(result => {
-    console.log('\n📊 LLM Evaluation Results:');
-    console.log('─'.repeat(40));
-    console.log(`  Estrutura: ${result.estrutura}%`);
-    console.log(`  Jurídico:  ${result.juridico}%`);
-    console.log(`  Utilidade: ${result.utilidade}%`);
-    console.log('─'.repeat(40));
-    console.log(`  OVERALL:   ${result.overall}%`);
+    logger.section('LLM Evaluation Results');
+    logger.info('Scores', {
+      estrutura: `${result.estrutura}%`,
+      juridico: `${result.juridico}%`,
+      utilidade: `${result.utilidade}%`,
+      overall: `${result.overall}%`
+    });
 
     if (result.problemas?.length) {
-      console.log('\n⚠️  Problemas:');
-      result.problemas.forEach(p => console.log(`  - ${p}`));
+      result.problemas.forEach(p => logger.warn('Problem', { detail: p }));
     }
 
     if (result.sugestoes?.length) {
-      console.log('\n💡 Sugestões:');
-      result.sugestoes.forEach(s => console.log(`  - ${s}`));
+      result.sugestoes.forEach(s => logger.info('Suggestion', { detail: s }));
     }
   });
 }

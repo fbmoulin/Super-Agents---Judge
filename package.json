@@ -16,7 +16,9 @@
     "test:agent": "node scripts/evaluators/test_and_evaluate.js",
     "test:real": "node scripts/validators/agent_validator.js --all --real",
     "download:stj": "python scripts/data/stj_downloader.py --download-all",
-    "ingest:qdrant": "python scripts/data/qdrant_ingest.py"
+    "ingest:qdrant": "python scripts/data/qdrant_ingest.py",
+    "checklist": "node scripts/production-checklist.js",
+    "deploy:check": "npm test && npm run validate && node scripts/production-checklist.js"
   },
   "keywords": [
     "legal-ai",

@@ -14,39 +14,7 @@
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
-
-// ============================================================================
-// TEST UTILITIES
-// ============================================================================
-
-const COLORS = {
-  reset: '\x1b[0m',
-  red: '\x1b[31m',
-  green: '\x1b[32m',
-  yellow: '\x1b[33m',
-  blue: '\x1b[34m',
-  magenta: '\x1b[35m',
-  cyan: '\x1b[36m'
-};
-
-function log(message, color = 'reset') {
-  console.log(`${COLORS[color]}${message}${COLORS.reset}`);
-}
-
-function logSection(title) {
-  console.log('\n' + '='.repeat(80));
-  log(title, 'cyan');
-  console.log('='.repeat(80));
-}
-
-function logTest(name, passed, details = '') {
-  const icon = passed ? '✓' : '✗';
-  const color = passed ? 'green' : 'red';
-  log(`${icon} ${name}`, color);
-  if (details) {
-    log(`  ${details}`, 'yellow');
-  }
-}
+const logger = require('../../lib/logger');
 
 // ============================================================================
 // LOAD WORKFLOW
@@ -66,9 +34,9 @@ try {
   nodeByName = new Map(workflow.nodes.map(n => [n.name, n]));
   nodeById = new Map(workflow.nodes.map(n => [n.id, n]));
 
-  log(`✓ Loaded workflow: ${workflowPath}`, 'green');
+  logger.success('Loaded workflow', { path: workflowPath });
 } catch (error) {
-  log(`✗ Failed to load workflow: ${error.message}`, 'red');
+  logger.error('Failed to load workflow', { error: error.message });
   process.exit(1);
 }
 
@@ -76,7 +44,7 @@ try {
 // TEST 1: JSON STRUCTURE VALIDATION
 // ============================================================================
 
-logSection('TEST 1: JSON Structure Validation');
+logger.section('TEST 1: JSON Structure Validation');
 
 const errors = [];
 const warnings = [];
@@ -89,14 +57,14 @@ requiredFields.forEach(field => {
   }
 });
 
-logTest('Required top-level fields', errors.length === 0,
+logger.testResult('Required top-level fields', errors.length === 0,
   errors.length > 0 ? errors.join(', ') : 'All required fields present');
 
 // Validate nodes
 if (!Array.isArray(workflow.nodes)) {
   errors.push('nodes must be an array');
 } else {
-  logTest('Nodes is array', true, `${workflow.nodes.length} nodes found`);
+  logger.testResult('Nodes is array', true, `${workflow.nodes.length} nodes found`);
 
   // Check each node structure
   const nodeIds = new Set();
@@ -125,7 +93,7 @@ if (!Array.isArray(workflow.nodes)) {
     }
   });
 
-  logTest('Node IDs unique', errors.filter(e => e.includes('Duplicate')).length === 0,
+  logger.testResult('Node IDs unique', errors.filter(e => e.includes('Duplicate')).length === 0,
     `${nodeIds.size} unique node IDs`);
 }
 
@@ -133,34 +101,30 @@ if (!Array.isArray(workflow.nodes)) {
 if (typeof workflow.connections !== 'object') {
   errors.push('connections must be an object');
 } else {
-  logTest('Connections is object', true);
+  logger.testResult('Connections is object', true);
 }
 
 // Summary
-console.log('\n' + '-'.repeat(80));
-log(`Errors: ${errors.length}`, errors.length > 0 ? 'red' : 'green');
-log(`Warnings: ${warnings.length}`, warnings.length > 0 ? 'yellow' : 'green');
+logger.info('Validation summary', { errors: errors.length, warnings: warnings.length });
 
 if (errors.length > 0) {
-  log('\nERRORS:', 'red');
-  errors.forEach(e => log(`  - ${e}`, 'red'));
+  errors.forEach(e => logger.error('Structure error', { detail: e }));
 }
 
 if (warnings.length > 0) {
-  log('\nWARNINGS:', 'yellow');
-  warnings.forEach(w => log(`  - ${w}`, 'yellow'));
+  warnings.forEach(w => logger.warn('Structure warning', { detail: w }));
 }
 
 // ============================================================================
 // TEST 2: JAVASCRIPT SYNTAX CHECK
 // ============================================================================
 
-logSection('TEST 2: JavaScript Syntax Check');
+logger.section('TEST 2: JavaScript Syntax Check');
 
 const jsErrors = [];
 const codeNodes = workflow.nodes.filter(n => n.type === 'n8n-nodes-base.code');
 
-log(`Found ${codeNodes.length} Code nodes to validate`, 'blue');
+logger.info('Found Code nodes', { count: codeNodes.length });
 
 codeNodes.forEach(node => {
   const code = node.parameters?.jsCode;
@@ -190,13 +154,14 @@ codeNodes.forEach(node => {
       Object: Object
     };
 
-    // Try to compile the code
-    new vm.Script(code);
+    // n8n wraps Code node content in a function, so top-level returns are valid
+    // We wrap the code in an async function to properly validate it
+    const wrappedCode = `(async function() { ${code} })()`;
 
-    // Try to create function
-    const func = new Function('$input', '$', '$json', '$execution', 'console', code);
+    // Try to compile the wrapped code
+    new vm.Script(wrappedCode);
 
-    logTest(`${node.name || node.id}`, true, `${code.length} chars`);
+    logger.testResult(`${node.name || node.id}`, true, `${code.length} chars`);
 
   } catch (error) {
     jsErrors.push({
@@ -205,12 +170,12 @@ codeNodes.forEach(node => {
       location: error.stack?.split('\n')[0]
     });
 
-    logTest(`${node.name || node.id}`, false, error.message);
+    logger.testResult(`${node.name || node.id}`, false, error.message);
   }
 });
 
 // Check for common issues
-log('\nChecking for common code patterns...', 'blue');
+logger.debug('Checking for common code patterns');
 
 const commonIssues = [];
 
@@ -247,25 +212,21 @@ codeNodes.forEach(node => {
 });
 
 if (commonIssues.length > 0) {
-  log('\nCommon issues found:', 'yellow');
   commonIssues.forEach(issue => {
-    const color = issue.severity === 'error' ? 'red' :
-                  issue.severity === 'warning' ? 'yellow' : 'blue';
-    log(`  [${issue.severity.toUpperCase()}] ${issue.node}: ${issue.issue}`, color);
+    const logFn = issue.severity === 'error' ? logger.error :
+                  issue.severity === 'warning' ? logger.warn : logger.info;
+    logFn('Code issue', { node: issue.node, issue: issue.issue, severity: issue.severity });
   });
 }
 
-console.log('\n' + '-'.repeat(80));
-log(`JavaScript Errors: ${jsErrors.length}`, jsErrors.length > 0 ? 'red' : 'green');
-log(`Code Issues: ${commonIssues.filter(i => i.severity === 'error').length}`,
-    commonIssues.filter(i => i.severity === 'error').length > 0 ? 'red' : 'green');
+logger.info('JavaScript validation summary', {
+  jsErrors: jsErrors.length,
+  codeIssues: commonIssues.filter(i => i.severity === 'error').length
+});
 
 if (jsErrors.length > 0) {
-  log('\nJAVASCRIPT ERRORS:', 'red');
   jsErrors.forEach(e => {
-    log(`  Node: ${e.node}`, 'red');
-    log(`  Error: ${e.error}`, 'red');
-    if (e.location) log(`  Location: ${e.location}`, 'red');
+    logger.error('JavaScript error', { node: e.node, error: e.error, location: e.location });
   });
 }
 
@@ -273,7 +234,7 @@ if (jsErrors.length > 0) {
 // TEST 3: CONNECTION GRAPH VALIDATION
 // ============================================================================
 
-logSection('TEST 3: Connection Graph Validation');
+logger.section('TEST 3: Connection Graph Validation');
 
 const graphErrors = [];
 const graphWarnings = [];
@@ -331,7 +292,7 @@ Object.keys(workflow.connections).forEach(sourceId => {
   });
 });
 
-logTest('All connection targets exist', graphErrors.filter(e => e.includes('not found')).length === 0);
+logger.testResult('All connection targets exist', graphErrors.filter(e => e.includes('not found')).length === 0);
 
 // Find orphan nodes (no incoming or outgoing connections)
 const nodesWithIncoming = new Set();
@@ -372,17 +333,16 @@ const orphanNodes = workflow.nodes.filter(node => {
 });
 
 if (orphanNodes.length > 0) {
-  log('\nPotential orphan nodes:', 'yellow');
   orphanNodes.forEach(node => {
     const hasIn = nodesWithIncoming.has(node.id);
     const hasOut = nodesWithOutgoing.has(node.id);
     const status = !hasIn && !hasOut ? 'NO CONNECTIONS' :
                    !hasIn ? 'NO INCOMING' : 'NO OUTGOING';
-    log(`  - ${node.name || node.id} (${node.type}): ${status}`, 'yellow');
+    logger.warn('Potential orphan node', { node: node.name || node.id, type: node.type, status });
   });
 }
 
-logTest('No orphan nodes', orphanNodes.length === 0,
+logger.testResult('No orphan nodes', orphanNodes.length === 0,
         `${orphanNodes.length} potential orphans (may be intentional)`);
 
 // Check for circular references
@@ -435,30 +395,26 @@ function detectCycles() {
 }
 
 const cycles = detectCycles();
-logTest('No circular references', cycles.length === 0,
+logger.testResult('No circular references', cycles.length === 0,
         cycles.length > 0 ? `${cycles.length} cycle(s) detected` : '');
 
 if (cycles.length > 0) {
-  log('\nCircular references:', 'red');
   cycles.forEach((cycle, idx) => {
-    log(`  Cycle ${idx + 1}: ${cycle.join(' -> ')}`, 'red');
+    logger.error('Circular reference detected', { cycle: idx + 1, path: cycle.join(' -> ') });
   });
 }
 
-console.log('\n' + '-'.repeat(80));
-log(`Graph Errors: ${graphErrors.length}`, graphErrors.length > 0 ? 'red' : 'green');
-log(`Graph Warnings: ${graphWarnings.length}`, graphWarnings.length > 0 ? 'yellow' : 'green');
+logger.info('Graph validation summary', { errors: graphErrors.length, warnings: graphWarnings.length });
 
 if (graphErrors.length > 0) {
-  log('\nGRAPH ERRORS:', 'red');
-  graphErrors.forEach(e => log(`  - ${e}`, 'red'));
+  graphErrors.forEach(e => logger.error('Graph error', { detail: e }));
 }
 
 // ============================================================================
 // TEST 4: DATA FLOW SIMULATION
 // ============================================================================
 
-logSection('TEST 4: Data Flow Simulation');
+logger.section('TEST 4: Data Flow Simulation');
 
 const dataFlowIssues = [];
 
@@ -477,8 +433,7 @@ function traceFlow() {
     return;
   }
 
-  log(`Starting trace from: ${webhook.name}`, 'blue');
-  log(`Target responses: ${responses.map(r => r.name).join(', ')}`, 'blue');
+  logger.info('Tracing data flow', { start: webhook.name, targets: responses.map(r => r.name).join(', ') });
 
   // BFS to find paths
   const queue = [[webhook.id]];
@@ -515,7 +470,7 @@ function traceFlow() {
     }
   }
 
-  logTest('Paths from webhook to response', paths.length > 0,
+  logger.testResult('Paths from webhook to response', paths.length > 0,
           `${paths.length} path(s) found`);
 
   if (paths.length === 0) {
@@ -528,7 +483,7 @@ function traceFlow() {
 const paths = traceFlow();
 
 // Check for null/undefined access in Code nodes
-log('\nChecking for potential null/undefined access...', 'blue');
+logger.debug('Checking for potential null/undefined access');
 
 codeNodes.forEach(node => {
   const code = node.parameters?.jsCode || '';
@@ -558,11 +513,11 @@ codeNodes.forEach(node => {
     }
   });
 
-  logTest(`${node.name || node.id} - null safety`, !hasUnsafe);
+  logger.testResult(`${node.name || node.id} - null safety`, !hasUnsafe);
 });
 
 // Check variable references between nodes
-log('\nChecking inter-node variable references...', 'blue');
+logger.debug('Checking inter-node variable references');
 
 const nodeReferences = new Map();
 
@@ -596,29 +551,26 @@ codeNodes.forEach(node => {
 });
 
 if (nodeReferences.size > 0) {
-  log('\nNode cross-references:', 'blue');
   nodeReferences.forEach((refs, nodeName) => {
-    log(`  ${nodeName} references: ${refs.join(', ')}`, 'blue');
+    logger.debug('Node cross-reference', { node: nodeName, references: refs.join(', ') });
   });
 }
 
-console.log('\n' + '-'.repeat(80));
 const dataFlowErrors = dataFlowIssues.filter(i => typeof i === 'object' && i.severity === 'error').length;
 const dataFlowWarnings = dataFlowIssues.filter(i => typeof i === 'object' && i.severity === 'warning').length;
 
-log(`Data Flow Errors: ${dataFlowErrors}`, dataFlowErrors > 0 ? 'red' : 'green');
-log(`Data Flow Warnings: ${dataFlowWarnings}`, dataFlowWarnings > 0 ? 'yellow' : 'green');
+logger.info('Data flow validation summary', { errors: dataFlowErrors, warnings: dataFlowWarnings });
 
 // ============================================================================
 // TEST 5: CREDENTIAL PLACEHOLDER CHECK
 // ============================================================================
 
-logSection('TEST 5: Credential Placeholder Check');
+logger.section('TEST 5: Credential Placeholder Check');
 
 const credentialIssues = [];
 const credentialNodes = workflow.nodes.filter(n => n.credentials);
 
-log(`Found ${credentialNodes.length} nodes with credentials`, 'blue');
+logger.info('Found credential nodes', { count: credentialNodes.length });
 
 credentialNodes.forEach(node => {
   const creds = node.credentials;
@@ -645,7 +597,7 @@ credentialNodes.forEach(node => {
       }
     }
 
-    logTest(`${node.name || node.id} - ${credType}`,
+    logger.testResult(`${node.name || node.id} - ${credType}`,
             credConfig.id !== undefined,
             `ID: ${credConfig.id}`);
   });
@@ -665,20 +617,17 @@ workflow.nodes.forEach(node => {
 });
 
 if (envVars.size > 0) {
-  log('\nEnvironment variables required:', 'blue');
-  envVars.forEach(varName => {
-    log(`  - ${varName}`, 'cyan');
-  });
+  logger.info('Required environment variables', { vars: Array.from(envVars).join(', ') });
 }
 
-console.log('\n' + '-'.repeat(80));
-log(`Credential Placeholders: ${credentialIssues.filter(i => i.status === 'placeholder').length}`, 'yellow');
-log(`Suspicious Credentials: ${credentialIssues.filter(i => i.status === 'suspicious').length}`, 'yellow');
+logger.info('Credential validation summary', {
+  placeholders: credentialIssues.filter(i => i.status === 'placeholder').length,
+  suspicious: credentialIssues.filter(i => i.status === 'suspicious').length
+});
 
 if (credentialIssues.length > 0) {
-  log('\nCREDENTIAL ISSUES:', 'yellow');
   credentialIssues.forEach(issue => {
-    log(`  [${issue.status.toUpperCase()}] ${issue.node} (${issue.type}): ${issue.id}`, 'yellow');
+    logger.warn('Credential issue', { status: issue.status, node: issue.node, type: issue.type, id: issue.id });
   });
 }
 
@@ -686,20 +635,17 @@ if (credentialIssues.length > 0) {
 // FINAL SUMMARY
 // ============================================================================
 
-logSection('VALIDATION SUMMARY');
+logger.section('VALIDATION SUMMARY');
 
 const totalErrors = errors.length + jsErrors.length + graphErrors.length + dataFlowErrors;
 const totalWarnings = warnings.length + graphWarnings.length + dataFlowWarnings + credentialIssues.length;
 
-console.log();
-log(`Total Errors: ${totalErrors}`, totalErrors > 0 ? 'red' : 'green');
-log(`Total Warnings: ${totalWarnings}`, totalWarnings > 0 ? 'yellow' : 'green');
-console.log();
+logger.info('Final summary', { totalErrors, totalWarnings });
 
 if (totalErrors === 0) {
-  log('✓ Workflow validation PASSED', 'green');
+  logger.success('Workflow validation PASSED');
   process.exit(0);
 } else {
-  log('✗ Workflow validation FAILED', 'red');
+  logger.error('Workflow validation FAILED');
   process.exit(1);
 }

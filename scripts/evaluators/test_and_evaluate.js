@@ -12,9 +12,10 @@ const fs = require('fs');
 const path = require('path');
 const { evaluateMinuta } = require('./llm_evaluator');
 
-// Load centralized configuration and HTTP client
+// Load centralized configuration, HTTP client, and logger
 const centralConfig = require('../../config');
 const { anthropicRequest, extractText } = require('../../lib/http-client');
+const logger = require('../../lib/logger');
 
 // ============================================================================
 // CONFIGURATION
@@ -128,8 +129,8 @@ async function testAgent(agentName, useFocused = true) {
   const systemPrompt = SYSTEM_PROMPTS[agent];
 
   if (!systemPrompt) {
-    console.error(`Unknown agent: ${agent}`);
-    console.log('Available agents:', Object.keys(SYSTEM_PROMPTS).join(', '));
+    logger.error('Unknown agent', { agent });
+    logger.info('Available agents', { agents: Object.keys(SYSTEM_PROMPTS).join(', ') });
     process.exit(1);
   }
 
@@ -137,7 +138,7 @@ async function testAgent(agentName, useFocused = true) {
   const testDir = useFocused ? CONFIG.focusedDir : path.join(__dirname, '..', 'test_cases', agentName.toLowerCase());
 
   if (!fs.existsSync(testDir)) {
-    console.error(`Test directory not found: ${testDir}`);
+    logger.error('Test directory not found', { path: testDir });
     process.exit(1);
   }
 
@@ -145,33 +146,29 @@ async function testAgent(agentName, useFocused = true) {
     .filter(f => f.endsWith('.json') && f.includes(agentName.toLowerCase()));
 
   if (testFiles.length === 0) {
-    console.error(`No test cases found for ${agent} in ${testDir}`);
+    logger.error('No test cases found', { agent, path: testDir });
     process.exit(1);
   }
 
-  console.log(`\n${'='.repeat(60)}`);
-  console.log(`🤖 Testing Agent: ${agent}`);
-  console.log(`📁 Test Cases: ${testFiles.length}`);
-  console.log(`🎯 Target Score: ${CONFIG.threshold}%`);
-  console.log('='.repeat(60));
+  logger.section(`Testing Agent: ${agent}`);
+  logger.info('Test configuration', { cases: testFiles.length, target: `${CONFIG.threshold}%` });
 
   const results = [];
 
   for (const file of testFiles) {
     const testCase = JSON.parse(fs.readFileSync(path.join(testDir, file), 'utf-8'));
-    console.log(`\n📋 Case: ${testCase.id || file}`);
-    console.log(`   ${testCase.descricao || ''}`);
+    logger.info('Running case', { id: testCase.id || file, description: testCase.descricao });
 
     try {
       // Generate minuta
-      console.log('   ⏳ Generating minuta...');
+      logger.debug('Generating minuta');
       const startTime = Date.now();
       const minuta = await callClaude(systemPrompt, buildUserMessage(testCase));
       const genTime = Date.now() - startTime;
-      console.log(`   ✅ Generated (${genTime}ms, ${minuta.split(/\s+/).length} words)`);
+      logger.info('Generated', { timeMs: genTime, words: minuta.split(/\s+/).length });
 
       // Evaluate with LLM
-      console.log('   ⏳ Evaluating with LLM...');
+      logger.debug('Evaluating with LLM');
       const evaluation = await evaluateMinuta(
         minuta,
         agent,
@@ -179,12 +176,15 @@ async function testAgent(agentName, useFocused = true) {
       );
 
       const passed = evaluation.overall >= CONFIG.threshold;
-      const emoji = passed ? '✅' : '❌';
 
-      console.log(`   ${emoji} Score: ${evaluation.overall}% (E:${evaluation.estrutura} J:${evaluation.juridico} U:${evaluation.utilidade})`);
+      logger.testResult(
+        `${testCase.id || file}: ${evaluation.overall}%`,
+        passed,
+        `E:${evaluation.estrutura} J:${evaluation.juridico} U:${evaluation.utilidade}`
+      );
 
       if (evaluation.problemas?.length) {
-        console.log(`   ⚠️  Problems: ${evaluation.problemas.slice(0, 2).join('; ')}`);
+        logger.warn('Problems found', { issues: evaluation.problemas.slice(0, 2).join('; ') });
       }
 
       results.push({
@@ -205,7 +205,7 @@ async function testAgent(agentName, useFocused = true) {
       });
 
     } catch (error) {
-      console.log(`   ❌ Error: ${error.message}`);
+      logger.error('Test case failed', { case: testCase.id || file, error: error.message });
       results.push({
         case_id: testCase.id || file,
         agent,
@@ -230,16 +230,21 @@ async function testAgent(agentName, useFocused = true) {
   const passed = results.filter(r => r.passed).length;
   const avgScore = Math.round(results.filter(r => r.scores).reduce((sum, r) => sum + r.scores.overall, 0) / results.filter(r => r.scores).length);
 
-  console.log(`\n${'─'.repeat(60)}`);
-  console.log(`📊 SUMMARY: ${agent}`);
-  console.log(`   Tests: ${results.length} | Passed: ${passed} | Failed: ${results.length - passed}`);
-  console.log(`   Average Score: ${avgScore}% (target: ${CONFIG.threshold}%)`);
-  console.log(`   Results saved: ${resultsFile}`);
+  logger.section(`SUMMARY: ${agent}`);
+  logger.info('Test summary', {
+    total: results.length,
+    passed,
+    failed: results.length - passed,
+    avgScore: `${avgScore}%`,
+    target: `${CONFIG.threshold}%`
+  });
+
+  logger.success('Results saved', { file: resultsFile });
 
   if (avgScore < CONFIG.threshold) {
-    console.log(`\n💡 Prompt improvement needed. Review problems and suggestions.`);
+    logger.warn('Prompt improvement needed', { suggestion: 'Review problems and suggestions' });
   } else {
-    console.log(`\n🎉 Agent ${agent} passes the ${CONFIG.threshold}% threshold!`);
+    logger.success(`Agent ${agent} passes threshold`, { score: `${avgScore}%` });
   }
 
   return { agent, passed, total: results.length, avgScore, results };
@@ -263,21 +268,19 @@ if (useAll) {
       summaries.push(summary);
     }
 
-    console.log(`\n${'='.repeat(60)}`);
-    console.log('📊 OVERALL SUMMARY');
-    console.log('='.repeat(60));
+    logger.section('OVERALL SUMMARY');
 
     for (const s of summaries) {
-      const emoji = s.avgScore >= CONFIG.threshold ? '✅' : '❌';
-      console.log(`${emoji} ${s.agent.padEnd(12)} Score: ${s.avgScore}% (${s.passed}/${s.total} passed)`);
+      logger.testResult(
+        s.agent,
+        s.avgScore >= CONFIG.threshold,
+        `${s.avgScore}% (${s.passed}/${s.total} passed)`
+      );
     }
   })();
 } else if (args.length > 0 && !args[0].startsWith('-')) {
   testAgent(args[0], useFocused);
 } else {
-  console.log('Usage:');
-  console.log('  node scripts/test_and_evaluate.js <agent_name>');
-  console.log('  node scripts/test_and_evaluate.js --all');
-  console.log('');
-  console.log('Agents:', Object.keys(SYSTEM_PROMPTS).join(', '));
+  logger.info('Usage: node scripts/test_and_evaluate.js <agent_name> | --all');
+  logger.info('Available agents', { agents: Object.keys(SYSTEM_PROMPTS).join(', ') });
 }

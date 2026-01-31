@@ -24,9 +24,10 @@
 const fs = require('fs');
 const path = require('path');
 
-// Load centralized configuration and HTTP client
+// Load centralized configuration, HTTP client, and logger
 const centralConfig = require('../../config');
 const { anthropicRequest, extractText } = require('../../lib/http-client');
+const logger = require('../../lib/logger');
 
 // ============================================================================
 // CONFIGURATION
@@ -312,13 +313,11 @@ Gere a **minuta completa de sentença/decisão** para este caso.
 // ============================================================================
 
 async function testAgent(agentName, verbose = false, useRealCases = false) {
-  console.log(`\n${'='.repeat(60)}`);
-  console.log(`🤖 Testing Agent: ${agentName}${useRealCases ? ' (PROCESSOS REAIS)' : ''}`);
-  console.log('='.repeat(60));
+  logger.section(`Testing Agent: ${agentName}${useRealCases ? ' (PROCESSOS REAIS)' : ''}`);
 
   const systemPrompt = SYSTEM_PROMPTS[agentName];
   if (!systemPrompt) {
-    console.error(`❌ Unknown agent: ${agentName}`);
+    logger.error('Unknown agent', { agent: agentName });
     return null;
   }
 
@@ -329,10 +328,10 @@ async function testAgent(agentName, verbose = false, useRealCases = false) {
 
   if (!fs.existsSync(testDir)) {
     if (useRealCases) {
-      console.log(`⚠️  No real cases directory for ${agentName}, skipping...`);
+      logger.warn('No real cases directory, skipping', { agent: agentName });
       return [];
     }
-    console.error(`❌ Test directory not found: ${testDir}`);
+    logger.error('Test directory not found', { path: testDir });
     return null;
   }
 
@@ -342,26 +341,26 @@ async function testAgent(agentName, verbose = false, useRealCases = false) {
 
   if (testFiles.length === 0) {
     if (useRealCases) {
-      console.log(`⚠️  No real cases found for ${agentName}, skipping...`);
+      logger.warn('No real cases found, skipping', { agent: agentName });
       return [];
     }
-    console.error(`❌ No test cases found in ${testDir}`);
+    logger.error('No test cases found', { path: testDir });
     return null;
   }
 
-  console.log(`📂 Found ${testFiles.length} ${useRealCases ? 'real case' : 'test case'}(s)`);
+  logger.info('Found test cases', { count: testFiles.length, type: useRealCases ? 'real' : 'synthetic' });
 
   const results = [];
 
   for (const testFile of testFiles) {
     const testCase = JSON.parse(fs.readFileSync(testFile, 'utf8'));
-    console.log(`\n📋 Test: ${testCase.caso_id} - ${testCase.descricao}`);
+    logger.info('Running test case', { id: testCase.caso_id, description: testCase.descricao });
 
     const userMessage = buildUserMessage(testCase);
 
     try {
       const startTime = Date.now();
-      console.log('   ⏳ Calling Claude API...');
+      logger.debug('Calling Claude API');
 
       const response = await callClaude(systemPrompt, userMessage);
       const endTime = Date.now();
@@ -383,27 +382,41 @@ async function testAgent(agentName, verbose = false, useRealCases = false) {
 
       results.push(result);
 
-      // Print summary
-      const scoreEmoji = validation.percentage >= 75 ? '✅' : validation.percentage >= 50 ? '⚠️' : '❌';
-      console.log(`   ${scoreEmoji} Score: ${validation.percentage}% (${validation.totalScore}/${validation.maxScore})`);
-      console.log(`   📊 Words: ${validation.summary.wordCount}`);
-      console.log(`   ⏱️  Time: ${result.executionTime}ms`);
-      console.log(`   💰 Tokens: ${result.inputTokens} in / ${result.outputTokens} out`);
+      // Log validation result
+      const passed = validation.percentage >= 75;
+      logger.testResult(
+        `${testCase.caso_id}: ${validation.percentage}%`,
+        passed,
+        `${validation.totalScore}/${validation.maxScore} points`
+      );
+
+      logger.info('Test metrics', {
+        words: validation.summary.wordCount,
+        timeMs: result.executionTime,
+        tokensIn: result.inputTokens,
+        tokensOut: result.outputTokens
+      });
 
       if (validation.summary.expectedSumulas) {
         const s = validation.summary.expectedSumulas;
-        console.log(`   📜 Súmulas: ${s.found.length}/${s.found.length + s.missing.length} (${s.percentage}%)`);
-        if (s.missing.length > 0) {
-          console.log(`      Missing: ${s.missing.join(', ')}`);
-        }
+        logger.info('Súmulas check', {
+          found: s.found.length,
+          total: s.found.length + s.missing.length,
+          percentage: s.percentage,
+          missing: s.missing.length > 0 ? s.missing.join(', ') : undefined
+        });
       }
 
-      // Print structure
+      // Log structure
       const struct = validation.summary.structure;
-      console.log(`   📝 Structure: R:${struct.hasRelatorio ? '✓' : '✗'} F:${struct.hasFundamentacao ? '✓' : '✗'} D:${struct.hasDispositivo ? '✓' : '✗'}`);
+      logger.debug('Structure check', {
+        relatorio: struct.hasRelatorio,
+        fundamentacao: struct.hasFundamentacao,
+        dispositivo: struct.hasDispositivo
+      });
 
     } catch (error) {
-      console.error(`   ❌ Error: ${error.message}`);
+      logger.error('Test failed', { testCase: testCase.caso_id, error: error.message });
       results.push({
         testCase: testCase.caso_id,
         descricao: testCase.descricao,
@@ -427,19 +440,16 @@ async function main() {
   const testAll = args.includes('--all') || args.includes('-a');
   const useRealCases = args.includes('--real') || args.includes('-r');
 
-  console.log('🏛️  Lex Intelligentia - Agent Validator');
-  console.log('========================================\n');
+  logger.section('Lex Intelligentia - Agent Validator');
 
   if (useRealCases) {
-    console.log('📂 Modo: PROCESSOS REAIS\n');
+    logger.info('Mode: PROCESSOS REAIS');
   }
 
   // Check API key
   if (!process.env.ANTHROPIC_API_KEY) {
-    console.error('❌ ANTHROPIC_API_KEY environment variable not set');
-    console.log('\nUsage:');
-    console.log('  export ANTHROPIC_API_KEY=sk-ant-...');
-    console.log('  node scripts/agent_validator.js bancario');
+    logger.error('ANTHROPIC_API_KEY environment variable not set');
+    logger.info('Usage: export ANTHROPIC_API_KEY=sk-ant-... && node scripts/agent_validator.js bancario');
     process.exit(1);
   }
 
@@ -459,27 +469,18 @@ async function main() {
       if (SYSTEM_PROMPTS[normalizedAgent]) {
         agentsToTest = [normalizedAgent];
       } else {
-        console.error(`❌ Unknown agent: ${agentArg}`);
-        console.log('\nAvailable agents:');
-        Object.keys(AGENT_DIRS).forEach(a => console.log(`  - ${a.replace('agent_', '')}`));
+        logger.error('Unknown agent', { agent: agentArg });
+        logger.info('Available agents', { agents: Object.keys(AGENT_DIRS).map(a => a.replace('agent_', '')).join(', ') });
         process.exit(1);
       }
     } else {
-      console.log('Usage:');
-      console.log('  node scripts/agent_validator.js <agent_name>');
-      console.log('  node scripts/agent_validator.js --all');
-      console.log('  node scripts/agent_validator.js --all --real  (processos reais)');
-      console.log('\nFlags:');
-      console.log('  --all, -a      Test all agents');
-      console.log('  --real, -r     Use real PDF cases');
-      console.log('  --verbose, -v  Show full response');
-      console.log('\nAvailable agents:');
-      Object.keys(AGENT_DIRS).forEach(a => console.log(`  - ${a.replace('agent_', '')}`));
+      logger.info('Usage: node scripts/agent_validator.js <agent_name> | --all [--real] [--verbose]');
+      logger.info('Available agents', { agents: Object.keys(AGENT_DIRS).map(a => a.replace('agent_', '')).join(', ') });
       process.exit(0);
     }
   }
 
-  console.log(`📋 Testing ${agentsToTest.length} agent(s): ${agentsToTest.map(a => a.replace('agent_', '')).join(', ')}`);
+  logger.info('Testing agents', { count: agentsToTest.length, agents: agentsToTest.map(a => a.replace('agent_', '')).join(', ') });
 
   const allResults = [];
   const summary = {
@@ -521,21 +522,24 @@ async function main() {
   }, null, 2));
 
   // Print final summary
-  console.log('\n' + '='.repeat(60));
-  console.log('📊 FINAL SUMMARY');
-  console.log('='.repeat(60));
-  console.log(`\nTotal Tests: ${summary.totalTests}`);
-  console.log(`Passed (≥75%): ${summary.passed}`);
-  console.log(`Failed (<75%): ${summary.failed}`);
-  console.log(`Average Score: ${summary.avgScore}%`);
-  console.log('\nBy Agent:');
+  logger.section('FINAL SUMMARY');
+  logger.info('Summary', {
+    totalTests: summary.totalTests,
+    passed: summary.passed,
+    failed: summary.failed,
+    avgScore: `${summary.avgScore}%`
+  });
 
   for (const [agent, stats] of Object.entries(summary.byAgent)) {
-    const emoji = stats.avgScore >= 75 ? '✅' : stats.avgScore >= 50 ? '⚠️' : '❌';
-    console.log(`  ${emoji} ${agent.replace('agent_', '').padEnd(20)} Score: ${stats.avgScore}% (${stats.passed}/${stats.tests} passed)`);
+    const passed = stats.avgScore >= 75;
+    logger.testResult(
+      `${agent.replace('agent_', '')}`,
+      passed,
+      `${stats.avgScore}% (${stats.passed}/${stats.tests} passed)`
+    );
   }
 
-  console.log(`\n💾 Results saved to: ${resultsFile}`);
+  logger.success('Results saved', { file: resultsFile });
 }
 
-main().catch(console.error);
+main().catch(err => logger.error('Fatal error', { error: err.message }));
