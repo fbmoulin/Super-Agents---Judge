@@ -6,6 +6,8 @@
     "doc": "docs"
   },
   "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "validate": "node scripts/validate_workflow.js n8n_workflow_v5.1_improved_prompts.json",
     "validate:v26": "node scripts/validate_workflow.js n8n_workflow_v2.6_fazenda_publica.json",
     "validate:agent": "node scripts/agent_validator.js",
@@ -33,5 +35,8 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
   }
 }
