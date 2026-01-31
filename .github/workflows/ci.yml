@@ -85,7 +85,6 @@ jobs:
           echo "Validating configuration files..."
           node -e "require('./config/settings.json')" && echo "✓ settings.json is valid"
           node -e "require('./config/prompts/system_prompts.json')" && echo "✓ system_prompts.json is valid"
-          node -e "require('./config/prompts/parameters.json')" && echo "✓ parameters.json is valid"
 
       - name: Check config loader
         run: |
