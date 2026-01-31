@@ -1,0 +1,153 @@
+name: CI - Lex Intelligentia
+
+on:
+  push:
+    branches: [master, main, develop]
+  pull_request:
+    branches: [master, main]
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  test:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Run tests with coverage
+        run: npm run test:coverage
+        continue-on-error: true
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 7
+
+  validate-workflows:
+    name: Validate n8n Workflows
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate v5.1 workflow
+        run: npm run validate
+        continue-on-error: true
+
+      - name: Validate v2.6 workflow
+        run: npm run validate:v26
+        continue-on-error: true
+
+  lint-config:
+    name: Validate Configuration
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Validate JSON configs
+        run: |
+          echo "Validating configuration files..."
+          node -e "require('./config/settings.json')" && echo "✓ settings.json is valid"
+          node -e "require('./config/prompts/system_prompts.json')" && echo "✓ system_prompts.json is valid"
+          node -e "require('./config/prompts/parameters.json')" && echo "✓ parameters.json is valid"
+
+      - name: Check config loader
+        run: |
+          echo "Testing config module..."
+          node -e "
+            const config = require('./config');
+            const agents = config.getAgentNames();
+            if (agents.length !== 21) {
+              console.error('Expected 21 agents, got', agents.length);
+              process.exit(1);
+            }
+            console.log('✓ Config module loads correctly with', agents.length, 'agents');
+          "
+
+  security-check:
+    name: Security Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for exposed secrets
+        run: |
+          echo "Checking for exposed secrets..."
+          # Check for common API key patterns
+          if grep -rE "(ANTHROPIC_API_KEY|GEMINI_API_KEY|sk-ant-|AIza)['\"]?\s*[:=]\s*['\"][^'\"]+['\"]" --include="*.js" --include="*.json" --include="*.ts" . 2>/dev/null | grep -v node_modules | grep -v ".env.example"; then
+            echo "::error::Potential exposed API keys found!"
+            exit 1
+          fi
+          echo "✓ No exposed secrets detected"
+
+      - name: Validate .gitignore
+        run: |
+          echo "Checking .gitignore coverage..."
+          required_patterns=(".env" "*.key" "credentials" "secrets")
+          for pattern in "${required_patterns[@]}"; do
+            if ! grep -q "$pattern" .gitignore; then
+              echo "::warning::Missing .gitignore pattern: $pattern"
+            fi
+          done
+          echo "✓ .gitignore validation complete"
+
+  all-checks:
+    name: All Checks Passed
+    needs: [test, validate-workflows, lint-config, security-check]
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Check results
+        run: |
+          if [[ "${{ needs.test.result }}" == "failure" ]]; then
+            echo "::error::Tests failed"
+            exit 1
+          fi
+          if [[ "${{ needs.lint-config.result }}" == "failure" ]]; then
+            echo "::error::Config validation failed"
+            exit 1
+          fi
+          if [[ "${{ needs.security-check.result }}" == "failure" ]]; then
+            echo "::error::Security check failed"
+            exit 1
+          fi
+          echo "All required checks passed!"
