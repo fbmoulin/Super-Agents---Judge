@@ -532,4 +532,17 @@ psql -U postgres -d lex_intelligentia -f init_db_audit_logs.sql
 
 ---
 
-*Ultima atualizacao: 2026-01-21 | Versao: 2.6 | Quality Score: 95/100 | 21 agentes especializados, 90-95% cobertura | n8n Cloud: migração Anthropic em andamento*
+*Ultima atualizacao: 2026-01-31 | Versao: 2.6.1 | Quality Score: 95/100 | 21 agentes especializados, 100% validados | n8n Cloud: migração Anthropic preparada*
+
+## Sprint 1 - Critical Path (2026-01-31)
+
+### Concluído
+- [x] SEC-001: API keys removidas de .claude/settings.local.json
+- [x] SEC-002: .claude/ adicionado ao .gitignore
+- [x] N8N-001-006: Guia de migração criado em docs/guides/N8N_ANTHROPIC_MIGRATION.md
+- [x] AGT-001-008: Agentes MANDADO_SEGURANCA e SAUDE_MEDICAMENTOS verificados (já existiam)
+
+### Próximos Passos
+- [ ] Executar migração n8n Cloud (manual no console)
+- [ ] Testar webhook pós-migração
+- [ ] Implementar RAG com Vector Store STJ (Sprint 3-4)

@@ -119,3 +119,9 @@ test_cases/processos_reais/**/*.pdf
 
 # Backups de workflow com credenciais
 **/workflow_backup_*.json
+
+# =============================================================================
+# CLAUDE CODE (SETTINGS LOCAIS)
+# =============================================================================
+.claude/
+!.claude/CLAUDE.md
