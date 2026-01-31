@@ -10,11 +10,11 @@
 
 const fs = require('fs');
 const path = require('path');
-const https = require('https');
 const { evaluateMinuta } = require('./llm_evaluator');
 
-// Load centralized configuration
-const centralConfig = require('../config');
+// Load centralized configuration and HTTP client
+const centralConfig = require('../../config');
+const { anthropicRequest, extractText } = require('../../lib/http-client');
 
 // ============================================================================
 // CONFIGURATION
@@ -61,57 +61,24 @@ const SYSTEM_PROMPTS = new Proxy({}, {
 
 
 // ============================================================================
-// CLAUDE API CALL
+// CLAUDE API CALL - Using centralized HTTP client
 // ============================================================================
 
-function callClaude(systemPrompt, userMessage) {
-  return new Promise((resolve, reject) => {
-    const apiKey = process.env.ANTHROPIC_API_KEY;
-    if (!apiKey) {
-      reject(new Error('ANTHROPIC_API_KEY not set'));
-      return;
-    }
-
-    const body = JSON.stringify({
-      model: CONFIG.model,
-      max_tokens: CONFIG.maxTokens,
-      temperature: CONFIG.temperature,
-      system: systemPrompt,
-      messages: [{ role: 'user', content: userMessage }]
-    });
-
-    const options = {
-      hostname: 'api.anthropic.com',
-      path: '/v1/messages',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01'
-      }
-    };
-
-    const req = https.request(options, (res) => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        try {
-          const json = JSON.parse(data);
-          if (json.error) {
-            reject(new Error(json.error.message));
-          } else {
-            resolve(json.content[0].text);
-          }
-        } catch (e) {
-          reject(e);
-        }
-      });
-    });
-
-    req.on('error', reject);
-    req.write(body);
-    req.end();
+/**
+ * Call Claude API and return text response
+ * @param {string} systemPrompt - System prompt
+ * @param {string} userMessage - User message
+ * @returns {Promise<string>} Text response from Claude
+ */
+async function callClaude(systemPrompt, userMessage) {
+  const response = await anthropicRequest({
+    systemPrompt,
+    userMessage,
+    model: CONFIG.model,
+    maxTokens: CONFIG.maxTokens,
+    temperature: CONFIG.temperature
   });
+  return extractText(response);
 }
 
 // ============================================================================

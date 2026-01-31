@@ -23,10 +23,10 @@
 
 const fs = require('fs');
 const path = require('path');
-const https = require('https');
 
-// Load centralized configuration
-const centralConfig = require('../config');
+// Load centralized configuration and HTTP client
+const centralConfig = require('../../config');
+const { anthropicRequest, extractText } = require('../../lib/http-client');
 
 // ============================================================================
 // CONFIGURATION
@@ -184,61 +184,19 @@ const VALIDATION_CRITERIA = {
 // API CALL FUNCTION
 // ============================================================================
 
+/**
+ * Call Claude API using centralized HTTP client
+ * @param {string} systemPrompt - System prompt
+ * @param {string} userMessage - User message
+ * @returns {Promise<Object>} API response
+ */
 async function callClaude(systemPrompt, userMessage) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-
-  if (!apiKey) {
-    throw new Error('ANTHROPIC_API_KEY not set');
-  }
-
-  const requestBody = JSON.stringify({
+  return anthropicRequest({
+    systemPrompt,
+    userMessage,
     model: CONFIG.model,
-    max_tokens: CONFIG.maxTokens,
-    temperature: CONFIG.temperature,
-    system: systemPrompt,
-    messages: [
-      { role: 'user', content: userMessage }
-    ]
-  });
-
-  return new Promise((resolve, reject) => {
-    const options = {
-      hostname: 'api.anthropic.com',
-      path: '/v1/messages',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-        'Content-Length': Buffer.byteLength(requestBody)
-      }
-    };
-
-    const req = https.request(options, (res) => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        try {
-          const response = JSON.parse(data);
-          if (response.error) {
-            reject(new Error(response.error.message));
-          } else {
-            resolve(response);
-          }
-        } catch (e) {
-          reject(new Error(`Failed to parse response: ${data}`));
-        }
-      });
-    });
-
-    req.on('error', reject);
-    req.setTimeout(120000, () => {
-      req.destroy();
-      reject(new Error('Request timeout'));
-    });
-
-    req.write(requestBody);
-    req.end();
+    maxTokens: CONFIG.maxTokens,
+    temperature: CONFIG.temperature
   });
 }
 

@@ -8,15 +8,15 @@
   "scripts": {
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "validate": "node scripts/validate_workflow.js n8n_workflow_v5.1_improved_prompts.json",
-    "validate:v26": "node scripts/validate_workflow.js n8n_workflow_v2.6_fazenda_publica.json",
-    "validate:agent": "node scripts/agent_validator.js",
-    "validate:all": "node scripts/agent_validator.js --all",
-    "evaluate": "node scripts/llm_evaluator.js",
-    "test:agent": "node scripts/test_and_evaluate.js",
-    "test:real": "node scripts/agent_validator.js --all --real",
-    "download:stj": "python scripts/stj_downloader.py --download-all",
-    "ingest:qdrant": "python scripts/qdrant_ingest.py"
+    "validate": "node scripts/validators/validate_workflow.js n8n_workflow_v5.1_improved_prompts.json",
+    "validate:v26": "node scripts/validators/validate_workflow.js n8n_workflow_v2.6_fazenda_publica.json",
+    "validate:agent": "node scripts/validators/agent_validator.js",
+    "validate:all": "node scripts/validators/agent_validator.js --all",
+    "evaluate": "node scripts/evaluators/llm_evaluator.js",
+    "test:agent": "node scripts/evaluators/test_and_evaluate.js",
+    "test:real": "node scripts/validators/agent_validator.js --all --real",
+    "download:stj": "python scripts/data/stj_downloader.py --download-all",
+    "ingest:qdrant": "python scripts/data/qdrant_ingest.py"
   },
   "keywords": [
     "legal-ai",

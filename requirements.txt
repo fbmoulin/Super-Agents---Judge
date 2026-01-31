@@ -1,0 +1,15 @@
+# Lex Intelligentia Judiciário - Python Dependencies
+# Python 3.11+ required
+
+# Core dependencies
+requests>=2.32.0
+python-dotenv>=1.0.0
+
+# Vector database - Qdrant
+qdrant-client>=1.7.0
+
+# OpenAI embeddings
+openai>=1.0.0
+
+# Optional: ChromaDB as alternative vector store
+# chromadb>=0.4.0
