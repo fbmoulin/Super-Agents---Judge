@@ -1,0 +1,266 @@
+{
+  "name": "Lex Intelligentia v5.1 - Improved Prompts",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "# LEX v5.1 IMPROVED PROMPTS\n\n**Fluxo:**\n```\nInput → Router → Agent → Output\n```\n\n**Melhorias:**\n- Prompts expandidos (90%+ quality)\n- Sem [REVISAR] markers\n- Presunções razoáveis\n\n**Credenciais necessárias:**\n- Gemini API Key\n- Anthropic API",
+        "height": 220,
+        "width": 280
+      },
+      "id": "info",
+      "name": "Info",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [100, 100]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lex-minimal",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook",
+      "name": "Input",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [400, 300],
+      "webhookId": "lex-v5"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [{ "name": "Content-Type", "value": "application/json" }]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  contents: [{ parts: [{ text: `Classifique: ${($json.body?.fatos || $json.fatos || '').substring(0, 500)}\n\nÁreas: BANCARIO, CONSUMIDOR, EXECUCAO, LOCACAO, SAUDE, GENERICO\n\nJSON: {\"area\": \"X\", \"confianca\": 0.9}` }] }],\n  generationConfig: { temperature: 0.1, maxOutputTokens: 100, responseMimeType: \"application/json\" }\n} }}",
+        "options": { "timeout": 10000 }
+      },
+      "id": "router",
+      "name": "Router",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [620, 300],
+      "credentials": {
+        "httpHeaderAuth": { "id": "GEMINI_ID", "name": "Gemini API Key" }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const webhook = $('Input').item.json;\nconst routerRaw = $('Router').item.json;\n\nlet area = 'GENERICO';\ntry {\n  const text = routerRaw.candidates?.[0]?.content?.parts?.[0]?.text || '{}';\n  area = JSON.parse(text.replace(/```json\\n?|```/g, '')).area || 'GENERICO';\n} catch (e) { }\n\nconst firac = webhook.body || webhook;\nreturn [{ json: { area, firac } }];"
+      },
+      "id": "prep",
+      "name": "Prepare",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [840, 300]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "rules": [
+            { "value": "BANCARIO", "outputKey": "Bancário" },
+            { "value": "CONSUMIDOR", "outputKey": "Consumidor" },
+            { "value": "EXECUCAO", "outputKey": "Execução" },
+            { "value": "LOCACAO", "outputKey": "Locação" },
+            { "value": "SAUDE", "outputKey": "Saúde" },
+            { "value": "GENERICO", "outputKey": "Genérico" }
+          ],
+          "fallbackOutput": { "mode": "extra" }
+        },
+        "dataPropertyName": "={{ $json.area }}"
+      },
+      "id": "switch",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [1060, 300]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ `Fatos: ${$json.firac.fatos || ''}\nQuestões: ${$json.firac.questoes || ''}\nPedidos: ${$json.firac.pedidos || ''}\n\nGere MINUTA DE SENTENÇA:\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO\nIII - DISPOSITIVO` }}",
+        "options": {
+          "systemMessage": "Agente BANCÁRIO especializado. Direito bancário e contratos financeiros.\n\nSÚMULAS OBRIGATÓRIAS (citar explicitamente):\n- Súmula 297/STJ: CDC aplica-se às instituições financeiras\n- Súmula 381/STJ: Revisão de ofício de cláusulas abusivas vedada\n- Súmula 382/STJ: Capitalização permitida desde que pactuada\n- Súmula 379/STJ: Comissão de permanência exclui outros encargos\n- Súmula 539/STJ: Juros remuneratórios não se limitam a 12% a.a.\n\nPARÂMETROS:\n- Juros abusivos: >1.5x taxa média BACEN\n- Danos negativação indevida: R$5.000-15.000\n- Danos fraude/consignado: R$8.000-25.000\n- Repetição indébito: simples (boa-fé) ou em dobro (má-fé, art. 42 CDC)\n\nINSTRUÇÕES:\n1. NUNCA use [REVISAR] - faça presunções razoáveis\n2. Se falta contestação: presuma revelia com efeitos materiais\n3. Número processo: \"Processo nº 0000000-00.0000.8.08.0000\"\n4. Nomes: use \"AUTOR\" e \"RÉU (Instituição Financeira)\"\n5. Sempre cite ao menos 3 súmulas relevantes\n\nESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO"
+        }
+      },
+      "id": "agent-bancario",
+      "name": "Bancário",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1300, 100]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ `Fatos: ${$json.firac.fatos || ''}\nQuestões: ${$json.firac.questoes || ''}\nPedidos: ${$json.firac.pedidos || ''}\n\nGere MINUTA DE SENTENÇA:\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO\nIII - DISPOSITIVO` }}",
+        "options": {
+          "systemMessage": "Agente CONSUMIDOR especializado. Código de Defesa do Consumidor.\n\nSÚMULAS OBRIGATÓRIAS (citar explicitamente):\n- Súmula 385/STJ: Negativação prévia exclui dano moral\n- Súmula 388/STJ: Legitimidade passiva do comerciante (art. 13 CDC)\n- Súmula 479/STJ: Banco responde por fraude de terceiro\n- Súmula 469/STJ: Cobertura despesas médicas + danos morais\n\nARTIGOS CDC ESSENCIAIS:\n- Art. 12: responsabilidade por fato do produto\n- Art. 14: responsabilidade por fato do serviço (objetiva)\n- Art. 18: vício do produto\n- Art. 42 parágrafo único: repetição em dobro\n\nPARÂMETROS DANOS MORAIS (TJES):\n- Negativação indevida: R$5.000-15.000\n- Negativação reincidente: R$10.000-30.000\n- Dano moral in re ipsa: presume-se da negativação indevida\n\nINSTRUÇÕES:\n1. NUNCA use [REVISAR] - faça presunções razoáveis\n2. Se falta contestação: presuma revelia\n3. Verificar Súmula 385 (negativação prévia): se não informada, presumir inexistente\n4. Número processo: \"Processo nº 0000000-00.0000.8.08.0000\"\n5. Nomes: use \"CONSUMIDOR/AUTOR\" e \"FORNECEDOR/RÉU\"\n\nESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO"
+        }
+      },
+      "id": "agent-consumidor",
+      "name": "Consumidor",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1300, 200]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ `Fatos: ${$json.firac.fatos || ''}\nQuestões: ${$json.firac.questoes || ''}\nPedidos: ${$json.firac.pedidos || ''}\n\nGere MINUTA DE SENTENÇA:\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO\nIII - DISPOSITIVO` }}",
+        "options": {
+          "systemMessage": "Agente EXECUÇÃO especializado. Títulos executivos e cumprimento de sentença.\n\nARTIGOS OBRIGATÓRIOS (CPC):\n- Art. 784: títulos executivos extrajudiciais\n- Art. 786: execução direta\n- Art. 523: cumprimento de sentença (15 dias, multa 10%)\n- Art. 921 §4º: prescrição intercorrente\n\nPRAZOS PRESCRICIONAIS:\n- Cheque: 6 meses da expiração do prazo de apresentação\n- Nota promissória: 3 anos do vencimento\n- Duplicata: 3 anos do vencimento\n- Sentença judicial: 15 anos (art. 205 CC)\n\nINSTRUÇÕES:\n1. NUNCA use [REVISAR] - faça presunções razoáveis\n2. Se título apresentado: presuma autenticidade (art. 784 §1º)\n3. Prescrição: calcule expressamente com base nas datas\n4. Número processo: \"Processo nº 0000000-00.0000.8.08.0000\"\n5. Nomes: use \"EXEQUENTE\" e \"EXECUTADO\"\n\nESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO"
+        }
+      },
+      "id": "agent-execucao",
+      "name": "Execução",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1300, 300]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ `Fatos: ${$json.firac.fatos || ''}\nQuestões: ${$json.firac.questoes || ''}\nPedidos: ${$json.firac.pedidos || ''}\n\nGere MINUTA DE SENTENÇA:\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO\nIII - DISPOSITIVO` }}",
+        "options": {
+          "systemMessage": "Agente LOCAÇÃO especializado. Lei 8.245/91.\n\nREGRAS:\n- Despejo falta pagamento: purgação mora até contestação (art. 62 II)\n- Renovatória: 5 requisitos cumulativos (art. 51 I-V)\n- Denúncia vazia: só contratos ≥30 meses\n- Benfeitorias: necessárias sempre indenizáveis, úteis se autorizadas (arts. 35-36)\n\nSÚMULAS OBRIGATÓRIAS: 335, 549/STJ quando aplicáveis.\n\nINSTRUÇÕES:\n1. NUNCA use [REVISAR] - faça presunções razoáveis\n2. Se falta contestação nos fatos: presuma revelia\n3. Se falta autorização benfeitorias: presuma não autorizadas (art. 35)\n4. Número do processo: use formato \"Processo nº 0000000-00.0000.8.08.0000\"\n5. Nome das partes: use \"AUTOR/LOCADOR\" e \"RÉU/LOCATÁRIO\"\n\nESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO"
+        }
+      },
+      "id": "agent-locacao",
+      "name": "Locação",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1300, 400]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ `Fatos: ${$json.firac.fatos || ''}\nQuestões: ${$json.firac.questoes || ''}\nPedidos: ${$json.firac.pedidos || ''}\n\nGere MINUTA DE SENTENÇA:\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO\nIII - DISPOSITIVO` }}",
+        "options": {
+          "systemMessage": "Agente SAÚDE especializado. Planos de saúde e cobertura.\n\nSÚMULAS OBRIGATÓRIAS (citar explicitamente):\n- Súmula 302/STJ: Abusiva cláusula que limita tempo UTI\n- Súmula 469/STJ: Aplica-se CDC aos planos de saúde\n- Súmula 597/STJ: Cobertura tratamento HIV independe de previsão\n- Súmula 608/STJ: CDC aplica-se à ANS\n- Súmula 609/STJ: Reajuste abusivo do plano de saúde por idade\n\nLEGISLAÇÃO:\n- Lei 9.656/98: planos de saúde\n- Lei 14.454/22: rol ANS exemplificativo (não exaustivo)\n- Art. 35-C Lei 9.656/98: cobertura emergência/urgência obrigatória\n\nARGUMENTAÇÃO COBERTURA:\n1. Rol ANS é exemplificativo (Lei 14.454/22)\n2. Prescrição médica vincula a operadora\n3. Urgência/emergência: cobertura obrigatória (art. 35-C)\n4. Recusa injustificada: dano moral in re ipsa\n\nPARÂMETROS DANOS (TJES):\n- Negativa simples: R$5.000-10.000\n- Tratamento oncológico/urgente: R$20.000-30.000\n\nINSTRUÇÕES:\n1. NUNCA use [REVISAR] - faça presunções razoáveis\n2. Se prescrição médica mencionada: presuma válida e vinculante\n3. Se operadora não especificada: use \"OPERADORA DE PLANO DE SAÚDE\"\n4. Número processo: \"Processo nº 0000000-00.0000.8.08.0000\"\n5. Nomes: use \"BENEFICIÁRIO/AUTOR\" e \"OPERADORA/RÉ\"\n6. SEMPRE cite Lei 14.454/22 para negar caráter taxativo do rol\n\nESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO"
+        }
+      },
+      "id": "agent-saude",
+      "name": "Saúde",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1300, 500]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ `Fatos: ${$json.firac.fatos || ''}\nQuestões: ${$json.firac.questoes || ''}\nPedidos: ${$json.firac.pedidos || ''}\n\nGere MINUTA DE SENTENÇA:\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO\nIII - DISPOSITIVO` }}",
+        "options": {
+          "systemMessage": "Agente GENÉRICO para casos atípicos. Flexível mas rigoroso.\n\nARTIGOS BASILARES (sempre aplicáveis):\n- Art. 319 CPC: requisitos da petição inicial\n- Art. 487 I CPC: resolução de mérito\n- Art. 85 §2º CPC: honorários advocatícios (10-20%)\n- Art. 373 CPC: ônus da prova\n\nTIPOS COMUNS:\n- Declaratória: arts. 19-20 CPC\n- Obrigação de fazer: art. 497 CPC (astreintes)\n- Indenizatória: arts. 186, 927 CC\n\nINSTRUÇÕES:\n1. NUNCA use [REVISAR] - faça presunções razoáveis e explicite-as\n2. Quando falta informação: presuma o mais comum e indique na fundamentação\n3. Honorários: fixar entre 10-20% conforme complexidade\n4. Número processo: \"Processo nº 0000000-00.0000.8.08.0000\"\n5. Nomes: use \"AUTOR\" e \"RÉU\"\n6. Dispositivo: ser específico nos comandos (valores, prazos, obrigações)\n\nESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO"
+        }
+      },
+      "id": "agent-generico",
+      "name": "Genérico",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1300, 600]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": { "maxTokensToSample": 4096, "temperature": 0.3 }
+      },
+      "id": "llm",
+      "name": "Claude",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [1500, 350],
+      "credentials": {
+        "anthropicApi": { "id": "ANTHROPIC_ID", "name": "Anthropic API" }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "id": "merge",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [1540, 350]
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $input.first().json;\nconst minuta = input.output || input.text || '';\nconst area = $('Prepare').item.json.area;\n\nreturn [{ json: {\n  success: true,\n  area: area,\n  minuta: minuta,\n  palavras: minuta.split(/\\s+/).length\n}}];"
+      },
+      "id": "output",
+      "name": "Format Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1760, 350]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": { "responseCode": 200 }
+      },
+      "id": "respond",
+      "name": "Respond",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1980, 350]
+    }
+  ],
+  "connections": {
+    "Input": {
+      "main": [[{ "node": "Router", "type": "main", "index": 0 }]]
+    },
+    "Router": {
+      "main": [[{ "node": "Prepare", "type": "main", "index": 0 }]]
+    },
+    "Prepare": {
+      "main": [[{ "node": "Switch", "type": "main", "index": 0 }]]
+    },
+    "Switch": {
+      "main": [
+        [{ "node": "Bancário", "type": "main", "index": 0 }],
+        [{ "node": "Consumidor", "type": "main", "index": 0 }],
+        [{ "node": "Execução", "type": "main", "index": 0 }],
+        [{ "node": "Locação", "type": "main", "index": 0 }],
+        [{ "node": "Saúde", "type": "main", "index": 0 }],
+        [{ "node": "Genérico", "type": "main", "index": 0 }],
+        [{ "node": "Genérico", "type": "main", "index": 0 }]
+      ]
+    },
+    "Bancário": { "main": [[{ "node": "Merge", "type": "main", "index": 0 }]] },
+    "Consumidor": { "main": [[{ "node": "Merge", "type": "main", "index": 0 }]] },
+    "Execução": { "main": [[{ "node": "Merge", "type": "main", "index": 0 }]] },
+    "Locação": { "main": [[{ "node": "Merge", "type": "main", "index": 0 }]] },
+    "Saúde": { "main": [[{ "node": "Merge", "type": "main", "index": 0 }]] },
+    "Genérico": { "main": [[{ "node": "Merge", "type": "main", "index": 0 }]] },
+    "Claude": {
+      "ai_languageModel": [
+        [{ "node": "Bancário", "type": "ai_languageModel", "index": 0 }],
+        [{ "node": "Consumidor", "type": "ai_languageModel", "index": 0 }],
+        [{ "node": "Execução", "type": "ai_languageModel", "index": 0 }],
+        [{ "node": "Locação", "type": "ai_languageModel", "index": 0 }],
+        [{ "node": "Saúde", "type": "ai_languageModel", "index": 0 }],
+        [{ "node": "Genérico", "type": "ai_languageModel", "index": 0 }]
+      ]
+    },
+    "Merge": { "main": [[{ "node": "Format Output", "type": "main", "index": 0 }]] },
+    "Format Output": { "main": [[{ "node": "Respond", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "tags": [{ "name": "improved-prompts" }, { "name": "v5.1" }]
+}

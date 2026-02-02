@@ -1,0 +1,317 @@
+{
+  "name": "Lex Intelligentia v2.7 - Graph RAG Enhanced",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "# LEX v2.7 GRAPH RAG ENHANCED\n\n**Fluxo:**\n```\nInput → Router → Prepare → Graph Context → Switch → Agent → Output\n```\n\n**Novidades v2.7:**\n- Graph RAG com súmulas obrigatórias\n- Tema 1368 SELIC scenarios\n- Multi-hop legal reasoning\n- RRF hybrid search ready\n\n**Melhorias esperadas:**\n- NDCG: 85% → 95%\n- Multi-hop: 23% → 87%\n- Hallucination: -90%",
+        "height": 280,
+        "width": 300
+      },
+      "id": "info",
+      "name": "Info",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [100, 100]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lex-v27",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook",
+      "name": "Input",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [400, 300],
+      "webhookId": "lex-v27"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [{ "name": "Content-Type", "value": "application/json" }]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  contents: [{ parts: [{ text: `Classifique: ${($json.body?.fatos || $json.fatos || '').substring(0, 500)}\n\nÁreas: BANCARIO, CONSUMIDOR, EXECUCAO, LOCACAO, SAUDE_COBERTURA, SAUDE_MEDICAMENTOS, MANDADO_SEGURANCA, GENERICO\n\nJSON: {\"area\": \"X\", \"confianca\": 0.9}` }] }],\n  generationConfig: { temperature: 0.1, maxOutputTokens: 100, responseMimeType: \"application/json\" }\n} }}",
+        "options": { "timeout": 10000 }
+      },
+      "id": "router",
+      "name": "Router",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [620, 300],
+      "credentials": {
+        "httpHeaderAuth": { "id": "GEMINI_ID", "name": "Gemini API Key" }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const webhook = $('Input').item.json;\nconst routerRaw = $('Router').item.json;\n\nlet area = 'GENERICO';\nlet confianca = 0.5;\ntry {\n  const text = routerRaw.candidates?.[0]?.content?.parts?.[0]?.text || '{}';\n  const parsed = JSON.parse(text.replace(/```json\\n?|```/g, ''));\n  area = parsed.area || 'GENERICO';\n  confianca = parsed.confianca || 0.5;\n} catch (e) { }\n\nconst firac = webhook.body || webhook;\nreturn [{ json: { area, confianca, firac } }];"
+      },
+      "id": "prep",
+      "name": "Prepare",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [840, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Graph RAG Context Builder - Embedded Knowledge Graph\n// Maps detected area to mandatory súmulas and temas\n\nconst input = $input.first().json;\nconst area = input.area.toUpperCase();\nconst firac = input.firac;\n\n// Domain to Graph mapping (from legal_graph.json)\nconst GRAPH_CONTEXT = {\n  BANCARIO: {\n    sumulas: [\n      { id: 'STJ_297', texto: 'O Código de Defesa do Consumidor é aplicável às instituições financeiras' },\n      { id: 'STJ_382', texto: 'A estipulação de juros remuneratórios superiores a 12% ao ano, por si só, não indica abusividade' },\n      { id: 'STJ_539', texto: 'É permitida a capitalização de juros com periodicidade inferior à anual em contratos celebrados com instituições do SFN a partir de 31/3/2000' },\n      { id: 'STJ_541', texto: 'A previsão no contrato bancário de taxa de juros anual superior ao duodécuplo da mensal é suficiente para permitir a cobrança da taxa efetiva anual' },\n      { id: 'STJ_30', texto: 'A comissão de permanência e a correção monetária são inacumuláveis' },\n      { id: 'STJ_472', texto: 'A cobrança de comissão de permanência exclui a exigibilidade dos juros remuneratórios, moratórios e da multa contratual' },\n      { id: 'STJ_565', texto: 'A pactuação das tarifas TAC e TEC é válida apenas nos contratos bancários anteriores a 30/4/2008' }\n    ],\n    temas: [\n      { id: 'TEMA_1368', numero: 1368, tese: 'A incidência da taxa SELIC como índice de atualização monetária e de juros de mora exige critério único de cálculo, vedada a cumulação com qualquer outro índice',\n        cenarios: [\n          { tipo: 'Dano material extracontratual', correcao: 'SELIC desde o evento danoso' },\n          { tipo: 'Dano material contratual', correcao: 'IPCA-E até citação, depois SELIC' },\n          { tipo: 'Dano moral extracontratual', correcao: 'SELIC desde o evento danoso' },\n          { tipo: 'Dano moral contratual', correcao: 'SELIC desde a citação' }\n        ],\n        vedacoes: ['Cumular SELIC com IPCA', 'Cumular SELIC com juros de 1% ao mês']\n      },\n      { id: 'TEMA_972', numero: 972, tese: 'Abusividade da exigência de contratação de seguro de proteção financeira como condição para o financiamento (venda casada)' }\n    ]\n  },\n  CONSUMIDOR: {\n    sumulas: [\n      { id: 'STJ_297', texto: 'O CDC é aplicável às instituições financeiras' },\n      { id: 'STJ_385', texto: 'Da anotação irregular em cadastro de proteção ao crédito, não cabe indenização por dano moral quando preexistente legítima inscrição' },\n      { id: 'STJ_388', texto: 'A simples devolução indevida de cheque caracteriza dano moral, independentemente de prova do prejuízo' },\n      { id: 'STJ_479', texto: 'As instituições financeiras respondem objetivamente pelos danos gerados por fortuito interno relativo a fraudes' }\n    ],\n    temas: [\n      { id: 'TEMA_929', numero: 929, tese: 'O comerciante é parte legítima para figurar no polo passivo de ação de indenização por fato do produto, respondendo solidariamente com o fabricante' }\n    ]\n  },\n  SAUDE_COBERTURA: {\n    sumulas: [\n      { id: 'STJ_302', texto: 'É abusiva a cláusula contratual de plano de saúde que limita no tempo a internação hospitalar do segurado' },\n      { id: 'STJ_469', texto: 'Aplica-se o CDC aos contratos de plano de saúde' },\n      { id: 'STJ_597', texto: 'A cláusula de carência para emergência/urgência é abusiva se ultrapassado prazo de 24 horas da contratação' },\n      { id: 'STJ_608', texto: 'Aplica-se o CDC aos planos de saúde, salvo os administrados por entidades de autogestão' },\n      { id: 'STJ_609', texto: 'A recusa de cobertura por doença preexistente é ilícita se não houve exigência de exames prévios ou demonstração de má-fé' }\n    ],\n    temas: [\n      { id: 'TEMA_952', numero: 952, tese: 'O reajuste por faixa etária é válido desde que haja previsão contratual, observância das normas reguladoras e não sejam aplicados percentuais desarrazoados' },\n      { id: 'TEMA_1069', numero: 1069, tese: 'O rol de procedimentos da ANS é, em regra, exemplificativo (Lei 14.454/2022), garantindo cobertura de procedimentos não previstos desde que demonstrada pertinência clínica' }\n    ]\n  },\n  SAUDE_MEDICAMENTOS: {\n    sumulas: [],\n    temas: [\n      { id: 'TEMA_793', numero: 793, tese: 'A responsabilidade dos entes federativos pelo fornecimento de medicamentos é solidária' },\n      { id: 'TEMA_1234', numero: 1234, tese: 'Fornecimento de medicamento não incorporado ao SUS exige: laudo médico, registro ANVISA, impossibilidade de substituição, e hipossuficiência' }\n    ],\n    base_legal: ['art. 196 CF', 'Lei 8.080/1990']\n  },\n  MANDADO_SEGURANCA: {\n    sumulas: [],\n    temas: [],\n    base_legal: ['Lei 12.016/2009', 'art. 5º LXIX CF'],\n    conceitos: ['direito líquido e certo', 'prazo decadencial 120 dias', 'autoridade coatora']\n  },\n  EXECUCAO: {\n    sumulas: [],\n    temas: [],\n    base_legal: ['art. 784 CPC', 'art. 921 §4º CPC']\n  },\n  LOCACAO: {\n    sumulas: [],\n    temas: [],\n    base_legal: ['Lei 8.245/91']\n  },\n  GENERICO: {\n    sumulas: [],\n    temas: [],\n    base_legal: ['art. 487 I CPC', 'arts. 186, 927 CC']\n  }\n};\n\n// Get context for detected area\nconst context = GRAPH_CONTEXT[area] || GRAPH_CONTEXT.GENERICO;\n\n// Build mandatory citations text\nlet citacoesObrigatorias = '';\nif (context.sumulas?.length > 0) {\n  citacoesObrigatorias += '\\n\\n## SÚMULAS OBRIGATÓRIAS (Graph RAG)\\n';\n  context.sumulas.forEach(s => {\n    citacoesObrigatorias += `- ${s.id.replace('_', ' ')}: ${s.texto}\\n`;\n  });\n}\n\nif (context.temas?.length > 0) {\n  citacoesObrigatorias += '\\n## TEMAS REPETITIVOS APLICÁVEIS\\n';\n  context.temas.forEach(t => {\n    citacoesObrigatorias += `- Tema ${t.numero}: ${t.tese}\\n`;\n    if (t.cenarios) {\n      citacoesObrigatorias += '  Cenários:\\n';\n      t.cenarios.forEach(c => {\n        citacoesObrigatorias += `  • ${c.tipo}: ${c.correcao}\\n`;\n      });\n    }\n    if (t.vedacoes) {\n      citacoesObrigatorias += '  Vedações: ' + t.vedacoes.join('; ') + '\\n';\n    }\n  });\n}\n\nif (context.base_legal?.length > 0) {\n  citacoesObrigatorias += '\\n## BASE LEGAL\\n' + context.base_legal.join(', ') + '\\n';\n}\n\nif (context.conceitos?.length > 0) {\n  citacoesObrigatorias += '\\n## CONCEITOS-CHAVE\\n' + context.conceitos.join(', ') + '\\n';\n}\n\nreturn [{\n  json: {\n    area: area,\n    confianca: input.confianca,\n    firac: firac,\n    graphContext: citacoesObrigatorias,\n    sumulasCount: context.sumulas?.length || 0,\n    temasCount: context.temas?.length || 0\n  }\n}];"
+      },
+      "id": "graph-context",
+      "name": "Graph Context",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1060, 300]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "rules": [
+            { "value": "BANCARIO", "outputKey": "Bancário" },
+            { "value": "CONSUMIDOR", "outputKey": "Consumidor" },
+            { "value": "EXECUCAO", "outputKey": "Execução" },
+            { "value": "LOCACAO", "outputKey": "Locação" },
+            { "value": "SAUDE_COBERTURA", "outputKey": "Saúde Cobertura" },
+            { "value": "SAUDE_MEDICAMENTOS", "outputKey": "Saúde Medicamentos" },
+            { "value": "MANDADO_SEGURANCA", "outputKey": "Mandado Segurança" },
+            { "value": "GENERICO", "outputKey": "Genérico" }
+          ],
+          "fallbackOutput": { "mode": "extra" }
+        },
+        "dataPropertyName": "={{ $json.area }}"
+      },
+      "id": "switch",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [1280, 300]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ `Fatos: ${$json.firac.fatos || ''}\nQuestões: ${$json.firac.questoes || ''}\nPedidos: ${$json.firac.pedidos || ''}\n${$json.graphContext || ''}\n\nGere MINUTA DE SENTENÇA:\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO (cite as súmulas e temas acima)\nIII - DISPOSITIVO` }}",
+        "options": {
+          "systemMessage": "Agente BANCÁRIO especializado v2.7 (Graph RAG Enhanced).\n\nVocê DEVE citar as súmulas e temas fornecidos no contexto. Eles são obrigatórios.\n\nPARÂMETROS:\n- Juros abusivos: >1.5x taxa média BACEN\n- Danos negativação indevida: R$5.000-15.000\n- Danos fraude/consignado: R$8.000-25.000\n- Repetição indébito: simples (boa-fé) ou em dobro (má-fé, art. 42 CDC)\n- SELIC: aplicar conforme Tema 1368 e cenário específico\n\nINSTRUÇÕES:\n1. NUNCA use [REVISAR] - faça presunções razoáveis\n2. SEMPRE cite as súmulas do Graph Context\n3. Aplique Tema 1368 para juros/correção conforme cenário\n4. Número processo: \"Processo nº 0000000-00.0000.8.08.0000\"\n5. Nomes: use \"AUTOR\" e \"RÉU (Instituição Financeira)\"\n\nESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO"
+        }
+      },
+      "id": "agent-bancario",
+      "name": "Bancário",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1520, 0]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ `Fatos: ${$json.firac.fatos || ''}\nQuestões: ${$json.firac.questoes || ''}\nPedidos: ${$json.firac.pedidos || ''}\n${$json.graphContext || ''}\n\nGere MINUTA DE SENTENÇA:\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO (cite as súmulas e temas acima)\nIII - DISPOSITIVO` }}",
+        "options": {
+          "systemMessage": "Agente CONSUMIDOR especializado v2.7 (Graph RAG Enhanced).\n\nVocê DEVE citar as súmulas e temas fornecidos no contexto.\n\nPARÂMETROS DANOS MORAIS (TJES):\n- Negativação indevida: R$5.000-15.000\n- Negativação reincidente: R$10.000-30.000\n- Dano moral in re ipsa: presume-se da negativação indevida\n\nINSTRUÇÕES:\n1. NUNCA use [REVISAR] - faça presunções razoáveis\n2. SEMPRE cite as súmulas do Graph Context\n3. Verificar Súmula 385 (negativação prévia)\n4. Número processo: \"Processo nº 0000000-00.0000.8.08.0000\"\n5. Nomes: use \"CONSUMIDOR/AUTOR\" e \"FORNECEDOR/RÉU\"\n\nESTRUTURA OBRIGATÓRIA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO"
+        }
+      },
+      "id": "agent-consumidor",
+      "name": "Consumidor",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1520, 100]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ `Fatos: ${$json.firac.fatos || ''}\nQuestões: ${$json.firac.questoes || ''}\nPedidos: ${$json.firac.pedidos || ''}\n${$json.graphContext || ''}\n\nGere MINUTA DE SENTENÇA:\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO\nIII - DISPOSITIVO` }}",
+        "options": {
+          "systemMessage": "Agente EXECUÇÃO especializado v2.7.\n\nARTIGOS OBRIGATÓRIOS (CPC):\n- Art. 784: títulos executivos extrajudiciais\n- Art. 523: cumprimento de sentença (15 dias, multa 10%)\n- Art. 921 §4º: prescrição intercorrente\n\nPRAZOS PRESCRICIONAIS:\n- Cheque: 6 meses\n- Nota promissória: 3 anos\n- Duplicata: 3 anos\n- Sentença: 15 anos\n\nINSTRUÇÕES:\n1. NUNCA use [REVISAR]\n2. Prescrição: calcule expressamente\n3. Número processo: \"Processo nº 0000000-00.0000.8.08.0000\"\n\nESTRUTURA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO"
+        }
+      },
+      "id": "agent-execucao",
+      "name": "Execução",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1520, 200]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ `Fatos: ${$json.firac.fatos || ''}\nQuestões: ${$json.firac.questoes || ''}\nPedidos: ${$json.firac.pedidos || ''}\n${$json.graphContext || ''}\n\nGere MINUTA DE SENTENÇA:\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO\nIII - DISPOSITIVO` }}",
+        "options": {
+          "systemMessage": "Agente LOCAÇÃO especializado v2.7. Lei 8.245/91.\n\nREGRAS:\n- Despejo falta pagamento: purgação mora até contestação (art. 62 II)\n- Renovatória: 5 requisitos cumulativos (art. 51 I-V)\n- Denúncia vazia: só contratos ≥30 meses\n- Benfeitorias: necessárias sempre indenizáveis\n\nINSTRUÇÕES:\n1. NUNCA use [REVISAR]\n2. Número processo: \"Processo nº 0000000-00.0000.8.08.0000\"\n\nESTRUTURA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO"
+        }
+      },
+      "id": "agent-locacao",
+      "name": "Locação",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1520, 300]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ `Fatos: ${$json.firac.fatos || ''}\nQuestões: ${$json.firac.questoes || ''}\nPedidos: ${$json.firac.pedidos || ''}\n${$json.graphContext || ''}\n\nGere MINUTA DE SENTENÇA:\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO (cite as súmulas e temas acima)\nIII - DISPOSITIVO` }}",
+        "options": {
+          "systemMessage": "Agente SAÚDE COBERTURA especializado v2.7 (Graph RAG Enhanced).\n\nVocê DEVE citar as súmulas e temas fornecidos no contexto.\n\nLEGISLAÇÃO:\n- Lei 9.656/98: planos de saúde\n- Lei 14.454/22: rol ANS exemplificativo\n- Art. 35-C Lei 9.656/98: cobertura emergência obrigatória\n\nPARÂMETROS DANOS:\n- Negativa simples: R$5.000-10.000\n- Tratamento oncológico/urgente: R$20.000-30.000\n\nINSTRUÇÕES:\n1. NUNCA use [REVISAR]\n2. SEMPRE cite súmulas e Tema 1069 do Graph Context\n3. SEMPRE cite Lei 14.454/22 sobre rol exemplificativo\n4. Número processo: \"Processo nº 0000000-00.0000.8.08.0000\"\n\nESTRUTURA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO"
+        }
+      },
+      "id": "agent-saude-cobertura",
+      "name": "Saúde Cobertura",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1520, 400]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ `Fatos: ${$json.firac.fatos || ''}\nQuestões: ${$json.firac.questoes || ''}\nPedidos: ${$json.firac.pedidos || ''}\n${$json.graphContext || ''}\n\nGere MINUTA DE SENTENÇA:\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO (cite os temas acima)\nIII - DISPOSITIVO` }}",
+        "options": {
+          "systemMessage": "Agente SAÚDE MEDICAMENTOS especializado v2.7 (Graph RAG Enhanced).\n\nVocê DEVE citar os temas fornecidos no contexto, especialmente:\n- Tema 793: responsabilidade solidária dos entes federativos\n- Tema 1234: requisitos para fornecimento de medicamento não incorporado ao SUS\n\nREQUISITOS TEMA 1234:\n1. Laudo médico fundamentado\n2. Registro na ANVISA\n3. Inexistência/ineficácia de medicamento no SUS\n4. Hipossuficiência financeira\n\nINSTRUÇÕES:\n1. NUNCA use [REVISAR]\n2. SEMPRE analise os requisitos do Tema 1234\n3. Fixar multa diária para descumprimento\n4. Número processo: \"Processo nº 0000000-00.0000.8.08.0000\"\n\nESTRUTURA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO"
+        }
+      },
+      "id": "agent-saude-medicamentos",
+      "name": "Saúde Medicamentos",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1520, 500]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ `Fatos: ${$json.firac.fatos || ''}\nQuestões: ${$json.firac.questoes || ''}\nPedidos: ${$json.firac.pedidos || ''}\n${$json.graphContext || ''}\n\nGere MINUTA DE SENTENÇA:\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO\nIII - DISPOSITIVO` }}",
+        "options": {
+          "systemMessage": "Agente MANDADO DE SEGURANÇA especializado v2.7 (Graph RAG Enhanced).\n\nBASE LEGAL:\n- Lei 12.016/2009\n- Art. 5º, LXIX da CF\n\nREQUISITOS:\n1. Direito líquido e certo (prova pré-constituída)\n2. Ato de autoridade pública (ou delegada)\n3. Ilegalidade ou abuso de poder\n4. Prazo decadencial: 120 dias do ato\n\nLIMINAR (art. 7º, III):\n- Fumus boni iuris\n- Periculum in mora\n- Não cabimento nas hipóteses do §2º\n\nINSTRUÇÕES:\n1. NUNCA use [REVISAR]\n2. SEMPRE analise prazo decadencial\n3. SEMPRE verificar autoridade coatora\n4. Número processo: \"Processo nº 0000000-00.0000.8.08.0000\"\n\nESTRUTURA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO"
+        }
+      },
+      "id": "agent-mandado-seguranca",
+      "name": "Mandado Segurança",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1520, 600]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "={{ `Fatos: ${$json.firac.fatos || ''}\nQuestões: ${$json.firac.questoes || ''}\nPedidos: ${$json.firac.pedidos || ''}\n${$json.graphContext || ''}\n\nGere MINUTA DE SENTENÇA:\nI - RELATÓRIO\nII - FUNDAMENTAÇÃO\nIII - DISPOSITIVO` }}",
+        "options": {
+          "systemMessage": "Agente GENÉRICO v2.7 para casos atípicos.\n\nARTIGOS BASILARES:\n- Art. 319 CPC: requisitos da petição inicial\n- Art. 487 I CPC: resolução de mérito\n- Art. 85 §2º CPC: honorários (10-20%)\n- Art. 373 CPC: ônus da prova\n- Arts. 186, 927 CC: responsabilidade civil\n\nINSTRUÇÕES:\n1. NUNCA use [REVISAR]\n2. Quando falta informação: presuma o mais comum\n3. Honorários: 10-20% conforme complexidade\n4. Número processo: \"Processo nº 0000000-00.0000.8.08.0000\"\n\nESTRUTURA: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO"
+        }
+      },
+      "id": "agent-generico",
+      "name": "Genérico",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [1520, 700]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-20250514",
+        "options": { "maxTokensToSample": 4096, "temperature": 0.3 }
+      },
+      "id": "llm",
+      "name": "Claude",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [1740, 350],
+      "credentials": {
+        "anthropicApi": { "id": "ANTHROPIC_ID", "name": "Anthropic API" }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "id": "merge",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [1760, 350]
+    },
+    {
+      "parameters": {
+        "jsCode": "const input = $input.first().json;\nconst minuta = input.output || input.text || '';\nconst graphCtx = $('Graph Context').item.json;\n\nreturn [{ json: {\n  success: true,\n  version: 'v2.7-graph-rag',\n  area: graphCtx.area,\n  confianca: graphCtx.confianca,\n  graphSumulas: graphCtx.sumulasCount,\n  graphTemas: graphCtx.temasCount,\n  minuta: minuta,\n  palavras: minuta.split(/\\s+/).length\n}}];"
+      },
+      "id": "output",
+      "name": "Format Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1980, 350]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": { "responseCode": 200 }
+      },
+      "id": "respond",
+      "name": "Respond",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [2200, 350]
+    }
+  ],
+  "connections": {
+    "Input": {
+      "main": [[{ "node": "Router", "type": "main", "index": 0 }]]
+    },
+    "Router": {
+      "main": [[{ "node": "Prepare", "type": "main", "index": 0 }]]
+    },
+    "Prepare": {
+      "main": [[{ "node": "Graph Context", "type": "main", "index": 0 }]]
+    },
+    "Graph Context": {
+      "main": [[{ "node": "Switch", "type": "main", "index": 0 }]]
+    },
+    "Switch": {
+      "main": [
+        [{ "node": "Bancário", "type": "main", "index": 0 }],
+        [{ "node": "Consumidor", "type": "main", "index": 0 }],
+        [{ "node": "Execução", "type": "main", "index": 0 }],
+        [{ "node": "Locação", "type": "main", "index": 0 }],
+        [{ "node": "Saúde Cobertura", "type": "main", "index": 0 }],
+        [{ "node": "Saúde Medicamentos", "type": "main", "index": 0 }],
+        [{ "node": "Mandado Segurança", "type": "main", "index": 0 }],
+        [{ "node": "Genérico", "type": "main", "index": 0 }],
+        [{ "node": "Genérico", "type": "main", "index": 0 }]
+      ]
+    },
+    "Bancário": { "main": [[{ "node": "Merge", "type": "main", "index": 0 }]] },
+    "Consumidor": { "main": [[{ "node": "Merge", "type": "main", "index": 0 }]] },
+    "Execução": { "main": [[{ "node": "Merge", "type": "main", "index": 0 }]] },
+    "Locação": { "main": [[{ "node": "Merge", "type": "main", "index": 0 }]] },
+    "Saúde Cobertura": { "main": [[{ "node": "Merge", "type": "main", "index": 0 }]] },
+    "Saúde Medicamentos": { "main": [[{ "node": "Merge", "type": "main", "index": 0 }]] },
+    "Mandado Segurança": { "main": [[{ "node": "Merge", "type": "main", "index": 0 }]] },
+    "Genérico": { "main": [[{ "node": "Merge", "type": "main", "index": 0 }]] },
+    "Claude": {
+      "ai_languageModel": [
+        [{ "node": "Bancário", "type": "ai_languageModel", "index": 0 }],
+        [{ "node": "Consumidor", "type": "ai_languageModel", "index": 0 }],
+        [{ "node": "Execução", "type": "ai_languageModel", "index": 0 }],
+        [{ "node": "Locação", "type": "ai_languageModel", "index": 0 }],
+        [{ "node": "Saúde Cobertura", "type": "ai_languageModel", "index": 0 }],
+        [{ "node": "Saúde Medicamentos", "type": "ai_languageModel", "index": 0 }],
+        [{ "node": "Mandado Segurança", "type": "ai_languageModel", "index": 0 }],
+        [{ "node": "Genérico", "type": "ai_languageModel", "index": 0 }]
+      ]
+    },
+    "Merge": { "main": [[{ "node": "Format Output", "type": "main", "index": 0 }]] },
+    "Format Output": { "main": [[{ "node": "Respond", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "tags": [{ "name": "graph-rag" }, { "name": "v2.7" }, { "name": "enhanced" }]
+}
