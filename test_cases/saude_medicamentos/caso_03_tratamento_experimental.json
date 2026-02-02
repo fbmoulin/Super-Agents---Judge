@@ -1,0 +1,41 @@
+{
+  "id": "saude_med_03",
+  "nome": "Fornecimento de Tratamento Experimental",
+  "descricao": "Acao para fornecimento de medicamento com registro ANVISA mas fora da indicacao aprovada (off-label)",
+  "dominio_esperado": "saude_medicamentos",
+  "graph_rag_validation": {
+    "domain_detected": "saude_medicamentos",
+    "mandatory_sources": ["art. 196 CF", "Lei 8.080/1990"],
+    "temas_expected": ["Tema 793", "Tema 1234"],
+    "multi_hop_test": true
+  },
+  "input": {
+    "fatos": "O autor, 45 anos, e portador de Esclerose Lateral Amiotrofica (ELA) - CID G12.2, diagnosticada em 2024. Seu neurologista prescreveu EDARAVONE (Radicava), unico medicamento com potencial de retardar a progressao da doenca. O medicamento possui registro na ANVISA para tratamento de ELA desde 2022, porem nao consta na RENAME e seu custo mensal ultrapassa R$ 30.000,00. O autor e servidor publico estadual com renda de R$ 8.000,00 e nao possui condicoes de arcar com o tratamento. O NAT-JUS emitiu parecer favoravel ao fornecimento, atestando a adequacao do tratamento prescrito.",
+    "questoes": "1) O registro na ANVISA e suficiente para determinar o fornecimento? 2) Qual o papel do parecer do NAT-JUS? 3) Os requisitos do Tema 1234/STF estao preenchidos?",
+    "pedidos": "Tutela de urgencia para fornecimento imediato e continuo do medicamento. No merito, condenacao solidaria do Estado e Municipio.",
+    "classe_processual": "Procedimento Comum Civel",
+    "assunto": "Fornecimento de Medicamentos - ELA"
+  },
+  "criterios_avaliacao": {
+    "estrutura_firac": true,
+    "citacao_temas": ["Tema 793/STF", "Tema 1234/STF", "Tema 106/STJ"],
+    "base_legal": ["art. 196 CF", "Lei 8.080/1990"],
+    "analise_requisitos_tutela": true,
+    "responsabilidade_solidaria": true,
+    "analise_parecer_nat_jus": true,
+    "registro_anvisa": true
+  },
+  "expectativa": {
+    "agente_esperado": "agent_SAUDE_MEDICAMENTOS",
+    "score_minimo": 85,
+    "confidence_minima": 0.85,
+    "elementos_obrigatorios": [
+      "Tema 793",
+      "Tema 1234",
+      "tutela de urgencia",
+      "responsabilidade solidaria",
+      "NAT-JUS",
+      "registro ANVISA"
+    ]
+  }
+}

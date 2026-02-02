@@ -1,0 +1,40 @@
+{
+  "id": "saude_med_04",
+  "nome": "Home Care pelo SUS",
+  "descricao": "Acao para fornecimento de servico de home care pelo Sistema Unico de Saude",
+  "dominio_esperado": "saude_medicamentos",
+  "graph_rag_validation": {
+    "domain_detected": "saude_medicamentos",
+    "mandatory_sources": ["art. 196 CF", "Lei 8.080/1990"],
+    "temas_expected": ["Tema 793"],
+    "multi_hop_test": true
+  },
+  "input": {
+    "fatos": "A autora, 78 anos, sofreu AVC isquemico em 2024, resultando em sequelas graves: hemiplegia esquerda, disfagia e incontinencia urinaria. Apos 45 dias internada em hospital publico, recebeu alta com prescricao medica de atendimento domiciliar (home care) incluindo: fisioterapia respiratoria e motora diaria, enfermagem 12h/dia, fonoaudiologia 3x/semana e fornecimento de fraldas geriatricas, dieta enteral e insumos. A Secretaria Municipal de Saude negou o home care alegando falta de previsao orcamentaria e indisponibilidade de equipe. A autora e aposentada com renda de 2 salarios minimos e mora apenas com sua filha que trabalha.",
+    "questoes": "1) O home care integra o rol de servicos obrigatorios do SUS? 2) Qual ente federativo e responsavel? 3) Cabe antecipacao de tutela?",
+    "pedidos": "Tutela de urgencia para disponibilizacao imediata do servico de home care. No merito, condenacao dos reus ao fornecimento continuo enquanto perdurar a necessidade, com fixacao de multa diaria.",
+    "classe_processual": "Procedimento Comum Civel",
+    "assunto": "Home Care - SUS"
+  },
+  "criterios_avaliacao": {
+    "estrutura_firac": true,
+    "citacao_temas": ["Tema 793/STF"],
+    "base_legal": ["art. 196 CF", "Lei 8.080/1990", "RDC ANVISA 11/2006"],
+    "analise_requisitos_tutela": true,
+    "responsabilidade_solidaria": true,
+    "fixacao_multa_diaria": true,
+    "analise_necessidade_clinica": true
+  },
+  "expectativa": {
+    "agente_esperado": "agent_SAUDE_MEDICAMENTOS",
+    "score_minimo": 85,
+    "confidence_minima": 0.85,
+    "elementos_obrigatorios": [
+      "Tema 793",
+      "home care",
+      "tutela de urgencia",
+      "multa diaria",
+      "responsabilidade solidaria"
+    ]
+  }
+}

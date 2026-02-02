@@ -1,0 +1,40 @@
+{
+  "id": "ms_concurso_03",
+  "nome": "MS - Cadastro de Reserva com Vaga Surgida",
+  "descricao": "MS impetrado por candidato em cadastro de reserva que busca nomeacao apos surgimento de vaga durante validade do certame",
+  "dominio_esperado": "mandado_seguranca",
+  "graph_rag_validation": {
+    "domain_detected": "mandado_seguranca",
+    "mandatory_sources": ["art. 5, LXIX CF", "Lei 12.016/2009"],
+    "concepts_expected": ["direito_liquido_e_certo"],
+    "multi_hop_test": true
+  },
+  "input": {
+    "fatos": "O impetrante foi aprovado em 15 lugar no concurso publico para o cargo de Tecnico Judiciario do TRF-2, Edital n 02/2024, que previa 10 vagas imediatas e formacao de cadastro de reserva. O certame foi homologado em 20/03/2025. Em agosto de 2025, 5 servidores do quadro pediram exoneracao, abrindo novas vagas. O impetrante foi informado por meio de publicacao no DOU de 15/09/2025 que nao haveria novas nomeacoes ate o termino da validade do concurso (20/03/2027), mesmo com as vagas surgidas e dotacao orcamentaria disponivel.",
+    "questoes": "1) O surgimento de vagas durante a validade do concurso transforma a expectativa de direito em direito subjetivo? 2) Aplica-se o entendimento do RE 837.311/PI (Tema 784/STF)? 3) A existencia de dotacao orcamentaria e relevante?",
+    "pedidos": "Concessao de liminar para nomeacao imediata. No merito, confirmacao da ordem para nomeacao e posse nos quadros do TRF-2.",
+    "classe_processual": "Mandado de Seguranca Civel",
+    "assunto": "Concurso Publico - Cadastro de Reserva"
+  },
+  "criterios_avaliacao": {
+    "estrutura_firac": true,
+    "citacao_sumulas": ["RE 837.311/STF", "Tema 784/STF"],
+    "base_legal": ["Lei 12.016/2009", "art. 37, II e IV CF"],
+    "analise_requisitos_liminar": true,
+    "observacao_prazo_120_dias": true,
+    "mencao_cadastro_reserva": true,
+    "analise_dotacao_orcamentaria": true
+  },
+  "expectativa": {
+    "agente_esperado": "agent_MANDADO_SEGURANCA",
+    "score_minimo": 85,
+    "confidence_minima": 0.85,
+    "elementos_obrigatorios": [
+      "direito liquido e certo",
+      "cadastro de reserva",
+      "surgimento de vagas",
+      "liminar",
+      "Lei 12.016/2009"
+    ]
+  }
+}

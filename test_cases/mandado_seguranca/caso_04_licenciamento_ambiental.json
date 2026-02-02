@@ -1,0 +1,38 @@
+{
+  "id": "ms_licenciamento_04",
+  "nome": "MS - Licenciamento Ambiental Indevido",
+  "descricao": "MS contra demora injustificada na analise de pedido de licenciamento ambiental",
+  "dominio_esperado": "mandado_seguranca",
+  "graph_rag_validation": {
+    "domain_detected": "mandado_seguranca",
+    "mandatory_sources": ["art. 5, LXIX CF", "Lei 12.016/2009"],
+    "concepts_expected": ["direito_liquido_e_certo"],
+    "multi_hop_test": true
+  },
+  "input": {
+    "fatos": "A impetrante, empresa do ramo de mineracao, protocolou pedido de Licenca Previa (LP) junto ao IBAMA em 12/01/2024 para instalacao de unidade de beneficiamento de minerio de ferro em Minas Gerais. O EIA/RIMA foi protocolado em 01/03/2024. Decorridos mais de 12 meses sem qualquer manifestacao do orgao ambiental, a empresa requereu informacoes sobre o andamento, obtendo como resposta que o processo estava 'em analise'. O art. 14 da LC 140/2011 estabelece prazo de 6 meses para analise, prorrogavel por igual periodo. Nao houve prorrogacao formal nem justificativa para a demora.",
+    "questoes": "1) A demora na analise configura omissao administrativa impugnavel por MS? 2) O MS e a via adequada ou deve-se utilizar acao ordinaria? 3) O licenciamento por decurso de prazo e possivel?",
+    "pedidos": "Concessao de liminar para que a autoridade coatora apresente, no prazo de 30 dias, decisao fundamentada sobre o pedido de LP. No merito, determinacao de prazo para conclusao da analise sob pena de deferimento tacito.",
+    "classe_processual": "Mandado de Seguranca Civel",
+    "assunto": "Licenciamento Ambiental - Omissao"
+  },
+  "criterios_avaliacao": {
+    "estrutura_firac": true,
+    "citacao_sumulas": [],
+    "base_legal": ["Lei 12.016/2009", "LC 140/2011", "Lei 6.938/1981"],
+    "analise_requisitos_liminar": true,
+    "observacao_prazo_120_dias": true,
+    "analise_omissao_administrativa": true
+  },
+  "expectativa": {
+    "agente_esperado": "agent_MANDADO_SEGURANCA",
+    "score_minimo": 85,
+    "confidence_minima": 0.85,
+    "elementos_obrigatorios": [
+      "direito liquido e certo",
+      "omissao administrativa",
+      "prazo legal",
+      "LC 140/2011"
+    ]
+  }
+}

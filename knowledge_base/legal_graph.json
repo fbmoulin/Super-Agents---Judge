@@ -1,0 +1,2965 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-01",
+    "lastUpdate": "2026-02-02",
+    "description": "Legal Knowledge Graph for Brazilian Judicial System",
+    "nodeTypes": [
+      "Sumula",
+      "Tema",
+      "Dominio",
+      "Artigo",
+      "Conceito"
+    ],
+    "edgeTypes": [
+      "GOVERNS",
+      "CITES",
+      "MODIFIES",
+      "APPLIES_TO",
+      "REQUIRES",
+      "RELATED_TO"
+    ],
+    "stats": {
+      "totalNodes": 96,
+      "totalEdges": 135,
+      "nodesByType": {
+        "Sumula": 49,
+        "Tema": 11,
+        "Dominio": 23,
+        "Conceito": 5,
+        "Artigo": 8
+      },
+      "edgesByType": {
+        "REQUIRES": 69,
+        "APPLIES_TO": 5,
+        "MODIFIES": 1,
+        "CITES": 7,
+        "GOVERNS": 36,
+        "RELATED_TO": 17
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "STJ_7",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 7,
+      "texto": "A pretensao de simples reexame de prova nao enseja recurso especial",
+      "domains": [
+        "processual"
+      ],
+      "keywords": [
+        "prova",
+        "recurso especial",
+        "reexame"
+      ]
+    },
+    {
+      "id": "STJ_30",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 30,
+      "texto": "A comissao de permanencia e a correcao monetaria sao inacumulaveis",
+      "domains": [
+        "bancario"
+      ],
+      "keywords": [
+        "comissao de permanencia",
+        "correcao monetaria",
+        "banco"
+      ]
+    },
+    {
+      "id": "STJ_54",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 54,
+      "texto": "Os juros moratorios fluem a partir do evento danoso, em caso de responsabilidade extracontratual",
+      "domains": [
+        "cobranca",
+        "responsabilidade_civil"
+      ],
+      "keywords": [
+        "juros moratorios",
+        "evento danoso",
+        "responsabilidade extracontratual",
+        "termo inicial"
+      ]
+    },
+    {
+      "id": "STJ_101",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 101,
+      "texto": "A acao de indenizacao do segurado em grupo contra a seguradora prescreve em um ano",
+      "domains": [
+        "seguros"
+      ],
+      "keywords": [
+        "seguro",
+        "prescricao",
+        "um ano",
+        "indenizacao",
+        "segurado"
+      ]
+    },
+    {
+      "id": "STJ_197",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 197,
+      "texto": "O divorcio direto pode ser concedido sem que haja previa partilha dos bens",
+      "domains": [
+        "divorcio"
+      ],
+      "keywords": [
+        "divorcio",
+        "partilha de bens",
+        "previa",
+        "dispensa"
+      ]
+    },
+    {
+      "id": "STJ_277",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 277,
+      "texto": "Julgada procedente a investigacao de paternidade, os alimentos sao devidos a partir da citacao",
+      "domains": [
+        "paternidade",
+        "alimentos"
+      ],
+      "keywords": [
+        "investigacao de paternidade",
+        "alimentos",
+        "citacao",
+        "filiacao"
+      ]
+    },
+    {
+      "id": "STJ_297",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 297,
+      "texto": "O Codigo de Defesa do Consumidor e aplicavel as instituicoes financeiras",
+      "domains": [
+        "bancario",
+        "consumidor"
+      ],
+      "keywords": [
+        "CDC",
+        "banco",
+        "financeira",
+        "consumidor",
+        "instituicao financeira"
+      ]
+    },
+    {
+      "id": "STJ_301",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 301,
+      "texto": "Em acao investigatoria, a recusa do suposto pai a submeter-se ao exame de DNA induz presuncao juris tantum de paternidade",
+      "domains": [
+        "paternidade"
+      ],
+      "keywords": [
+        "investigacao de paternidade",
+        "DNA",
+        "recusa",
+        "presuncao"
+      ]
+    },
+    {
+      "id": "STJ_302",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 302,
+      "texto": "E abusiva a clausula contratual de plano de saude que limita no tempo a internacao hospitalar do segurado",
+      "domains": [
+        "saude"
+      ],
+      "keywords": [
+        "plano de saude",
+        "internacao",
+        "UTI",
+        "limite",
+        "hospitalar"
+      ]
+    },
+    {
+      "id": "STJ_309",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 309,
+      "texto": "O debito alimentar que autoriza a prisao civil do alimentante e o que compreende as tres prestacoes anteriores ao ajuizamento da execucao e as que se vencerem no curso do processo",
+      "domains": [
+        "alimentos"
+      ],
+      "keywords": [
+        "alimentos",
+        "prisao civil",
+        "execucao",
+        "tres prestacoes"
+      ]
+    },
+    {
+      "id": "STJ_336",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 336,
+      "texto": "A mulher que renunciou aos alimentos na separacao judicial tem direito a pensao previdenciaria por morte do ex-marido, comprovada a necessidade economica superveniente",
+      "domains": [
+        "alimentos"
+      ],
+      "keywords": [
+        "alimentos",
+        "renuncia",
+        "pensao previdenciaria",
+        "necessidade superveniente"
+      ]
+    },
+    {
+      "id": "STJ_340",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 340,
+      "texto": "No contrato de abertura de credito em conta corrente, a nao entrega do extrato ao correntista e descumprimento do dever de informar",
+      "domains": [
+        "bancario"
+      ],
+      "keywords": [
+        "conta corrente",
+        "extrato",
+        "banco",
+        "informacao"
+      ]
+    },
+    {
+      "id": "STJ_358",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 358,
+      "texto": "O cancelamento de pensao alimenticia de filho que atingiu a maioridade esta sujeito a decisao judicial, mediante contraditorio, ainda que nos proprios autos",
+      "domains": [
+        "alimentos"
+      ],
+      "keywords": [
+        "alimentos",
+        "maioridade",
+        "cancelamento",
+        "contraditorio",
+        "exoneracao"
+      ]
+    },
+    {
+      "id": "STJ_362",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 362,
+      "texto": "A correcao monetaria do valor da indenizacao do dano moral incide desde a data do arbitramento",
+      "domains": [
+        "obrigacional",
+        "responsabilidade_civil"
+      ],
+      "keywords": [
+        "dano moral",
+        "correcao monetaria",
+        "arbitramento",
+        "indenizacao"
+      ]
+    },
+    {
+      "id": "STJ_379",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 379,
+      "texto": "Nos contratos bancarios nao regidos por legislacao especifica, os juros moratorios poderao ser convencionados ate o limite de 1% ao mes",
+      "domains": [
+        "bancario"
+      ],
+      "keywords": [
+        "juros moratorios",
+        "banco",
+        "1%",
+        "contrato bancario"
+      ]
+    },
+    {
+      "id": "STJ_381",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 381,
+      "texto": "Nos contratos bancarios, e vedado ao julgador conhecer, de oficio, da abusividade das clausulas",
+      "domains": [
+        "bancario",
+        "processual"
+      ],
+      "keywords": [
+        "banco",
+        "clausula abusiva",
+        "oficio",
+        "conhecimento"
+      ]
+    },
+    {
+      "id": "STJ_382",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 382,
+      "texto": "A estipulacao de juros remuneratorios superiores a 12% ao ano, por si so, nao indica abusividade",
+      "domains": [
+        "bancario"
+      ],
+      "keywords": [
+        "juros remuneratorios",
+        "12%",
+        "abusividade",
+        "banco"
+      ]
+    },
+    {
+      "id": "STJ_383",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 383,
+      "texto": "A competencia para processar e julgar as acoes conexas de interesse de menor e, em principio, do foro do domicilio do detentor de sua guarda",
+      "domains": [
+        "guarda",
+        "processual"
+      ],
+      "keywords": [
+        "guarda",
+        "competencia",
+        "menor",
+        "domicilio",
+        "foro"
+      ]
+    },
+    {
+      "id": "STJ_385",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 385,
+      "texto": "Da anotacao irregular em cadastro de protecao ao credito, nao cabe indenizacao por dano moral, quando preexistente legitima inscricao, ressalvado o direito ao cancelamento",
+      "domains": [
+        "reparacao_danos",
+        "consumidor"
+      ],
+      "keywords": [
+        "negativacao",
+        "SPC",
+        "Serasa",
+        "dano moral",
+        "inscricao preexistente"
+      ]
+    },
+    {
+      "id": "STJ_387",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 387,
+      "texto": "E licita a cumulacao das indenizacoes de dano estetico e dano moral",
+      "domains": [
+        "reparacao_danos",
+        "responsabilidade_civil"
+      ],
+      "keywords": [
+        "dano estetico",
+        "dano moral",
+        "cumulacao",
+        "indenizacao"
+      ]
+    },
+    {
+      "id": "STJ_388",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 388,
+      "texto": "A simples devolucao indevida de cheque caracteriza dano moral, independentemente de prova do prejuizo sofrido pela vitima",
+      "domains": [
+        "reparacao_danos",
+        "bancario"
+      ],
+      "keywords": [
+        "cheque",
+        "devolucao indevida",
+        "dano moral",
+        "in re ipsa"
+      ]
+    },
+    {
+      "id": "STJ_402",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 402,
+      "texto": "O contrato de seguro por danos pessoais compreende os danos morais, salvo clausula expressa de exclusao",
+      "domains": [
+        "seguros"
+      ],
+      "keywords": [
+        "seguro",
+        "danos pessoais",
+        "danos morais",
+        "cobertura"
+      ]
+    },
+    {
+      "id": "STJ_403",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 403,
+      "texto": "Independe de prova do prejuizo a indenizacao pela publicacao nao autorizada de imagem de pessoa com fins economicos ou comerciais",
+      "domains": [
+        "reparacao_danos",
+        "responsabilidade_civil"
+      ],
+      "keywords": [
+        "imagem",
+        "publicacao nao autorizada",
+        "dano moral",
+        "in re ipsa"
+      ]
+    },
+    {
+      "id": "STJ_465",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 465,
+      "texto": "Ressalvada a hipotese de efetivo agravamento do risco, a seguradora nao se exime do dever de indenizar em razao da transferencia do veiculo sem a sua previa comunicacao",
+      "domains": [
+        "seguros"
+      ],
+      "keywords": [
+        "seguro",
+        "veiculo",
+        "transferencia",
+        "agravamento de risco",
+        "comunicacao"
+      ]
+    },
+    {
+      "id": "STJ_469",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 469,
+      "texto": "Aplica-se o Codigo de Defesa do Consumidor aos contratos de plano de saude",
+      "domains": [
+        "saude",
+        "consumidor"
+      ],
+      "keywords": [
+        "plano de saude",
+        "CDC",
+        "consumidor",
+        "contrato"
+      ]
+    },
+    {
+      "id": "STJ_472",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 472,
+      "texto": "A cobranca de comissao de permanencia - cujo valor nao pode ultrapassar a soma dos encargos remuneratorios e moratorios previstos no contrato - exclui a exigibilidade dos juros remuneratorios, moratorios e da multa contratual",
+      "domains": [
+        "bancario"
+      ],
+      "keywords": [
+        "comissao de permanencia",
+        "juros",
+        "multa",
+        "banco"
+      ]
+    },
+    {
+      "id": "STJ_479",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 479,
+      "texto": "As instituicoes financeiras respondem objetivamente pelos danos gerados por fortuito interno relativo a fraudes e delitos praticados por terceiros no ambito de operacoes bancarias",
+      "domains": [
+        "reparacao_danos",
+        "bancario",
+        "consumidor"
+      ],
+      "keywords": [
+        "banco",
+        "fraude",
+        "responsabilidade objetiva",
+        "fortuito interno",
+        "terceiros"
+      ]
+    },
+    {
+      "id": "STJ_530",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 530,
+      "texto": "Nos contratos bancarios, na impossibilidade de comprovar a taxa de juros efetivamente contratada, aplica-se a taxa media de mercado",
+      "domains": [
+        "cobranca",
+        "bancario"
+      ],
+      "keywords": [
+        "taxa de juros",
+        "banco",
+        "taxa media",
+        "prova",
+        "contrato bancario"
+      ]
+    },
+    {
+      "id": "STJ_537",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 537,
+      "texto": "Em acao de reparacao de danos, a seguradora denunciada, se aceitar a denunciacao ou contestar o pedido do autor, pode ser condenada, direta e solidariamente, junto com o segurado, ao pagamento da indenizacao devida a vitima, nos limites contratados na apolice",
+      "domains": [
+        "seguros",
+        "responsabilidade_civil"
+      ],
+      "keywords": [
+        "seguro",
+        "denunciacao da lide",
+        "solidariedade",
+        "responsabilidade civil",
+        "apolice"
+      ]
+    },
+    {
+      "id": "STJ_539",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 539,
+      "texto": "E permitida a capitalizacao de juros com periodicidade inferior a anual em contratos celebrados com instituicoes integrantes do Sistema Financeiro Nacional a partir de 31/3/2000",
+      "domains": [
+        "bancario"
+      ],
+      "keywords": [
+        "capitalizacao",
+        "juros",
+        "SFN",
+        "banco",
+        "anatocismo"
+      ]
+    },
+    {
+      "id": "STJ_541",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 541,
+      "texto": "A previsao no contrato bancario de taxa de juros anual superior ao duodecuplo da mensal e suficiente para permitir a cobranca da taxa efetiva anual contratada",
+      "domains": [
+        "bancario"
+      ],
+      "keywords": [
+        "taxa de juros",
+        "anual",
+        "mensal",
+        "banco"
+      ]
+    },
+    {
+      "id": "STJ_543",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 543,
+      "texto": "Na hipotese de resolucao de contrato de promessa de compra e venda de imovel submetido ao Codigo de Defesa do Consumidor, deve ocorrer a imediata restituicao das parcelas pagas pelo promitente comprador",
+      "domains": [
+        "incorporacao",
+        "consumidor"
+      ],
+      "keywords": [
+        "imovel",
+        "resolucao",
+        "restituicao",
+        "compra e venda",
+        "incorporadora"
+      ]
+    },
+    {
+      "id": "STJ_565",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 565,
+      "texto": "A pactuacao das tarifas de abertura de credito (TAC) e de emissao de carne (TEC), ou outra denominacao para o mesmo fato gerador, e valida apenas nos contratos bancarios anteriores a 30/4/2008",
+      "domains": [
+        "bancario"
+      ],
+      "keywords": [
+        "TAC",
+        "TEC",
+        "tarifa",
+        "banco",
+        "abertura de credito"
+      ]
+    },
+    {
+      "id": "STJ_594",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 594,
+      "texto": "O Ministerio Publico tem legitimidade ativa para ajuizar acao de alimentos em proveito de crianca ou adolescente independentemente do exercicio do poder familiar dos pais, ou do fato de o menor se encontrar nas situacoes de risco descritas no art. 98 do Estatuto da Crianca e do Adolescente",
+      "domains": [
+        "alimentos"
+      ],
+      "keywords": [
+        "alimentos",
+        "Ministerio Publico",
+        "legitimidade",
+        "menor",
+        "ECA"
+      ]
+    },
+    {
+      "id": "STJ_596",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 596,
+      "texto": "A obrigacao alimentar dos avos tem natureza complementar e subsidiaria, somente se configurando no caso de impossibilidade total ou parcial de seu cumprimento pelos pais",
+      "domains": [
+        "alimentos"
+      ],
+      "keywords": [
+        "alimentos",
+        "avos",
+        "subsidiaria",
+        "complementar",
+        "impossibilidade"
+      ]
+    },
+    {
+      "id": "STJ_597",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 597,
+      "texto": "A clausula contratual de plano de saude que preve carencia para utilizacao dos servicos de assistencia medica nas situacoes de emergencia ou de urgencia e considerada abusiva se ultrapassado o prazo maximo de 24 horas contado da data da contratacao",
+      "domains": [
+        "saude"
+      ],
+      "keywords": [
+        "plano de saude",
+        "carencia",
+        "emergencia",
+        "urgencia",
+        "24 horas"
+      ]
+    },
+    {
+      "id": "STJ_608",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 608,
+      "texto": "Aplica-se o Codigo de Defesa do Consumidor aos contratos de plano de saude, salvo os administrados por entidades de autogestao",
+      "domains": [
+        "saude",
+        "consumidor"
+      ],
+      "keywords": [
+        "plano de saude",
+        "CDC",
+        "autogestao"
+      ]
+    },
+    {
+      "id": "STJ_609",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 609,
+      "texto": "A recusa de cobertura securitaria, sob a alegacao de doenca preexistente, e ilicita se nao houve a exigencia de exames medicos previos a contratacao ou a demonstracao de ma-fe do segurado",
+      "domains": [
+        "saude"
+      ],
+      "keywords": [
+        "plano de saude",
+        "doenca preexistente",
+        "cobertura",
+        "ma-fe",
+        "exame previo"
+      ]
+    },
+    {
+      "id": "STJ_610",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 610,
+      "texto": "O suicidio nao e coberto nos dois primeiros anos de vigencia do contrato de seguro de vida, ressalvado o direito do beneficiario a devolucao do montante da reserva tecnica formada",
+      "domains": [
+        "seguros"
+      ],
+      "keywords": [
+        "seguro de vida",
+        "suicidio",
+        "carencia",
+        "dois anos",
+        "reserva tecnica"
+      ]
+    },
+    {
+      "id": "STJ_621",
+      "type": "Sumula",
+      "tribunal": "STJ",
+      "numero": 621,
+      "texto": "Os efeitos da sentenca que reduz, majora ou exonera o alimentante do pagamento retroagem a data da citacao, vedadas a compensacao e a repeticao do indebito",
+      "domains": [
+        "alimentos"
+      ],
+      "keywords": [
+        "alimentos",
+        "revisional",
+        "exoneratoria",
+        "retroatividade",
+        "citacao"
+      ]
+    },
+    {
+      "id": "STF_112",
+      "type": "Sumula",
+      "tribunal": "STF",
+      "numero": 112,
+      "texto": "O imposto de transmissao causa mortis e devido pela aliquota vigente ao tempo da abertura da sucessao",
+      "domains": [
+        "inventario"
+      ],
+      "keywords": [
+        "ITCMD",
+        "imposto",
+        "sucessao",
+        "aliquota",
+        "abertura da sucessao"
+      ]
+    },
+    {
+      "id": "STF_149",
+      "type": "Sumula",
+      "tribunal": "STF",
+      "numero": 149,
+      "texto": "E imprescritivel a acao de investigacao de paternidade, mas nao o e a de peticao de heranca",
+      "domains": [
+        "paternidade"
+      ],
+      "keywords": [
+        "investigacao de paternidade",
+        "imprescritivel",
+        "filiacao",
+        "peticao de heranca"
+      ]
+    },
+    {
+      "id": "STF_331",
+      "type": "Sumula",
+      "tribunal": "STF",
+      "numero": 331,
+      "texto": "E legitima a incidencia do imposto de transmissao causa mortis no inventario por morte presumida",
+      "domains": [
+        "inventario"
+      ],
+      "keywords": [
+        "ITCMD",
+        "morte presumida",
+        "inventario",
+        "transmissao causa mortis"
+      ]
+    },
+    {
+      "id": "STF_340",
+      "type": "Sumula",
+      "tribunal": "STF",
+      "numero": 340,
+      "texto": "Desde a vigencia do Codigo Civil, os bens dominicais, como os demais bens publicos, nao podem ser adquiridos por usucapiao",
+      "domains": [
+        "usucapiao",
+        "direitos_reais"
+      ],
+      "keywords": [
+        "bem publico",
+        "usucapiao",
+        "dominical",
+        "imprescritibilidade"
+      ]
+    },
+    {
+      "id": "STF_346",
+      "type": "Sumula",
+      "tribunal": "STF",
+      "numero": 346,
+      "texto": "A administracao publica pode declarar a nulidade dos seus proprios atos",
+      "domains": [
+        "administrativo"
+      ],
+      "keywords": [
+        "nulidade",
+        "ato administrativo",
+        "autotutela"
+      ]
+    },
+    {
+      "id": "STF_377",
+      "type": "Sumula",
+      "tribunal": "STF",
+      "numero": 377,
+      "texto": "No regime de separacao legal de bens, comunicam-se os adquiridos na constancia do casamento",
+      "domains": [
+        "divorcio"
+      ],
+      "keywords": [
+        "separacao legal",
+        "regime de bens",
+        "aquestos",
+        "comunicacao",
+        "casamento"
+      ]
+    },
+    {
+      "id": "STF_380",
+      "type": "Sumula",
+      "tribunal": "STF",
+      "numero": 380,
+      "texto": "Comprovada a existencia de sociedade de fato entre os concubinos, e cabivel a sua dissolucao judicial, com a partilha do patrimonio adquirido pelo esforco comum",
+      "domains": [
+        "divorcio"
+      ],
+      "keywords": [
+        "uniao estavel",
+        "sociedade de fato",
+        "partilha",
+        "esforco comum",
+        "concubinato"
+      ]
+    },
+    {
+      "id": "STF_473",
+      "type": "Sumula",
+      "tribunal": "STF",
+      "numero": 473,
+      "texto": "A administracao pode anular seus proprios atos, quando eivados de vicios que os tornam ilegais, porque deles nao se originam direitos",
+      "domains": [
+        "administrativo"
+      ],
+      "keywords": [
+        "nulidade",
+        "ato administrativo",
+        "vicio",
+        "ilegalidade"
+      ]
+    },
+    {
+      "id": "STF_542",
+      "type": "Sumula",
+      "tribunal": "STF",
+      "numero": 542,
+      "texto": "Nao e inconstitucional a multa instituida pelo Estado-Membro, como sancao pelo retardamento do inicio ou da ultimacao do inventario",
+      "domains": [
+        "inventario"
+      ],
+      "keywords": [
+        "inventario",
+        "multa",
+        "atraso",
+        "prazo",
+        "sancao"
+      ]
+    },
+    {
+      "id": "TEMA_622",
+      "type": "Tema",
+      "tribunal": "STF",
+      "numero": 622,
+      "situacao": "JULGADO",
+      "tese": "A paternidade socioafetiva, declarada ou nao em registro publico, nao impede o reconhecimento do vinculo de filiacao concomitante baseado na origem biologica, com os efeitos juridicos proprios",
+      "domains": [
+        "paternidade"
+      ],
+      "keywords": [
+        "paternidade socioafetiva",
+        "multiparentalidade",
+        "filiacao biologica",
+        "registro"
+      ],
+      "aplicacao": "Reconhecimento de multiparentalidade - coexistencia de paternidade biologica e socioafetiva",
+      "detalhamento": {
+        "requisitos": [
+          "Vinculo socioafetivo configurado (posse do estado de filho)",
+          "Existencia de pai biologico distinto do socioafetivo",
+          "Interesse do filho no reconhecimento"
+        ],
+        "efeitos": [
+          "Dupla paternidade no registro civil",
+          "Direitos sucessorios em relacao a ambos os pais",
+          "Deveres alimentares de ambos os pais"
+        ]
+      }
+    },
+    {
+      "id": "TEMA_929",
+      "type": "Tema",
+      "tribunal": "STJ",
+      "numero": 929,
+      "situacao": "AFETADO",
+      "tese": "O comerciante e parte legitima para figurar no polo passivo de acao de indenizacao por fato do produto, respondendo solidariamente com o fabricante",
+      "domains": [
+        "reparacao_danos",
+        "consumidor"
+      ],
+      "keywords": [
+        "fato do produto",
+        "comerciante",
+        "legitimidade passiva",
+        "solidariedade",
+        "CDC"
+      ],
+      "aplicacao": "Responsabilidade do comerciante por fato do produto"
+    },
+    {
+      "id": "TEMA_932",
+      "type": "Tema",
+      "tribunal": "STJ",
+      "numero": 932,
+      "situacao": "JULGADO",
+      "tese": "E imprescritivel a pretensao do filho de obter o reconhecimento do estado de filiacao",
+      "domains": [
+        "paternidade"
+      ],
+      "keywords": [
+        "investigacao de paternidade",
+        "imprescritivel",
+        "filiacao",
+        "estado de filiacao"
+      ],
+      "aplicacao": "Imprescritibilidade da acao de investigacao de paternidade"
+    },
+    {
+      "id": "TEMA_952",
+      "type": "Tema",
+      "tribunal": "STJ",
+      "numero": 952,
+      "situacao": "AFETADO",
+      "tese": "O reajuste de mensalidade de plano de saude individual ou familiar fundado na mudanca de faixa etaria do beneficiario e valido desde que (i) haja previsao contratual, (ii) sejam observadas as normas expedidas pelos orgaos governamentais reguladores e (iii) nao sejam aplicados percentuais desarrazoados ou aleatorios que, concretamente e sem base atuarial idonea, onerem excessivamente o consumidor ou discriminem o idoso",
+      "domains": [
+        "saude"
+      ],
+      "keywords": [
+        "plano de saude",
+        "reajuste",
+        "faixa etaria",
+        "idoso"
+      ],
+      "aplicacao": "Reajuste por mudanca de faixa etaria em planos de saude"
+    },
+    {
+      "id": "TEMA_970",
+      "type": "Tema",
+      "tribunal": "STJ",
+      "numero": 970,
+      "situacao": "AFETADO",
+      "tese": "No contrato de promessa de compra e venda de imovel na planta, no ambito do Programa Minha Casa, Minha Vida, para os beneficiarios de unidades autonomas situadas em empreendimentos de interesse social, a previsao de clausula contratual de tolerancia de ate 180 (cento e oitenta) dias para a entrega do imovel e valida",
+      "domains": [
+        "incorporacao"
+      ],
+      "keywords": [
+        "imovel",
+        "entrega",
+        "atraso",
+        "tolerancia",
+        "180 dias",
+        "MCMV"
+      ],
+      "aplicacao": "Prazo de tolerancia para entrega de imovel na planta"
+    },
+    {
+      "id": "TEMA_972",
+      "type": "Tema",
+      "tribunal": "STJ",
+      "numero": 972,
+      "situacao": "AFETADO",
+      "tese": "Abusividade da exigencia de contratacao de seguro de protecao financeira como condicao para o financiamento (venda casada)",
+      "domains": [
+        "bancario",
+        "consumidor"
+      ],
+      "keywords": [
+        "venda casada",
+        "seguro",
+        "financiamento",
+        "banco"
+      ],
+      "aplicacao": "Venda casada de seguros em contratos bancarios"
+    },
+    {
+      "id": "TEMA_985",
+      "type": "Tema",
+      "tribunal": "STJ",
+      "numero": 985,
+      "situacao": "AFETADO",
+      "tese": "Para fins de usucapiao especial urbana (art. 183 da CF/88 e art. 1.240 do CC/2002), nao e exigivel a observancia do modulo minimo previsto na lei de parcelamento do solo urbano",
+      "domains": [
+        "usucapiao"
+      ],
+      "keywords": [
+        "usucapiao",
+        "area minima",
+        "modulo",
+        "urbano"
+      ],
+      "aplicacao": "Dispensa de area minima na usucapiao especial urbana"
+    },
+    {
+      "id": "TEMA_996",
+      "type": "Tema",
+      "tribunal": "STJ",
+      "numero": 996,
+      "situacao": "AFETADO",
+      "tese": "Na aquisicao de unidades autonomas em construcao, sob o regime de incorporacao imobiliaria, o atraso na entrega do imovel superior a 180 dias enseja a resolucao do contrato por culpa da incorporadora/construtora e a restituicao integral dos valores pagos pelo adquirente, alem de lucros cessantes",
+      "domains": [
+        "incorporacao"
+      ],
+      "keywords": [
+        "imovel",
+        "atraso",
+        "resolucao",
+        "restituicao",
+        "lucros cessantes"
+      ],
+      "aplicacao": "Atraso na entrega de imovel e consequencias"
+    },
+    {
+      "id": "TEMA_1062",
+      "type": "Tema",
+      "tribunal": "STJ",
+      "numero": 1062,
+      "situacao": "AFETADO",
+      "tese": "A correcao monetaria e os juros de mora incidentes sobre as indenizacoes por danos morais e materiais sao regulados pelo art. 407 do CC, fluindo a partir do evento danoso (Sumula 54/STJ) ou da citacao (Sumula 362/STJ), conforme a natureza da obrigacao",
+      "domains": [
+        "obrigacional",
+        "responsabilidade_civil"
+      ],
+      "keywords": [
+        "correcao monetaria",
+        "juros",
+        "dano moral",
+        "dano material"
+      ],
+      "aplicacao": "Correcao monetaria e juros em indenizacoes"
+    },
+    {
+      "id": "TEMA_1069",
+      "type": "Tema",
+      "tribunal": "STJ",
+      "numero": 1069,
+      "situacao": "AFETADO",
+      "tese": "O rol de procedimentos e eventos em saude elaborado pela ANS e, em regra, exemplificativo (Lei 14.454/2022), garantindo aos beneficiarios de plano de saude o direito a cobertura de procedimentos nao previstos no rol, desde que demonstrada a pertinencia clinica",
+      "domains": [
+        "saude"
+      ],
+      "keywords": [
+        "plano de saude",
+        "rol ANS",
+        "cobertura",
+        "procedimento"
+      ],
+      "aplicacao": "Natureza exemplificativa do rol ANS"
+    },
+    {
+      "id": "TEMA_1368",
+      "type": "Tema",
+      "tribunal": "STJ",
+      "numero": 1368,
+      "situacao": "AFETADO",
+      "tese": "A incidencia da taxa Selic como indice de atualizacao monetaria e de juros de mora, na forma prevista no art. 406 do CC/2002, exige a observancia de criterio unico de calculo, vedada a cumulacao com qualquer outro indice de atualizacao",
+      "domains": [
+        "bancario",
+        "obrigacional"
+      ],
+      "keywords": [
+        "SELIC",
+        "correcao monetaria",
+        "juros",
+        "cumulacao"
+      ],
+      "aplicacao": "Aplicacao da taxa SELIC em debitos civis",
+      "cenarios": [
+        {
+          "tipo": "Dano material extracontratual",
+          "correcao": "SELIC desde o evento danoso",
+          "juros": "Absorvidos pela SELIC",
+          "sumula_superada": "54/STJ parcialmente"
+        },
+        {
+          "tipo": "Dano material contratual",
+          "correcao": "IPCA-E ate citacao, depois SELIC",
+          "juros": "Absorvidos pela SELIC apos citacao"
+        },
+        {
+          "tipo": "Dano moral extracontratual",
+          "correcao": "SELIC desde o evento danoso",
+          "juros": "Absorvidos pela SELIC"
+        },
+        {
+          "tipo": "Dano moral contratual",
+          "correcao": "SELIC desde a citacao",
+          "juros": "Absorvidos pela SELIC"
+        }
+      ],
+      "vedacoes": [
+        "Cumular SELIC com IPCA",
+        "Cumular SELIC com juros de 1% ao mes",
+        "Aplicar indices distintos para correcao e juros quando usar SELIC"
+      ]
+    },
+    {
+      "id": "DOMINIO_bancario",
+      "type": "Dominio",
+      "nome": "Bancario",
+      "agente": "agent_BANCARIO",
+      "keywords": [
+        "emprestimo",
+        "financiamento",
+        "juros",
+        "banco",
+        "credito",
+        "capitalizacao",
+        "anatocismo",
+        "tarifa",
+        "CDC bancario",
+        "comissao de permanencia",
+        "revisional",
+        "contrato bancario",
+        "financeira",
+        "cedula de credito",
+        "alienacao fiduciaria",
+        "busca e apreensao",
+        "consignado",
+        "cheque especial"
+      ],
+      "base_legal": []
+    },
+    {
+      "id": "DOMINIO_saude",
+      "type": "Dominio",
+      "nome": "Saude",
+      "agente": "agent_SAUDE_COBERTURA",
+      "keywords": [
+        "plano de saude",
+        "cobertura",
+        "ANS",
+        "hospital",
+        "tratamento",
+        "internacao",
+        "UTI",
+        "cirurgia",
+        "medicamento",
+        "home care",
+        "urgencia",
+        "emergencia",
+        "carencia",
+        "doenca preexistente",
+        "reajuste",
+        "mensalidade",
+        "operadora"
+      ],
+      "base_legal": []
+    },
+    {
+      "id": "DOMINIO_transito",
+      "type": "Dominio",
+      "nome": "Transito",
+      "agente": "agent_TRANSITO",
+      "keywords": [
+        "acidente",
+        "colisao",
+        "veiculo",
+        "DPVAT",
+        "transito",
+        "atropelamento",
+        "danos materiais",
+        "perda total",
+        "lesao corporal",
+        "morte",
+        "invalidez",
+        "seguro obrigatorio",
+        "culpa concorrente",
+        "CTB",
+        "batida",
+        "abalroamento"
+      ],
+      "base_legal": [
+        "arts. 186, 927 CC",
+        "art. 37 par.6o CF",
+        "CTB"
+      ]
+    },
+    {
+      "id": "DOMINIO_incorporacao",
+      "type": "Dominio",
+      "nome": "Incorporacao Imobiliaria",
+      "agente": "agent_INCORPORACAO",
+      "keywords": [
+        "imovel",
+        "incorporadora",
+        "entrega",
+        "atraso",
+        "construtora",
+        "apartamento",
+        "unidade",
+        "planta",
+        "SATI",
+        "corretagem",
+        "distrato",
+        "resolucao",
+        "restituicao",
+        "lucros cessantes",
+        "prazo de tolerancia",
+        "180 dias"
+      ],
+      "base_legal": []
+    },
+    {
+      "id": "DOMINIO_usucapiao",
+      "type": "Dominio",
+      "nome": "Usucapiao",
+      "agente": "agent_USUCAPIAO",
+      "keywords": [
+        "posse",
+        "usucapiao",
+        "ocupacao",
+        "tempo",
+        "prescricao aquisitiva",
+        "animus domini",
+        "mansa",
+        "pacifica",
+        "continua",
+        "extraordinaria",
+        "especial urbana",
+        "especial rural",
+        "funcao social"
+      ],
+      "base_legal": [
+        "art. 1.238 CC",
+        "art. 183 CF",
+        "art. 1.240 CC"
+      ]
+    },
+    {
+      "id": "DOMINIO_execucao",
+      "type": "Dominio",
+      "nome": "Execucao",
+      "agente": "agent_EXECUCAO",
+      "keywords": [
+        "execucao",
+        "titulo executivo",
+        "penhora",
+        "hasta publica",
+        "prescricao intercorrente",
+        "suspensao",
+        "arquivamento",
+        "satisfacao",
+        "adjudicacao",
+        "arrematacao",
+        "embargos a execucao"
+      ],
+      "base_legal": [
+        "art. 921 CPC",
+        "art. 924 CPC"
+      ]
+    },
+    {
+      "id": "DOMINIO_locacao",
+      "type": "Dominio",
+      "nome": "Locacao",
+      "agente": "agent_LOCACAO",
+      "keywords": [
+        "locacao",
+        "aluguel",
+        "inquilino",
+        "locador",
+        "locatario",
+        "despejo",
+        "renovatoria",
+        "revisional de aluguel",
+        "fiador",
+        "caucao",
+        "benfeitorias",
+        "retomada"
+      ],
+      "base_legal": [
+        "Lei 8.245/91"
+      ]
+    },
+    {
+      "id": "DOMINIO_consumidor",
+      "type": "Dominio",
+      "nome": "Consumidor",
+      "agente": "agent_CONSUMIDOR",
+      "keywords": [
+        "consumidor",
+        "fornecedor",
+        "produto",
+        "servico",
+        "defeito",
+        "vicio",
+        "propaganda enganosa",
+        "cobranca indevida",
+        "negativacao",
+        "SPC",
+        "Serasa",
+        "recall",
+        "responsabilidade objetiva"
+      ],
+      "base_legal": [
+        "CDC Lei 8.078/90"
+      ]
+    },
+    {
+      "id": "DOMINIO_responsabilidade_civil",
+      "type": "Dominio",
+      "nome": "Responsabilidade Civil",
+      "agente": "agent_GENERICO",
+      "keywords": [
+        "dano moral",
+        "dano material",
+        "dano estetico",
+        "lucros cessantes",
+        "indenizacao",
+        "reparacao",
+        "culpa",
+        "dolo",
+        "nexo causal",
+        "ato ilicito",
+        "responsabilidade objetiva",
+        "responsabilidade subjetiva"
+      ],
+      "base_legal": [
+        "arts. 186, 187, 927 CC"
+      ]
+    },
+    {
+      "id": "DOMINIO_obrigacional",
+      "type": "Dominio",
+      "nome": "Direito Obrigacional",
+      "agente": "agent_GENERICO",
+      "keywords": [
+        "contrato",
+        "inadimplemento",
+        "resolucao",
+        "rescisao",
+        "mora",
+        "perdas e danos",
+        "clausula penal",
+        "multa",
+        "obrigacao de fazer",
+        "obrigacao de dar",
+        "novacao",
+        "compensacao"
+      ],
+      "base_legal": [
+        "arts. 389 a 420 CC"
+      ]
+    },
+    {
+      "id": "DOMINIO_processual",
+      "type": "Dominio",
+      "nome": "Direito Processual",
+      "agente": "agent_GENERICO",
+      "keywords": [
+        "recurso",
+        "apelacao",
+        "agravo",
+        "embargos",
+        "prova",
+        "pericia",
+        "audiencia",
+        "citacao",
+        "intimacao",
+        "prazo",
+        "preclusao",
+        "nulidade processual",
+        "competencia",
+        "litisconsorcio"
+      ],
+      "base_legal": [
+        "CPC/2015"
+      ]
+    },
+    {
+      "id": "DOMINIO_direitos_reais",
+      "type": "Dominio",
+      "nome": "Direitos Reais",
+      "agente": "agent_GENERICO",
+      "keywords": [
+        "propriedade",
+        "posse",
+        "servidao",
+        "usufruto",
+        "hipoteca",
+        "penhor",
+        "anticrese",
+        "superficie",
+        "condominio",
+        "vizinhanca",
+        "registro de imoveis",
+        "matricula"
+      ],
+      "base_legal": [
+        "arts. 1.196 a 1.510 CC"
+      ]
+    },
+    {
+      "id": "DOMINIO_administrativo",
+      "type": "Dominio",
+      "nome": "Direito Administrativo",
+      "agente": "agent_GENERICO",
+      "keywords": [
+        "ato administrativo",
+        "licitacao",
+        "concurso publico",
+        "servidor",
+        "poder de policia",
+        "desapropriacao",
+        "responsabilidade do Estado",
+        "improbidade",
+        "autotutela",
+        "anulacao",
+        "revogacao"
+      ],
+      "base_legal": [
+        "CF/88 art. 37",
+        "Lei 8.666/93",
+        "Lei 14.133/21"
+      ]
+    },
+    {
+      "id": "DOMINIO_reparacao_danos",
+      "type": "Dominio",
+      "nome": "Reparacao de Danos",
+      "agente": "agent_REPARACAO_DANOS",
+      "keywords": [
+        "dano moral",
+        "negativacao indevida",
+        "SPC",
+        "Serasa",
+        "cobranca indevida",
+        "falha do servico",
+        "vicio do produto",
+        "dano estetico",
+        "indenizacao",
+        "repeticao do indebito",
+        "devolucao em dobro",
+        "CDC",
+        "consumidor"
+      ],
+      "base_legal": [
+        "CDC Lei 8.078/90",
+        "arts. 186, 187, 927 CC"
+      ]
+    },
+    {
+      "id": "DOMINIO_alimentos",
+      "type": "Dominio",
+      "nome": "Alimentos",
+      "agente": "agent_ALIMENTOS",
+      "keywords": [
+        "alimentos",
+        "pensao alimenticia",
+        "alimentando",
+        "alimentante",
+        "binomio necessidade possibilidade",
+        "revisional",
+        "exoneratoria",
+        "oferta de alimentos",
+        "execucao de alimentos",
+        "prisao civil"
+      ],
+      "base_legal": [
+        "art. 1.694 a 1.710 CC",
+        "Lei 5.478/68",
+        "art. 528 CPC"
+      ]
+    },
+    {
+      "id": "DOMINIO_paternidade",
+      "type": "Dominio",
+      "nome": "Paternidade",
+      "agente": "agent_PATERNIDADE",
+      "keywords": [
+        "investigacao de paternidade",
+        "negatoria de paternidade",
+        "DNA",
+        "exame genetico",
+        "filiacao",
+        "reconhecimento de paternidade",
+        "paternidade socioafetiva",
+        "multiparentalidade",
+        "registro civil"
+      ],
+      "base_legal": [
+        "art. 1.593 a 1.617 CC",
+        "Lei 8.560/92",
+        "art. 27 ECA"
+      ]
+    },
+    {
+      "id": "DOMINIO_guarda",
+      "type": "Dominio",
+      "nome": "Guarda",
+      "agente": "agent_GUARDA",
+      "keywords": [
+        "guarda",
+        "guarda compartilhada",
+        "guarda unilateral",
+        "regulamentacao de guarda",
+        "modificacao de guarda",
+        "direito de visitas",
+        "convivencia familiar",
+        "alienacao parental",
+        "melhor interesse da crianca",
+        "poder familiar"
+      ],
+      "base_legal": [
+        "art. 1.583 a 1.590 CC",
+        "Lei 13.058/14",
+        "Lei 12.318/10",
+        "ECA"
+      ]
+    },
+    {
+      "id": "DOMINIO_cobranca",
+      "type": "Dominio",
+      "nome": "Cobranca",
+      "agente": "agent_COBRANCA",
+      "keywords": [
+        "cobranca",
+        "divida",
+        "inadimplemento",
+        "mora",
+        "monitoria",
+        "titulo executivo",
+        "cumprimento de sentenca",
+        "impugnacao",
+        "honorarios advocaticios",
+        "correcao monetaria",
+        "juros mora",
+        "SELIC",
+        "nota promissoria",
+        "cheque",
+        "duplicata"
+      ],
+      "base_legal": [
+        "arts. 389 a 420 CC",
+        "arts. 700 a 702 CPC",
+        "arts. 513 a 538 CPC"
+      ]
+    },
+    {
+      "id": "DOMINIO_divorcio",
+      "type": "Dominio",
+      "nome": "Divorcio",
+      "agente": "agent_DIVORCIO",
+      "keywords": [
+        "divorcio",
+        "separacao",
+        "dissolucao",
+        "casamento",
+        "conjuge",
+        "partilha de bens",
+        "comunhao parcial",
+        "comunhao universal",
+        "separacao de bens",
+        "meacao",
+        "uniao estavel",
+        "companheiro",
+        "regime de bens",
+        "pensao ao ex-conjuge"
+      ],
+      "base_legal": [
+        "arts. 1.571 a 1.590 CC",
+        "art. 226 par.6o CF",
+        "arts. 731 a 734 CPC"
+      ]
+    },
+    {
+      "id": "DOMINIO_inventario",
+      "type": "Dominio",
+      "nome": "Inventario",
+      "agente": "agent_INVENTARIO",
+      "keywords": [
+        "inventario",
+        "arrolamento",
+        "heranca",
+        "espolio",
+        "partilha",
+        "herdeiro",
+        "sucessao",
+        "falecido",
+        "de cujus",
+        "monte-mor",
+        "quinhao",
+        "formal de partilha",
+        "ITCMD",
+        "alvara",
+        "sobrepartilha",
+        "colacao",
+        "meacao do viuvo"
+      ],
+      "base_legal": [
+        "arts. 1.784 a 1.856 CC",
+        "arts. 610 a 673 CPC",
+        "Lei 11.441/2007"
+      ]
+    },
+    {
+      "id": "DOMINIO_seguros",
+      "type": "Dominio",
+      "nome": "Seguros",
+      "agente": "agent_SEGUROS",
+      "keywords": [
+        "seguro",
+        "sinistro",
+        "apolice",
+        "premio",
+        "franquia",
+        "seguradora",
+        "indenizacao securitaria",
+        "cobertura",
+        "beneficiario",
+        "capital segurado",
+        "regulacao de sinistro",
+        "recusa de pagamento",
+        "seguro de vida",
+        "seguro de veiculo",
+        "seguro residencial",
+        "SUSEP"
+      ],
+      "base_legal": [
+        "arts. 757 a 802 CC",
+        "DL 73/1966",
+        "Circulares SUSEP"
+      ]
+    },
+    {
+      "id": "DOMINIO_mandado_seguranca",
+      "type": "Dominio",
+      "nome": "Mandado de Seguranca",
+      "agente": "agent_MANDADO_SEGURANCA",
+      "keywords": [
+        "mandado de seguranca",
+        "writ",
+        "liminar",
+        "direito liquido e certo",
+        "autoridade coatora",
+        "ato ilegal",
+        "ato abusivo",
+        "impetrar",
+        "impetrante",
+        "impetrado",
+        "informacoes",
+        "suspensao de seguranca",
+        "decadencia 120 dias",
+        "servidor publico",
+        "concurso publico",
+        "licitacao",
+        "nomeacao",
+        "posse"
+      ],
+      "base_legal": [
+        "Lei 12.016/2009",
+        "art. 5o LXIX CF"
+      ]
+    },
+    {
+      "id": "DOMINIO_saude_medicamentos",
+      "type": "Dominio",
+      "nome": "Saude - Medicamentos",
+      "agente": "agent_SAUDE_MEDICAMENTOS",
+      "keywords": [
+        "medicamento",
+        "SUS",
+        "fornecimento",
+        "tratamento medico",
+        "cirurgia",
+        "leito",
+        "UTI",
+        "internacao",
+        "RENAME",
+        "ANVISA",
+        "alto custo",
+        "oncologico",
+        "quimioterapia",
+        "insulina",
+        "fralda geriatrica",
+        "cadeira de rodas",
+        "home care",
+        "NAT-JUS",
+        "direito a saude",
+        "ente publico",
+        "Estado",
+        "Municipio",
+        "Uniao",
+        "responsabilidade solidaria"
+      ],
+      "base_legal": [
+        "art. 196 CF",
+        "Lei 8.080/1990"
+      ]
+    },
+    {
+      "id": "CONCEITO_dano_moral_in_re_ipsa",
+      "type": "Conceito",
+      "nome": "Dano Moral In Re Ipsa",
+      "descricao": "Dano moral presumido que decorre da propria natureza do ato ilicito, dispensando prova do efetivo prejuizo",
+      "exemplos": [
+        "negativacao indevida",
+        "devolucao indevida de cheque",
+        "uso nao autorizado de imagem"
+      ]
+    },
+    {
+      "id": "CONCEITO_responsabilidade_objetiva",
+      "type": "Conceito",
+      "nome": "Responsabilidade Objetiva",
+      "descricao": "Responsabilidade civil que independe de culpa, baseada na teoria do risco",
+      "exemplos": [
+        "relacoes de consumo",
+        "atividades de risco",
+        "responsabilidade do Estado"
+      ]
+    },
+    {
+      "id": "CONCEITO_venda_casada",
+      "type": "Conceito",
+      "nome": "Venda Casada",
+      "descricao": "Pratica abusiva que condiciona a aquisicao de um produto ou servico a aquisicao de outro",
+      "exemplos": [
+        "seguro em financiamento",
+        "pacote de servicos bancarios"
+      ]
+    },
+    {
+      "id": "CONCEITO_anatocismo",
+      "type": "Conceito",
+      "nome": "Anatocismo",
+      "descricao": "Capitalizacao de juros, cobranca de juros sobre juros",
+      "exemplos": [
+        "juros compostos em contratos bancarios"
+      ]
+    },
+    {
+      "id": "CONCEITO_direito_liquido_certo",
+      "type": "Conceito",
+      "nome": "Direito Liquido e Certo",
+      "descricao": "Direito que pode ser comprovado de plano, mediante prova pre-constituida, sem necessidade de dilacao probatoria",
+      "exemplos": [
+        "direito a nomeacao em concurso publico dentro das vagas",
+        "direito a posse em cargo publico"
+      ]
+    },
+    {
+      "id": "ARTIGO_CC_186",
+      "type": "Artigo",
+      "codigo": "CC",
+      "numero": "186",
+      "texto": "Aquele que, por acao ou omissao voluntaria, negligencia ou imprudencia, violar direito e causar dano a outrem, ainda que exclusivamente moral, comete ato ilicito"
+    },
+    {
+      "id": "ARTIGO_CC_187",
+      "type": "Artigo",
+      "codigo": "CC",
+      "numero": "187",
+      "texto": "Tambem comete ato ilicito o titular de um direito que, ao exerce-lo, excede manifestamente os limites impostos pelo seu fim economico ou social, pela boa-fe ou pelos bons costumes"
+    },
+    {
+      "id": "ARTIGO_CC_927",
+      "type": "Artigo",
+      "codigo": "CC",
+      "numero": "927",
+      "texto": "Aquele que, por ato ilicito, causar dano a outrem, fica obrigado a repara-lo"
+    },
+    {
+      "id": "ARTIGO_CC_406",
+      "type": "Artigo",
+      "codigo": "CC",
+      "numero": "406",
+      "texto": "Quando os juros moratorios nao forem convencionados, ou o forem sem taxa estipulada, ou quando provierem de determinacao da lei, serao fixados segundo a taxa que estiver em vigor para a mora do pagamento de impostos devidos a Fazenda Nacional"
+    },
+    {
+      "id": "ARTIGO_CDC_6",
+      "type": "Artigo",
+      "codigo": "CDC",
+      "numero": "6",
+      "texto": "Sao direitos basicos do consumidor: [...] VI - a efetiva prevencao e reparacao de danos patrimoniais e morais, individuais, coletivos e difusos"
+    },
+    {
+      "id": "ARTIGO_CDC_14",
+      "type": "Artigo",
+      "codigo": "CDC",
+      "numero": "14",
+      "texto": "O fornecedor de servicos responde, independentemente da existencia de culpa, pela reparacao dos danos causados aos consumidores por defeitos relativos a prestacao dos servicos"
+    },
+    {
+      "id": "ARTIGO_CF_196",
+      "type": "Artigo",
+      "codigo": "CF",
+      "numero": "196",
+      "texto": "A saude e direito de todos e dever do Estado, garantido mediante politicas sociais e economicas que visem a reducao do risco de doenca e de outros agravos e ao acesso universal e igualitario as acoes e servicos para sua promocao, protecao e recuperacao"
+    },
+    {
+      "id": "ARTIGO_CF_5_LXIX",
+      "type": "Artigo",
+      "codigo": "CF",
+      "numero": "5, LXIX",
+      "texto": "Conceder-se-a mandado de seguranca para proteger direito liquido e certo, nao amparado por habeas corpus ou habeas data, quando o responsavel pela ilegalidade ou abuso de poder for autoridade publica ou agente de pessoa juridica no exercicio de atribuicoes do Poder Publico"
+    }
+  ],
+  "edges": [
+    {
+      "source": "DOMINIO_bancario",
+      "target": "STJ_297",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_bancario",
+      "target": "STJ_382",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_bancario",
+      "target": "STJ_539",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 3
+      }
+    },
+    {
+      "source": "DOMINIO_bancario",
+      "target": "STJ_541",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 4
+      }
+    },
+    {
+      "source": "DOMINIO_bancario",
+      "target": "STJ_30",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 5
+      }
+    },
+    {
+      "source": "DOMINIO_bancario",
+      "target": "STJ_472",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 6
+      }
+    },
+    {
+      "source": "DOMINIO_bancario",
+      "target": "STJ_565",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 7
+      }
+    },
+    {
+      "source": "DOMINIO_bancario",
+      "target": "TEMA_1368",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_bancario",
+      "target": "TEMA_972",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_saude",
+      "target": "STJ_302",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_saude",
+      "target": "STJ_469",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_saude",
+      "target": "STJ_597",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 3
+      }
+    },
+    {
+      "source": "DOMINIO_saude",
+      "target": "STJ_608",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 4
+      }
+    },
+    {
+      "source": "DOMINIO_saude",
+      "target": "STJ_609",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 5
+      }
+    },
+    {
+      "source": "DOMINIO_saude",
+      "target": "TEMA_952",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_saude",
+      "target": "TEMA_1069",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_transito",
+      "target": "TEMA_1062",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_incorporacao",
+      "target": "STJ_543",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_incorporacao",
+      "target": "TEMA_970",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_incorporacao",
+      "target": "TEMA_996",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_usucapiao",
+      "target": "STF_340",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_usucapiao",
+      "target": "TEMA_985",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_consumidor",
+      "target": "STJ_297",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_consumidor",
+      "target": "STJ_469",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_responsabilidade_civil",
+      "target": "STJ_362",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_responsabilidade_civil",
+      "target": "TEMA_1062",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_obrigacional",
+      "target": "TEMA_1368",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_processual",
+      "target": "STJ_7",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_direitos_reais",
+      "target": "STF_340",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_administrativo",
+      "target": "STF_346",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_administrativo",
+      "target": "STF_473",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_reparacao_danos",
+      "target": "STJ_385",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_reparacao_danos",
+      "target": "STJ_387",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_reparacao_danos",
+      "target": "STJ_388",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 3
+      }
+    },
+    {
+      "source": "DOMINIO_reparacao_danos",
+      "target": "STJ_403",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 4
+      }
+    },
+    {
+      "source": "DOMINIO_reparacao_danos",
+      "target": "STJ_479",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 5
+      }
+    },
+    {
+      "source": "DOMINIO_reparacao_danos",
+      "target": "TEMA_929",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_alimentos",
+      "target": "STJ_309",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_alimentos",
+      "target": "STJ_336",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_alimentos",
+      "target": "STJ_358",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 3
+      }
+    },
+    {
+      "source": "DOMINIO_alimentos",
+      "target": "STJ_594",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 4
+      }
+    },
+    {
+      "source": "DOMINIO_alimentos",
+      "target": "STJ_596",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 5
+      }
+    },
+    {
+      "source": "DOMINIO_alimentos",
+      "target": "STJ_621",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 6
+      }
+    },
+    {
+      "source": "DOMINIO_paternidade",
+      "target": "STF_149",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_paternidade",
+      "target": "STJ_277",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_paternidade",
+      "target": "STJ_301",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 3
+      }
+    },
+    {
+      "source": "DOMINIO_paternidade",
+      "target": "TEMA_622",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_paternidade",
+      "target": "TEMA_932",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_guarda",
+      "target": "STJ_383",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_cobranca",
+      "target": "STJ_54",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_cobranca",
+      "target": "STJ_362",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_cobranca",
+      "target": "STJ_379",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 3
+      }
+    },
+    {
+      "source": "DOMINIO_cobranca",
+      "target": "STJ_382",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 4
+      }
+    },
+    {
+      "source": "DOMINIO_cobranca",
+      "target": "STJ_530",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 5
+      }
+    },
+    {
+      "source": "DOMINIO_cobranca",
+      "target": "TEMA_1062",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_cobranca",
+      "target": "TEMA_1368",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "QUANDO_APLICAVEL",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_divorcio",
+      "target": "STJ_197",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_divorcio",
+      "target": "STF_377",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_divorcio",
+      "target": "STF_380",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 3
+      }
+    },
+    {
+      "source": "DOMINIO_inventario",
+      "target": "STF_112",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_inventario",
+      "target": "STF_331",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_inventario",
+      "target": "STF_542",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 3
+      }
+    },
+    {
+      "source": "DOMINIO_seguros",
+      "target": "STJ_101",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_seguros",
+      "target": "STJ_402",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 2
+      }
+    },
+    {
+      "source": "DOMINIO_seguros",
+      "target": "STJ_465",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 3
+      }
+    },
+    {
+      "source": "DOMINIO_seguros",
+      "target": "STJ_537",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 4
+      }
+    },
+    {
+      "source": "DOMINIO_seguros",
+      "target": "STJ_610",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 5
+      }
+    },
+    {
+      "source": "DOMINIO_mandado_seguranca",
+      "target": "ARTIGO_CF_5_LXIX",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "DOMINIO_mandado_seguranca",
+      "target": "CONCEITO_direito_liquido_certo",
+      "type": "APPLIES_TO",
+      "properties": {
+        "obrigatoriedade": "SEMPRE"
+      }
+    },
+    {
+      "source": "DOMINIO_saude_medicamentos",
+      "target": "ARTIGO_CF_196",
+      "type": "REQUIRES",
+      "properties": {
+        "obrigatoriedade": "SEMPRE",
+        "prioridade": 1
+      }
+    },
+    {
+      "source": "TEMA_1368",
+      "target": "STJ_54",
+      "type": "MODIFIES",
+      "properties": {
+        "tipo": "SUPERA_PARCIALMENTE",
+        "descricao": "Tema 1368 modifica aplicacao da Sumula 54 para juros"
+      }
+    },
+    {
+      "source": "TEMA_1062",
+      "target": "STJ_54",
+      "type": "CITES",
+      "properties": {
+        "tipo": "REFERENCIA"
+      }
+    },
+    {
+      "source": "TEMA_1062",
+      "target": "STJ_362",
+      "type": "CITES",
+      "properties": {
+        "tipo": "REFERENCIA"
+      }
+    },
+    {
+      "source": "STJ_297",
+      "target": "ARTIGO_CDC_6",
+      "type": "CITES",
+      "properties": {
+        "tipo": "BASE_LEGAL"
+      }
+    },
+    {
+      "source": "STJ_297",
+      "target": "ARTIGO_CDC_14",
+      "type": "CITES",
+      "properties": {
+        "tipo": "BASE_LEGAL"
+      }
+    },
+    {
+      "source": "STJ_469",
+      "target": "ARTIGO_CDC_6",
+      "type": "CITES",
+      "properties": {
+        "tipo": "BASE_LEGAL"
+      }
+    },
+    {
+      "source": "STJ_362",
+      "target": "ARTIGO_CC_186",
+      "type": "CITES",
+      "properties": {
+        "tipo": "BASE_LEGAL"
+      }
+    },
+    {
+      "source": "STJ_479",
+      "target": "CONCEITO_responsabilidade_objetiva",
+      "type": "APPLIES_TO",
+      "properties": {
+        "contexto": "fraude bancaria"
+      }
+    },
+    {
+      "source": "STJ_388",
+      "target": "CONCEITO_dano_moral_in_re_ipsa",
+      "type": "APPLIES_TO",
+      "properties": {
+        "contexto": "devolucao indevida de cheque"
+      }
+    },
+    {
+      "source": "STJ_403",
+      "target": "CONCEITO_dano_moral_in_re_ipsa",
+      "type": "APPLIES_TO",
+      "properties": {
+        "contexto": "uso nao autorizado de imagem"
+      }
+    },
+    {
+      "source": "TEMA_972",
+      "target": "CONCEITO_venda_casada",
+      "type": "APPLIES_TO",
+      "properties": {
+        "contexto": "seguro em financiamento"
+      }
+    },
+    {
+      "source": "STJ_539",
+      "target": "CONCEITO_anatocismo",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Regula a capitalizacao de juros no SFN"
+      }
+    },
+    {
+      "source": "TEMA_1368",
+      "target": "ARTIGO_CC_406",
+      "type": "CITES",
+      "properties": {
+        "tipo": "BASE_LEGAL"
+      }
+    },
+    {
+      "source": "STJ_297",
+      "target": "DOMINIO_bancario",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Aplicacao do CDC a instituicoes financeiras"
+      }
+    },
+    {
+      "source": "STJ_297",
+      "target": "DOMINIO_consumidor",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Aplicacao do CDC a instituicoes financeiras"
+      }
+    },
+    {
+      "source": "STJ_469",
+      "target": "DOMINIO_saude",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Aplicacao do CDC a planos de saude"
+      }
+    },
+    {
+      "source": "STJ_469",
+      "target": "DOMINIO_consumidor",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Aplicacao do CDC a planos de saude"
+      }
+    },
+    {
+      "source": "STJ_302",
+      "target": "DOMINIO_saude",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Limites de internacao em planos de saude"
+      }
+    },
+    {
+      "source": "TEMA_1069",
+      "target": "DOMINIO_saude",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Natureza exemplificativa do rol ANS"
+      }
+    },
+    {
+      "source": "TEMA_1368",
+      "target": "DOMINIO_bancario",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Aplicacao da SELIC em debitos civis"
+      }
+    },
+    {
+      "source": "TEMA_1368",
+      "target": "DOMINIO_obrigacional",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Aplicacao da SELIC em debitos civis"
+      }
+    },
+    {
+      "source": "STJ_381",
+      "target": "DOMINIO_bancario",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Vedacao ao conhecimento de oficio de abusividade"
+      }
+    },
+    {
+      "source": "STJ_381",
+      "target": "DOMINIO_processual",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Vedacao ao conhecimento de oficio de abusividade"
+      }
+    },
+    {
+      "source": "STJ_277",
+      "target": "DOMINIO_paternidade",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Termo inicial dos alimentos em investigacao de paternidade"
+      }
+    },
+    {
+      "source": "STJ_277",
+      "target": "DOMINIO_alimentos",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Termo inicial dos alimentos em investigacao de paternidade"
+      }
+    },
+    {
+      "source": "TEMA_622",
+      "target": "DOMINIO_paternidade",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Multiparentalidade"
+      }
+    },
+    {
+      "source": "STF_340",
+      "target": "DOMINIO_usucapiao",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Impossibilidade de usucapiao de bens publicos"
+      }
+    },
+    {
+      "source": "STF_340",
+      "target": "DOMINIO_direitos_reais",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Impossibilidade de usucapiao de bens publicos"
+      }
+    },
+    {
+      "source": "TEMA_985",
+      "target": "DOMINIO_usucapiao",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Dispensa de area minima em usucapiao especial urbana"
+      }
+    },
+    {
+      "source": "STF_346",
+      "target": "DOMINIO_administrativo",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Autotutela administrativa"
+      }
+    },
+    {
+      "source": "STF_473",
+      "target": "DOMINIO_administrativo",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Autotutela administrativa"
+      }
+    },
+    {
+      "source": "STJ_543",
+      "target": "DOMINIO_incorporacao",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Restituicao em resolucao de promessa de compra e venda"
+      }
+    },
+    {
+      "source": "TEMA_996",
+      "target": "DOMINIO_incorporacao",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Consequencias do atraso na entrega de imovel"
+      }
+    },
+    {
+      "source": "TEMA_970",
+      "target": "DOMINIO_incorporacao",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Prazo de tolerancia de 180 dias"
+      }
+    },
+    {
+      "source": "STJ_479",
+      "target": "DOMINIO_reparacao_danos",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Responsabilidade bancaria por fraudes"
+      }
+    },
+    {
+      "source": "STJ_479",
+      "target": "DOMINIO_bancario",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Responsabilidade bancaria por fraudes"
+      }
+    },
+    {
+      "source": "STJ_385",
+      "target": "DOMINIO_reparacao_danos",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Inscricao preexistente afasta dano moral"
+      }
+    },
+    {
+      "source": "STJ_309",
+      "target": "DOMINIO_alimentos",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Debito alimentar para prisao civil"
+      }
+    },
+    {
+      "source": "STJ_596",
+      "target": "DOMINIO_alimentos",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Subsidiariedade da obrigacao alimentar dos avos"
+      }
+    },
+    {
+      "source": "STJ_621",
+      "target": "DOMINIO_alimentos",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Retroatividade de sentenca revisional/exoneratoria"
+      }
+    },
+    {
+      "source": "STJ_383",
+      "target": "DOMINIO_guarda",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Competencia em acoes de guarda"
+      }
+    },
+    {
+      "source": "STJ_383",
+      "target": "DOMINIO_processual",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Competencia em acoes de guarda"
+      }
+    },
+    {
+      "source": "STJ_197",
+      "target": "DOMINIO_divorcio",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Divorcio sem previa partilha"
+      }
+    },
+    {
+      "source": "STF_377",
+      "target": "DOMINIO_divorcio",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Comunicacao de bens na separacao legal"
+      }
+    },
+    {
+      "source": "STF_112",
+      "target": "DOMINIO_inventario",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Aliquota do ITCMD"
+      }
+    },
+    {
+      "source": "STF_542",
+      "target": "DOMINIO_inventario",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Multa por atraso em inventario"
+      }
+    },
+    {
+      "source": "STJ_101",
+      "target": "DOMINIO_seguros",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Prescricao em seguro de grupo"
+      }
+    },
+    {
+      "source": "STJ_610",
+      "target": "DOMINIO_seguros",
+      "type": "GOVERNS",
+      "properties": {
+        "descricao": "Cobertura de suicidio em seguro de vida"
+      }
+    },
+    {
+      "source": "STJ_297",
+      "target": "STJ_469",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de aplicacao do CDC"
+      }
+    },
+    {
+      "source": "STJ_297",
+      "target": "STJ_608",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de aplicacao do CDC"
+      }
+    },
+    {
+      "source": "STJ_302",
+      "target": "STJ_597",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de planos de saude e carencia/internacao"
+      }
+    },
+    {
+      "source": "STJ_302",
+      "target": "STJ_609",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de cobertura de planos de saude"
+      }
+    },
+    {
+      "source": "STJ_539",
+      "target": "STJ_541",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de capitalizacao de juros"
+      }
+    },
+    {
+      "source": "STJ_30",
+      "target": "STJ_472",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de comissao de permanencia"
+      }
+    },
+    {
+      "source": "STJ_382",
+      "target": "STJ_379",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de limites de juros"
+      }
+    },
+    {
+      "source": "STJ_54",
+      "target": "STJ_362",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de termo inicial de juros/correcao"
+      }
+    },
+    {
+      "source": "STJ_387",
+      "target": "STJ_388",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de dano moral"
+      }
+    },
+    {
+      "source": "STJ_387",
+      "target": "STJ_403",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de dano moral in re ipsa"
+      }
+    },
+    {
+      "source": "STJ_309",
+      "target": "STJ_621",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de execucao/revisao de alimentos"
+      }
+    },
+    {
+      "source": "STJ_277",
+      "target": "STJ_301",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de investigacao de paternidade"
+      }
+    },
+    {
+      "source": "STF_149",
+      "target": "TEMA_932",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambos tratam de imprescritibilidade da investigacao de paternidade"
+      }
+    },
+    {
+      "source": "STF_346",
+      "target": "STF_473",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de autotutela administrativa"
+      }
+    },
+    {
+      "source": "TEMA_970",
+      "target": "TEMA_996",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de atraso na entrega de imovel"
+      }
+    },
+    {
+      "source": "TEMA_952",
+      "target": "TEMA_1069",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de planos de saude"
+      }
+    },
+    {
+      "source": "TEMA_1062",
+      "target": "TEMA_1368",
+      "type": "RELATED_TO",
+      "properties": {
+        "descricao": "Ambas tratam de correcao monetaria e juros"
+      }
+    }
+  ]
+}
