@@ -1,18 +1,21 @@
 # Roadmap de Evolução - Lex Intelligentia Judiciário
 
-Este roadmap detalha as próximas fases de desenvolvimento para o sistema Lex Intelligentia Judiciário, com base na arquitetura v2.2 (11 agentes, router hierárquico) e nas oportunidades de otimização identificadas.
+Este roadmap detalha as próximas fases de desenvolvimento para o sistema Lex Intelligentia Judiciário.
 
 ---
 
-## 📊 Status Atual (v2.2 - Janeiro 2026)
+## 📊 Status Atual (v2.6.2 - Fevereiro 2026)
 
 | Componente | Status |
 |------------|--------|
-| Agentes Especializados | 11 (5 validados, 6 pendentes) |
+| Agentes Especializados | 21 (19 validados, 2 pendentes) |
 | Router | Gemini 2.5 Flash (hierárquico 2-stage) |
 | QA | Híbrido (estrutural + semântico) |
 | Compliance CNJ 615 | ✅ Implementado |
-| Workflow Nodes | 59 |
+| **Security** | ✅ Prompt injection + Webhook auth |
+| Workflow Nodes | 60+ |
+| Testes | 176 passed |
+| Coverage | lib/ 92%, config/ 85% |
 
 ---
 
@@ -20,13 +23,40 @@ Este roadmap detalha as próximas fases de desenvolvimento para o sistema Lex In
 
 O objetivo é evoluir o sistema de um assistente de automação para um parceiro de decisão proativo, aumentando a qualidade das minutas, reduzindo custos operacionais e melhorando a experiência de revisão do usuário final (magistrados e assessores).
 
+**Target Q1 2026:**
+- 52% cost reduction (caching + model routing)
+- 40% latency improvement (parallel QA)
+- 100% CNJ 615 compliance
+- RAG integration with STJ jurisprudence
+
 ---
 
 ## 🗺️ Fases do Roadmap
 
-### Fase 0: Validação em Produção (Atual - Janeiro 2026) ✅
+### Fase 0: Validação em Produção (Janeiro 2026) ✅
 
-**Objetivo:** Validar todos os 11 agentes em produção com casos reais.
+**Objetivo:** Validar todos os 21 agentes em produção com casos reais.
+
+**Resultado:** 19/21 agentes validados, score médio 98.5%
+
+### Fase 0.5: Security Hardening (Fevereiro 2026) ✅
+
+**Objetivo:** Implementar proteções de segurança críticas.
+
+| # | Tarefa | Status |
+|---|--------|--------|
+| **0.5.1** | Prompt injection detection (20+ patterns) | ✅ Concluído |
+| **0.5.2** | Webhook authentication (API Key, Bearer, HMAC) | ✅ Concluído |
+| **0.5.3** | Input sanitization aprimorada | ✅ Concluído |
+| **0.5.4** | Security tests (31 testes) | ✅ Concluído |
+| **0.5.5** | Enhancement Master Plan | ✅ Concluído |
+
+**Documentação:**
+- `docs/plans/2026-01-31-ENHANCEMENT-MASTER-PLAN.md`
+- `docs/plans/2026-01-31-EXECUTIVE-SUMMARY.md`
+- `docs/research/llm-legal-document-generation-best-practices-2025-2026.md`
+
+### Fase 1: Fundações de Dados (Atual - Fevereiro 2026)
 
 | # | Tarefa | Status |
 |---|--------|--------|

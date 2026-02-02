@@ -99,6 +99,277 @@ function sanitizeText(text) {
 }
 
 // =============================================================================
+// PROMPT INJECTION DETECTION (SEC-HIGH-002)
+// =============================================================================
+
+/**
+ * Patterns that indicate potential prompt injection attempts
+ * These patterns are designed to detect common attack vectors while
+ * minimizing false positives in legitimate legal text
+ */
+const PROMPT_INJECTION_PATTERNS = [
+  // Direct instruction override attempts
+  /ignore\s+(all\s+)?(previous|prior|above|earlier)\s+(instructions?|prompts?|rules?|guidelines?)/i,
+  /disregard\s+(all\s+)?(previous|prior|above|earlier)/i,
+  /forget\s+(all\s+)?(previous|prior|above|earlier)\s+(instructions?|context)/i,
+
+  // Role manipulation attempts
+  /you\s+are\s+now\s+(a|an|acting\s+as)/i,
+  /pretend\s+(you\s+are|to\s+be)/i,
+  /act\s+as\s+if\s+you/i,
+  /roleplay\s+as/i,
+  /assume\s+the\s+role\s+of/i,
+
+  // System prompt extraction attempts
+  /what\s+(is|are)\s+your\s+(system\s+)?(instructions?|prompt)/i,
+  /reveal\s+(your\s+)?(system\s+)?(prompt|instructions?)/i,
+  /show\s+(me\s+)?(your\s+)?(system\s+)?(instructions?|prompt)/i,
+  /print\s+(your\s+)?(system\s+)?(prompt|instructions?)/i,
+  /output\s+(your\s+)?(system\s+)?(instructions?|prompt)/i,
+
+  // Delimiter injection
+  /\[INST\]/i,
+  /\[\/INST\]/i,
+  /<\|im_start\|>/i,
+  /<\|im_end\|>/i,
+  /<<SYS>>/i,
+  /<\/SYS>>/i,
+  /\[SYSTEM\]/i,
+
+  // Explicit override keywords
+  /system\s*:\s*override/i,
+  /admin\s*:\s*execute/i,
+  /debug\s*:\s*true/i,
+  /jailbreak/i,
+  /DAN\s*mode/i,
+
+  // Code execution attempts
+  /```(python|javascript|bash|sh|exec)/i,
+  /eval\s*\(/i,
+  /exec\s*\(/i,
+  /__import__/i
+];
+
+/**
+ * Detect potential prompt injection attempts in text
+ * @param {string} text - Text to analyze
+ * @returns {{ detected: boolean, patterns: string[], severity: string }}
+ */
+function detectPromptInjection(text) {
+  if (!text || typeof text !== 'string') {
+    return { detected: false, patterns: [], severity: 'NONE' };
+  }
+
+  const detectedPatterns = [];
+
+  for (const pattern of PROMPT_INJECTION_PATTERNS) {
+    if (pattern.test(text)) {
+      detectedPatterns.push(pattern.toString());
+    }
+  }
+
+  if (detectedPatterns.length === 0) {
+    return { detected: false, patterns: [], severity: 'NONE' };
+  }
+
+  // Determine severity based on number and type of patterns
+  let severity = 'LOW';
+  if (detectedPatterns.length >= 3) {
+    severity = 'CRITICAL';
+  } else if (detectedPatterns.length >= 2) {
+    severity = 'HIGH';
+  } else if (detectedPatterns.some(p =>
+    p.includes('INST') || p.includes('im_start') || p.includes('SYS')
+  )) {
+    severity = 'HIGH';
+  }
+
+  return {
+    detected: true,
+    patterns: detectedPatterns,
+    severity
+  };
+}
+
+/**
+ * Validate input for prompt injection before processing
+ * Combines sanitization with injection detection
+ * @param {object} input - Input object with text fields
+ * @returns {{ safe: boolean, issues: object[], sanitized: object }}
+ */
+function validateAndSanitizeInput(input) {
+  const issues = [];
+  const sanitized = {};
+  const fieldsToCheck = ['fatos', 'questoes', 'pedidos', 'classe_processual', 'assunto'];
+
+  for (const field of fieldsToCheck) {
+    if (input[field]) {
+      // First sanitize
+      const sanitizedValue = sanitizeText(input[field]);
+
+      // Then check for injection
+      const injectionCheck = detectPromptInjection(sanitizedValue);
+
+      if (injectionCheck.detected) {
+        issues.push({
+          field,
+          type: 'PROMPT_INJECTION',
+          severity: injectionCheck.severity,
+          patterns: injectionCheck.patterns.length
+        });
+      }
+
+      sanitized[field] = sanitizedValue;
+    }
+  }
+
+  // Block if any HIGH or CRITICAL severity issues
+  const hasCritical = issues.some(i =>
+    i.severity === 'CRITICAL' || i.severity === 'HIGH'
+  );
+
+  return {
+    safe: !hasCritical,
+    issues,
+    sanitized
+  };
+}
+
+// =============================================================================
+// WEBHOOK AUTHENTICATION (SEC-HIGH-001)
+// =============================================================================
+
+/**
+ * Webhook authentication configuration
+ * Supports multiple authentication methods
+ */
+const WEBHOOK_AUTH_CONFIG = {
+  // API Key authentication (recommended)
+  apiKey: {
+    headerName: 'X-API-Key',
+    envVar: 'WEBHOOK_API_KEY'
+  },
+
+  // Bearer token authentication
+  bearer: {
+    headerName: 'Authorization',
+    prefix: 'Bearer ',
+    envVar: 'WEBHOOK_BEARER_TOKEN'
+  },
+
+  // HMAC signature verification (for webhooks from known sources)
+  hmac: {
+    headerName: 'X-Signature',
+    algorithm: 'sha256',
+    envVar: 'WEBHOOK_HMAC_SECRET'
+  }
+};
+
+/**
+ * Validate webhook authentication
+ * @param {object} headers - Request headers
+ * @param {string} body - Request body (for HMAC)
+ * @param {string} method - Authentication method ('apiKey', 'bearer', 'hmac')
+ * @returns {{ authenticated: boolean, error?: string }}
+ */
+function validateWebhookAuth(headers, body = '', method = 'apiKey') {
+  const config = WEBHOOK_AUTH_CONFIG[method];
+  if (!config) {
+    return { authenticated: false, error: 'Invalid authentication method' };
+  }
+
+  const expectedValue = process.env[config.envVar];
+  if (!expectedValue) {
+    // If no auth configured, log warning but allow (for development)
+    if (process.env.NODE_ENV === 'development') {
+      console.warn(`[SECURITY] ${config.envVar} not configured - webhook auth disabled`);
+      return { authenticated: true, warning: 'Auth disabled in development' };
+    }
+    return { authenticated: false, error: 'Authentication not configured' };
+  }
+
+  switch (method) {
+    case 'apiKey': {
+      const providedKey = headers[config.headerName.toLowerCase()] ||
+                          headers[config.headerName];
+      if (!providedKey) {
+        return { authenticated: false, error: 'API key not provided' };
+      }
+      if (providedKey !== expectedValue) {
+        return { authenticated: false, error: 'Invalid API key' };
+      }
+      return { authenticated: true };
+    }
+
+    case 'bearer': {
+      const authHeader = headers['authorization'] || headers['Authorization'];
+      if (!authHeader) {
+        return { authenticated: false, error: 'Authorization header not provided' };
+      }
+      if (!authHeader.startsWith(config.prefix)) {
+        return { authenticated: false, error: 'Invalid authorization format' };
+      }
+      const token = authHeader.slice(config.prefix.length);
+      if (token !== expectedValue) {
+        return { authenticated: false, error: 'Invalid bearer token' };
+      }
+      return { authenticated: true };
+    }
+
+    case 'hmac': {
+      const crypto = require('crypto');
+      const providedSignature = headers[config.headerName.toLowerCase()] ||
+                                headers[config.headerName];
+      if (!providedSignature) {
+        return { authenticated: false, error: 'Signature not provided' };
+      }
+      const expectedSignature = crypto
+        .createHmac(config.algorithm, expectedValue)
+        .update(body)
+        .digest('hex');
+      if (providedSignature !== expectedSignature) {
+        return { authenticated: false, error: 'Invalid signature' };
+      }
+      return { authenticated: true };
+    }
+
+    default:
+      return { authenticated: false, error: 'Unknown authentication method' };
+  }
+}
+
+/**
+ * n8n Code node for webhook authentication
+ * Add this as the first node after webhook trigger
+ */
+const N8N_WEBHOOK_AUTH_CODE = `
+// Webhook Authentication Code Node for n8n
+// Add this as the first node after webhook trigger
+
+const headers = $input.first().json.headers || {};
+const expectedApiKey = $env.WEBHOOK_API_KEY;
+
+// Skip auth in test mode or if not configured
+if (!expectedApiKey) {
+  console.warn('[SECURITY] WEBHOOK_API_KEY not set - auth skipped');
+  return $input.all();
+}
+
+const providedApiKey = headers['x-api-key'] || headers['X-API-Key'];
+
+if (!providedApiKey) {
+  throw new Error('Authentication required: X-API-Key header missing');
+}
+
+if (providedApiKey !== expectedApiKey) {
+  throw new Error('Authentication failed: Invalid API key');
+}
+
+// Authentication successful - pass through
+return $input.all();
+`;
+
+// =============================================================================
 // RATE LIMITING (Configuration for n8n implementation)
 // =============================================================================
 
@@ -264,13 +535,30 @@ function anonymizeIP(ip) {
 // =============================================================================
 
 module.exports = {
+  // Constants
   LIMITS,
   RATE_LIMITS,
   SECURITY_HEADERS,
+  WEBHOOK_AUTH_CONFIG,
+  PROMPT_INJECTION_PATTERNS,
+
+  // Input validation
   validateInput,
   sanitizeText,
+  validateAndSanitizeInput,
+
+  // Prompt injection detection (SEC-HIGH-002)
+  detectPromptInjection,
+
+  // Webhook authentication (SEC-HIGH-001)
+  validateWebhookAuth,
+
+  // Audit logging (CNJ 615/2025)
   createAuditEntry,
   calculateRisk,
   anonymizeIP,
-  N8N_RATE_LIMIT_CODE
+
+  // n8n Code snippets
+  N8N_RATE_LIMIT_CODE,
+  N8N_WEBHOOK_AUTH_CODE
 };

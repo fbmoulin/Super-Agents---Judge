@@ -532,9 +532,9 @@ psql -U postgres -d lex_intelligentia -f init_db_audit_logs.sql
 
 ---
 
-*Ultima atualizacao: 2026-01-31 | Versao: 2.6.1 | Quality Score: 95/100 | 21 agentes especializados, 100% validados | n8n Cloud: migração Anthropic preparada*
+*Ultima atualizacao: 2026-02-01 | Versao: 2.6.2 | Quality Score: 95/100 | 21 agentes especializados, 100% validados | Security Hardened*
 
-## Sprint 1 - Critical Path (2026-01-31)
+## Sprint 1 - Critical Path (2026-01-31) ✅
 
 ### Concluído
 - [x] SEC-001: API keys removidas de .claude/settings.local.json
@@ -542,7 +542,7 @@ psql -U postgres -d lex_intelligentia -f init_db_audit_logs.sql
 - [x] N8N-001-006: Guia de migração criado em docs/guides/N8N_ANTHROPIC_MIGRATION.md
 - [x] AGT-001-008: Agentes MANDADO_SEGURANCA e SAUDE_MEDICAMENTOS verificados (já existiam)
 
-## Sprint 2 - Technical Foundation (2026-01-31)
+## Sprint 2 - Technical Foundation (2026-01-31) ✅
 
 ### Concluído
 - [x] LIB-001/002: lib/http-client.js e lib/logger.js já existiam
@@ -553,13 +553,45 @@ psql -U postgres -d lex_intelligentia -f init_db_audit_logs.sql
 - [x] TST-004: Jest configurado com coverage thresholds (lib/: 80% lines, config/: 70% lines)
 - [x] DOC-001: docs/PYTHON_SETUP.md criado
 
-### Métricas
+### Métricas Sprint 2
 - **Testes:** 147 passed, 0 failed
 - **Coverage lib/:** 92.72% statements, 70.51% branches
 - **Coverage config/:** 85.57% statements, 78.66% branches
-- **Console.log restantes:** 0 nos validators principais
 
-### Próximos Passos (Sprint 3)
-- [ ] Executar migração n8n Cloud (manual no console)
-- [ ] Testar webhook pós-migração
-- [ ] Implementar RAG com Vector Store STJ
+## Sprint 3 - Security Hardening (2026-02-01) ✅
+
+### Concluído
+- [x] SEC-HIGH-001: Webhook authentication implementado (API Key, Bearer, HMAC)
+- [x] SEC-HIGH-002: Prompt injection detection (20+ patterns, severity classification)
+- [x] SEC-HIGH-003: PII test cases excluídos do git (processos_reais/)
+- [x] SEC-GITIGNORE: Patterns adicionados para .env.local em subdiretorios
+- [x] TST-SEC: 31 novos testes de segurança (security.test.js)
+- [x] DOC-PLAN: Enhancement Master Plan criado (docs/plans/2026-01-31-ENHANCEMENT-MASTER-PLAN.md)
+- [x] DOC-RESEARCH: LLM best practices research (docs/research/)
+
+### Métricas Sprint 3
+- **Testes:** 176 passed, 0 failed (+29 security tests)
+- **Prompt Injection Patterns:** 20+ regex patterns
+- **Authentication Methods:** 3 (API Key, Bearer, HMAC)
+- **Security Coverage:** detectPromptInjection(), validateWebhookAuth(), validateAndSanitizeInput()
+
+### Arquivos Modificados
+- `config/security.js` (+290 lines) - prompt injection + webhook auth
+- `tests/unit/security.test.js` (+230 lines) - 31 security tests
+- `.gitignore` (+11 lines) - .env.local patterns
+- `.env.keys.template` (+15 lines) - WEBHOOK_API_KEY
+
+## Sprint 4 - Performance & RAG (Próximo)
+
+### Planejado
+- [ ] PERF-001: Redis caching layer (40-50% cost reduction)
+- [ ] PERF-002: Parallel QA validation (0.5-1s latency reduction)
+- [ ] RAG-001: STJ jurisprudence integration (Qdrant)
+- [ ] RAG-002: Hybrid search (BM25 + vector)
+- [ ] AGT-001: Complete MANDADO_SEGURANCA prompt
+- [ ] AGT-002: Complete SAUDE_MEDICAMENTOS prompt
+
+### Documentação
+- **Master Plan:** docs/plans/2026-01-31-ENHANCEMENT-MASTER-PLAN.md
+- **Executive Summary:** docs/plans/2026-01-31-EXECUTIVE-SUMMARY.md
+- **Research:** docs/research/llm-legal-document-generation-best-practices-2025-2026.md

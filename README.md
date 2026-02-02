@@ -1,10 +1,11 @@
 # 🏛️ LEX INTELLIGENTIA JUDICIÁRIO
 ## Sistema Multi-Agente para Automação de Minutas Judiciais
 
-**Versão:** 2.6
-**Data:** Janeiro 2026
+**Versão:** 2.6.2
+**Data:** Fevereiro 2026
 **Compliance:** CNJ 615/2025
 **Quality Score:** 95/100
+**Security:** Prompt Injection Protection + Webhook Auth
 **Autor:** Sistema desenvolvido para 2ª Vara Cível de Cariacica/ES
 
 ---
@@ -352,6 +353,40 @@ python stj_downloader.py --process --input ./stj_data --output ./stj_chunks
 1. Ative o workflow `STJ Vector Store - Ingestão e Busca`
 2. Copie o arquivo de chunks para `/data/stj/`
 3. Chame o webhook de ingestão
+
+---
+
+## 🔐 SEGURANÇA
+
+### Proteções Implementadas (v2.6.2)
+
+| Proteção | Descrição |
+|----------|-----------|
+| **Prompt Injection Detection** | 20+ patterns para detectar tentativas de manipulação |
+| **Webhook Authentication** | API Key, Bearer Token, HMAC signature |
+| **Input Sanitization** | Remoção de null bytes, controle chars, normalização |
+| **Rate Limiting** | Configuração para 60 req/min por IP |
+| **LGPD Compliance** | IP anonymization, PII masking |
+
+### Configuração de Autenticação
+
+```bash
+# Gerar API key
+openssl rand -hex 32
+
+# Adicionar ao .env.keys
+WEBHOOK_API_KEY=sua_chave_gerada
+```
+
+### Uso no n8n
+
+Adicione header `X-API-Key` nas requisições ao webhook:
+```bash
+curl -X POST https://seu-webhook.n8n.cloud/webhook/lex-intelligentia-agentes \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: sua_chave_gerada" \
+  -d '{"fatos": "...", "questoes": "...", "pedidos": "..."}'
+```
 
 ---
 

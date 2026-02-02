@@ -116,9 +116,20 @@ coverage/
 # Resultados de teste com dados reais
 test_results/*_real_*.json
 test_cases/processos_reais/**/*.pdf
+test_cases/processos_reais/
 
 # Backups de workflow com credenciais
 **/workflow_backup_*.json
+
+# =============================================================================
+# ENVIRONMENT FILES IN SUBDIRECTORIES (CRITICAL)
+# =============================================================================
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+agent-ui/.env*
+!agent-ui/.env.example
 
 # =============================================================================
 # CLAUDE CODE (SETTINGS LOCAIS)
