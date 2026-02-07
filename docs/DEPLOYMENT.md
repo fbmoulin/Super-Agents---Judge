@@ -1,6 +1,6 @@
 # Lex Intelligentia Judiciário - Deployment Guide
 
-Complete deployment guide for the multi-agent judicial automation system (21 specialized agents for Brazilian courts, CNJ 615/2025 compliant).
+Complete deployment guide for the multi-agent judicial automation system (23 specialized agents for Brazilian courts, CNJ 615/2025 compliant).
 
 ## System Requirements
 
@@ -287,7 +287,7 @@ Expected response:
 ┌──────────────────────────▼──────────────────────────────────┐
 │                   n8n WORKFLOW                              │
 │  ┌─────────┐   ┌────────┐   ┌────────┐   ┌──────────────┐  │
-│  │ Webhook │ → │ Router │ → │ Switch │ → │ Agent (1/21) │  │
+│  │ Webhook │ → │ Router │ → │ Switch │ → │ Agent (1/23) │  │
 │  └─────────┘   │(Gemini)│   │(6 cat) │   │  (Claude)    │  │
 │                └────────┘   └────────┘   └──────┬───────┘  │
 │                                                  │          │

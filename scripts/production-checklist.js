@@ -60,7 +60,7 @@ function warn(name, condition, details = '') {
 // MAIN CHECKS
 // ============================================================================
 
-logger.section('LEX INTELLIGENTIA - Production Readiness Checker v2.6.0');
+logger.section('LEX INTELLIGENTIA - Production Readiness Checker v2.8.0');
 
 // ----------------------------------------------------------------------------
 // 1. ENVIRONMENT
@@ -149,8 +149,8 @@ try {
 
 if (config) {
   const agents = config.getAgentNames();
-  check('21 agents defined',
-    () => agents.length === 21,
+  check('23+ agents defined',
+    () => agents.length >= 23,
     `Found: ${agents.length} agents`
   );
 
