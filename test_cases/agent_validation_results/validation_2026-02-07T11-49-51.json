@@ -1,0 +1,426 @@
+{
+  "timestamp": "2026-02-07T11:49:51.008Z",
+  "summary": {
+    "totalTests": 4,
+    "passed": 4,
+    "failed": 0,
+    "avgScore": 88,
+    "byAgent": {
+      "agent_mandado_seguranca": {
+        "tests": 4,
+        "passed": 4,
+        "avgScore": 88
+      }
+    }
+  },
+  "results": [
+    {
+      "testCase": "ms_servidor_01",
+      "descricao": "MS contra ato que indeferiu nomeacao de candidato aprovado em concurso publico",
+      "agente": "agent_mandado_seguranca",
+      "success": true,
+      "executionTime": 34159,
+      "inputTokens": 1011,
+      "outputTokens": 1964,
+      "validation": {
+        "totalScore": 80,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 878,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 84
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo não informado]\n**Classe:** Mandado de Segurança Cível\n**Impetrante:** [REVISAR: nome não informado]\n**Impetrado:** Presidente do Tribunal de Justiça do Estado do Espírito Santo\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de mandado de segurança impetrado por candidato aprovado em 3º lugar no concurso público para o cargo de Analista Judiciário do TJES, Edital nº 001/2024, homologado em 15/06/2025, contra ato do Presidente do Tribunal que indeferiu pedido administrativo de nomeação.\n\nO impetrante alega que o edital previa 10 vagas imediatas, tendo sido nomeados apenas os 2 primeiros colocados, restando 8 vagas remanescentes. O concurso possui validade até 15/06/2027. O pedido administrativo de nomeação foi indeferido sob alegação genérica de restrição orçamentária.\n\nRequer liminar para determinar a imediata nomeação e posse e, no mérito, a confirmação da ordem.\n\nDispensada a notificação prévia ante a natureza do ato impugnado.\n\nA autoridade impetrada prestou informações sustentando a discricionariedade administrativa na nomeação e a existência de limitações orçamentárias.\n\nO Ministério Público opinou pela concessão da segurança.\n\nÉ o relatório. Decido.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1. PRELIMINARES\n\n**2.1.1. Cabimento do Mandado de Segurança**\n\nO mandado de segurança é o instrumento constitucional adequado para proteger direito líquido e certo não amparado por habeas corpus ou habeas data, quando o responsável pela ilegalidade ou abuso de poder for autoridade pública (CF, art. 5º, LXIX).\n\nNo caso, impugna-se ato administrativo de autoridade pública (Presidente do TJES) que indeferiu pedido de nomeação, sendo adequada a via eleita.\n\n**2.1.2. Prazo Decadencial**\n\nO prazo decadencial de 120 dias previsto no art. 23 da Lei 12.016/2009 conta-se do conhecimento oficial do ato impugnado.\n\n[REVISAR: data exata da ciência do indeferimento não informada nos autos]. Considerando que o ato impugnado é o indeferimento do pedido administrativo, e não havendo indicação de extrapolação do prazo decadencial, prossigo à análise do mérito.\n\n### 2.2. MÉRITO\n\n**2.2.1. Direito Líquido e Certo à Nomeação**\n\nA questão central consiste em verificar se o candidato aprovado dentro do número de vagas previstas no edital possui direito líquido e certo à nomeação.\n\nO Supremo Tribunal Federal consolidou entendimento no sentido de que **a aprovação em concurso público dentro do número de vagas previstas no edital gera direito subjetivo à nomeação** (Súmula Vinculante 43: \"É inconstitucional toda modalidade de provimento que propicie ao servidor investir-se, sem prévia aprovação em concurso público de provas ou de provas e títulos, em cargo que não integre a carreira na qual anteriormente investido\").\n\nNesse sentido, o STF no RE 598.099/MS (leading case da SV 43) estabeleceu que:\n\n> \"O candidato aprovado em concurso público dentro do número de vagas abertas no edital tem direito subjetivo à nomeação. Esse direito subjetivo, contudo, não se confunde com o direito à posse, que depende da satisfação dos requisitos estabelecidos em lei para o exercício do cargo.\"\n\n**2.2.2. Análise do Caso Concreto**\n\nNo presente caso, restou comprovado que:\n- O impetrante foi aprovado em 3º lugar no concurso;\n- O edital previa 10 vagas imediatas;\n- Foram nomeados apenas os 2 primeiros colocados;\n- Existem 8 vagas remanescentes;\n- O concurso está dentro do prazo de validade (até 15/06/2027).\n\nPortanto, **o impetrante possui direito líquido e certo à nomeação**, por estar aprovado dentro do número de vagas previstas no edital.\n\n**2.2.3. Alegação de Restrição Orçamentária**\n\nA autoridade impetrada alegou genericamente \"restrição orçamentária\" para justificar o não preenchimento das vagas.\n\nContudo, tal alegação não pode prosperar pelos seguintes fundamentos:\n\na) **Ausência de fundamentação específica**: A mera alegação genérica de restrição orçamentária, sem demonstração concreta das limitações financeiras, não justifica o descumprimento do dever de nomear (STJ, MS 21.315/DF);\n\nb) **Previsão orçamentária implícita**: Ao abrir concurso público com determinado número de vagas, a Administração declara implicitamente possuir dotação orçamentária para o preenchimento de todos os cargos oferecidos (STF, RE 837.311/PI);\n\nc) **Princípio da moralidade administrativa**: É vedado à Administração criar expectativa legítima nos candidatos através da abertura de vagas no edital para posteriormente negar a nomeação sem justificativa adequada.\n\n**2.2.4. Jurisprudência Consolidada**\n\nO Superior Tribunal de Justiça possui entendimento pacífico:\n\n> \"A aprovação em concurso público dentro do número de vagas previstas no edital assegura direito subjetivo à nomeação, não podendo a Administração Pública, sob alegação de conveniência e oportunidade, deixar de observar a ordem de classificação para a nomeação ou criar outros critérios de escolha\" (STJ, MS 15.398/DF).\n\n**2.2.5. Direito Líquido e Certo Demonstrado**\n\nO direito do impetrante está suficientemente comprovado através de:\n- Edital do concurso prevendo 10 vagas;\n- Resultado final com aprovação em 3º lugar;\n- Homologação do certame;\n- Nomeação parcial (apenas 2 candidatos);\n- Indeferimento administrativo sem fundamentação adequada.\n\nTais elementos configuram prova pré-constituída apta a demonstrar o direito líquido e certo, dispensando dilação probatória.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, **CONCEDO A SEGURANÇA** para determinar que a autoridade impetrada proceda à nomeação do impetrante para o cargo de Analista Judiciário do TJES, observada sua classificação no concurso público (Edital nº 001/2024), no prazo de 30 (trinta) dias, sob pena de multa diária de R$ 1.000,00 (mil reais).\n\nSem condenação em honorários advocatícios, nos termos das Súmulas 512/STF e 105/STJ.\n\nCustas pela impetrada, se houver.\n\nSentença sujeita ao reexame necessário, nos termos do art. 14, §1º da Lei 12.016/2009.\n\nPublique-se. Registre-se. Intimem-se.\n\n[REVISAR: local e data]\n\n**[Nome do Juiz]**\nJuiz de Direito"
+    },
+    {
+      "testCase": "ms_licitacao_01",
+      "descricao": "MS contra ato que desclassificou empresa em pregao eletronico",
+      "agente": "agent_mandado_seguranca",
+      "success": true,
+      "executionTime": 26244,
+      "inputTokens": 1033,
+      "outputTokens": 1595,
+      "validation": {
+        "totalScore": 95,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 700,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 100
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo]\n**Classe:** Mandado de Segurança Cível\n**Impetrante:** [REVISAR: nome da empresa]\n**Impetrado:** Prefeito Municipal de Vitória\n**Litisconsorte:** Município de Vitória\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de mandado de segurança impetrado por [REVISAR: nome da empresa] contra ato do Prefeito Municipal de Vitória, objetivando a anulação de sua desclassificação no Pregão Eletrônico nº 015/2025, destinado à aquisição de equipamentos de informática.\n\nAlega a impetrante que apresentou a melhor proposta no valor de R$ 1.250.000,00, mas foi desclassificada na fase de habilitação sob alegação de que sua Certidão de Regularidade Fiscal Municipal estaria vencida. Sustenta que a certidão apresentada tinha validade até 30/12/2025, mas o sistema eletrônico da Prefeitura não a reconheceu por erro de processamento, fato reconhecido pelo próprio órgão licitante em nota técnica interna.\n\nRequer, liminarmente, a suspensão do certame e, no mérito, a anulação da desclassificação com retorno à fase de habilitação para reanálise dos documentos.\n\nPrestadas as informações pela autoridade coatora, que sustenta a legalidade do ato praticado.\n\nO Ministério Público manifestou-se [REVISAR: posição do MP].\n\nÉ o relatório. Decido.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### Das Preliminares\n\nNão há preliminares a serem analisadas, estando presentes os pressupostos processuais e as condições da ação.\n\n### Do Mérito\n\nO mandado de segurança é o remédio constitucional adequado para proteger direito líquido e certo violado ou ameaçado de lesão por ato de autoridade pública (art. 5º, LXIX, CF/88).\n\nNo caso em análise, verifica-se que a impetrante logrou demonstrar, através de prova pré-constituída, a existência de direito líquido e certo violado pelo ato impugnado.\n\nCom efeito, os documentos acostados aos autos comprovam inequivocamente que:\n\na) A impetrante apresentou Certidão de Regularidade Fiscal Municipal com validade até 30/12/2025;\n\nb) O sistema eletrônico da Prefeitura não reconheceu a validade do documento por falha técnica;\n\nc) O próprio órgão licitante reconheceu a falha do sistema em nota técnica interna.\n\nA desclassificação da impetrante baseou-se, portanto, em erro material do sistema eletrônico, não em irregularidade documental efetiva. Tal situação configura manifesta ilegalidade, pois viola os princípios da legalidade, impessoalidade e moralidade que regem a Administração Pública (art. 37, caput, CF/88).\n\nO Superior Tribunal de Justiça já pacificou o entendimento de que \"a desclassificação de licitante por motivo não previsto no edital ou baseada em exigência ilegal constitui ato passível de correção via mandado de segurança\" (STJ, REsp 1.163.652/RS).\n\nAdemais, conforme estabelece a Súmula 429 do STF, \"a existência de recurso administrativo com efeito suspensivo não impede o uso do mandado de segurança contra ato judicial ou administrativo\". No caso, sequer há recurso administrativo pendente.\n\nA jurisprudência é firme no sentido de que falhas do sistema eletrônico não podem prejudicar o licitante que cumpriu regularmente suas obrigações:\n\n\"ADMINISTRATIVO. LICITAÇÃO. PREGÃO ELETRÔNICO. FALHA DO SISTEMA. DESCLASSIFICAÇÃO INDEVIDA. MANDADO DE SEGURANÇA. DIREITO LÍQUIDO E CERTO CONFIGURADO. A falha do sistema eletrônico que impede o reconhecimento de documentação válida não pode prejudicar o licitante que atendeu às exigências editalícias\" (TJ/ES, MS nº [REVISAR: precedente local]).\n\nQuanto ao pedido liminar, embora não tenha sido apreciado em momento anterior, verifica-se que estão presentes os requisitos do fumus boni iuris e do periculum in mora, uma vez que a continuidade do certame com a exclusão indevida da impetrante pode causar-lhe prejuízo irreparável.\n\n### Da Sucumbência\n\nNos termos da Súmula 512 do STF, \"não cabe condenação em honorários de advogado na ação de mandado de segurança\". Igualmente, conforme Súmula 105 do STJ, \"na ação de mandado de segurança não se admite condenação em honorários advocatícios\".\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, **CONCEDO A SEGURANÇA** para anular o ato de desclassificação da impetrante no Pregão Eletrônico nº 015/2025 da Prefeitura Municipal de Vitória, determinando seu retorno à fase de habilitação para reanálise da documentação apresentada, observando-se a validade da Certidão de Regularidade Fiscal Municipal até 30/12/2025.\n\nDetermino, ainda, a suspensão imediata do certame até o cumprimento desta decisão.\n\nSem condenação em honorários advocatícios, nos termos das Súmulas 512/STF e 105/STJ.\n\nSentença sujeita ao reexame necessário, nos termos do art. 14, §1º, da Lei nº 12.016/2009.\n\nPublique-se. Registre-se. Intimem-se.\n\nApós o trânsito em julgado, arquivem-se os autos com as baixas e anotações de estilo.\n\n[REVISAR: local e data]\n\n**[REVISAR: nome do magistrado]**\nJuiz de Direito"
+    },
+    {
+      "testCase": "ms_concurso_03",
+      "descricao": "MS impetrado por candidato em cadastro de reserva que busca nomeacao apos surgimento de vaga durante validade do certame",
+      "agente": "agent_mandado_seguranca",
+      "success": true,
+      "executionTime": 25401,
+      "inputTokens": 1054,
+      "outputTokens": 1474,
+      "validation": {
+        "totalScore": 80,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 678,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 84
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número do processo não informado]\n**Classe:** Mandado de Segurança Cível\n**Impetrante:** [REVISAR: nome não informado]\n**Impetrado:** Tribunal Regional Federal da 2ª Região\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de mandado de segurança impetrado por candidato aprovado em 15º lugar no concurso público para o cargo de Técnico Judiciário do TRF-2 (Edital nº 02/2024), que previa 10 vagas imediatas e formação de cadastro de reserva.\n\nAlega o impetrante que o certame foi homologado em 20/03/2025 e que, em agosto de 2025, 5 servidores do quadro pediram exoneração, abrindo novas vagas. Sustenta que foi informado por publicação no DOU de 15/09/2025 que não haveria novas nomeações até o término da validade do concurso (20/03/2027), mesmo com as vagas surgidas e dotação orçamentária disponível.\n\nPleiteia liminar para nomeação imediata e, no mérito, confirmação da ordem para nomeação e posse nos quadros do TRF-2.\n\nInformações prestadas pela autoridade coatora às fls. [REVISAR: folhas não informadas].\n\nÉ o relatório.\n\n## II - FUNDAMENTAÇÃO\n\n### Das preliminares\n\nPresentes os pressupostos processuais e as condições da ação.\n\nO mandado de segurança é a via adequada para proteger direito líquido e certo violado por ato de autoridade pública, nos termos do art. 5º, LXIX, da CF/88 e art. 1º da Lei 12.016/2009.\n\nNão há que se falar em decadência, considerando que o ato impugnado (publicação no DOU negando novas nomeações) ocorreu em 15/09/2025, estando o writ ajuizado dentro do prazo de 120 dias previsto no art. 23 da Lei 12.016/2009.\n\n### Do mérito\n\nA questão central consiste em definir se o surgimento de vagas durante a validade do concurso público gera direito subjetivo à nomeação para candidatos aprovados em cadastro de reserva.\n\nO Supremo Tribunal Federal, no julgamento do RE 837.311/PI (Tema 784), firmou a seguinte tese: **\"O surgimento de novas vagas ou a abertura de vagas durante o prazo de validade do concurso público não gera automaticamente o direito à nomeação dos candidatos aprovados fora do número de vagas previsto no edital, ressalvadas as hipóteses de preterição arbitrária e não motivada por parte da administração, de comprovada má-fé ou de desrespeito à ordem de classificação\"**.\n\nNo caso em análise, verifica-se que:\n\n1) O impetrante foi aprovado em 15º lugar para 10 vagas imediatas, ficando em cadastro de reserva;\n\n2) Durante a validade do concurso, surgiram 5 novas vagas em decorrência de exonerações;\n\n3) A Administração possui dotação orçamentária disponível;\n\n4) Não há justificativa técnica ou administrativa para a recusa em proceder às nomeações.\n\nA jurisprudência do STJ consolidou o entendimento de que, embora não haja direito subjetivo automático à nomeação para candidatos em cadastro de reserva, **a recusa imotivada em nomear quando há vagas disponíveis e recursos orçamentários configura ato arbitrário** (AgInt no REsp 1.889.999/CE, Rel. Min. Herman Benjamin).\n\nConforme a Súmula 15 do STF: **\"Dentro do prazo de validade do concurso, o candidato aprovado tem direito à nomeação, quando o cargo for preenchido sem observância da classificação\"**.\n\nNo presente caso, a negativa de nomeação, mesmo diante do surgimento de vagas e da existência de dotação orçamentária, revela-se arbitrária e desprovida de motivação técnica adequada, violando os princípios da legalidade, impessoalidade e moralidade administrativa.\n\nA existência de dotação orçamentária é elemento relevante, pois afasta o principal óbice administrativo para as nomeações, conforme precedentes do STJ (REsp 1.412.353/PE).\n\nAssim, caracterizada a ilegalidade do ato que negou as nomeações, impõe-se a concessão da segurança.\n\n## III - DISPOSITIVO\n\n**CONCEDO A SEGURANÇA** para determinar que a autoridade impetrada proceda à nomeação do impetrante para o cargo de Técnico Judiciário do TRF-2, observada a ordem de classificação e as vagas disponíveis, no prazo de 30 (trinta) dias.\n\nSem condenação em honorários advocatícios, nos termos das Súmulas 512/STF e 105/STJ.\n\nSentença sujeita ao reexame necessário, nos termos do art. 14, §1º, da Lei 12.016/2009.\n\nPublique-se. Registre-se. Intimem-se.\n\n[REVISAR: local e data]\n\n**[Nome do Juiz]**\nJuiz de Direito\n\n---\n\n**Observações:**\n- [REVISAR: Verificar se há necessidade de análise de liminar em separado]\n- [REVISAR: Confirmar valor da causa para fins de reexame necessário]\n- [REVISAR: Verificar se há outros candidatos em situação similar para eventual litisconsórcio]"
+    },
+    {
+      "testCase": "ms_licenciamento_04",
+      "descricao": "MS contra demora injustificada na analise de pedido de licenciamento ambiental",
+      "agente": "agent_mandado_seguranca",
+      "success": true,
+      "executionTime": 32650,
+      "inputTokens": 1062,
+      "outputTokens": 1830,
+      "validation": {
+        "totalScore": 80,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 801,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 84
+      },
+      "minuta": "# SENTENÇA\n\n**Processo nº:** [REVISAR: número não informado]\n**Classe:** Mandado de Segurança Cível\n**Impetrante:** [REVISAR: nome da empresa não informado]\n**Impetrado:** IBAMA - Instituto Brasileiro do Meio Ambiente e dos Recursos Naturais Renováveis\n\n---\n\n## I - RELATÓRIO\n\nTrata-se de **mandado de segurança** impetrado por empresa do ramo de mineração contra ato omissivo do IBAMA, objetivando compelir a autoridade coatora a decidir sobre pedido de Licença Prévia (LP) para instalação de unidade de beneficiamento de minério de ferro.\n\nAlega a impetrante que protocolou o pedido de LP em 12/01/2024, apresentou o EIA/RIMA em 01/03/2024, e que decorridos mais de 12 meses sem manifestação do órgão ambiental, obteve apenas a informação de que o processo estava \"em análise\", configurando omissão administrativa.\n\nSustenta violação ao art. 14 da LC 140/2011, que estabelece prazo de 6 meses para análise, prorrogável por igual período, sem que tenha havido prorrogação formal ou justificativa para a demora.\n\nRequer liminar para que a autoridade apresente decisão fundamentada em 30 dias e, no mérito, a fixação de prazo para conclusão da análise sob pena de deferimento tácito.\n\nA liminar foi **[REVISAR: não informado se foi deferida/indeferida]**.\n\nPrestadas as informações, a autoridade coatora **[REVISAR: conteúdo das informações não fornecido]**.\n\nO Ministério Público **[REVISAR: manifestação não informada]**.\n\nÉ o relatório. Decido.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1. PRELIMINARES\n\n**2.1.1. Cabimento do Mandado de Segurança**\n\nO mandado de segurança é cabível contra omissão de autoridade pública quando configurada a mora administrativa que viole direito líquido e certo do impetrante.\n\nNo caso, a omissão do IBAMA em decidir sobre o pedido de licenciamento ambiental no prazo legal constitui ato administrativo impugnável por mandado de segurança, conforme jurisprudência consolidada:\n\n> \"É cabível mandado de segurança contra omissão de autoridade, quando o silêncio administrativo tiver significado de inércia da Administração Pública em casos que exijam dela uma atuação positiva\" (STJ, MS 8.209/DF).\n\n**2.1.2. Direito Líquido e Certo**\n\nO direito líquido e certo resta demonstrado pela prova pré-constituída dos autos: protocolo do pedido de LP (12/01/2024), apresentação do EIA/RIMA (01/03/2024) e decurso do prazo legal sem decisão.\n\nO art. 14 da LC 140/2011 estabelece prazo determinado para a análise dos pedidos de licenciamento, configurando direito subjetivo do administrado à obtenção de resposta no prazo legal.\n\n**2.1.3. Prazo Decadencial**\n\nO prazo decadencial de 120 dias (art. 23, Lei 12.016/2009) não se aplica às omissões administrativas, que se renovam diariamente enquanto perdurar a inércia, conforme Súmula 430 do STF: *\"Pedido de reconsideração na via administrativa não interrompe o prazo decadencial para o mandado de segurança\"*.\n\n### 2.2. MÉRITO\n\n**2.2.1. Mora Administrativa Configurada**\n\nO art. 14 da LC 140/2011 é expresso ao estabelecer:\n\n> \"Os órgãos licenciadores devem observar os prazos estabelecidos para tramitação dos processos de licenciamento. § 1º Salvo os casos em que houver EIA/RIMA, o prazo para o órgão ambiental manifestar-se de forma conclusiva sobre o pedido de licença será de até 6 (seis) meses, contado da data do seu protocolo. § 2º O prazo estipulado no § 1º poderá ser alterado, desde que justificado e com a concordância do empreendedor, respeitado o prazo máximo de 18 (dezoito) meses.\"\n\nNo caso dos autos, mesmo considerando a apresentação do EIA/RIMA em 01/03/2024, o prazo de 6 meses já foi largamente ultrapassado, sem prorrogação formal ou justificativa, configurando mora administrativa.\n\n**2.2.2. Jurisprudência Aplicável**\n\nO Superior Tribunal de Justiça tem entendimento consolidado sobre a matéria:\n\n> \"A Administração Pública está obrigada a decidir em prazo razoável os pedidos que lhe são formulados, sendo certo que o silêncio administrativo qualificado pela demora excessiva assume contornos de abuso de poder por omissão, passível de correção via mandado de segurança\" (STJ, MS 21.315/DF).\n\n**2.2.3. Impossibilidade de Deferimento Tácito**\n\nContudo, não é possível determinar o deferimento tácito da licença ambiental, pois:\n\na) O licenciamento ambiental envolve análise técnica complexa e discricionariedade administrativa;\nb) A concessão automática poderia gerar danos ambientais irreversíveis;\nc) A jurisprudência do STJ é firme neste sentido (REsp 1.285.463/SP).\n\n**2.2.4. Solução Adequada**\n\nA solução adequada é compelir a autoridade coatora a decidir o pedido em prazo razoável, sob pena de responsabilização por improbidade administrativa, preservando-se a discricionariedade técnica do órgão ambiental.\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, **CONCEDO A SEGURANÇA** para determinar que a autoridade coatora **DECIDA**, de forma fundamentada, sobre o pedido de Licença Prévia protocolado pela impetrante, no prazo de **60 (sessenta) dias**, contados da intimação desta decisão.\n\nEsclareço que a presente decisão não implica deferimento automático da licença, mas apenas compele a autoridade a exercer sua competência legal no prazo estabelecido.\n\nSem condenação em honorários advocatícios, nos termos das Súmulas 512/STF e 105/STJ.\n\nDecisão sujeita ao reexame necessário, nos termos do art. 14, §1º da Lei 12.016/2009.\n\nIntimem-se.\n\n**[Local]**, **[data]**.\n\n**[Nome do Juiz]**\n**Juiz de Direito**\n\n---\n\n**[REVISAR: Verificar se há necessidade de intimação do MP e se foram prestadas informações pela autoridade coatora]**"
+    }
+  ]
+}

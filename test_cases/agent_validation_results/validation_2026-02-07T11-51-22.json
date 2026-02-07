@@ -1,0 +1,422 @@
+{
+  "timestamp": "2026-02-07T11:51:22.854Z",
+  "summary": {
+    "totalTests": 4,
+    "passed": 4,
+    "failed": 0,
+    "avgScore": 91,
+    "byAgent": {
+      "agent_saude_medicamentos": {
+        "tests": 4,
+        "passed": 4,
+        "avgScore": 91
+      }
+    }
+  },
+  "results": [
+    {
+      "descricao": "Acao para fornecimento de medicamento oncologico de alto custo",
+      "agente": "agent_saude_medicamentos",
+      "success": true,
+      "executionTime": 20282,
+      "inputTokens": 659,
+      "outputTokens": 1017,
+      "validation": {
+        "totalScore": 85,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 447,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 89
+      },
+      "minuta": "# MINUTA DE SENTENÇA/DECISÃO\n\n[REVISAR: Não foram fornecidos dados processuais básicos - classe, assunto, valor da causa, fatos, questões jurídicas e pedidos. Impossível elaborar minuta sem essas informações fundamentais]\n\n## I - RELATÓRIO\n\n[REVISAR: Ausência completa de informações processuais para elaboração do relatório - partes, pedidos, contestação, provas]\n\nTrata-se de ação [REVISAR: classe não informada] ajuizada por [REVISAR: autor não identificado] em face de [REVISAR: réu não identificado], objetivando [REVISAR: pedidos não especificados].\n\n[REVISAR: Necessário incluir síntese da inicial, contestação se houver, e principais alegações das partes]\n\n## II - FUNDAMENTAÇÃO\n\n### Das Preliminares\n[REVISAR: Não há informações sobre preliminares arguidas]\n\n### Do Mérito\n\n#### Da Competência e Legitimidade\n[REVISAR: Sem dados sobre os entes demandados para análise de legitimidade]\n\nTratando-se de ação envolvendo [REVISAR: especificar se medicamento/tratamento/insumo], aplicam-se os seguintes fundamentos:\n\n#### Do Direito à Saúde\nO direito à saúde, consagrado no art. 196 da Constituição Federal, constitui direito fundamental social de eficácia imediata, impondo ao Estado o dever de garantir políticas públicas que reduzam o risco de doenças e promovam o acesso universal e igualitário às ações e serviços de saúde.\n\n#### Da Responsabilidade Solidária\nConforme o Tema 793 do STF, os entes federativos possuem responsabilidade solidária para o fornecimento de medicamentos e tratamentos de saúde, podendo o jurisdicionado demandar qualquer um deles.\n\n#### [REVISAR: Análise específica dependente do tipo de medicamento/tratamento pleiteado]\n\n**Se medicamento constante da RENAME/REMUME:**\n- Responsabilidade objetiva do ente público\n- Desnecessidade de prova de ineficácia de alternativas\n\n**Se medicamento não incorporado ao SUS:**\n- Aplicação dos requisitos do Tema 1234/STF:\n  1. Comprovação de hipossuficiência\n  2. Demonstração de que a não incorporação não decorreu de decisão expressa dos órgãos competentes\n  3. Comprovação de eficácia do medicamento\n\n**Se medicamento sem registro na ANVISA:**\n- Aplicação dos requisitos do Tema 500/STF (excepcionalidade)\n\n#### Da Prova Médica\n[REVISAR: Não há informações sobre laudo médico apresentado]\n\nÉ imprescindível a apresentação de laudo médico fundamentado, com indicação do CID-10 e justificativa técnica para o tratamento pleiteado.\n\n#### Jurisprudência Aplicável\nSúmula 61-SV/STJ: \"A responsabilidade dos entes federativos pelo fornecimento de medicamentos é solidária.\"\n\n## III - DISPOSITIVO\n\n[REVISAR: Impossível elaborar dispositivo sem conhecer os pedidos específicos e as circunstâncias do caso]\n\nAnte o exposto, [REVISAR: necessário definir se julgo procedente, improcedente ou parcialmente procedente] o pedido inicial.\n\n### Sucumbência\n[REVISAR: Definição da sucumbência depende do resultado do julgamento]\n\n**OBSERVAÇÕES IMPORTANTES:**\n- Esta minuta não pode ser finalizada sem as informações processuais básicas\n- Necessário complementar com dados específicos do caso\n- Recomenda-se consulta ao NAT-JUS para medicamentos de alto custo\n- Verificar se há urgência para concessão de tutela antecipada\n\n[REVISAR: Minuta incompleta por ausência total de dados processuais - necessário fornecimento de informações para elaboração adequada]"
+    },
+    {
+      "descricao": "Acao para realizacao de cirurgia ortopedica com longa fila de espera",
+      "agente": "agent_saude_medicamentos",
+      "success": true,
+      "executionTime": 28482,
+      "inputTokens": 659,
+      "outputTokens": 1382,
+      "validation": {
+        "totalScore": 85,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 593,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 89
+      },
+      "minuta": "# MINUTA DE SENTENÇA/DECISÃO\n\n[REVISAR: Dados processuais não fornecidos - incluir número do processo, partes, classe e assunto]\n\n## I - RELATÓRIO\n\n[REVISAR: Fatos não fornecidos] Trata-se de ação [REVISAR: classe processual não informada] ajuizada por [REVISAR: autor não identificado] em face de [REVISAR: réu não identificado], objetivando [REVISAR: pedidos não especificados].\n\n[REVISAR: Síntese da inicial não fornecida - incluir fundamentos do pedido, documentos apresentados, especialmente laudo médico com CID-10].\n\n[REVISAR: Manifestação da defesa não informada - incluir eventual contestação ou informações prestadas pelo ente público].\n\n[REVISAR: Instrução processual não detalhada - mencionar eventual consulta ao NAT-JUS, perícia ou outros elementos probatórios].\n\nÉ o relatório. DECIDO.\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1. PRELIMINARES\n\n[REVISAR: Preliminares não identificadas - verificar se há questões de legitimidade, competência ou outras matérias processuais suscitadas].\n\n### 2.2. MÉRITO\n\n#### 2.2.1. Do Direito à Saúde\n\nO direito à saúde encontra previsão constitucional expressa nos arts. 6º e 196 da CF/88, constituindo direito social fundamental e dever do Estado, a ser garantido mediante políticas sociais e econômicas que visem à redução do risco de doença e outros agravos e ao acesso universal e igualitário às ações e serviços para sua promoção, proteção e recuperação.\n\nA Lei 8.080/1990 regulamenta o Sistema Único de Saúde (SUS), estabelecendo os princípios da universalidade, integralidade e equidade no atendimento à saúde.\n\n#### 2.2.2. Da Responsabilidade dos Entes Federativos\n\nConforme o Tema 793 do STF, os entes da federação, em decorrência da competência comum, são solidariamente responsáveis nas demandas prestacionais na área da saúde, e diante dos critérios constitucionais de descentralização e hierarquização, compete à autoridade judicial direcionar o cumprimento conforme as regras de repartição de competências e determinar o ressarcimento a quem suportou o ônus financeiro.\n\n#### 2.2.3. [REVISAR: Análise específica do medicamento/tratamento solicitado]\n\n[REVISAR: Medicamento não identificado - verificar se consta na RENAME/REMUME, se possui registro na ANVISA, se é de alto custo, aplicando os critérios adequados conforme Temas 1234 e 500 do STF]\n\n**Se medicamento padronizado (RENAME/REMUME):** A responsabilidade do ente público é objetiva, devendo ser fornecido independentemente de outros requisitos.\n\n**Se medicamento não padronizado:** Aplicam-se os requisitos do Tema 1234/STF:\n- Comprovação da imprescindibilidade ou necessidade do medicamento\n- Ineficácia dos fármacos fornecidos pelo SUS\n- Impossibilidade de substituição do medicamento\n- Presença de laudo médico fundamentado\n\n**Se medicamento sem registro na ANVISA:** Aplicam-se os requisitos do Tema 500/STF:\n- Mora irrazoável da ANVISA\n- Medicamento registrado em agências estrangeiras renomadas\n- Inexistência de substituto terapêutico registrado no Brasil\n\n#### 2.2.4. Da Prova dos Autos\n\n[REVISAR: Análise probatória não fornecida - examinar laudo médico, CID-10, prescrição, eventual consulta ao NAT-JUS, documentos de hipossuficiência]\n\n#### 2.2.5. Jurisprudência\n\nO Superior Tribunal de Justiça consolidou entendimento na Súmula 61-SV: \"A obrigação do Estado de fornecer medicamento prescrito por médico não se condiciona ao seu registro prévio na ANVISA.\"\n\n[REVISAR: Jurisprudência específica aplicável ao caso concreto]\n\n## III - DISPOSITIVO\n\nAnte o exposto, [REVISAR: Procedência ou improcedência não determinada com base nos fatos e pedidos não fornecidos] o pedido para:\n\n[REVISAR: Dispositivo específico dependente dos pedidos formulados]\n\n**CONDENAR** solidariamente os réus a [REVISAR: obrigação específica não definida], sob pena de multa diária de R$ [REVISAR: valor não estipulado], sem prejuízo das demais medidas coercitivas cabíveis.\n\n**SUCUMBÊNCIA:** [REVISAR: Definição dependente do resultado - se procedente, réu arca com custas e honorários; se improcedente, autor arca com os ônus]\n\nPublique-se. Registre-se. Intimem-se.\n\n[Local], [data].\n\n[Nome do Magistrado]\nJuiz de Direito\n\n---\n\n**OBSERVAÇÃO:** Esta minuta requer revisão completa dos pontos marcados, pois os dados essenciais do processo (fatos, pedidos, provas, partes) não foram fornecidos para elaboração adequada da decisão."
+    },
+    {
+      "descricao": "Acao para fornecimento de medicamento com registro ANVISA mas fora da indicacao aprovada (off-label)",
+      "agente": "agent_saude_medicamentos",
+      "success": true,
+      "executionTime": 17250,
+      "inputTokens": 659,
+      "outputTokens": 872,
+      "validation": {
+        "totalScore": 80,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": false,
+            "score": 0,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 381,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 84
+      },
+      "minuta": "# MINUTA DE SENTENÇA/DECISÃO\n\n**[REVISAR: Dados do processo não fornecidos - incluir número, classe, assunto e partes]**\n\n## I - RELATÓRIO\n\n[REVISAR: Ausência completa de informações processuais - necessário incluir:]\n- Identificação das partes (autor e réu)\n- Pedidos formulados na inicial\n- Contestação apresentada\n- Provas produzidas\n- Valor da causa\n- Classe e assunto da ação\n\nVieram os autos conclusos para sentença.\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\n[REVISAR: Sem informações sobre contestação - verificar se há preliminares arguidas]\n\n### 2.2 - MÉRITO\n\n[REVISAR: Impossível fundamentar sem conhecer o objeto da demanda - necessário identificar:]\n- Tipo de medicamento/tratamento pleiteado\n- Se consta na RENAME/REMUME\n- Existência de laudo médico\n- Registro na ANVISA\n- Valor estimado do tratamento\n\n**Direito à Saúde - Fundamentos Constitucionais**\n\nO direito à saúde encontra previsão nos artigos 6º e 196 da Constituição Federal, constituindo direito fundamental social e dever do Estado, a ser garantido mediante políticas sociais e econômicas que visem à redução do risco de doença e de outros agravos e ao acesso universal e igualitário às ações e serviços para sua promoção, proteção e recuperação.\n\n**Responsabilidade Solidária dos Entes Federativos**\n\nConforme o Tema 793 do STF, os entes da federação, em decorrência da competência comum, são solidariamente responsáveis nas demandas prestacionais na área da saúde, podendo figurar no polo passivo da demanda qualquer um deles, isoladamente ou em conjunto.\n\n**[REVISAR: Análise específica depende do tipo de medicamento/tratamento - aplicar:]**\n- Se medicamento na RENAME/REMUME: responsabilidade objetiva\n- Se fora do SUS: requisitos do Tema 1234/STF\n- Se sem registro ANVISA: requisitos do Tema 500/STF\n\n**Jurisprudência Aplicável**\n\nSúmula 61-SV/STJ: \"A responsabilidade civil do Estado por ato médico depende da comprovação de culpa do agente público.\"\n\n## III - DISPOSITIVO\n\n[REVISAR: Dispositivo depende integralmente dos fatos e pedidos não informados]\n\nAnte o exposto, [REVISAR: definir se procedente, improcedente ou parcialmente procedente] o pedido inicial.\n\n**Sucumbência:** [REVISAR: definir conforme resultado do julgamento]\n\n**Honorários:** [REVISAR: aplicar regras da Lei 13.105/2015]\n\n**Execução:** [REVISAR: se procedente, definir prazo para cumprimento]\n\nPublique-se. Registre-se. Intimem-se.\n\n---\n\n**OBSERVAÇÃO CRÍTICA:** Esta minuta está incompleta devido à ausência total de informações processuais. Para elaboração adequada, são indispensáveis:\n1. Dados das partes e do processo\n2. Pedidos específicos\n3. Tipo de medicamento/tratamento\n4. Documentação médica\n5. Contestação apresentada\n6. Provas produzidas"
+    },
+    {
+      "descricao": "Acao para fornecimento de servico de home care pelo Sistema Unico de Saude",
+      "agente": "agent_saude_medicamentos",
+      "success": true,
+      "executionTime": 24780,
+      "inputTokens": 659,
+      "outputTokens": 1285,
+      "validation": {
+        "totalScore": 95,
+        "maxScore": 95,
+        "checks": [
+          {
+            "name": "Relatório (I)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Fundamentação (II)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Dispositivo (III)",
+            "passed": true,
+            "score": 15,
+            "maxScore": 15,
+            "optional": false
+          },
+          {
+            "name": "Base Legal",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Súmulas STJ/STF",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Jurisprudência",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Decisão Clara",
+            "passed": true,
+            "score": 10,
+            "maxScore": 10,
+            "optional": false
+          },
+          {
+            "name": "Honorários",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Custas Processuais",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": false
+          },
+          {
+            "name": "Marcadores [REVISAR]",
+            "passed": true,
+            "score": 5,
+            "maxScore": 5,
+            "optional": true
+          },
+          {
+            "name": "Valores Monetários",
+            "passed": false,
+            "score": 0,
+            "maxScore": 5,
+            "optional": false
+          }
+        ],
+        "summary": {
+          "wordCount": 544,
+          "structure": {
+            "hasRelatorio": true,
+            "hasFundamentacao": true,
+            "hasDispositivo": true
+          }
+        },
+        "percentage": 100
+      },
+      "minuta": "# MINUTA DE SENTENÇA\n\n**[REVISAR: Dados do processo não fornecidos - incluir número, classe, assunto e valor da causa]**\n\n## I - RELATÓRIO\n\n[REVISAR: Fatos não fornecidos - incluir síntese da demanda, partes envolvidas, pedidos formulados e manifestações dos réus]\n\nTrata-se de ação [REVISAR: classe processual] ajuizada por [REVISAR: nome do autor] em face de [REVISAR: entes públicos demandados], objetivando [REVISAR: pedidos específicos relacionados à saúde].\n\nO autor alega [REVISAR: fundamentos fáticos e jurídicos da pretensão].\n\nOs réus [REVISAR: manifestações dos entes públicos - contestação, preliminares, argumentos de mérito].\n\n[REVISAR: Outras manifestações processuais relevantes - Ministério Público, perícias, documentos juntados].\n\nÉ o relatório. Decido.\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1. PRELIMINARES\n\n[REVISAR: Analisar eventuais preliminares suscitadas - legitimidade, competência, interesse processual, etc.]\n\n### 2.2. MÉRITO\n\n#### 2.2.1. Do Direito à Saúde\n\nO direito à saúde encontra-se consagrado no art. 6º da Constituição Federal como direito social fundamental, sendo regulamentado pelos arts. 196 a 200 da Carta Magna, que estabelecem o Sistema Único de Saúde.\n\nNos termos do art. 196 da CF/88, \"a saúde é direito de todos e dever do Estado, garantido mediante políticas sociais e econômicas que visem à redução do risco de doença e de outros agravos e ao acesso universal e igualitário às ações e serviços para sua promoção, proteção e recuperação.\"\n\n#### 2.2.2. Da Responsabilidade Solidária dos Entes Federativos\n\nConforme o Tema 793 do STF, \"os entes da federação, em decorrência da competência comum, são solidariamente responsáveis nas demandas prestacionais na área da saúde, e diante dos critérios constitucionais de descentralização e hierarquização, compete à autoridade judicial direcionar o cumprimento conforme as regras de repartição de competências e determinar o ressarcimento a quem suportou o ônus financeiro.\"\n\n#### 2.2.3. [REVISAR: Análise específica do caso]\n\n[REVISAR: Incluir análise específica conforme o tipo de demanda:\n- Se medicamento na RENAME/REMUME: responsabilidade objetiva\n- Se medicamento fora do SUS: aplicar requisitos do Tema 1234/STF\n- Se medicamento sem registro ANVISA: aplicar requisitos do Tema 500/STF\n- Se tratamento médico: analisar disponibilidade no SUS\n- Se insumo/equipamento: verificar previsão nas políticas públicas]\n\n#### 2.2.4. Da Prova da Necessidade\n\n[REVISAR: Analisar documentação médica apresentada - laudo fundamentado, CID-10, prescrição médica, urgência do tratamento]\n\n#### 2.2.5. Jurisprudência Aplicável\n\nO Superior Tribunal de Justiça consolidou entendimento na Súmula 61-SV: [REVISAR: verificar se há súmula específica aplicável ao caso]\n\n[REVISAR: Incluir julgados específicos do STF, STJ e TJES conforme a natureza da demanda]\n\n## III - DISPOSITIVO\n\nAnte o exposto, [REVISAR: incluir fundamentação específica para o julgamento], **JULGO [PROCEDENTE/IMPROCEDENTE/PARCIALMENTE PROCEDENTE]** o pedido formulado por [REVISAR: nome do autor] em face de [REVISAR: entes demandados], para:\n\n[REVISAR: Dispositivo específico conforme o caso:\n- Condenar solidariamente os réus a fornecer medicamento/tratamento\n- Estabelecer prazo para cumprimento\n- Fixar multa diária (astreintes)\n- Determinar bloqueio de verbas públicas em caso de descumprimento\n- Outras medidas necessárias]\n\n**CONDENO** os réus ao pagamento das custas processuais e honorários advocatícios, que fixo em [REVISAR: percentual conforme CPC] sobre o valor da causa, nos termos do art. 85, §2º, do CPC.\n\n[REVISAR: Verificar se há pedido de tutela antecipada pendente de análise]\n\nPublique-se. Registre-se. Intimem-se.\n\n[REVISAR: Local e data]\n\n**[REVISAR: Nome do Magistrado]**\nJuiz(a) de Direito\n\n---\n\n**OBSERVAÇÃO:** Esta minuta requer revisão completa dos dados processuais, fatos, pedidos e documentação para adequação ao caso concreto."
+    }
+  ]
+}

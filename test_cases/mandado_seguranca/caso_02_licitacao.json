@@ -1,24 +1,14 @@
 {
-  "id": "ms_licitacao_01",
-  "nome": "Mandado de Seguranca - Desclassificacao em Licitacao",
+  "caso_id": "ms_licitacao_01",
   "descricao": "MS contra ato que desclassificou empresa em pregao eletronico",
-  "dominio_esperado": "mandado_seguranca",
-  "input": {
-    "fatos": "A empresa impetrante participou do Pregao Eletronico n 015/2025 da Prefeitura Municipal de Vitoria, para aquisicao de equipamentos de informatica, tendo apresentado a melhor proposta de R$ 1.250.000,00. Na fase de habilitacao, foi desclassificada sob alegacao de que a Certidao de Regularidade Fiscal Municipal estava vencida. Ocorre que a certidao apresentada tinha validade ate 30/12/2025, porem o sistema eletronico da Prefeitura nao a reconheceu por erro de processamento. A impetrante juntou prova da validade da certidao e comprovou que o sistema apresentou falha tecnica reconhecida pelo proprio orgao licitante em nota tecnica interna.",
-    "questoes": "1) O ato de desclassificacao foi ilegal? 2) A falha do sistema pode prejudicar o licitante? 3) Cabivel liminar para suspender a licitacao?",
-    "pedidos": "Liminar para suspender o certame. No merito, anulacao da desclassificacao e retorno a fase de habilitacao com reanalise dos documentos.",
-    "classe_processual": "Mandado de Seguranca Civel",
-    "assunto": "Licitacao - Desclassificacao"
-  },
-  "criterios_avaliacao": {
-    "estrutura_firac": true,
-    "citacao_sumulas": ["Sumula 333/STJ"],
-    "base_legal": ["Lei 12.016/2009", "Lei 14.133/2021", "Lei 8.666/93"],
-    "analise_requisitos_liminar": true,
-    "proporcionalidade_medida": true
-  },
+  "fatos": "A empresa impetrante participou do Pregao Eletronico n 015/2025 da Prefeitura Municipal de Vitoria, para aquisicao de equipamentos de informatica, tendo apresentado a melhor proposta de R$ 1.250.000,00. Na fase de habilitacao, foi desclassificada sob alegacao de que a Certidao de Regularidade Fiscal Municipal estava vencida. Ocorre que a certidao apresentada tinha validade ate 30/12/2025, porem o sistema eletronico da Prefeitura nao a reconheceu por erro de processamento. A impetrante juntou prova da validade da certidao e comprovou que o sistema apresentou falha tecnica reconhecida pelo proprio orgao licitante em nota tecnica interna.",
+  "questoes": "1) O ato de desclassificacao foi ilegal? 2) A falha do sistema pode prejudicar o licitante? 3) Cabivel liminar para suspender a licitacao?",
+  "pedidos": "Liminar para suspender o certame. No merito, anulacao da desclassificacao e retorno a fase de habilitacao com reanalise dos documentos.",
+  "classe": "Mandado de Seguranca Civel",
+  "assunto": "Licitacao - Desclassificacao",
+  "valor_causa": 1250000.00,
   "expectativa": {
-    "agente_esperado": "agent_MANDADO_SEGURANCA",
+    "agente_esperado": "agent_mandado_seguranca",
     "score_minimo": 75,
     "elementos_obrigatorios": ["direito liquido e certo", "licitacao", "liminar"]
   }
