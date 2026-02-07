@@ -16,18 +16,19 @@ Sistema multi-agente para automação de minutas judiciais (decisões e sentenç
 | v2.4 | Legacy | +4 Agentes Família (Alimentos, Paternidade, Guarda) + Reparação Danos |
 | v2.5 | Legacy | +4 Agentes (Cobrança, Divórcio, Inventário, Seguros) - 19 agentes total |
 | v2.6 | Legacy | +2 Agentes Fazenda Pública (Execução Fiscal, Resp. Civil Estado) - 21 agentes |
-| v2.7 | **Atual** | +Cache Redis, +RAG Module, +2 Agentes (Mandado Segurança, Saúde/Medicamentos) - 23 agentes |
+| v2.7 | Legacy | +Cache Redis, +RAG Module, +2 Agentes (Mandado Segurança, Saúde/Medicamentos) - 23 agentes |
+| v2.8 | **Atual** | +Hallucination Detector, +Pipeline Orchestrator, +Parallel QA, +Integration Tests |
 
 ## Status do Projeto
 
 ```
 ╔═══════════════════════════════════════════════════════════════╗
-║  ✅ WORKFLOW v2.7 - 23 AGENTES ESPECIALIZADOS                   ║
+║  ✅ WORKFLOW v2.8 - 23 AGENTES ESPECIALIZADOS                   ║
 ║                                                               ║
 ║  Quality Score: 95/100 (estrutura)                            ║
 ║  Nodes: 60+ | Connections: 53+                                ║
 ║  Production Tests: 23/23 AGENTES VALIDADOS ✅                  ║
-║  Unit Tests: 286 passed (Jest 30), 10 suites                  ║
+║  Unit Tests: 327 passed (Jest 30), 14 suites                  ║
 ║  Cobertura: 90-95% (estimada) via Knowledge Base              ║
 ║                                                               ║
 ║  AGENTES VALIDADOS (2026-01-19):                              ║
@@ -246,6 +247,9 @@ Disponível em `~/.claude/skills/LegalPromptGenerator/`:
 | `agents/agent_SAUDE_MEDICAMENTOS.md` | **v2.7** | Agente saúde/medicamentos SUS (91%) |
 | `lib/cache.js` | **v2.7** | Redis cache module (mock + real) |
 | `lib/rag.js` | **v2.7** | RAG query builder + precedent formatter |
+| `lib/hallucination-detector.js` | **v2.8** | Hallucination detector (súmulas/temas cross-ref) |
+| `lib/pipeline.js` | **v2.8** | Pipeline orchestrator (cache→RAG→LLM→QA→cache) |
+| `lib/parallel-qa.js` | **v2.8** | Parallel QA runner (Promise.allSettled) |
 | `knowledge_base/sumulas.json` | **NOVO** | Súmulas STJ/STF pesquisáveis |
 | `knowledge_base/temas_repetitivos.json` | **NOVO** | Temas com detalhamento |
 | `knowledge_base/domain_mapping.json` | **NOVO** | Mapping keywords → domínios |
@@ -570,7 +574,7 @@ psql -U postgres -d lex_intelligentia -f init_db_audit_logs.sql
 - `.gitignore` (+11 lines) - .env.local patterns
 - `.env.keys.template` (+15 lines) - WEBHOOK_API_KEY
 
-## Sprint 4 - Performance & RAG (2026-02-07) ✅ Parcial
+## Sprint 4 - Performance & RAG (2026-02-07) ✅
 
 ### Concluído
 - [x] PERF-001: Redis caching layer (`lib/cache.js` - 11 testes, mock + real Redis)
@@ -585,13 +589,30 @@ psql -U postgres -d lex_intelligentia -f init_db_audit_logs.sql
 - **Agentes:** 21 → 23 (100% validados)
 - **Novos módulos:** lib/cache.js, lib/rag.js
 
-### Pendente (Sprint 5)
-- [ ] PERF-002: Parallel QA validation (0.5-1s latency reduction)
-- [ ] RAG-002: Hybrid search com Qdrant (BM25 + vector live)
+## Sprint 5 - Hallucination Detection & Pipeline (2026-02-07) ✅
+
+### Concluído
+- [x] TEST-004: Hallucination detector (`lib/hallucination-detector.js` - 19 testes, cross-ref súmulas/temas)
+- [x] PIPE-001: Pipeline orchestrator (`lib/pipeline.js` - 8 testes, cache→RAG→LLM→QA→cache)
+- [x] PERF-002: Parallel QA runner (`lib/parallel-qa.js` - 9 testes, Promise.allSettled)
+- [x] CI/CD: Agent count check fixado (21→23), job `validate-agents` adicionado
+- [x] TEST-002: Integration tests (`tests/integration/pipeline.integration.test.js` - 5 testes)
+- [x] Version bump v2.7.0 → v2.8.0
+
+### Métricas Sprint 5
+- **Testes:** 327 passed, 0 failed (+41 novos: 19 halluc + 8 pipeline + 9 QA + 5 integration)
+- **Suites:** 10 → 14
+- **Novos módulos:** lib/hallucination-detector.js, lib/pipeline.js, lib/parallel-qa.js
+
+### Pendente (Sprint 6)
+- [ ] RAG-002: Hybrid search com Qdrant live (BM25 + vector)
+- [ ] PERF-003: Model routing optimization (Haiku for simple cases)
 - [ ] Dashboard de métricas (Looker Studio / Metabase)
 - [ ] A/B testing de prompts
+- [ ] COMP-001: Complete audit schema (additional fields)
 
 ### Documentação
+- **Sprint 5 Plan:** docs/plans/2026-02-07-sprint5-hallucination-pipeline-qa.md
 - **Sprint 4 Plan:** docs/plans/2026-02-07-sprint4-performance-rag.md
 - **Master Plan:** docs/plans/2026-01-31-ENHANCEMENT-MASTER-PLAN.md
 - **Executive Summary:** docs/plans/2026-01-31-EXECUTIVE-SUMMARY.md

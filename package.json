@@ -1,7 +1,7 @@
 {
   "name": "lex-intelligentia-judiciario",
-  "version": "2.7.0",
-  "description": "Sistema multi-agente para automação de minutas judiciais - 21 agentes especializados em conformidade com CNJ 615/2025 - Security hardened",
+  "version": "2.8.0",
+  "description": "Sistema multi-agente para automação de minutas judiciais - 23 agentes especializados em conformidade com CNJ 615/2025 - Security hardened",
   "directories": {
     "doc": "docs"
   },
