@@ -80,10 +80,10 @@ Este arquivo serve como índice central para toda a documentação do projeto Le
 
 | Script | Descrição | Localização |
 |--------|-----------|-------------|
-| **validate_workflow.js** | Validação de workflows n8n | `/scripts/validate_workflow.js` |
-| **validate_detailed.js** | Validação detalhada | `/scripts/validate_detailed.js` |
-| **stj_downloader.py** | Download de jurisprudência STJ | `/scripts/stj_downloader.py` |
-| **test_scenarios.js** | Cenários de teste | `/scripts/test_scenarios.js` |
+| **validate_workflow.js** | Validação de workflows n8n | `/scripts/validators/validate_workflow.js` |
+| **validate_detailed.js** | Validação detalhada | `/scripts/validators/validate_detailed.js` |
+| **stj_downloader.py** | Download de jurisprudência STJ | `/scripts/data/stj_downloader.py` |
+| **test_scenarios.js** | Cenários de teste | `/scripts/validators/test_scenarios.js` |
 
 ---
 
@@ -91,9 +91,11 @@ Este arquivo serve como índice central para toda a documentação do projeto Le
 
 | Arquivo | Descrição | Status |
 |---------|-----------|--------|
-| **n8n_workflow_agentes_especializados_v2.2.json** | Workflow principal (11 agentes) | **PRODUÇÃO** |
-| **n8n_workflow_v2.1.1_cloud_ready.json** | Versão cloud-ready | Backup |
+| **n8n_workflow_v5.1_improved_prompts.json** | Workflow principal (21 agentes) | **PRODUÇÃO** |
+| **n8n_workflow_v2.6_fazenda_publica.json** | Fazenda Pública | Produção |
+| **n8n_workflow_v2.7_graph_rag.json** | Graph/RAG | Experimental |
 | **n8n_workflow_stj_vectorstore.json** | Vector store STJ | RAG (futuro) |
+| **archive/workflows/n8n_workflow_v2.1.1_cloud_ready.json** | Versão cloud-ready | Legacy |
 | **archive/workflows/** | Workflows legados | Arquivados |
 | **test_cases/workflows/** | Workflows de teste | Testes |
 

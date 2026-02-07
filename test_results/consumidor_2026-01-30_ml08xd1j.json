@@ -1,0 +1,47 @@
+[
+  {
+    "case_id": "consumidor_01_simple",
+    "agent": "CONSUMIDOR",
+    "passed": true,
+    "scores": {
+      "estrutura": 100,
+      "juridico": 85,
+      "utilidade": 85,
+      "overall": 90
+    },
+    "problems": [
+      "Data no relatório (dezembro/2025) parece ser futura.",
+      "Falta identificação do TJSP na jurisprudência citada."
+    ],
+    "suggestions": [
+      "Verificar e corrigir a data mencionada no relatório.",
+      "Incluir a identificação completa do Tribunal de Justiça na citação jurisprudencial."
+    ],
+    "generation_time_ms": 19278,
+    "word_count": 520,
+    "minuta": "# SENTENÇA\n\n**Processo nº 0000000-00.0000.8.08.0000**\n\n**AUTOR:** CONSUMIDOR  \n**RÉU:** FORNECEDOR  \n**Classe:** Procedimento Comum Cível  \n**Assunto:** Responsabilidade do Fornecedor - Vício do Produto  \n\n---\n\n## I - RELATÓRIO\n\nCONSUMIDOR ajuizou ação de responsabilidade civil contra FORNECEDOR, alegando ter adquirido aparelho celular por R$ 2.500,00 em dezembro/2025. Sustenta que após 15 dias de uso, o produto apresentou defeito de fabricação, conforme laudo da assistência técnica. Afirma que a ré recusou a troca ou devolução do valor pago, sob alegação de expiração do prazo de 7 dias. Requer a restituição do valor pago ou troca por produto equivalente.\n\nCitada, a ré não apresentou contestação no prazo legal.\n\nÉ o relatório. DECIDO.\n\n---\n\n## II - FUNDAMENTAÇÃO\n\n### 2.1 - PRELIMINARES\n\nPresentes os pressupostos processuais e condições da ação. Decreto a revelia da ré ante a ausência de contestação tempestiva.\n\n### 2.2 - MÉRITO\n\n#### 2.2.1 - Da Relação de Consumo\n\nConfigura-se relação de consumo entre as partes, nos termos dos arts. 2º e 3º do CDC, sendo o autor destinatário final do produto e a ré fornecedora no mercado de consumo.\n\n#### 2.2.2 - Do Vício do Produto\n\nO caso versa sobre vício do produto, regulamentado pelo art. 18 do CDC. Restou demonstrado que o aparelho celular apresentou defeito de fabricação após 15 dias de uso, conforme laudo t��cnico juntado aos autos.\n\nO prazo decadencial para reclamação de vícios em produtos duráveis é de 90 dias (art. 26, II, CDC), contados da entrega efetiva do produto. No caso, o defeito manifestou-se dentro deste prazo.\n\n#### 2.2.3 - Da Responsabilidade do Comerciante\n\nNos termos do art. 18, §1º, III do CDC, não sanado o vício no prazo de 30 dias, pode o consumidor exigir, alternativamente: a substituição do produto por outro da mesma espécie; a restituição imediata da quantia paga; ou o abatimento proporcional do preço.\n\n**Súmula 388/STJ**: \"A pessoa jurídica de direito privado que explora atividade econômica, a título de estabelecimento comercial, responde pelas reparações civis decorrentes dos acidentes de consumo envolvendo os produtos e serviços que comercializa.\"\n\n#### 2.2.4 - Da Revelia\n\nA revelia da ré implica presunção de veracidade dos fatos alegados pelo autor (art. 344, CPC), corroborando a existência do vício e a recusa injustificada da troca.\n\n#### 2.2.5 - Jurisprudência\n\n> \"CONSUMIDOR. VÍCIO DO PRODUTO. CELULAR. DEFEITO DE FABRICAÇÃO. PRAZO DECADENCIAL. ART. 18, CDC. O consumidor tem direito à substituição do produto ou restituição do valor quando comprovado vício de qualidade que o torne inadequado ao consumo.\" (TJSP)\n\n---\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO **PROCEDENTE** o pedido para:\n\n**a)** CONDENAR a ré a restituir ao autor o valor de **R$ 2.500,00** (dois mil e quinhentos reais), corrigido monetariamente pelo IPCA-E desde o desembolso e acrescido de juros de mora de 1% ao mês desde a citação;\n\n**b)** Facultar à ré, alternativamente, a substituição do produto por outro da mesma espécie e qualidade, no prazo de 15 dias, hipótese em que ficará isenta da restituição monetária.\n\n**SUCUMBÊNCIA:** Condeno a ré ao pagamento das custas processuais e honorários advocatícios, fixados em 10% sobre o valor da condenação (art. 85, §2º, CPC).\n\nPublique-se. Registre-se. Intimem-se.\n\n**Local, data**\n\n**JUIZ DE DIREITO**"
+  },
+  {
+    "case_id": "consumidor_02_complex",
+    "agent": "CONSUMIDOR",
+    "passed": true,
+    "scores": {
+      "estrutura": 100,
+      "juridico": 85,
+      "utilidade": 85,
+      "overall": 90
+    },
+    "problems": [
+      "A data no comprovante de pagamento (outubro/2025) e da negativação (novembro/2025) são futuras, o que é irreal.",
+      "A Súmula 388 não foi utilizada e não se aplica ao caso."
+    ],
+    "suggestions": [
+      "Verificar e corrigir as datas mencionadas no relatório e na fundamentação para que reflitam um cenário temporal coerente.",
+      "Remover a menção à Súmula 388, pois não é relevante para o caso em questão.",
+      "Considerar a inclusão de jurisprudência mais recente do STJ sobre a fixação de danos morais em casos de negativação indevida, se houver."
+    ],
+    "generation_time_ms": 22238,
+    "word_count": 649,
+    "minuta": "# SENTENÇA\n\n**Processo nº 0000000-00.0000.8.08.0000**\n\n**CONSUMIDOR/AUTOR** ajuizou ação de procedimento comum cível em face de **FORNECEDOR/RÉU**.\n\n## I - RELATÓRIO\n\nO autor alega que teve seu nome inscrito indevidamente nos cadastros do SPC/Serasa pela empresa ré em razão de dívida de R$ 850,00 que já havia quitado. Apresenta comprovante de pagamento datado de outubro/2025, sendo que a negativação ocorreu em novembro/2025. Afirma ter sido impedido de obter crédito para compra de veículo e não possuir outras negativações em seu nome.\n\nPleiteia: a) declaração de inexigibilidade do débito; b) exclusão do nome dos cadastros de proteção ao crédito; c) condenação da ré ao pagamento de danos morais no valor de R$ 10.000,00.\n\nNão houve contestação, presumindo-se a revelia da ré.\n\nÉ o relatório. DECIDO.\n\n## II - FUNDAMENTAÇÃO\n\n### DAS PRELIMINARES\n\nNão há preliminares a serem analisadas. Presentes as condições da ação e os pressupostos processuais.\n\n### DO MÉRITO\n\n#### DA RELAÇÃO DE CONSUMO\n\nTrata-se de relação de consumo, aplicando-se o Código de Defesa do Consumidor, nos termos dos artigos 2º e 3º da Lei 8.078/90.\n\n#### DA RESPONSABILIDADE CIVIL\n\nA responsabilidade do fornecedor de serviços é objetiva, conforme art. 14 do CDC, bastando a demonstração do fato do serviço, do dano e do nexo causal.\n\nNo caso em tela, restou demonstrado que o autor quitou a dívida em outubro/2025, conforme comprovante de pagamento apresentado, sendo que a negativação ocorreu posteriormente, em novembro/2025.\n\nA revelia da ré faz presumir verdadeiros os fatos alegados pelo autor (art. 344 do CPC), especialmente quanto à quitação da dívida e à negativação posterior ao pagamento.\n\n#### DA NEGATIVAÇÃO INDEVIDA\n\nA manutenção do nome do consumidor em cadastros de proteção ao crédito após a quitação da dívida constitui ato ilícito, gerando o dever de indenizar.\n\nO Superior Tribunal de Justiça consolidou entendimento de que a negativação indevida gera dano moral in re ipsa, independentemente de prova específica do prejuízo:\n\n*\"A jurisprudência desta Corte está consolidada no sentido de que na concepção moderna da reparação do dano moral prevalece a orientação de que a responsabilização do agente se opera por força do simples fato da violação, de modo a tornar-se desnecessária a prova do prejuízo em concreto\"* (STJ, REsp 196.024/MG).\n\n#### DA AUSÊNCIA DE NEGATIVAÇÃO PRÉVIA\n\nNão há informação nos autos sobre negativações anteriores em nome do autor, presumindo-se sua inexistência. Assim, não se aplica a Súmula 385 do STJ (*\"Da anotação irregular em cadastro de proteção ao crédito, não cabe indenização por dano moral, quando preexistente legítima inscrição, ressalvado o direito ao cancelamento\"*).\n\n#### DO VALOR DA INDENIZAÇÃO\n\nPara fixação do valor da indenização por danos morais, devem ser considerados: a) gravidade da lesão; b) situação econômica das partes; c) caráter pedagógico da sanção.\n\nConsiderando os parâmetros adotados pelo Tribunal de Justiça do Espírito Santo para casos de negativação indevida (R$ 5.000,00 a R$ 15.000,00), o valor pleiteado de R$ 10.000,00 mostra-se adequado e proporcional ao dano sofrido.\n\n#### DA DECLARAÇÃO DE INEXIGIBILIDADE\n\nComprovada a quitação da dívida, impõe-se a declaração de sua inexigibilidade.\n\n#### DA EXCLUSÃO DOS CADASTROS\n\nProcedente o pedido de exclusão do nome do autor dos cadastros de proteção ao crédito, ante a inexigibilidade do débito.\n\n## III - DISPOSITIVO\n\nAnte o exposto, JULGO PROCEDENTES os pedidos formulados por **CONSUMIDOR/AUTOR** em face de **FORNECEDOR/RÉU**, para:\n\na) DECLARAR inexigível o débito de R$ 850,00;\n\nb) DETERMINAR a exclusão definitiva do nome do autor dos cadastros do SPC/Serasa relativamente ao débito em questão;\n\nc) CONDENAR a ré ao pagamento de indenização por danos morais no valor de R$ 10.000,00 (dez mil reais), corrigido monetariamente pelo IPCA-E a partir desta sentença e acrescido de juros de mora de 1% ao mês a partir do evento danoso (negativação indevida);\n\nd) CONDENAR a ré ao pagamento das custas processuais e honorários advocatícios, fixados em 10% sobre o valor da condenação, nos termos do art. 85, §2º, do CPC.\n\nPublique-se. Registre-se. Intimem-se.\n\n**Local e data**\n\n**Juiz de Direito**"
+  }
+]

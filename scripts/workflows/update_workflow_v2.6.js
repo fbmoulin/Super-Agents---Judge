@@ -7,7 +7,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const workflowPath = path.join(__dirname, '..', 'n8n_workflow_v2.6_fazenda_publica.json');
+const repoRoot = path.resolve(__dirname, '..', '..');
+const workflowPath = path.join(repoRoot, 'n8n_workflow_v2.6_fazenda_publica.json');
 
 // Read workflow
 const workflow = JSON.parse(fs.readFileSync(workflowPath, 'utf-8'));

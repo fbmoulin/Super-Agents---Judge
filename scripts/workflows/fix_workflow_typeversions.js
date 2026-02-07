@@ -14,8 +14,14 @@ const fs = require('fs');
 const path = require('path');
 
 // Configuration
-const INPUT_FILE = path.join(__dirname, '..', 'n8n_workflow_agentes_especializados_v2.2.json');
-const OUTPUT_FILE = path.join(__dirname, '..', 'n8n_workflow_agentes_especializados_v2.3_n8n2.0.json');
+const repoRoot = path.resolve(__dirname, '..', '..');
+const INPUT_FILE = path.join(
+  repoRoot,
+  'archive',
+  'workflows',
+  'n8n_workflow_agentes_especializados_v2.2.json'
+);
+const OUTPUT_FILE = path.join(repoRoot, 'n8n_workflow_agentes_especializados_v2.3_n8n2.0.json');
 
 // TypeVersion mappings for n8n 2.0 compatibility
 const TYPE_VERSION_FIXES = {

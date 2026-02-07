@@ -9,8 +9,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const WORKFLOW_FILE = 'n8n_workflow_v2.6_fazenda_publica.json';
-const OUTPUT_FILE = 'n8n_workflow_v3.0_rag.json';
+const repoRoot = path.resolve(__dirname, '..', '..');
+const WORKFLOW_FILE = path.join(repoRoot, 'n8n_workflow_v2.6_fazenda_publica.json');
+const OUTPUT_FILE = path.join(repoRoot, 'n8n_workflow_v3.0_rag.json');
 
 // RAG Tool definition for AI Agents
 const RAG_TOOL_NODE = {
@@ -115,15 +116,13 @@ return [{ json: { rag_context: context, results_count: results.length } }];`
   "name": "Format RAG Results"
 };
 
-function loadWorkflow(filename) {
-  const filepath = path.join(__dirname, '..', filename);
+function loadWorkflow(filepath) {
   return JSON.parse(fs.readFileSync(filepath, 'utf8'));
 }
 
-function saveWorkflow(workflow, filename) {
-  const filepath = path.join(__dirname, '..', filename);
+function saveWorkflow(workflow, filepath) {
   fs.writeFileSync(filepath, JSON.stringify(workflow, null, 2), 'utf8');
-  console.log(`✓ Saved workflow to ${filename}`);
+  console.log(`✓ Saved workflow to ${path.relative(repoRoot, filepath)}`);
 }
 
 function findAgentNodes(workflow) {
@@ -162,7 +161,7 @@ function main() {
 
   // Load workflow
   const workflow = loadWorkflow(WORKFLOW_FILE);
-  console.log(`Loaded workflow: ${WORKFLOW_FILE}`);
+  console.log(`Loaded workflow: ${path.relative(repoRoot, WORKFLOW_FILE)}`);
   console.log(`Total nodes: ${workflow.nodes.length}`);
 
   // Find agents
@@ -181,7 +180,7 @@ function main() {
   saveWorkflow(updatedWorkflow, OUTPUT_FILE);
 
   console.log('\n=== Integration Complete ===');
-  console.log(`Output: ${OUTPUT_FILE}`);
+  console.log(`Output: ${path.relative(repoRoot, OUTPUT_FILE)}`);
   console.log('\nNext steps:');
   console.log('1. Import workflow into n8n');
   console.log('2. Configure OpenAI API credentials');

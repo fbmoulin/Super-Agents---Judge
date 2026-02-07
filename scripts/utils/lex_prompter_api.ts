@@ -75,7 +75,7 @@ interface LexPrompterResult {
 
 // Knowledge Base loader
 function loadKnowledgeBase(): KnowledgeBase {
-  const basePath = path.join(__dirname, '../knowledge_base');
+  const basePath = path.join(__dirname, '..', '..', 'knowledge_base');
 
   const sumulas = JSON.parse(
     fs.readFileSync(path.join(basePath, 'sumulas.json'), 'utf-8')

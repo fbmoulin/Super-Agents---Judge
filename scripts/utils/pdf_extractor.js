@@ -18,8 +18,9 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
+const repoRoot = path.resolve(__dirname, '..', '..');
 // Diretório base para processos reais
-const PROCESSOS_DIR = path.join(__dirname, '..', 'test_cases', 'processos_reais');
+const PROCESSOS_DIR = path.join(repoRoot, 'test_cases', 'processos_reais');
 
 // Categorias de agentes
 const CATEGORIAS = [

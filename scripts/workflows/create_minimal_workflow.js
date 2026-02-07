@@ -16,8 +16,14 @@
 const fs = require('fs');
 const path = require('path');
 
-const INPUT_FILE = path.join(__dirname, '..', 'n8n_workflow_agentes_especializados_v2.2.json');
-const OUTPUT_FILE = path.join(__dirname, '..', 'n8n_workflow_MINIMAL_v2.3.json');
+const repoRoot = path.resolve(__dirname, '..', '..');
+const INPUT_FILE = path.join(
+  repoRoot,
+  'archive',
+  'workflows',
+  'n8n_workflow_agentes_especializados_v2.2.json'
+);
+const OUTPUT_FILE = path.join(repoRoot, 'n8n_workflow_MINIMAL_v2.3.json');
 
 // Node types to REMOVE (will be replaced with placeholder)
 const NODES_TO_REMOVE = [

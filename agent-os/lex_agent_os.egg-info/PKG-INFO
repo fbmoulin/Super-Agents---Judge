@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: lex-agent-os
+Version: 0.1.0
+Summary: AgentOS backend for Lex Intelligentia - Legal AI Agents
+Author-email: Lex Intelligentia <dev@lexintelligentia.com>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: agno>=2.3.0
+Requires-Dist: fastapi[standard]
+Requires-Dist: uvicorn[standard]
+Requires-Dist: python-dotenv
+Provides-Extra: google
+Requires-Dist: google-genai; extra == "google"
+Requires-Dist: google-generativeai; extra == "google"
+Provides-Extra: anthropic
+Requires-Dist: anthropic; extra == "anthropic"
+Provides-Extra: openai
+Requires-Dist: openai; extra == "openai"
+Provides-Extra: db
+Requires-Dist: pgvector; extra == "db"
+Requires-Dist: psycopg[binary]; extra == "db"
+Requires-Dist: sqlalchemy; extra == "db"
+Provides-Extra: tools
+Requires-Dist: duckduckgo-search; extra == "tools"
+Requires-Dist: yfinance; extra == "tools"
+Requires-Dist: httpx; extra == "tools"
+Provides-Extra: all-extras
+Requires-Dist: lex-agent-os[anthropic,db,google,openai,tools]; extra == "all-extras"
+Provides-Extra: dev
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-asyncio; extra == "dev"

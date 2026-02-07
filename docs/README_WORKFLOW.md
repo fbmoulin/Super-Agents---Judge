@@ -1,10 +1,12 @@
 # n8n Workflow - Lex Intelligentia Judiciário v2.2
 
+**Nota:** este documento descreve o workflow legado v2.2. O workflow principal atual é `n8n_workflow_v5.1_improved_prompts.json`.
+
 ## Quick Start
 
 ### 1. Import Workflow
 ```
-n8n_workflow_agentes_especializados_v2.2.json
+archive/workflows/n8n_workflow_agentes_especializados_v2.2.json
 ```
 
 ### 2. Configure Credentials

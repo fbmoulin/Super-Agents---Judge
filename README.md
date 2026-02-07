@@ -170,9 +170,10 @@ O Lex Intelligentia Judiciário é um sistema multi-agente que se integra ao seu
 
 | Arquivo | Descrição |
 |---------|-----------|
-| `n8n_workflow_agentes_especializados_v2.2.json` | Workflow v2.2 (59 nodes, 11 agentes) |
-| `n8n_workflow_agentes_especializados_v2.1.json` | Workflow v2.1.1 legacy (38 nodes) |
-| `n8n_workflow_agentes_especializados.json` | Workflow v2.0 legacy (não usar) |
+| `n8n_workflow_v5.1_improved_prompts.json` | Workflow principal (prompts v5.1, 21 agentes) |
+| `n8n_workflow_v2.6_fazenda_publica.json` | Workflow Fazenda Pública (agentes fiscais/Estado) |
+| `n8n_workflow_v2.7_graph_rag.json` | Workflow com Graph/RAG (experimental) |
+| `archive/workflows/n8n_workflow_agentes_especializados_v2.2.json` | Workflow v2.2 legacy (11 agentes) |
 
 ### Documentação
 
@@ -182,21 +183,22 @@ O Lex Intelligentia Judiciário é um sistema multi-agente que se integra ao seu
 | `credentials-setup.md` | Guia de configuração de credenciais |
 | `docs/TUTORIAL_INICIANTES.md` | Tutorial passo-a-passo para iniciantes |
 | `docs/plans/*.md` | Planos de implementação e otimização |
-| `GUIA_INTEGRACAO_AGENTES.md` | Guia de integração |
+| `docs/guides/GUIA_INTEGRACAO_AGENTES.md` | Guia de integração |
 
 ### Infraestrutura
 
 | Arquivo | Descrição |
 |---------|-----------|
-| `docker-compose-lex-intelligentia.yml` | Stack completa (Qdrant, n8n, PostgreSQL, Redis) |
-| `init_db.sql` | Schema PostgreSQL para audit logs |
+| `docker/docker-compose.yml` | Stack completa (Qdrant, n8n, Redis) |
+| `docker/docker-compose-qdrant.yml` | Stack mínima (Qdrant isolado) |
+| `init_db_audit_logs.sql` | Schema PostgreSQL para audit logs |
 
 ### Scripts
 
 | Arquivo | Descrição |
 |---------|-----------|
-| `stj_downloader.py` | Download de dados abertos STJ |
-| `STJ_Dados_Abertos_Catalogo_VectorStore.md` | Catálogo com links diretos |
+| `scripts/data/stj_downloader.py` | Download de dados abertos STJ |
+| `docs/RAG_INTEGRATION.md` | Guia de integração RAG |
 
 ---
 
@@ -216,7 +218,7 @@ O Lex Intelligentia Judiciário é um sistema multi-agente que se integra ao seu
 mkdir lex-intelligentia && cd lex-intelligentia
 
 # Subir containers
-docker-compose -f docker-compose-lex-intelligentia.yml up -d
+docker-compose -f docker/docker-compose.yml up -d
 
 # Verificar status
 docker-compose ps
@@ -226,7 +228,7 @@ docker-compose ps
 
 1. Acesse n8n em `http://localhost:5678`
 2. Vá em **Settings** → **Import Workflow**
-3. Importe `n8n_workflow_agentes_especializados.json`
+3. Importe `n8n_workflow_v5.1_improved_prompts.json`
 4. Importe `n8n_workflow_stj_vectorstore.json` (opcional)
 
 ### Passo 3: Configurar Credenciais
@@ -320,7 +322,7 @@ curl -X POST http://localhost:5678/webhook/lex-intelligentia-agentes \
 
 ### Integrando ao Fluxo Existente
 
-Veja o arquivo `GUIA_INTEGRACAO_AGENTES.md` para instruções detalhadas.
+Veja o arquivo `docs/guides/GUIA_INTEGRACAO_AGENTES.md` para instruções detalhadas.
 
 ---
 
@@ -333,10 +335,10 @@ Veja o arquivo `GUIA_INTEGRACAO_AGENTES.md` para instruções detalhadas.
 pip install requests tqdm pandas
 
 # Baixar todos os dados
-python stj_downloader.py --download-all
+python scripts/data/stj_downloader.py --download-all
 
 # Processar para chunks
-python stj_downloader.py --process --input ./stj_data --output ./stj_chunks
+python scripts/data/stj_downloader.py --process --input ./stj_data --output ./stj_chunks
 ```
 
 ### Datasets Disponíveis
@@ -502,7 +504,7 @@ ALTO:   confianca < 0.50 || agent_generico
 Para dúvidas ou problemas:
 
 1. Verifique os logs do n8n
-2. Consulte o arquivo `GUIA_INTEGRACAO_AGENTES.md`
+2. Consulte o arquivo `docs/guides/GUIA_INTEGRACAO_AGENTES.md`
 3. Revise as credenciais configuradas
 4. Teste os webhooks isoladamente
 

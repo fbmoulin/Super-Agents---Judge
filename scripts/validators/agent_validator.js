@@ -33,14 +33,15 @@ const logger = require('../../lib/logger');
 // CONFIGURATION
 // ============================================================================
 
+const repoRoot = path.resolve(__dirname, '..', '..');
 const apiConfig = centralConfig.getApiConfig('anthropic');
 const CONFIG = {
   model: apiConfig.model || 'claude-sonnet-4-20250514',
   maxTokens: apiConfig.maxTokens || 8192,
   temperature: apiConfig.temperature || 0.3,
-  testCasesDir: path.join(__dirname, '..', 'test_cases'),
-  realCasesDir: path.join(__dirname, '..', 'test_cases', 'processos_reais'),
-  resultsDir: path.join(__dirname, '..', 'test_cases', 'agent_validation_results'),
+  testCasesDir: path.join(repoRoot, 'test_cases'),
+  realCasesDir: path.join(repoRoot, 'test_cases', 'processos_reais'),
+  resultsDir: path.join(repoRoot, 'test_cases', 'agent_validation_results'),
   apiUrl: 'https://api.anthropic.com/v1/messages'
 };
 

@@ -7,9 +7,12 @@
 const fs = require('fs');
 const path = require('path');
 
-const workflow = JSON.parse(
-  fs.readFileSync(process.argv[2] || 'n8n_workflow_agentes_especializados_v2.1.json', 'utf8')
-);
+const repoRoot = path.resolve(__dirname, '..', '..');
+const defaultWorkflow = path.join(repoRoot, 'n8n_workflow_v5.1_improved_prompts.json');
+const workflowPath = process.argv[2]
+  ? path.resolve(process.cwd(), process.argv[2])
+  : defaultWorkflow;
+const workflow = JSON.parse(fs.readFileSync(workflowPath, 'utf8'));
 
 console.log('🧪 N8N WORKFLOW TEST SCENARIOS\n');
 console.log('='.repeat(80));

@@ -1,0 +1,111 @@
+version: '3.8'
+
+# Lex Intelligentia Judiciário - Complete Production Stack
+# Usage: docker-compose -f docker/docker-compose.yml up -d
+#
+# Services:
+# - n8n: Workflow automation (http://localhost:5678)
+# - qdrant: Vector database for RAG (http://localhost:6333)
+# - redis: Cache for high-score drafts (port 6379)
+
+services:
+  # ============================================================================
+  # N8N - Workflow Automation Platform
+  # ============================================================================
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: lex-n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER:-admin}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD:-lex2025!}
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://localhost:5678/
+      - GENERIC_TIMEZONE=America/Sao_Paulo
+      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY:-lex-intelligentia-encryption-key}
+      # API Keys (set in .env file)
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./workflows:/home/node/workflows:ro
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:5678/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - lex-network
+
+  # ============================================================================
+  # QDRANT - Vector Database for STJ Jurisprudence RAG
+  # ============================================================================
+  qdrant:
+    image: qdrant/qdrant:v1.7.4
+    container_name: lex-qdrant
+    ports:
+      - "6333:6333"   # REST API
+      - "6334:6334"   # gRPC
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    environment:
+      - QDRANT__SERVICE__GRPC_PORT=6334
+      - QDRANT__LOG_LEVEL=INFO
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/readyz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - lex-network
+
+  # ============================================================================
+  # REDIS - Cache for High-Score Draft Storage
+  # ============================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: lex-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - lex-network
+
+# ============================================================================
+# VOLUMES
+# ============================================================================
+volumes:
+  n8n_data:
+    driver: local
+  qdrant_storage:
+    driver: local
+  redis_data:
+    driver: local
+
+# ============================================================================
+# NETWORKS
+# ============================================================================
+networks:
+  lex-network:
+    name: lex-intelligentia-net
+    driver: bridge

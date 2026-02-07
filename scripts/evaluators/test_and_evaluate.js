@@ -21,13 +21,14 @@ const logger = require('../../lib/logger');
 // CONFIGURATION
 // ============================================================================
 
+const repoRoot = path.resolve(__dirname, '..', '..');
 const apiConfig = centralConfig.getApiConfig('anthropic');
 const CONFIG = {
   model: apiConfig.model || 'claude-sonnet-4-20250514',
   maxTokens: apiConfig.maxTokens || 8192,
   temperature: apiConfig.temperature || 0.3,
-  focusedDir: path.join(__dirname, '..', 'test_cases', 'focused'),
-  resultsDir: path.join(__dirname, '..', 'test_results'),
+  focusedDir: path.join(repoRoot, 'test_cases', 'focused'),
+  resultsDir: path.join(repoRoot, 'test_results'),
   threshold: centralConfig.settings?.validation?.targetScore || 90
 };
 
@@ -124,7 +125,7 @@ Gere a **minuta completa de sentença/decisão** para este caso.
 // MAIN TEST FUNCTION
 // ============================================================================
 
-async function testAgent(agentName, useFocused = true) {
+async function testAgent(agentName, useFocused = false) {
   const agent = agentName.toUpperCase();
   const systemPrompt = SYSTEM_PROMPTS[agent];
 
@@ -135,7 +136,9 @@ async function testAgent(agentName, useFocused = true) {
   }
 
   // Find test cases
-  const testDir = useFocused ? CONFIG.focusedDir : path.join(__dirname, '..', 'test_cases', agentName.toLowerCase());
+  const testDir = useFocused
+    ? CONFIG.focusedDir
+    : path.join(repoRoot, 'test_cases', agentName.toLowerCase());
 
   if (!fs.existsSync(testDir)) {
     logger.error('Test directory not found', { path: testDir });
@@ -256,7 +259,7 @@ async function testAgent(agentName, useFocused = true) {
 
 const args = process.argv.slice(2);
 const useAll = args.includes('--all') || args.includes('-a');
-const useFocused = args.includes('--focused') || args.includes('-f') || true; // default to focused
+const useFocused = args.includes('--focused') || args.includes('-f');
 
 if (useAll) {
   (async () => {

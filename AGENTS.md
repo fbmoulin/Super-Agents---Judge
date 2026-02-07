@@ -12,8 +12,8 @@
 - `archive/` keeps legacy workflow exports.
 
 ## Build, Test, and Development Commands
-- `node scripts/validate_workflow.js n8n_workflow_agentes_especializados_v2.2.json` validates JSON, code nodes, and graph wiring.
-- `node scripts/test_scenarios.js n8n_workflow_agentes_especializados_v2.2.json` runs scenario checks.
+- `node scripts/validators/validate_workflow.js n8n_workflow_v5.1_improved_prompts.json` validates JSON, code nodes, and graph wiring.
+- `node scripts/validators/test_scenarios.js n8n_workflow_v5.1_improved_prompts.json` runs scenario checks.
 - `cd test_cases; $env:WEBHOOK_URL="https://YOUR-N8N.app.n8n.cloud/webhook-test/lex-intelligentia-agentes"; node run_production_tests.js` executes webhook tests.
 - `cd agent-ui; pnpm install; pnpm dev` runs the UI; `pnpm validate` runs lint/format/typecheck.
 - `cd serena; uv venv; .venv\\Scripts\\activate; uv pip install --all-extras -r pyproject.toml -e .` sets up the Serena dev env.

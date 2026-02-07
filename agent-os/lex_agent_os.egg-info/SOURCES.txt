@@ -1,0 +1,7 @@
+pyproject.toml
+app/main.py
+lex_agent_os.egg-info/PKG-INFO
+lex_agent_os.egg-info/SOURCES.txt
+lex_agent_os.egg-info/dependency_links.txt
+lex_agent_os.egg-info/requires.txt
+lex_agent_os.egg-info/top_level.txt
