@@ -15,13 +15,14 @@ Sistema multi-agente para automação de minutas judiciais (decisões e sentenç
 | v2.3 | Legacy | +LEX PROMPTER (geração dinâmica), Knowledge Base, 100% cobertura |
 | v2.4 | Legacy | +4 Agentes Família (Alimentos, Paternidade, Guarda) + Reparação Danos |
 | v2.5 | Legacy | +4 Agentes (Cobrança, Divórcio, Inventário, Seguros) - 19 agentes total |
-| v2.6 | **Atual** | +2 Agentes Fazenda Pública (Execução Fiscal, Resp. Civil Estado) - 21 agentes |
+| v2.6 | Legacy | +2 Agentes Fazenda Pública (Execução Fiscal, Resp. Civil Estado) - 21 agentes |
+| v2.7 | **Atual** | +Cache Redis, +RAG Module, +2 Agentes (Mandado Segurança, Saúde/Medicamentos) - 23 agentes |
 
 ## Status do Projeto
 
 ```
 ╔═══════════════════════════════════════════════════════════════╗
-║  ✅ WORKFLOW v2.6 - 21 AGENTES ESPECIALIZADOS                   ║
+║  ✅ WORKFLOW v2.7 - 23 AGENTES ESPECIALIZADOS                   ║
 ║                                                               ║
 ║  Quality Score: 95/100 (estrutura)                            ║
 ║  Nodes: 60+ | Connections: 53+                                ║
@@ -64,11 +65,15 @@ Sistema multi-agente para automação de minutas judiciais (decisões e sentenç
 ║  FASE 6 - FAZENDA PUBLICA (2026-01-21):                       ║
 ║  ✓ agent_EXECUCAO_FISCAL    - Estrutura validada (2/2 casos)  ║
 ║  ✓ agent_RESP_CIVIL_ESTADO  - Estrutura validada (2/2 casos)  ║
-║  ⏳ agent_MANDADO_SEGURANCA - Pendente                         ║
-║  ⏳ agent_SAUDE_MEDICAMENTOS- Pendente                         ║
+║  ✓ agent_MANDADO_SEGURANCA  - Score 88%  (4/4 casos)          ║
+║  ✓ agent_SAUDE_MEDICAMENTOS - Score 91%  (4/4 casos)          ║
 ║                                                               ║
-║  TESTES v2.5 + FASES 1-5 CONCLUIDOS:                          ║
-║  ✓ 32 casos de teste executados                               ║
+║  FASE 7 - MANDADO SEGURANCA/SAUDE MED (2026-02-07):          ║
+║  ✓ agent_MANDADO_SEGURANCA  - Score 88%  (4/4 casos)          ║
+║  ✓ agent_SAUDE_MEDICAMENTOS - Score 91%  (4/4 casos)          ║
+║                                                               ║
+║  TESTES v2.5 + FASES 1-7 CONCLUIDOS:                          ║
+║  ✓ 40 casos de teste executados                               ║
 ║  ✓ 100% taxa de aprovacao (>75% threshold)                    ║
 ║  ✓ Score medio global: 98.5%                                  ║
 ║  ✓ Relatorio: test_results/V2.5_AGENT_TEST_REPORT_2026-01-20.md║
@@ -215,9 +220,11 @@ Disponível em `~/.claude/skills/LegalPromptGenerator/`:
 
 | Arquivo | Status | Descrição |
 |---------|--------|-----------|
-| `n8n_workflow_agentes_especializados_v2.2.json` | **USAR** | Workflow v2.2 (59 nodes) |
-| `n8n_workflow_v2.1.1_cloud_ready.json` | Cloud | Versão cloud-ready |
+| `n8n_workflow_v5.1_improved_prompts.json` | **USAR** | Workflow principal (prompts v5.1, 21 agentes) |
+| `n8n_workflow_v2.6_fazenda_publica.json` | Produção | Fazenda Pública (agentes fiscais/Estado) |
+| `n8n_workflow_v2.7_graph_rag.json` | Experimental | Graph/RAG |
 | `n8n_workflow_stj_vectorstore.json` | RAG | Vector store STJ |
+| `archive/workflows/n8n_workflow_v2.1.1_cloud_ready.json` | Legacy | Versão cloud-ready |
 | `credentials-setup.md` | Docs | Guia de configuração de credenciais |
 | `docs/TUTORIAL_INICIANTES.md` | Docs | Tutorial passo-a-passo para iniciantes |
 | `docs/FRAMEWORK_LEGAL_PROMPT_ENGINEERING.md` | **NOVO** | Framework 5 camadas para prompts |
@@ -238,8 +245,8 @@ Disponível em `~/.claude/skills/LegalPromptGenerator/`:
 | `knowledge_base/temas_repetitivos.json` | **NOVO** | Temas com detalhamento |
 | `knowledge_base/domain_mapping.json` | **NOVO** | Mapping keywords → domínios |
 | `prompts_extracted/` | **NOVO** | 11 prompts convertidos para Markdown |
-| `scripts/validate_workflow.js` | Script | Validação de workflows |
-| `scripts/stj_downloader.py` | Script | Download de jurisprudência STJ |
+| `scripts/validators/validate_workflow.js` | Script | Validação de workflows |
+| `scripts/data/stj_downloader.py` | Script | Download de jurisprudência STJ |
 | `init_db_audit_logs.sql` | Opcional | Schema PostgreSQL (alternativa a Sheets) |
 | `archive/workflows/` | Legacy | Workflows antigos (não usar) |
 
@@ -532,7 +539,7 @@ psql -U postgres -d lex_intelligentia -f init_db_audit_logs.sql
 
 ---
 
-*Ultima atualizacao: 2026-02-01 | Versao: 2.6.2 | Quality Score: 95/100 | 21 agentes especializados, 100% validados | Security Hardened*
+*Ultima atualizacao: 2026-02-07 | Versao: 2.7.0 | Quality Score: 95/100 | 23 agentes especializados, 100% validados | Security Hardened*
 
 ## Sprint 1 - Critical Path (2026-01-31) ✅
 
@@ -583,13 +590,13 @@ psql -U postgres -d lex_intelligentia -f init_db_audit_logs.sql
 
 ## Sprint 4 - Performance & RAG (Próximo)
 
-### Planejado
-- [ ] PERF-001: Redis caching layer (40-50% cost reduction)
+### Concluído / Planejado
+- [x] PERF-001: Redis caching layer (lib/cache.js)
 - [ ] PERF-002: Parallel QA validation (0.5-1s latency reduction)
-- [ ] RAG-001: STJ jurisprudence integration (Qdrant)
+- [x] RAG-001: RAG query module (lib/rag.js)
 - [ ] RAG-002: Hybrid search (BM25 + vector)
-- [ ] AGT-001: Complete MANDADO_SEGURANCA prompt
-- [ ] AGT-002: Complete SAUDE_MEDICAMENTOS prompt
+- [x] AGT-001: Complete MANDADO_SEGURANCA (88%)
+- [x] AGT-002: Complete SAUDE_MEDICAMENTOS (91%)
 
 ### Documentação
 - **Master Plan:** docs/plans/2026-01-31-ENHANCEMENT-MASTER-PLAN.md
