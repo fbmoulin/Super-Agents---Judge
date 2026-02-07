@@ -1,5 +1,5 @@
 // tests/unit/cache.test.js
-const { generateCacheKey, getTTL, CACHE_PREFIX } = require('../../lib/cache');
+const { generateCacheKey, getTTL, CACHE_PREFIX, createCacheClient, getCachedResult, setCachedResult } = require('../../lib/cache');
 
 describe('Cache Module', () => {
   describe('generateCacheKey', () => {
@@ -50,6 +50,45 @@ describe('Cache Module', () => {
   describe('CACHE_PREFIX', () => {
     test('exports correct prefix', () => {
       expect(CACHE_PREFIX).toBe('lex:v2.7:');
+    });
+  });
+});
+
+describe('Redis Client Wrapper', () => {
+  describe('createCacheClient', () => {
+    test('returns object with get, set, quit methods', () => {
+      const client = createCacheClient({ mock: true });
+      expect(client).toHaveProperty('get');
+      expect(client).toHaveProperty('set');
+      expect(client).toHaveProperty('quit');
+    });
+  });
+
+  describe('getCachedResult (mock)', () => {
+    test('returns null for cache miss', async () => {
+      const client = createCacheClient({ mock: true });
+      const result = await getCachedResult(client, 'lex:v2.7:nonexistent');
+      expect(result).toBeNull();
+    });
+  });
+
+  describe('setCachedResult (mock)', () => {
+    test('stores and retrieves cached result', async () => {
+      const client = createCacheClient({ mock: true });
+      const key = 'lex:v2.7:testkey1234';
+      const data = { minuta: 'I - RELATORIO...', score: 95 };
+
+      await setCachedResult(client, key, data, 86400);
+      const result = await getCachedResult(client, key);
+      expect(result).toEqual(data);
+    });
+
+    test('does not cache when TTL is 0', async () => {
+      const client = createCacheClient({ mock: true });
+      const key = 'lex:v2.7:nottl';
+      await setCachedResult(client, key, { minuta: 'test' }, 0);
+      const result = await getCachedResult(client, key);
+      expect(result).toBeNull();
     });
   });
 });
