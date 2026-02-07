@@ -2,7 +2,7 @@
 
 ## Project Summary
 - **Name:** Lex Intelligentia Judiciário
-- **Version:** 2.6.0
+- **Version:** 2.8.0
 - **Type:** Multi-Agent System for Judicial Document Automation
 - **Compliance:** CNJ 615/2025 (Brazilian judicial system)
 - **Quality Score:** 95/100
@@ -144,12 +144,9 @@
 - Coverage: config/, scripts/ directories
 - Setup file: tests/setup.js
 
-### Existing Tests (5 files)
-- `config.test.js` - Config loader tests
-- `http-client.test.js` - HTTP client tests
-- `logger.test.js` - Logging tests
-- `security.test.js` - Security validation tests
-- `validation-criteria.test.js` - Validation criteria tests
+### Existing Tests (14 suites, 328 tests)
+**Unit (13):** cache, config, entity-extraction, graph, hallucination-detector, http-client, hybrid-search, logger, parallel-qa, pipeline, rag, security, validation-criteria
+**Integration (1):** pipeline.integration
 
 ### Test Fixtures
 - `/tests/fixtures/test-cases.js` - Test case data
@@ -158,12 +155,12 @@
 - `/tests/mocks/anthropic.js` - Anthropic API mocks
 - `/tests/mocks/gemini.js` - Gemini API mocks
 
-## 21 Specialized Agents (100% Validated)
+## 23 Specialized Agents (100% Validated)
 
-**Core (6):** BANCARIO, CONSUMIDOR, EXECUCAO, LOCACAO, POSSESSORIAS, GENERICO
+**Core (7):** BANCARIO, CONSUMIDOR, EXECUCAO, LOCACAO, POSSESSORIAS, OBRIGACIONAL, GENERICO
 **Health (3):** SAUDE_COBERTURA, SAUDE_CONTRATUAL, SAUDE_MEDICAMENTOS
 **Family (5):** ALIMENTOS, GUARDA, PATERNIDADE, DIVORCIO, INVENTARIO
-**Specialized (6):** TRANSITO, USUCAPIAO, INCORPORACAO, SEGUROS, COBRANCA, REPARACAO_DANOS
+**Specialized (7):** TRANSITO, USUCAPIAO, INCORPORACAO, SEGUROS, COBRANCA, REPARACAO_DANOS, RESPONSABILIDADE_CIVIL
 **Public Sector (3):** EXECUCAO_FISCAL, RESP_CIVIL_ESTADO, MANDADO_SEGURANCA
 
 ## NPM Scripts Available
@@ -245,15 +242,15 @@
 - [ ] Performance tuning guide
 
 ## Quality Metrics
-- **Test Coverage Goal:** Expand from 5 tests to comprehensive suite
+- **Test Coverage:** 328 tests across 14 suites (Jest 30)
 - **Code Quality:** 95/100 (current)
 - **Agent Validation:** 32+ test cases, 98.5% score
-- **Agents Complete:** 21/21 (100% validated)
+- **Agents Complete:** 23/23 (100% validated)
 
 ## Project Status
 - ✅ Core agents implemented and validated
 - ✅ n8n integration architecture complete
-- ✅ Testing framework initialized (Jest)
+- ✅ Testing framework mature (Jest 30, 328 tests, 14 suites)
 - ✅ Config management system in place
 - ✅ Security validation in CI/CD
 - ⏳ Deployment infrastructure (PENDING)
