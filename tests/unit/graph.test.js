@@ -199,6 +199,15 @@ describe('lib/graph - Legal Knowledge Graph', () => {
         expect(tema1368.modificationType).toBe('SUPERA_PARCIALMENTE');
       }
     });
+
+    it('should filter out null entries when source node is missing', () => {
+      const modifiers = graph.getModifiers('NON_EXISTENT_SUMULA');
+      expect(modifiers).toBeInstanceOf(Array);
+      modifiers.forEach(m => {
+        expect(m).not.toBeNull();
+        expect(m.id).toBeDefined();
+      });
+    });
   });
 
   describe('getLegalBasis()', () => {

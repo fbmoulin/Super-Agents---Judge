@@ -7,7 +7,7 @@
  */
 
 const { createPipeline } = require('../../lib/pipeline');
-const { createCacheClient, generateCacheKey } = require('../../lib/cache');
+const { createCacheClient, generateCacheKey, CACHE_PREFIX } = require('../../lib/cache');
 const { runParallelQA, mergeQAScores } = require('../../lib/parallel-qa');
 
 describe('Integration: Full Pipeline', () => {
@@ -217,8 +217,8 @@ describe('Integration: Full Pipeline', () => {
     expect(key3).not.toBe(key1);
 
     // Keys should have the expected prefix
-    expect(key1).toMatch(/^lex:v2\.7:/);
-    expect(key3).toMatch(/^lex:v2\.7:/);
+    expect(key1.startsWith(CACHE_PREFIX)).toBe(true);
+    expect(key3.startsWith(CACHE_PREFIX)).toBe(true);
   });
 
   // ── Test 5: Parallel QA is faster than sequential ───────────────────────

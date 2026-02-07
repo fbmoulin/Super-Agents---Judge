@@ -1,5 +1,6 @@
 // tests/unit/cache.test.js
 const { generateCacheKey, getTTL, CACHE_PREFIX, createCacheClient, getCachedResult, setCachedResult } = require('../../lib/cache');
+const { version } = require('../../package.json');
 
 describe('Cache Module', () => {
   describe('generateCacheKey', () => {
@@ -14,7 +15,8 @@ describe('Cache Module', () => {
       const key1 = generateCacheKey(input);
       const key2 = generateCacheKey(input);
       expect(key1).toBe(key2);
-      expect(key1).toMatch(/^lex:v2\.7:[a-f0-9]{16}$/);
+      const escapedVersion = version.replace(/\./g, '\\.');
+      expect(key1).toMatch(new RegExp(`^lex:v${escapedVersion}:[a-f0-9]{16}$`));
     });
 
     test('generates different keys for different inputs', () => {
@@ -48,8 +50,8 @@ describe('Cache Module', () => {
   });
 
   describe('CACHE_PREFIX', () => {
-    test('exports correct prefix', () => {
-      expect(CACHE_PREFIX).toBe('lex:v2.7:');
+    test('exports correct prefix matching package.json version', () => {
+      expect(CACHE_PREFIX).toBe(`lex:v${version}:`);
     });
   });
 });
