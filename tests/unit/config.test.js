@@ -45,9 +45,15 @@ describe('Config Module', () => {
       expect(agents).toContain('RESP_CIVIL_ESTADO');
     });
 
-    test('should have 21 agents total', () => {
+    test('should include fazenda publica agents', () => {
       const agents = config.getAgentNames();
-      expect(agents.length).toBe(21);
+      expect(agents).toContain('MANDADO_SEGURANCA');
+      expect(agents).toContain('SAUDE_MEDICAMENTOS');
+    });
+
+    test('should have 23 agents total', () => {
+      const agents = config.getAgentNames();
+      expect(agents.length).toBe(23);
     });
   });
 

@@ -418,6 +418,73 @@
       "sumulas": ["37", "54", "362", "387"],
       "temas": ["940", "366", "698"]
     },
+    "MANDADO_SEGURANCA": {
+      "titulo": "AGENTE JUDICIAL: MANDADO DE SEGURANÇA",
+      "funcao": "Gerar minutas de decisões e sentenças em mandados de segurança para Vara de Fazenda Pública do TJES.",
+      "competencias": [
+        "Mandado de Segurança Individual (art. 5º, LXIX CF)",
+        "Mandado de Segurança Coletivo (art. 5º, LXX CF)",
+        "Liminar em MS (art. 7º Lei 12.016/2009)",
+        "Suspensão de Segurança (art. 15 Lei 12.016/2009)",
+        "Recursos em MS (agravo, apelação)"
+      ],
+      "regras": [
+        "Estrutura: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO",
+        "Direito líquido e certo: prova pré-constituída obrigatória",
+        "Prazo decadencial: 120 dias do conhecimento do ato (art. 23 Lei 12.016/2009)",
+        "Sem condenação em honorários (Súmula 512/STF e 105/STJ)",
+        "Sentença sujeita a reexame necessário (art. 14, §1º Lei 12.016/2009)",
+        "Liminar: fumus boni iuris + periculum in mora (art. 7º, III Lei 12.016/2009)",
+        "Vedação de liminar irreversível (art. 7º, §3º Lei 12.016/2009)"
+      ],
+      "sumulas": ["266-STF", "267-STF", "269-STF", "271-STF", "304-STF", "429-STF", "512-STF", "625-STF", "105", "202", "213", "333", "376", "460"],
+      "baseLegal": ["Lei 12.016/2009", "CF/88 Art. 5º, LXIX e LXX"],
+      "parametros": {
+        "prazoDecadencial": "120 dias do conhecimento do ato coator",
+        "prazoInformacoes": "10 dias para autoridade coatora",
+        "prazoParecer": "10 dias para o Ministério Público",
+        "prazoSentenca": "30 dias (art. 14 Lei 12.016/2009)"
+      }
+    },
+    "SAUDE_MEDICAMENTOS": {
+      "titulo": "AGENTE JUDICIAL: SAÚDE/MEDICAMENTOS",
+      "funcao": "Gerar minutas de decisões e sentenças em ações de fornecimento de medicamentos e tratamentos contra o Poder Público para Vara de Fazenda Pública do TJES.",
+      "competencias": [
+        "Fornecimento de Medicamentos (SUS e alto custo)",
+        "Tratamentos Médicos (cirurgias, terapias, internações)",
+        "Insumos e Equipamentos (fraldas, cadeiras de rodas, órteses)",
+        "Leitos de UTI",
+        "Transferências e Remoções",
+        "Erro Médico em Hospital Público"
+      ],
+      "regras": [
+        "Estrutura: I-RELATÓRIO, II-FUNDAMENTAÇÃO, III-DISPOSITIVO",
+        "Responsabilidade solidária dos entes federativos (Tema 793/STF)",
+        "Medicamento na RENAME/REMUME: responsabilidade objetiva do ente",
+        "Medicamento fora do SUS: aplicar requisitos do Tema 1234/STF",
+        "Medicamento sem registro ANVISA: aplicar requisitos do Tema 500/STF",
+        "Consulta ao NAT-JUS recomendada para medicamentos de alto custo (Resolução CNJ 238/2016)",
+        "Laudo médico fundamentado obrigatório com CID-10"
+      ],
+      "sumulas": ["61-SV"],
+      "temas": ["6", "500", "793", "1234"],
+      "baseLegal": ["CF/88 Arts. 6º e 196", "Lei 8.080/1990 (Lei do SUS)", "Resolução CNJ 238/2016"],
+      "parametros": {
+        "astreintes": {
+          "medicamentoComum": { "min": 500, "max": 1000 },
+          "medicamentoOncologico": { "min": 1000, "max": 2000 },
+          "leitoUTI": { "min": 5000, "max": 10000 },
+          "limiteAstreintes": "30 a 60 dias (reavaliação)"
+        },
+        "prazosCumprimento": {
+          "medicamentoSUS": "15 dias",
+          "medicamentoForaSUS": "30 dias",
+          "medicamentoImportado": "30 a 45 dias",
+          "cirurgiaEletiva": "30 a 60 dias",
+          "leitoUTI": "imediato (24-48 horas)"
+        }
+      }
+    },
     "GENERICO": {
       "titulo": "AGENTE JUDICIAL: GENÉRICO",
       "funcao": "Gerar minutas para casos não especializados. PRIORIZAR SEGURANÇA.",
