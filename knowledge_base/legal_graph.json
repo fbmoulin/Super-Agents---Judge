@@ -38,10 +38,10 @@
         "RELATED_TO": 17
       }
     },
-    "enriched_at": "2026-02-06T21:49:07.478352",
+    "enriched_at": "2026-02-06T21:58:47.359099",
     "enrichment_stats": {
-      "nodes_added": 12,
-      "edges_added": 24
+      "nodes_added": 485,
+      "edges_added": 299
     },
     "relationships_discovered_at": "2026-02-06T21:50:13.436979",
     "relationships_added": 29
@@ -1899,6 +1899,3467 @@
       "nome": "selic",
       "extracted": true,
       "extraction_context": "Tema 1368 do STJ (AFETADO): A incidência da taxa Selic como índice de atualização monetária e de juros d..."
+    },
+    {
+      "id": "ARTIGO_Art256",
+      "type": "Artigo",
+      "value": "Art. 256",
+      "extracted": true,
+      "extraction_context": "...i alterada para cancelada em razão do disposto no art. 256-E, I, do RISTJ que prevê hipótese de rejeição, de..."
+    },
+    {
+      "id": "ARTIGO_Art202",
+      "type": "Artigo",
+      "value": "Art. 202",
+      "extracted": true,
+      "extraction_context": "...ial vindicado, conforme interpretação extraída do art. 202, parágrafo único, do Código Civil de 2002.1.2. O ..."
+    },
+    {
+      "id": "ARTIGO_Art40",
+      "type": "Artigo",
+      "value": "Art. 40",
+      "extracted": true,
+      "extraction_context": "... transcurso de 1 (um) ano (aplicação analógica do art. 40, § 2º, da Lei 6.830/1980).1.3. O termo inicial do..."
+    },
+    {
+      "id": "LEI_6830_1980",
+      "type": "Lei",
+      "value": "Lei 6830/1980",
+      "extracted": true,
+      "extraction_context": "...um) ano (aplicação analógica do art. 40, § 2º, da Lei 6.830/1980).1.3. O termo inicial do art. 1.056 do CPC/2015 t..."
+    },
+    {
+      "id": "ARTIGO_Art206",
+      "type": "Artigo",
+      "value": "Art. 206",
+      "extracted": true,
+      "extraction_context": "...vados do contrato de seguro, ex vi do disposto no artigo 206, § 1º, II, \"b\", do Código Civil de 2002 (artigo 1..."
+    },
+    {
+      "id": "ARTIGO_Art178",
+      "type": "Artigo",
+      "value": "Art. 178",
+      "extracted": true,
+      "extraction_context": "...tigo 206, § 1º, II, \"b\", do Código Civil de 2002 (artigo 178, § 6º, II, do Código Civil de 1916).  Órgão Julga..."
+    },
+    {
+      "id": "ARTIGO_Art34",
+      "type": "Artigo",
+      "value": "Art. 34",
+      "extracted": true,
+      "extraction_context": "...cisão proferida em execução fiscal no contexto do art. 34 da Lei n. 6.830/80.  Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art10",
+      "type": "Artigo",
+      "value": "Art. 10",
+      "extracted": true,
+      "extraction_context": "... direito de propriedade intelectual constantes do art. 10 da Lei 9.456/97 - aplicáveis tão somente aos titula..."
+    },
+    {
+      "id": "LEI_9456_1997",
+      "type": "Lei",
+      "value": "Lei 9456/1997",
+      "extracted": true,
+      "extraction_context": "... propriedade intelectual constantes do art. 10 da Lei 9.456/97 - aplicáveis tão somente aos titulares de Certifi..."
+    },
+    {
+      "id": "ARTIGO_Art109",
+      "type": "Artigo",
+      "value": "Art. 109",
+      "extracted": true,
+      "extraction_context": "...estadual, nos termos em que previsto pelo § 3º do art. 109 da Constituição Federal, pelo inciso III do art. 15..."
+    },
+    {
+      "id": "ARTIGO_Art15",
+      "type": "Artigo",
+      "value": "Art. 15",
+      "extracted": true,
+      "extraction_context": ".... 109 da Constituição Federal, pelo inciso III do art. 15 da Lei n. 5.010, de 30 de maio de 1965, em sua reda..."
+    },
+    {
+      "id": "LEI_13876_2019",
+      "type": "Lei",
+      "value": "Lei 13876/2019",
+      "extracted": true,
+      "extraction_context": "(IAC)  Tese Firmada: Os efeitos da Lei nº 13.876/2019 na modificação de competência para o processament..."
+    },
+    {
+      "id": "LEI_5010",
+      "type": "Lei",
+      "value": "Lei 5010",
+      "extracted": true,
+      "extraction_context": "...nstituição Federal, pelo inciso III do art. 15 da Lei n. 5.010, de 30 de maio de 1965, em sua redação original. ..."
+    },
+    {
+      "id": "ARTIGO_Art18",
+      "type": "Artigo",
+      "value": "Art. 18",
+      "extracted": true,
+      "extraction_context": "...oisa julgada oponível \"erga omnes\", nos termos do art. 18 da Lei 4.717/65, motivo pelo qual a parte dispositi..."
+    },
+    {
+      "id": "LEI_4717_1965",
+      "type": "Lei",
+      "value": "Lei 4717/1965",
+      "extracted": true,
+      "extraction_context": "...a oponível \"erga omnes\", nos termos do art. 18 da Lei 4.717/65, motivo pelo qual a parte dispositiva deve recair..."
+    },
+    {
+      "id": "ARTIGO_Art148",
+      "type": "Artigo",
+      "value": "Art. 148",
+      "extracted": true,
+      "extraction_context": "...omo de transporte coletivo escolar, nos termos do art. 148-A da Lei n. 9.503/1997 (Código de Trânsito Brasil..."
+    },
+    {
+      "id": "LEI_9503_1997",
+      "type": "Lei",
+      "value": "Lei 9503/1997",
+      "extracted": true,
+      "extraction_context": "...rte coletivo escolar, nos termos do art. 148-A da Lei n. 9.503/1997 (Código de Trânsito Brasileiro).  Órgão Julgador:..."
+    },
+    {
+      "id": "STJ_206",
+      "type": "Sumula",
+      "numero": 206,
+      "tribunal": "STJ",
+      "texto": "... em lei ou na Constituição Federal, nos termos da Súmula n. 206/STJ (\"A existência de vara privativa, instituída por ...",
+      "extracted": true,
+      "extraction_context": "... em lei ou na Constituição Federal, nos termos da Súmula n. 206/STJ (\"A existência de vara privativa, instituída por ..."
+    },
+    {
+      "id": "ARTIGO_Art2",
+      "type": "Artigo",
+      "value": "Art. 2",
+      "extracted": true,
+      "extraction_context": "...regra, do local do dano, para ação civil pública (art. 2º da Lei n. 7.347/1985);ii) ressalvada a competência ..."
+    },
+    {
+      "id": "ARTIGO_Art93",
+      "type": "Artigo",
+      "value": "Art. 93",
+      "extracted": true,
+      "extraction_context": "...geral do CPC, em havendo competência concorrente (art. 93, I e II, do CDC).Tese B) São absolutas as competênci..."
+    },
+    {
+      "id": "ARTIGO_Art79",
+      "type": "Artigo",
+      "value": "Art. 79",
+      "extracted": true,
+      "extraction_context": "... competência originária dos tribunais superiores (arts. 79 e 80 da Lei n. 10.741/2003 e 53, III, e, do CPC/2015);..."
+    },
+    {
+      "id": "ARTIGO_Art52",
+      "type": "Artigo",
+      "value": "Art. 52",
+      "extracted": true,
+      "extraction_context": "...oluta do Juizado, se existente no local de opção (art. 52, parágrafo único, do CPC/2015, c/c o art. 2º, § 4..."
+    },
+    {
+      "id": "LEI_7347_1985",
+      "type": "Lei",
+      "value": "Lei 7347/1985",
+      "extracted": true,
+      "extraction_context": "...ocal do dano, para ação civil pública (art. 2º da Lei n. 7.347/1985);ii) ressalvada a competência da Justiça Federal,..."
+    },
+    {
+      "id": "LEI_8069_1990",
+      "type": "Lei",
+      "value": "Lei 8069/1990",
+      "extracted": true,
+      "extraction_context": "...dos tribunais superiores (arts. 148, IV, e 209 da Lei n. 8.069/1990; e Tese n. 1.058/STJ);ii) do local de domicílio d..."
+    },
+    {
+      "id": "LEI_10741_2003",
+      "type": "Lei",
+      "value": "Lei 10741/2003",
+      "extracted": true,
+      "extraction_context": "...inária dos tribunais superiores (arts. 79 e 80 da Lei n. 10.741/2003 e 53, III, e, do CPC/2015);iii) do Juizado Especi..."
+    },
+    {
+      "id": "LEI_12153_2009",
+      "type": "Lei",
+      "value": "Lei 12153/2009",
+      "extracted": true,
+      "extraction_context": "...causas da sua alçada e matéria (art. 2º, § 4º, da Lei n. 12.153/2009);iv) nas hipóteses do item (iii), faculta-se ao a..."
+    },
+    {
+      "id": "LEI_9847_1999",
+      "type": "Lei",
+      "value": "Lei 9847/1999",
+      "extracted": true,
+      "extraction_context": "... decisão administrativa definitiva, nos termos da Lei n. 9.847/1999.  Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art75",
+      "type": "Artigo",
+      "value": "Art. 75",
+      "extracted": true,
+      "extraction_context": "...o (não recepção) da regra transitória prevista no art. 75 da Lei 13.043/2014, razão pela qual devem permanece..."
+    },
+    {
+      "id": "LEI_13043_2014",
+      "type": "Lei",
+      "value": "Lei 13043/2014",
+      "extracted": true,
+      "extraction_context": "...pção) da regra transitória prevista no art. 75 da Lei 13.043/2014, razão pela qual devem permanecer na Justiça Esta..."
+    },
+    {
+      "id": "LEI_11343_2006",
+      "type": "Lei",
+      "value": "Lei 11343/2006",
+      "extracted": true,
+      "extraction_context": "...os dos arts. 1º, parágrafo único, e 2º, caput, da Lei n. 11.343/2006 (Lei de Drogas), não pode ser considerado proscri..."
+    },
+    {
+      "id": "ARTIGO_Art227",
+      "type": "Artigo",
+      "value": "Art. 227",
+      "extracted": true,
+      "extraction_context": "...direitos da criança e do adolescente, prevista no artigo 227 da Constituição Federal, deve nortear a interpretaç..."
+    },
+    {
+      "id": "ARTIGO_Art33",
+      "type": "Artigo",
+      "value": "Art. 33",
+      "extracted": true,
+      "extraction_context": "...tituição Federal, deve nortear a interpretação do artigo 33, § 3º, do Estatuto da Criança e do Adolescente e ..."
+    },
+    {
+      "id": "ARTIGO_Art16",
+      "type": "Artigo",
+      "value": "Art. 16",
+      "extracted": true,
+      "extraction_context": "... 3º, do Estatuto da Criança e do Adolescente e do artigo 16, § 2º, da Lei n. 8.213/1991, com a redação altera..."
+    },
+    {
+      "id": "LEI_8213_1991",
+      "type": "Lei",
+      "value": "Lei 8213/1991",
+      "extracted": true,
+      "extraction_context": "...Criança e do Adolescente e do artigo 16, § 2º, da Lei n. 8.213/1991, com a redação alterada pela Lei n. 9.528/1997, p..."
+    },
+    {
+      "id": "LEI_9528_1997",
+      "type": "Lei",
+      "value": "Lei 9528/1997",
+      "extracted": true,
+      "extraction_context": "...da Lei n. 8.213/1991, com a redação alterada pela Lei n. 9.528/1997, para se vedar a exclusão do menor sob guarda do ..."
+    },
+    {
+      "id": "LEI_2",
+      "type": "Lei",
+      "value": "Lei 2",
+      "extracted": true,
+      "extraction_context": "..., houve incorporação do reajuste com o advento do Decreto-Lei nº 2.453/88 (art. 1º) e do art. 1º da Lei nº 7.686/88,..."
+    },
+    {
+      "id": "LEI_7686_1988",
+      "type": "Lei",
+      "value": "Lei 7686/1988",
+      "extracted": true,
+      "extraction_context": "...Decreto-Lei nº 2.453/88 (art. 1º) e do art. 1º da Lei nº 7.686/88, bem ainda modificação na estrutura remuneratória..."
+    },
+    {
+      "id": "LEI_9032_1995",
+      "type": "Lei",
+      "value": "Lei 9032/1995",
+      "extracted": true,
+      "extraction_context": "...or categoria profissional vigente até a edição da Lei 9.032/1995, não possui o direito subjetivo à conversão ou co..."
+    },
+    {
+      "id": "LEI_10698_2003",
+      "type": "Lei",
+      "value": "Lei 10698/2003",
+      "extracted": true,
+      "extraction_context": "...da: A Vantagem Pecuniária Individual, criada pela Lei 10.698/2003, não possui natureza de revisão geral de vencimen..."
+    },
+    {
+      "id": "ARTIGO_Art4",
+      "type": "Artigo",
+      "value": "Art. 4",
+      "extracted": true,
+      "extraction_context": "...da Lei 10.405/2002 foi revogada a determinação do art. 4º da Lei n. 6.932/1981, que autorizava o pagamento de..."
+    },
+    {
+      "id": "LEI_10405_2002",
+      "type": "Lei",
+      "value": "Lei 10405/2002",
+      "extracted": true,
+      "extraction_context": "(PUIL)  Tese Firmada: Com o advento da Lei 10.405/2002 foi revogada a determinação do art. 4º da Lei n. ..."
+    },
+    {
+      "id": "LEI_6932_1981",
+      "type": "Lei",
+      "value": "Lei 6932/1981",
+      "extracted": true,
+      "extraction_context": "...05/2002 foi revogada a determinação do art. 4º da Lei n. 6.932/1981, que autorizava o pagamento de auxílio-moradia e ..."
+    },
+    {
+      "id": "LEI_536_2011",
+      "type": "Lei",
+      "value": "Lei 536/2011",
+      "extracted": true,
+      "extraction_context": "...mente vieram a ser restabelecidos com a edição da MP 536/2011, convertida posteriormente na Lei 12.514/2012.  Ó..."
+    },
+    {
+      "id": "LEI_12514_2012",
+      "type": "Lei",
+      "value": "Lei 12514/2012",
+      "extracted": true,
+      "extraction_context": "...ição da MP 536/2011, convertida posteriormente na Lei 12.514/2012.  Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art187",
+      "type": "Artigo",
+      "value": "Art. 187",
+      "extracted": true,
+      "extraction_context": "...entido da aplicação do critério estabelecido pelo art. 187 do Decreto 3.048/1999.\"O Regulamento da Previdência..."
+    },
+    {
+      "id": "ARTIGO_Art188",
+      "type": "Artigo",
+      "value": "Art. 188",
+      "extracted": true,
+      "extraction_context": "...a Lei 9.876/1999, deve ser observada a redação do artigo 188-B do referido Decreto. Em qualquer dos casos deve..."
+    },
+    {
+      "id": "LEI_9876_1999",
+      "type": "Lei",
+      "value": "Lei 9876/1999",
+      "extracted": true,
+      "extraction_context": "...a concessão de aposentadoria; (2) pelo advento da Lei 9.876/1999. As duas possibilidades estão amparadas nos artig..."
+    },
+    {
+      "id": "ARTIGO_Art3",
+      "type": "Artigo",
+      "value": "Art. 3",
+      "extracted": true,
+      "extraction_context": "...Constituição Federal, o § 5º do art. 2º e o 1º do art. 3º da Emenda Constitucional 41/2003, e o art. 7º da Le..."
+    },
+    {
+      "id": "ARTIGO_Art7",
+      "type": "Artigo",
+      "value": "Art. 7",
+      "extracted": true,
+      "extraction_context": "... do art. 3º da Emenda Constitucional 41/2003, e o art. 7º da Lei 10.887/2004.  Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_10887_2004",
+      "type": "Lei",
+      "value": "Lei 10887/2004",
+      "extracted": true,
+      "extraction_context": "... da Emenda Constitucional 41/2003, e o art. 7º da Lei 10.887/2004.  Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art6",
+      "type": "Artigo",
+      "value": "Art. 6",
+      "extracted": true,
+      "extraction_context": "...duziu o patamar para 85 dB, sob pena de ofensa ao art. 6º da LINDB (ex- ICC)\".  Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_8880_1994",
+      "type": "Lei",
+      "value": "Lei 8880/1994",
+      "extracted": true,
+      "extraction_context": "...nversão das retribuições aos servidores pela URV (Lei 8.880/94), apesar dos reajustes voluntários já concedidos ..."
+    },
+    {
+      "id": "LEI_9494_1997",
+      "type": "Lei",
+      "value": "Lei 9494/1997",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O art. 1º-F, da Lei 9.494/97, que fixa os juros moratórios nas ações ajuizadas..."
+    },
+    {
+      "id": "STJ_85",
+      "type": "Sumula",
+      "numero": 85,
+      "tribunal": "STJ",
+      "texto": ".../06/2003, deve ser aplicado apenas o enunciado da Súmula 85 desta Corte.  Órgão Julgador: S3",
+      "extracted": true,
+      "extraction_context": ".../06/2003, deve ser aplicado apenas o enunciado da Súmula 85 desta Corte.  Órgão Julgador: S3"
+    },
+    {
+      "id": "LEI_2131",
+      "type": "Lei",
+      "value": "Lei 2131",
+      "extracted": true,
+      "extraction_context": "... reajuste de 28,86% deve se limitar ao advento da Medida Provisória n. 2.131, de 28/12/2000, que reestruturou a remuneração do..."
+    },
+    {
+      "id": "ARTIGO_Art86",
+      "type": "Artigo",
+      "value": "Art. 86",
+      "extracted": true,
+      "extraction_context": "... (lei nova mais benéfica), que alterou o § 1º, do art. 86, da Lei n.º 8.213/91, deve ser aplicada imediatament..."
+    },
+    {
+      "id": "LEI_",
+      "type": "Lei",
+      "value": "Lei ",
+      "extracted": true,
+      "extraction_context": "...ais benéfica), que alterou o § 1º, do art. 86, da Lei n.º 8.213/91, deve ser aplicada imediatamente, ating..."
+    },
+    {
+      "id": "ARTIGO_Art44",
+      "type": "Artigo",
+      "value": "Art. 44",
+      "extracted": true,
+      "extraction_context": "...a: É inadmissível a fixação de pena substitutiva (art. 44 do CP) como condição especial ao regime aberto.   Ó..."
+    },
+    {
+      "id": "STF_596",
+      "type": "Sumula",
+      "numero": 596,
+      "tribunal": "STF",
+      "texto": "...s estipulada na Lei de Usura (Decreto 22.626/33), Súmula 596/STF.  Órgão Julgador: S2",
+      "extracted": true,
+      "extraction_context": "...s estipulada na Lei de Usura (Decreto 22.626/33), Súmula 596/STF.  Órgão Julgador: S2"
+    },
+    {
+      "id": "ARTIGO_Art591",
+      "type": "Artigo",
+      "value": "Art. 591",
+      "extracted": true,
+      "extraction_context": "...dos contratos de mútuo bancário as disposições do art. 591 c/c o art. 406 do CC/02.  Órgão Julgador: S2"
+    },
+    {
+      "id": "ARTIGO_Art51",
+      "type": "Artigo",
+      "value": "Art. 51",
+      "extracted": true,
+      "extraction_context": "...de colocar o consumidor em desvantagem exagerada (art. 51, §1 º, do CDC) fique cabalmente demonstrada, ante..."
+    },
+    {
+      "id": "ARTIGO_Art43",
+      "type": "Artigo",
+      "value": "Art. 43",
+      "extracted": true,
+      "extraction_context": "... em cadastros de proteção ao crédito, prevista no art. 43, § 2º, do CDC, enseja o direito à compensação por..."
+    },
+    {
+      "id": "ARTIGO_Art359",
+      "type": "Artigo",
+      "value": "Art. 359",
+      "extracted": true,
+      "extraction_context": "...ese Firmada: A presunção de veracidade contida no art. 359 do Código de Processo Civil não se aplica às ações ..."
+    },
+    {
+      "id": "LEI_4380_1964",
+      "type": "Lei",
+      "value": "Lei 4380/1964",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O art. 6º, e, da Lei n. 4.380/1964 não estabelece limitação aos juros remuneratórios..."
+    },
+    {
+      "id": "LEI_8177_1991",
+      "type": "Lei",
+      "value": "Lei 8177/1991",
+      "extracted": true,
+      "extraction_context": "...o do Sistema Financeiro da Habitação, a partir da Lei n. 8.177/1991, é permitida a utilização da Taxa Referencial (TR..."
+    },
+    {
+      "id": "LEI_70_1966",
+      "type": "Lei",
+      "value": "Lei 70/1966",
+      "extracted": true,
+      "extraction_context": "...abitação, a execução extrajudicial de que trata o Decreto-lei nº 70/66, enquanto perdurar a demanda, poderá ser suspensa..."
+    },
+    {
+      "id": "LEI_7713_1988",
+      "type": "Lei",
+      "value": "Lei 7713/1988",
+      "extracted": true,
+      "extraction_context": "...rça da isenção concedida pelo art. 6º, VII, b, da Lei 7.713/88, na redação anterior à que lhe foi dada pela Lei ..."
+    },
+    {
+      "id": "LEI_9250_1995",
+      "type": "Lei",
+      "value": "Lei 9250/1995",
+      "extracted": true,
+      "extraction_context": "...3/88, na redação anterior à que lhe foi dada pela Lei 9.250/95, é indevida a cobrança de imposto de renda sobre ..."
+    },
+    {
+      "id": "LEI_1",
+      "type": "Lei",
+      "value": "Lei 1",
+      "extracted": true,
+      "extraction_context": "...os juros remuneratórios de que trata o art. 2° do Decreto-lei 1.512/76 (item 3), a lesão ao direito do consumidor..."
+    },
+    {
+      "id": "LEI_4357_1964",
+      "type": "Lei",
+      "value": "Lei 4357/1964",
+      "extracted": true,
+      "extraction_context": "...e, que deve obedecer à regra do art. 7°, § 1°, da Lei 4.357/64 e, a partir daí, o critério anual previsto no art..."
+    },
+    {
+      "id": "LEI_1512_1976",
+      "type": "Lei",
+      "value": "Lei 1512/1976",
+      "extracted": true,
+      "extraction_context": "...eu em relação ao principal, nos termos do Decreto-lei 1.512/76.  Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_7181_1983",
+      "type": "Lei",
+      "value": "Lei 7181/1983",
+      "extracted": true,
+      "extraction_context": "...ercado, por expressa disposição legal (art. 4º da Lei 7.181/83).   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art5",
+      "type": "Artigo",
+      "value": "Art. 5",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O art. 5º da Resolução 20/2001 do Comitê Gestor do Programa p..."
+    },
+    {
+      "id": "ARTIGO_Art31",
+      "type": "Artigo",
+      "value": "Art. 31",
+      "extracted": true,
+      "extraction_context": "...ítulo de contribuição previdenciária, na forma do art. 31 da Lei n. 8.212/91, não configura nova modalidade d..."
+    },
+    {
+      "id": "LEI_8212_1991",
+      "type": "Lei",
+      "value": "Lei 8212/1991",
+      "extracted": true,
+      "extraction_context": "...ntribuição previdenciária, na forma do art. 31 da Lei n. 8.212/91, não configura nova modalidade de tributo, mas tã..."
+    },
+    {
+      "id": "LEI_7787_1989",
+      "type": "Lei",
+      "value": "Lei 7787/1989",
+      "extracted": true,
+      "extraction_context": "... cento) - destinada ao Incra não foi extinta pela Lei 7.787/89 e tampouco pela Lei 8.213/91.   Órgão Julgador: S..."
+    },
+    {
+      "id": "ARTIGO_Art59",
+      "type": "Artigo",
+      "value": "Art. 59",
+      "extracted": true,
+      "extraction_context": "...evisto no art. 2º da Lei 8.022/90, reiterado pelo art. 59 da Lei 8.383/91.   Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_8022_1990",
+      "type": "Lei",
+      "value": "Lei 8022/1990",
+      "extracted": true,
+      "extraction_context": "...fre a incidência do regime previsto no art. 2º da Lei 8.022/90, reiterado pelo art. 59 da Lei 8.383/91.   Órgão ..."
+    },
+    {
+      "id": "LEI_8383_1991",
+      "type": "Lei",
+      "value": "Lei 8383/1991",
+      "extracted": true,
+      "extraction_context": "...rt. 2º da Lei 8.022/90, reiterado pelo art. 59 da Lei 8.383/91.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art126",
+      "type": "Artigo",
+      "value": "Art. 126",
+      "extracted": true,
+      "extraction_context": "...ria, a inconstitucionalidade dos §§ 1.º e 2.º, do artigo 126, da Lei 8.213/91, com a redação dada pela Medida Pro..."
+    },
+    {
+      "id": "LEI_1608-14_1998",
+      "type": "Lei",
+      "value": "Lei 1608-14/1998",
+      "extracted": true,
+      "extraction_context": "...igo 126, da Lei 8.213/91, com a redação dada pela Medida Provisória 1.608-14/98, convertida na Lei 9.639/98.   Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_9639_1998",
+      "type": "Lei",
+      "value": "Lei 9639/1998",
+      "extracted": true,
+      "extraction_context": "...pela Medida Provisória 1.608-14/98, convertida na Lei 9.639/98.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art83",
+      "type": "Artigo",
+      "value": "Art. 83",
+      "extracted": true,
+      "extraction_context": "...o a respeito, conforme se observa do constante do artigo 83 do anexo à Resolução 426/2005, que regulamentou o s..."
+    },
+    {
+      "id": "STJ_188",
+      "type": "Sumula",
+      "numero": 188,
+      "tribunal": "STJ",
+      "texto": "...s termos do art. 167, parágrafo único do CTN e da Súmula 188/STJ, 'Os juros moratórios, na repetição do indébito t...",
+      "extracted": true,
+      "extraction_context": "...s termos do art. 167, parágrafo único do CTN e da Súmula 188/STJ, 'Os juros moratórios, na repetição do indébito t..."
+    },
+    {
+      "id": "ARTIGO_Art167",
+      "type": "Artigo",
+      "value": "Art. 167",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: Nos termos do art. 167, parágrafo único do CTN e da Súmula 188/STJ, 'Os ..."
+    },
+    {
+      "id": "STJ_156",
+      "type": "Sumula",
+      "numero": 156,
+      "tribunal": "STJ",
+      "texto": "...QN (e não de ICMS). Confirma-se o entendimento da Súmula 156/STJ: 'A prestação de serviço de composição gráfica, p...",
+      "extracted": true,
+      "extraction_context": "...QN (e não de ICMS). Confirma-se o entendimento da Súmula 156/STJ: 'A prestação de serviço de composição gráfica, p..."
+    },
+    {
+      "id": "LEI_406_1968",
+      "type": "Lei",
+      "value": "Lei 406/1968",
+      "extracted": true,
+      "extraction_context": "... elas agregados estão incluídos na Lista Anexa ao Decreto-Lei 406/68 (item 77) e à LC 116/03 (item 13.05). Consequente..."
+    },
+    {
+      "id": "ARTIGO_Art442",
+      "type": "Artigo",
+      "value": "Art. 442",
+      "extracted": true,
+      "extraction_context": "... DEBÊNTURES e, portanto, não se aplica a regra do art. 442 do CCom, segundo o qual prescrevem em 20 anos as aç..."
+    },
+    {
+      "id": "LEI_4156_1962",
+      "type": "Lei",
+      "value": "Lei 4156/1962",
+      "extracted": true,
+      "extraction_context": "...m razão do empréstimo compulsório instituído pela Lei 4.156/62 não se confundem com as DEBÊNTURES e, portanto, n..."
+    },
+    {
+      "id": "LEI_644_1969",
+      "type": "Lei",
+      "value": "Lei 644/1969",
+      "extracted": true,
+      "extraction_context": "... o art. 4º, § 10, da Lei 4.156/62 (acrescido pelo DL 644/69) conferiu à ELETROBRÁS a faculdade de proceder à ..."
+    },
+    {
+      "id": "ARTIGO_Art135",
+      "type": "Artigo",
+      "value": "Art. 135",
+      "extracted": true,
+      "extraction_context": "...esponsabilidade subsidiária do sócio, prevista no art. 135 do CTN. É indispensável, para tanto, que tenha agid..."
+    },
+    {
+      "id": "ARTIGO_Art1062",
+      "type": "Artigo",
+      "value": "Art. 1062",
+      "extracted": true,
+      "extraction_context": "...norma específica, a taxa legal, antes prevista no art. 1062 do Código Civil de 1916 e agora no art. 406 do Códi..."
+    },
+    {
+      "id": "ARTIGO_Art20",
+      "type": "Artigo",
+      "value": "Art. 20",
+      "extracted": true,
+      "extraction_context": "...ecutado, sem baixa na distribuição, nos termos do art. 20 da Lei 10.522/2002, deve ser reconhecida a prescriç..."
+    },
+    {
+      "id": "LEI_10522_2002",
+      "type": "Lei",
+      "value": "Lei 10522/2002",
+      "extracted": true,
+      "extraction_context": "...m baixa na distribuição, nos termos do art. 20 da Lei 10.522/2002, deve ser reconhecida a prescrição intercorrente ..."
+    },
+    {
+      "id": "ARTIGO_Art138",
+      "type": "Artigo",
+      "value": "Art. 138",
+      "extracted": true,
+      "extraction_context": "...Tese Firmada: O instituto da denúncia espontânea (art. 138 do CTN) não se aplica nos casos de parcelamento de ..."
+    },
+    {
+      "id": "ARTIGO_Art281",
+      "type": "Artigo",
+      "value": "Art. 281",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O art. 281, parágrafo único, II, do CTB prevê que será arqui..."
+    },
+    {
+      "id": "LEI_5958",
+      "type": "Lei",
+      "value": "Lei 5958",
+      "extracted": true,
+      "extraction_context": "...ese Firmada: Os optantes pelo FGTS, nos termos da Lei nº 5.958, de 1973, têm direito à taxa progressiva de juros..."
+    },
+    {
+      "id": "LEI_5107_1966",
+      "type": "Lei",
+      "value": "Lei 5107/1966",
+      "extracted": true,
+      "extraction_context": "... taxa progressiva de juros na forma do art. 4º da Lei nº 5.107/66.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art166",
+      "type": "Artigo",
+      "value": "Art. 166",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O art. 166 do CTN tem como cenário natural de aplicação as hip..."
+    },
+    {
+      "id": "ARTIGO_Art29",
+      "type": "Artigo",
+      "value": "Art. 29",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O art. 29-C da Lei 8.036/90, introduzido pela Medida Provis..."
+    },
+    {
+      "id": "ARTIGO_CPC_Art20_21",
+      "type": "Artigo",
+      "value": "Art. 20, 21 do CPC",
+      "extracted": true,
+      "extraction_context": "...ndas sobre FGTS), é norma especial em relação aos arts. 20 e 21 do CPC e somente se aplica às ações ajuizadas após a sua..."
+    },
+    {
+      "id": "LEI_8036_1990",
+      "type": "Lei",
+      "value": "Lei 8036/1990",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O art. 29-C da Lei 8.036/90, introduzido pela Medida Provisória 2.164-40/2001..."
+    },
+    {
+      "id": "LEI_2164-40_2001",
+      "type": "Lei",
+      "value": "Lei 2164-40/2001",
+      "extracted": true,
+      "extraction_context": "...da: O art. 29-C da Lei 8.036/90, introduzido pela Medida Provisória 2.164-40/2001 (dispensando a condenação em honorários em demand..."
+    },
+    {
+      "id": "ARTIGO_Art161",
+      "type": "Artigo",
+      "value": "Art. 161",
+      "extracted": true,
+      "extraction_context": "...terior, incide a taxa de 1% ao mês, nos termos do art. 161, § 1º, do CTN, observado o disposto na súmula 188..."
+    },
+    {
+      "id": "LEI_1577_1997",
+      "type": "Lei",
+      "value": "Lei 1577/1997",
+      "extracted": true,
+      "extraction_context": "...de 12% até 11/6/1997, data anterior à vigência da MP 1577/97.  Órgão Julgador: S1"
+    },
+    {
+      "id": "CONCEITO_juros_compensatórios",
+      "type": "Conceito",
+      "nome": "juros compensatórios",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O índice de juros compensatórios na desapropriação direta ou indireta é de 12% até..."
+    },
+    {
+      "id": "ARTIGO_Art522",
+      "type": "Artigo",
+      "value": "Art. 522",
+      "extracted": true,
+      "extraction_context": "...utenticação de cópias do Agravo de Instrumento do artigo 522, do CPC, resulta como diligência não prevista em lei..."
+    },
+    {
+      "id": "ARTIGO_Art219",
+      "type": "Artigo",
+      "value": "Art. 219",
+      "extracted": true,
+      "extraction_context": "...propositura da ação pode ser decretada de ofício (art. 219, § 5º, do CPC).   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art150",
+      "type": "Artigo",
+      "value": "Art. 150",
+      "extracted": true,
+      "extraction_context": "...s a partir do pagamento antecipado de que trata o art. 150, § 1º, do CTN.  Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art461",
+      "type": "Artigo",
+      "value": "Art. 461",
+      "extracted": true,
+      "extraction_context": "...de obrigação de fazer (astreintes), nos termos do art. 461, § 4º, do CPC, no caso de atraso injustificado no..."
+    },
+    {
+      "id": "ARTIGO_Art11",
+      "type": "Artigo",
+      "value": "Art. 11",
+      "extracted": true,
+      "extraction_context": "...ema)  Tese Firmada: A ficção jurídica prevista no artigo 11 da Lei nº 9.779/99, não alcança situação reveladora..."
+    },
+    {
+      "id": "LEI_9779_1999",
+      "type": "Lei",
+      "value": "Lei 9779/1999",
+      "extracted": true,
+      "extraction_context": "...rmada: A ficção jurídica prevista no artigo 11 da Lei nº 9.779/99, não alcança situação reveladora de isenção do Im..."
+    },
+    {
+      "id": "ARTIGO_Art8",
+      "type": "Artigo",
+      "value": "Art. 8",
+      "extracted": true,
+      "extraction_context": "... tributária progressiva (\"para frente\"), à luz do artigo 8º, II, \"b\", da Lei Complementar 87/96.   Órgão Julgador..."
+    },
+    {
+      "id": "LEI_8541_1992",
+      "type": "Lei",
+      "value": "Lei 8541/1992",
+      "extracted": true,
+      "extraction_context": "...ros e assemelhadas, à luz dos artigos 29 e 36, da Lei 8.541/92, é legítima e complementar ao conceito de renda d..."
+    },
+    {
+      "id": "LEI_57_1966",
+      "type": "Lei",
+      "value": "Lei 57/1966",
+      "extracted": true,
+      "extraction_context": "... agrícola, pecuária ou agroindustrial (art. 15 do DL 57/1966).  Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art530",
+      "type": "Artigo",
+      "value": "Art. 530",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: Seja porque o art. 530 do CPC não faz restrição quanto à natureza da matér..."
+    },
+    {
+      "id": "ARTIGO_Art27",
+      "type": "Artigo",
+      "value": "Art. 27",
+      "extracted": true,
+      "extraction_context": "...ropriação deve respeitar os limites impostos pelo artigo 27, § 1º, do Decreto-lei 3.365/41 - qual seja: entre..."
+    },
+    {
+      "id": "LEI_3",
+      "type": "Lei",
+      "value": "Lei 3",
+      "extracted": true,
+      "extraction_context": "...itar os limites impostos pelo artigo 27, § 1º, do Decreto-lei 3.365/41 - qual seja: entre 0,5% e 5% da diferença ..."
+    },
+    {
+      "id": "ARTIGO_Art68",
+      "type": "Artigo",
+      "value": "Art. 68",
+      "extracted": true,
+      "extraction_context": "...ifásico de individualização da pena, trazido pelo art. 68 do Código Penal, não permite ao Magistrado extrapol..."
+    },
+    {
+      "id": "LEI_6368_1976",
+      "type": "Lei",
+      "value": "Lei 6368/1976",
+      "extracted": true,
+      "extraction_context": "...avorável ao réu do que o advindo da utilização da Lei 6.368/76, sendo vedada a combinação de leis.   Órgão Julga..."
+    },
+    {
+      "id": "ARTIGO_Art557",
+      "type": "Artigo",
+      "value": "Art. 557",
+      "extracted": true,
+      "extraction_context": "...seguimento monocraticamente, com base no caput do artigo 557 do CPC.   Órgão Julgador: CE"
+    },
+    {
+      "id": "ARTIGO_Art12",
+      "type": "Artigo",
+      "value": "Art. 12",
+      "extracted": true,
+      "extraction_context": "...entar, o imposto é devido no local da construção (art. 12, letra \"b\" do DL 406/68 e art. 3º, da LC 116/2003). ..."
+    },
+    {
+      "id": "ARTIGO_Art605",
+      "type": "Artigo",
+      "value": "Art. 605",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: Conforme o disposto no artigo 605 da Consolidação da Leis do Trabalho, em respeito ao..."
+    },
+    {
+      "id": "STJ_249",
+      "type": "Sumula",
+      "numero": 249,
+      "tribunal": "STJ",
+      "texto": "...om a exclusão da União e dos bancos depositários (Súmula 249/STJ).   Órgão Julgador: S1",
+      "extracted": true,
+      "extraction_context": "...om a exclusão da União e dos bancos depositários (Súmula 249/STJ).   Órgão Julgador: S1"
+    },
+    {
+      "id": "STJ_210",
+      "type": "Sumula",
+      "numero": 210,
+      "tribunal": "STJ",
+      "texto": "...ária de contas vinculadas ao FGTS, nos termos das Súmula 210/STJ.   Órgão Julgador: S1",
+      "extracted": true,
+      "extraction_context": "...ária de contas vinculadas ao FGTS, nos termos das Súmula 210/STJ.   Órgão Julgador: S1"
+    },
+    {
+      "id": "STJ_252",
+      "type": "Sumula",
+      "numero": 252,
+      "tribunal": "STJ",
+      "texto": "... 44,80% (IPC), 5,38 (BTN) e 7% (TR). Enunciado da Súmula 252/STJ.   Órgão Julgador: S1",
+      "extracted": true,
+      "extraction_context": "... 44,80% (IPC), 5,38 (BTN) e 7% (TR). Enunciado da Súmula 252/STJ.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art103",
+      "type": "Artigo",
+      "value": "Art. 103",
+      "extracted": true,
+      "extraction_context": "... convertida na Lei 10.839/2004, que acrescentou o art. 103-A à Lei 8.213/91 (LBPS) e fixou em 10 anos o praz..."
+    },
+    {
+      "id": "LEI_9784_1999",
+      "type": "Lei",
+      "value": "Lei 9784/1999",
+      "extracted": true,
+      "extraction_context": "...mada: Os atos administrativos praticados antes da Lei 9.784/99 podem ser revistos pela Administração a qualquer ..."
+    },
+    {
+      "id": "LEI_138",
+      "type": "Lei",
+      "value": "Lei 138",
+      "extracted": true,
+      "extraction_context": "...assou a ser tratada no âmbito previdenciário pela MP 138, de 19.11.2003, convertida na Lei 10.839/2004, qu..."
+    },
+    {
+      "id": "LEI_10839_2004",
+      "type": "Lei",
+      "value": "Lei 10839/2004",
+      "extracted": true,
+      "extraction_context": "...nciário pela MP 138, de 19.11.2003, convertida na Lei 10.839/2004, que acrescentou o art. 103-A à Lei 8.213/91 (LBP..."
+    },
+    {
+      "id": "LEI_8620_1993",
+      "type": "Lei",
+      "value": "Lei 8620/1993",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: A Lei n. 8.620/93, em seu art. 7.º, § 2.º autorizou expressamente a..."
+    },
+    {
+      "id": "LEI_9249_1995",
+      "type": "Lei",
+      "value": "Lei 9249/1995",
+      "extracted": true,
+      "extraction_context": "...es', constante do artigo 15, § 1º, inciso III, da Lei 9.249/95, deve ser interpretada de forma objetiva (ou seja..."
+    },
+    {
+      "id": "LEI_11382_2006",
+      "type": "Lei",
+      "value": "Lei 11382/2006",
+      "extracted": true,
+      "extraction_context": "...: A penhora on line, antes da entrada em vigor da Lei n. 11.382/2006, configura-se como medida excepcional, cuja efeti..."
+    },
+    {
+      "id": "ARTIGO_Art244",
+      "type": "Artigo",
+      "value": "Art. 244",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: A configuração do crime do art. 244-B do ECA independe da prova da efetiva corrupção ..."
+    },
+    {
+      "id": "ARTIGO_Art22",
+      "type": "Artigo",
+      "value": "Art. 22",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O art. 22, § 1º, da Lei 8.036/90 diz respeito a correção mo..."
+    },
+    {
+      "id": "LEI_491_1969",
+      "type": "Lei",
+      "value": "Lei 491/1969",
+      "extracted": true,
+      "extraction_context": "...: O crédito-prêmio do IPI, previsto no art. 1º do DL 491/69, não se aplica às vendas para o exterior realizad..."
+    },
+    {
+      "id": "ARTIGO_Art168",
+      "type": "Artigo",
+      "value": "Art. 168",
+      "extracted": true,
+      "extraction_context": "...o prazo prescricional é quinquenal, nos termos do art. 168, I, do CTN.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art515",
+      "type": "Artigo",
+      "value": "Art. 515",
+      "extracted": true,
+      "extraction_context": "...la sentença, nos termos dos parágrafos 1º e 2º do art. 515 do CPC, aplicável a regra iura novit curia. Consequ..."
+    },
+    {
+      "id": "LEI_2445_1988",
+      "type": "Lei",
+      "value": "Lei 2445/1988",
+      "extracted": true,
+      "extraction_context": "... declaração de inconstitucionalidade dos Decretos-lei n. 2.445/88 e 2.249/88.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art17",
+      "type": "Artigo",
+      "value": "Art. 17",
+      "extracted": true,
+      "extraction_context": "...adores do Banco Central, consoante preconizado no art. 17 da Lei 10.910, de 15 de julho de 2004, têm como pre..."
+    },
+    {
+      "id": "LEI_10910",
+      "type": "Lei",
+      "value": "Lei 10910",
+      "extracted": true,
+      "extraction_context": "...anco Central, consoante preconizado no art. 17 da Lei 10.910, de 15 de julho de 2004, têm como prerrogativa o ..."
+    },
+    {
+      "id": "LEI_10034_2000",
+      "type": "Lei",
+      "value": "Lei 10034/2000",
+      "extracted": true,
+      "extraction_context": "...mente a partir de 24/10/2000, data de vigência da Lei n. 10.034/2000.   Órgão Julgador: S1"
+    },
+    {
+      "id": "STJ_343",
+      "type": "Sumula",
+      "numero": 343,
+      "tribunal": "STJ",
+      "texto": "(Tema)  Tese Firmada: A Súmula 343, do Supremo Tribunal Federal, cristalizou o enten...",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: A Súmula 343, do Supremo Tribunal Federal, cristalizou o enten..."
+    },
+    {
+      "id": "ARTIGO_Art38",
+      "type": "Artigo",
+      "value": "Art. 38",
+      "extracted": true,
+      "extraction_context": "...ema)  Tese Firmada: O depósito prévio previsto no art. 38, da LEF, não constitui condição de procedibilidade d..."
+    },
+    {
+      "id": "ARTIGO_Art151",
+      "type": "Artigo",
+      "value": "Art. 151",
+      "extracted": true,
+      "extraction_context": "...xigibilidade do crédito tributário, nos termos do art. 151 do CTN, inibindo, dessa forma, o ajuizamento da açã..."
+    },
+    {
+      "id": "STJ_375",
+      "type": "Sumula",
+      "numero": 375,
+      "tribunal": "STJ",
+      "texto": "...nado ou da prova de má-fé do terceiro adquirente (Súmula n. 375/STJ). 1.3. A presunção de boa-fé é princípio geral de...",
+      "extracted": true,
+      "extraction_context": "...nado ou da prova de má-fé do terceiro adquirente (Súmula n. 375/STJ). 1.3. A presunção de boa-fé é princípio geral de..."
+    },
+    {
+      "id": "ARTIGO_Art543",
+      "type": "Artigo",
+      "value": "Art. 543",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: Para fins do art. 543-c do CPC, firma-se a seguinte orientação: 1.1. É ..."
+    },
+    {
+      "id": "ARTIGO_Art615",
+      "type": "Artigo",
+      "value": "Art. 615",
+      "extracted": true,
+      "extraction_context": "...ecução, ressalvada a hipótese prevista no § 3º do art. 615-A do CPC. 1.2. O reconhecimento da fraude de exec..."
+    },
+    {
+      "id": "ARTIGO_Art659",
+      "type": "Artigo",
+      "value": "Art. 659",
+      "extracted": true,
+      "extraction_context": "...a, sob pena de torna-se letra morta o disposto no art. 659, § 4º, do CPC. 1.5. Conforme previsto no § 3º do ..."
+    },
+    {
+      "id": "CONCEITO_boa_fé",
+      "type": "Conceito",
+      "nome": "boa-fé",
+      "extracted": true,
+      "extraction_context": "...quirente (Súmula n. 375/STJ). 1.3. A presunção de boa-fé é princípio geral de direito universalmente aceit..."
+    },
+    {
+      "id": "LEI_1963-17_2000",
+      "type": "Lei",
+      "value": "Lei 1963-17/2000",
+      "extracted": true,
+      "extraction_context": "... celebrados após 31.3.2000, data da publicação da Medida Provisória n. 1.963-17/2000 (em vigor como MP 2.170-36/2001), desde que expre..."
+    },
+    {
+      "id": "LEI_2170-36_2001",
+      "type": "Lei",
+      "value": "Lei 2170-36/2001",
+      "extracted": true,
+      "extraction_context": "...Medida Provisória n. 1.963-17/2000 (em vigor como MP 2.170-36/2001), desde que expressamente pactuada.   Órgão Julga..."
+    },
+    {
+      "id": "LEI_11052_2004",
+      "type": "Lei",
+      "value": "Lei 11052/2004",
+      "extracted": true,
+      "extraction_context": "...a Lei 7.713/88, com as alterações promovidas pela Lei 11.052/2004, é explícito em conceder o benefício fiscal em fa..."
+    },
+    {
+      "id": "LEI_9138_1995",
+      "type": "Lei",
+      "value": "Lei 9138/1995",
+      "extracted": true,
+      "extraction_context": "...rações financeiras alongadas ou renegociadas (cf. Lei n. 9.138/95), cedidos à União por força da Medida Provisória ..."
+    },
+    {
+      "id": "LEI_2196-3_2001",
+      "type": "Lei",
+      "value": "Lei 2196-3/2001",
+      "extracted": true,
+      "extraction_context": "...f. Lei n. 9.138/95), cedidos à União por força da Medida Provisória 2.196-3/2001, estão abarcados no conceito de Dívida Ativa da U..."
+    },
+    {
+      "id": "LEI_1212_1995",
+      "type": "Lei",
+      "value": "Lei 1212/1995",
+      "extracted": true,
+      "extraction_context": "...tre março de 1996 a outubro de 1998, por força da Medida Provisória 1.212/95 e suas reedições.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art24",
+      "type": "Artigo",
+      "value": "Art. 24",
+      "extracted": true,
+      "extraction_context": "... é de 360 dias a partir do protocolo dos pedidos (art. 24 da Lei 11.457/07).   Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_11457_2007",
+      "type": "Lei",
+      "value": "Lei 11457/2007",
+      "extracted": true,
+      "extraction_context": "...querimentos efetuados anteriormente à vigência da Lei 11.457/07, quanto aos pedidos protocolados após o advento d..."
+    },
+    {
+      "id": "LEI_8021_1990",
+      "type": "Lei",
+      "value": "Lei 8021/1990",
+      "extracted": true,
+      "extraction_context": "... aplicáveis a fatos pretéritos, razão pela qual a Lei 8.021/90 e a Lei Complementar 105/2001, por envergarem ess..."
+    },
+    {
+      "id": "LEI_6019_1974",
+      "type": "Lei",
+      "value": "Lei 6019/1974",
+      "extracted": true,
+      "extraction_context": "...e locação de mão de obra temporária (regidas pela Lei 6.019/1974 e pelo Decreto 73.841/1974), a título de pagament..."
+    },
+    {
+      "id": "LEI_1901-",
+      "type": "Lei",
+      "value": "Lei 1901-",
+      "extracted": true,
+      "extraction_context": "...e Firmada: Até 26.9.99, data anterior à edição da MP 1901- 30/99, são devidos juros compensatórios nas desap..."
+    },
+    {
+      "id": "LEI_1901-30_1999",
+      "type": "Lei",
+      "value": "Lei 1901-30/1999",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: Mesmo antes da MP 1901-30/99, são indevidos juros compensatórios quando a prop..."
+    },
+    {
+      "id": "LEI_3365_2041",
+      "type": "Lei",
+      "value": "Lei 3365/2041",
+      "extracted": true,
+      "extraction_context": "...ncia de juros compensatórios (art. 15-A, § 1º, do Decreto-Lei 3365/41);ii) Desde 5.5.2000, data de edição da MP 2027-38..."
+    },
+    {
+      "id": "LEI_2027-38_2000",
+      "type": "Lei",
+      "value": "Lei 2027-38/2000",
+      "extracted": true,
+      "extraction_context": "...ei 3365/41);ii) Desde 5.5.2000, data de edição da MP 2027-38/00, veda-se a incidência dos juros em imóveis com ín..."
+    },
+    {
+      "id": "ARTIGO_Art526",
+      "type": "Artigo",
+      "value": "Art. 526",
+      "extracted": true,
+      "extraction_context": "...mprimento das providências enumeradas no caput do art. 526 do CPC, adotáveis no prazo de três dias, somente en..."
+    },
+    {
+      "id": "TEMA_96",
+      "type": "Tema",
+      "numero": 96,
+      "tribunal": "STF",
+      "tese": "",
+      "extracted": true,
+      "extraction_context": "...pecial de 20/3/2019, nos termos da tese fixada no Tema 96 do STF:Incidem os juros da mora no período compreendido ..."
+    },
+    {
+      "id": "LEI_2180-35_2001",
+      "type": "Lei",
+      "value": "Lei 2180-35/2001",
+      "extracted": true,
+      "extraction_context": "...no artigo 1º-F da Lei 9.494/97, acrescentado pela MP 2.180-35/01.   Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_32_1989",
+      "type": "Lei",
+      "value": "Lei 32/1989",
+      "extracted": true,
+      "extraction_context": "...ado até 15 de janeiro de 1989, não se aplicando a Medida Provisória n. 32/89 (Plano Verão), que determinava a atualização pela..."
+    },
+    {
+      "id": "LEI_7730_1989",
+      "type": "Lei",
+      "value": "Lei 7730/1989",
+      "extracted": true,
+      "extraction_context": "...PC), conforme disposto nos arts. 10 e 17, III, da Lei 7.730/89, o índice a ser aplicado no mês de março de 1990 ..."
+    },
+    {
+      "id": "LEI_168_1990",
+      "type": "Lei",
+      "value": "Lei 168/1990",
+      "extracted": true,
+      "extraction_context": "...períodos aquisitivos iniciados após a vigência da Medida Provisória 168/90 e nos meses subsequentes ao seu advento (abril, m..."
+    },
+    {
+      "id": "LEI_8088_1990",
+      "type": "Lei",
+      "value": "Lei 8088/1990",
+      "extracted": true,
+      "extraction_context": "...r aplicado remunerado de acordo com o disposto na Lei n. 8.088/90, não podendo ser aplicado o novo critério de remu..."
+    },
+    {
+      "id": "LEI_294",
+      "type": "Lei",
+      "value": "Lei 294",
+      "extracted": true,
+      "extraction_context": "...licado o novo critério de remuneração previsto na Medida Provisória n. 294, de 31.1.1991, convertida na Lei n. 8.177/91.   Ó..."
+    },
+    {
+      "id": "LEI_10352_2001",
+      "type": "Lei",
+      "value": "Lei 10352/2001",
+      "extracted": true,
+      "extraction_context": "... cognitivo for anterior à reforma engendrada pela Lei 10.352/2001.   Órgão Julgador: CE"
+    },
+    {
+      "id": "ARTIGO_Art284",
+      "type": "Artigo",
+      "value": "Art. 284",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O prazo do art. 284 do Código de Processo Civil não é peremptório, mas ..."
+    },
+    {
+      "id": "ARTIGO_Art60",
+      "type": "Artigo",
+      "value": "Art. 60",
+      "extracted": true,
+      "extraction_context": "...e Desenvolvimento do Ensino Fundamental - FUNDEF (art. 60 do ADCT, redação da EC 14/96), o 'valor mínimo anua..."
+    },
+    {
+      "id": "LEI_9424_1996",
+      "type": "Lei",
+      "value": "Lei 9424/1996",
+      "extracted": true,
+      "extraction_context": "...or aluno' (VMAA), de que trata o art. 6º, § 1º da Lei 9.424/96, deve ser calculado levando em conta a média naci..."
+    },
+    {
+      "id": "LEI_8100_1990",
+      "type": "Lei",
+      "value": "Lei 8100/1990",
+      "extracted": true,
+      "extraction_context": "...té 05.12.1990, ante a ratio essendi do art. 3º da Lei 8.100/90, com o redação conferida pela Lei n 10.150, de 21..."
+    },
+    {
+      "id": "LEI_10150",
+      "type": "Lei",
+      "value": "Lei 10150",
+      "extracted": true,
+      "extraction_context": "... 3º da Lei 8.100/90, com o redação conferida pela Lei n 10.150, de 21.12.2001.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art13",
+      "type": "Artigo",
+      "value": "Art. 13",
+      "extracted": true,
+      "extraction_context": "...esponsabilidade dos sócios em face do disposto no art. 13 da Lei 8.620/93. Na vigência de tal dispositivo (po..."
+    },
+    {
+      "id": "ARTIGO_CTN_Art135_III",
+      "type": "Artigo",
+      "value": "Art. 135, III do CTN",
+      "extracted": true,
+      "extraction_context": "...e, quando presentes as condições estabelecidas no art. 135, III do CTN. Há, todavia uma razão superior, mais importante ..."
+    },
+    {
+      "id": "ARTIGO_Art146",
+      "type": "Artigo",
+      "value": "Art. 146",
+      "extracted": true,
+      "extraction_context": "...Lei 8.620/93, tanto por vício formal (violação ao art. 146, III, da Constituição Federal), como por vício materia..."
+    },
+    {
+      "id": "LEI_11941_2009",
+      "type": "Lei",
+      "value": "Lei 11941/2009",
+      "extracted": true,
+      "extraction_context": "...e revogado de modo expresso pelo art. 79, VII, da Lei 11.941/09), já havia entendimento desta 1ª Seção segundo o ..."
+    },
+    {
+      "id": "LEI_9711_1998",
+      "type": "Lei",
+      "value": "Lei 9711/1998",
+      "extracted": true,
+      "extraction_context": "... art. 31 da Lei 8.212/91, com a redação dada pela Lei 9.711/98, a empresa contratante é responsável, com exclusi..."
+    },
+    {
+      "id": "ARTIGO_Art66",
+      "type": "Artigo",
+      "value": "Art. 66",
+      "extracted": true,
+      "extraction_context": "...r o pleno exercício da compensação de que trata o art. 66 da Lei 8.383/91, sem que lhe fosse impingidos os li..."
+    },
+    {
+      "id": "STJ_310",
+      "type": "Sumula",
+      "numero": 310,
+      "tribunal": "STJ",
+      "texto": "...-contribuição para a Previdência. Inteligência da Súmula 310/STJ.   Órgão Julgador: S1",
+      "extracted": true,
+      "extraction_context": "...-contribuição para a Previdência. Inteligência da Súmula 310/STJ.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art231",
+      "type": "Artigo",
+      "value": "Art. 231",
+      "extracted": true,
+      "extraction_context": "... transporte irregular de passageiros, com base no art. 231, VIII, do Código de Trânsito Brasileiro, não está condi..."
+    },
+    {
+      "id": "LEI_7689_1988",
+      "type": "Lei",
+      "value": "Lei 7689/1988",
+      "extracted": true,
+      "extraction_context": "...rmal e material da exação conforme concebida pela Lei 7.689/88, assim como a inexistência de relação jurídica ma..."
+    },
+    {
+      "id": "ARTIGO_Art9",
+      "type": "Artigo",
+      "value": "Art. 9",
+      "extracted": true,
+      "extraction_context": "...superveniência de situação impeditiva prevista no artigo 9º, incisos III a XIV e XVII a XIX, da Lei 9.317/1996, ..."
+    },
+    {
+      "id": "LEI_9317_1996",
+      "type": "Lei",
+      "value": "Lei 9317/1996",
+      "extracted": true,
+      "extraction_context": "... no artigo 9º, incisos III a XIV e XVII a XIX, da Lei 9.317/1996, seus efeitos são produzidos a partir do mês subs..."
+    },
+    {
+      "id": "ARTIGO_Art41",
+      "type": "Artigo",
+      "value": "Art. 41",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: Não há ilegalidade no artigo 41 do Decreto n. 332/91, consonante com a Lei n. 8.200..."
+    },
+    {
+      "id": "LEI_8200",
+      "type": "Lei",
+      "value": "Lei 8200",
+      "extracted": true,
+      "extraction_context": "... artigo 41 do Decreto n. 332/91, consonante com a Lei n. 8.200/1, artigo 1º, que, ao cuidar da correção monetári..."
+    },
+    {
+      "id": "LEI_8429_1992",
+      "type": "Lei",
+      "value": "Lei 8429/1992",
+      "extracted": true,
+      "extraction_context": "...da: O especialíssimo procedimento estabelecido na Lei 8.429/92, que prevê um juízo de delibação para recebimento..."
+    },
+    {
+      "id": "ARTIGO_Art170",
+      "type": "Artigo",
+      "value": "Art. 170",
+      "extracted": true,
+      "extraction_context": "...da respectiva decisão judicial', conforme prevê o art. 170-A do CTN, vedação que, todavia, não se aplica a a..."
+    },
+    {
+      "id": "ARTIGO_Art56",
+      "type": "Artigo",
+      "value": "Art. 56",
+      "extracted": true,
+      "extraction_context": "...91 (lei materialmente ordinária), perpetrada pelo artigo 56, da Lei 9.430/96.   Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_9430_1996",
+      "type": "Lei",
+      "value": "Lei 9430/1996",
+      "extracted": true,
+      "extraction_context": "...almente ordinária), perpetrada pelo artigo 56, da Lei 9.430/96.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art286",
+      "type": "Artigo",
+      "value": "Art. 286",
+      "extracted": true,
+      "extraction_context": "...ormas de direito privado à espécie, notadamente o art. 286 do Código Civil.  Órgão Julgador: S1"
+    },
+    {
+      "id": "STJ_33",
+      "type": "Sumula",
+      "numero": 33,
+      "tribunal": "STJ",
+      "texto": "...e ser observada, não está sujeita ao enunciado da Súmula nº 33 do Superior Tribunal de Justiça.   Órgão Julgador:...",
+      "extracted": true,
+      "extraction_context": "...e ser observada, não está sujeita ao enunciado da Súmula nº 33 do Superior Tribunal de Justiça.   Órgão Julgador:..."
+    },
+    {
+      "id": "LEI_7798_1989",
+      "type": "Lei",
+      "value": "Lei 7798/1989",
+      "extracted": true,
+      "extraction_context": "... dá sobre valor previamente fixado, nos moldes da Lei 7.798/89 (regime de preços fixos), salvo se o resultado de..."
+    },
+    {
+      "id": "ARTIGO_Art527",
+      "type": "Artigo",
+      "value": "Art. 527",
+      "extracted": true,
+      "extraction_context": "...ação do princípio do contraditório, nos termos do art. 527, V, do CPC. (...) A dispensa do referido ato process..."
+    },
+    {
+      "id": "ARTIGO_Art475",
+      "type": "Artigo",
+      "value": "Art. 475",
+      "extracted": true,
+      "extraction_context": "...a ilíquida, para a imposição da multa prevista no art. 475-J do CPC, revela-se indispensável (i) a prévia li..."
+    },
+    {
+      "id": "ARTIGO_Art354",
+      "type": "Artigo",
+      "value": "Art. 354",
+      "extracted": true,
+      "extraction_context": "... regra de imputação de pagamentos estabelecida no art. 354 do Código Civil não se aplica às hipóteses de compe..."
+    },
+    {
+      "id": "LEI_11051_2004",
+      "type": "Lei",
+      "value": "Lei 11051/2004",
+      "extracted": true,
+      "extraction_context": "... dívida ativa, ex vi do disposto no artigo 13, da Lei 11.051/2004.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art149",
+      "type": "Artigo",
+      "value": "Art. 149",
+      "extracted": true,
+      "extraction_context": "...sião do lançamento anterior, ex vi do disposto no artigo 149, inciso VIII, do CTN.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art32",
+      "type": "Artigo",
+      "value": "Art. 32",
+      "extracted": true,
+      "extraction_context": "...à vigência do Decreto-Lei 2.472/88 (que alterou o artigo 32, do Decreto-Lei 37/66), não ostentava a condição de ..."
+    },
+    {
+      "id": "LEI_37_1966",
+      "type": "Lei",
+      "value": "Lei 37/1966",
+      "extracted": true,
+      "extraction_context": "...Decreto-Lei 2.472/88 (que alterou o artigo 32, do Decreto-Lei 37/66), não ostentava a condição de responsável tributá..."
+    },
+    {
+      "id": "ARTIGO_Art179",
+      "type": "Artigo",
+      "value": "Art. 179",
+      "extracted": true,
+      "extraction_context": "... Bens ou Direitos), à luz do disposto no caput do artigo 179, do CTN.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art28",
+      "type": "Artigo",
+      "value": "Art. 28",
+      "extracted": true,
+      "extraction_context": "...da unidade da garantia da execução, nos termos do art. 28 da Lei 6.830/80, é uma faculdade outorgada ao juiz,..."
+    },
+    {
+      "id": "CONCEITO_ipca_e",
+      "type": "Conceito",
+      "nome": "ipca-e",
+      "extracted": true,
+      "extraction_context": "...to reais e vinte e sete centavos), corrigido pelo IPCA-E a partir de janeiro de 2001, valor esse que deve ..."
+    },
+    {
+      "id": "LEI_9289_1996",
+      "type": "Lei",
+      "value": "Lei 9289/1996",
+      "extracted": true,
+      "extraction_context": "...ncidência da norma inserta no artigo 1º, § 1º, da Lei 9.289/96), cabe à Fazenda Pública Federal adiantar as desp..."
+    },
+    {
+      "id": "LEI_10684_2003",
+      "type": "Lei",
+      "value": "Lei 10684/2003",
+      "extracted": true,
+      "extraction_context": "... 4º, da Lei 10.522/2002, c/c o artigo 4º, III, da Lei 10.684/2003) e adimplidas as prestações mensais estabelecidas..."
+    },
+    {
+      "id": "ARTIGO_Art25",
+      "type": "Artigo",
+      "value": "Art. 25",
+      "extracted": true,
+      "extraction_context": "...nto de multa, não é compatível com o que dispõe o art. 25, § 4º, da Lei n. 9.605/98; entretanto, não há ile..."
+    },
+    {
+      "id": "LEI_9605_1998",
+      "type": "Lei",
+      "value": "Lei 9605/1998",
+      "extracted": true,
+      "extraction_context": "...é compatível com o que dispõe o art. 25, § 4º, da Lei n. 9.605/98; entretanto, não há ilegalidade quando o referido..."
+    },
+    {
+      "id": "LEI_12336",
+      "type": "Lei",
+      "value": "Lei 12336",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: As alterações trazidas pela Lei 12.336 passaram a viger a partir de 26 de outubro de 201..."
+    },
+    {
+      "id": "ARTIGO_Art741",
+      "type": "Artigo",
+      "value": "Art. 741",
+      "extracted": true,
+      "extraction_context": "...Firmada: \"não se comportam no âmbito normativo do art. 741, parágrafo único, do CPC, as sentenças que tenham..."
+    },
+    {
+      "id": "ARTIGO_Art57",
+      "type": "Artigo",
+      "value": "Art. 57",
+      "extracted": true,
+      "extraction_context": "... a parte do texto que revogava o referido § 5º do art. 57 da Lei n. 8.213/1991.   Órgão Julgador: S3"
+    },
+    {
+      "id": "LEI_1663",
+      "type": "Lei",
+      "value": "Lei 1663",
+      "extracted": true,
+      "extraction_context": "...um após 1998, pois a partir da última reedição da MP n. 1.663, parcialmente convertida na Lei 9.711/1998, a nor..."
+    },
+    {
+      "id": "ARTIGO_Art993",
+      "type": "Artigo",
+      "value": "Art. 993",
+      "extracted": true,
+      "extraction_context": "... art. 354 do Código Civil de 2002, que reproduz o art. 993 do Código Civil de 1916 e foi adotada pela RD BNH 8..."
+    },
+    {
+      "id": "ARTIGO_Art19",
+      "type": "Artigo",
+      "value": "Art. 19",
+      "extracted": true,
+      "extraction_context": "...o de renda incidente sobre o lucro da exploração (art. 19, §6º, do Decreto-Lei n. 1.598/77, incluído pelo D..."
+    },
+    {
+      "id": "LEI_1730_1979",
+      "type": "Lei",
+      "value": "Lei 1730/1979",
+      "extracted": true,
+      "extraction_context": "...do Decreto-Lei n. 1.598/77, incluído pelo Decreto-Lei n. 1.730/79).   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art225",
+      "type": "Artigo",
+      "value": "Art. 225",
+      "extracted": true,
+      "extraction_context": "...sponsabilidade objetiva ínsita ao dano ambiental (art. 225, § 3º, da CF e do art. 14, § 1º, da Lei nº 6.938/..."
+    },
+    {
+      "id": "ARTIGO_Art14",
+      "type": "Artigo",
+      "value": "Art. 14",
+      "extracted": true,
+      "extraction_context": "...ita ao dano ambiental (art. 225, § 3º, da CF e do art. 14, § 1º, da Lei nº 6.938/81), responsabilizando o d..."
+    },
+    {
+      "id": "LEI_6938_1981",
+      "type": "Lei",
+      "value": "Lei 6938/1981",
+      "extracted": true,
+      "extraction_context": "...tal (art. 225, § 3º, da CF e do art. 14, § 1º, da Lei nº 6.938/81), responsabilizando o degradador em decorrência d..."
+    },
+    {
+      "id": "STJ_450",
+      "type": "Sumula",
+      "numero": 450,
+      "tribunal": "STJ",
+      "texto": "...cede sua amortização pelo pagamento da prestação. Súmula 450/STJ   Órgão Julgador: CE",
+      "extracted": true,
+      "extraction_context": "...cede sua amortização pelo pagamento da prestação. Súmula 450/STJ   Órgão Julgador: CE"
+    },
+    {
+      "id": "ARTIGO_Art593",
+      "type": "Artigo",
+      "value": "Art. 593",
+      "extracted": true,
+      "extraction_context": "...inte, a ser demonstrado pelo Fisco, nos termos do art. 593 do CPC/1973 (art. 792 do novo CPC - fraude à execuç..."
+    },
+    {
+      "id": "ARTIGO_Art792",
+      "type": "Artigo",
+      "value": "Art. 792",
+      "extracted": true,
+      "extraction_context": "...o pelo Fisco, nos termos do art. 593 do CPC/1973 (art. 792 do novo CPC - fraude à execução), combinado com o a..."
+    },
+    {
+      "id": "ARTIGO_Art185",
+      "type": "Artigo",
+      "value": "Art. 185",
+      "extracted": true,
+      "extraction_context": "...do novo CPC - fraude à execução), combinado com o art. 185 do CTN (presunção de fraude contra a Fazenda Públic..."
+    },
+    {
+      "id": "STJ_520",
+      "type": "Sumula",
+      "numero": 520,
+      "tribunal": "STJ",
+      "texto": "...enado irá usufruir os benefícios. Inteligência da Súmula n. 520 do STJ. Terceira tese: Respeitado o limite anual de 35 d...",
+      "extracted": true,
+      "extraction_context": "...enado irá usufruir os benefícios. Inteligência da Súmula n. 520 do STJ. Terceira tese: Respeitado o limite anual de 35 d..."
+    },
+    {
+      "id": "ARTIGO_Art125",
+      "type": "Artigo",
+      "value": "Art. 125",
+      "extracted": true,
+      "extraction_context": "...bservadas as hipóteses de revogação automática do art. 125 da LEP. Segunda tese: O calendário prévio das saída..."
+    },
+    {
+      "id": "ARTIGO_Art124",
+      "type": "Artigo",
+      "value": "Art. 124",
+      "extracted": true,
+      "extraction_context": "...tado o limite anual de 35 dias, estabelecido pelo art. 124 da LEP, é cabível a concessão de maior número de au..."
+    },
+    {
+      "id": "ARTIGO_Art306",
+      "type": "Artigo",
+      "value": "Art. 306",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O tipo penal do art. 306 do Código de Trânsito Brasileiro é formado, entre o..."
+    },
+    {
+      "id": "ARTIGO_Art26",
+      "type": "Artigo",
+      "value": "Art. 26",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: A decadência do art. 26 do CDC não é aplicável à prestação de contas para o..."
+    },
+    {
+      "id": "LEI_9469_1997",
+      "type": "Lei",
+      "value": "Lei 9469/1997",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O § 2º do art. 6º da Lei n. 9.469/1997, que obriga à repartição dos honorários advocatíc..."
+    },
+    {
+      "id": "STF_280",
+      "type": "Sumula",
+      "numero": 280,
+      "tribunal": "STF",
+      "texto": "...por recurso especial. Aplicação, por analogia, da Súmula 280 do STF.   Órgão Julgador: S1",
+      "extracted": true,
+      "extraction_context": "...por recurso especial. Aplicação, por analogia, da Súmula 280 do STF.   Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_12397_1997",
+      "type": "Lei",
+      "value": "Lei 12397/1997",
+      "extracted": true,
+      "extraction_context": "...s reajustes concedidos pela legislação municipal (Lei 12.397/97) e seus reflexos no cálculo do percentual devido ..."
+    },
+    {
+      "id": "LEI_10637_2002",
+      "type": "Lei",
+      "value": "Lei 10637/2002",
+      "extracted": true,
+      "extraction_context": "... de juros sobre o capital próprio, na vigência da Lei n. 10.637/2002 e da Lei n. 10.833/2003.   Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_10833_2003",
+      "type": "Lei",
+      "value": "Lei 10833/2003",
+      "extracted": true,
+      "extraction_context": "...l próprio, na vigência da Lei n. 10.637/2002 e da Lei n. 10.833/2003.   Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_9718_1998",
+      "type": "Lei",
+      "value": "Lei 9718/1998",
+      "extracted": true,
+      "extraction_context": "...COFINS sobre o JCP recebido durante a vigência da Lei 9.718/98 até a edição das Leis 10.637/02 (cujo art. 1º. en..."
+    },
+    {
+      "id": "LEI_11941_2008",
+      "type": "Lei",
+      "value": "Lei 11941/2008",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: A Lei 11.941/2008 remite os débitos para com a Fazenda Nacional ven..."
+    },
+    {
+      "id": "ARTIGO_2_Artúnico",
+      "type": "Artigo",
+      "value": "Art. único do 2",
+      "extracted": true,
+      "extraction_context": "...em que determina a observância das disposições do parágrafo único do art. 2º da citada norma, o qual, de sua parte, garante a..."
+    },
+    {
+      "id": "LEI_8186_1991",
+      "type": "Lei",
+      "value": "Lei 8186/1991",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O art. 5º da Lei 8.186/91 assegura o direito à complementação à pensão, na ..."
+    },
+    {
+      "id": "ARTIGO_Art95",
+      "type": "Artigo",
+      "value": "Art. 95",
+      "extracted": true,
+      "extraction_context": "... a responsabilidade do réu pelos danos causados' (art. 95 do CDC). A condenação, pois, não se reveste de liqu..."
+    },
+    {
+      "id": "ARTIGO_Art156",
+      "type": "Artigo",
+      "value": "Art. 156",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: De acordo com o art. 156, I, do CTN, o pagamento extingue o crédito tributári..."
+    },
+    {
+      "id": "LEI_9703_1998",
+      "type": "Lei",
+      "value": "Lei 9703/1998",
+      "extracted": true,
+      "extraction_context": "...initivo por ordem judicial (art. 1º, § 3º, II, da Lei n. 9.703/98) somente ocorre depois de encerrada a lide, o cré..."
+    },
+    {
+      "id": "LEI_11960_2009",
+      "type": "Lei",
+      "value": "Lei 11960/2009",
+      "extracted": true,
+      "extraction_context": "...ntra a Fazenda Pública após a entrada em vigor da Lei 11.960/09 devem observar os critérios de atualização (corre..."
+    },
+    {
+      "id": "LEI_542_1995",
+      "type": "Lei",
+      "value": "Lei 542/1995",
+      "extracted": true,
+      "extraction_context": "... de Cr$ 2.750,00, nos termos do art. 1º, § 3º, da MP 542/95, convertida na Lei 9.096/95.   Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_9096_1995",
+      "type": "Lei",
+      "value": "Lei 9096/1995",
+      "extracted": true,
+      "extraction_context": "...mos do art. 1º, § 3º, da MP 542/95, convertida na Lei 9.096/95.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art49",
+      "type": "Artigo",
+      "value": "Art. 49",
+      "extracted": true,
+      "extraction_context": "...de mora), pois, conforme expressa previsão legal (art. 49, I e § 1º, da Lei 8.112/90), não se incorporam ao ve..."
+    },
+    {
+      "id": "LEI_8112_1990",
+      "type": "Lei",
+      "value": "Lei 8112/1990",
+      "extracted": true,
+      "extraction_context": "...me expressa previsão legal (art. 49, I e § 1º, da Lei 8.112/90), não se incorporam ao vencimento ou provento.   ..."
+    },
+    {
+      "id": "LEI_9624_1998",
+      "type": "Lei",
+      "value": "Lei 9624/1998",
+      "extracted": true,
+      "extraction_context": "... funções e cargos comissionados entre a edição da Lei n. 9.624/1998 e a MP n. 2.225- 48/2001;b) Porém, os servidores ..."
+    },
+    {
+      "id": "LEI_2225-",
+      "type": "Lei",
+      "value": "Lei 2225-",
+      "extracted": true,
+      "extraction_context": "...ssionados entre a edição da Lei n. 9.624/1998 e a MP n. 2.225- 48/2001;b) Porém, os servidores públicos que rece..."
+    },
+    {
+      "id": "LEI_2225-48_2001",
+      "type": "Lei",
+      "value": "Lei 2225-48/2001",
+      "extracted": true,
+      "extraction_context": "...ssionados entre a edição da Lei n. 9.624/1998 e a MP n. 2.225-48/2001, seja por decisão administrativa ou decisão judic..."
+    },
+    {
+      "id": "TEMA_962",
+      "type": "Tema",
+      "numero": 962,
+      "tribunal": "STJ",
+      "tese": "",
+      "extracted": true,
+      "extraction_context": "...havendo que ser observada a modulação prevista no Tema n. 962 da Repercussão Geral do STF - Precedentes:RE n. 1...."
+    },
+    {
+      "id": "STJ_453",
+      "type": "Sumula",
+      "numero": 453,
+      "tribunal": "STJ",
+      "texto": "... por compreensão extensiva, incide o enunciado da Súmula 453/STJ quando a parte exequente reitera o pedido formula...",
+      "extracted": true,
+      "extraction_context": "... por compreensão extensiva, incide o enunciado da Súmula 453/STJ quando a parte exequente reitera o pedido formula..."
+    },
+    {
+      "id": "ARTIGO_Art503",
+      "type": "Artigo",
+      "value": "Art. 503",
+      "extracted": true,
+      "extraction_context": "... preclusão lógica a que se refere o legislador no art. 503 do CPC, segundo o qual 'A parte, que aceitar expres..."
+    },
+    {
+      "id": "ARTIGO_Art538",
+      "type": "Artigo",
+      "value": "Art. 538",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: A multa prevista no artigo 538, parágrafo único, do Código de Processo Civil tem..."
+    },
+    {
+      "id": "STJ_232",
+      "type": "Sumula",
+      "numero": 232,
+      "tribunal": "STJ",
+      "texto": "...sa forma, considera-se aplicável, por analogia, a Súmula n. 232 desta Corte Superior ('A Fazenda Pública, quando p...",
+      "extracted": true,
+      "extraction_context": "...sa forma, considera-se aplicável, por analogia, a Súmula n. 232 desta Corte Superior ('A Fazenda Pública, quando p..."
+    },
+    {
+      "id": "STJ_289",
+      "type": "Sumula",
+      "numero": 289,
+      "tribunal": "STJ",
+      "texto": "...devendo ser incluídos os expurgos inflacionários (Súmula 289/STJ).   Órgão Julgador: S2",
+      "extracted": true,
+      "extraction_context": "...devendo ser incluídos os expurgos inflacionários (Súmula 289/STJ).   Órgão Julgador: S2"
+    },
+    {
+      "id": "LEI_10150_2000",
+      "type": "Lei",
+      "value": "Lei 10150/2000",
+      "extracted": true,
+      "extraction_context": "...nanciador e fora das condições estabelecidas pela Lei nº 10.150/2000, o cessionário não tem legitimidade ativa para aj..."
+    },
+    {
+      "id": "ARTIGO_Art267",
+      "type": "Artigo",
+      "value": "Art. 267",
+      "extracted": true,
+      "extraction_context": "...tor desistir da ação, sem o consentimento do réu (art. 267, § 4º, do CPC), sendo que é legítima a oposição à..."
+    },
+    {
+      "id": "LEI_2225-45_2001",
+      "type": "Lei",
+      "value": "Lei 2225-45/2001",
+      "extracted": true,
+      "extraction_context": "...à incorporação dos quintos surgiu com a edição da MP n. 2.225-45/2001. Portanto, em 04 de setembro de 2001, quando publ..."
+    },
+    {
+      "id": "ARTIGO_Art53",
+      "type": "Artigo",
+      "value": "Art. 53",
+      "extracted": true,
+      "extraction_context": "...ral para o recebimento da indenização prevista no art. 53, I, da Lei 8112/1990, por meio de normas infralegais..."
+    },
+    {
+      "id": "LEI_1523-9_1997",
+      "type": "Lei",
+      "value": "Lei 1523-9/1997",
+      "extracted": true,
+      "extraction_context": "...ia do art. 103 da Lei 8.213/1991, instituído pela Medida Provisória 1.523-9/1997, convertida na Lei 9.528/1997, no direito de revi..."
+    },
+    {
+      "id": "LEI_20",
+      "type": "Lei",
+      "value": "Lei 20",
+      "extracted": true,
+      "extraction_context": "...do das referidas contas, nos termos do art. 1º do Decreto-Lei 20.910/32.   Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_1915_1999",
+      "type": "Lei",
+      "value": "Lei 1915/1999",
+      "extracted": true,
+      "extraction_context": "...data de reestruturação da carreira promovida pela Medida Provisória n. 1.915/99, a fim de que o percentual em comento seja absorv..."
+    },
+    {
+      "id": "STJ_149",
+      "type": "Sumula",
+      "numero": 149,
+      "tribunal": "STJ",
+      "texto": "(Tema)  Tese Firmada: Aplica-se a Súmula 149/STJ ('A prova exclusivamente testemunhal não basta à ...",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: Aplica-se a Súmula 149/STJ ('A prova exclusivamente testemunhal não basta à ..."
+    },
+    {
+      "id": "LEI_1596-14_1997",
+      "type": "Lei",
+      "value": "Lei 1596-14/1997",
+      "extracted": true,
+      "extraction_context": "..., da Lei 8.213/1991, promovida em 11.11.1997 pela Medida Provisória 1.596-14/1997, posteriormente convertida na Lei 9.528/1997.  Ór..."
+    },
+    {
+      "id": "ARTIGO_Art23",
+      "type": "Artigo",
+      "value": "Art. 23",
+      "extracted": true,
+      "extraction_context": "...ou do trabalho, deve ser observada a definição do art. 23 da Lei 8.213/1991, segundo a qual 'considera-se com..."
+    },
+    {
+      "id": "ARTIGO_Art155",
+      "type": "Artigo",
+      "value": "Art. 155",
+      "extracted": true,
+      "extraction_context": "... reconhecimento do privilégio previsto no § 2º do art. 155 do Código Penal nos casos de furto qualificado (CP,..."
+    },
+    {
+      "id": "TEMA_563",
+      "type": "Tema",
+      "numero": 563,
+      "tribunal": "STJ",
+      "tese": "",
+      "extracted": true,
+      "extraction_context": "...ão do STJ decidiu que a \"tese firmada pelo STJ no Tema 563/STJ deve ser alterada para os exatos termos do estipu..."
+    },
+    {
+      "id": "ARTIGO_Art245",
+      "type": "Artigo",
+      "value": "Art. 245",
+      "extracted": true,
+      "extraction_context": "... em sua primeira oportunidade de falar nos autos (art. 245 do CPC/73, correspondente ao art. 278 do CPC/2015),..."
+    },
+    {
+      "id": "ARTIGO_Art278",
+      "type": "Artigo",
+      "value": "Art. 278",
+      "extracted": true,
+      "extraction_context": "... nos autos (art. 245 do CPC/73, correspondente ao art. 278 do CPC/2015), ao alegar nulidade pela falta de qual..."
+    },
+    {
+      "id": "LEI_11977_2009",
+      "type": "Lei",
+      "value": "Lei 11977/2009",
+      "extracted": true,
+      "extraction_context": "...tema Financeiro da Habitação antes da vigência da Lei n. 11.977/2009, que acrescentou o art. 15-A à Lei n. 4.380/1964...."
+    },
+    {
+      "id": "ARTIGO_Art177",
+      "type": "Artigo",
+      "value": "Art. 177",
+      "extracted": true,
+      "extraction_context": "...vinte) anos, na vigência do Código Civil de 1916 (art. 177), e de 3 (três) anos, na vigência do Código Civil..."
+    },
+    {
+      "id": "ARTIGO_Art141",
+      "type": "Artigo",
+      "value": "Art. 141",
+      "extracted": true,
+      "extraction_context": "...ras que deviam ser custeadas pela concessionária (art. 141), pelo consumidor (art. 142), ou por ambos (art.1..."
+    },
+    {
+      "id": "ARTIGO_Art142",
+      "type": "Artigo",
+      "value": "Art. 142",
+      "extracted": true,
+      "extraction_context": "... pela concessionária (art. 141), pelo consumidor (art. 142), ou por ambos (art.138 e art. 140).  2. Em contr..."
+    },
+    {
+      "id": "ARTIGO_Art140",
+      "type": "Artigo",
+      "value": "Art. 140",
+      "extracted": true,
+      "extraction_context": "...lo consumidor (art. 142), ou por ambos (art.138 e art. 140).  2. Em contratos regidos pelo Decreto n. 41.019..."
+    },
+    {
+      "id": "ARTIGO_Art620",
+      "type": "Artigo",
+      "value": "Art. 620",
+      "extracted": true,
+      "extraction_context": "...stra-se insuficiente a mera invocação genérica do art. 620 do CPC.   Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_12015_2009",
+      "type": "Lei",
+      "value": "Lei 12015/2009",
+      "extracted": true,
+      "extraction_context": "...o violento ao pudor praticados antes da edição da Lei nº 12.015/2009, ainda que em sua forma simples, configuram modal..."
+    },
+    {
+      "id": "LEI_11907_2009",
+      "type": "Lei",
+      "value": "Lei 11907/2009",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: A Lei n. 11.907/2009, que (...) produziu efeitos financeiros retroativ..."
+    },
+    {
+      "id": "ARTIGO_Art61",
+      "type": "Artigo",
+      "value": "Art. 61",
+      "extracted": true,
+      "extraction_context": "...nhecida a preponderância da agravante prevista no art. 61, I, do Código Penal, sendo admissível a sua compensa..."
+    },
+    {
+      "id": "ARTIGO_Art485",
+      "type": "Artigo",
+      "value": "Art. 485",
+      "extracted": true,
+      "extraction_context": "...sórcio configuram documentos novos, nos termos do art. 485, VII, do CPC, aptos a respaldar o pedido rescisório po..."
+    },
+    {
+      "id": "ARTIGO_Art368",
+      "type": "Artigo",
+      "value": "Art. 368",
+      "extracted": true,
+      "extraction_context": "...cia dos pressupostos do instituto da compensação (art. 368 do Código Civil). Impossibilidade de se compensarem..."
+    },
+    {
+      "id": "LEI_2048-26_0000",
+      "type": "Lei",
+      "value": "Lei 2048-26/0000",
+      "extracted": true,
+      "extraction_context": "...autores de que a supressão da GAE pelo art. 59 da MP 2.048-26/0000 diz respeito apenas aos cargos referidos no art. ..."
+    },
+    {
+      "id": "LEI_11738_2008",
+      "type": "Lei",
+      "value": "Lei 11738/2008",
+      "extracted": true,
+      "extraction_context": "... dispositivos do art. 4º, caput, e §§ 1º e 2º, da Lei n. 11.738/2008 não amparam a tese de que a União é parte legítim..."
+    },
+    {
+      "id": "ARTIGO_Art184",
+      "type": "Artigo",
+      "value": "Art. 184",
+      "extracted": true,
+      "extraction_context": "...ca, formal e materialmente, a conduta prevista no artigo 184, § 2º, do Código Penal, afastando, assim, a aplic..."
+    },
+    {
+      "id": "ARTIGO_Art30",
+      "type": "Artigo",
+      "value": "Art. 30",
+      "extracted": true,
+      "extraction_context": "...ação dos prazos previstos na redação original dos arts. 30 e 32 da Lei n. 10.826/2003.   Órgão Julgador: S3"
+    },
+    {
+      "id": "LEI_10826_2003",
+      "type": "Lei",
+      "value": "Lei 10826/2003",
+      "extracted": true,
+      "extraction_context": "...revistos na redação original dos arts. 30 e 32 da Lei n. 10.826/2003.   Órgão Julgador: S3"
+    },
+    {
+      "id": "ARTIGO_Art115",
+      "type": "Artigo",
+      "value": "Art. 115",
+      "extracted": true,
+      "extraction_context": "...a título de benefício previdenciário previstos no art. 115, II, da Lei n. 8.213/91 que devem submeter-se a ação ..."
+    },
+    {
+      "id": "LEI_9394_1996",
+      "type": "Lei",
+      "value": "Lei 9394/1996",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O art. 53, inciso V, da Lei 9394/96 permite à universidade fixar normas específicas a..."
+    },
+    {
+      "id": "ARTIGO_Art237",
+      "type": "Artigo",
+      "value": "Art. 237",
+      "extracted": true,
+      "extraction_context": "...enda Nacional por carta com aviso de recebimento (art. 237, II, do CPC) quando o respectivo órgão não possui sed..."
+    },
+    {
+      "id": "LEI_10529_2002",
+      "type": "Lei",
+      "value": "Lei 10529/2002",
+      "extracted": true,
+      "extraction_context": "...-se a situação dos paradigmas (§ 4º do art. 6º da Lei 10.529/2002). A possibilidade de promoção, contudo, é restrit..."
+    },
+    {
+      "id": "ARTIGO_100_Artúnico",
+      "type": "Artigo",
+      "value": "Art. único do 100",
+      "extracted": true,
+      "extraction_context": "...ão: o do local do acidente ou o do seu domicílio (parágrafo único do art. 100 do Código de Processo Civil); bem como, ainda, o ..."
+    },
+    {
+      "id": "ARTIGO_Art94",
+      "type": "Artigo",
+      "value": "Art. 94",
+      "extracted": true,
+      "extraction_context": "...o Civil); bem como, ainda, o do domicílio do réu (art. 94 do mesmo Diploma).   Órgão Julgador: S2"
+    },
+    {
+      "id": "ARTIGO_Art96",
+      "type": "Artigo",
+      "value": "Art. 96",
+      "extracted": true,
+      "extraction_context": "...a indenização calculada conforme o dispositivo do art. 96, IV, da Lei n. 8.213/1991.  Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_4870_1965",
+      "type": "Lei",
+      "value": "Lei 4870/1965",
+      "extracted": true,
+      "extraction_context": "...m os critérios previstos nos arts. 9º, 10 e 11 da Lei 4.870/1965, uma vez que teriam sido estabelecidos pelo Insti..."
+    },
+    {
+      "id": "LEI_5517_1968",
+      "type": "Lei",
+      "value": "Lei 5517/1968",
+      "extracted": true,
+      "extraction_context": "...a)  Tese Firmada: À míngua de previsão contida da Lei n. 5.517/68, a venda de medicamentos veterinários - o que não..."
+    },
+    {
+      "id": "ARTIGO_Art940",
+      "type": "Artigo",
+      "value": "Art. 940",
+      "extracted": true,
+      "extraction_context": "...igo 1.531 do Código Civil de 1916, reproduzida no artigo 940 do Código Civil de 2002) pode ser postulada pelo ré..."
+    },
+    {
+      "id": "ARTIGO_Art47",
+      "type": "Artigo",
+      "value": "Art. 47",
+      "extracted": true,
+      "extraction_context": "...n. 2.158-35/2001), sendo flagrante a ilicitude do art. 47, § 2º, da IN/SRF n. 247/2002, nessa extensão.   Ó..."
+    },
+    {
+      "id": "LEI_1858_1999",
+      "type": "Lei",
+      "value": "Lei 1858/1999",
+      "extracted": true,
+      "extraction_context": "... o exige a isenção estabelecida no art. 14, X, da Medida Provisória n. 1.858/99 (atual MP n. 2.158-35/2001), sendo flagrante a il..."
+    },
+    {
+      "id": "LEI_2158-35_2001",
+      "type": "Lei",
+      "value": "Lei 2158-35/2001",
+      "extracted": true,
+      "extraction_context": "...t. 14, X, da Medida Provisória n. 1.858/99 (atual MP n. 2.158-35/2001), sendo flagrante a ilicitude do art. 47, § 2º, d..."
+    },
+    {
+      "id": "ARTIGO_Art39",
+      "type": "Artigo",
+      "value": "Art. 39",
+      "extracted": true,
+      "extraction_context": "...12.873/2013, que alterou a redação do inciso I do artigo 39 da Lei n. 8.213/91, não precisa comprovar o recolhi..."
+    },
+    {
+      "id": "LEI_12873_2013",
+      "type": "Lei",
+      "value": "Lei 12873/2013",
+      "extracted": true,
+      "extraction_context": "...ujo acidente ou moléstia é anterior à vigência da Lei n. 12.873/2013, que alterou a redação do inciso I do artigo 39 d..."
+    },
+    {
+      "id": "ARTIGO_Art283",
+      "type": "Artigo",
+      "value": "Art. 283",
+      "extracted": true,
+      "extraction_context": "...eficaz a instruir a inicial, conforme determina o art. 283 do CPC, implica a carência de pressuposto de consti..."
+    },
+    {
+      "id": "ARTIGO_CPC_Art267_IV",
+      "type": "Artigo",
+      "value": "Art. 267, IV do CPC",
+      "extracted": true,
+      "extraction_context": "... impondo sua extinção sem o julgamento do mérito (art. 267, IV do CPC) e a consequente possibilidade de o autor intenta..."
+    },
+    {
+      "id": "ARTIGO_Art268",
+      "type": "Artigo",
+      "value": "Art. 268",
+      "extracted": true,
+      "extraction_context": "...ssibilidade de o autor intentar novamente a ação (art. 268 do CPC), caso reúna os elementos necessários à tal ..."
+    },
+    {
+      "id": "ARTIGO_Art120",
+      "type": "Artigo",
+      "value": "Art. 120",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: À luz do art. 120, § 5º, da Lei n. 11.784/2008, até que fosse publi..."
+    },
+    {
+      "id": "LEI_11784_2008",
+      "type": "Lei",
+      "value": "Lei 11784/2008",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: À luz do art. 120, § 5º, da Lei n. 11.784/2008, até que fosse publicado o regulamento, as regras..."
+    },
+    {
+      "id": "LEI_11344_2006",
+      "type": "Lei",
+      "value": "Lei 11344/2006",
+      "extracted": true,
+      "extraction_context": "...eral seriam regidas pelas disposições da anterior Lei n. 11.344/2006, que previa duas possibilidades de progressão: po..."
+    },
+    {
+      "id": "LEI_11941",
+      "type": "Lei",
+      "value": "Lei 11941",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O artigo 6º, § 1º, da Lei nº 11.941, de 2009, só dispensou dos honorários advocatício..."
+    },
+    {
+      "id": "ARTIGO_Art84",
+      "type": "Artigo",
+      "value": "Art. 84",
+      "extracted": true,
+      "extraction_context": "...da, depois do decreto de falência, nos termos dos arts. 84 e 149 da Lei n. 11.101/2005.   Órgão Julgador: CE"
+    },
+    {
+      "id": "LEI_7",
+      "type": "Lei",
+      "value": "Lei 7",
+      "extracted": true,
+      "extraction_context": "...de habilitação em falência, seja pela regência do Decreto-Lei n. 7.661/1945, seja pela forma prevista na Lei n. 11.1..."
+    },
+    {
+      "id": "LEI_11101_2005",
+      "type": "Lei",
+      "value": "Lei 11101/2005",
+      "extracted": true,
+      "extraction_context": "...to-Lei n. 7.661/1945, seja pela forma prevista na Lei n. 11.101/2005, observado o limite de valor previsto no artigo 8..."
+    },
+    {
+      "id": "LEI_8742_1993",
+      "type": "Lei",
+      "value": "Lei 8742/1993",
+      "extracted": true,
+      "extraction_context": "... renda per capita prevista no artigo 20, § 3º, da Lei n. 8.742/93.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art307",
+      "type": "Artigo",
+      "value": "Art. 307",
+      "extracted": true,
+      "extraction_context": "...ial, ainda que em situação de alegada autodefesa (art. 307 do CP).   Órgão Julgador: S3"
+    },
+    {
+      "id": "ARTIGO_Art205",
+      "type": "Artigo",
+      "value": "Art. 205",
+      "extracted": true,
+      "extraction_context": "... a data de vencimento da obrigação, nos termos do art. 205, § 3º, Lei 6.404/76, e juros de mora desde a cita..."
+    },
+    {
+      "id": "LEI_6404_1976",
+      "type": "Lei",
+      "value": "Lei 6404/1976",
+      "extracted": true,
+      "extraction_context": "...mento da obrigação, nos termos do art. 205, § 3º, Lei 6.404/76, e juros de mora desde a citação.   Órgão Julgado..."
+    },
+    {
+      "id": "LEI_451_2008",
+      "type": "Lei",
+      "value": "Lei 451/2008",
+      "extracted": true,
+      "extraction_context": "...nterior a 16/12/2008, data da entrada em vigor da Medida Provisória 451/08.  Órgão Julgador: S2"
+    },
+    {
+      "id": "ARTIGO_Art77",
+      "type": "Artigo",
+      "value": "Art. 77",
+      "extracted": true,
+      "extraction_context": "...da: O chamamento ao processo da União com base no art. 77, III, do CPC, nas demandas propostas contra os demais ..."
+    },
+    {
+      "id": "ARTIGO_Art520",
+      "type": "Artigo",
+      "value": "Art. 520",
+      "extracted": true,
+      "extraction_context": "...eventuais prejuízos nos mesmos autos, na forma do art. 520, II, do CPC/2015 (art. 475-O, II, do CPC/73).  Órgão ..."
+    },
+    {
+      "id": "LEI_12514_2011",
+      "type": "Lei",
+      "value": "Lei 12514/2011",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: É inaplicável o art. 8º da Lei nº 12.514/11 ('Os Conselhos não executarão judicialmente dívid..."
+    },
+    {
+      "id": "STJ_392",
+      "type": "Sumula",
+      "numero": 392,
+      "tribunal": "STJ",
+      "texto": "...Lei 6.830/1980 não viola a orientação fixada pela Súmula 392 do Superior Tribunal Justiça, mas tão somente inse...",
+      "extracted": true,
+      "extraction_context": "...Lei 6.830/1980 não viola a orientação fixada pela Súmula 392 do Superior Tribunal Justiça, mas tão somente inse..."
+    },
+    {
+      "id": "ARTIGO_Art36",
+      "type": "Artigo",
+      "value": "Art. 36",
+      "extracted": true,
+      "extraction_context": "...o trabalho, será apurada na forma estabelecida no art. 36, § 7º, do Decreto 3.048/99, segundo o qual a rend..."
+    },
+    {
+      "id": "LEI_8009_1990",
+      "type": "Lei",
+      "value": "Lei 8009/1990",
+      "extracted": true,
+      "extraction_context": "...ação, ante o que dispõe o art. 3º, inciso VII, da Lei n. 8.009/1990   Órgão Julgador: S2"
+    },
+    {
+      "id": "STJ_441",
+      "type": "Sumula",
+      "numero": 441,
+      "tribunal": "STJ",
+      "texto": "...o prazo pela prática de falta grave. Aplicação da Súmula 441/STJ. 3. Também não é interrompido automaticamente o p...",
+      "extracted": true,
+      "extraction_context": "...o prazo pela prática de falta grave. Aplicação da Súmula 441/STJ. 3. Também não é interrompido automaticamente o p..."
+    },
+    {
+      "id": "LEI_12414_2011",
+      "type": "Lei",
+      "value": "Lei 12414/2011",
+      "extracted": true,
+      "extraction_context": "...utorizada pelo art. 5º, IV, e pelo art. 7º, I, da Lei n. 12.414/2011 (lei do cadastro positivo).III - Na avaliação do ..."
+    },
+    {
+      "id": "LEI_3820_1960",
+      "type": "Lei",
+      "value": "Lei 3820/1960",
+      "extracted": true,
+      "extraction_context": "...ção passível de multa. Inteligência do art. 24 da Lei n. 3.820/60, c/c o art. 15 da Lei n. 5.991/73.   Órgão Julgad..."
+    },
+    {
+      "id": "LEI_5991_1973",
+      "type": "Lei",
+      "value": "Lei 5991/1973",
+      "extracted": true,
+      "extraction_context": "...a do art. 24 da Lei n. 3.820/60, c/c o art. 15 da Lei n. 5.991/73.   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art87",
+      "type": "Artigo",
+      "value": "Art. 87",
+      "extracted": true,
+      "extraction_context": "...ada: A renúncia ao valor excedente ao previsto no art. 87 do ADCT, manifestada após a propositura da demanda ..."
+    },
+    {
+      "id": "ARTIGO_Art730",
+      "type": "Artigo",
+      "value": "Art. 730",
+      "extracted": true,
+      "extraction_context": "...revelava inicialmente impositiva a observância do art. 730 CPC, segundo a sistemática do pagamento de precatór..."
+    },
+    {
+      "id": "LEI_10931_2004",
+      "type": "Lei",
+      "value": "Lei 10931/2004",
+      "extracted": true,
+      "extraction_context": "...se Firmada: Nos contratos firmados na vigência da Lei n. 10.931/2004, compete ao devedor, no prazo de 5 (cinco) dias a..."
+    },
+    {
+      "id": "LEI_9492_1997",
+      "type": "Lei",
+      "value": "Lei 9492/1997",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: No regime próprio da Lei n. 9.492/1997, legitimamente protestado o título de crédito ou ..."
+    },
+    {
+      "id": "LEI_13021_2014",
+      "type": "Lei",
+      "value": "Lei 13021/2014",
+      "extracted": true,
+      "extraction_context": "...o que deve ser aplicado até a entrada em vigor da Lei n. 13.021/2014.   Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_1523_1996",
+      "type": "Lei",
+      "value": "Lei 1523/1996",
+      "extracted": true,
+      "extraction_context": "...nstituidor da pensão seja posterior à vigência da Medida Provisória 1.523/96, reeditada e convertida na Lei 9.528/97. Funda-se..."
+    },
+    {
+      "id": "LEI_295",
+      "type": "Lei",
+      "value": "Lei 295",
+      "extracted": true,
+      "extraction_context": "...1991, em virtude da publicação, em 01/02/1991, da Medida Provisória 295, de 31/01/1991, posteriormente convertida na Lei ..."
+    },
+    {
+      "id": "LEI_8178",
+      "type": "Lei",
+      "value": "Lei 8178",
+      "extracted": true,
+      "extraction_context": "... 295, de 31/01/1991, posteriormente convertida na Lei 8.178, de 01/03/1991,* que instituiu nova política naci..."
+    },
+    {
+      "id": "LEI_12995_2014",
+      "type": "Lei",
+      "value": "Lei 12995/2014",
+      "extracted": true,
+      "extraction_context": "...s os fatos geradores ocorridos após a vigência da Lei 12.995/2014. Aqui se trata de observância à estrita legalidad..."
+    },
+    {
+      "id": "LEI_8625_1993",
+      "type": "Lei",
+      "value": "Lei 8625/1993",
+      "extracted": true,
+      "extraction_context": "...individuais indisponíveis, na forma do art. 1º da Lei n. 8.625/1993 (Lei Orgânica Nacional do Ministério Público).  Ó..."
+    },
+    {
+      "id": "ARTIGO_Art835",
+      "type": "Artigo",
+      "value": "Art. 835",
+      "extracted": true,
+      "extraction_context": "...ircunstâncias do caso concreto, assim o entender (art. 835, § 1º, do CPC/2015), justificando-a por decisão d..."
+    },
+    {
+      "id": "ARTIGO_Art805",
+      "type": "Artigo",
+      "value": "Art. 805",
+      "extracted": true,
+      "extraction_context": "...- Na aplicação do princípio da menor onerosidade (art. 805, parágrafo único, do CPC/2015; art. 620, do CPC/1..."
+    },
+    {
+      "id": "LEI_12767_2012",
+      "type": "Lei",
+      "value": "Lei 12767/2012",
+      "extracted": true,
+      "extraction_context": "...único, da Lei 9.492/1997, com a redação dada pela Lei 12.767/2012.  Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_9678",
+      "type": "Lei",
+      "value": "Lei 9678",
+      "extracted": true,
+      "extraction_context": "...-45/2001, não configurando tal marco o advento da Lei n. 9.678, de 3 de julho de 1998, que estabeleceu a Gratifi..."
+    },
+    {
+      "id": "LEI_11419_2006",
+      "type": "Lei",
+      "value": "Lei 11419/2006",
+      "extracted": true,
+      "extraction_context": "...o ocorre frente à exigência contida no art. 15 da Lei nº 11.419/06.  Em ações de execução fiscal, descabe indeferir ..."
+    },
+    {
+      "id": "LEI_8078_1990",
+      "type": "Lei",
+      "value": "Lei 8078/1990",
+      "extracted": true,
+      "extraction_context": "...ecessária a providência de que trata o art. 94 da Lei n.8.078/90.   Órgão Julgador: S1"
+    },
+    {
+      "id": "STF_150",
+      "type": "Sumula",
+      "numero": 150,
+      "tribunal": "STF",
+      "texto": "... do lapso prescricional executório, nos termos da Súmula 150/STF\".   Órgão Julgador: S1",
+      "extracted": true,
+      "extraction_context": "... do lapso prescricional executório, nos termos da Súmula 150/STF\".   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art604",
+      "type": "Artigo",
+      "value": "Art. 604",
+      "extracted": true,
+      "extraction_context": "...ncia da Lei n. 10.444/2002, que incluiu o § 1º ao art. 604, dispositivo que foi sucedido, conforme Lei n. 11.232..."
+    },
+    {
+      "id": "LEI_10444_2002",
+      "type": "Lei",
+      "value": "Lei 10444/2002",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: \"A partir da vigência da Lei n. 10.444/2002, que incluiu o § 1º ao art. 604, dispositivo que ..."
+    },
+    {
+      "id": "LEI_11232_2005",
+      "type": "Lei",
+      "value": "Lei 11232/2005",
+      "extracted": true,
+      "extraction_context": "... art. 604, dispositivo que foi sucedido, conforme Lei n. 11.232/2005, pelo art. 475-B, §§ 1º e 2º, todos do CPC/1973, ..."
+    },
+    {
+      "id": "LEI_831_1995",
+      "type": "Lei",
+      "value": "Lei 831/1995",
+      "extracted": true,
+      "extraction_context": "...scalização e Arrecadação - GEFA, após a edição da Medida Provisória 831/1995 e até a edição da Medida Provisória 1.915-1/1999,..."
+    },
+    {
+      "id": "LEI_1915-1_1999",
+      "type": "Lei",
+      "value": "Lei 1915-1/1999",
+      "extracted": true,
+      "extraction_context": "...o da Medida Provisória 831/1995 e até a edição da Medida Provisória 1.915-1/1999, mais precisamente no período de janeiro de 1995 ..."
+    },
+    {
+      "id": "ARTIGO_Art80",
+      "type": "Artigo",
+      "value": "Art. 80",
+      "extracted": true,
+      "extraction_context": "...se Firmada: Para a concessão de auxílio-reclusão (art. 80 da Lei 8.213/1991) no regime anterior à vigência da..."
+    },
+    {
+      "id": "LEI_871_2019",
+      "type": "Lei",
+      "value": "Lei 871/2019",
+      "extracted": true,
+      "extraction_context": "... Lei 8.213/1991) no regime anterior à vigência da MP 871/2019, o critério de aferição de renda do segurado que ..."
+    },
+    {
+      "id": "LEI_6194_1974",
+      "type": "Lei",
+      "value": "Lei 6194/1974",
+      "extracted": true,
+      "extraction_context": "...z do seguro DPVAT, prevista no § 7º do art. 5º da Lei n. 6194/74, redação dada pela Lei n. 11.482/2007, opera-se d..."
+    },
+    {
+      "id": "LEI_11482_2007",
+      "type": "Lei",
+      "value": "Lei 11482/2007",
+      "extracted": true,
+      "extraction_context": "...º do art. 5º da Lei n. 6194/74, redação dada pela Lei n. 11.482/2007, opera-se desde a data do evento danoso.   Órgão ..."
+    },
+    {
+      "id": "ARTIGO_Art310",
+      "type": "Artigo",
+      "value": "Art. 310",
+      "extracted": true,
+      "extraction_context": "...Firmada: É de perigo abstrato o crime previsto no art. 310 do Código de Trânsito Brasileiro. Assim, não é exig..."
+    },
+    {
+      "id": "LEI_8870_1994",
+      "type": "Lei",
+      "value": "Lei 8870/1994",
+      "extracted": true,
+      "extraction_context": "...orem preenchidos em data anterior à publicação da Lei n. 8.870/1994, que expressamente excluiu o décimo terceiro salá..."
+    },
+    {
+      "id": "LEI_11430_2006",
+      "type": "Lei",
+      "value": "Lei 11430/2006",
+      "extracted": true,
+      "extraction_context": "... que se refere ao período posterior à vigência da Lei 11.430/2006, que incluiu o art. 41-A na Lei 8.213/91. Quanto ..."
+    },
+    {
+      "id": "ARTIGO_Art655",
+      "type": "Artigo",
+      "value": "Art. 655",
+      "extracted": true,
+      "extraction_context": "...rdem de preferência legal disposta no inciso I do art. 655 do CPC/73 (ou no inciso I do art. 835 do NCPC). II ..."
+    },
+    {
+      "id": "ARTIGO_Art217",
+      "type": "Artigo",
+      "value": "Art. 217",
+      "extracted": true,
+      "extraction_context": "...ção do crime de estupro de vulnerável previsto no art. 217-A, caput, do Código Penal, basta que o agente ten..."
+    },
+    {
+      "id": "ARTIGO_Art89",
+      "type": "Artigo",
+      "value": "Art. 89",
+      "extracted": true,
+      "extraction_context": "...no prudente uso da faculdade judicial disposta no art. 89, § 2º, da Lei n. 9.099/1995, obrigações equivalen..."
+    },
+    {
+      "id": "LEI_9099_1995",
+      "type": "Lei",
+      "value": "Lei 9099/1995",
+      "extracted": true,
+      "extraction_context": "... faculdade judicial disposta no art. 89, § 2º, da Lei n. 9.099/1995, obrigações equivalentes, do ponto de vista práti..."
+    },
+    {
+      "id": "ARTIGO_Art927",
+      "type": "Artigo",
+      "value": "Art. 927",
+      "extracted": true,
+      "extraction_context": "... Justiça do Trabalho; III - Modulação de efeitos (art. 927, § 3º, do CPC/2015): para as demandas ajuizadas n..."
+    },
+    {
+      "id": "LEI_10233_2001",
+      "type": "Lei",
+      "value": "Lei 10233/2001",
+      "extracted": true,
+      "extraction_context": "...xtrai da conjugada exegese dos arts. 82, § 3º, da Lei 10.233/2001 e 21 da Lei 9.503/97 (Código de Trânsito Brasilei..."
+    },
+    {
+      "id": "STJ_345",
+      "type": "Sumula",
+      "numero": 345,
+      "tribunal": "STJ",
+      "texto": "...afasta a aplicação do entendimento consolidado na Súmula 345 do STJ, de modo que são devidos honorários advocatícios ...",
+      "extracted": true,
+      "extraction_context": "...afasta a aplicação do entendimento consolidado na Súmula 345 do STJ, de modo que são devidos honorários advocatícios ..."
+    },
+    {
+      "id": "ARTIGO_Art85",
+      "type": "Artigo",
+      "value": "Art. 85",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: O art. 85, § 7º, do CPC/2015 não afasta a aplicação do ente..."
+    },
+    {
+      "id": "LEI_12855_2013",
+      "type": "Lei",
+      "value": "Lei 12855/2013",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: A Lei 12.855/2013, que instituiu a Indenização por Trabalho em Loca..."
+    },
+    {
+      "id": "CONCEITO_ipca",
+      "type": "Conceito",
+      "nome": "ipca",
+      "extracted": true,
+      "extraction_context": "... geral de preços de ampla publicidade (INPC/IBGE, IPCA/IBGE, IGP-M/FGV, IGP-DI/FGV, IPC/FGV ou IPC/FIPE)..."
+    },
+    {
+      "id": "CONCEITO_igp_m",
+      "type": "Conceito",
+      "nome": "igp-m",
+      "extracted": true,
+      "extraction_context": "...reços de ampla publicidade (INPC/IBGE, IPCA/IBGE, IGP-M/FGV, IGP-DI/FGV, IPC/FGV ou IPC/FIPE). Na falta d..."
+    },
+    {
+      "id": "CONCEITO_boa_fé_objetiva",
+      "type": "Conceito",
+      "nome": "boa-fé objetiva",
+      "extracted": true,
+      "extraction_context": "...o segurado, diante do caso concreto, comprova sua boa-fé objetiva, sobretudo com demonstração de que não lhe era po..."
+    },
+    {
+      "id": "ARTIGO_Art45",
+      "type": "Artigo",
+      "value": "Art. 45",
+      "extracted": true,
+      "extraction_context": "...imo de 25% (vinte e cinco por cento), previsto no art. 45 da Lei n. 8.213/91, a todos os aposentados pelo RGP..."
+    },
+    {
+      "id": "ARTIGO_Art105",
+      "type": "Artigo",
+      "value": "Art. 105",
+      "extracted": true,
+      "extraction_context": "...lica e a seccional da OAB. 4ª) Dado o disposto no art. 105, parágrafo único, II, da Constituição da Repúblic..."
+    },
+    {
+      "id": "STJ_56",
+      "type": "Sumula",
+      "numero": 56,
+      "tribunal": "STJ",
+      "texto": "...io da prisão domiciliar, porquanto, nos termos da Súmula Vinculante n° 56, é imprescindível que a adoção de tal medida seja...",
+      "extracted": true,
+      "extraction_context": "...io da prisão domiciliar, porquanto, nos termos da Súmula Vinculante n° 56, é imprescindível que a adoção de tal medida seja..."
+    },
+    {
+      "id": "ARTIGO_CPC_Art493_933",
+      "type": "Artigo",
+      "value": "Art. 493, 933 do CPC",
+      "extracted": true,
+      "extraction_context": "...icional nas instâncias ordinárias, nos termos dos arts. 493 e 933 do CPC/2015, observada a causa de pedir.  Órgão Julgador..."
+    },
+    {
+      "id": "ARTIGO_Art400",
+      "type": "Artigo",
+      "value": "Art. 400",
+      "extracted": true,
+      "extraction_context": "...rminar sua exibição sob pena de multa com base no art. 400, parágrafo único, do CPC/2015.  Órgão Julgador: S..."
+    },
+    {
+      "id": "ARTIGO_Art91",
+      "type": "Artigo",
+      "value": "Art. 91",
+      "extracted": true,
+      "extraction_context": "...eor dos arts. 27 e 511, § 1º, do revogado CPC/73 (arts. 91 e 1.007, § 1º, do vigente CPC/15), o Instituto Nacion..."
+    },
+    {
+      "id": "LEI_13786_2018",
+      "type": "Lei",
+      "value": "Lei 13786/2018",
+      "extracted": true,
+      "extraction_context": "...pra e venda de unidades imobiliárias anteriores à Lei nº 13.786/2018, em que é pleiteada a resolução do contrato por i..."
+    },
+    {
+      "id": "ARTIGO_Art104",
+      "type": "Artigo",
+      "value": "Art. 104",
+      "extracted": true,
+      "extraction_context": "..., salvo se requerida a sua suspensão, na forma do art. 104 da Lei 8.078/90.  Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art48",
+      "type": "Artigo",
+      "value": "Art. 48",
+      "extracted": true,
+      "extraction_context": "...o o recolhimento das contribuições, nos termos do art. 48, § 3o. da Lei 8.213/1991, seja qual for a predomi..."
+    },
+    {
+      "id": "LEI_12651_2012",
+      "type": "Lei",
+      "value": "Lei 12651/2012",
+      "extracted": true,
+      "extraction_context": "...se Firmada: Na vigência do novo Código Florestal (Lei n. 12.651/2012), a extensão não edificável nas Áreas de Preserva..."
+    },
+    {
+      "id": "ARTIGO_1_Artúnico",
+      "type": "Artigo",
+      "value": "Art. único do 1",
+      "extracted": true,
+      "extraction_context": "...nteresse social ao imóvel, é de 10 anos, conforme parágrafo único do art. 1.238 do CC.  Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_11936_2009",
+      "type": "Lei",
+      "value": "Lei 11936/2009",
+      "extracted": true,
+      "extraction_context": "...endo ser adotado como marco inicial a vigência da Lei nº 11.936/09, cujo texto não apresentou justificativa para a p..."
+    },
+    {
+      "id": "ARTIGO_Art782",
+      "type": "Artigo",
+      "value": "Art. 782",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: \"O art. 782, §3º do CPC é aplicável às execuções fiscais, dev..."
+    },
+    {
+      "id": "LEI_8906_1994",
+      "type": "Lei",
+      "value": "Lei 8906/1994",
+      "extracted": true,
+      "extraction_context": "... agente de trânsito, nos termos do art. 28, V, da Lei 8.906/94.\"  Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art292",
+      "type": "Artigo",
+      "value": "Art. 292",
+      "extracted": true,
+      "extraction_context": "...s termos do art. 3º, § 2º, da referida lei, c/c o art. 292, §§ 1º e 2º, do CPC/2015.  Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_10259_2001",
+      "type": "Lei",
+      "value": "Lei 10259/2001",
+      "extracted": true,
+      "extraction_context": "... salários mínimos previstos no art. 3º, caput, da Lei 10.259/2001, aí incluídas, sendo o caso, até doze prestações ..."
+    },
+    {
+      "id": "LEI_9656_1998",
+      "type": "Lei",
+      "value": "Lei 9656/1998",
+      "extracted": true,
+      "extraction_context": "... do prazo de 10 (dez) anos previsto no art. 31 da Lei n. 9.656/1998, devendo haver a soma dos períodos contributivos ..."
+    },
+    {
+      "id": "LEI_8666_1993",
+      "type": "Lei",
+      "value": "Lei 8666/1993",
+      "extracted": true,
+      "extraction_context": "...ão, sob pena de ofensa ao artigo 40, inciso X, da Lei nº 8.666/1993.\"  Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_911_1969",
+      "type": "Lei",
+      "value": "Lei 911/1969",
+      "extracted": true,
+      "extraction_context": "...mada: Na ação de busca e apreensão de que trata o Decreto-Lei nº 911/1969, a análise da contestação somente deve ocorrer ap..."
+    },
+    {
+      "id": "ARTIGO_129_Artúnico",
+      "type": "Artigo",
+      "value": "Art. único do 129",
+      "extracted": true,
+      "extraction_context": "...ria da isenção de ônus sucumbenciais, prevista no parágrafo único do art. 129 da Lei 8.213/91.  Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art144",
+      "type": "Artigo",
+      "value": "Art. 144",
+      "extracted": true,
+      "extraction_context": "... observado o fato gerador, em conformidade com os arts. 144 e 173, I, ambos do CTN.  Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art112",
+      "type": "Artigo",
+      "value": "Art. 112",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: I. O disposto no art. 112 da Lei n. 8.213/1991 é aplicável aos âmbitos judici..."
+    },
+    {
+      "id": "ARTIGO_Art330",
+      "type": "Artigo",
+      "value": "Art. 330",
+      "extracted": true,
+      "extraction_context": "... constitui conduta penalmente típica, prevista no art. 330 do Código Penal Brasileiro.   Órgão Julgador: S3"
+    },
+    {
+      "id": "LEI_780",
+      "type": "Lei",
+      "value": "Lei 780",
+      "extracted": true,
+      "extraction_context": "...os que tenham sido iniciados antes da vigência da Medida Provisória nº 780, de 2017, convertida na Lei n. 13.494/2017 (antes..."
+    },
+    {
+      "id": "LEI_13494_2017",
+      "type": "Lei",
+      "value": "Lei 13494/2017",
+      "extracted": true,
+      "extraction_context": "... Medida Provisória nº 780, de 2017, convertida na Lei n. 13.494/2017 (antes de 22.05.2017) são nulas, devendo a consti..."
+    },
+    {
+      "id": "LEI_871",
+      "type": "Lei",
+      "value": "Lei 871",
+      "extracted": true,
+      "extraction_context": "...os que tenham sido iniciados antes da vigência da Medida Provisória nº 871, de 2019, convertida na Lei nº 13.846/2019 (antes..."
+    },
+    {
+      "id": "LEI_13846_2019",
+      "type": "Lei",
+      "value": "Lei 13846/2019",
+      "extracted": true,
+      "extraction_context": "... Medida Provisória nº 871, de 2019, convertida na Lei nº 13.846/2019 (antes de 18.01.2019) são nulas, devendo a consti..."
+    },
+    {
+      "id": "ARTIGO_40_Artúnico",
+      "type": "Artigo",
+      "value": "Art. único do 40",
+      "extracted": true,
+      "extraction_context": "... marco inicial e o prazo de vigência previstos no parágrafo único do art. 40 da LPI não são aplicáveis às patentes depositadas..."
+    },
+    {
+      "id": "ARTIGO_Art229",
+      "type": "Artigo",
+      "value": "Art. 229",
+      "extracted": true,
+      "extraction_context": "... às patentes depositadas na forma estipulada pelo art. 229, parágrafo único, dessa mesma lei (patentes mailb..."
+    },
+    {
+      "id": "LEI_1997-34",
+      "type": "Lei",
+      "value": "Lei 1997-34",
+      "extracted": true,
+      "extraction_context": "...vidas até 12.01.2000, data anterior à vigência da MP 1.997-34.\"   Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_22_Artúnico",
+      "type": "Artigo",
+      "value": "Art. único do 22",
+      "extracted": true,
+      "extraction_context": "...o compreendida na exceção prevista no inciso I do parágrafo único do art. 22 da Lei Complementar 101/2000.  Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_6950_1981",
+      "type": "Lei",
+      "value": "Lei 6950/1981",
+      "extracted": true,
+      "extraction_context": "...ias, o art. 4°, parágrafo único, da superveniente Lei 6.950/1981, também especificou o teto das contribuições para..."
+    },
+    {
+      "id": "LEI_2318_1986",
+      "type": "Lei",
+      "value": "Lei 2318/1986",
+      "extracted": true,
+      "extraction_context": "...tir da entrada em vigor do art. 1°, 1, do Decreto-Lei 2.318/1986, as contribuições destinadas ao Sesi, ao Senai, a..."
+    },
+    {
+      "id": "ARTIGO_Art50",
+      "type": "Artigo",
+      "value": "Art. 50",
+      "extracted": true,
+      "extraction_context": "...tos do trabalho assalariado\", referida no § 4º do art. 50 da Lei 6880/1980, na sua redação original, inclui a..."
+    },
+    {
+      "id": "ARTIGO_Art54",
+      "type": "Artigo",
+      "value": "Art. 54",
+      "extracted": true,
+      "extraction_context": "...so legal, não se aplicando o prazo decadencial do artigo 54 da Lei 9784/1999, ante a contrariedade à lei e afro..."
+    },
+    {
+      "id": "ARTIGO_Art37",
+      "type": "Artigo",
+      "value": "Art. 37",
+      "extracted": true,
+      "extraction_context": "...legalidade, moralidade e eficiência, previstos no art. 37, caput, bem como o princípio da probidade administra..."
+    },
+    {
+      "id": "ARTIGO_Art198",
+      "type": "Artigo",
+      "value": "Art. 198",
+      "extracted": true,
+      "extraction_context": "... dependência econômica, em aplicação analógica do art. 198 do Estatuto dos Servidores Públicos (Lei 8.112/1990..."
+    },
+    {
+      "id": "LEI_13954_2019",
+      "type": "Lei",
+      "value": "Lei 13954/2019",
+      "extracted": true,
+      "extraction_context": "...ilitares falecidos antes ou depois da vigência da Lei 13.954/2019; 2. A definição legal de \"rendimentos do trabalho..."
+    },
+    {
+      "id": "LEI_6880_1980",
+      "type": "Lei",
+      "value": "Lei 6880/1980",
+      "extracted": true,
+      "extraction_context": "...alho assalariado\", referida no § 4º do art. 50 da Lei 6880/1980, na sua redação original, inclui as \"pensões, civ..."
+    },
+    {
+      "id": "LEI_4506_1964",
+      "type": "Lei",
+      "value": "Lei 4506/1964",
+      "extracted": true,
+      "extraction_context": "...ressamente estabelecido no art. 16, inciso XI, da Lei 4506/1964; 3. A Administração Militar tem o poder-dever de ..."
+    },
+    {
+      "id": "LEI_13964_2019",
+      "type": "Lei",
+      "value": "Lei 13964/2019",
+      "extracted": true,
+      "extraction_context": "...vidade do patamar estabelecido no art. 112, V, da Lei n. 13.964/2019, àqueles apenados que, embora tenham cometido cri..."
+    },
+    {
+      "id": "LEI_10820_2003",
+      "type": "Lei",
+      "value": "Lei 10820/2003",
+      "extracted": true,
+      "extraction_context": "...logia, a limitação prevista no § 1º do art. 1º da Lei n. 10.820/2003, que disciplina os empréstimos consignados em fol..."
+    },
+    {
+      "id": "LEI_9527_1997",
+      "type": "Lei",
+      "value": "Lei 9527/1997",
+      "extracted": true,
+      "extraction_context": "...ei n. 8.112/1990, bem como a dicção do art. 7º da Lei n. 9.527/1997, o servidor federal inativo, sob pena de enriquec..."
+    },
+    {
+      "id": "ARTIGO_Art110",
+      "type": "Artigo",
+      "value": "Art. 110",
+      "extracted": true,
+      "extraction_context": "...rmanentemente para qualquer trabalho, na forma do art. 110, § 1º, da Lei 6.880/80.\"  Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_14112_2020",
+      "type": "Lei",
+      "value": "Lei 14112/2020",
+      "extracted": true,
+      "extraction_context": "...cução fiscal em curso, mesmo antes da vigência da Lei n. 14.112/2020, e desde que não haja pedido de constrição no juí..."
+    },
+    {
+      "id": "LEI_11033_2004",
+      "type": "Lei",
+      "value": "Lei 11033/2004",
+      "extracted": true,
+      "extraction_context": "...33/2003).2. O benefício instituído no art. 17, da Lei 11.033/2004, não se restringe somente às empresas que se enco..."
+    },
+    {
+      "id": "LEI_1598_1977",
+      "type": "Lei",
+      "value": "Lei 1598/1977",
+      "extracted": true,
+      "extraction_context": "...S sobre o custo de aquisição (art. 13, do Decreto-Lei n. 1.598/77) de bens sujeitos à tributação monofásica, já que..."
+    },
+    {
+      "id": "LEI_9514_1997",
+      "type": "Lei",
+      "value": "Lei 9514/1997",
+      "extracted": true,
+      "extraction_context": "...uído em mora, deverá observar a forma prevista na Lei nº 9.514/97, por se tratar de legislação específica, afastand..."
+    },
+    {
+      "id": "ARTIGO_Art117",
+      "type": "Artigo",
+      "value": "Art. 117",
+      "extracted": true,
+      "extraction_context": "... acórdão condenatório de que trata o inciso IV do art. 117 do Código Penal interrompe a prescrição, inclusive ..."
+    },
+    {
+      "id": "LEI_1962-33_2000",
+      "type": "Lei",
+      "value": "Lei 1962-33/2000",
+      "extracted": true,
+      "extraction_context": "...ursos Humanos - SIAPE, conforme art. 7º, § 2º, da MP 1.962-33/2000, reproduzida na vigente MP 2.169-43/2001, apenas ..."
+    },
+    {
+      "id": "LEI_2169-43_2001",
+      "type": "Lei",
+      "value": "Lei 2169-43/2001",
+      "extracted": true,
+      "extraction_context": "...§ 2º, da MP 1.962-33/2000, reproduzida na vigente MP 2.169-43/2001, apenas em relação a acordos firmados posteriorme..."
+    },
+    {
+      "id": "STJ_111",
+      "type": "Sumula",
+      "numero": 111,
+      "tribunal": "STJ",
+      "texto": "...irmada: Continua eficaz e aplicável o conteúdo da Súmula 111/STJ (com a redação modificada em 2006), mesmo após a ...",
+      "extracted": true,
+      "extraction_context": "...irmada: Continua eficaz e aplicável o conteúdo da Súmula 111/STJ (com a redação modificada em 2006), mesmo após a ..."
+    },
+    {
+      "id": "ARTIGO_Art191",
+      "type": "Artigo",
+      "value": "Art. 191",
+      "extracted": true,
+      "extraction_context": "...Firmada: Não ocorre renúncia tácita à prescrição (art. 191 do Código Civil), a ensejar o pagamento retroativo ..."
+    },
+    {
+      "id": "ARTIGO_Art387",
+      "type": "Artigo",
+      "value": "Art. 387",
+      "extracted": true,
+      "extraction_context": "...incremento na basilar, nos termos do que dispõe o art. 387, II e III, do CPP.3. Não cabe a esta Corte Superior a..."
+    },
+    {
+      "id": "LEI_13654_2018",
+      "type": "Lei",
+      "value": "Lei 13654/2018",
+      "extracted": true,
+      "extraction_context": "...razão da novatio legis in mellius engendrada pela Lei n. 13.654/2018, o emprego de arma branca, embora não configure m..."
+    },
+    {
+      "id": "ARTIGO_Art571",
+      "type": "Artigo",
+      "value": "Art. 571",
+      "extracted": true,
+      "extraction_context": "...o da nulidade se sujeita à preclusão, na forma do art. 571, I e II, do CPP, e à demonstração do prejuízo para o..."
+    },
+    {
+      "id": "ARTIGO_Art215",
+      "type": "Artigo",
+      "value": "Art. 215",
+      "extracted": true,
+      "extraction_context": "...assificação para o delito de importunação sexual (art. 215-A do CP).  Órgão Julgador: S3"
+    },
+    {
+      "id": "ARTIGO_Art97",
+      "type": "Artigo",
+      "value": "Art. 97",
+      "extracted": true,
+      "extraction_context": "...a ao princípio da legalidade estrita, previsto no art. 97, IV, do CTN.  Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_9961_2000",
+      "type": "Lei",
+      "value": "Lei 9961/2000",
+      "extracted": true,
+      "extraction_context": "...alidade devida por plano de saúde (art. 20, I, da Lei 9.961/2000) -, em afronta ao princípio da legalidade estrita..."
+    },
+    {
+      "id": "TEMA_350",
+      "type": "Tema",
+      "numero": 350,
+      "tribunal": "STF",
+      "tese": "",
+      "extracted": true,
+      "extraction_context": "...verá apresentar novo requerimento administrativo (Tema 350/STF). A ação judicial proposta nessas condições deve ..."
+    },
+    {
+      "id": "TEMA_995",
+      "type": "Tema",
+      "numero": 995,
+      "tribunal": "STJ",
+      "tese": "",
+      "extracted": true,
+      "extraction_context": "...nchimento posterior dos requisitos, nos termos do Tema 995/STJ. 2.2) Quando o INSS, ao receber um pedido adminis..."
+    },
+    {
+      "id": "LEI_13324_2016",
+      "type": "Lei",
+      "value": "Lei 13324/2016",
+      "extracted": true,
+      "extraction_context": "...da função até 1º/1/2017, nos termos do art. 39 da Lei 13.324/2016.  Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art76",
+      "type": "Artigo",
+      "value": "Art. 76",
+      "extracted": true,
+      "extraction_context": "...ional, filiados ou não, com domicílio necessário (art. 76, parágrafo único, do Código Civil) na base territ..."
+    },
+    {
+      "id": "TEMA_928",
+      "type": "Tema",
+      "numero": 928,
+      "tribunal": "STJ",
+      "tese": "",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: Nas ações relacionadas ao Tema Repetitivo 928/STJ, a citação válida do Estado do Paraná e da Faculd..."
+    },
+    {
+      "id": "ARTIGO_Art405",
+      "type": "Artigo",
+      "value": "Art. 405",
+      "extracted": true,
+      "extraction_context": "...egurança, quando o devedor é constituído em mora (art. 405 do Código Civil e art. 240 do CPC).  Órgão Julgador..."
+    },
+    {
+      "id": "ARTIGO_Art240",
+      "type": "Artigo",
+      "value": "Art. 240",
+      "extracted": true,
+      "extraction_context": "...é constituído em mora (art. 405 do Código Civil e art. 240 do CPC).  Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art130",
+      "type": "Artigo",
+      "value": "Art. 130",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: Diante do disposto no art. 130, parágrafo único, do Código Tributário Nacional, ..."
+    },
+    {
+      "id": "LEI_13463_2017",
+      "type": "Lei",
+      "value": "Lei 13463/2017",
+      "extracted": true,
+      "extraction_context": "...ão de pequeno valor, fundada nos arts. 2º e 3º da Lei 13.463/2017, sujeita-se à prescrição quinquenal prevista no a..."
+    },
+    {
+      "id": "LEI_9636_1998",
+      "type": "Lei",
+      "value": "Lei 9636/1998",
+      "extracted": true,
+      "extraction_context": "... gerador, consoante exegese do § 1º do art. 47 da Lei n. 9.636/1998, com a redação dada pela Lei n. 9.821/1999, não s..."
+    },
+    {
+      "id": "LEI_9821_1999",
+      "type": "Lei",
+      "value": "Lei 9821/1999",
+      "extracted": true,
+      "extraction_context": "... 47 da Lei n. 9.636/1998, com a redação dada pela Lei n. 9.821/1999, não sendo, portanto, a data em que foi consolida..."
+    },
+    {
+      "id": "LEI_9969_1998",
+      "type": "Lei",
+      "value": "Lei 9969/1998",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: A Lei 9.969/1998 não prevê a obrigatoriedade de inscrição de técni..."
+    },
+    {
+      "id": "ARTIGO_Art833",
+      "type": "Artigo",
+      "value": "Art. 833",
+      "extracted": true,
+      "extraction_context": "...r, não se enquadra na exceção prevista no § 2º do art. 833 do CPC/2015 (penhora para pagamento de prestação al..."
+    },
+    {
+      "id": "LEI_7210",
+      "type": "Lei",
+      "value": "Lei 7210",
+      "extracted": true,
+      "extraction_context": "...tos objetivo e subjetivo descritos no art. 112 da Lei 7.210, de 11/07/1984 (Lei de Execução Penal), e não a d..."
+    },
+    {
+      "id": "STJ_24",
+      "type": "Sumula",
+      "numero": 24,
+      "tribunal": "STJ",
+      "texto": "...a, do crédito tributário, consoante o disposto na Súmula Vinculante n. 24 do Supremo Tribunal Federal.  Órgão Julgador: S3",
+      "extracted": true,
+      "extraction_context": "...a, do crédito tributário, consoante o disposto na Súmula Vinculante n. 24 do Supremo Tribunal Federal.  Órgão Julgador: S3"
+    },
+    {
+      "id": "LEI_11340_2006",
+      "type": "Lei",
+      "value": "Lei 11340/2006",
+      "extracted": true,
+      "extraction_context": "...Tese Firmada: \"A audiência prevista no art. 16 da Lei 11.340/2006 tem por objetivo confirmar a retratação, não a re..."
+    },
+    {
+      "id": "ARTIGO_Art241",
+      "type": "Artigo",
+      "value": "Art. 241",
+      "extracted": true,
+      "extraction_context": "...verbos e condutas distintas, sendo que o crime do art. 241-B não configura fase normal, tampouco meio de exe..."
+    },
+    {
+      "id": "ARTIGO_Art506",
+      "type": "Artigo",
+      "value": "Art. 506",
+      "extracted": true,
+      "extraction_context": "...e na via laboral, não sendo por ele prejudicadas (art. 506, CPC).  Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_9491_1997",
+      "type": "Lei",
+      "value": "Lei 9491/1997",
+      "extracted": true,
+      "extraction_context": "...zados diretamente ao empregado, após o advento da Lei 9.491/1997, em decorrência de acordo homologado na Justiça d..."
+    },
+    {
+      "id": "LEI_12973_2014",
+      "type": "Lei",
+      "value": "Lei 12973/2014",
+      "extracted": true,
+      "extraction_context": "...10, da Lei Complementar n. 160/2017 e art. 30, da Lei n. 12.973/2014), não se lhes aplicando o entendimento firmado no..."
+    },
+    {
+      "id": "LEI_12546_2011",
+      "type": "Lei",
+      "value": "Lei 12546/2011",
+      "extracted": true,
+      "extraction_context": "...ceita Bruta (CPRB) prevista no § 13 do art. 9º da Lei 12.546/2011 destina-se apenas ao beneficiário do regime, e nã..."
+    },
+    {
+      "id": "LEI_13670_2018",
+      "type": "Lei",
+      "value": "Lei 13670/2018",
+      "extracted": true,
+      "extraction_context": "...previdenciária pelo sistema da CPRB, trazida pela Lei 13.670/2018, não feriu direitos do contribuinte, tendo em vis..."
+    },
+    {
+      "id": "ARTIGO_Art55",
+      "type": "Artigo",
+      "value": "Art. 55",
+      "extracted": true,
+      "extraction_context": "... de prova material válida, conforme o disposto no art. 55, § 3º, da Lei 8.213/91, quando houver nos autos e..."
+    },
+    {
+      "id": "ARTIGO_Art70",
+      "type": "Artigo",
+      "value": "Art. 70",
+      "extracted": true,
+      "extraction_context": "...sma família, configura concurso formal de crimes (art. 70 do CP).  Órgão Julgador: S3"
+    },
+    {
+      "id": "LEI_14195_2021",
+      "type": "Lei",
+      "value": "Lei 14195/2021",
+      "extracted": true,
+      "extraction_context": "...sto no § 2º do artigo referido (acrescentado pela Lei 14.195/2021), o qual constitui norma de natureza processual, ..."
+    },
+    {
+      "id": "ARTIGO_Art65",
+      "type": "Artigo",
+      "value": "Art. 65",
+      "extracted": true,
+      "extraction_context": "...nte genérica da confissão espontânea, prevista no art. 65, III, d, do Código Penal, é apta a abrandar a pena ind..."
+    },
+    {
+      "id": "LEI_7210_1984",
+      "type": "Lei",
+      "value": "Lei 7210/1984",
+      "extracted": true,
+      "extraction_context": "...n. 13.964/2019 no art. 112, inc. VI, alínea a, da Lei n. 7.210/84 (Lei de Execução Penal), bem como a posterior con..."
+    },
+    {
+      "id": "LEI_9",
+      "type": "Lei",
+      "value": "Lei 9",
+      "extracted": true,
+      "extraction_context": "...os jurídicos a alteração legislativa do art. 11do Decreto-lei 9.760/46 promovida pelo art. 5º da Lei 11.481/2007...."
+    },
+    {
+      "id": "LEI_11481_2007",
+      "type": "Lei",
+      "value": "Lei 11481/2007",
+      "extracted": true,
+      "extraction_context": "...do Decreto-lei 9.760/46 promovida pelo art. 5º da Lei 11.481/2007.  Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art71",
+      "type": "Artigo",
+      "value": "Art. 71",
+      "extracted": true,
+      "extraction_context": "...licação da fração máxima de majoração prevista no art. 71, caput, do Código Penal, ainda que não haja a delimi..."
+    },
+    {
+      "id": "ARTIGO_Art226",
+      "type": "Artigo",
+      "value": "Art. 226",
+      "extracted": true,
+      "extraction_context": "...do art. 61, II, \"f\", e da majorante específica do art. 226, II, ambos do Código Penal, salvo quando presente ape..."
+    },
+    {
+      "id": "ARTIGO_Art64",
+      "type": "Artigo",
+      "value": "Art. 64",
+      "extracted": true,
+      "extraction_context": "...nitividade, sendo inaplicável o prazo previsto no art. 64, I, do CP, incumbindo ao julgador avaliar o lapso te..."
+    },
+    {
+      "id": "ARTIGO_Art579",
+      "type": "Artigo",
+      "value": "Art. 579",
+      "extracted": true,
+      "extraction_context": "...e admissibilidade do recurso cabível, na forma do art. 579, caput e parágrafo único, do Código de Processo Pena..."
+    },
+    {
+      "id": "LEI_12016_2009",
+      "type": "Lei",
+      "value": "Lei 12016/2009",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: Nos termos do art. 25 da Lei n. 12.016/2009, não se revela cabível a fixação de honorários de..."
+    },
+    {
+      "id": "TEMA_69",
+      "type": "Tema",
+      "numero": 69,
+      "tribunal": "STF",
+      "tese": "",
+      "extracted": true,
+      "extraction_context": "...13.05.2021 à modulação de efeitos estabelecida no Tema 69/STF - Repercussão Geral.  Órgão Julgador: S1"
+    },
+    {
+      "id": "ARTIGO_Art535",
+      "type": "Artigo",
+      "value": "Art. 535",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: Nos termos do art. 535, § 8º, do CPC, é admissível o ajuizamento de Ação..."
+    },
+    {
+      "id": "ARTIGO_Art21",
+      "type": "Artigo",
+      "value": "Art. 21",
+      "extracted": true,
+      "extraction_context": "...da, a ofendida deve ser comunicada, nos termos do art. 21 da Lei n. 11.340/2006.  Órgão Julgador: S3"
+    },
+    {
+      "id": "LEI_14230_2021",
+      "type": "Lei",
+      "value": "Lei 14230/2021",
+      "extracted": true,
+      "extraction_context": "(Tema)  Tese Firmada: As disposições da Lei 14.230/2021 são aplicáveis aos processos em curso, para regul..."
+    },
+    {
+      "id": "ARTIGO_Art42",
+      "type": "Artigo",
+      "value": "Art. 42",
+      "extracted": true,
+      "extraction_context": "...antidade da substância entorpecente, previstas no art. 42 da Lei n. 11.343/2006, configura-se desproporcional..."
+    },
+    {
+      "id": "ARTIGO_Art988",
+      "type": "Artigo",
+      "value": "Art. 988",
+      "extracted": true,
+      "extraction_context": "...za o manejo da reclamação prevista no inciso I do artigo 988 do CPC;2. Na hipótese em que o juiz da causa negar ..."
+    },
+    {
+      "id": "LEI_11771_2008",
+      "type": "Lei",
+      "value": "Lei 11771/2008",
+      "extracted": true,
+      "extraction_context": "...amente inscrito no CADASTUR, conforme previsto na Lei 11.771/2008, para que possa se beneficiar da alíquota zero re..."
+    },
+    {
+      "id": "LEI_14148_2021",
+      "type": "Lei",
+      "value": "Lei 14148/2021",
+      "extracted": true,
+      "extraction_context": "...INS, à CSLL e ao IRPJ, instituído pelo art. 4º da Lei 14.148/2021 no Programa Emergencial de Retomada do Setor de E..."
+    },
+    {
+      "id": "LEI_14148",
+      "type": "Lei",
+      "value": "Lei 14148",
+      "extracted": true,
+      "extraction_context": "...INS, à CSLL e ao IRPJ, instituída pelo art. 4º da Lei 14.148 /2021 no Programa Emergencial de Retomada do Seto..."
+    },
+    {
+      "id": "LEI_1132_2022",
+      "type": "Lei",
+      "value": "Lei 1132/2022",
+      "extracted": true,
+      "extraction_context": "...utorizados antes de 4/8/2022, data da vigência da Medida Provisória n. 1.132/2022, convertida na Lei n. 14.509/2022, não se aplica ..."
+    },
+    {
+      "id": "LEI_14509_2022",
+      "type": "Lei",
+      "value": "Lei 14509/2022",
+      "extracted": true,
+      "extraction_context": "...da Medida Provisória n. 1.132/2022, convertida na Lei n. 14.509/2022, não se aplica limite específico para as consigna..."
+    },
+    {
+      "id": "LEI_2215-10_2001",
+      "type": "Lei",
+      "value": "Lei 2215-10/2001",
+      "extracted": true,
+      "extraction_context": "... após os descontos, na forma do art. 14, § 3º, da Medida Provisória n. 2.215-10/2001.  Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_13465_2017",
+      "type": "Lei",
+      "value": "Lei 13465/2017",
+      "extracted": true,
+      "extraction_context": "...a)  Tese Firmada: a) antes da entrada em vigor da Lei n. 13.465/2017, nas situações em que já consolidada a propriedad..."
+    },
+    {
+      "id": "LEI_12772_2012",
+      "type": "Lei",
+      "value": "Lei 12772/2012",
+      "extracted": true,
+      "extraction_context": "...Básico, Técnico e Tecnológico aposentado antes da Lei 12.772/2012 e que tenha direito à paridade remuneratória cons..."
+    },
+    {
+      "id": "LEI_9873_1999",
+      "type": "Lei",
+      "value": "Lei 9873/1999",
+      "extracted": true,
+      "extraction_context": "...rição intercorrente prevista no art. 1º, § 1º, da Lei 9.873/1999 quando paralisado o processo administrativo de ap..."
+    },
+    {
+      "id": "LEI_12158_2009",
+      "type": "Lei",
+      "value": "Lei 12158/2009",
+      "extracted": true,
+      "extraction_context": "...e Firmada: É compatível a aplicação cumulativa da Lei n. 12.158/2009 e do art. 34 da Medida Provisória n. 2.215-10/200..."
+    },
+    {
+      "id": "ARTIGO_Art373",
+      "type": "Artigo",
+      "value": "Art. 373",
+      "extracted": true,
+      "extraction_context": "...ser fato constitutivo de seu direito, na forma do art. 373, I, do CPC, sendo incabível a inversão (art. 6º, VII..."
+    },
+    {
+      "id": "LEI_4502_1964",
+      "type": "Lei",
+      "value": "Lei 4502/1964",
+      "extracted": true,
+      "extraction_context": "...o no II, art. 47, a, do CTN; e no art. 14, II, da Lei 4.502/1964.  Órgão Julgador: S1"
+    },
+    {
+      "id": "LEI_8745_1993",
+      "type": "Lei",
+      "value": "Lei 8745/1993",
+      "extracted": true,
+      "extraction_context": "...do contrato anterior, contida no art. 9º, III, da Lei 8.745/1993, não se aplica aos contratos realizados por insti..."
+    },
+    {
+      "id": "ARTIGO_Art122",
+      "type": "Artigo",
+      "value": "Art. 122",
+      "extracted": true,
+      "extraction_context": "...alegações finais, prevista na redação original do art. 122, parágrafo único, Decreto 6.514/2008, somente aca..."
+    },
+    {
+      "id": "LEI_14994_2024",
+      "type": "Lei",
+      "value": "Lei 14994/2024",
+      "extracted": true,
+      "extraction_context": "... hipótese de incidência de seu §2º, incluído pela Lei n. 14.994/2024, por força dos princípios da especialidade e da p..."
+    },
+    {
+      "id": "ARTIGO_Art428",
+      "type": "Artigo",
+      "value": "Art. 428",
+      "extracted": true,
+      "extraction_context": "...muneração decorrente do contrato de aprendizagem (art. 428 da CLT) integra a base de cálculo da contribuição p..."
+    },
+    {
+      "id": "ARTIGO_Art218",
+      "type": "Artigo",
+      "value": "Art. 218",
+      "extracted": true,
+      "extraction_context": "...a transferência, com base em normativos da ANEEL (art. 218 da Resolução Normativa ANEEL n. 414/2010, alterado ..."
+    },
+    {
+      "id": "LEI_14905_2024",
+      "type": "Lei",
+      "value": "Lei 14905/2024",
+      "extracted": true,
+      "extraction_context": "...ódigo Civil de 2002, antes da entrada em vigor da Lei n° 14.905/2024, deve ser interpretado no sentido de que é a SELI..."
     }
   ],
   "edges": [
@@ -3456,26 +6917,1820 @@
         "concept": "selic",
         "discovered_by": "concept_mapping"
       }
+    },
+    {
+      "source": "ARTIGO_Art202",
+      "target": "ARTIGO_Art40",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art202",
+      "target": "ARTIGO_Art1",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art40",
+      "target": "ARTIGO_Art1",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art206",
+      "target": "ARTIGO_Art178",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art109",
+      "target": "ARTIGO_Art15",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STJ_206",
+      "target": "ARTIGO_Art2",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "STJ_206",
+      "target": "ARTIGO_Art93",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "STJ_206",
+      "target": "ARTIGO_Art79",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "STJ_206",
+      "target": "ARTIGO_Art52",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art2",
+      "target": "ARTIGO_Art93",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art2",
+      "target": "ARTIGO_Art79",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art2",
+      "target": "ARTIGO_Art52",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art93",
+      "target": "ARTIGO_Art79",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art93",
+      "target": "ARTIGO_Art52",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art79",
+      "target": "ARTIGO_Art52",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art109",
+      "target": "ARTIGO_Art75",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art227",
+      "target": "ARTIGO_Art33",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art227",
+      "target": "ARTIGO_Art16",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art33",
+      "target": "ARTIGO_Art16",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art187",
+      "target": "ARTIGO_Art188",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art187",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art188",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art40",
+      "target": "ARTIGO_Art2",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art40",
+      "target": "ARTIGO_Art3",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art40",
+      "target": "ARTIGO_Art7",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art2",
+      "target": "ARTIGO_Art3",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art2",
+      "target": "ARTIGO_Art7",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art3",
+      "target": "ARTIGO_Art7",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "CONCEITO_juros_moratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STF_596",
+      "target": "CONCEITO_juros_remuneratórios",
+      "type": "GOVERNS",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art591",
+      "target": "ARTIGO_Art406",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art591",
+      "target": "CONCEITO_juros_remuneratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art406",
+      "target": "CONCEITO_juros_remuneratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art51",
+      "target": "CONCEITO_juros_remuneratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art6",
+      "target": "CONCEITO_juros_remuneratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art2",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art2",
+      "target": "CONCEITO_juros_remuneratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_correção_monetária",
+      "target": "CONCEITO_juros_remuneratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art7",
+      "target": "ARTIGO_Art3",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art7",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art3",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_juros_remuneratórios",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_correção_monetária",
+      "target": "CONCEITO_juros_moratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_correção_monetária",
+      "target": "CONCEITO_selic",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_juros_moratórios",
+      "target": "CONCEITO_selic",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art2",
+      "target": "ARTIGO_Art59",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art5",
+      "target": "ARTIGO_Art126",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STJ_188",
+      "target": "ARTIGO_Art167",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "STJ_188",
+      "target": "CONCEITO_juros_moratórios",
+      "type": "GOVERNS",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art167",
+      "target": "CONCEITO_juros_moratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art6",
+      "target": "ARTIGO_Art43",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1062",
+      "target": "ARTIGO_Art406",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1062",
+      "target": "CONCEITO_juros_moratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1062",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1062",
+      "target": "CONCEITO_selic",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art406",
+      "target": "CONCEITO_juros_moratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art406",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_juros_moratórios",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art29",
+      "target": "ARTIGO_CPC_Art20_21",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STJ_188",
+      "target": "ARTIGO_Art161",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "STJ_188",
+      "target": "ARTIGO_Art1",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "STJ_188",
+      "target": "CONCEITO_selic",
+      "type": "GOVERNS",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art161",
+      "target": "ARTIGO_Art1",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art161",
+      "target": "CONCEITO_selic",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "CONCEITO_selic",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art3",
+      "target": "ARTIGO_Art150",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art12",
+      "target": "ARTIGO_Art3",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_selic",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STJ_210",
+      "target": "CONCEITO_correção_monetária",
+      "type": "GOVERNS",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_juros_compensatórios",
+      "target": "CONCEITO_juros_moratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art22",
+      "target": "ARTIGO_Art15",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art22",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art15",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art38",
+      "target": "ARTIGO_Art151",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STJ_375",
+      "target": "ARTIGO_Art543",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "STJ_375",
+      "target": "ARTIGO_Art615",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "STJ_375",
+      "target": "ARTIGO_Art659",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "STJ_375",
+      "target": "CONCEITO_boa_fé",
+      "type": "GOVERNS",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art543",
+      "target": "ARTIGO_Art615",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art543",
+      "target": "ARTIGO_Art659",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art543",
+      "target": "CONCEITO_boa_fé",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art615",
+      "target": "ARTIGO_Art659",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art615",
+      "target": "CONCEITO_boa_fé",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art659",
+      "target": "CONCEITO_boa_fé",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art15",
+      "target": "CONCEITO_juros_compensatórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art60",
+      "target": "ARTIGO_Art6",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art13",
+      "target": "ARTIGO_Art79",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art13",
+      "target": "ARTIGO_CTN_Art135_III",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art13",
+      "target": "ARTIGO_Art146",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art13",
+      "target": "ARTIGO_Art543",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art79",
+      "target": "ARTIGO_CTN_Art135_III",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art79",
+      "target": "ARTIGO_Art146",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art79",
+      "target": "ARTIGO_Art543",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_CTN_Art135_III",
+      "target": "ARTIGO_Art146",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_CTN_Art135_III",
+      "target": "ARTIGO_Art543",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art146",
+      "target": "ARTIGO_Art543",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art3",
+      "target": "ARTIGO_Art66",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art3",
+      "target": "CONCEITO_juros_moratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art66",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art66",
+      "target": "CONCEITO_juros_moratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art9",
+      "target": "ARTIGO_Art15",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art41",
+      "target": "ARTIGO_Art1",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art41",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "ARTIGO_Art6",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "ARTIGO_Art56",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art6",
+      "target": "ARTIGO_Art56",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STJ_33",
+      "target": "ARTIGO_Art15",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art11",
+      "target": "ARTIGO_Art4",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art2",
+      "target": "ARTIGO_Art25",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art741",
+      "target": "ARTIGO_Art5",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art741",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art5",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art354",
+      "target": "ARTIGO_Art993",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art4",
+      "target": "ARTIGO_Art19",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art225",
+      "target": "ARTIGO_Art14",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art225",
+      "target": "CONCEITO_responsabilidade_objetiva",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art14",
+      "target": "CONCEITO_responsabilidade_objetiva",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art135",
+      "target": "ARTIGO_Art543",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art135",
+      "target": "ARTIGO_Art593",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art135",
+      "target": "ARTIGO_Art792",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art135",
+      "target": "ARTIGO_Art185",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art543",
+      "target": "ARTIGO_Art593",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art543",
+      "target": "ARTIGO_Art792",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art543",
+      "target": "ARTIGO_Art185",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art593",
+      "target": "ARTIGO_Art792",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art593",
+      "target": "ARTIGO_Art185",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art792",
+      "target": "ARTIGO_Art185",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STJ_520",
+      "target": "ARTIGO_Art125",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "STJ_520",
+      "target": "ARTIGO_Art124",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art125",
+      "target": "ARTIGO_Art124",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art5",
+      "target": "ARTIGO_2_Artúnico",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art475",
+      "target": "ARTIGO_Art95",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art151",
+      "target": "ARTIGO_Art6",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art156",
+      "target": "ARTIGO_Art1",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art4",
+      "target": "ARTIGO_Art49",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "TEMA_962",
+      "target": "CONCEITO_selic",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STJ_453",
+      "target": "ARTIGO_Art503",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art267",
+      "target": "ARTIGO_Art3",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "ARTIGO_Art9",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "ARTIGO_Art4",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art9",
+      "target": "ARTIGO_Art4",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art206",
+      "target": "ARTIGO_Art2",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "TEMA_563",
+      "target": "ARTIGO_Art1",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "TEMA_563",
+      "target": "ARTIGO_Art18",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "ARTIGO_Art18",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art245",
+      "target": "ARTIGO_Art278",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art245",
+      "target": "ARTIGO_Art40",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art278",
+      "target": "ARTIGO_Art40",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art15",
+      "target": "CONCEITO_capitalização_de_juros",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art15",
+      "target": "CONCEITO_anatocismo",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_capitalização_de_juros",
+      "target": "CONCEITO_anatocismo",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art177",
+      "target": "ARTIGO_Art206",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art177",
+      "target": "ARTIGO_Art2",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art141",
+      "target": "ARTIGO_Art142",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art141",
+      "target": "ARTIGO_Art138",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art141",
+      "target": "ARTIGO_Art140",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art142",
+      "target": "ARTIGO_Art138",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art142",
+      "target": "ARTIGO_Art140",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art138",
+      "target": "ARTIGO_Art140",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art9",
+      "target": "ARTIGO_Art620",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art20",
+      "target": "ARTIGO_Art368",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STF_280",
+      "target": "STJ_7",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STF_280",
+      "target": "CONCEITO_boa_fé",
+      "type": "GOVERNS",
+      "properties": {}
+    },
+    {
+      "source": "STJ_7",
+      "target": "CONCEITO_boa_fé",
+      "type": "GOVERNS",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art59",
+      "target": "ARTIGO_Art1",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art59",
+      "target": "ARTIGO_Art41",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "ARTIGO_Art41",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art3",
+      "target": "ARTIGO_Art8",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art3",
+      "target": "ARTIGO_Art10",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art8",
+      "target": "ARTIGO_Art10",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_100_Artúnico",
+      "target": "ARTIGO_Art94",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "ARTIGO_Art940",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art14",
+      "target": "ARTIGO_Art47",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art283",
+      "target": "ARTIGO_CPC_Art267_IV",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art283",
+      "target": "ARTIGO_Art268",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_CPC_Art267_IV",
+      "target": "ARTIGO_Art268",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art6",
+      "target": "ARTIGO_Art26",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art83",
+      "target": "ARTIGO_Art84",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art177",
+      "target": "ARTIGO_Art543",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art2",
+      "target": "ARTIGO_Art543",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art2",
+      "target": "ARTIGO_Art206",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art543",
+      "target": "ARTIGO_Art206",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art34",
+      "target": "ARTIGO_Art20",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art205",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art520",
+      "target": "ARTIGO_Art475",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art284",
+      "target": "ARTIGO_Art2",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STJ_392",
+      "target": "ARTIGO_Art284",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "STJ_392",
+      "target": "ARTIGO_Art2",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art5",
+      "target": "ARTIGO_Art7",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art5",
+      "target": "ARTIGO_Art187",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art5",
+      "target": "ARTIGO_Art16",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art5",
+      "target": "ARTIGO_Art3",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art5",
+      "target": "CONCEITO_responsabilidade_objetiva",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art7",
+      "target": "ARTIGO_Art187",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art7",
+      "target": "ARTIGO_Art16",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art7",
+      "target": "CONCEITO_responsabilidade_objetiva",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art187",
+      "target": "ARTIGO_Art16",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art187",
+      "target": "ARTIGO_Art3",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art187",
+      "target": "CONCEITO_responsabilidade_objetiva",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art16",
+      "target": "ARTIGO_Art3",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art16",
+      "target": "CONCEITO_responsabilidade_objetiva",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art3",
+      "target": "CONCEITO_responsabilidade_objetiva",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art24",
+      "target": "ARTIGO_Art15",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art87",
+      "target": "ARTIGO_Art730",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art87",
+      "target": "ARTIGO_Art1",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art730",
+      "target": "ARTIGO_Art1",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art835",
+      "target": "ARTIGO_Art805",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art835",
+      "target": "ARTIGO_Art620",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art805",
+      "target": "ARTIGO_Art620",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STJ_85",
+      "target": "ARTIGO_Art86",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art219",
+      "target": "ARTIGO_Art267",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art6",
+      "target": "ARTIGO_Art15",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STF_150",
+      "target": "ARTIGO_Art604",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "STF_150",
+      "target": "ARTIGO_Art475",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art604",
+      "target": "ARTIGO_Art475",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art59",
+      "target": "ARTIGO_Art49",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art28",
+      "target": "ARTIGO_Art29",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "ARTIGO_Art161",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "CONCEITO_ipca_e",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art41",
+      "target": "ARTIGO_Art161",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art41",
+      "target": "CONCEITO_ipca_e",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art41",
+      "target": "CONCEITO_selic",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art41",
+      "target": "CONCEITO_juros_moratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art161",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art161",
+      "target": "CONCEITO_ipca_e",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art161",
+      "target": "CONCEITO_juros_moratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_correção_monetária",
+      "target": "CONCEITO_ipca_e",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_ipca_e",
+      "target": "CONCEITO_selic",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_ipca_e",
+      "target": "CONCEITO_juros_moratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_selic",
+      "target": "CONCEITO_juros_moratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art655",
+      "target": "ARTIGO_Art835",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art177",
+      "target": "ARTIGO_Art205",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art205",
+      "target": "ARTIGO_Art2",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STJ_345",
+      "target": "ARTIGO_Art85",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_ipca",
+      "target": "CONCEITO_igp_m",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_ipca",
+      "target": "CONCEITO_ipca_e",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_igp_m",
+      "target": "CONCEITO_ipca_e",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "CONCEITO_ipca",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_correção_monetária",
+      "target": "CONCEITO_ipca",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art29",
+      "target": "ARTIGO_Art3",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art27",
+      "target": "ARTIGO_Art91",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art24",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "TEMA_952",
+      "target": "ARTIGO_Art3",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STJ_85",
+      "target": "ARTIGO_Art1",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art3",
+      "target": "ARTIGO_Art292",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art40",
+      "target": "ARTIGO_Art244",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_40_Artúnico",
+      "target": "ARTIGO_Art229",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_juros_compensatórios",
+      "target": "CONCEITO_anatocismo",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "CONCEITO_juros_moratórios",
+      "target": "CONCEITO_anatocismo",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "ARTIGO_Art3",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art4",
+      "target": "ARTIGO_Art3",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art50",
+      "target": "ARTIGO_Art16",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art50",
+      "target": "ARTIGO_Art54",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art50",
+      "target": "ARTIGO_Art37",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art50",
+      "target": "ARTIGO_Art5",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art50",
+      "target": "ARTIGO_Art198",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art16",
+      "target": "ARTIGO_Art54",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art16",
+      "target": "ARTIGO_Art37",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art16",
+      "target": "ARTIGO_Art5",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art16",
+      "target": "ARTIGO_Art198",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art54",
+      "target": "ARTIGO_Art37",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art54",
+      "target": "ARTIGO_Art5",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art54",
+      "target": "ARTIGO_Art198",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art37",
+      "target": "ARTIGO_Art5",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art37",
+      "target": "ARTIGO_Art198",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art5",
+      "target": "ARTIGO_Art198",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art87",
+      "target": "ARTIGO_Art7",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art13",
+      "target": "ARTIGO_Art17",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art28",
+      "target": "ARTIGO_Art5",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art400",
+      "target": "ARTIGO_Art571",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art217",
+      "target": "ARTIGO_Art215",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art3",
+      "target": "ARTIGO_Art20",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art3",
+      "target": "ARTIGO_Art97",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art20",
+      "target": "ARTIGO_Art97",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "TEMA_350",
+      "target": "TEMA_995",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art405",
+      "target": "ARTIGO_Art240",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "ARTIGO_Art2",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "STJ_24",
+      "target": "ARTIGO_Art168",
+      "type": "CITES",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art506",
+      "target": "CONCEITO_correção_monetária",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art506",
+      "target": "CONCEITO_juros_moratórios",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art10",
+      "target": "ARTIGO_Art30",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art112",
+      "target": "ARTIGO_Art83",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art11",
+      "target": "ARTIGO_Art5",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art61",
+      "target": "ARTIGO_Art226",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "TEMA_69",
+      "target": "ARTIGO_Art535",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "ARTIGO_Art988",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art184",
+      "target": "ARTIGO_Art400",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art4",
+      "target": "ARTIGO_Art24",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art34",
+      "target": "ARTIGO_Art27",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art27",
+      "target": "ARTIGO_Art85",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art373",
+      "target": "ARTIGO_Art6",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art47",
+      "target": "ARTIGO_Art14",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art61",
+      "target": "ARTIGO_Art1",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art61",
+      "target": "ARTIGO_Art12",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art61",
+      "target": "ARTIGO_Art21",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "ARTIGO_Art12",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art1",
+      "target": "ARTIGO_Art21",
+      "type": "RELATED_TO",
+      "properties": {}
+    },
+    {
+      "source": "ARTIGO_Art12",
+      "target": "ARTIGO_Art21",
+      "type": "RELATED_TO",
+      "properties": {}
     }
   ],
   "statistics": {
-    "total_nodes": 108,
-    "total_edges": 188,
+    "total_nodes": 593,
+    "total_edges": 487,
     "nodes_by_type": {
-      "Sumula": 49,
-      "Tema": 11,
+      "Sumula": 75,
+      "Tema": 18,
       "Dominio": 23,
-      "Conceito": 11,
-      "Artigo": 13,
-      "Lei": 1
+      "Conceito": 17,
+      "Artigo": 220,
+      "Lei": 240
     },
     "edges_by_type": {
       "REQUIRES": 69,
       "APPLIES_TO": 7,
       "MODIFIES": 1,
-      "CITES": 10,
-      "GOVERNS": 51,
-      "RELATED_TO": 50
+      "CITES": 32,
+      "GOVERNS": 58,
+      "RELATED_TO": 320
     }
   }
 }

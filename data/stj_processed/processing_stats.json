@@ -1,0 +1,8 @@
+{
+  "total_chunks": 2283,
+  "knowledge_base": 0,
+  "precedentes": 2283,
+  "acordaos": 0,
+  "output_file": "data/stj_processed/stj_chunks_vectorstore.json",
+  "timestamp": "2026-02-06T21:58:27.493273"
+}
