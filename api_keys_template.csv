@@ -1,6 +1,0 @@
-Servico,Tipo Credencial n8n,Onde Obter,Nome do Campo,Valor (PREENCHER)
-Gemini API,HTTP Header Auth,https://aistudio.google.com/app/apikey,x-goog-api-key,
-Anthropic API,Anthropic API,https://console.anthropic.com/settings/keys,API Key,
-Google Sheets,OAuth2,https://console.cloud.google.com,Client ID,
-Google Sheets,OAuth2,https://console.cloud.google.com,Client Secret,
-Variavel n8n,Variable,Criar no n8n Settings,AUDIT_SHEET_ID,

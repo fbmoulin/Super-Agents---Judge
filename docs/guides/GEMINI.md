@@ -24,7 +24,7 @@ The core technologies involved are:
 
 *   `docs/plans/2026-01-14-lex-intelligentia-v2.1-optimization-plan.md`: Details the plan and justification for upgrading the system to version 2.1, focusing on using Google's Gemini 2.5 Flash model for routing and QA to improve quality and reduce operational costs.
 
-*   `init_db_audit_logs.sql`: The SQL script to create the necessary database schema for the audit logs, ensuring compliance with judicial AI regulations.
+*   `migrations/init_db_audit_logs.sql`: The SQL script to create the necessary database schema for the audit logs, ensuring compliance with judicial AI regulations.
 
 ## Usage
 

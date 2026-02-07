@@ -7,8 +7,7 @@
 - `scripts/` contains workflow validators and utilities.
 - `knowledge_base/` is curated legal references (summulas, temas, mappings).
 - `docs/` and `README.md` are the primary project docs and plans.
-- `agent-ui/`, `agent-os/`, and `serena/` are standalone subprojects with their own READMEs.
-- `serena/src/serena` and `serena/src/solidlsp` hold the Python sources; `serena/test/` hosts the test suite.
+- `agent-ui/` and `agent-os/` are standalone subprojects with their own READMEs.
 - `archive/` keeps legacy workflow exports.
 
 ## Build, Test, and Development Commands
@@ -16,8 +15,6 @@
 - `node scripts/validators/test_scenarios.js n8n_workflow_v5.1_improved_prompts.json` runs scenario checks.
 - `cd test_cases; $env:WEBHOOK_URL="https://YOUR-N8N.app.n8n.cloud/webhook-test/lex-intelligentia-agentes"; node run_production_tests.js` executes webhook tests.
 - `cd agent-ui; pnpm install; pnpm dev` runs the UI; `pnpm validate` runs lint/format/typecheck.
-- `cd serena; uv venv; .venv\\Scripts\\activate; uv pip install --all-extras -r pyproject.toml -e .` sets up the Serena dev env.
-- `cd serena; poe test` runs pytest; `poe lint`, `poe format`, and `poe type-check` run Black/Ruff/Mypy tasks.
 
 ## Coding Style & Naming Conventions
 - Use 2-space indentation for JSON/JS/TS files; keep Markdown headings in sentence case.
@@ -36,5 +33,5 @@
 - PRs should list affected workflows/agents, link test evidence, and call out any n8n credential or env var changes.
 
 ## Security & Configuration
-- Never commit secrets; use `.env.keys.template` and `api_keys_template.csv` as templates only.
-- Follow `credentials-setup.md` for n8n credentials and `init_db_audit_logs.sql` for audit logging schema.
+- Never commit secrets; use `.env.keys.template` as the template.
+- Follow `docs/guides/credentials-setup.md` for n8n credentials and `migrations/init_db_audit_logs.sql` for audit logging schema.

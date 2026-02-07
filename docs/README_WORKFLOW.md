@@ -17,7 +17,7 @@ archive/workflows/n8n_workflow_agentes_especializados_v2.2.json
 | Anthropic API | Anthropic API | [Anthropic Console](https://console.anthropic.com/settings/keys) |
 | Google Sheets | OAuth2 | [Google Cloud Console](https://console.cloud.google.com) |
 
-See `credentials-setup.md` for detailed instructions.
+See `docs/guides/credentials-setup.md` for detailed instructions.
 
 ### 3. Set Environment Variable
 ```
@@ -133,9 +133,9 @@ Error Path:
 | File | Purpose |
 |------|---------|
 | `CLAUDE.md` | Full project documentation |
-| `credentials-setup.md` | Credential configuration guide |
+| `docs/guides/credentials-setup.md` | Credential configuration guide |
 | `docs/TUTORIAL_INICIANTES.md` | Beginner tutorial |
-| `init_db_audit_logs.sql` | PostgreSQL schema (optional) |
+| `migrations/init_db_audit_logs.sql` | PostgreSQL schema (optional) |
 | `test_cases/` | Test cases for all domains |
 
 ## CNJ 615/2025 Compliance

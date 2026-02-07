@@ -224,10 +224,10 @@ Disponível em `~/.claude/skills/LegalPromptGenerator/`:
 |---------|--------|-----------|
 | `n8n_workflow_v5.1_improved_prompts.json` | **USAR** | Workflow principal (prompts v5.1, 21 agentes) |
 | `n8n_workflow_v2.6_fazenda_publica.json` | Produção | Fazenda Pública (agentes fiscais/Estado) |
-| `n8n_workflow_v2.7_graph_rag.json` | Experimental | Graph/RAG |
-| `n8n_workflow_stj_vectorstore.json` | RAG | Vector store STJ |
+| `archive/workflows/n8n_workflow_v2.7_graph_rag.json` | Experimental | Graph/RAG (archived) |
+| `data/samples/stj_chunks_vectorstore.json` | RAG | Vector store STJ sample data |
 | `archive/workflows/n8n_workflow_v2.1.1_cloud_ready.json` | Legacy | Versão cloud-ready |
-| `credentials-setup.md` | Docs | Guia de configuração de credenciais |
+| `docs/guides/credentials-setup.md` | Docs | Guia de configuração de credenciais |
 | `docs/TUTORIAL_INICIANTES.md` | Docs | Tutorial passo-a-passo para iniciantes |
 | `docs/FRAMEWORK_LEGAL_PROMPT_ENGINEERING.md` | **NOVO** | Framework 5 camadas para prompts |
 | `docs/INTEGRACAO_LEX_PROMPTER.md` | **NOVO** | Integração LEX PROMPTER no n8n |
@@ -253,10 +253,10 @@ Disponível em `~/.claude/skills/LegalPromptGenerator/`:
 | `knowledge_base/sumulas.json` | **NOVO** | Súmulas STJ/STF pesquisáveis |
 | `knowledge_base/temas_repetitivos.json` | **NOVO** | Temas com detalhamento |
 | `knowledge_base/domain_mapping.json` | **NOVO** | Mapping keywords → domínios |
-| `prompts_extracted/` | **NOVO** | 11 prompts convertidos para Markdown |
+| `archive/prompts_legacy_extracted/` | Legacy | 11 prompts convertidos para Markdown |
 | `scripts/validators/validate_workflow.js` | Script | Validação de workflows |
 | `scripts/data/stj_downloader.py` | Script | Download de jurisprudência STJ |
-| `init_db_audit_logs.sql` | Opcional | Schema PostgreSQL (alternativa a Sheets) |
+| `migrations/init_db_audit_logs.sql` | Opcional | Schema PostgreSQL (alternativa a Sheets) |
 | `archive/workflows/` | Legacy | Workflows antigos (não usar) |
 
 ## Agentes Especializados
@@ -418,7 +418,7 @@ curl -X POST http://localhost:5678/webhook/lex-intelligentia-agentes \
   -d '{"body": {"fatos": "...", "questoes": "...", "pedidos": "..."}}'
 
 # PostgreSQL (alternativa a Sheets)
-psql -U postgres -d lex_intelligentia -f init_db_audit_logs.sql
+psql -U postgres -d lex_intelligentia -f migrations/init_db_audit_logs.sql
 ```
 
 ## Response Structure

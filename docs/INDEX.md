@@ -13,7 +13,7 @@ Este arquivo serve como índice central para toda a documentação do projeto Le
 | **CLAUDE.md** | Documentação principal do projeto, status e configuração | `/CLAUDE.md` |
 | **README.md** | Visão geral, arquitetura, agentes e roadmap | `/README.md` |
 | **ROADMAP.md** | Roadmap de evolução do projeto | `/ROADMAP.md` |
-| **TUTORIAL.md** | Tutorial rápido | `/TUTORIAL.md` |
+| **TUTORIAL.md** | Tutorial rápido | `/docs/guides/TUTORIAL.md` |
 
 ---
 
@@ -21,9 +21,9 @@ Este arquivo serve como índice central para toda a documentação do projeto Le
 
 | Documento | Descrição | Localização |
 |-----------|-----------|-------------|
-| **credentials-setup.md** | Guia de configuração de credenciais (Gemini, Claude, Sheets) | `/credentials-setup.md` |
+| **credentials-setup.md** | Guia de configuração de credenciais (Gemini, Claude, Sheets) | `/docs/guides/credentials-setup.md` |
 | **.env.keys.template** | Template de variáveis de ambiente | `/.env.keys.template` |
-| **init_db_audit_logs.sql** | Schema PostgreSQL (alternativa a Sheets) | `/init_db_audit_logs.sql` |
+| **init_db_audit_logs.sql** | Schema PostgreSQL (alternativa a Sheets) | `/migrations/init_db_audit_logs.sql` |
 
 ---
 
@@ -93,8 +93,8 @@ Este arquivo serve como índice central para toda a documentação do projeto Le
 |---------|-----------|--------|
 | **n8n_workflow_v5.1_improved_prompts.json** | Workflow principal (21 agentes) | **PRODUÇÃO** |
 | **n8n_workflow_v2.6_fazenda_publica.json** | Fazenda Pública | Produção |
-| **n8n_workflow_v2.7_graph_rag.json** | Graph/RAG | Experimental |
-| **n8n_workflow_stj_vectorstore.json** | Vector store STJ | RAG (futuro) |
+| **archive/workflows/n8n_workflow_v2.7_graph_rag.json** | Graph/RAG | Archived |
+| **data/samples/stj_chunks_vectorstore.json** | Vector store STJ sample data | Archived |
 | **archive/workflows/n8n_workflow_v2.1.1_cloud_ready.json** | Versão cloud-ready | Legacy |
 | **archive/workflows/** | Workflows legados | Arquivados |
 | **test_cases/workflows/** | Workflows de teste | Testes |

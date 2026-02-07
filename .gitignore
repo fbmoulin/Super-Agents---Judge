@@ -136,3 +136,18 @@ agent-ui/.env*
 # =============================================================================
 .claude/
 !.claude/CLAUDE.md
+
+# =============================================================================
+# MISCELLANEOUS
+# =============================================================================
+# Empty Windows artifacts
+nul
+
+# n8n temp files
+*.n8n
+
+# Serena (external tool, not project code)
+serena/
+
+# Playwright MCP screenshots (auto-generated)
+.playwright-mcp/

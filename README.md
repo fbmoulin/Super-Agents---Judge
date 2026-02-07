@@ -172,7 +172,7 @@ O Lex Intelligentia Judiciário é um sistema multi-agente que se integra ao seu
 |---------|-----------|
 | `n8n_workflow_v5.1_improved_prompts.json` | Workflow principal (prompts v5.1, 21 agentes) |
 | `n8n_workflow_v2.6_fazenda_publica.json` | Workflow Fazenda Pública (agentes fiscais/Estado) |
-| `n8n_workflow_v2.7_graph_rag.json` | Workflow com Graph/RAG (experimental) |
+| `archive/workflows/n8n_workflow_v2.7_graph_rag.json` | Workflow com Graph/RAG (experimental, archived) |
 | `archive/workflows/n8n_workflow_agentes_especializados_v2.2.json` | Workflow v2.2 legacy (11 agentes) |
 
 ### Documentação
@@ -180,7 +180,7 @@ O Lex Intelligentia Judiciário é um sistema multi-agente que se integra ao seu
 | Arquivo | Descrição |
 |---------|-----------|
 | `CLAUDE.md` | Documentação principal do projeto |
-| `credentials-setup.md` | Guia de configuração de credenciais |
+| `docs/guides/credentials-setup.md` | Guia de configuração de credenciais |
 | `docs/TUTORIAL_INICIANTES.md` | Tutorial passo-a-passo para iniciantes |
 | `docs/plans/*.md` | Planos de implementação e otimização |
 | `docs/guides/GUIA_INTEGRACAO_AGENTES.md` | Guia de integração |
@@ -191,7 +191,7 @@ O Lex Intelligentia Judiciário é um sistema multi-agente que se integra ao seu
 |---------|-----------|
 | `docker/docker-compose.yml` | Stack completa (Qdrant, n8n, Redis) |
 | `docker/docker-compose-qdrant.yml` | Stack mínima (Qdrant isolado) |
-| `init_db_audit_logs.sql` | Schema PostgreSQL para audit logs |
+| `migrations/init_db_audit_logs.sql` | Schema PostgreSQL para audit logs |
 
 ### Scripts
 
