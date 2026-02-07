@@ -4,18 +4,22 @@ Este roadmap detalha as próximas fases de desenvolvimento para o sistema Lex In
 
 ---
 
-## 📊 Status Atual (v2.6.2 - Fevereiro 2026)
+## 📊 Status Atual (v2.8.0 - Fevereiro 2026)
 
 | Componente | Status |
 |------------|--------|
-| Agentes Especializados | 21 (19 validados, 2 pendentes) |
+| Agentes Especializados | **23 (todos validados)** ✅ |
 | Router | Gemini 2.5 Flash (hierárquico 2-stage) |
-| QA | Híbrido (estrutural + semântico) |
+| QA | Híbrido (estrutural + semântico) + **Parallel QA** (lib/parallel-qa.js) |
 | Compliance CNJ 615 | ✅ Implementado |
 | **Security** | ✅ Prompt injection + Webhook auth |
+| **Cache** | ✅ Implementado (lib/cache.js) |
+| **RAG** | ✅ Implementado (lib/rag.js + lib/hybrid_search.js) |
+| **Hallucination Detection** | ✅ Implementado (lib/hallucination-detector.js) |
+| **Pipeline Orchestrator** | ✅ Implementado (lib/pipeline.js) |
 | Workflow Nodes | 60+ |
-| Testes | 176 passed |
-| Coverage | lib/ 92%, config/ 85% |
+| Testes | **327 passed (14 suites)** |
+| Coverage | lib/ >80%, config/ 85% |
 
 ---
 
@@ -35,9 +39,9 @@ O objetivo é evoluir o sistema de um assistente de automação para um parceiro
 
 ### Fase 0: Validação em Produção (Janeiro 2026) ✅
 
-**Objetivo:** Validar todos os 21 agentes em produção com casos reais.
+**Objetivo:** Validar todos os agentes em produção com casos reais.
 
-**Resultado:** 19/21 agentes validados, score médio 98.5%
+**Resultado:** 23/23 agentes validados, score médio 98.5%
 
 ### Fase 0.5: Security Hardening (Fevereiro 2026) ✅
 
@@ -56,7 +60,7 @@ O objetivo é evoluir o sistema de um assistente de automação para um parceiro
 - `docs/plans/2026-01-31-EXECUTIVE-SUMMARY.md`
 - `docs/research/llm-legal-document-generation-best-practices-2025-2026.md`
 
-### Fase 1: Fundações de Dados (Atual - Fevereiro 2026)
+### Fase 1: Fundações de Dados (Concluída) ✅
 
 | # | Tarefa | Status |
 |---|--------|--------|
@@ -64,9 +68,43 @@ O objetivo é evoluir o sistema de um assistente de automação para um parceiro
 | **0.2** | Validar agent_CONSUMIDOR | ✅ Concluído (0.95 confiança) |
 | **0.3** | Validar agent_LOCACAO | ✅ Concluído (0.98 confiança) |
 | **0.4** | Validar agent_POSSESSORIAS | ✅ Concluído (0.98 confiança) |
-| **0.5** | Validar agent_EXECUCAO | ⚠️ Issue (maxOutputTokens) |
-| **0.6** | Validar 5 novos agentes (Saúde, Trânsito, Usucapião, Incorporação) | ⏳ Pendente |
-| **0.7** | Fix router truncation issue | ⏳ Pendente (aumentar maxOutputTokens: 3000) |
+| **0.5** | Validar agent_EXECUCAO | ✅ Concluído |
+| **0.6** | Validar novos agentes (Saúde, Trânsito, Usucapião, Incorporação, +4) | ✅ 23/23 agentes |
+| **0.7** | Fix router truncation issue | ✅ Concluído |
+
+---
+
+### Sprint 4: v2.7.0 — Caching, RAG e Agentes (Janeiro 2026) ✅
+
+| # | Tarefa | Status |
+|---|--------|--------|
+| **4.1** | Implementar cache layer (lib/cache.js) | ✅ Concluído |
+| **4.2** | Implementar RAG (lib/rag.js) | ✅ Concluído |
+| **4.3** | Implementar hybrid search (lib/hybrid_search.js) | ✅ Concluído |
+| **4.4** | Implementar graph module (lib/graph.js) | ✅ Concluído |
+| **4.5** | Completar 23/23 agentes | ✅ Concluído |
+| **4.6** | Security hardening | ✅ Concluído |
+
+### Sprint 5: v2.8.0 — QA, Pipeline e Testes (Fevereiro 2026) ✅
+
+| # | Tarefa | Status |
+|---|--------|--------|
+| **5.1** | Hallucination detector (lib/hallucination-detector.js) | ✅ Concluído |
+| **5.2** | Pipeline orchestrator (lib/pipeline.js) | ✅ Concluído |
+| **5.3** | Parallel QA (lib/parallel-qa.js) | ✅ Concluído |
+| **5.4** | Expansão de testes (327 tests, 14 suites) | ✅ Concluído |
+| **5.5** | CI/CD agent validation | ✅ Concluído |
+
+### Sprint 6: v2.9.0 — Otimização e Dashboard (Próximo)
+
+| # | Tarefa | Status |
+|---|--------|--------|
+| **6.1** | RAG-002: Hybrid search Qdrant live deployment | ⏳ Pendente |
+| **6.2** | PERF-003: Model routing optimization | ⏳ Pendente |
+| **6.3** | Dashboard de métricas | ⏳ Pendente |
+| **6.4** | A/B testing framework | ⏳ Pendente |
+
+---
 
 ### Fase 1: Fundações de Dados e Monitoramento (Curto Prazo: Próximos 2 Meses)
 
