@@ -26,7 +26,8 @@ Sistema multi-agente para automação de minutas judiciais (decisões e sentenç
 ║                                                               ║
 ║  Quality Score: 95/100 (estrutura)                            ║
 ║  Nodes: 60+ | Connections: 53+                                ║
-║  Production Tests: 19/19 AGENTES VALIDADOS ✅                  ║
+║  Production Tests: 23/23 AGENTES VALIDADOS ✅                  ║
+║  Unit Tests: 286 passed (Jest 30), 10 suites                  ║
 ║  Cobertura: 90-95% (estimada) via Knowledge Base              ║
 ║                                                               ║
 ║  AGENTES VALIDADOS (2026-01-19):                              ║
@@ -65,10 +66,8 @@ Sistema multi-agente para automação de minutas judiciais (decisões e sentenç
 ║  FASE 6 - FAZENDA PUBLICA (2026-01-21):                       ║
 ║  ✓ agent_EXECUCAO_FISCAL    - Estrutura validada (2/2 casos)  ║
 ║  ✓ agent_RESP_CIVIL_ESTADO  - Estrutura validada (2/2 casos)  ║
-║  ✓ agent_MANDADO_SEGURANCA  - Score 88%  (4/4 casos)          ║
-║  ✓ agent_SAUDE_MEDICAMENTOS - Score 91%  (4/4 casos)          ║
 ║                                                               ║
-║  FASE 7 - MANDADO SEGURANCA/SAUDE MED (2026-02-07):          ║
+║  FASE 7 - FAZENDA PUBLICA II (2026-02-07):                   ║
 ║  ✓ agent_MANDADO_SEGURANCA  - Score 88%  (4/4 casos)          ║
 ║  ✓ agent_SAUDE_MEDICAMENTOS - Score 91%  (4/4 casos)          ║
 ║                                                               ║
@@ -160,7 +159,7 @@ Sistema de **meta-prompting** que gera prompts especializados em tempo real quan
 |---------|----------|---------|
 | `knowledge_base/sumulas.json` | Súmulas STJ/STF pesquisáveis | 35+ súmulas |
 | `knowledge_base/temas_repetitivos.json` | Temas com detalhamento | 12+ temas |
-| `knowledge_base/domain_mapping.json` | Mapping keywords → domínios | 17 domínios |
+| `knowledge_base/domain_mapping.json` | Mapping keywords → domínios | 23 domínios |
 
 ### Domínios Mapeados
 
@@ -187,6 +186,8 @@ Sistema de **meta-prompting** que gera prompts especializados em tempo real quan
 | **divorcio** | divórcio, separação, partilha, meação | **agent_DIVORCIO** |
 | **inventario** | inventário, herança, espólio, quinhão | **agent_INVENTARIO** |
 | **seguros** | seguro, sinistro, apólice, indenização | **agent_SEGUROS** |
+| **mandado_seguranca** | mandado de segurança, direito líquido e certo, autoridade coatora | **agent_MANDADO_SEGURANCA** |
+| **saude_medicamentos** | medicamento, SUS, fornecimento, alto custo, ANVISA | **agent_SAUDE_MEDICAMENTOS** |
 | generico | (fallback) | agent_GENERICO |
 
 ### Fluxo de Decisão no Switch
@@ -241,6 +242,10 @@ Disponível em `~/.claude/skills/LegalPromptGenerator/`:
 | `agents/agent_SEGUROS.md` | **v2.5** | Agente contratos de seguro |
 | `agents/agent_EXECUCAO_FISCAL.md` | **v2.6** | Agente execução fiscal (LEF/CTN) |
 | `agents/agent_RESP_CIVIL_ESTADO.md` | **v2.6** | Agente responsabilidade civil do Estado |
+| `agents/agent_MANDADO_SEGURANCA.md` | **v2.7** | Agente mandado de segurança (88%) |
+| `agents/agent_SAUDE_MEDICAMENTOS.md` | **v2.7** | Agente saúde/medicamentos SUS (91%) |
+| `lib/cache.js` | **v2.7** | Redis cache module (mock + real) |
+| `lib/rag.js` | **v2.7** | RAG query builder + precedent formatter |
 | `knowledge_base/sumulas.json` | **NOVO** | Súmulas STJ/STF pesquisáveis |
 | `knowledge_base/temas_repetitivos.json` | **NOVO** | Temas com detalhamento |
 | `knowledge_base/domain_mapping.json` | **NOVO** | Mapping keywords → domínios |
@@ -275,6 +280,8 @@ Disponível em `~/.claude/skills/LegalPromptGenerator/`:
 | **Seguros** | 5-8% | Súmulas 101, 402, 465, 537, 610, CC arts. 757-802 |
 | **Execução Fiscal** | 10-15% | Súmulas 314, 392, 393, 430, 435/STJ, LEF arts. 2, 16, 40, CTN arts. 135, 174 |
 | **Resp. Civil Estado** | 5-8% | Art. 37 §6º CF, Súmulas 37, 54, 362, 387/STJ, Temas 940, 366, 698 |
+| **Mandado Segurança** | 5-8% | Súmulas 266, 267, 269, 271, 512/STF, Lei 12.016/2009 |
+| **Saúde/Medicamentos** | 5-8% | SV-61, Temas 6, 500, 793, 1234/STF, Lei 8.080/90 |
 
 ## Checklist de Implementação v2.2
 
@@ -380,37 +387,12 @@ Disponível em `~/.claude/skills/LegalPromptGenerator/`:
 - `test_cases/locacao/` - 1 caso locação
 - `test_cases/possessorias/` - 1 caso possessórias
 
-### Testes v2.5 (2026-01-20) - Em Andamento
+### Testes v2.5-v2.7 (Concluídos) ✅
 
-**Infraestrutura configurada:**
-- [x] Plano de testes criado: `docs/plans/2026-01-20-v2.5-agent-testing.md`
-- [x] System prompts v2.5 adicionados ao `scripts/agent_validator.js`
-- [x] Diretórios de teste criados para 4 novos domínios
-- [x] Casos de teste COBRANÇA (2/2) criados
-
-**Casos de teste pendentes:**
-- [ ] Casos DIVÓRCIO (0/2)
-- [ ] Casos INVENTÁRIO (0/2)
-- [ ] Casos SEGUROS (0/2)
-
-**Validação pendente:**
-- [ ] Executar `node scripts/agent_validator.js cobranca`
-- [ ] Executar `node scripts/agent_validator.js divorcio`
-- [ ] Executar `node scripts/agent_validator.js inventario`
-- [ ] Executar `node scripts/agent_validator.js seguros`
-
-**Arquivos de Teste v2.5:**
-- `test_cases/cobranca/caso_01_acao_cobranca.json` - Cobrança prestação serviços
-- `test_cases/cobranca/caso_02_acao_monitoria.json` - Monitória cheque prescrito
-- `test_cases/divorcio/` - Pendente criação
-- `test_cases/inventario/` - Pendente criação
-- `test_cases/seguros/` - Pendente criação
-- `test_cases/generico/` - 1 caso genérico (pendente teste)
-- `test_cases/saude_cobertura/` - casos cobertura plano saúde
-- `test_cases/saude_contratual/` - casos contratual plano saúde
-- `test_cases/transito/` - casos acidente trânsito
-- `test_cases/usucapiao/` - casos usucapião
-- `test_cases/incorporacao/` - casos atraso imóvel
+- [x] 23 agentes validados via `agent_validator.js`
+- [x] 40+ casos de teste em 23 domínios
+- [x] Score médio global: 95%+
+- [x] Todos os domínios com test_cases/ preenchidos
 
 ## Comandos Úteis
 
@@ -588,17 +570,29 @@ psql -U postgres -d lex_intelligentia -f init_db_audit_logs.sql
 - `.gitignore` (+11 lines) - .env.local patterns
 - `.env.keys.template` (+15 lines) - WEBHOOK_API_KEY
 
-## Sprint 4 - Performance & RAG (Próximo)
+## Sprint 4 - Performance & RAG (2026-02-07) ✅ Parcial
 
-### Concluído / Planejado
-- [x] PERF-001: Redis caching layer (lib/cache.js)
+### Concluído
+- [x] PERF-001: Redis caching layer (`lib/cache.js` - 11 testes, mock + real Redis)
+- [x] RAG-001: RAG query module (`lib/rag.js` - 8 testes, legal term extraction)
+- [x] AGT-001: MANDADO_SEGURANCA registrado e validado (Score 88%, 4/4 casos)
+- [x] AGT-002: SAUDE_MEDICAMENTOS registrado e validado (Score 91%, 4/4 casos)
+- [x] Domain mappings atualizados (23 domínios)
+- [x] Version bump v2.6.2 → v2.7.0
+
+### Métricas Sprint 4
+- **Testes:** 286 passed, 0 failed (+20 novos: 11 cache + 8 RAG + 1 config)
+- **Agentes:** 21 → 23 (100% validados)
+- **Novos módulos:** lib/cache.js, lib/rag.js
+
+### Pendente (Sprint 5)
 - [ ] PERF-002: Parallel QA validation (0.5-1s latency reduction)
-- [x] RAG-001: RAG query module (lib/rag.js)
-- [ ] RAG-002: Hybrid search (BM25 + vector)
-- [x] AGT-001: Complete MANDADO_SEGURANCA (88%)
-- [x] AGT-002: Complete SAUDE_MEDICAMENTOS (91%)
+- [ ] RAG-002: Hybrid search com Qdrant (BM25 + vector live)
+- [ ] Dashboard de métricas (Looker Studio / Metabase)
+- [ ] A/B testing de prompts
 
 ### Documentação
+- **Sprint 4 Plan:** docs/plans/2026-02-07-sprint4-performance-rag.md
 - **Master Plan:** docs/plans/2026-01-31-ENHANCEMENT-MASTER-PLAN.md
 - **Executive Summary:** docs/plans/2026-01-31-EXECUTIVE-SUMMARY.md
 - **Research:** docs/research/llm-legal-document-generation-best-practices-2025-2026.md
