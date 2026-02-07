@@ -1,0 +1,1990 @@
+[
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_7",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 7/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_7",
+          "start": 0,
+          "end": 15,
+          "context": "Sumula 7 do STJ: A pretensão de simples reexame de prova não ense..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_30",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 30/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_30",
+          "start": 0,
+          "end": 16,
+          "context": "Sumula 30 do STJ: A comissão de permanência e a correção monetária..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": [
+        {
+          "type": "Conceito",
+          "value": "correção monetária",
+          "tribunal": null,
+          "normalized_id": "CONCEITO_correção_monetária",
+          "start": 48,
+          "end": 66,
+          "context": "Sumula 30 do STJ: A comissão de permanência e a correção monetária são inacumuláveis"
+        }
+      ]
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 1
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_297",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 297/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_297",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 297 do STJ: O Código de Defesa do Consumidor é aplicável às ..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_302",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 302/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_302",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 302 do STJ: É abusiva a cláusula contratual de plano de saúd..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_340",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 340/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_340",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 340 do STJ: No contrato de abertura de crédito em conta corr..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_362",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 362/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_362",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 362 do STJ: A correção monetária do valor da indenização do ..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": [
+        {
+          "type": "Conceito",
+          "value": "correção monetária",
+          "tribunal": null,
+          "normalized_id": "CONCEITO_correção_monetária",
+          "start": 21,
+          "end": 39,
+          "context": "Sumula 362 do STJ: A correção monetária do valor da indenização do dano moral incide desd..."
+        }
+      ]
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 1
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_379",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 379/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_379",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 379 do STJ: Nos contratos bancários não regidos por legislaç..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": [
+        {
+          "type": "Conceito",
+          "value": "juros moratórios",
+          "tribunal": null,
+          "normalized_id": "CONCEITO_juros_moratórios",
+          "start": 85,
+          "end": 101,
+          "context": "...ncários não regidos por legislação específica, os juros moratórios poderão ser convencionados até o limite de 1% ao ..."
+        }
+      ]
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 1
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_381",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 381/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_381",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 381 do STJ: Nos contratos bancários, é vedado ao julgador co..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_382",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 382/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_382",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 382 do STJ: A estipulação de juros remuneratórios superiores..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": [
+        {
+          "type": "Conceito",
+          "value": "juros remuneratórios",
+          "tribunal": null,
+          "normalized_id": "CONCEITO_juros_remuneratórios",
+          "start": 36,
+          "end": 56,
+          "context": "Sumula 382 do STJ: A estipulação de juros remuneratórios superiores a 12% ao ano, por si só, não indica ab..."
+        }
+      ]
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 1
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_469",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 469/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_469",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 469 do STJ: Aplica-se o Código de Defesa do Consumidor aos c..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_472",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 472/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_472",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 472 do STJ: A cobrança de comissão de permanência - cujo val..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": [
+        {
+          "type": "Conceito",
+          "value": "juros remuneratórios",
+          "tribunal": null,
+          "normalized_id": "CONCEITO_juros_remuneratórios",
+          "start": 190,
+          "end": 210,
+          "context": "...revistos no contrato - exclui a exigibilidade dos juros remuneratórios, moratórios e da multa contratual"
+        }
+      ]
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 1
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_539",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 539/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_539",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 539 do STJ: É permitida a capitalização de juros com periodi..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": [
+        {
+          "type": "Conceito",
+          "value": "capitalização de juros",
+          "tribunal": null,
+          "normalized_id": "CONCEITO_capitalização_de_juros",
+          "start": 33,
+          "end": 55,
+          "context": "Sumula 539 do STJ: É permitida a capitalização de juros com periodicidade inferior à anual em contratos c..."
+        }
+      ]
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 1
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_541",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 541/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_541",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 541 do STJ: A previsão no contrato bancário de taxa de juros..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_543",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 543/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_543",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 543 do STJ: Na hipótese de resolução de contrato de promessa..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_565",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 565/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_565",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 565 do STJ: A pactuação das tarifas de abertura de crédito (..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_597",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 597/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_597",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 597 do STJ: A cláusula contratual de plano de saúde que prev..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_608",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 608/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_608",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 608 do STJ: Aplica-se o Código de Defesa do Consumidor aos c..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_609",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 609/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_609",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 609 do STJ: A recusa de cobertura securitária, sob a alegaçã..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_277",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 277/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_277",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 277 do STJ: Julgada procedente a investigação de paternidade..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_301",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 301/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_301",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 301 do STJ: Em ação investigatória, a recusa do suposto pai ..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_309",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 309/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_309",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 309 do STJ: O débito alimentar que autoriza a prisão civil d..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_336",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 336/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_336",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 336 do STJ: A mulher que renunciou aos alimentos na separaçã..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_358",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 358/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_358",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 358 do STJ: O cancelamento de pensão alimentícia de filho qu..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_383",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 383/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_383",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 383 do STJ: A competência para processar e julgar as ações c..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_385",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 385/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_385",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 385 do STJ: Da anotação irregular em cadastro de proteção ao..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_387",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 387/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_387",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 387 do STJ: É lícita a cumulação das indenizações de dano es..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_388",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 388/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_388",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 388 do STJ: A simples devolução indevida de cheque caracteri..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_403",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 403/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_403",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 403 do STJ: Independe de prova do prejuízo a indenização pel..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_479",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 479/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_479",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 479 do STJ: As instituições financeiras respondem objetivame..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": [
+        {
+          "type": "Conceito",
+          "value": "fortuito interno",
+          "tribunal": null,
+          "normalized_id": "CONCEITO_fortuito_interno",
+          "start": 95,
+          "end": 111,
+          "context": "...s respondem objetivamente pelos danos gerados por fortuito interno relativo a fraudes e delitos praticados por terce..."
+        }
+      ]
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 1
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_594",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 594/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_594",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 594 do STJ: O Ministério Público tem legitimidade ativa para..."
+        }
+      ],
+      "temas": [],
+      "artigos": [
+        {
+          "type": "Artigo",
+          "value": "Art. 98",
+          "tribunal": null,
+          "normalized_id": "ARTIGO_Art98",
+          "start": 262,
+          "end": 271,
+          "context": "... se encontrar nas situações de risco descritas no art. 98 do Estatuto da Criança e do Adolescente"
+        }
+      ],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 1,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_596",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 596/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_596",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 596 do STJ: A obrigação alimentar dos avós tem natureza comp..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_621",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 621/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_621",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 621 do STJ: Os efeitos da sentença que reduz, majora ou exon..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_54",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 54/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_54",
+          "start": 0,
+          "end": 16,
+          "context": "Sumula 54 do STJ: Os juros moratórios fluem a partir do evento dan..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": [
+        {
+          "type": "Conceito",
+          "value": "juros moratórios",
+          "tribunal": null,
+          "normalized_id": "CONCEITO_juros_moratórios",
+          "start": 21,
+          "end": 37,
+          "context": "Sumula 54 do STJ: Os juros moratórios fluem a partir do evento danoso, em caso de respo..."
+        }
+      ]
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 1
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_101",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 101/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_101",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 101 do STJ: A ação de indenização do segurado em grupo contr..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_197",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 197/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_197",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 197 do STJ: O divórcio direto pode ser concedido sem que haj..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_402",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 402/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_402",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 402 do STJ: O contrato de seguro por danos pessoais compreen..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_465",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 465/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_465",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 465 do STJ: Ressalvada a hipótese de efetivo agravamento do ..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_530",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 530/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_530",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 530 do STJ: Nos contratos bancários, na impossibilidade de c..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_537",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 537/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_537",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 537 do STJ: Em ação de reparação de danos, a seguradora denu..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STJ_610",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 610/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_610",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 610 do STJ: O suicídio não é coberto nos dois primeiros anos..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STF_149",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 149/STF",
+          "tribunal": "STF",
+          "normalized_id": "STF_149",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 149 do STF: É imprescritível a ação de investigação de pater..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STF_340",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 340/STF",
+          "tribunal": "STF",
+          "normalized_id": "STF_340",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 340 do STF: Desde a vigência do Código Civil, os bens domini..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STF_346",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 346/STF",
+          "tribunal": "STF",
+          "normalized_id": "STF_346",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 346 do STF: A administração pública pode declarar a nulidade..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STF_473",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 473/STF",
+          "tribunal": "STF",
+          "normalized_id": "STF_473",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 473 do STF: A administração pode anular seus próprios atos, ..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STF_112",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 112/STF",
+          "tribunal": "STF",
+          "normalized_id": "STF_112",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 112 do STF: O imposto de transmissão causa mortis é devido p..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STF_331",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 331/STF",
+          "tribunal": "STF",
+          "normalized_id": "STF_331",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 331 do STF: É legítima a incidência do imposto de transmissã..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STF_377",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 377/STF",
+          "tribunal": "STF",
+          "normalized_id": "STF_377",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 377 do STF: No regime de separação legal de bens, comunicam-..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STF_380",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 380/STF",
+          "tribunal": "STF",
+          "normalized_id": "STF_380",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 380 do STF: Comprovada a existência de sociedade de fato ent..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "sumula_STF_542",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 542/STF",
+          "tribunal": "STF",
+          "normalized_id": "STF_542",
+          "start": 0,
+          "end": 17,
+          "context": "Sumula 542 do STF: Não é inconstitucional a multa instituída pelo E..."
+        }
+      ],
+      "temas": [],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 1,
+      "temas": 0,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "tema_STJ_952",
+    "entities": {
+      "sumulas": [],
+      "temas": [
+        {
+          "type": "Tema",
+          "value": "Tema 952/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "TEMA_952",
+          "start": 0,
+          "end": 15,
+          "context": "Tema 952 do STJ (AFETADO): O reajuste de mensalidade de plano de ..."
+        }
+      ],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 0,
+      "temas": 1,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "tema_STJ_970",
+    "entities": {
+      "sumulas": [],
+      "temas": [
+        {
+          "type": "Tema",
+          "value": "Tema 970/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "TEMA_970",
+          "start": 0,
+          "end": 15,
+          "context": "Tema 970 do STJ (AFETADO): No contrato de promessa de compra e ve..."
+        }
+      ],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 0,
+      "temas": 1,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "tema_STJ_972",
+    "entities": {
+      "sumulas": [],
+      "temas": [
+        {
+          "type": "Tema",
+          "value": "Tema 972/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "TEMA_972",
+          "start": 0,
+          "end": 15,
+          "context": "Tema 972 do STJ (AFETADO): Abusividade da exigência de contrataçã..."
+        }
+      ],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": [
+        {
+          "type": "Conceito",
+          "value": "venda casada",
+          "tribunal": null,
+          "normalized_id": "CONCEITO_venda_casada",
+          "start": 136,
+          "end": 148,
+          "context": "...ão financeira como condição para o financiamento (venda casada). Aplicacao: Venda casada de seguros em contratos..."
+        }
+      ]
+    },
+    "stats": {
+      "sumulas": 0,
+      "temas": 1,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 1
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "tema_STJ_985",
+    "entities": {
+      "sumulas": [],
+      "temas": [
+        {
+          "type": "Tema",
+          "value": "Tema 985/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "TEMA_985",
+          "start": 0,
+          "end": 15,
+          "context": "Tema 985 do STJ (AFETADO): Para fins de usucapião especial urbana..."
+        }
+      ],
+      "artigos": [
+        {
+          "type": "Artigo",
+          "value": "Art. 183",
+          "tribunal": null,
+          "normalized_id": "ARTIGO_Art183",
+          "start": 67,
+          "end": 77,
+          "context": "...AFETADO): Para fins de usucapião especial urbana (art. 183 da CF/88 e art. 1.240 do CC/2002), não é exigível a..."
+        },
+        {
+          "type": "Artigo",
+          "value": "Art. 1",
+          "tribunal": null,
+          "normalized_id": "ARTIGO_Art1",
+          "start": 87,
+          "end": 93,
+          "context": "...de usucapião especial urbana (art. 183 da CF/88 e art. 1.240 do CC/2002), não é exigível a observância do ..."
+        }
+      ],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 0,
+      "temas": 1,
+      "artigos": 2,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "tema_STJ_996",
+    "entities": {
+      "sumulas": [],
+      "temas": [
+        {
+          "type": "Tema",
+          "value": "Tema 996/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "TEMA_996",
+          "start": 0,
+          "end": 15,
+          "context": "Tema 996 do STJ (AFETADO): Na aquisição de unidades autônomas em ..."
+        }
+      ],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 0,
+      "temas": 1,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "tema_STJ_1062",
+    "entities": {
+      "sumulas": [
+        {
+          "type": "Sumula",
+          "value": "Sumula 54/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_54",
+          "start": 200,
+          "end": 213,
+          "context": "...rt. 407 do CC, fluindo a partir do evento danoso (Súmula 54/STJ) ou da citação (Súmula 362/STJ), conforme a natur..."
+        },
+        {
+          "type": "Sumula",
+          "value": "Sumula 362/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "STJ_362",
+          "start": 230,
+          "end": 244,
+          "context": "...r do evento danoso (Súmula 54/STJ) ou da citação (Súmula 362/STJ), conforme a natureza da obrigação. Aplicacao: Co..."
+        }
+      ],
+      "temas": [
+        {
+          "type": "Tema",
+          "value": "Tema 1062/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "TEMA_1062",
+          "start": 0,
+          "end": 16,
+          "context": "Tema 1062 do STJ (AFETADO): A correção monetária e os juros de mor..."
+        }
+      ],
+      "artigos": [
+        {
+          "type": "Artigo",
+          "value": "Art. 407",
+          "tribunal": null,
+          "normalized_id": "ARTIGO_Art407",
+          "start": 149,
+          "end": 159,
+          "context": "...s por danos morais e materiais são regulados pelo art. 407 do CC, fluindo a partir do evento danoso (Súmula 54..."
+        }
+      ],
+      "leis": [],
+      "processos": [],
+      "conceitos": [
+        {
+          "type": "Conceito",
+          "value": "correção monetária",
+          "tribunal": null,
+          "normalized_id": "CONCEITO_correção_monetária",
+          "start": 30,
+          "end": 48,
+          "context": "Tema 1062 do STJ (AFETADO): A correção monetária e os juros de mora incidentes sobre as indenizaçõ..."
+        }
+      ]
+    },
+    "stats": {
+      "sumulas": 2,
+      "temas": 1,
+      "artigos": 1,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 1
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "tema_STJ_1069",
+    "entities": {
+      "sumulas": [],
+      "temas": [
+        {
+          "type": "Tema",
+          "value": "Tema 1069/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "TEMA_1069",
+          "start": 0,
+          "end": 16,
+          "context": "Tema 1069 do STJ (AFETADO): O rol de procedimentos e eventos em sa..."
+        }
+      ],
+      "artigos": [],
+      "leis": [
+        {
+          "type": "Lei",
+          "value": "Lei 14454/2022",
+          "tribunal": null,
+          "normalized_id": "LEI_14454_2022",
+          "start": 119,
+          "end": 134,
+          "context": "... elaborado pela ANS é, em regra, exemplificativo (Lei 14.454/2022), garantindo aos beneficiários de plano de saúde ..."
+        }
+      ],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 0,
+      "temas": 1,
+      "artigos": 0,
+      "leis": 1,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "tema_STJ_1368",
+    "entities": {
+      "sumulas": [],
+      "temas": [
+        {
+          "type": "Tema",
+          "value": "Tema 1368/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "TEMA_1368",
+          "start": 0,
+          "end": 16,
+          "context": "Tema 1368 do STJ (AFETADO): A incidência da taxa Selic como índice..."
+        }
+      ],
+      "artigos": [
+        {
+          "type": "Artigo",
+          "value": "Art. 406",
+          "tribunal": null,
+          "normalized_id": "ARTIGO_Art406",
+          "start": 133,
+          "end": 143,
+          "context": "...onetária e de juros de mora, na forma prevista no art. 406 do CC/2002, exige a observância de critério único d..."
+        }
+      ],
+      "leis": [],
+      "processos": [],
+      "conceitos": [
+        {
+          "type": "Conceito",
+          "value": "selic",
+          "tribunal": null,
+          "normalized_id": "CONCEITO_selic",
+          "start": 49,
+          "end": 54,
+          "context": "Tema 1368 do STJ (AFETADO): A incidência da taxa Selic como índice de atualização monetária e de juros d..."
+        }
+      ]
+    },
+    "stats": {
+      "sumulas": 0,
+      "temas": 1,
+      "artigos": 1,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 1
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "tema_STF_622",
+    "entities": {
+      "sumulas": [],
+      "temas": [
+        {
+          "type": "Tema",
+          "value": "Tema 622/STF",
+          "tribunal": "STF",
+          "normalized_id": "TEMA_622",
+          "start": 0,
+          "end": 15,
+          "context": "Tema 622 do STF (JULGADO): A paternidade socioafetiva, declarada ..."
+        }
+      ],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 0,
+      "temas": 1,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "tema_STJ_929",
+    "entities": {
+      "sumulas": [],
+      "temas": [
+        {
+          "type": "Tema",
+          "value": "Tema 929/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "TEMA_929",
+          "start": 0,
+          "end": 15,
+          "context": "Tema 929 do STJ (AFETADO): O comerciante é parte legítima para fi..."
+        }
+      ],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 0,
+      "temas": 1,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  },
+  {
+    "source_file": "data/stj_chunks/stj_chunks_vectorstore.json",
+    "chunk_id": "tema_STJ_932",
+    "entities": {
+      "sumulas": [],
+      "temas": [
+        {
+          "type": "Tema",
+          "value": "Tema 932/STJ",
+          "tribunal": "STJ",
+          "normalized_id": "TEMA_932",
+          "start": 0,
+          "end": 15,
+          "context": "Tema 932 do STJ (JULGADO): É imprescritível a pretensão do filho ..."
+        }
+      ],
+      "artigos": [],
+      "leis": [],
+      "processos": [],
+      "conceitos": []
+    },
+    "stats": {
+      "sumulas": 0,
+      "temas": 1,
+      "artigos": 0,
+      "leis": 0,
+      "processos": 0,
+      "conceitos": 0
+    }
+  }
+]
